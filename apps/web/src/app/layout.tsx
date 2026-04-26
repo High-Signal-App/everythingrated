@@ -21,6 +21,12 @@ export default function RootLayout({
         <SiteHeader />
         <main className="flex-1">{children}</main>
         <SiteFooter />
+        {/* TODO: cf-beacon-token — paste real Web Analytics token from dash.cloudflare.com */}
+        <script
+          defer
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon='{"token": "PASTE_TOKEN_HERE"}'
+        />
       </body>
     </html>
   );

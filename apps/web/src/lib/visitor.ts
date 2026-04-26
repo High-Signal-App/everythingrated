@@ -1,5 +1,4 @@
 import { cookies } from "next/headers";
-import { randomUUID } from "node:crypto";
 
 export const VISITOR_COOKIE = "er_visitor";
 const ONE_YEAR = 60 * 60 * 24 * 365;
@@ -22,7 +21,7 @@ export async function ensureVisitorId(): Promise<string> {
   const c = await cookies();
   const existing = c.get(VISITOR_COOKIE)?.value;
   if (existing) return existing;
-  const id = randomUUID();
+  const id = crypto.randomUUID();
   c.set(VISITOR_COOKIE, id, {
     httpOnly: true,
     sameSite: "lax",

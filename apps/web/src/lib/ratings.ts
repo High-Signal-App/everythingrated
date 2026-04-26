@@ -1,6 +1,6 @@
-import { db, items, aspects, ratings, type Aspect, type Item } from "@everythingrated/db";
-import { and, eq } from "drizzle-orm";
-import { randomUUID } from "node:crypto";
+import { items, aspects, ratings, type Aspect, type Item } from "@everythingrated/db";
+import { eq } from "drizzle-orm";
+import { getDb } from "./db";
 
 export type AspectAverage = {
   aspect: Aspect;
@@ -18,6 +18,7 @@ export type ItemWithAggregate = {
 
 /** Load all aspects in display order. */
 export async function listAspects(): Promise<Aspect[]> {
+  const db = await getDb();
   return db.select().from(aspects).orderBy(aspects.sortOrder);
 }
 
@@ -25,9 +26,10 @@ export async function listAspects(): Promise<Aspect[]> {
 export async function listItemsWithAggregates(
   visitorId: string | null,
 ): Promise<ItemWithAggregate[]> {
+  const db = await getDb();
   const [allItems, allAspects, allRatings] = await Promise.all([
     db.select().from(items).orderBy(items.name),
-    listAspects(),
+    db.select().from(aspects).orderBy(aspects.sortOrder),
     db.select().from(ratings),
   ]);
 
@@ -39,10 +41,11 @@ export async function getItemAggregate(
   slug: string,
   visitorId: string | null,
 ): Promise<ItemWithAggregate | null> {
+  const db = await getDb();
   const [item] = await db.select().from(items).where(eq(items.slug, slug));
   if (!item) return null;
   const [allAspects, itemRatings] = await Promise.all([
-    listAspects(),
+    db.select().from(aspects).orderBy(aspects.sortOrder),
     db.select().from(ratings).where(eq(ratings.itemId, item.id)),
   ]);
   return buildAggregate(item, allAspects, itemRatings, visitorId);
@@ -56,10 +59,11 @@ export async function rate(opts: {
   score: number;
 }): Promise<void> {
   const score = Math.max(1, Math.min(5, Math.round(opts.score)));
+  const db = await getDb();
   await db
     .insert(ratings)
     .values({
-      id: randomUUID(),
+      id: crypto.randomUUID(),
       itemId: opts.itemId,
       aspectId: opts.aspectId,
       visitorId: opts.visitorId,
