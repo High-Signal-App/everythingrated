@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { SiteHeader } from "@/components/organisms/site-header";
 import { SiteFooter } from "@/components/organisms/site-footer";
+import { SaaSMakerFeedback } from "@/components/saasmaker-feedback";
 
 export const metadata: Metadata = {
   title: "EverythingRated — multi-axis ratings",
@@ -21,6 +22,7 @@ export default function RootLayout({
         <SiteHeader />
         <main className="flex-1">{children}</main>
         <SiteFooter />
+        <SaaSMakerFeedback />
         {/* TODO: cf-beacon-token — paste real Web Analytics token from dash.cloudflare.com */}
         <script
           defer
