@@ -11,20 +11,18 @@
   },
   "scripts": {
     "generate": "drizzle-kit generate",
-    "push": "drizzle-kit push",
-    "migrate": "tsx src/migrate.ts",
+    "migrate:local": "wrangler d1 migrations apply everythingrated-db --local --config=../../apps/web/wrangler.toml",
+    "migrate:remote": "wrangler d1 migrations apply everythingrated-db --remote --config=../../apps/web/wrangler.toml",
     "studio": "drizzle-kit studio",
-    "seed": "tsx src/seed.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@libsql/client": "0.17.3",
     "drizzle-orm": "0.45.2"
   },
   "devDependencies": {
-    "dotenv": "17.4.2",
+    "@cloudflare/workers-types": "4.20260424.1",
     "drizzle-kit": "0.31.10",
-    "tsx": "4.21.0",
-    "typescript": "5.6.3"
+    "typescript": "5.6.3",
+    "wrangler": "4.85.0"
   }
 }
