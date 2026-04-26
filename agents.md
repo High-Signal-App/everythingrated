@@ -10,7 +10,11 @@ UX feels right and the data model holds.
 - Framework: Next.js 16 (App Router), React 19
 - Language: TypeScript
 - Styling: Tailwind CSS v4
-- DB: Drizzle ORM + Turso (libSQL). Local: `file:./local.db`. Prod: Turso `libsql://...`
+- DB: Drizzle ORM + Cloudflare D1 (`everythingrated-db`). Bound via
+  `apps/web/wrangler.toml` as `DB`. Read via `getCloudflareContext().env.DB`
+  inside Server Components / Server Actions.
+- Runtime: `@opennextjs/cloudflare` → Cloudflare Workers (single Worker hosts
+  the whole app + assets).
 - Auth: NONE in POC. Ratings are anonymous, identified by an httpOnly cookie
   `er_visitor=<uuid>` set on first rating.
 - Package manager: pnpm workspaces (Node ≥20)
@@ -33,33 +37,39 @@ apps/web/                           # Next.js application
     cn.ts                           # clsx + tailwind-merge
     visitor.ts                      # cookie read/ensure (er_visitor)
     ratings.ts                      # all DB queries + aggregation
-  next.config.ts
-  postcss.config.mjs
-  eslint.config.mjs
+    db.ts                           # getDb() — wraps D1 binding from request ctx
+  next.config.ts                    # initOpenNextCloudflareForDev() so `next dev` sees D1
+  open-next.config.ts
+  wrangler.toml                     # D1 binding (DB), assets, worker entry
+  cloudflare-env.d.ts               # augments CloudflareEnv with DB
 packages/
-  db/                               # Drizzle schema + client + seed
+  db/                               # Drizzle schema + D1 client
     src/
       schema.ts                     # items, aspects, ratings
-      client.ts                     # global libsql client + drizzle()
-      migrate.ts                    # apply ./drizzle migrations
-      seed.ts                       # 10 AI dev tools, 5 aspects, owner ratings
-    drizzle.config.ts
+      client.ts                     # createDb(d1) → drizzle(d1, { schema })
+      index.ts                      # re-exports
+    migrations/                     # drizzle-kit generate output (D1 SQL)
+    drizzle.config.ts               # dialect: sqlite, driver: d1-http
+scripts/
+  seed-d1.ts                        # wrangler-driven seed — 10 tools + 5 aspects
 ```
 
 ## Key commands
 ```bash
 pnpm install
-pnpm db:push                        # push schema to local.db (no migration files)
-# OR: pnpm db:generate && pnpm db:migrate
 
-pnpm db:seed                        # insert 10 tools + 5 aspects + owner ratings
-pnpm dev                            # apps/web on http://localhost:3000
+# Local
+pnpm db:migrate:local               # apply migrations to local D1 (.wrangler/)
+pnpm db:seed:local                  # 10 tools + 5 aspects + owner ratings
+pnpm dev                            # http://localhost:3000
+
+# Remote
+pnpm db:migrate:remote
+pnpm db:seed:remote
+pnpm deploy                         # opennextjs-cloudflare build && deploy
 
 pnpm --filter web typecheck
-pnpm --filter web build
-
-# DB inspection
-pnpm db:studio
+pnpm db:generate                    # regen migrations after schema change
 ```
 
 ## Architecture notes
@@ -84,7 +94,6 @@ pnpm db:studio
 - No `packages/core` (no domain logic worth extracting yet).
 - No `packages/ui`, `packages/config` (truehire's are empty too — not used).
 - No NextAuth, no GitHub adapter tables.
-- No Cloudflare Workers / OpenNext config — Vercel-only deploy in POC.
 - No husky / secret-scan yet — add when first secret lands.
 - ESLint + tsconfig use upstream `eslint-config-next` directly instead of
   `@saas-maker/*` shared configs (those configs aren't in this repo, and the
