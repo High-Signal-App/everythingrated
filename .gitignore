@@ -33,3 +33,7 @@ playwright-report/
 .idea/
 *.log
 .vercel
+
+# fallow cache
+.fallow/
+cache.bin
