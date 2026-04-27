@@ -2,9 +2,9 @@
 
 ## Purpose
 Multi-axis ratings platform. Every "thing" is rated across multiple aspects
-(speed, accuracy, cost, ergonomics, integration depth) instead of a single
-star. POC is seeded with ~10 AI dev tools — enough to prove the multi-axis
-UX feels right and the data model holds.
+instead of a single star. Items are organised into **directories**, each with
+its own per-directory aspect set (an AI editor is rated on different axes than
+a database). Seeded directories: AI dev tools, databases, hosting.
 
 ## Stack
 - Framework: Next.js 16 (App Router), React 19
@@ -24,19 +24,20 @@ UX feels right and the data model holds.
 apps/web/                           # Next.js application
   src/app/
     layout.tsx                      # Site shell + global styles
-    page.tsx                        # Landing — hero + tool grid
-    [slug]/
-      page.tsx                      # Item page — interactive rating UI
-      actions.ts                    # Server Action: submitRating (upsert)
+    page.tsx                        # Landing — hero + directory grid
+    d/[directory]/
+      page.tsx                      # Directory landing — item grid
+      [item]/page.tsx               # Item page — interactive rating UI
     globals.css                     # Tailwind v4 + design tokens
   src/components/                   # Atomic design
     atoms/      badge, card, score-bar
     molecules/  aspect-row, rate-row
-    organisms/  site-header, site-footer, item-card
+    organisms/  site-header, site-footer, item-card, directory-card
   src/lib/
     cn.ts                           # clsx + tailwind-merge
     visitor.ts                      # cookie read/ensure (er_visitor)
     ratings.ts                      # all DB queries + aggregation
+    actions.ts                      # Server Action: submitRating
     db.ts                           # getDb() — wraps D1 binding from request ctx
   next.config.ts                    # initOpenNextCloudflareForDev() so `next dev` sees D1
   open-next.config.ts
@@ -45,13 +46,13 @@ apps/web/                           # Next.js application
 packages/
   db/                               # Drizzle schema + D1 client
     src/
-      schema.ts                     # items, aspects, ratings
+      schema.ts                     # directories, items, aspects, ratings
       client.ts                     # createDb(d1) → drizzle(d1, { schema })
       index.ts                      # re-exports
     migrations/                     # drizzle-kit generate output (D1 SQL)
     drizzle.config.ts               # dialect: sqlite, driver: d1-http
 scripts/
-  seed-d1.ts                        # wrangler-driven seed — 10 tools + 5 aspects
+  seed-d1.ts                        # wrangler-driven seed — 3 directories
 ```
 
 ## Key commands
@@ -73,12 +74,17 @@ pnpm db:generate                    # regen migrations after schema change
 ```
 
 ## Architecture notes
-- **Three tables**: `items`, `aspects`, `ratings`. The unique index
-  `(item_id, aspect_id, visitor_id)` enforces "one rating per axis per
-  visitor"; `submitRating` upserts on it so re-rating just updates.
-- **Aggregation lives in `lib/ratings.ts`**: `listItemsWithAggregates` does
-  one full pull and reduces in JS — fine at POC scale, swap for SQL avg
-  groupings if the table grows.
+- **Four tables**: `directories`, `items`, `aspects`, `ratings`.
+  - `items.directory_id` + `(directory_id, slug)` unique → slugs are scoped
+    per directory.
+  - `aspects.directory_id` + `(directory_id, key)` unique → aspects are
+    per-directory (databases have their own axes, AI tools have theirs).
+  - `(item_id, aspect_id, visitor_id)` unique on `ratings` enforces "one
+    rating per axis per visitor"; `submitRating` upserts on it so re-rating
+    just updates.
+- **Aggregation lives in `lib/ratings.ts`**: `listItemsWithAggregates` is
+  directory-scoped and does one full pull + JS reduce — fine at POC scale,
+  swap for SQL avg groupings if a directory grows.
 - **Cookie**: `er_visitor` is httpOnly + SameSite=Lax + 1 year. Minted lazily
   on the first `submitRating` call (Server Action), never on read pages, so
   bots don't pollute the visitor space.
@@ -87,8 +93,9 @@ pnpm db:generate                    # regen migrations after schema change
   authoritative view.
 - **No middleware**: visitor ids are only minted in mutating Server Actions
   to keep page renders cacheable and bot-noise-free.
-- **DO NOT ADD** in POC: auth, search, item submission, categories,
-  comments, admin panel, email. The whole bet is multi-axis UX.
+- **DO NOT ADD** in POC: auth, search, item submission, comments, admin
+  panel, email, dynamic directory creation (needs auth + spam mitigation).
+  The whole bet is multi-axis UX.
 
 ## Divergence from the truehire template
 - No `packages/core` (no domain logic worth extracting yet).
@@ -101,5 +108,6 @@ pnpm db:generate                    # regen migrations after schema change
 
 ## Active context
 POC. Owner is the only seeded rater (`visitor_id = "seed-owner"`). Scores
-above are first-pass author opinion — replace with real ratings after a
-few days of usage.
+are first-pass author opinion — replace with real ratings after a few days
+of usage. 3 seeded directories (ai-dev-tools, databases, hosting); plan
+0003 covers the static multi-directory shape currently in production.
