@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { AnalyticsProvider } from "@/components/posthog-provider";
 import { SiteHeader } from "@/components/organisms/site-header";
 import { SiteFooter } from "@/components/organisms/site-footer";
 import { SaaSMakerFeedback } from "@/components/saasmaker-feedback";
@@ -19,10 +20,12 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full antialiased">
       <body className="min-h-full flex flex-col bg-[var(--background)] text-[var(--foreground)]">
-        <SiteHeader />
-        <main className="flex-1">{children}</main>
-        <SiteFooter />
-        <SaaSMakerFeedback />
+        <AnalyticsProvider>
+          <SiteHeader />
+          <main className="flex-1">{children}</main>
+          <SiteFooter />
+          <SaaSMakerFeedback />
+        </AnalyticsProvider>
         {/* TODO: cf-beacon-token — paste real Web Analytics token from dash.cloudflare.com */}
         <script
           defer
