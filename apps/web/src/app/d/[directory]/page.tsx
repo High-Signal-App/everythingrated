@@ -3,21 +3,37 @@ import { notFound } from "next/navigation";
 import { getDirectoryBySlug, listItemsWithAggregates } from "@/lib/ratings";
 import { readVisitorId } from "@/lib/visitor";
 import { ItemCard } from "@/components/organisms/item-card";
+import { ComparisonBoard } from "@/components/organisms/comparison-board";
 import { Badge } from "@/components/atoms/badge";
+import { parseCompareState } from "@/lib/comparison";
 
 export const dynamic = "force-dynamic";
 
 export default async function DirectoryPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ directory: string }>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
   const { directory: dirSlug } = await params;
+  const query = await searchParams;
   const directory = await getDirectoryBySlug(dirSlug);
   if (!directory) notFound();
 
   const visitorId = await readVisitorId();
   const items = await listItemsWithAggregates(directory.id, visitorId);
+  const compareState = parseCompareState(
+    new URLSearchParams(
+      Object.entries(query).flatMap(([key, value]) =>
+        Array.isArray(value)
+          ? value.map((item) => [key, item])
+          : value
+            ? [[key, value]]
+            : [],
+      ),
+    ),
+  );
 
   return (
     <>
@@ -63,6 +79,14 @@ export default async function DirectoryPage({
           </div>
         )}
       </section>
+
+      {items.length > 0 && (
+        <ComparisonBoard
+          items={items}
+          initialSelectedIds={compareState.selectedIds}
+          initialWeights={compareState.weights}
+        />
+      )}
     </>
   );
 }
