@@ -11,9 +11,12 @@ export function SiteHeader() {
           <LogoMark />
           <span>EverythingRated</span>
         </Link>
-        <span className="hidden text-[12px] text-[var(--muted)] md:block">
-          Multi-axis ratings
-        </span>
+        <nav className="flex items-center gap-4 text-[12px] text-[var(--muted)]">
+          <Link href="/submit-directory" className="hover:text-[var(--foreground)]">
+            Submit directory
+          </Link>
+          <span className="hidden md:block">Multi-axis ratings</span>
+        </nav>
       </div>
     </header>
   );

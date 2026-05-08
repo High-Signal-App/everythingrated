@@ -1,5 +1,6 @@
 import { sql } from "drizzle-orm";
 import {
+  index,
   integer,
   sqliteTable,
   text,
@@ -92,7 +93,35 @@ export const ratings = sqliteTable(
   }),
 );
 
+/** Community directory suggestions queued for owner moderation. */
+export const directorySubmissions = sqliteTable(
+  "directory_submissions",
+  {
+    id: text("id").primaryKey(),
+    slug: text("slug").notNull(),
+    name: text("name").notNull(),
+    description: text("description").notNull(),
+    heroCopy: text("hero_copy").notNull(),
+    aspectLabels: text("aspect_labels").notNull(),
+    submitterName: text("submitter_name"),
+    submitterEmail: text("submitter_email"),
+    status: text("status").notNull().default("pending"),
+    moderatorNote: text("moderator_note"),
+    createdAt: integer("created_at", { mode: "timestamp_ms" })
+      .notNull()
+      .default(sql`(unixepoch() * 1000)`),
+    moderatedAt: integer("moderated_at", { mode: "timestamp_ms" }),
+  },
+  (t) => ({
+    statusCreated: index("directory_submissions_status_created_idx").on(
+      t.status,
+      t.createdAt,
+    ),
+  }),
+);
+
 export type Directory = typeof directories.$inferSelect;
 export type Item = typeof items.$inferSelect;
 export type Aspect = typeof aspects.$inferSelect;
 export type Rating = typeof ratings.$inferSelect;
+export type DirectorySubmission = typeof directorySubmissions.$inferSelect;
