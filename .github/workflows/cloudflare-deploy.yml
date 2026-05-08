@@ -27,8 +27,6 @@ jobs:
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
-        with:
-          version: 10
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -48,5 +46,5 @@ jobs:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         run: pnpm run deploy
 
-      # TODO: Add a production smoke check after the canonical EverythingRated
-      # URL or health endpoint is recorded in the repo or GitHub environment.
+      - name: Smoke Production Worker
+        run: curl --fail --show-error --silent --location --max-time 30 https://everythingrated.sarthakagrawal927.workers.dev/ > /dev/null
