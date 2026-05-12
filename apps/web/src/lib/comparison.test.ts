@@ -46,3 +46,49 @@ const parsed = parseCompareState(new URLSearchParams(encoded));
 assert.deepEqual(parsed.selectedIds, ["a", "b"]);
 assert.equal(parsed.weights.polish, 2.5);
 assert.equal(parsed.weights.speed, undefined);
+
+// Weight of 0 zeroes that aspect's contribution.
+const zeroWeight = compareItems(
+  [item("a", "A", { speed: 5, polish: 5 }), item("b", "B", { speed: 5, polish: 0 })],
+  ["a", "b"],
+  { speed: 0, polish: 1 },
+);
+assert.equal(zeroWeight[0].item.id, "a");
+assert.equal(zeroWeight[0].total, 5);
+assert.equal(zeroWeight[1].total, 0);
+
+// Weights above 5 should clamp; weights below 0 should clamp to 0.
+const clampedEncoded = encodeCompareState(["a"], { speed: 99, polish: -2 });
+const clampedParsed = parseCompareState(new URLSearchParams(clampedEncoded));
+assert.equal(clampedParsed.weights.speed, 5);
+assert.equal(clampedParsed.weights.polish, 0);
+
+// More than 5 selected IDs should truncate to the first 5.
+const truncated = parseCompareState(
+  new URLSearchParams("compare=a,b,c,d,e,f,g"),
+);
+assert.deepEqual(truncated.selectedIds, ["a", "b", "c", "d", "e"]);
+
+// Selecting an unknown id should drop it rather than throw.
+const unknown = compareItems(
+  [item("a", "A", { speed: 4 })],
+  ["a", "missing"],
+  {},
+);
+assert.equal(unknown.length, 1);
+assert.equal(unknown[0].item.id, "a");
+
+// Equal totals sort alphabetically.
+const tied = compareItems(
+  [
+    item("z", "Zeta", { speed: 4 }),
+    item("a", "Alpha", { speed: 4 }),
+  ],
+  ["z", "a"],
+  {},
+);
+assert.equal(tied[0].item.name, "Alpha");
+
+// Empty weight string should not pollute the parsed map.
+const noWeights = parseCompareState(new URLSearchParams("compare=a,b"));
+assert.deepEqual(noWeights.weights, {});
