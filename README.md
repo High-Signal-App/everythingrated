@@ -29,3 +29,15 @@ Next.js 16 · React 19 · Tailwind v4 · Drizzle ORM · Cloudflare D1 ·
 anonymous, scoped to an httpOnly `er_visitor` cookie minted on first rating.
 
 See `agents.md` for architecture, conventions, and what NOT to add.
+
+## Commands
+
+```bash
+pnpm test            # validation + comparison assertions (tsx)
+pnpm typecheck       # tsc --noEmit across workspaces
+pnpm lint            # recursive lint
+pnpm db:generate     # regenerate Drizzle migrations after schema change
+pnpm db:studio       # browse local D1 via drizzle-kit
+```
+
+See `docs/migrations.md` for the D1 migration + rollback runbook.
