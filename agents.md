@@ -1,5 +1,9 @@
 # agents.md — EverythingRated
 
+## Shared Fleet Standard
+
+Also read and follow the shared fleet-level agent standard at `../AGENTS.md`. Treat this repository as owned product code: protect production stability, keep changes scoped, verify work, and record durable follow-up tasks when something remains incomplete or blocked.
+
 ## Purpose
 Multi-axis ratings platform. Every "thing" is rated across multiple aspects
 instead of a single star. Items are organised into **directories**, each with
