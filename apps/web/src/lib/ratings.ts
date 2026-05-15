@@ -31,6 +31,95 @@ export type DirectorySummary = {
 };
 
 /**
+ * Top items across the whole catalogue ranked by the visitor count + mean
+ * score of a specific aspect-key match. The same aspect key (e.g.
+ * "performance") can exist across multiple directories — items show up
+ * with their directory label so users can disambiguate.
+ */
+export async function topItemsByAspectKey(
+  aspectKey: string,
+  limit = 50,
+): Promise<Array<{
+  item: Item;
+  directory: Directory;
+  aspectId: string;
+  avg: number;
+  raters: number;
+}>> {
+  const db = await getDb();
+  const [matchingAspects, allItems, allDirs, allRatings] = await Promise.all([
+    db.select().from(aspects).where(eq(aspects.key, aspectKey)),
+    db.select().from(items),
+    db.select().from(directories),
+    db.select().from(ratings),
+  ]);
+
+  if (matchingAspects.length === 0) return [];
+  const itemById = new Map(allItems.map((i) => [i.id, i]));
+  const dirById = new Map(allDirs.map((d) => [d.id, d]));
+
+  const out: Array<{
+    item: Item;
+    directory: Directory;
+    aspectId: string;
+    avg: number;
+    raters: number;
+  }> = [];
+
+  for (const aspect of matchingAspects) {
+    const dir = dirById.get(aspect.directoryId);
+    if (!dir) continue;
+    const dirItems = allItems.filter((i) => i.directoryId === aspect.directoryId);
+    for (const item of dirItems) {
+      const rs = allRatings.filter(
+        (r) => r.itemId === item.id && r.aspectId === aspect.id,
+      );
+      if (rs.length === 0) continue;
+      const visitors = new Set(rs.map((r) => r.visitorId));
+      const sum = rs.reduce((s, r) => s + r.score, 0);
+      out.push({
+        item,
+        directory: dir,
+        aspectId: aspect.id,
+        avg: sum / rs.length,
+        raters: visitors.size,
+      });
+    }
+  }
+
+  out.sort((a, b) =>
+    b.raters !== a.raters ? b.raters - a.raters : b.avg - a.avg,
+  );
+  return out.slice(0, limit);
+}
+
+/**
+ * Every distinct aspect key in the catalogue with a count of directories it
+ * appears in and a sample label.
+ */
+export async function listAspectKeys(): Promise<Array<{
+  key: string;
+  label: string;
+  directories: number;
+}>> {
+  const db = await getDb();
+  const allAspects = await db.select().from(aspects);
+  const byKey = new Map<string, { label: string; directories: Set<string> }>();
+  for (const a of allAspects) {
+    const entry = byKey.get(a.key) ?? { label: a.label, directories: new Set<string>() };
+    entry.directories.add(a.directoryId);
+    byKey.set(a.key, entry);
+  }
+  return [...byKey.entries()]
+    .map(([key, entry]) => ({
+      key,
+      label: entry.label,
+      directories: entry.directories.size,
+    }))
+    .sort((a, b) => b.directories - a.directories);
+}
+
+/**
  * Items the given visitor has rated, with the visitor's mean score per item
  * and the directory it lives in. Newest rating first.
  */
