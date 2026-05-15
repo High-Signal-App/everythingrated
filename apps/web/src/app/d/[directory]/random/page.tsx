@@ -20,8 +20,11 @@ export default function RandomItem() {
     }
     fetch(`/d/${directory}/items.json`, { cache: "no-store" })
       .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
-      .then((data) => {
-        const items = (data?.items ?? []) as Array<{ item: { slug: string } }>;
+      .then((data: unknown) => {
+        const items =
+          data && typeof data === "object" && "items" in data && Array.isArray((data as { items: unknown }).items)
+            ? ((data as { items: Array<{ item: { slug: string } }> }).items)
+            : [];
         if (items.length === 0) {
           setError("no items in this directory yet");
           return;
