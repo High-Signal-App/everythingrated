@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
-import { Card, CardBody, CardHeader, CardTitle } from "@/components/atoms/card";
+import { Card, CardBody } from "@/components/atoms/card";
 import { listDirectories, listItemsWithAggregates } from "@/lib/ratings";
 
 export const metadata: Metadata = {
@@ -54,11 +54,9 @@ export default async function TrendingPage() {
 
       {top.length === 0 ? (
         <Card className="mt-8">
-          <CardHeader>
-            <CardTitle>Nothing trending yet</CardTitle>
-          </CardHeader>
           <CardBody>
-            <p className="text-sm text-[var(--muted)]">
+            <h2 className="text-base font-semibold">Nothing trending yet</h2>
+            <p className="mt-2 text-sm text-[var(--muted)]">
               Rate something — it&apos;ll appear here.
             </p>
           </CardBody>
