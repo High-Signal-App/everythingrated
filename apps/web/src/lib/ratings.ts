@@ -30,6 +30,65 @@ export type DirectorySummary = {
   aspectCount: number;
 };
 
+/**
+ * Items the given visitor has rated, with the visitor's mean score per item
+ * and the directory it lives in. Newest rating first.
+ */
+export async function listItemsRatedByVisitor(
+  visitorId: string,
+): Promise<Array<{
+  item: Item;
+  directory: Directory;
+  yourMean: number;
+  ratedAspects: number;
+  lastRatedAt: Date;
+}>> {
+  const db = await getDb();
+  const [myRatings, allItems, allDirs] = await Promise.all([
+    db.select().from(ratings).where(eq(ratings.visitorId, visitorId)),
+    db.select().from(items),
+    db.select().from(directories),
+  ]);
+  const itemById = new Map(allItems.map((i) => [i.id, i]));
+  const dirById = new Map(allDirs.map((d) => [d.id, d]));
+
+  const byItem = new Map<
+    string,
+    { sum: number; count: number; latest: number }
+  >();
+  for (const r of myRatings) {
+    const e = byItem.get(r.itemId) ?? { sum: 0, count: 0, latest: 0 };
+    e.sum += r.score;
+    e.count += 1;
+    const t = r.createdAt instanceof Date ? r.createdAt.getTime() : Number(r.createdAt);
+    if (t > e.latest) e.latest = t;
+    byItem.set(r.itemId, e);
+  }
+
+  const out: Array<{
+    item: Item;
+    directory: Directory;
+    yourMean: number;
+    ratedAspects: number;
+    lastRatedAt: Date;
+  }> = [];
+  for (const [itemId, e] of byItem) {
+    const item = itemById.get(itemId);
+    if (!item) continue;
+    const dir = dirById.get(item.directoryId);
+    if (!dir) continue;
+    out.push({
+      item,
+      directory: dir,
+      yourMean: e.sum / e.count,
+      ratedAspects: e.count,
+      lastRatedAt: new Date(e.latest),
+    });
+  }
+  out.sort((a, b) => b.lastRatedAt.getTime() - a.lastRatedAt.getTime());
+  return out;
+}
+
 /** Load all directories with item + aspect counts. */
 export async function listDirectories(): Promise<DirectorySummary[]> {
   const db = await getDb();
