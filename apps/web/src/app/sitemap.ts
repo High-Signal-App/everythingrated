@@ -16,7 +16,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   try {
     const dirs = await listDirectories();
     directoryEntries = dirs.map((d) => ({
-      url: `${siteUrl}/d/${d.slug}`,
+      url: `${siteUrl}/d/${d.directory.slug}`,
       lastModified: now,
       changeFrequency: "weekly" as const,
       priority: 0.8,
