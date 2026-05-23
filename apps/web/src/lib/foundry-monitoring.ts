@@ -27,7 +27,7 @@ export function captureError(
   options: { scope?: ErrorBoundaryScope; digest?: string; source?: string } = {},
 ) {
   try {
-    track("error_captured", {
+    const payload = {
       project_slug: PROJECT_SLUG,
       route: route(),
       scope: options.scope ?? "unknown",
@@ -35,7 +35,9 @@ export function captureError(
       source: options.source ?? "error_boundary",
       message: messageFrom(error),
       stack: error instanceof Error ? error.stack : undefined,
-    });
+    };
+    track("error_captured", payload);
+    track("foundry_page_crash", payload);
   } catch {
     // Never let monitoring throw inside an error boundary.
   }
