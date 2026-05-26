@@ -70,7 +70,7 @@ export function ComparisonBoard({
   }
 
   return (
-    <section className="mx-auto w-full max-w-6xl px-6 pb-14">
+    <section id="compare" className="mx-auto w-full max-w-6xl scroll-mt-20 px-6 pb-14">
       <div className="mb-4 flex items-end justify-between gap-4">
         <div>
           <h2 className="text-[20px] font-semibold tracking-tight">Comparison board</h2>

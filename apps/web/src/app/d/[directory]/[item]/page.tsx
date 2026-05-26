@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getItemAggregate } from "@/lib/ratings";
+import { getItemAggregate, listDirectories } from "@/lib/ratings";
 import { readVisitorId } from "@/lib/visitor";
 import { Badge } from "@/components/atoms/badge";
 import { RateRow } from "@/components/molecules/rate-row";
+import { CategoryChips } from "@/components/molecules/category-chips";
 
 export const dynamic = "force-dynamic";
 
@@ -14,9 +15,15 @@ export default async function ItemPage({
 }) {
   const { directory: dirSlug, item: itemSlug } = await params;
   const visitorId = await readVisitorId();
-  const result = await getItemAggregate(dirSlug, itemSlug, visitorId);
+  const [result, allDirectories] = await Promise.all([
+    getItemAggregate(dirSlug, itemSlug, visitorId),
+    listDirectories(),
+  ]);
   if (!result) notFound();
   const { directory, data } = result;
+  const otherDirectories = allDirectories.filter(
+    (d) => d.directory.id !== directory.id && d.itemCount > 0,
+  );
   const yourRatedAspects = data.aspects.filter((a) => a.yourScore !== null);
   const yourMean =
     yourRatedAspects.length > 0
@@ -106,6 +113,18 @@ export default async function ItemPage({
           ))}
         </div>
       </section>
+
+      {otherDirectories.length > 0 && (
+        <section className="mt-10 border-t border-[var(--border)] pt-8">
+          <h2 className="text-[12px] uppercase tracking-[0.1em] text-[var(--muted)]">
+            Rate next
+          </h2>
+          <p className="mt-1 text-[12px] text-[var(--muted-2)]">
+            Different category, different axes — pick another to keep going.
+          </p>
+          <CategoryChips className="mt-3" directories={otherDirectories} />
+        </section>
+      )}
     </div>
   );
 }

@@ -5,6 +5,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { Card, CardBody } from "@/components/atoms/card";
 import {
   addItemToCollection,
+  buildShareUrl,
   COLLECTIONS_STORAGE_KEY,
   createCollection,
   directoriesFromRatedItems,
@@ -31,6 +32,7 @@ export function RankedCollectionsPanel({
   const [creating, setCreating] = useState(false);
   const [formError, setFormError] = useState<string | null>(null);
   const [actionError, setActionError] = useState<string | null>(null);
+  const [copied, setCopied] = useState(false);
 
   const [draftName, setDraftName] = useState("");
   const [draftDirectory, setDraftDirectory] = useState("");
@@ -144,6 +146,15 @@ export function RankedCollectionsPanel({
     );
     persist(next);
     setActionError(null);
+  }
+
+  function handleShare() {
+    if (!selected || selectedRows.length < 2) return;
+    const url = buildShareUrl(window.location.origin, selected, selectedRows);
+    navigator.clipboard.writeText(url).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    });
   }
 
   function handleDeleteCollection() {
@@ -396,13 +407,22 @@ export function RankedCollectionsPanel({
                         {selectedRows.length} ranked item{selectedRows.length === 1 ? "" : "s"}
                       </p>
                     </div>
-                    <button
-                      type="button"
-                      onClick={handleDeleteCollection}
-                      className="text-[12px] text-[var(--muted)] hover:text-[var(--foreground)]"
-                    >
-                      Delete
-                    </button>
+                    <div className="flex items-center gap-3">
+                      <button
+                        type="button"
+                        onClick={handleShare}
+                        className="text-[12px] text-[var(--muted)] hover:text-[var(--foreground)]"
+                      >
+                        {copied ? "Copied!" : "Share"}
+                      </button>
+                      <button
+                        type="button"
+                        onClick={handleDeleteCollection}
+                        className="text-[12px] text-[var(--muted)] hover:text-[var(--foreground)]"
+                      >
+                        Delete
+                      </button>
+                    </div>
                   </div>
 
                   <ol className="divide-y divide-[var(--border)]">

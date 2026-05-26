@@ -168,6 +168,22 @@ export function directoriesFromRatedItems(
     .sort((a, b) => a.name.localeCompare(b.name));
 }
 
+export function buildShareUrl(
+  origin: string,
+  collection: RankedCollection,
+  resolvedItems: Array<RatedItemRef & { rank: number }>,
+): string {
+  const params = new URLSearchParams();
+  params.set("name", collection.name);
+  params.set("dir", collection.directorySlug);
+  const slugs = [...resolvedItems]
+    .sort((a, b) => a.rank - b.rank)
+    .map((item) => item.itemSlug)
+    .join(",");
+  params.set("items", slugs);
+  return `${origin}/list?${params.toString()}`;
+}
+
 export function parseStoredCollections(raw: string | null): RankedCollection[] {
   if (!raw) return [];
   try {

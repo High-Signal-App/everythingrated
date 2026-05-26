@@ -108,3 +108,22 @@ pnpm build
 ```
 
 See `agents.md` for architecture, conventions, and what not to add in the POC.
+
+<!-- ACTIVE-AI-TASK-LOG:START -->
+## Active AI Task Log
+
+This section is maintained by the SaaS Maker Active-AI product/design loop so future agents do not reopen duplicate UI tasks.
+
+- Business lane: P1 Explore
+- Rule: do not create another broad "improve the UI" task unless the acceptance criteria differ materially from the tasks listed here.
+- Source of truth for task status: SaaS Maker task board. README entries are durable context only.
+
+| Task | Status | Priority | Last known note |
+| --- | --- | --- | --- |
+| `b302386d` everythingrated: show a real multi-axis rating example above the fold | done | medium | 2026-05-25 17:33:09 |
+| `c6dd9804` everythingrated: add submit-your-own rating loop after example | done | medium | 2026-05-26 |
+| `7da0927c` everythingrated: add rating confidence explainer | done | medium | 2026-05-26 |
+| `21980055` everythingrated: add compare-two-items loop | done | medium | 2026-05-26 |
+| `871fe1d5` everythingrated: add category suggestion chips | done | low | 2026-05-26 |
+| `14eb9a2a` everythingrated: add shareable ranked-list preview | done | medium | 2026-05-26 |
+<!-- ACTIVE-AI-TASK-LOG:END -->
