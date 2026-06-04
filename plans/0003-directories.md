@@ -50,6 +50,8 @@ old `items`, `aspects`, `ratings`, `_cf_KV` and re-run migrations.
 
 ## Out of scope (next plans)
 - Dynamic directory maker (UI to create directory + define aspects). Needs
-  auth + spam mitigation.
+  auth + spam mitigation. → **Partially shipped** (directory moderation queue,
+  2026-05). See `0004-moderated-dynamic-submissions.md`.
 - Search across directories.
-- Item submission flow.
+- Item submission flow. → **Planned** in `0004-moderated-dynamic-submissions.md`
+  (pilot: `ai-dev-tools` only).

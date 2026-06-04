@@ -1,0 +1,74 @@
+[
+  {
+    "id": "sub-cursor-dup",
+    "directorySlug": "ai-dev-tools",
+    "slug": "cursor",
+    "name": "Cursor",
+    "description": "AI-first code editor with composer and agent workflows for daily development.",
+    "websiteUrl": "https://cursor.com",
+    "submitterName": "Jamie",
+    "submitterEmail": null,
+    "status": "pending",
+    "_expected": "merge — exact slug duplicate of seeded item"
+  },
+  {
+    "id": "sub-cursor-alt",
+    "directorySlug": "ai-dev-tools",
+    "slug": "cursor-ide",
+    "name": "Cursor IDE",
+    "description": "The VS Code fork with built-in AI chat and multi-file editing agents.",
+    "websiteUrl": "https://www.cursor.com",
+    "submitterName": null,
+    "submitterEmail": "dev@example.com",
+    "status": "pending",
+    "_expected": "merge — normalized name / host duplicate of Cursor"
+  },
+  {
+    "id": "sub-zed-new",
+    "directorySlug": "ai-dev-tools",
+    "slug": "zed",
+    "name": "Zed",
+    "description": "High-performance multiplayer code editor built for speed and real-time collaboration.",
+    "websiteUrl": "https://zed.dev",
+    "submitterName": "Alex",
+    "submitterEmail": "alex@example.com",
+    "status": "pending",
+    "_expected": "approve — legitimate missing tool"
+  },
+  {
+    "id": "sub-fake-ai",
+    "directorySlug": "ai-dev-tools",
+    "slug": "totally-real-ai-coder",
+    "name": "Totally Real AI Coder",
+    "description": "The best AI coding tool ever made with unlimited free tokens forever.",
+    "websiteUrl": "https://example.invalid",
+    "submitterName": "Spam Bot",
+    "submitterEmail": null,
+    "status": "pending",
+    "_expected": "reject — spam / unreachable URL"
+  },
+  {
+    "id": "sub-continue-conflict",
+    "directorySlug": "ai-dev-tools",
+    "slug": "continue-dev",
+    "name": "Continue Dev",
+    "description": "Open-source AI coding assistant for VS Code with bring-your-own-model support.",
+    "websiteUrl": "https://continue.dev",
+    "submitterName": "Sam",
+    "submitterEmail": null,
+    "status": "pending",
+    "_expected": "merge — overlaps seeded Continue item"
+  },
+  {
+    "id": "sub-warp-new",
+    "directorySlug": "ai-dev-tools",
+    "slug": "warp",
+    "name": "Warp",
+    "description": "Modern terminal with AI command suggestions and collaborative blocks for teams.",
+    "websiteUrl": "https://www.warp.dev",
+    "submitterName": "Taylor",
+    "submitterEmail": "taylor@example.com",
+    "status": "pending",
+    "_expected": "approve — legitimate missing tool"
+  }
+]
