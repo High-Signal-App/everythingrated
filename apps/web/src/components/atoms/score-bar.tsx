@@ -12,7 +12,7 @@ export function ScoreBar({
   return (
     <div
       className={cn(
-        "h-1.5 w-full overflow-hidden rounded-full bg-[var(--score-track)]",
+        "h-2 w-full overflow-hidden rounded-full bg-[var(--score-track)] ring-1 ring-inset ring-[var(--border)]",
         className,
       )}
       role="meter"
@@ -20,7 +20,10 @@ export function ScoreBar({
       aria-valuemax={5}
       aria-valuenow={value}
     >
-      <div className="h-full bg-[var(--score-fill)]" style={{ width: `${pct}%` }} />
+      <div
+        className="h-full rounded-full bg-gradient-to-r from-[var(--score-fill)] via-[var(--score-fill-mid)] to-[var(--score-fill-high)] transition-[width]"
+        style={{ width: `${pct}%` }}
+      />
     </div>
   );
 }

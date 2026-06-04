@@ -12,7 +12,11 @@
   --accent: #0d0d0e;
   --accent-contrast: #ffffff;
   --score-track: #eae8e4;
-  --score-fill: #0b0b0c;
+  --score-fill: #111827;
+  --score-fill-mid: #2563eb;
+  --score-fill-high: #16a34a;
+  --warm-surface: #fffaf0;
+  --cool-surface: #f3f8ff;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -29,6 +33,10 @@
     --accent-contrast: #08080b;
     --score-track: #26262e;
     --score-fill: #f4f3ef;
+    --score-fill-mid: #60a5fa;
+    --score-fill-high: #34d399;
+    --warm-surface: #17140e;
+    --cool-surface: #101722;
   }
 }
 

@@ -23,13 +23,19 @@ export function ItemCard({
     : allRated
       ? "Review →"
       : "Finish rating →";
+  const overallPct = Math.max(0, Math.min(100, (data.overall / 5) * 100));
+  const confidenceLabel = data.totalRaters >= 5
+    ? "solid signal"
+    : data.totalRaters > 0
+      ? "early signal"
+      : "unrated";
 
   return (
     <Link href={`/d/${directorySlug}/${data.item.slug}`} className="group block">
-      <Card className="h-full transition-colors group-hover:border-[var(--border-strong)]">
+      <Card className="h-full overflow-hidden transition-all duration-200 group-hover:-translate-y-0.5 group-hover:border-[var(--border-strong)] group-hover:shadow-lg">
         <CardBody className="flex h-full flex-col gap-4">
           <div className="flex items-start justify-between gap-3">
-            <div>
+            <div className="min-w-0">
               <h3 className="text-[16px] font-semibold tracking-tight">
                 {data.item.name}
               </h3>
@@ -37,17 +43,29 @@ export function ItemCard({
                 {data.item.description}
               </p>
             </div>
-            <div className="flex flex-col items-end">
-              <span className="num text-2xl font-semibold tabular-nums">
-                {data.overall > 0 ? data.overall.toFixed(1) : "—"}
+            <div className="flex shrink-0 flex-col items-end">
+              <span
+                className="grid h-16 w-16 place-items-center rounded-full p-[3px]"
+                style={{
+                  background:
+                    data.overall > 0
+                      ? `conic-gradient(var(--score-fill-high) ${overallPct}%, var(--score-track) 0)`
+                      : "var(--score-track)",
+                }}
+              >
+                <span className="grid h-full w-full place-items-center rounded-full bg-[var(--surface)]">
+                  <span className="num text-xl font-semibold leading-none tabular-nums">
+                    {data.overall > 0 ? data.overall.toFixed(1) : "—"}
+                  </span>
+                </span>
               </span>
-              <span className="text-[10px] uppercase tracking-[0.08em] text-[var(--muted-2)]">
-                Overall / 5
+              <span className="mt-1 text-[10px] uppercase tracking-[0.08em] text-[var(--muted-2)]">
+                {confidenceLabel}
               </span>
             </div>
           </div>
 
-          <div className="mt-auto flex flex-col gap-1.5 border-t border-[var(--border)] pt-3">
+          <div className="mt-auto flex flex-col gap-2.5 rounded-[var(--radius-sm)] border border-[var(--border)] bg-[var(--surface-2)] p-3">
             {data.aspects.map((a) => (
               <AspectRow key={a.aspect.id} a={a} />
             ))}
