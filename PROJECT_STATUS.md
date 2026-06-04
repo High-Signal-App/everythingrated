@@ -25,6 +25,6 @@ Last updated: 2026-06-04
 - Search, comments, item owner claims, dynamic aspect editing
 - Item submission rollout beyond `ai-dev-tools` until moderation pilot is stable
 
-## Active Symphony task
+## Recent Symphony task
 
-- `17386fdc` — item submission prototype (fixture queue + moderation UI)
+- `17386fdc` — item submission prototype (fixture queue + moderation UI), completed 2026-06-04.
