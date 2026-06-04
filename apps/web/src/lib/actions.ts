@@ -7,6 +7,13 @@ import {
   rejectDirectorySubmission,
   submitDirectorySuggestion,
 } from "@/lib/directory-submissions";
+import {
+  approveItemSubmission,
+  mergeItemSubmission,
+  rejectItemSubmission,
+  rollbackApprovedItemSubmission,
+  submitItemSuggestion,
+} from "@/lib/item-submissions";
 import { trackActivated, trackCoreAction } from "@/lib/analytics";
 import { getModerationToken } from "@/lib/moderation";
 import { countVisitorRatings, rate } from "@/lib/ratings";
@@ -116,6 +123,93 @@ export async function moderateDirectorySubmission(formData: FormData): Promise<v
     revalidatePath("/");
   } else {
     params.set("error", result.error);
+  }
+
+  revalidatePath("/moderation");
+  redirect(`/moderation?${params.toString()}`);
+}
+
+export type SubmitItemState = {
+  ok: boolean;
+  message: string;
+  existingItemSlug?: string;
+};
+
+export async function submitItem(
+  _prevState: SubmitItemState,
+  formData: FormData,
+): Promise<SubmitItemState> {
+  let result;
+  try {
+    result = await submitItemSuggestion({
+      directorySlug: String(formData.get("directorySlug") ?? ""),
+      name: String(formData.get("name") ?? ""),
+      description: String(formData.get("description") ?? ""),
+      websiteUrl: String(formData.get("websiteUrl") ?? ""),
+      submitterName: String(formData.get("submitterName") ?? ""),
+      submitterEmail: String(formData.get("submitterEmail") ?? ""),
+    });
+  } catch (error) {
+    console.error("submitItem failed", error);
+    return {
+      ok: false,
+      message:
+        "Something went wrong saving your submission. Please try again in a moment.",
+    };
+  }
+
+  if (!result.ok) {
+    return {
+      ok: false,
+      message: result.error,
+      existingItemSlug: result.existingItemSlug,
+    };
+  }
+
+  revalidatePath(`/d/${formData.get("directorySlug")}`);
+  revalidatePath("/moderation");
+  return {
+    ok: true,
+    message:
+      "Thanks — queued for review. You can still rate existing tools while we review.",
+  };
+}
+
+export async function moderateItemSubmission(formData: FormData): Promise<void> {
+  const token = String(formData.get("token") ?? "");
+  const id = String(formData.get("id") ?? "");
+  const intent = String(formData.get("intent") ?? "");
+  const note = String(formData.get("note") ?? "");
+  const expectedToken = await getModerationToken();
+  const params = new URLSearchParams({ token });
+
+  if (!expectedToken || token !== expectedToken) {
+    params.set("error", "invalid-token");
+    redirect(`/moderation?${params.toString()}`);
+  }
+
+  const handlers: Record<string, () => Promise<{ ok: boolean; error?: string }>> = {
+    approve: () => approveItemSubmission(id),
+    reject: () => rejectItemSubmission(id, note),
+    merge: () => mergeItemSubmission(id),
+    rollback: () => rollbackApprovedItemSubmission(id, note),
+  };
+
+  const handler = handlers[intent];
+  if (!handler) {
+    params.set("error", "invalid-action");
+    redirect(`/moderation?${params.toString()}`);
+  }
+
+  const result = await handler();
+  if (result.ok) {
+    params.set("itemModerated", intent);
+    revalidatePath("/");
+    const directorySlug = String(formData.get("directorySlug") ?? "ai-dev-tools");
+    revalidatePath(`/d/${directorySlug}`);
+    revalidatePath(`/d/${directorySlug}/submit`);
+  } else {
+    params.set("error", result.error ?? "Action failed.");
   }
 
   revalidatePath("/moderation");

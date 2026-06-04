@@ -9,13 +9,13 @@ Last updated: 2026-06-04
 - Visitor cookie (`er_visitor`) minted on first rating only
 - Directory comparison boards with tunable aspect weights
 - **Directory submission + moderation queue** (`/submit-directory`, `/moderation` with `MODERATION_TOKEN`)
+- **Item submission pilot** (`/d/ai-dev-tools/submit`, item queue on `/moderation`; fixture-backed queue, approve writes to D1 `items`)
 - Deployed on Cloudflare Workers + D1
 
 ## Planned next
 
-- **Item submissions inside existing directories** — product brief in
-  `plans/0004-moderated-dynamic-submissions.md`; pilot directory `ai-dev-tools`
-  only; fixtures in `fixtures/item-submissions-ai-dev-tools.json`
+- **Item submissions persistence** — prototype uses in-memory queue + fixtures;
+  D1 `item_submissions` table deferred until pilot validates moderation load
 - Time-evolving ratings (`plans/0001-time-evolving-ratings.md`) — ready, not started
 
 ## Deferred / parked
@@ -27,4 +27,4 @@ Last updated: 2026-06-04
 
 ## Active Symphony task
 
-- `60db0288` — moderated dynamic directory submissions plan (brief + fixtures)
+- `17386fdc` — item submission prototype (fixture queue + moderation UI)

@@ -6,6 +6,7 @@ import { ItemCard } from "@/components/organisms/item-card";
 import { ComparisonBoard } from "@/components/organisms/comparison-board";
 import { Badge } from "@/components/atoms/badge";
 import { parseCompareState } from "@/lib/comparison";
+import { PILOT_DIRECTORY_SLUG } from "@/lib/item-submissions";
 
 export const dynamic = "force-dynamic";
 
@@ -60,11 +61,21 @@ export default async function DirectoryPage({
       </section>
 
       <section className="mx-auto w-full max-w-6xl px-6 py-14">
-        <div className="mb-6 flex items-baseline justify-between">
+        <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-baseline sm:justify-between">
           <h2 className="text-[20px] font-semibold tracking-tight">{directory.name}</h2>
-          <span className="text-[12px] text-[var(--muted)]">
-            {items.length} item{items.length === 1 ? "" : "s"}
-          </span>
+          <div className="flex flex-wrap items-center gap-3">
+            {directory.slug === PILOT_DIRECTORY_SLUG ? (
+              <Link
+                href={`/d/${directory.slug}/submit`}
+                className="text-[12px] font-medium text-[var(--foreground)] underline-offset-2 hover:underline"
+              >
+                Suggest a tool →
+              </Link>
+            ) : null}
+            <span className="text-[12px] text-[var(--muted)]">
+              {items.length} item{items.length === 1 ? "" : "s"}
+            </span>
+          </div>
         </div>
 
         {items.length === 0 ? (
