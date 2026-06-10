@@ -181,6 +181,7 @@ export function isDomainAligned(name: string, websiteUrl: string): boolean {
 export async function detectDuplicateSlug(
   directoryId: string,
   slug: string,
+  excludeSubmissionId?: string,
 ): Promise<{ duplicate: boolean; existingItemSlug?: string }> {
   await ensureQueueLoaded();
   const db = await getDb();
@@ -194,6 +195,7 @@ export async function detectDuplicateSlug(
 
   const queued = queue.find(
     (row) =>
+      row.id !== excludeSubmissionId &&
       row.directoryId === directoryId &&
       row.slug === slug &&
       (row.status === "pending" || row.status === "approved"),
@@ -521,7 +523,13 @@ export async function approveItemSubmission(id: string): Promise<ItemSubmissionR
     return { ok: false, error: "Only pending submissions can be approved." };
   }
 
-  const slugDup = await detectDuplicateSlug(submission.directoryId, submission.slug);
+  // Exclude the submission itself from the queue-side duplicate check —
+  // it is, by definition, sitting in the queue with this exact slug.
+  const slugDup = await detectDuplicateSlug(
+    submission.directoryId,
+    submission.slug,
+    submission.id,
+  );
   if (slugDup.duplicate) {
     return { ok: false, error: "An item with this slug already exists." };
   }

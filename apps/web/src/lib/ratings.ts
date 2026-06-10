@@ -253,7 +253,12 @@ export async function countVisitorRatings(visitorId: string): Promise<number> {
   return rows.length;
 }
 
-/** Upsert a rating from the given visitor. Score is clamped to 1..5. */
+/**
+ * Upsert a rating from the given visitor. Score is clamped to 1..5.
+ * Rejects item/aspect pairs that don't share a directory — the ids come
+ * straight from the client, and a crafted mismatch would otherwise insert
+ * stray rows that inflate an item's distinct-rater count.
+ */
 export async function rate(opts: {
   itemId: string;
   aspectId: string;
@@ -262,6 +267,19 @@ export async function rate(opts: {
 }): Promise<void> {
   const score = Math.max(1, Math.min(5, Math.round(opts.score)));
   const db = await getDb();
+  const [[item], [aspect]] = await Promise.all([
+    db
+      .select({ directoryId: items.directoryId })
+      .from(items)
+      .where(eq(items.id, opts.itemId)),
+    db
+      .select({ directoryId: aspects.directoryId })
+      .from(aspects)
+      .where(eq(aspects.id, opts.aspectId)),
+  ]);
+  if (!item || !aspect || item.directoryId !== aspect.directoryId) {
+    throw new Error("Invalid rating: aspect does not belong to this item's directory.");
+  }
   await db
     .insert(ratings)
     .values({
