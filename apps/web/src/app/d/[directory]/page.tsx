@@ -24,17 +24,19 @@ export default async function DirectoryPage({
 
   const visitorId = await readVisitorId();
   const items = await listItemsWithAggregates(directory.id, visitorId);
-  const compareState = parseCompareState(
-    new URLSearchParams(
-      Object.entries(query).flatMap(([key, value]) =>
-        Array.isArray(value)
-          ? value.map((item) => [key, item])
-          : value
-            ? [[key, value]]
-            : [],
-      ),
-    ),
-  );
+  const compareParams: Array<[string, string]> = [];
+  for (const [key, value] of Object.entries(query)) {
+    if (Array.isArray(value)) {
+      for (const item of value) {
+        compareParams.push([key, item]);
+      }
+      continue;
+    }
+    if (value) {
+      compareParams.push([key, value]);
+    }
+  }
+  const compareState = parseCompareState(new URLSearchParams(compareParams));
 
   return (
     <>
