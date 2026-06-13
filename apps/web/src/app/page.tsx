@@ -62,7 +62,7 @@ export default async function LandingPage() {
             scores every tool across the axes that actually decide the
             trade-off — pick a directory and dig in.
           </p>
-          <div className="mt-8 flex flex-wrap items-center gap-3">
+          <div className="mt-8 flex flex-wrap items-center gap-5">
             <a
               href="#directories"
               className="inline-flex h-11 items-center rounded-[var(--radius-sm)] bg-[var(--foreground)] px-5 text-sm font-medium text-[var(--background)] transition-opacity hover:opacity-90"
@@ -71,9 +71,9 @@ export default async function LandingPage() {
             </a>
             <a
               href="/submit-directory"
-              className="inline-flex h-11 items-center rounded-[var(--radius-sm)] border border-[var(--border-strong)] px-5 text-sm font-medium text-[var(--foreground)] transition-colors hover:bg-[var(--surface-2)]"
+              className="text-sm text-[var(--muted)] underline-offset-4 hover:text-[var(--foreground)] hover:underline"
             >
-              Submit a directory
+              or submit a new directory
             </a>
           </div>
           {directories.length > 0 && (
