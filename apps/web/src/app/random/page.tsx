@@ -29,26 +29,27 @@ export default function RandomItemAcrossDirectories() {
           setMsg("No directories yet.");
           return;
         }
-        const pickedDir = dirs[Math.floor(Math.random() * dirs.length)]!;
-        const slug = pickedDir.directory.slug;
-        const itemsRes = await fetch(`/d/${slug}/items.json`, { cache: "no-store" });
-        if (!itemsRes.ok) {
-          setMsg("Could not load directory items.");
+        const shuffled = [...dirs].sort(() => Math.random() - 0.5);
+        for (const pickedDir of shuffled) {
+          const slug = pickedDir.directory.slug;
+          const itemsRes = await fetch(`/d/${slug}/items.json`, { cache: "no-store" });
+          if (!itemsRes.ok) {
+            continue;
+          }
+          const itemsData: unknown = await itemsRes.json();
+          const items =
+            itemsData && typeof itemsData === "object" && "items" in itemsData &&
+            Array.isArray((itemsData as { items: unknown }).items)
+              ? ((itemsData as { items: Array<{ item: { slug: string } }> }).items)
+              : [];
+          if (items.length === 0) {
+            continue;
+          }
+          const pickedItem = items[Math.floor(Math.random() * items.length)]!;
+          window.location.replace(`/d/${slug}/${pickedItem.item.slug}`);
           return;
         }
-        const itemsData: unknown = await itemsRes.json();
-        const items =
-          itemsData && typeof itemsData === "object" && "items" in itemsData &&
-          Array.isArray((itemsData as { items: unknown }).items)
-            ? ((itemsData as { items: Array<{ item: { slug: string } }> }).items)
-            : [];
-        if (items.length === 0) {
-          // Try a different directory if this one is empty.
-          window.location.replace("/");
-          return;
-        }
-        const pickedItem = items[Math.floor(Math.random() * items.length)]!;
-        window.location.replace(`/d/${slug}/${pickedItem.item.slug}`);
+        setMsg("No items in any directory yet.");
       })
       .catch(() => {
         if (!aborted) setMsg("Could not reach the catalog.");

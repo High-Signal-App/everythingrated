@@ -265,6 +265,9 @@ export async function rate(opts: {
   visitorId: string;
   score: number;
 }): Promise<void> {
+  if (!Number.isFinite(opts.score)) {
+    throw new Error("Invalid rating: score must be a finite number.");
+  }
   const score = Math.max(1, Math.min(5, Math.round(opts.score)));
   const db = await getDb();
   const [[item], [aspect]] = await Promise.all([
