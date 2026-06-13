@@ -9,6 +9,11 @@ Cosmetic, infra, and seed-data changes do not need entries; check `git log`.
 
 ## Unreleased
 
+- Item submissions now persist in D1 `item_submissions` table (pilot: ai-dev-tools).
+  Moderation queue, duplicate detection, trust signals, rate limits, approve/merge/reject/rollback all use real rows. Fixtures can be loaded via `loadItemSubmissionFixtures()` for dry-runs. (plans/0004)
+- Time-evolving ratings core (plans/0001): ratings are now append-only history. Re-rates supersede prior row (old kept for trends); current aggregates (scores, counts, your, overall, raters) ignore superseded rows. Schema has item_versions + version_id/superseded_at on ratings. Rate auto-anchors version when seeded. (Full 30d/90d windows, sparklines, version UI, seed backfills remain for polish.)
+- Item submissions persistence complete for pilot (see prior).
+
 ## 2026-05 — Directory moderation queue
 
 - Anonymous visitors can suggest new directories via `/submit-directory`.

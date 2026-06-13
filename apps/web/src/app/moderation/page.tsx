@@ -124,8 +124,8 @@ export default async function ModerationPage({
           <div>
             <h2 className="text-[22px] font-semibold tracking-tight">Item submissions</h2>
             <p className="mt-1 text-[13px] text-[var(--muted)]">
-              Pilot directory: {PILOT_DIRECTORY_SLUG}. Fixture rows load on first visit;
-              visitor submissions append to the in-memory queue.
+              Pilot directory: {PILOT_DIRECTORY_SLUG}. Submissions are persisted in D1
+              and appear in this queue for review.
             </p>
           </div>
           <Link
@@ -138,7 +138,7 @@ export default async function ModerationPage({
 
         <div className="mt-6 grid grid-cols-1 gap-4">
           {itemSubmissions.length === 0 ? (
-            <EmptyState message="No item submissions loaded. Start dev with local D1 seeded." />
+            <EmptyState message="No item submissions yet." />
           ) : (
             itemSubmissions.map((submission) => {
               const trust = computeTrustSignals(submission, itemSubmissions);
@@ -153,9 +153,6 @@ export default async function ModerationPage({
                     />
 
                     <div className="flex flex-wrap gap-2">
-                      <Badge tone={submission.source === "fixture" ? "neutral" : "outline"}>
-                        source: {submission.source}
-                      </Badge>
                       {trust.trustedSubmitter ? (
                         <Badge tone="strong">trusted submitter</Badge>
                       ) : null}

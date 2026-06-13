@@ -1,7 +1,8 @@
 # 0004 — Moderated dynamic submissions (product brief)
 
-**Status:** ready for implementation planning  
+**Status:** shipped 2026-06-13 (D1 persistence + moderation flow complete for pilot)
 **Created:** 2026-06-04  
+**Shipped notes:** In-memory queue + fixture prototype replaced with real `item_submissions` table (0002 migration). Lib mirrors directory-submissions pattern. `loadItemSubmissionFixtures()` helper added for seed/dry-runs. UI copy updated. Approve/merge/reject/rollback persist correctly; dups/trust/rate-limits preserved. See `apps/web/src/lib/item-submissions.ts`, moderation page, and migration 0002. Pilot remains `ai-dev-tools` only.
 **Source:** [saas-ideas consolidation](https://github.com/sarthakagrawal927/saas-ideas) at `aba1a83`, mapped in `saas-maker/docs/ideas/saas-ideas-consolidation-2026-06-03.md`  
 **Depends on:** `0003-directories.md` (shipped), directory moderation queue (shipped 2026-05)
 

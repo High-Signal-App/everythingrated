@@ -64,9 +64,30 @@ export const aspects = sqliteTable(
   }),
 );
 
+// NEW in 0001 — sparse release timeline per item for anchoring ratings to versions.
+// Items with no rows fall back to date-only.
+export const itemVersions = sqliteTable(
+  "item_versions",
+  {
+    id: text("id").primaryKey(),
+    itemId: text("item_id")
+      .notNull()
+      .references(() => items.id, { onDelete: "cascade" }),
+    version: text("version").notNull(), // e.g. "0.45", "1.0", "Sonnet 4.5"
+    releasedAt: integer("released_at", { mode: "timestamp_ms" }).notNull(),
+    note: text("note"), // optional changelog blurb
+  },
+  (t) => ({
+    uniq: uniqueIndex("item_versions_item_version_idx").on(t.itemId, t.version),
+    byDate: index("item_versions_item_released_idx").on(t.itemId, t.releasedAt),
+  }),
+);
+
 /**
- * One rating per (item, aspect, visitor). Re-rating upserts.
- * `visitorId` comes from the `er_visitor` cookie (anonymous UUID).
+ * Ratings are append-only history (0001).
+ * Re-rating supersedes the prior row for the same (visitor, item, aspect) by setting supersededAt.
+ * versionId (nullable) anchors to an item_version when available (auto-derived or explicit).
+ * Aggregations for "current" view exclude rows where supersededAt IS NOT NULL.
  */
 export const ratings = sqliteTable(
   "ratings",
@@ -80,16 +101,20 @@ export const ratings = sqliteTable(
       .references(() => aspects.id, { onDelete: "cascade" }),
     visitorId: text("visitor_id").notNull(),
     score: integer("score").notNull(),
+    versionId: text("version_id").references(() => itemVersions.id, { onDelete: "set null" }),
     createdAt: integer("created_at", { mode: "timestamp_ms" })
       .notNull()
       .default(sql`(unixepoch() * 1000)`),
+    // Set on re-rate for same (visitor,item,aspect); old row kept for history/trends.
+    supersededAt: integer("superseded_at", { mode: "timestamp_ms" }),
   },
   (t) => ({
-    uniq: uniqueIndex("ratings_item_aspect_visitor_idx").on(
-      t.itemId,
-      t.aspectId,
-      t.visitorId,
-    ),
+    // Hot path: aggregate one item's ratings within a time window.
+    byItemTime: index("ratings_item_time_idx").on(t.itemId, t.createdAt),
+    // Hot path: per-aspect window aggregations.
+    byAspectTime: index("ratings_item_aspect_time_idx").on(t.itemId, t.aspectId, t.createdAt),
+    // Find a visitor's current (non-superseded) row for "your score".
+    byVisitor: index("ratings_visitor_idx").on(t.visitorId, t.itemId, t.aspectId),
   }),
 );
 
@@ -120,8 +145,47 @@ export const directorySubmissions = sqliteTable(
   }),
 );
 
+/** Community item suggestion inside one directory. Pilot: ai-dev-tools only. */
+export const itemSubmissions = sqliteTable(
+  "item_submissions",
+  {
+    id: text("id").primaryKey(),
+    directoryId: text("directory_id")
+      .notNull()
+      .references(() => directories.id, { onDelete: "cascade" }),
+    slug: text("slug").notNull(),
+    name: text("name").notNull(),
+    description: text("description").notNull(),
+    websiteUrl: text("website_url").notNull(),
+    submitterVisitorId: text("submitter_visitor_id"), // nullable; from er_visitor if present
+    submitterName: text("submitter_name"),
+    submitterEmail: text("submitter_email"),
+    status: text("status").notNull().default("pending"), // pending | approved | rejected | merged
+    mergedIntoItemId: text("merged_into_item_id").references(() => items.id, {
+      onDelete: "set null",
+    }),
+    moderatorNote: text("moderator_note"),
+    createdAt: integer("created_at", { mode: "timestamp_ms" })
+      .notNull()
+      .default(sql`(unixepoch() * 1000)`),
+    moderatedAt: integer("moderated_at", { mode: "timestamp_ms" }),
+  },
+  (t) => ({
+    dirSlugPending: uniqueIndex("item_submissions_dir_slug_active_idx").on(
+      t.directoryId,
+      t.slug,
+    ), // partial unique in app layer: only when status in (pending, approved)
+    statusCreated: index("item_submissions_status_created_idx").on(
+      t.status,
+      t.createdAt,
+    ),
+  }),
+);
+
 export type Directory = typeof directories.$inferSelect;
 export type Item = typeof items.$inferSelect;
 export type Aspect = typeof aspects.$inferSelect;
 export type Rating = typeof ratings.$inferSelect;
 export type DirectorySubmission = typeof directorySubmissions.$inferSelect;
+export type ItemSubmission = typeof itemSubmissions.$inferSelect;
+export type ItemVersion = typeof itemVersions.$inferSelect;

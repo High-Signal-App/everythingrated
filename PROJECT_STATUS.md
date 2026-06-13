@@ -1,6 +1,6 @@
 # Project Status
 
-Last updated: 2026-06-04
+Last updated: 2026-06-13
 
 ## Current Scope
 
@@ -13,14 +13,13 @@ EverythingRated is a multi-axis ratings platform. The current POC tests whether 
 - Visitor cookie (`er_visitor`) minted on first rating only
 - Directory comparison boards with tunable aspect weights
 - **Directory submission + moderation queue** (`/submit-directory`, `/moderation` with `MODERATION_TOKEN`)
-- **Item submission pilot** (`/d/ai-dev-tools/submit`, item queue on `/moderation`; fixture-backed queue, approve writes to D1 `items`)
+- **Item submission pilot** (`/d/ai-dev-tools/submit`, moderation queue on `/moderation` with `MODERATION_TOKEN`; D1 `item_submissions` table + approve writes to `items`; fixtures loadable for dry-runs)
 - Deployed on Cloudflare Workers + D1
 
 ## Planned Next
 
-- **Item submissions persistence** — prototype uses in-memory queue + fixtures;
-  D1 `item_submissions` table deferred until pilot validates moderation load
-- Time-evolving ratings (`plans/0001-time-evolving-ratings.md`) — ready, not started
+- Time-evolving ratings (`plans/0001-time-evolving-ratings.md`) — core done (append-only history, superseded filter for current views, schema/migrations); full windows/trends/sparklines + seed versions polish next
+- Expand item submission pilot beyond `ai-dev-tools` (after moderation load validated)
 
 ## Deferred / Parked
 

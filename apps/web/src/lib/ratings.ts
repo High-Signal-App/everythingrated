@@ -3,11 +3,12 @@ import {
   aspects,
   ratings,
   directories,
+  itemVersions,
   type Aspect,
   type Item,
   type Directory,
 } from "@everythingrated/db";
-import { and, eq } from "drizzle-orm";
+import { and, desc, eq, isNull, lte } from "drizzle-orm";
 import { getDb } from "./db";
 
 export type AspectAverage = {
@@ -72,7 +73,7 @@ export async function topItemsByAspectKey(
     const dirItems = allItems.filter((i) => i.directoryId === aspect.directoryId);
     for (const item of dirItems) {
       const rs = allRatings.filter(
-        (r) => r.itemId === item.id && r.aspectId === aspect.id,
+        (r) => r.itemId === item.id && r.aspectId === aspect.id && r.supersededAt == null,
       );
       if (rs.length === 0) continue;
       const visitors = new Set(rs.map((r) => r.visitorId));
@@ -138,6 +139,7 @@ export async function listItemsRatedByVisitor(
     db.select().from(items),
     db.select().from(directories),
   ]);
+  const currentMyRatings = myRatings.filter((r) => r.supersededAt == null);
   const itemById = new Map(allItems.map((i) => [i.id, i]));
   const dirById = new Map(allDirs.map((d) => [d.id, d]));
 
@@ -145,7 +147,7 @@ export async function listItemsRatedByVisitor(
     string,
     { sum: number; count: number; latest: number }
   >();
-  for (const r of myRatings) {
+  for (const r of currentMyRatings) {
     const e = byItem.get(r.itemId) ?? { sum: 0, count: 0, latest: 0 };
     e.sum += r.score;
     e.count += 1;
@@ -213,7 +215,8 @@ export async function listItemsWithAggregates(
   ]);
   if (dirItems.length === 0) return [];
   const itemIds = new Set(dirItems.map((i) => i.id));
-  const allRatings = (await db.select().from(ratings)).filter((r) => itemIds.has(r.itemId));
+  const allRatings = (await db.select().from(ratings))
+    .filter((r) => itemIds.has(r.itemId) && r.supersededAt == null); // current view only (0001)
 
   return dirItems.map((item) => buildAggregate(item, dirAspects, allRatings, visitorId));
 }
@@ -236,7 +239,8 @@ export async function getItemAggregate(
     db.select().from(aspects).where(eq(aspects.directoryId, dir.id)).orderBy(aspects.sortOrder),
     db.select().from(ratings).where(eq(ratings.itemId, item.id)),
   ]);
-  return { directory: dir, data: buildAggregate(item, dirAspects, itemRatings, visitorId) };
+  const currentItemRatings = itemRatings.filter((r) => r.supersededAt == null);
+  return { directory: dir, data: buildAggregate(item, dirAspects, currentItemRatings, visitorId) };
 }
 
 /**
@@ -254,10 +258,11 @@ export async function countVisitorRatings(visitorId: string): Promise<number> {
 }
 
 /**
- * Upsert a rating from the given visitor. Score is clamped to 1..5.
- * Rejects item/aspect pairs that don't share a directory — the ids come
- * straight from the client, and a crafted mismatch would otherwise insert
- * stray rows that inflate an item's distinct-rater count.
+ * Append a rating (append-only history per 0001).
+ * - Supersedes any prior non-superseded row for the same (visitor, item, aspect) by setting supersededAt.
+ * - New row is inserted as current.
+ * - versionId auto-derived from latest item_version with releasedAt <= now (nullable ok).
+ * Score clamped to 1..5. Directory match validated.
  */
 export async function rate(opts: {
   itemId: string;
@@ -283,19 +288,41 @@ export async function rate(opts: {
   if (!item || !aspect || item.directoryId !== aspect.directoryId) {
     throw new Error("Invalid rating: aspect does not belong to this item's directory.");
   }
+
+  const now = Date.now();
+
+  // Supersede prior current rating from this visitor on this axis (history preserved).
   await db
-    .insert(ratings)
-    .values({
-      id: crypto.randomUUID(),
-      itemId: opts.itemId,
-      aspectId: opts.aspectId,
-      visitorId: opts.visitorId,
-      score,
-    })
-    .onConflictDoUpdate({
-      target: [ratings.itemId, ratings.aspectId, ratings.visitorId],
-      set: { score },
-    });
+    .update(ratings)
+    .set({ supersededAt: now })
+    .where(
+      and(
+        eq(ratings.visitorId, opts.visitorId),
+        eq(ratings.itemId, opts.itemId),
+        eq(ratings.aspectId, opts.aspectId),
+        isNull(ratings.supersededAt),
+      ),
+    );
+
+  // Auto-resolve version: latest item_version released at or before now.
+  let versionId: string | null = null;
+  const [latestVer] = await db
+    .select({ id: itemVersions.id })
+    .from(itemVersions)
+    .where(and(eq(itemVersions.itemId, opts.itemId), lte(itemVersions.releasedAt, now)))
+    .orderBy(desc(itemVersions.releasedAt))
+    .limit(1);
+  if (latestVer) versionId = latestVer.id;
+
+  await db.insert(ratings).values({
+    id: crypto.randomUUID(),
+    itemId: opts.itemId,
+    aspectId: opts.aspectId,
+    visitorId: opts.visitorId,
+    score,
+    versionId,
+    createdAt: now,
+  });
 }
 
 // ─────────── internal ───────────

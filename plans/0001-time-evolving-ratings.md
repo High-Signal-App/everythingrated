@@ -1,7 +1,8 @@
 # Plan 0001 — Time-evolving ratings
 
-**Status:** ready (next iteration after v0 POC scaffold)
+**Status:** core shipped 2026-06-13 (append-only + supersede + current aggregates filter non-superseded; schema + migration for versions + columns + indexes)
 **Created:** 2026-04-26
+**Shipped notes:** `rate()` now supersedes prior + inserts new row (history preserved). All current-view aggregates (dir grid, item page, comparison, my, top, etc.) filter `supersededAt IS NULL`. itemVersions table + ratings columns added (0003 migration). Auto version resolution on rate (when versions seeded). Full time windows / sparklines / last_release / staleness UI + seed backfill deferred to polish iteration; current aggregates behave as "latest view". See lib/ratings.ts rate + build sites, schema, 0003 migration.
 **Parallel:** see `0002-signal-ingest.md` for external signal time-bucketing.
 
 ## Problem

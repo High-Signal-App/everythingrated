@@ -1,7 +1,5 @@
-import { directories, items, ratings } from "@everythingrated/db";
-import { and, eq } from "drizzle-orm";
-import { readFileSync } from "node:fs";
-import { join } from "node:path";
+import { directories, items, ratings, itemSubmissions } from "@everythingrated/db";
+import { and, desc, eq, inArray, ne, or } from "drizzle-orm";
 import { getDb } from "./db";
 import { readVisitorId } from "./visitor";
 
@@ -12,8 +10,6 @@ const MAX_PENDING_PER_VISITOR_PER_DAY = 3;
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export type ItemSubmissionStatus = "pending" | "approved" | "rejected" | "merged";
-
-export type ItemSubmissionSource = "fixture" | "visitor";
 
 export type ItemSubmission = {
   id: string;
@@ -32,7 +28,7 @@ export type ItemSubmission = {
   moderatorNote: string | null;
   createdAt: Date;
   moderatedAt: Date | null;
-  source: ItemSubmissionSource;
+  source: "visitor" | "fixture";
 };
 
 export type ItemSubmissionInput = {
@@ -58,21 +54,6 @@ export type ItemSubmissionTrustSignals = {
   duplicateConfidence: "none" | "low" | "high";
   duplicateHint: string | null;
 };
-
-type FixtureRow = {
-  id: string;
-  directorySlug: string;
-  slug: string;
-  name: string;
-  description: string;
-  websiteUrl: string;
-  submitterName: string | null;
-  submitterEmail: string | null;
-  status: ItemSubmissionStatus;
-};
-
-const queue: ItemSubmission[] = [];
-let queueBootstrapped = false;
 
 export function slugifyItemName(name: string): string {
   return name
@@ -183,7 +164,6 @@ export async function detectDuplicateSlug(
   slug: string,
   excludeSubmissionId?: string,
 ): Promise<{ duplicate: boolean; existingItemSlug?: string }> {
-  await ensureQueueLoaded();
   const db = await getDb();
   const [liveItem] = await db
     .select({ slug: items.slug })
@@ -193,15 +173,24 @@ export async function detectDuplicateSlug(
     return { duplicate: true, existingItemSlug: liveItem.slug };
   }
 
-  const queued = queue.find(
-    (row) =>
-      row.id !== excludeSubmissionId &&
-      row.directoryId === directoryId &&
-      row.slug === slug &&
-      (row.status === "pending" || row.status === "approved"),
-  );
-  if (queued) {
-    return { duplicate: true, existingItemSlug: queued.slug };
+  const conditions = [
+    eq(itemSubmissions.directoryId, directoryId),
+    eq(itemSubmissions.slug, slug),
+    or(
+      eq(itemSubmissions.status, "pending"),
+      eq(itemSubmissions.status, "approved"),
+    ),
+  ];
+  if (excludeSubmissionId) {
+    conditions.push(ne(itemSubmissions.id, excludeSubmissionId));
+  }
+
+  const activeSubs = await db
+    .select({ slug: itemSubmissions.slug })
+    .from(itemSubmissions)
+    .where(and(...conditions));
+  if (activeSubs.length > 0) {
+    return { duplicate: true, existingItemSlug: activeSubs[0].slug };
   }
 
   return { duplicate: false };
@@ -226,12 +215,21 @@ export async function detectDuplicateName(
     }
   }
 
-  await ensureQueueLoaded();
-  for (const row of queue) {
-    if (row.directoryId !== directoryId) continue;
-    if (row.status !== "pending" && row.status !== "approved") continue;
-    if (normalizeItemName(row.name) === normalized) {
-      return { duplicate: true, existingItemSlug: row.slug };
+  const activeSubs = await db
+    .select({ slug: itemSubmissions.slug, name: itemSubmissions.name })
+    .from(itemSubmissions)
+    .where(
+      and(
+        eq(itemSubmissions.directoryId, directoryId),
+        or(
+          eq(itemSubmissions.status, "pending"),
+          eq(itemSubmissions.status, "approved"),
+        ),
+      ),
+    );
+  for (const sub of activeSubs) {
+    if (normalizeItemName(sub.name) === normalized) {
+      return { duplicate: true, existingItemSlug: sub.slug };
     }
   }
 
@@ -257,12 +255,21 @@ export async function detectDuplicateHost(
     }
   }
 
-  await ensureQueueLoaded();
-  for (const row of queue) {
-    if (row.directoryId !== directoryId) continue;
-    if (row.status !== "pending" && row.status !== "approved") continue;
-    if (parseWebsiteHost(row.websiteUrl) === host) {
-      return { duplicate: true, existingItemSlug: row.slug, host };
+  const activeSubs = await db
+    .select({ slug: itemSubmissions.slug, websiteUrl: itemSubmissions.websiteUrl })
+    .from(itemSubmissions)
+    .where(
+      and(
+        eq(itemSubmissions.directoryId, directoryId),
+        or(
+          eq(itemSubmissions.status, "pending"),
+          eq(itemSubmissions.status, "approved"),
+        ),
+      ),
+    );
+  for (const sub of activeSubs) {
+    if (parseWebsiteHost(sub.websiteUrl) === host) {
+      return { duplicate: true, existingItemSlug: sub.slug, host };
     }
   }
 
@@ -312,83 +319,84 @@ export function computeTrustSignals(
   };
 }
 
-function loadFixtureRows(): FixtureRow[] {
-  const candidates = [
-    join(process.cwd(), "fixtures/item-submissions-ai-dev-tools.json"),
-    join(process.cwd(), "../../fixtures/item-submissions-ai-dev-tools.json"),
-  ];
-  for (const path of candidates) {
-    try {
-      const raw = readFileSync(path, "utf8");
-      return JSON.parse(raw) as FixtureRow[];
-    } catch {
-      // try next path
-    }
-  }
-  return [];
-}
-
-async function ensureQueueLoaded(): Promise<void> {
-  if (queueBootstrapped) return;
-  queueBootstrapped = true;
-
-  const db = await getDb();
-  const [directory] = await db
-    .select()
-    .from(directories)
-    .where(eq(directories.slug, PILOT_DIRECTORY_SLUG));
-  if (!directory) return;
-
-  const rows = loadFixtureRows();
-  const now = new Date();
-  for (const row of rows) {
-    if (row.directorySlug !== PILOT_DIRECTORY_SLUG) continue;
-    queue.push({
-      id: row.id,
-      directorySlug: row.directorySlug,
-      directoryId: directory.id,
-      slug: row.slug,
-      name: row.name,
-      description: row.description,
-      websiteUrl: row.websiteUrl,
-      submitterVisitorId: null,
-      submitterName: row.submitterName,
-      submitterEmail: row.submitterEmail,
-      status: row.status,
-      mergedIntoItemId: null,
-      mergedIntoItemSlug: null,
-      moderatorNote: null,
-      createdAt: now,
-      moderatedAt: null,
-      source: "fixture",
-    });
-  }
-}
 
 export async function listItemSubmissions(
   directorySlug = PILOT_DIRECTORY_SLUG,
   status?: ItemSubmissionStatus,
 ): Promise<ItemSubmission[]> {
-  await ensureQueueLoaded();
-  const rows = queue
-    .filter((row) => row.directorySlug === directorySlug)
-    .sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime());
-  if (!status) return rows;
-  return rows.filter((row) => row.status === status);
+  const db = await getDb();
+  const [directory] = await db
+    .select({ id: directories.id, slug: directories.slug })
+    .from(directories)
+    .where(eq(directories.slug, directorySlug));
+  if (!directory) return [];
+
+  const baseWhere = eq(itemSubmissions.directoryId, directory.id);
+  const rows = await (status
+    ? db
+        .select()
+        .from(itemSubmissions)
+        .where(and(baseWhere, eq(itemSubmissions.status, status)))
+        .orderBy(desc(itemSubmissions.createdAt))
+    : db
+        .select()
+        .from(itemSubmissions)
+        .where(baseWhere)
+        .orderBy(desc(itemSubmissions.createdAt)));
+
+
+  // For merged rows, resolve the target slug for UI links
+  const mergedIds = rows.filter((r) => r.mergedIntoItemId).map((r) => r.mergedIntoItemId!);
+  let slugById = new Map<string, string>();
+  if (mergedIds.length > 0) {
+    const targets = await db
+      .select({ id: items.id, slug: items.slug })
+      .from(items)
+      .where(inArray(items.id, mergedIds));
+    slugById = new Map(targets.map((t) => [t.id, t.slug]));
+  }
+
+  // Enrich with directorySlug + convert dates + default source for UI compat.
+  return rows.map((r) => ({
+    id: r.id,
+    directorySlug: directory.slug,
+    directoryId: r.directoryId,
+    slug: r.slug,
+    name: r.name,
+    description: r.description,
+    websiteUrl: r.websiteUrl,
+    submitterVisitorId: r.submitterVisitorId ?? null,
+    submitterName: r.submitterName ?? null,
+    submitterEmail: r.submitterEmail ?? null,
+    status: r.status as ItemSubmissionStatus,
+    mergedIntoItemId: r.mergedIntoItemId ?? null,
+    mergedIntoItemSlug: r.mergedIntoItemId ? (slugById.get(r.mergedIntoItemId) ?? null) : null,
+    moderatorNote: r.moderatorNote ?? null,
+    createdAt: r.createdAt instanceof Date ? r.createdAt : new Date(r.createdAt),
+    moderatedAt: r.moderatedAt ? (r.moderatedAt instanceof Date ? r.moderatedAt : new Date(r.moderatedAt)) : null,
+    source: "visitor" as const,
+  }));
 }
 
-function countRecentPendingForVisitor(
+async function countRecentPendingForVisitor(
   visitorId: string,
   directoryId: string,
-): number {
+): Promise<number> {
   const dayAgo = Date.now() - 24 * 60 * 60 * 1000;
-  return queue.filter(
-    (row) =>
-      row.directoryId === directoryId &&
-      row.submitterVisitorId === visitorId &&
-      row.status === "pending" &&
-      row.createdAt.getTime() >= dayAgo,
-  ).length;
+  const rows = await (await getDb())
+    .select({ id: itemSubmissions.id, createdAt: itemSubmissions.createdAt })
+    .from(itemSubmissions)
+    .where(
+      and(
+        eq(itemSubmissions.directoryId, directoryId),
+        eq(itemSubmissions.submitterVisitorId, visitorId),
+        eq(itemSubmissions.status, "pending"),
+      ),
+    );
+  return rows.filter((r) => {
+    const t = r.createdAt instanceof Date ? r.createdAt.getTime() : Number(r.createdAt);
+    return t >= dayAgo;
+  }).length;
 }
 
 export async function submitItemSuggestion(
@@ -396,8 +404,6 @@ export async function submitItemSuggestion(
 ): Promise<ItemSubmissionResult> {
   const validation = validateItemSubmission(input);
   if (!validation.ok) return validation;
-
-  await ensureQueueLoaded();
 
   const db = await getDb();
   const [directory] = await db
@@ -415,7 +421,8 @@ export async function submitItemSuggestion(
   }
 
   const visitorId = await readVisitorId();
-  if (visitorId && countRecentPendingForVisitor(visitorId, directory.id) >= MAX_PENDING_PER_VISITOR_PER_DAY) {
+  const recent = visitorId ? await countRecentPendingForVisitor(visitorId, directory.id) : 0;
+  if (visitorId && recent >= MAX_PENDING_PER_VISITOR_PER_DAY) {
     return {
       ok: false,
       error: "You already have several suggestions pending review. Try again tomorrow.",
@@ -451,24 +458,22 @@ export async function submitItemSuggestion(
 
   const websiteUrl = normalizeWebsiteUrl(input.websiteUrl.trim())!;
   const id = crypto.randomUUID();
-  queue.push({
+  const now = new Date();
+  await db.insert(itemSubmissions).values({
     id,
-    directorySlug: directory.slug,
     directoryId: directory.id,
     slug,
     name,
     description: input.description.trim(),
     websiteUrl,
-    submitterVisitorId: visitorId,
+    submitterVisitorId: visitorId ?? null,
     submitterName: input.submitterName?.trim() || null,
     submitterEmail: input.submitterEmail?.trim() || null,
     status: "pending",
     mergedIntoItemId: null,
-    mergedIntoItemSlug: null,
     moderatorNote: null,
-    createdAt: new Date(),
+    createdAt: now,
     moderatedAt: null,
-    source: "visitor",
   });
 
   return { ok: true, id };
@@ -516,15 +521,17 @@ async function findMergeTarget(
 }
 
 export async function approveItemSubmission(id: string): Promise<ItemSubmissionResult> {
-  await ensureQueueLoaded();
-  const submission = queue.find((row) => row.id === id);
+  const db = await getDb();
+  const [submission] = await db
+    .select()
+    .from(itemSubmissions)
+    .where(eq(itemSubmissions.id, id));
   if (!submission) return { ok: false, error: "Submission not found." };
   if (submission.status !== "pending") {
     return { ok: false, error: "Only pending submissions can be approved." };
   }
 
-  // Exclude the submission itself from the queue-side duplicate check —
-  // it is, by definition, sitting in the queue with this exact slug.
+  // Exclude the submission itself from duplicate check
   const slugDup = await detectDuplicateSlug(
     submission.directoryId,
     submission.slug,
@@ -534,7 +541,6 @@ export async function approveItemSubmission(id: string): Promise<ItemSubmissionR
     return { ok: false, error: "An item with this slug already exists." };
   }
 
-  const db = await getDb();
   const itemId = crypto.randomUUID();
   await db.insert(items).values({
     id: itemId,
@@ -545,9 +551,14 @@ export async function approveItemSubmission(id: string): Promise<ItemSubmissionR
     websiteUrl: submission.websiteUrl,
   });
 
-  submission.status = "approved";
-  submission.moderatorNote = "Approved into public directory.";
-  submission.moderatedAt = new Date();
+  await db
+    .update(itemSubmissions)
+    .set({
+      status: "approved",
+      moderatorNote: "Approved into public directory.",
+      moderatedAt: new Date(),
+    })
+    .where(eq(itemSubmissions.id, id));
 
   return { ok: true, id: itemId };
 }
@@ -556,37 +567,75 @@ export async function rejectItemSubmission(
   id: string,
   note: string,
 ): Promise<ItemSubmissionResult> {
-  await ensureQueueLoaded();
-  const submission = queue.find((row) => row.id === id);
+  const db = await getDb();
+  const [submission] = await db
+    .select({ id: itemSubmissions.id, status: itemSubmissions.status })
+    .from(itemSubmissions)
+    .where(eq(itemSubmissions.id, id));
   if (!submission) return { ok: false, error: "Submission not found." };
   if (submission.status !== "pending") {
     return { ok: false, error: "Only pending submissions can be rejected." };
   }
 
-  submission.status = "rejected";
-  submission.moderatorNote = note.trim() || "Rejected by moderator.";
-  submission.moderatedAt = new Date();
+  await db
+    .update(itemSubmissions)
+    .set({
+      status: "rejected",
+      moderatorNote: note.trim() || "Rejected by moderator.",
+      moderatedAt: new Date(),
+    })
+    .where(eq(itemSubmissions.id, id));
+
   return { ok: true, id };
 }
 
 export async function mergeItemSubmission(id: string): Promise<ItemSubmissionResult> {
-  await ensureQueueLoaded();
-  const submission = queue.find((row) => row.id === id);
-  if (!submission) return { ok: false, error: "Submission not found." };
-  if (submission.status !== "pending") {
+  const db = await getDb();
+  const [row] = await db
+    .select()
+    .from(itemSubmissions)
+    .where(eq(itemSubmissions.id, id));
+  if (!row) return { ok: false, error: "Submission not found." };
+  if (row.status !== "pending") {
     return { ok: false, error: "Only pending submissions can be merged." };
   }
 
-  const target = await findMergeTarget(submission);
+  // Rebuild a minimal ItemSubmission-like for findMergeTarget (it only needs directoryId, slug, name, websiteUrl)
+  const submissionForMerge: ItemSubmission = {
+    id: row.id,
+    directorySlug: "", // not used
+    directoryId: row.directoryId,
+    slug: row.slug,
+    name: row.name,
+    description: row.description,
+    websiteUrl: row.websiteUrl,
+    submitterVisitorId: row.submitterVisitorId ?? null,
+    submitterName: row.submitterName ?? null,
+    submitterEmail: row.submitterEmail ?? null,
+    status: row.status as ItemSubmissionStatus,
+    mergedIntoItemId: row.mergedIntoItemId ?? null,
+    mergedIntoItemSlug: null,
+    moderatorNote: row.moderatorNote ?? null,
+    createdAt: row.createdAt instanceof Date ? row.createdAt : new Date(row.createdAt),
+    moderatedAt: row.moderatedAt ? (row.moderatedAt instanceof Date ? row.moderatedAt : new Date(row.moderatedAt)) : null,
+    source: "visitor",
+  };
+
+  const target = await findMergeTarget(submissionForMerge);
   if (!target) {
     return { ok: false, error: "No matching live item found to merge into." };
   }
 
-  submission.status = "merged";
-  submission.mergedIntoItemId = target.itemId;
-  submission.mergedIntoItemSlug = target.slug;
-  submission.moderatorNote = `Merged into existing item /d/${submission.directorySlug}/${target.slug}.`;
-  submission.moderatedAt = new Date();
+  await db
+    .update(itemSubmissions)
+    .set({
+      status: "merged",
+      mergedIntoItemId: target.itemId,
+      moderatorNote: `Merged into existing item /d/${(await db.select({slug: directories.slug}).from(directories).where(eq(directories.id, row.directoryId)))[0]?.slug || "ai-dev-tools"}/${target.slug}.`,
+      moderatedAt: new Date(),
+    })
+    .where(eq(itemSubmissions.id, id));
+
   return { ok: true, id: target.itemId };
 }
 
@@ -595,14 +644,16 @@ export async function rollbackApprovedItemSubmission(
   id: string,
   note: string,
 ): Promise<ItemSubmissionResult> {
-  await ensureQueueLoaded();
-  const submission = queue.find((row) => row.id === id);
+  const db = await getDb();
+  const [submission] = await db
+    .select()
+    .from(itemSubmissions)
+    .where(eq(itemSubmissions.id, id));
   if (!submission) return { ok: false, error: "Submission not found." };
   if (submission.status !== "approved") {
     return { ok: false, error: "Only approved submissions can be rolled back." };
   }
 
-  const db = await getDb();
   const [liveItem] = await db
     .select({ id: items.id })
     .from(items)
@@ -610,9 +661,14 @@ export async function rollbackApprovedItemSubmission(
       and(eq(items.directoryId, submission.directoryId), eq(items.slug, submission.slug)),
     );
   if (!liveItem) {
-    submission.status = "rejected";
-    submission.moderatorNote = note.trim() || "Rolled back — item row missing.";
-    submission.moderatedAt = new Date();
+    await db
+      .update(itemSubmissions)
+      .set({
+        status: "rejected",
+        moderatorNote: note.trim() || "Rolled back — item row missing.",
+        moderatedAt: new Date(),
+      })
+      .where(eq(itemSubmissions.id, id));
     return { ok: true, id };
   }
 
@@ -628,15 +684,68 @@ export async function rollbackApprovedItemSubmission(
   }
 
   await db.delete(items).where(eq(items.id, liveItem.id));
-  submission.status = "rejected";
-  submission.moderatorNote =
-    note.trim() || "Rolled back — removed approved item with no ratings yet.";
-  submission.moderatedAt = new Date();
+  await db
+    .update(itemSubmissions)
+    .set({
+      status: "rejected",
+      moderatorNote: note.trim() || "Rolled back — removed approved item with no ratings yet.",
+      moderatedAt: new Date(),
+    })
+    .where(eq(itemSubmissions.id, id));
   return { ok: true, id: liveItem.id };
 }
 
-/** Test-only reset — clears runtime queue so fixtures reload. */
-export function resetItemSubmissionQueueForTests(): void {
-  queue.length = 0;
-  queueBootstrapped = false;
+/** Seed helper: load the fixture rows into item_submissions as pending (idempotent by id).
+ * Call after migrate, e.g. via tsx one-off or extend seed-d1.
+ * Safe to run multiple times.
+ */
+export async function loadItemSubmissionFixtures(): Promise<void> {
+  const { readFileSync } = await import("node:fs");
+  const { join } = await import("node:path");
+  const candidates = [
+    join(process.cwd(), "fixtures/item-submissions-ai-dev-tools.json"),
+    join(process.cwd(), "../../fixtures/item-submissions-ai-dev-tools.json"),
+  ];
+  let fixtureRows: any[] = [];
+  for (const p of candidates) {
+    try {
+      fixtureRows = JSON.parse(readFileSync(p, "utf8"));
+      break;
+    } catch {}
+  }
+  if (!fixtureRows.length) return;
+
+  const db = await getDb();
+  const [dir] = await db
+    .select({ id: directories.id })
+    .from(directories)
+    .where(eq(directories.slug, PILOT_DIRECTORY_SLUG));
+  if (!dir) return;
+
+  for (const f of fixtureRows) {
+    if (f.directorySlug !== PILOT_DIRECTORY_SLUG) continue;
+    // upsert by id (or skip if exists)
+    const existing = await db
+      .select({ id: itemSubmissions.id })
+      .from(itemSubmissions)
+      .where(eq(itemSubmissions.id, f.id));
+    if (existing.length) continue;
+
+    await db.insert(itemSubmissions).values({
+      id: f.id,
+      directoryId: dir.id,
+      slug: f.slug,
+      name: f.name,
+      description: f.description,
+      websiteUrl: f.websiteUrl,
+      submitterVisitorId: null,
+      submitterName: f.submitterName ?? null,
+      submitterEmail: f.submitterEmail ?? null,
+      status: f.status || "pending",
+      mergedIntoItemId: null,
+      moderatorNote: null,
+      createdAt: new Date(),
+      moderatedAt: null,
+    });
+  }
 }

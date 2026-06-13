@@ -99,7 +99,7 @@ export default async function ItemPage({
           </div>
         </div>
         <p className="mt-1 text-[12px] text-[var(--muted-2)]">
-          One rating per aspect per visitor — change anytime, your latest counts.
+          One rating per aspect per visitor — change anytime, your latest counts. Prior ratings are kept for history and trends (0001).
         </p>
         <div className="mt-4 rounded-[var(--radius-md)] border border-[var(--border)] bg-[var(--surface)] px-5">
           {data.aspects.map((a) => (

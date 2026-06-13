@@ -10,7 +10,7 @@ import { captureActionFailure } from "@/lib/foundry-monitoring";
 
 /**
  * Interactive rating row — 5 buttons, optimistic update, calls a Server Action.
- * Re-rating is permitted (server upserts on the unique constraint).
+ * Re-rating is permitted (server appends history row + supersedes prior for current aggregates).
  * On failure the optimistic state is rolled back and a retry is offered.
  */
 export function RateRow({
