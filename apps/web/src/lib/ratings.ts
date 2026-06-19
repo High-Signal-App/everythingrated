@@ -289,7 +289,10 @@ export async function rate(opts: {
     throw new Error("Invalid rating: aspect does not belong to this item's directory.");
   }
 
-  const now = Date.now();
+  // Date (not ms number): the timestamp_ms columns these feed (ratings.created_at,
+  // .superseded_at, item_versions.released_at) are typed as Date and drizzle's
+  // driver calls .getTime() on the value — a raw number fails type + runtime.
+  const now = new Date();
 
   // Supersede prior current rating from this visitor on this axis (history preserved).
   await db

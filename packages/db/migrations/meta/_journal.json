@@ -29,6 +29,13 @@
       "when": 1779100000000,
       "tag": "0003_time_evolving_ratings",
       "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "6",
+      "when": 1781882280645,
+      "tag": "0004_dear_lady_deathstrike",
+      "breakpoints": true
     }
   ]
 }

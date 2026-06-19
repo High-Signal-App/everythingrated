@@ -84,6 +84,29 @@ export const itemVersions = sqliteTable(
 );
 
 /**
+ * Constraint tags on an item (0004 — stack recommender).
+ * Key/value attributes the cross-stack recommender filters and boosts on,
+ * e.g. ("runs-on","cloudflare"), ("pricing","free-tier"), ("self-hostable","yes").
+ * Sparse: items with no tags simply don't get constraint boosts. Unique per
+ * (item, key, value) so re-seeding is idempotent.
+ */
+export const itemTags = sqliteTable(
+  "item_tags",
+  {
+    id: text("id").primaryKey(),
+    itemId: text("item_id")
+      .notNull()
+      .references(() => items.id, { onDelete: "cascade" }),
+    key: text("key").notNull(), // e.g. "runs-on", "pricing", "self-hostable", "language"
+    value: text("value").notNull(), // e.g. "cloudflare", "free-tier", "yes", "typescript"
+  },
+  (t) => ({
+    uniq: uniqueIndex("item_tags_item_key_value_idx").on(t.itemId, t.key, t.value),
+    byKeyValue: index("item_tags_key_value_idx").on(t.key, t.value),
+  }),
+);
+
+/**
  * Ratings are append-only history (0001).
  * Re-rating supersedes the prior row for the same (visitor, item, aspect) by setting supersededAt.
  * versionId (nullable) anchors to an item_version when available (auto-derived or explicit).
@@ -189,3 +212,4 @@ export type Rating = typeof ratings.$inferSelect;
 export type DirectorySubmission = typeof directorySubmissions.$inferSelect;
 export type ItemSubmission = typeof itemSubmissions.$inferSelect;
 export type ItemVersion = typeof itemVersions.$inferSelect;
+export type ItemTag = typeof itemTags.$inferSelect;

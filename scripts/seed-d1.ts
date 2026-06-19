@@ -2360,9 +2360,197 @@ function esc(s: string): string {
   return `'${s.replace(/'/g, "''")}'`;
 }
 
+/**
+ * Curated constraint tags for the cross-stack recommender, keyed by item slug
+ * (slugs are globally unique in this seed). Values are "key:value". Sparse and
+ * hand-curated — the recommender treats tags as optional boosts, so untagged
+ * items still rank by score. Restricted to dimensions where the tag is a real
+ * differentiator (e.g. "self-hostable" only on services that offer it, not on
+ * every OSS library).
+ */
+const CURATED_TAGS: Record<string, string[]> = {
+  // databases
+  "cloudflare-d1": ["runs-on:cloudflare", "deploy:edge", "deploy:serverless", "pricing:free-tier"],
+  turso: ["deploy:edge", "pricing:free-tier", "self-hostable:yes"],
+  neon: ["deploy:serverless", "deploy:edge", "pricing:free-tier"],
+  planetscale: ["deploy:serverless"],
+  "supabase-postgres": ["pricing:free-tier", "self-hostable:yes", "realtime:yes"],
+  "supabase-realtime": ["realtime:yes", "pricing:free-tier"],
+  convex: ["deploy:serverless", "realtime:yes", "language:typescript", "pricing:free-tier"],
+  "mongodb-atlas": ["deploy:serverless", "pricing:free-tier"],
+  fauna: ["deploy:serverless"],
+  xata: ["deploy:serverless", "pricing:free-tier"],
+  cockroachdb: ["self-hostable:yes", "deploy:serverless"],
+  // hosting
+  "cloudflare-workers": ["runs-on:cloudflare", "deploy:edge", "deploy:serverless", "pricing:free-tier"],
+  "cloudflare-pages": ["runs-on:cloudflare", "deploy:edge", "pricing:free-tier"],
+  vercel: ["deploy:serverless", "deploy:edge", "pricing:free-tier"],
+  netlify: ["deploy:serverless", "deploy:edge", "pricing:free-tier"],
+  "deno-deploy": ["deploy:edge", "deploy:serverless", "pricing:free-tier"],
+  "fly-io": ["pricing:free-tier"],
+  railway: ["pricing:free-tier"],
+  render: ["pricing:free-tier"],
+  "aws-amplify": ["deploy:serverless"],
+  // vector-databases
+  pinecone: ["deploy:serverless", "pricing:free-tier"],
+  weaviate: ["self-hostable:yes"],
+  qdrant: ["self-hostable:yes", "language:python"],
+  milvus: ["self-hostable:yes"],
+  chroma: ["self-hostable:yes", "language:python", "pricing:free-tier"],
+  lancedb: ["self-hostable:yes"],
+  typesense: ["self-hostable:yes"],
+  "redis-vector-search": ["self-hostable:yes"],
+  // observability
+  sentry: ["pricing:free-tier", "self-hostable:yes"],
+  "grafana-cloud": ["pricing:free-tier", "self-hostable:yes"],
+  axiom: ["pricing:free-tier"],
+  logtail: ["pricing:free-tier"],
+  hyperdx: ["self-hostable:yes"],
+  honeycomb: ["pricing:free-tier"],
+  // auth-platforms
+  clerk: ["pricing:free-tier", "language:typescript"],
+  "supabase-auth": ["pricing:free-tier", "self-hostable:yes"],
+  "better-auth": ["self-hostable:yes", "language:typescript", "pricing:free-tier"],
+  lucia: ["self-hostable:yes", "language:typescript"],
+  stytch: ["pricing:free-tier"],
+  "firebase-auth": ["pricing:free-tier", "deploy:serverless"],
+  auth0: ["pricing:free-tier"],
+  // queues-and-jobs
+  "cloudflare-queues": ["runs-on:cloudflare", "deploy:serverless"],
+  "upstash-qstash": ["deploy:serverless", "deploy:edge", "pricing:free-tier"],
+  inngest: ["deploy:serverless", "language:typescript", "pricing:free-tier"],
+  "trigger-dev": ["language:typescript", "self-hostable:yes", "pricing:free-tier"],
+  temporal: ["self-hostable:yes"],
+  bullmq: ["self-hostable:yes", "language:typescript"],
+  hatchet: ["self-hostable:yes"],
+  "aws-sqs": ["deploy:serverless"],
+  // payments
+  stripe: ["language:typescript"],
+  lemonsqueezy: ["pricing:free-tier"],
+  polar: ["self-hostable:yes", "language:typescript", "pricing:free-tier"],
+  // analytics
+  posthog: ["self-hostable:yes", "pricing:free-tier"],
+  plausible: ["self-hostable:yes", "pricing:free-tier"],
+  umami: ["self-hostable:yes", "pricing:free-tier"],
+  fathom: ["pricing:free-tier"],
+  mixpanel: ["pricing:free-tier"],
+  amplitude: ["pricing:free-tier"],
+  // ci-cd
+  "github-actions": ["pricing:free-tier"],
+  "gitlab-ci": ["self-hostable:yes", "pricing:free-tier"],
+  "woodpecker-ci": ["self-hostable:yes"],
+  jenkins: ["self-hostable:yes"],
+  circleci: ["pricing:free-tier"],
+  // feature-flags
+  statsig: ["pricing:free-tier"],
+  unleash: ["self-hostable:yes", "pricing:free-tier"],
+  growthbook: ["self-hostable:yes", "pricing:free-tier"],
+  flagsmith: ["self-hostable:yes", "pricing:free-tier"],
+  configcat: ["pricing:free-tier"],
+  "vercel-flags": ["deploy:edge"],
+  // meta-frameworks
+  nextjs: ["deploy:serverless", "deploy:edge"],
+  astro: ["deploy:edge", "pricing:free-tier"],
+  sveltekit: ["deploy:edge"],
+  nuxt: ["deploy:serverless"],
+  redwoodjs: ["language:typescript"],
+  "tanstack-start": ["language:typescript"],
+  "qwik-city": ["deploy:edge"],
+  // orms
+  drizzle: ["language:typescript"],
+  prisma: ["language:typescript"],
+  kysely: ["language:typescript"],
+  "mikro-orm": ["language:typescript"],
+  typeorm: ["language:typescript"],
+  sqlalchemy: ["language:python"],
+  // api-frameworks
+  hono: ["language:typescript", "deploy:edge", "runs-on:cloudflare"],
+  elysia: ["language:typescript"],
+  trpc: ["language:typescript"],
+  nestjs: ["language:typescript"],
+  fastify: ["language:typescript"],
+  encore: ["language:typescript"],
+  adonisjs: ["language:typescript"],
+  // email-apis
+  resend: ["language:typescript", "pricing:free-tier"],
+  loops: ["pricing:free-tier"],
+  mailgun: ["pricing:free-tier"],
+  "amazon-ses": ["deploy:serverless", "pricing:free-tier"],
+  brevo: ["pricing:free-tier"],
+  sendgrid: ["pricing:free-tier"],
+  // object-storage
+  "cloudflare-r2": ["runs-on:cloudflare", "deploy:edge", "deploy:serverless", "pricing:free-tier"],
+  "aws-s3": ["deploy:serverless"],
+  "backblaze-b2": ["pricing:free-tier"],
+  minio: ["self-hostable:yes"],
+  storj: ["self-hostable:yes"],
+  "google-cloud-storage": ["deploy:serverless"],
+  "azure-blob": ["deploy:serverless"],
+  // llm-models (open weights)
+  llama: ["self-hostable:yes"],
+  "deepseek-r1": ["self-hostable:yes"],
+  qwen: ["self-hostable:yes"],
+  // llm-gateways
+  "cloudflare-ai-gateway": ["runs-on:cloudflare", "deploy:edge", "pricing:free-tier"],
+  openrouter: ["pricing:free-tier"],
+  litellm: ["self-hostable:yes", "language:python", "pricing:free-tier"],
+  helicone: ["self-hostable:yes", "pricing:free-tier"],
+  portkey: ["pricing:free-tier"],
+  "vercel-ai-gateway": ["deploy:edge", "language:typescript"],
+  // image-generation (open weights)
+  "stable-diffusion": ["self-hostable:yes"],
+  flux: ["self-hostable:yes"],
+  // validation-libraries
+  zod: ["language:typescript"],
+  valibot: ["language:typescript"],
+  arktype: ["language:typescript"],
+  "effect-schema": ["language:typescript"],
+  typebox: ["language:typescript"],
+  superstruct: ["language:typescript"],
+  // state-management
+  zustand: ["language:typescript"],
+  jotai: ["language:typescript"],
+  valtio: ["language:typescript"],
+  nanostores: ["language:typescript"],
+  "redux-toolkit": ["language:typescript"],
+  "tanstack-query": ["language:typescript"],
+  // test-runners
+  vitest: ["language:typescript"],
+  // headless-cms
+  sanity: ["pricing:free-tier"],
+  payload: ["self-hostable:yes", "language:typescript", "pricing:free-tier"],
+  strapi: ["self-hostable:yes", "pricing:free-tier"],
+  directus: ["self-hostable:yes", "pricing:free-tier"],
+  keystone: ["self-hostable:yes", "language:typescript"],
+  storyblok: ["pricing:free-tier"],
+  contentful: ["pricing:free-tier"],
+  hygraph: ["pricing:free-tier"],
+  // ai-agent-frameworks
+  "vercel-ai-sdk": ["language:typescript"],
+  langchain: ["language:python", "self-hostable:yes"],
+  langgraph: ["language:python", "self-hostable:yes"],
+  llamaindex: ["language:python"],
+  mastra: ["language:typescript", "self-hostable:yes"],
+  crewai: ["language:python"],
+  "openai-agents-sdk": ["language:python"],
+  "anthropic-agents": ["language:python"],
+  agno: ["language:python"],
+  "pydantic-ai": ["language:python"],
+  // mobile-frameworks
+  "react-native": ["language:typescript"],
+  expo: ["language:typescript", "pricing:free-tier"],
+  capacitor: ["language:typescript"],
+};
+
 function buildSql(): string {
   const out: string[] = [];
   const now = Date.now();
+
+  // Ratings are append-only since 0003 (the old (item,aspect,visitor) unique
+  // index was dropped), so re-running can't upsert. Clear prior seed-owner rows
+  // first, then insert fresh — keeps seeding idempotent without touching real
+  // visitors' history.
+  out.push(`DELETE FROM ratings WHERE visitor_id = ${esc(SEED_VISITOR)};`);
 
   DIRECTORIES.forEach((dir, dirIdx) => {
     const dirId = randomUUID();
@@ -2388,7 +2576,17 @@ function buildSql(): string {
       for (const [key, score] of Object.entries(it.scores)) {
         const ratingId = randomUUID();
         out.push(
-          `INSERT INTO ratings (id, item_id, aspect_id, visitor_id, score, created_at) SELECT ${esc(ratingId)}, items.id, aspects.id, ${esc(SEED_VISITOR)}, ${score}, ${now} FROM items, aspects, directories WHERE directories.slug = ${esc(dir.slug)} AND items.slug = ${esc(it.slug)} AND items.directory_id = directories.id AND aspects.key = ${esc(key)} AND aspects.directory_id = directories.id ON CONFLICT(item_id, aspect_id, visitor_id) DO UPDATE SET score=excluded.score;`,
+          `INSERT INTO ratings (id, item_id, aspect_id, visitor_id, score, created_at) SELECT ${esc(ratingId)}, items.id, aspects.id, ${esc(SEED_VISITOR)}, ${score}, ${now} FROM items, aspects, directories WHERE directories.slug = ${esc(dir.slug)} AND items.slug = ${esc(it.slug)} AND items.directory_id = directories.id AND aspects.key = ${esc(key)} AND aspects.directory_id = directories.id;`,
+        );
+      }
+
+      // Constraint tags for the cross-stack recommender (0004). Sparse/curated.
+      for (const pair of CURATED_TAGS[it.slug] ?? []) {
+        const [tagKey, tagValue] = pair.split(":");
+        if (!tagKey || !tagValue) continue;
+        const tagId = randomUUID();
+        out.push(
+          `INSERT INTO item_tags (id, item_id, key, value) SELECT ${esc(tagId)}, items.id, ${esc(tagKey)}, ${esc(tagValue)} FROM items, directories WHERE directories.slug = ${esc(dir.slug)} AND items.slug = ${esc(it.slug)} AND items.directory_id = directories.id ON CONFLICT(item_id, key, value) DO NOTHING;`,
         );
       }
     }
