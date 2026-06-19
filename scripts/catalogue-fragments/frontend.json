@@ -1,0 +1,382 @@
+{
+  "deepen": {
+    "frontend-frameworks": [
+      {
+        "slug": "marko",
+        "name": "Marko",
+        "description": "eBay's HTML-based framework with a resumable compiler, streaming, and sub-template granular bundling.",
+        "websiteUrl": "https://markojs.com",
+        "scores": { "performance": 5, "dx": 4, "ecosystem": 2, "learning_curve": 4, "ssr_support": 5 },
+        "tags": ["language:typescript", "self-hostable:yes"]
+      },
+      {
+        "slug": "mithril",
+        "name": "Mithril.js",
+        "description": "Lightweight SPA framework with a fast virtual DOM plus built-in routing and XHR utilities.",
+        "websiteUrl": "https://mithril.js.org",
+        "scores": { "performance": 5, "dx": 3, "ecosystem": 2, "learning_curve": 4, "ssr_support": 2 },
+        "tags": ["self-hostable:yes"]
+      },
+      {
+        "slug": "ember",
+        "name": "Ember.js",
+        "description": "Opinionated batteries-included framework with conventions, a strong CLI, and the Glimmer rendering engine.",
+        "websiteUrl": "https://emberjs.com",
+        "scores": { "performance": 3, "dx": 3, "ecosystem": 3, "learning_curve": 2, "ssr_support": 3 },
+        "tags": ["language:typescript", "self-hostable:yes"]
+      },
+      {
+        "slug": "stencil",
+        "name": "Stencil",
+        "description": "Compiler from Ionic for building standards-based Web Components with lazy loading and prerendering.",
+        "websiteUrl": "https://stenciljs.com",
+        "scores": { "performance": 4, "dx": 3, "ecosystem": 3, "learning_curve": 3, "ssr_support": 3 },
+        "tags": ["language:typescript", "self-hostable:yes"]
+      },
+      {
+        "slug": "stimulus",
+        "name": "Stimulus",
+        "description": "Hotwire's modest JavaScript framework that wires behavior to existing server-rendered HTML via controllers.",
+        "websiteUrl": "https://stimulus.hotwired.dev",
+        "scores": { "performance": 4, "dx": 4, "ecosystem": 2, "learning_curve": 5, "ssr_support": 5 },
+        "tags": ["self-hostable:yes"]
+      },
+      {
+        "slug": "aurelia",
+        "name": "Aurelia",
+        "description": "Modular, convention-driven framework with two-way binding, dependency injection, and extensible architecture.",
+        "websiteUrl": "https://aurelia.io",
+        "scores": { "performance": 3, "dx": 3, "ecosystem": 2, "learning_curve": 3, "ssr_support": 3 },
+        "tags": ["language:typescript", "self-hostable:yes"]
+      },
+      {
+        "slug": "riot",
+        "name": "Riot.js",
+        "description": "Tiny component framework with a simple custom-tag syntax and minimal API surface.",
+        "websiteUrl": "https://riot.js.org",
+        "scores": { "performance": 4, "dx": 3, "ecosystem": 2, "learning_curve": 5, "ssr_support": 3 },
+        "tags": ["self-hostable:yes"]
+      },
+      {
+        "slug": "inferno",
+        "name": "Inferno",
+        "description": "Fast React-like library focused on extreme rendering performance for high-throughput UIs.",
+        "websiteUrl": "https://infernojs.org",
+        "scores": { "performance": 5, "dx": 3, "ecosystem": 2, "learning_curve": 3, "ssr_support": 3 },
+        "tags": ["self-hostable:yes"]
+      }
+    ],
+    "meta-frameworks": [
+      {
+        "slug": "remix",
+        "name": "Remix",
+        "description": "Full-stack web framework focused on web standards, nested routes, and progressive enhancement.",
+        "websiteUrl": "https://remix.run",
+        "scores": { "dx": 5, "performance": 4, "deployment": 5, "ecosystem": 4, "ssr_quality": 5 },
+        "tags": ["deploy:edge", "deploy:serverless", "language:typescript", "self-hostable:yes"]
+      },
+      {
+        "slug": "vike",
+        "name": "Vike",
+        "description": "Modular Vite-based meta-framework letting you bring your own UI library, with flexible rendering and type-safe RPC.",
+        "websiteUrl": "https://vike.dev",
+        "scores": { "dx": 4, "performance": 4, "deployment": 5, "ecosystem": 3, "ssr_quality": 4 },
+        "tags": ["deploy:edge", "deploy:serverless", "language:typescript", "self-hostable:yes"]
+      },
+      {
+        "slug": "analog",
+        "name": "Analog",
+        "description": "Vite-powered meta-framework for Angular with file-based routing, server routes, and SSR.",
+        "websiteUrl": "https://analogjs.org",
+        "scores": { "dx": 4, "performance": 4, "deployment": 4, "ecosystem": 3, "ssr_quality": 4 },
+        "tags": ["deploy:serverless", "language:typescript", "self-hostable:yes"]
+      },
+      {
+        "slug": "waku",
+        "name": "Waku",
+        "description": "Minimal React meta-framework built around React Server Components with file-based routing.",
+        "websiteUrl": "https://waku.gg",
+        "scores": { "dx": 4, "performance": 4, "deployment": 4, "ecosystem": 2, "ssr_quality": 4 },
+        "tags": ["deploy:edge", "deploy:serverless", "language:typescript", "self-hostable:yes"]
+      },
+      {
+        "slug": "redwoodsdk",
+        "name": "RedwoodSDK",
+        "description": "Server-first React meta-framework built specifically for the Cloudflare Workers platform.",
+        "websiteUrl": "https://rwsdk.com",
+        "scores": { "dx": 4, "performance": 4, "deployment": 4, "ecosystem": 2, "ssr_quality": 4 },
+        "tags": ["runs-on:cloudflare", "deploy:edge", "deploy:serverless", "language:typescript", "self-hostable:yes"]
+      },
+      {
+        "slug": "fresh",
+        "name": "Fresh",
+        "description": "Deno-native full-stack framework using Preact and an islands architecture with zero client JS by default.",
+        "websiteUrl": "https://fresh.deno.dev",
+        "scores": { "dx": 4, "performance": 5, "deployment": 4, "ecosystem": 3, "ssr_quality": 4 },
+        "tags": ["deploy:edge", "deploy:serverless", "language:typescript", "self-hostable:yes"]
+      },
+      {
+        "slug": "eleventy",
+        "name": "Eleventy",
+        "description": "Flexible zero-JS static site generator that works with many template languages.",
+        "websiteUrl": "https://www.11ty.dev",
+        "scores": { "dx": 4, "performance": 5, "deployment": 5, "ecosystem": 3, "ssr_quality": 3 },
+        "tags": ["self-hostable:yes"]
+      },
+      {
+        "slug": "gatsby",
+        "name": "Gatsby",
+        "description": "React-based static site generator with a GraphQL data layer and a large plugin ecosystem.",
+        "websiteUrl": "https://www.gatsbyjs.com",
+        "scores": { "dx": 3, "performance": 3, "deployment": 4, "ecosystem": 4, "ssr_quality": 3 },
+        "tags": ["deploy:serverless", "language:typescript", "self-hostable:yes"]
+      },
+      {
+        "slug": "hydrogen",
+        "name": "Hydrogen",
+        "description": "Shopify's React framework for building custom, headless commerce storefronts on Oxygen.",
+        "websiteUrl": "https://hydrogen.shopify.dev",
+        "scores": { "dx": 4, "performance": 4, "deployment": 3, "ecosystem": 3, "ssr_quality": 4 },
+        "tags": ["deploy:edge", "language:typescript"]
+      },
+      {
+        "slug": "docusaurus",
+        "name": "Docusaurus",
+        "description": "Meta's React-based static generator optimized for documentation sites with versioning and search.",
+        "websiteUrl": "https://docusaurus.io",
+        "scores": { "dx": 5, "performance": 4, "deployment": 5, "ecosystem": 4, "ssr_quality": 3 },
+        "tags": ["language:typescript", "self-hostable:yes"]
+      }
+    ],
+    "css-tools": [
+      {
+        "slug": "sass",
+        "name": "Sass",
+        "description": "The most widely used CSS preprocessor, adding variables, nesting, mixins, and partials.",
+        "websiteUrl": "https://sass-lang.com",
+        "scores": { "dx": 4, "performance": 4, "customization": 5, "learning_curve": 4, "ecosystem": 5 },
+        "tags": ["self-hostable:yes"]
+      },
+      {
+        "slug": "postcss",
+        "name": "PostCSS",
+        "description": "Tool for transforming CSS with JavaScript plugins like autoprefixer and preset-env.",
+        "websiteUrl": "https://postcss.org",
+        "scores": { "dx": 4, "performance": 5, "customization": 5, "learning_curve": 3, "ecosystem": 5 },
+        "tags": ["self-hostable:yes"]
+      },
+      {
+        "slug": "less",
+        "name": "Less",
+        "description": "Mature CSS preprocessor with variables, mixins, and nesting, popular in legacy and Bootstrap stacks.",
+        "websiteUrl": "https://lesscss.org",
+        "scores": { "dx": 3, "performance": 4, "customization": 4, "learning_curve": 4, "ecosystem": 4 },
+        "tags": ["self-hostable:yes"]
+      },
+      {
+        "slug": "lightningcss",
+        "name": "Lightning CSS",
+        "description": "Rust-based CSS parser, transformer, and minifier used by Tailwind and many bundlers.",
+        "websiteUrl": "https://lightningcss.dev",
+        "scores": { "dx": 4, "performance": 5, "customization": 3, "learning_curve": 4, "ecosystem": 4 },
+        "tags": ["self-hostable:yes"]
+      },
+      {
+        "slug": "stylex",
+        "name": "StyleX",
+        "description": "Meta's compile-time atomic CSS-in-JS library used across Facebook and Instagram.",
+        "websiteUrl": "https://stylexjs.com",
+        "scores": { "dx": 4, "performance": 5, "customization": 4, "learning_curve": 3, "ecosystem": 3 },
+        "tags": ["language:typescript", "self-hostable:yes"]
+      },
+      {
+        "slug": "linaria",
+        "name": "Linaria",
+        "description": "Zero-runtime CSS-in-JS that extracts styles to real CSS files at build time.",
+        "websiteUrl": "https://linaria.dev",
+        "scores": { "dx": 4, "performance": 5, "customization": 5, "learning_curve": 3, "ecosystem": 3 },
+        "tags": ["language:typescript", "self-hostable:yes"]
+      },
+      {
+        "slug": "bootstrap",
+        "name": "Bootstrap",
+        "description": "Ubiquitous component-and-grid CSS framework for quick, consistent, responsive UIs.",
+        "websiteUrl": "https://getbootstrap.com",
+        "scores": { "dx": 4, "performance": 3, "customization": 3, "learning_curve": 5, "ecosystem": 5 },
+        "tags": ["self-hostable:yes"]
+      },
+      {
+        "slug": "bulma",
+        "name": "Bulma",
+        "description": "Flexbox-based, JavaScript-free CSS framework with a clean modular component set.",
+        "websiteUrl": "https://bulma.io",
+        "scores": { "dx": 4, "performance": 4, "customization": 4, "learning_curve": 5, "ecosystem": 3 },
+        "tags": ["self-hostable:yes"]
+      },
+      {
+        "slug": "picocss",
+        "name": "Pico CSS",
+        "description": "Minimal classless CSS framework that styles semantic HTML with sensible defaults.",
+        "websiteUrl": "https://picocss.com",
+        "scores": { "dx": 4, "performance": 5, "customization": 3, "learning_curve": 5, "ecosystem": 2 },
+        "tags": ["self-hostable:yes"]
+      }
+    ],
+    "ui-component-libraries": [
+      {
+        "slug": "primereact",
+        "name": "PrimeReact",
+        "description": "Comprehensive React UI suite with 80+ components, styled and unstyled themes, and prebuilt blocks.",
+        "websiteUrl": "https://primereact.org",
+        "scores": { "design_quality": 4, "customization": 4, "accessibility": 4, "dx": 4, "ecosystem": 4 },
+        "tags": ["language:typescript", "self-hostable:yes"]
+      },
+      {
+        "slug": "daisyui",
+        "name": "daisyUI",
+        "description": "Tailwind-based component classes giving themeable buttons, cards, and inputs without leaving HTML.",
+        "websiteUrl": "https://daisyui.com",
+        "scores": { "design_quality": 4, "customization": 4, "accessibility": 3, "dx": 5, "ecosystem": 4 },
+        "tags": ["self-hostable:yes"]
+      },
+      {
+        "slug": "react-aria",
+        "name": "React Aria",
+        "description": "Adobe's library of accessible, unstyled React hooks and components for building design systems.",
+        "websiteUrl": "https://react-spectrum.adobe.com/react-aria",
+        "scores": { "design_quality": 3, "customization": 5, "accessibility": 5, "dx": 4, "ecosystem": 4 },
+        "tags": ["language:typescript", "self-hostable:yes"]
+      },
+      {
+        "slug": "vuetify",
+        "name": "Vuetify",
+        "description": "The leading Material Design component framework for Vue with 80+ documented components.",
+        "websiteUrl": "https://vuetifyjs.com",
+        "scores": { "design_quality": 4, "customization": 4, "accessibility": 4, "dx": 4, "ecosystem": 5 },
+        "tags": ["language:typescript", "self-hostable:yes"]
+      },
+      {
+        "slug": "primevue",
+        "name": "PrimeVue",
+        "description": "Enterprise-ready Vue component library with a large component set and Tailwind theming.",
+        "websiteUrl": "https://primevue.org",
+        "scores": { "design_quality": 4, "customization": 4, "accessibility": 4, "dx": 4, "ecosystem": 4 },
+        "tags": ["language:typescript", "self-hostable:yes"]
+      },
+      {
+        "slug": "quasar",
+        "name": "Quasar",
+        "description": "Vue framework with a rich component set targeting web, mobile, and desktop from one codebase.",
+        "websiteUrl": "https://quasar.dev",
+        "scores": { "design_quality": 4, "customization": 4, "accessibility": 3, "dx": 4, "ecosystem": 4 },
+        "tags": ["language:typescript", "self-hostable:yes"]
+      },
+      {
+        "slug": "element-plus",
+        "name": "Element Plus",
+        "description": "Vue 3 successor to Element UI with clean components, TypeScript support, and i18n.",
+        "websiteUrl": "https://element-plus.org",
+        "scores": { "design_quality": 4, "customization": 3, "accessibility": 3, "dx": 4, "ecosystem": 4 },
+        "tags": ["language:typescript", "self-hostable:yes"]
+      },
+      {
+        "slug": "naive-ui",
+        "name": "Naive UI",
+        "description": "Lightweight Vue 3 component library with theming, dark mode, and full TypeScript types.",
+        "websiteUrl": "https://www.naiveui.com",
+        "scores": { "design_quality": 4, "customization": 4, "accessibility": 3, "dx": 4, "ecosystem": 3 },
+        "tags": ["language:typescript", "self-hostable:yes"]
+      },
+      {
+        "slug": "flowbite",
+        "name": "Flowbite",
+        "description": "Open-source UI component library built on Tailwind CSS with framework bindings.",
+        "websiteUrl": "https://flowbite.com",
+        "scores": { "design_quality": 4, "customization": 4, "accessibility": 3, "dx": 4, "ecosystem": 4 },
+        "tags": ["self-hostable:yes"]
+      },
+      {
+        "slug": "tremor",
+        "name": "Tremor",
+        "description": "React components and charts for building dashboards quickly with Tailwind styling.",
+        "websiteUrl": "https://tremor.so",
+        "scores": { "design_quality": 4, "customization": 4, "accessibility": 3, "dx": 5, "ecosystem": 3 },
+        "tags": ["language:typescript", "self-hostable:yes"]
+      },
+      {
+        "slug": "magic-ui",
+        "name": "Magic UI",
+        "description": "Copy-in animated React components and effects designed to pair with shadcn/ui.",
+        "websiteUrl": "https://magicui.design",
+        "scores": { "design_quality": 5, "customization": 5, "accessibility": 3, "dx": 4, "ecosystem": 3 },
+        "tags": ["language:typescript", "self-hostable:yes"]
+      }
+    ],
+    "state-management": [
+      {
+        "slug": "redux",
+        "name": "Redux",
+        "description": "The original predictable state container for JS apps, now primarily used via Redux Toolkit.",
+        "websiteUrl": "https://redux.js.org",
+        "scores": { "dx": 3, "performance": 4, "bundle_size": 3, "ts_support": 4, "learning_curve": 2 },
+        "tags": ["language:typescript", "self-hostable:yes"]
+      },
+      {
+        "slug": "xstate",
+        "name": "XState",
+        "description": "State machines and statecharts that make invalid states impossible, with visual tooling from Stately.",
+        "websiteUrl": "https://stately.ai/docs/xstate",
+        "scores": { "dx": 4, "performance": 4, "bundle_size": 3, "ts_support": 5, "learning_curve": 2 },
+        "tags": ["language:typescript", "self-hostable:yes"]
+      },
+      {
+        "slug": "effector",
+        "name": "Effector",
+        "description": "Reactive state manager built around stores, events, and effects with strong type inference.",
+        "websiteUrl": "https://effector.dev",
+        "scores": { "dx": 4, "performance": 5, "bundle_size": 4, "ts_support": 5, "learning_curve": 3 },
+        "tags": ["language:typescript", "self-hostable:yes"]
+      },
+      {
+        "slug": "legend-state",
+        "name": "Legend-State",
+        "description": "Ultra-fast signal-based state library with fine-grained reactivity and built-in persistence.",
+        "websiteUrl": "https://legendapp.com/open-source/state",
+        "scores": { "dx": 4, "performance": 5, "bundle_size": 5, "ts_support": 5, "learning_curve": 4 },
+        "tags": ["language:typescript", "self-hostable:yes"]
+      },
+      {
+        "slug": "pinia",
+        "name": "Pinia",
+        "description": "The official Vue store with an intuitive composition-style API and great devtools.",
+        "websiteUrl": "https://pinia.vuejs.org",
+        "scores": { "dx": 5, "performance": 4, "bundle_size": 5, "ts_support": 5, "learning_curve": 5 },
+        "tags": ["language:typescript", "self-hostable:yes"]
+      },
+      {
+        "slug": "apollo-client",
+        "name": "Apollo Client",
+        "description": "Comprehensive GraphQL client managing remote data, normalized caching, and local state.",
+        "websiteUrl": "https://www.apollographql.com/docs/react",
+        "scores": { "dx": 4, "performance": 3, "bundle_size": 2, "ts_support": 4, "learning_curve": 3 },
+        "tags": ["language:typescript", "self-hostable:yes"]
+      },
+      {
+        "slug": "tanstack-store",
+        "name": "TanStack Store",
+        "description": "Framework-agnostic reactive store underpinning the TanStack libraries.",
+        "websiteUrl": "https://tanstack.com/store",
+        "scores": { "dx": 4, "performance": 5, "bundle_size": 5, "ts_support": 5, "learning_curve": 4 },
+        "tags": ["language:typescript", "self-hostable:yes"]
+      },
+      {
+        "slug": "rtk-query",
+        "name": "RTK Query",
+        "description": "Data fetching and caching layer built into Redux Toolkit for server state.",
+        "websiteUrl": "https://redux-toolkit.js.org/rtk-query/overview",
+        "scores": { "dx": 4, "performance": 4, "bundle_size": 3, "ts_support": 5, "learning_curve": 3 },
+        "tags": ["language:typescript", "self-hostable:yes"]
+      }
+    ]
+  }
+}

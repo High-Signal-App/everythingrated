@@ -1,0 +1,380 @@
+{
+  "deepen": {
+    "auth-platforms": [
+      {
+        "slug": "kinde",
+        "name": "Kinde",
+        "description": "Developer-focused auth and billing platform with generous flat pricing and B2B org features.",
+        "websiteUrl": "https://kinde.com",
+        "scores": { "security": 4, "customization": 4, "cost": 5, "dx": 5, "ecosystem": 4 },
+        "tags": ["pricing:free-tier", "language:typescript"]
+      },
+      {
+        "slug": "keycloak",
+        "name": "Keycloak",
+        "description": "Mature open-source identity and access management server with SAML, SSO, and LDAP federation.",
+        "websiteUrl": "https://www.keycloak.org",
+        "scores": { "security": 5, "customization": 5, "cost": 5, "dx": 2, "ecosystem": 5 },
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
+      },
+      {
+        "slug": "zitadel",
+        "name": "ZITADEL",
+        "description": "API-first, multi-tenant open-source identity platform with passkeys, SSO, and self-hosting.",
+        "websiteUrl": "https://zitadel.com",
+        "scores": { "security": 5, "customization": 4, "cost": 4, "dx": 4, "ecosystem": 3 },
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
+      },
+      {
+        "slug": "ory",
+        "name": "Ory",
+        "description": "Cloud-native, modular IAM stack (Kratos, Hydra, Keto) for distributed and Kubernetes deployments.",
+        "websiteUrl": "https://www.ory.sh",
+        "scores": { "security": 5, "customization": 5, "cost": 3, "dx": 3, "ecosystem": 4 },
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
+      },
+      {
+        "slug": "supertokens",
+        "name": "SuperTokens",
+        "description": "Open-source authentication with prebuilt UI and self-hostable or managed core service.",
+        "websiteUrl": "https://supertokens.com",
+        "scores": { "security": 4, "customization": 4, "cost": 5, "dx": 4, "ecosystem": 3 },
+        "tags": ["self-hostable:yes", "pricing:free-tier", "language:typescript"]
+      },
+      {
+        "slug": "fusionauth",
+        "name": "FusionAuth",
+        "description": "Single-tenant identity platform that is free to self-host with deep customization and standards support.",
+        "websiteUrl": "https://fusionauth.io",
+        "scores": { "security": 5, "customization": 5, "cost": 4, "dx": 3, "ecosystem": 4 },
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
+      },
+      {
+        "slug": "descope",
+        "name": "Descope",
+        "description": "Drag-and-drop authentication platform for building passwordless and CIAM flows visually.",
+        "websiteUrl": "https://www.descope.com",
+        "scores": { "security": 5, "customization": 4, "cost": 4, "dx": 4, "ecosystem": 4 },
+        "tags": ["pricing:free-tier"]
+      },
+      {
+        "slug": "aws-cognito",
+        "name": "Amazon Cognito",
+        "description": "AWS-native user pools and identity federation that integrate deeply with the AWS ecosystem.",
+        "websiteUrl": "https://aws.amazon.com/cognito",
+        "scores": { "security": 4, "customization": 3, "cost": 4, "dx": 2, "ecosystem": 5 },
+        "tags": ["pricing:free-tier", "deploy:serverless"]
+      },
+      {
+        "slug": "hanko",
+        "name": "Hanko",
+        "description": "Open-source, passkey-first authentication with embeddable web components and self-hosting.",
+        "websiteUrl": "https://www.hanko.io",
+        "scores": { "security": 5, "customization": 4, "cost": 5, "dx": 4, "ecosystem": 2 },
+        "tags": ["self-hostable:yes", "pricing:free-tier", "language:typescript"]
+      },
+      {
+        "slug": "authelia",
+        "name": "Authelia",
+        "description": "Open-source authentication and SSO portal that adds 2FA in front of reverse proxies.",
+        "websiteUrl": "https://www.authelia.com",
+        "scores": { "security": 4, "customization": 3, "cost": 5, "dx": 3, "ecosystem": 2 },
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
+      }
+    ],
+    "payments": [
+      {
+        "slug": "mollie",
+        "name": "Mollie",
+        "description": "European payments platform with broad local methods and a clean, developer-friendly API.",
+        "websiteUrl": "https://www.mollie.com",
+        "scores": { "coverage": 4, "subscriptions": 4, "compliance": 4, "dx": 4, "fees": 4 }
+      },
+      {
+        "slug": "checkout-com",
+        "name": "Checkout.com",
+        "description": "Enterprise payments processor with global acquiring, fraud tooling, and unified APIs.",
+        "websiteUrl": "https://www.checkout.com",
+        "scores": { "coverage": 5, "subscriptions": 3, "compliance": 5, "dx": 4, "fees": 3 }
+      },
+      {
+        "slug": "fastspring",
+        "name": "FastSpring",
+        "description": "Merchant-of-record platform handling global tax, subscriptions, and digital product sales.",
+        "websiteUrl": "https://fastspring.com",
+        "scores": { "coverage": 4, "subscriptions": 4, "compliance": 5, "dx": 3, "fees": 2 }
+      },
+      {
+        "slug": "recurly",
+        "name": "Recurly",
+        "description": "Subscription management and recurring billing platform with dunning and revenue recovery.",
+        "websiteUrl": "https://recurly.com",
+        "scores": { "coverage": 4, "subscriptions": 5, "compliance": 4, "dx": 4, "fees": 2 }
+      },
+      {
+        "slug": "square",
+        "name": "Square",
+        "description": "Commerce platform combining in-person and online payments with developer APIs.",
+        "websiteUrl": "https://squareup.com",
+        "scores": { "coverage": 3, "subscriptions": 3, "compliance": 4, "dx": 3, "fees": 3 }
+      },
+      {
+        "slug": "paypal",
+        "name": "PayPal",
+        "description": "Ubiquitous consumer wallet and checkout with broad buyer trust and global reach.",
+        "websiteUrl": "https://www.paypal.com",
+        "scores": { "coverage": 5, "subscriptions": 3, "compliance": 4, "dx": 2, "fees": 3 }
+      },
+      {
+        "slug": "creem",
+        "name": "Creem",
+        "description": "Merchant-of-record payment platform aimed at indie SaaS and AI startups.",
+        "websiteUrl": "https://www.creem.io",
+        "scores": { "coverage": 3, "subscriptions": 4, "compliance": 4, "dx": 5, "fees": 4 },
+        "tags": ["language:typescript"]
+      },
+      {
+        "slug": "dodo-payments",
+        "name": "Dodo Payments",
+        "description": "Merchant-of-record API for global digital sales, tax handling, and subscriptions.",
+        "websiteUrl": "https://dodopayments.com",
+        "scores": { "coverage": 4, "subscriptions": 4, "compliance": 4, "dx": 4, "fees": 4 }
+      },
+      {
+        "slug": "stripe-connect",
+        "name": "Stripe Connect",
+        "description": "Stripe's platform product for marketplaces handling onboarding, payouts, and split payments.",
+        "websiteUrl": "https://stripe.com/connect",
+        "scores": { "coverage": 5, "subscriptions": 4, "compliance": 5, "dx": 5, "fees": 3 }
+      },
+      {
+        "slug": "worldpay",
+        "name": "Worldpay",
+        "description": "Large-scale enterprise payment processor with global acquiring and omnichannel support.",
+        "websiteUrl": "https://www.worldpay.com",
+        "scores": { "coverage": 5, "subscriptions": 3, "compliance": 5, "dx": 2, "fees": 3 }
+      }
+    ],
+    "email-apis": [
+      {
+        "slug": "mailersend",
+        "name": "MailerSend",
+        "description": "Transactional email API and SMTP relay with a drag-and-drop template builder.",
+        "websiteUrl": "https://www.mailersend.com",
+        "scores": { "deliverability": 4, "dx": 4, "cost": 4, "templating": 5, "ecosystem": 3 },
+        "tags": ["pricing:free-tier"]
+      },
+      {
+        "slug": "smtp2go",
+        "name": "SMTP2GO",
+        "description": "Reliable SMTP and API email delivery service with global sending infrastructure.",
+        "websiteUrl": "https://www.smtp2go.com",
+        "scores": { "deliverability": 4, "dx": 3, "cost": 4, "templating": 3, "ecosystem": 3 },
+        "tags": ["pricing:free-tier"]
+      },
+      {
+        "slug": "sparkpost",
+        "name": "SparkPost",
+        "description": "High-volume email delivery and analytics platform now part of MessageBird/Bird.",
+        "websiteUrl": "https://www.sparkpost.com",
+        "scores": { "deliverability": 4, "dx": 3, "cost": 3, "templating": 3, "ecosystem": 4 }
+      },
+      {
+        "slug": "mailjet",
+        "name": "Mailjet",
+        "description": "Transactional and marketing email API with collaborative template editing.",
+        "websiteUrl": "https://www.mailjet.com",
+        "scores": { "deliverability": 3, "dx": 3, "cost": 4, "templating": 4, "ecosystem": 4 },
+        "tags": ["pricing:free-tier"]
+      },
+      {
+        "slug": "elastic-email",
+        "name": "Elastic Email",
+        "description": "Low-cost email delivery API and SMTP service for high-volume senders.",
+        "websiteUrl": "https://elasticemail.com",
+        "scores": { "deliverability": 3, "dx": 3, "cost": 5, "templating": 3, "ecosystem": 3 },
+        "tags": ["pricing:free-tier"]
+      },
+      {
+        "slug": "mailchimp-transactional",
+        "name": "Mailchimp Transactional",
+        "description": "Transactional email API (formerly Mandrill) bolted onto the Mailchimp marketing suite.",
+        "websiteUrl": "https://mailchimp.com/features/transactional-email",
+        "scores": { "deliverability": 4, "dx": 3, "cost": 2, "templating": 4, "ecosystem": 4 }
+      },
+      {
+        "slug": "sendpulse",
+        "name": "SendPulse",
+        "description": "Multichannel platform offering transactional email API alongside SMS and chatbots.",
+        "websiteUrl": "https://sendpulse.com",
+        "scores": { "deliverability": 3, "dx": 3, "cost": 4, "templating": 4, "ecosystem": 4 },
+        "tags": ["pricing:free-tier"]
+      },
+      {
+        "slug": "courier",
+        "name": "Courier",
+        "description": "Notification API that orchestrates email plus SMS, push, and chat through one interface.",
+        "websiteUrl": "https://www.courier.com",
+        "scores": { "deliverability": 4, "dx": 5, "cost": 3, "templating": 5, "ecosystem": 5 },
+        "tags": ["pricing:free-tier", "language:typescript"]
+      },
+      {
+        "slug": "mailpace",
+        "name": "MailPace",
+        "description": "Privacy-focused transactional email API with fast sending and a simple developer interface.",
+        "websiteUrl": "https://mailpace.com",
+        "scores": { "deliverability": 4, "dx": 4, "cost": 4, "templating": 3, "ecosystem": 2 }
+      }
+    ],
+    "feature-flags": [
+      {
+        "slug": "split",
+        "name": "Split",
+        "description": "Feature delivery platform pairing flags with built-in experimentation and metric impact tracking.",
+        "websiteUrl": "https://www.split.io",
+        "scores": { "targeting": 5, "experiments": 5, "latency": 4, "dx": 4, "cost": 3 }
+      },
+      {
+        "slug": "optimizely-feature-experimentation",
+        "name": "Optimizely Feature Experimentation",
+        "description": "Enterprise experimentation and feature flagging platform with strong statistical rigor.",
+        "websiteUrl": "https://www.optimizely.com/products/feature-experimentation",
+        "scores": { "targeting": 5, "experiments": 5, "latency": 4, "dx": 3, "cost": 2 }
+      },
+      {
+        "slug": "harness-feature-flags",
+        "name": "Harness Feature Flags",
+        "description": "Feature management inside the Harness software delivery platform with CI/CD integration.",
+        "websiteUrl": "https://www.harness.io/products/feature-flags",
+        "scores": { "targeting": 4, "experiments": 3, "latency": 4, "dx": 4, "cost": 3 }
+      },
+      {
+        "slug": "devcycle",
+        "name": "DevCycle",
+        "description": "OpenFeature-native feature flag platform with edge-evaluated flags and real-time updates.",
+        "websiteUrl": "https://www.devcycle.com",
+        "scores": { "targeting": 4, "experiments": 3, "latency": 5, "dx": 4, "cost": 4 },
+        "tags": ["deploy:edge", "language:typescript"]
+      },
+      {
+        "slug": "posthog-feature-flags",
+        "name": "PostHog Feature Flags",
+        "description": "Feature flags bundled into PostHog alongside analytics, experiments, and session replay.",
+        "websiteUrl": "https://posthog.com/feature-flags",
+        "scores": { "targeting": 4, "experiments": 4, "latency": 4, "dx": 4, "cost": 5 },
+        "tags": ["pricing:free-tier", "self-hostable:yes"]
+      },
+      {
+        "slug": "featbit",
+        "name": "FeatBit",
+        "description": "Open-source, self-hostable feature flag and experimentation platform.",
+        "websiteUrl": "https://www.featbit.co",
+        "scores": { "targeting": 4, "experiments": 3, "latency": 4, "dx": 3, "cost": 5 },
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
+      },
+      {
+        "slug": "flipt",
+        "name": "Flipt",
+        "description": "Open-source, self-hosted feature flag solution that runs entirely within your infrastructure.",
+        "websiteUrl": "https://www.flipt.io",
+        "scores": { "targeting": 4, "experiments": 2, "latency": 5, "dx": 4, "cost": 5 },
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
+      },
+      {
+        "slug": "hypertune",
+        "name": "Hypertune",
+        "description": "Type-safe feature flags and config with code generation and a GraphQL-style schema.",
+        "websiteUrl": "https://www.hypertune.com",
+        "scores": { "targeting": 4, "experiments": 3, "latency": 5, "dx": 5, "cost": 4 },
+        "tags": ["language:typescript", "deploy:edge"]
+      },
+      {
+        "slug": "openfeature",
+        "name": "OpenFeature",
+        "description": "Vendor-neutral CNCF specification and SDKs that standardize feature flag evaluation.",
+        "websiteUrl": "https://openfeature.dev",
+        "scores": { "targeting": 3, "experiments": 2, "latency": 4, "dx": 4, "cost": 5 },
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
+      }
+    ],
+    "analytics": [
+      {
+        "slug": "ga4",
+        "name": "Google Analytics 4",
+        "description": "Google's event-based web and app analytics, free and ubiquitous with BigQuery export.",
+        "websiteUrl": "https://marketingplatform.google.com/about/analytics",
+        "scores": { "privacy": 2, "funnels": 4, "query_speed": 3, "cost": 5, "warehouse_fit": 5 },
+        "tags": ["pricing:free-tier"]
+      },
+      {
+        "slug": "matomo",
+        "name": "Matomo",
+        "description": "Open-source, privacy-respecting web analytics offering full data ownership and self-hosting.",
+        "websiteUrl": "https://matomo.org",
+        "scores": { "privacy": 5, "funnels": 4, "query_speed": 3, "cost": 4, "warehouse_fit": 3 },
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
+      },
+      {
+        "slug": "pendo",
+        "name": "Pendo",
+        "description": "Product analytics combined with in-app guidance, surveys, and feature adoption tracking.",
+        "websiteUrl": "https://www.pendo.io",
+        "scores": { "privacy": 3, "funnels": 4, "query_speed": 4, "cost": 2, "warehouse_fit": 3 }
+      },
+      {
+        "slug": "segment",
+        "name": "Segment",
+        "description": "Customer data platform that collects events once and routes them to analytics and warehouses.",
+        "websiteUrl": "https://segment.com",
+        "scores": { "privacy": 3, "funnels": 3, "query_speed": 3, "cost": 2, "warehouse_fit": 5 }
+      },
+      {
+        "slug": "rudderstack",
+        "name": "RudderStack",
+        "description": "Warehouse-first customer data pipeline and CDP with open-source and cloud options.",
+        "websiteUrl": "https://www.rudderstack.com",
+        "scores": { "privacy": 4, "funnels": 3, "query_speed": 4, "cost": 3, "warehouse_fit": 5 },
+        "tags": ["self-hostable:yes"]
+      },
+      {
+        "slug": "snowplow",
+        "name": "Snowplow",
+        "description": "Behavioral data platform for collecting rich, schema-validated events into your warehouse.",
+        "websiteUrl": "https://snowplow.io",
+        "scores": { "privacy": 4, "funnels": 3, "query_speed": 4, "cost": 3, "warehouse_fit": 5 },
+        "tags": ["self-hostable:yes"]
+      },
+      {
+        "slug": "pirsch",
+        "name": "Pirsch",
+        "description": "Cookieless, privacy-friendly web analytics with a well-documented API and SDKs.",
+        "websiteUrl": "https://pirsch.io",
+        "scores": { "privacy": 5, "funnels": 3, "query_speed": 5, "cost": 4, "warehouse_fit": 3 },
+        "tags": ["pricing:free-tier"]
+      },
+      {
+        "slug": "cloudflare-web-analytics",
+        "name": "Cloudflare Web Analytics",
+        "description": "Zero-setup, privacy-respecting web analytics free for unlimited sites on Cloudflare.",
+        "websiteUrl": "https://www.cloudflare.com/web-analytics",
+        "scores": { "privacy": 5, "funnels": 2, "query_speed": 4, "cost": 5, "warehouse_fit": 2 },
+        "tags": ["pricing:free-tier", "runs-on:cloudflare", "deploy:edge"]
+      },
+      {
+        "slug": "simple-analytics",
+        "name": "Simple Analytics",
+        "description": "Privacy-first, cookieless website analytics with a clean single-page dashboard.",
+        "websiteUrl": "https://www.simpleanalytics.com",
+        "scores": { "privacy": 5, "funnels": 2, "query_speed": 5, "cost": 3, "warehouse_fit": 3 }
+      },
+      {
+        "slug": "tinybird",
+        "name": "Tinybird",
+        "description": "ClickHouse-based platform for building real-time analytics APIs over event data.",
+        "websiteUrl": "https://www.tinybird.co",
+        "scores": { "privacy": 4, "funnels": 3, "query_speed": 5, "cost": 3, "warehouse_fit": 5 },
+        "tags": ["realtime:yes"]
+      }
+    ]
+  }
+}

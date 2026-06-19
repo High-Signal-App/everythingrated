@@ -1,0 +1,598 @@
+{
+  "newDirectories": [
+    {
+      "slug": "cdn",
+      "name": "CDNs",
+      "description": "Content delivery networks that cache and serve assets close to users.",
+      "heroCopy": "Edge latency, cache control, cost, DX, ecosystem reach — see where each network wins.",
+      "aspects": [
+        { "key": "latency", "label": "Latency", "description": "Edge proximity and how fast cached assets reach users." },
+        { "key": "cache_control", "label": "Cache control", "description": "Granularity of purging, TTLs, and edge cache rules." },
+        { "key": "cost", "label": "Cost", "description": "Value relative to price, including egress (5 = great deal)." },
+        { "key": "dx", "label": "Developer experience", "description": "APIs, dashboards, docs, and day-to-day ergonomics." },
+        { "key": "ecosystem", "label": "Ecosystem", "description": "Integrations, edge compute, and surrounding platform breadth." }
+      ],
+      "items": [
+        {
+          "slug": "cloudflare-cdn",
+          "name": "Cloudflare CDN",
+          "description": "Global CDN spanning 300+ cities with a generous free tier and integrated security and edge compute.",
+          "websiteUrl": "https://www.cloudflare.com/application-services/products/cdn/",
+          "scores": { "latency": 5, "cache_control": 4, "cost": 5, "dx": 4, "ecosystem": 5 },
+          "tags": ["runs-on:cloudflare", "deploy:edge", "pricing:free-tier"]
+        },
+        {
+          "slug": "fastly",
+          "name": "Fastly",
+          "description": "Developer-focused edge cloud with instant purging and programmable VCL/Compute edge logic.",
+          "websiteUrl": "https://www.fastly.com",
+          "scores": { "latency": 5, "cache_control": 5, "cost": 3, "dx": 5, "ecosystem": 4 },
+          "tags": ["deploy:edge", "pricing:free-tier"]
+        },
+        {
+          "slug": "akamai",
+          "name": "Akamai",
+          "description": "The largest enterprise CDN, powering streaming, gaming, and finance at massive scale.",
+          "websiteUrl": "https://www.akamai.com",
+          "scores": { "latency": 5, "cache_control": 4, "cost": 2, "dx": 3, "ecosystem": 5 }
+        },
+        {
+          "slug": "aws-cloudfront",
+          "name": "Amazon CloudFront",
+          "description": "AWS-native CDN tightly integrated with S3, Lambda@Edge, and the rest of AWS.",
+          "websiteUrl": "https://aws.amazon.com/cloudfront/",
+          "scores": { "latency": 4, "cache_control": 4, "cost": 3, "dx": 3, "ecosystem": 5 },
+          "tags": ["deploy:edge", "pricing:free-tier"]
+        },
+        {
+          "slug": "bunny-cdn",
+          "name": "Bunny.net",
+          "description": "Budget-friendly CDN with pay-as-you-go pricing, built-in optimizer, and edge storage.",
+          "websiteUrl": "https://bunny.net",
+          "scores": { "latency": 4, "cache_control": 4, "cost": 5, "dx": 4, "ecosystem": 3 }
+        },
+        {
+          "slug": "gcore-cdn",
+          "name": "Gcore CDN",
+          "description": "Global CDN with 180+ points of presence and low-latency edge delivery for media and apps.",
+          "websiteUrl": "https://gcore.com/cdn",
+          "scores": { "latency": 4, "cache_control": 4, "cost": 4, "dx": 3, "ecosystem": 4 },
+          "tags": ["pricing:free-tier"]
+        },
+        {
+          "slug": "keycdn",
+          "name": "KeyCDN",
+          "description": "Simple pay-as-you-go HTTP/2 CDN with 50+ global POPs aimed at small teams and sites.",
+          "websiteUrl": "https://www.keycdn.com",
+          "scores": { "latency": 4, "cache_control": 3, "cost": 4, "dx": 4, "ecosystem": 2 }
+        },
+        {
+          "slug": "cdn77",
+          "name": "CDN77",
+          "description": "Performance-focused CDN with 50+ data centers, strong for VOD and live video delivery.",
+          "websiteUrl": "https://www.cdn77.com",
+          "scores": { "latency": 4, "cache_control": 4, "cost": 3, "dx": 3, "ecosystem": 3 }
+        },
+        {
+          "slug": "azure-cdn",
+          "name": "Azure Front Door / CDN",
+          "description": "Microsoft's global CDN and edge delivery layer integrated with Azure services.",
+          "websiteUrl": "https://azure.microsoft.com/en-us/products/frontdoor",
+          "scores": { "latency": 4, "cache_control": 3, "cost": 3, "dx": 3, "ecosystem": 5 }
+        },
+        {
+          "slug": "google-cloud-cdn",
+          "name": "Google Cloud CDN",
+          "description": "GCP-native CDN serving content from Google's global edge with low latency and high throughput.",
+          "websiteUrl": "https://cloud.google.com/cdn",
+          "scores": { "latency": 4, "cache_control": 3, "cost": 3, "dx": 3, "ecosystem": 4 }
+        },
+        {
+          "slug": "jsdelivr",
+          "name": "jsDelivr",
+          "description": "Free public CDN for open-source libraries, npm packages, GitHub repos, and static assets.",
+          "websiteUrl": "https://www.jsdelivr.com",
+          "scores": { "latency": 4, "cache_control": 2, "cost": 5, "dx": 4, "ecosystem": 3 },
+          "tags": ["pricing:free-tier"]
+        },
+        {
+          "slug": "vercel-edge-network",
+          "name": "Vercel Edge Network",
+          "description": "Global edge CDN baked into Vercel deployments, optimized for Next.js and frontend apps.",
+          "websiteUrl": "https://vercel.com",
+          "scores": { "latency": 5, "cache_control": 4, "cost": 3, "dx": 5, "ecosystem": 4 },
+          "tags": ["deploy:edge", "deploy:serverless", "pricing:free-tier"]
+        },
+        {
+          "slug": "netlify-cdn",
+          "name": "Netlify CDN",
+          "description": "Git-driven CDN for static frontends and Jamstack sites with atomic deploys and edge functions.",
+          "websiteUrl": "https://www.netlify.com",
+          "scores": { "latency": 4, "cache_control": 4, "cost": 3, "dx": 5, "ecosystem": 4 },
+          "tags": ["deploy:edge", "deploy:serverless", "pricing:free-tier"]
+        },
+        {
+          "slug": "stackpath",
+          "name": "StackPath",
+          "description": "Edge platform offering CDN, WAF, and edge compute across roughly 60 data centers.",
+          "websiteUrl": "https://www.stackpath.com",
+          "scores": { "latency": 3, "cache_control": 3, "cost": 3, "dx": 3, "ecosystem": 3 },
+          "tags": ["deploy:edge"]
+        }
+      ]
+    },
+    {
+      "slug": "dns",
+      "name": "Managed DNS",
+      "description": "Authoritative DNS hosting and management providers.",
+      "heroCopy": "Resolution latency, reliability, cost, DX, ecosystem — pick the nameservers your stack depends on.",
+      "aspects": [
+        { "key": "latency", "label": "Latency", "description": "Resolution speed from Anycast networks worldwide." },
+        { "key": "reliability", "label": "Reliability", "description": "Uptime, SLAs, and resilience against outages and attacks." },
+        { "key": "cost", "label": "Cost", "description": "Value relative to price including query-based fees (5 = great deal)." },
+        { "key": "dx", "label": "Developer experience", "description": "APIs, terraform support, dashboards, and ergonomics." },
+        { "key": "ecosystem", "label": "Ecosystem", "description": "Integrations, automation, and surrounding platform breadth." }
+      ],
+      "items": [
+        {
+          "slug": "cloudflare-dns",
+          "name": "Cloudflare DNS",
+          "description": "Top-ranked managed DNS with a free tier, unlimited queries, and a fast global Anycast network.",
+          "websiteUrl": "https://www.cloudflare.com/products/dns/",
+          "scores": { "latency": 5, "reliability": 5, "cost": 5, "dx": 5, "ecosystem": 4 },
+          "tags": ["runs-on:cloudflare", "pricing:free-tier"]
+        },
+        {
+          "slug": "aws-route53",
+          "name": "Amazon Route 53",
+          "description": "AWS's scalable DNS with health checks, latency-based routing, and pay-as-you-go pricing.",
+          "websiteUrl": "https://aws.amazon.com/route53/",
+          "scores": { "latency": 4, "reliability": 5, "cost": 3, "dx": 4, "ecosystem": 5 }
+        },
+        {
+          "slug": "google-cloud-dns",
+          "name": "Google Cloud DNS",
+          "description": "GCP-native authoritative DNS with 100% uptime SLA and pay-per-query pricing.",
+          "websiteUrl": "https://cloud.google.com/dns",
+          "scores": { "latency": 4, "reliability": 5, "cost": 3, "dx": 3, "ecosystem": 4 }
+        },
+        {
+          "slug": "azure-dns",
+          "name": "Azure DNS",
+          "description": "Microsoft's managed DNS with Alias records that dynamically reference Azure resources.",
+          "websiteUrl": "https://azure.microsoft.com/en-us/products/dns",
+          "scores": { "latency": 4, "reliability": 4, "cost": 3, "dx": 3, "ecosystem": 4 }
+        },
+        {
+          "slug": "ns1",
+          "name": "NS1 Connect (IBM)",
+          "description": "Enterprise DNS with advanced traffic steering, filter chains, and data-driven routing.",
+          "websiteUrl": "https://www.ibm.com/products/ns1-connect",
+          "scores": { "latency": 5, "reliability": 5, "cost": 2, "dx": 4, "ecosystem": 4 }
+        },
+        {
+          "slug": "dnsimple",
+          "name": "DNSimple",
+          "description": "Developer-friendly managed DNS and domain registrar with a clean API and easy record editing.",
+          "websiteUrl": "https://dnsimple.com",
+          "scores": { "latency": 3, "reliability": 4, "cost": 3, "dx": 5, "ecosystem": 3 }
+        },
+        {
+          "slug": "dns-made-easy",
+          "name": "DNS Made Easy",
+          "description": "Long-running business DNS provider known for fast resolution and strong uptime guarantees.",
+          "websiteUrl": "https://dnsmadeeasy.com",
+          "scores": { "latency": 4, "reliability": 5, "cost": 4, "dx": 3, "ecosystem": 3 }
+        },
+        {
+          "slug": "oracle-dyn",
+          "name": "Oracle Dyn DNS",
+          "description": "Enterprise managed DNS (formerly Dyn) with traffic steering inside Oracle Cloud Infrastructure.",
+          "websiteUrl": "https://www.oracle.com/cloud/networking/dns/",
+          "scores": { "latency": 4, "reliability": 5, "cost": 2, "dx": 3, "ecosystem": 3 }
+        },
+        {
+          "slug": "akamai-edge-dns",
+          "name": "Akamai Edge DNS",
+          "description": "Carrier-grade authoritative DNS on Akamai's massive Anycast network with built-in DDoS resilience.",
+          "websiteUrl": "https://www.akamai.com/products/edge-dns",
+          "scores": { "latency": 5, "reliability": 5, "cost": 2, "dx": 3, "ecosystem": 4 }
+        },
+        {
+          "slug": "namecheap-dns",
+          "name": "Namecheap FreeDNS",
+          "description": "Free and premium DNS hosting bundled with Namecheap's popular domain registrar.",
+          "websiteUrl": "https://www.namecheap.com/domains/freedns/",
+          "scores": { "latency": 3, "reliability": 3, "cost": 5, "dx": 3, "ecosystem": 2 },
+          "tags": ["pricing:free-tier"]
+        },
+        {
+          "slug": "bunny-dns",
+          "name": "Bunny DNS",
+          "description": "Low-latency Anycast DNS from Bunny.net with smart geo and latency-based routing.",
+          "websiteUrl": "https://bunny.net/dns/",
+          "scores": { "latency": 4, "reliability": 4, "cost": 5, "dx": 4, "ecosystem": 3 }
+        },
+        {
+          "slug": "desec",
+          "name": "deSEC",
+          "description": "Free, security-focused DNS hosting built on open-source software with DNSSEC by default.",
+          "websiteUrl": "https://desec.io",
+          "scores": { "latency": 3, "reliability": 4, "cost": 5, "dx": 4, "ecosystem": 2 },
+          "tags": ["pricing:free-tier", "self-hostable:yes"]
+        },
+        {
+          "slug": "hurricane-electric-dns",
+          "name": "Hurricane Electric DNS",
+          "description": "Free authoritative DNS hosting from the global IPv6-friendly network operator.",
+          "websiteUrl": "https://dns.he.net",
+          "scores": { "latency": 3, "reliability": 4, "cost": 5, "dx": 2, "ecosystem": 2 },
+          "tags": ["pricing:free-tier"]
+        }
+      ]
+    },
+    {
+      "slug": "secrets-management",
+      "name": "Secrets management",
+      "description": "Platforms for storing, rotating, and distributing secrets and credentials.",
+      "heroCopy": "Security depth, integrations, cost, DX, ecosystem — choose where your keys live.",
+      "aspects": [
+        { "key": "security", "label": "Security", "description": "Encryption model, dynamic secrets, rotation, and audit depth." },
+        { "key": "integrations", "label": "Integrations", "description": "Breadth of cloud, CI/CD, Kubernetes, and SDK connectors." },
+        { "key": "cost", "label": "Cost", "description": "Value relative to price and licensing (5 = great deal)." },
+        { "key": "dx", "label": "Developer experience", "description": "CLI, SDKs, dashboards, and day-to-day ergonomics." },
+        { "key": "ecosystem", "label": "Ecosystem", "description": "Community, tooling, and surrounding platform breadth." }
+      ],
+      "items": [
+        {
+          "slug": "hashicorp-vault",
+          "name": "HashiCorp Vault",
+          "description": "The most mature secrets platform with full dynamic secrets and multi-cloud credential brokering.",
+          "websiteUrl": "https://www.vaultproject.io",
+          "scores": { "security": 5, "integrations": 5, "cost": 3, "dx": 3, "ecosystem": 5 },
+          "tags": ["self-hostable:yes"]
+        },
+        {
+          "slug": "aws-secrets-manager",
+          "name": "AWS Secrets Manager",
+          "description": "AWS-native secrets store with automatic rotation and tight IAM integration.",
+          "websiteUrl": "https://aws.amazon.com/secrets-manager/",
+          "scores": { "security": 4, "integrations": 4, "cost": 3, "dx": 4, "ecosystem": 5 }
+        },
+        {
+          "slug": "azure-key-vault",
+          "name": "Azure Key Vault",
+          "description": "Microsoft's managed vault for secrets, keys, and certificates with HSM-backed options.",
+          "websiteUrl": "https://azure.microsoft.com/en-us/products/key-vault",
+          "scores": { "security": 4, "integrations": 4, "cost": 4, "dx": 3, "ecosystem": 4 }
+        },
+        {
+          "slug": "google-secret-manager",
+          "name": "Google Secret Manager",
+          "description": "GCP-native secret store with versioning, IAM bindings, and rotation notifications.",
+          "websiteUrl": "https://cloud.google.com/secret-manager",
+          "scores": { "security": 4, "integrations": 4, "cost": 4, "dx": 4, "ecosystem": 4 }
+        },
+        {
+          "slug": "doppler",
+          "name": "Doppler",
+          "description": "Developer-first SaaS secrets manager with strong CLI, sync integrations, and access controls.",
+          "websiteUrl": "https://www.doppler.com",
+          "scores": { "security": 4, "integrations": 5, "cost": 3, "dx": 5, "ecosystem": 4 },
+          "tags": ["pricing:free-tier"]
+        },
+        {
+          "slug": "infisical",
+          "name": "Infisical",
+          "description": "Open-source secrets, certificates, and access platform with a Kubernetes operator and CSI driver.",
+          "websiteUrl": "https://infisical.com",
+          "scores": { "security": 4, "integrations": 4, "cost": 5, "dx": 5, "ecosystem": 4 },
+          "tags": ["self-hostable:yes", "pricing:free-tier", "language:typescript"]
+        },
+        {
+          "slug": "akeyless",
+          "name": "Akeyless",
+          "description": "SaaS secrets platform using Distributed Fragments Cryptography so no single party holds a full key.",
+          "websiteUrl": "https://www.akeyless.io",
+          "scores": { "security": 5, "integrations": 5, "cost": 3, "dx": 4, "ecosystem": 4 }
+        },
+        {
+          "slug": "cyberark-conjur",
+          "name": "CyberArk Conjur",
+          "description": "Enterprise secrets management with policy-as-code and deep PAM integration for DevOps workloads.",
+          "websiteUrl": "https://www.conjur.org",
+          "scores": { "security": 5, "integrations": 4, "cost": 2, "dx": 3, "ecosystem": 4 },
+          "tags": ["self-hostable:yes"]
+        },
+        {
+          "slug": "openbao",
+          "name": "OpenBao",
+          "description": "Open-source, community-governed fork of Vault for managing secrets, certificates, and keys.",
+          "websiteUrl": "https://openbao.org",
+          "scores": { "security": 4, "integrations": 4, "cost": 5, "dx": 3, "ecosystem": 3 },
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
+        },
+        {
+          "slug": "1password-secrets",
+          "name": "1Password Secrets Automation",
+          "description": "Extends 1Password into developer secrets with Connect and SDK-based injection.",
+          "websiteUrl": "https://developer.1password.com/docs/secrets-automation/",
+          "scores": { "security": 4, "integrations": 4, "cost": 3, "dx": 5, "ecosystem": 3 }
+        },
+        {
+          "slug": "bitwarden-secrets-manager",
+          "name": "Bitwarden Secrets Manager",
+          "description": "Open-source secrets manager extending Bitwarden with CLI, SDKs, and machine accounts.",
+          "websiteUrl": "https://bitwarden.com/products/secrets-manager/",
+          "scores": { "security": 4, "integrations": 3, "cost": 4, "dx": 4, "ecosystem": 3 },
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
+        },
+        {
+          "slug": "keeper-secrets-manager",
+          "name": "Keeper Secrets Manager",
+          "description": "FedRAMP-authorized, zero-knowledge secrets manager aimed at regulated and enterprise teams.",
+          "websiteUrl": "https://www.keepersecurity.com/secrets-manager.html",
+          "scores": { "security": 5, "integrations": 4, "cost": 3, "dx": 3, "ecosystem": 3 }
+        },
+        {
+          "slug": "sops",
+          "name": "SOPS",
+          "description": "CLI tool that encrypts secrets in-place inside version-controlled YAML, JSON, and ENV files.",
+          "websiteUrl": "https://github.com/getsops/sops",
+          "scores": { "security": 4, "integrations": 3, "cost": 5, "dx": 3, "ecosystem": 4 },
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
+        }
+      ]
+    },
+    {
+      "slug": "search",
+      "name": "Search engines",
+      "description": "Full-text, faceted, and AI search engines and services for apps.",
+      "heroCopy": "Relevance, latency, cost, DX, ecosystem — find the engine that powers your search box.",
+      "aspects": [
+        { "key": "relevance", "label": "Relevance", "description": "Ranking quality, typo tolerance, and semantic/hybrid search." },
+        { "key": "latency", "label": "Latency", "description": "Query speed and responsiveness under load." },
+        { "key": "cost", "label": "Cost", "description": "Value relative to price and scaling economics (5 = great deal)." },
+        { "key": "dx", "label": "Developer experience", "description": "APIs, SDKs, indexing flow, and day-to-day ergonomics." },
+        { "key": "ecosystem", "label": "Ecosystem", "description": "Integrations, plugins, and surrounding platform breadth." }
+      ],
+      "items": [
+        {
+          "slug": "elasticsearch",
+          "name": "Elasticsearch",
+          "description": "The dominant Lucene-based search and analytics engine for full-text, logs, and observability.",
+          "websiteUrl": "https://www.elastic.co/elasticsearch",
+          "scores": { "relevance": 5, "latency": 4, "cost": 3, "dx": 3, "ecosystem": 5 },
+          "tags": ["self-hostable:yes"]
+        },
+        {
+          "slug": "opensearch",
+          "name": "OpenSearch",
+          "description": "Open-source, Apache-licensed fork of Elasticsearch for search, observability, and vector search.",
+          "websiteUrl": "https://opensearch.org",
+          "scores": { "relevance": 4, "latency": 4, "cost": 5, "dx": 3, "ecosystem": 4 },
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
+        },
+        {
+          "slug": "algolia",
+          "name": "Algolia",
+          "description": "Premium hosted search-as-a-service with instant relevance, faceting, and rich analytics.",
+          "websiteUrl": "https://www.algolia.com",
+          "scores": { "relevance": 5, "latency": 5, "cost": 2, "dx": 5, "ecosystem": 5 },
+          "tags": ["pricing:free-tier"]
+        },
+        {
+          "slug": "typesense-search",
+          "name": "Typesense",
+          "description": "Open-source, C++ search engine positioned as an easy, typo-tolerant alternative to Algolia.",
+          "websiteUrl": "https://typesense.org",
+          "scores": { "relevance": 4, "latency": 5, "cost": 5, "dx": 5, "ecosystem": 3 },
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
+        },
+        {
+          "slug": "meilisearch",
+          "name": "Meilisearch",
+          "description": "Open-source, developer-friendly search API with typo tolerance and AI-powered hybrid search.",
+          "websiteUrl": "https://www.meilisearch.com",
+          "scores": { "relevance": 4, "latency": 5, "cost": 5, "dx": 5, "ecosystem": 3 },
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
+        },
+        {
+          "slug": "apache-solr",
+          "name": "Apache Solr",
+          "description": "Mature open-source search platform built on Lucene with faceting and distributed indexing.",
+          "websiteUrl": "https://solr.apache.org",
+          "scores": { "relevance": 4, "latency": 4, "cost": 5, "dx": 2, "ecosystem": 4 },
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
+        },
+        {
+          "slug": "vespa",
+          "name": "Vespa",
+          "description": "Open-source big-data serving engine for large-scale search, ranking, RAG, and recommendation.",
+          "websiteUrl": "https://vespa.ai",
+          "scores": { "relevance": 5, "latency": 4, "cost": 3, "dx": 2, "ecosystem": 3 },
+          "tags": ["self-hostable:yes"]
+        },
+        {
+          "slug": "pinecone-search",
+          "name": "Pinecone",
+          "description": "Fully-managed vector database for low-latency similarity search powering AI and RAG apps.",
+          "websiteUrl": "https://www.pinecone.io",
+          "scores": { "relevance": 4, "latency": 5, "cost": 3, "dx": 5, "ecosystem": 4 },
+          "tags": ["pricing:free-tier"]
+        },
+        {
+          "slug": "weaviate-search",
+          "name": "Weaviate",
+          "description": "Open-source AI-native vector database with hybrid search and built-in vectorizer modules.",
+          "websiteUrl": "https://weaviate.io",
+          "scores": { "relevance": 4, "latency": 4, "cost": 4, "dx": 4, "ecosystem": 4 },
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
+        },
+        {
+          "slug": "qdrant-search",
+          "name": "Qdrant",
+          "description": "Open-source vector search engine written in Rust with fast filtering and a managed cloud.",
+          "websiteUrl": "https://qdrant.tech",
+          "scores": { "relevance": 4, "latency": 5, "cost": 4, "dx": 4, "ecosystem": 4 },
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
+        },
+        {
+          "slug": "coveo",
+          "name": "Coveo",
+          "description": "Enterprise AI search and personalization platform for commerce, service, and workplace.",
+          "websiteUrl": "https://www.coveo.com",
+          "scores": { "relevance": 5, "latency": 4, "cost": 2, "dx": 3, "ecosystem": 4 }
+        },
+        {
+          "slug": "elastic-cloud",
+          "name": "Elastic Cloud",
+          "description": "Managed Elasticsearch service from Elastic with hosted deployments across major clouds.",
+          "websiteUrl": "https://www.elastic.co/cloud",
+          "scores": { "relevance": 5, "latency": 4, "cost": 3, "dx": 4, "ecosystem": 5 },
+          "tags": ["pricing:free-tier"]
+        },
+        {
+          "slug": "aws-opensearch-service",
+          "name": "Amazon OpenSearch Service",
+          "description": "AWS-managed OpenSearch and Elasticsearch with built-in scaling and AWS integrations.",
+          "websiteUrl": "https://aws.amazon.com/opensearch-service/",
+          "scores": { "relevance": 4, "latency": 4, "cost": 3, "dx": 3, "ecosystem": 5 }
+        },
+        {
+          "slug": "typesense-cloud",
+          "name": "Typesense Cloud",
+          "description": "Managed hosting for Typesense with high-availability clusters and zero-ops scaling.",
+          "websiteUrl": "https://cloud.typesense.org",
+          "scores": { "relevance": 4, "latency": 5, "cost": 4, "dx": 5, "ecosystem": 3 }
+        }
+      ]
+    },
+    {
+      "slug": "message-brokers",
+      "name": "Message brokers",
+      "description": "Queues, streaming platforms, and pub/sub systems for moving events between services.",
+      "heroCopy": "Throughput, durability, cost, DX, ecosystem — route your events through the right pipe.",
+      "aspects": [
+        { "key": "throughput", "label": "Throughput", "description": "Sustained message rate and scalability under load." },
+        { "key": "durability", "label": "Durability", "description": "Persistence, replication, and delivery guarantees." },
+        { "key": "cost", "label": "Cost", "description": "Value relative to price and operational overhead (5 = great deal)." },
+        { "key": "dx", "label": "Developer experience", "description": "Client libraries, tooling, and day-to-day ergonomics." },
+        { "key": "ecosystem", "label": "Ecosystem", "description": "Connectors, integrations, and surrounding platform breadth." }
+      ],
+      "items": [
+        {
+          "slug": "apache-kafka",
+          "name": "Apache Kafka",
+          "description": "The dominant distributed event-streaming platform handling pub/sub, storage, and stream processing.",
+          "websiteUrl": "https://kafka.apache.org",
+          "scores": { "throughput": 5, "durability": 5, "cost": 3, "dx": 3, "ecosystem": 5 },
+          "tags": ["self-hostable:yes", "realtime:yes"]
+        },
+        {
+          "slug": "rabbitmq",
+          "name": "RabbitMQ",
+          "description": "Feature-rich, multi-protocol message broker excelling at complex routing and task queues.",
+          "websiteUrl": "https://www.rabbitmq.com",
+          "scores": { "throughput": 3, "durability": 4, "cost": 5, "dx": 4, "ecosystem": 4 },
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
+        },
+        {
+          "slug": "nats",
+          "name": "NATS",
+          "description": "Lightweight, high-performance messaging system with microsecond latency and JetStream persistence.",
+          "websiteUrl": "https://nats.io",
+          "scores": { "throughput": 5, "durability": 4, "cost": 5, "dx": 4, "ecosystem": 3 },
+          "tags": ["self-hostable:yes", "pricing:free-tier", "realtime:yes"]
+        },
+        {
+          "slug": "apache-pulsar",
+          "name": "Apache Pulsar",
+          "description": "Multi-tenant streaming platform with separated serving and storage layers and native geo-replication.",
+          "websiteUrl": "https://pulsar.apache.org",
+          "scores": { "throughput": 5, "durability": 5, "cost": 3, "dx": 3, "ecosystem": 4 },
+          "tags": ["self-hostable:yes", "realtime:yes"]
+        },
+        {
+          "slug": "redpanda",
+          "name": "Redpanda",
+          "description": "Kafka-compatible streaming platform rewritten in C++ with no JVM or ZooKeeper for low latency.",
+          "websiteUrl": "https://www.redpanda.com",
+          "scores": { "throughput": 5, "durability": 4, "cost": 4, "dx": 4, "ecosystem": 4 },
+          "tags": ["self-hostable:yes", "realtime:yes"]
+        },
+        {
+          "slug": "amazon-sqs",
+          "name": "Amazon SQS",
+          "description": "Fully-managed, elastic message queue for decoupling serverless and microservice workloads.",
+          "websiteUrl": "https://aws.amazon.com/sqs/",
+          "scores": { "throughput": 4, "durability": 5, "cost": 4, "dx": 4, "ecosystem": 5 },
+          "tags": ["deploy:serverless", "pricing:free-tier"]
+        },
+        {
+          "slug": "google-pubsub",
+          "name": "Google Cloud Pub/Sub",
+          "description": "Planet-scale managed pub/sub with automatic scaling, global replication, and message replay.",
+          "websiteUrl": "https://cloud.google.com/pubsub",
+          "scores": { "throughput": 5, "durability": 5, "cost": 3, "dx": 4, "ecosystem": 4 },
+          "tags": ["deploy:serverless", "pricing:free-tier", "realtime:yes"]
+        },
+        {
+          "slug": "azure-service-bus",
+          "name": "Azure Service Bus",
+          "description": "Enterprise managed message broker with queues, topics, and sessions, popular in .NET stacks.",
+          "websiteUrl": "https://azure.microsoft.com/en-us/products/service-bus",
+          "scores": { "throughput": 4, "durability": 5, "cost": 3, "dx": 3, "ecosystem": 4 }
+        },
+        {
+          "slug": "confluent-cloud",
+          "name": "Confluent Cloud",
+          "description": "Fully-managed Kafka from Kafka's creators with connectors, ksqlDB, and Stream Governance.",
+          "websiteUrl": "https://www.confluent.io/confluent-cloud/",
+          "scores": { "throughput": 5, "durability": 5, "cost": 2, "dx": 4, "ecosystem": 5 },
+          "tags": ["pricing:free-tier", "realtime:yes"]
+        },
+        {
+          "slug": "activemq",
+          "name": "Apache ActiveMQ",
+          "description": "Mature open-source JMS message broker supporting many protocols and classic enterprise messaging.",
+          "websiteUrl": "https://activemq.apache.org",
+          "scores": { "throughput": 3, "durability": 4, "cost": 5, "dx": 3, "ecosystem": 3 },
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
+        },
+        {
+          "slug": "solace-pubsub",
+          "name": "Solace PubSub+",
+          "description": "Event-mesh broker with wire-speed routing across hybrid and multi-cloud and multi-protocol support.",
+          "websiteUrl": "https://solace.com",
+          "scores": { "throughput": 5, "durability": 5, "cost": 3, "dx": 3, "ecosystem": 4 },
+          "tags": ["self-hostable:yes", "realtime:yes"]
+        },
+        {
+          "slug": "redis-streams",
+          "name": "Redis Streams",
+          "description": "Append-only log data type in Redis providing lightweight, low-latency streaming and consumer groups.",
+          "websiteUrl": "https://redis.io/docs/latest/develop/data-types/streams/",
+          "scores": { "throughput": 4, "durability": 3, "cost": 4, "dx": 4, "ecosystem": 4 },
+          "tags": ["self-hostable:yes", "pricing:free-tier", "realtime:yes"]
+        },
+        {
+          "slug": "eclipse-mosquitto",
+          "name": "Eclipse Mosquitto",
+          "description": "Lightweight open-source MQTT broker for IoT telemetry across millions of intermittent devices.",
+          "websiteUrl": "https://mosquitto.org",
+          "scores": { "throughput": 3, "durability": 3, "cost": 5, "dx": 4, "ecosystem": 3 },
+          "tags": ["self-hostable:yes", "pricing:free-tier", "realtime:yes"]
+        },
+        {
+          "slug": "zeromq",
+          "name": "ZeroMQ",
+          "description": "Brokerless messaging library extending sockets with async queues and multiple messaging patterns.",
+          "websiteUrl": "https://zeromq.org",
+          "scores": { "throughput": 5, "durability": 2, "cost": 5, "dx": 3, "ecosystem": 3 },
+          "tags": ["self-hostable:yes", "pricing:free-tier", "realtime:yes"]
+        }
+      ]
+    }
+  ]
+}

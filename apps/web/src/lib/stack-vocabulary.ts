@@ -77,6 +77,17 @@ export const DIRECTORY_SIGNALS: DirectorySignal[] = [
   { slug: "state-management", keywords: ["state management", "state", "store", "redux", "zustand", "jotai", "global state"] },
   { slug: "ai-agent-frameworks", keywords: ["agent framework", "ai agent", "agents", "autonomous agent", "langchain", "agentic", "tool use"] },
   { slug: "mobile-frameworks", keywords: ["mobile", "mobile app", "ios", "android", "react native", "flutter", "expo", "mobile framework"] },
+  // New categories (web-sourced expansion).
+  { slug: "cdn", keywords: ["cdn", "content delivery", "content delivery network", "edge cache", "edge caching", "asset delivery"] },
+  { slug: "dns", keywords: ["dns", "domain name", "nameserver", "name server", "dns provider", "managed dns"] },
+  { slug: "secrets-management", keywords: ["secrets", "secret management", "secrets manager", "secrets management", "vault", "api keys", "credential management", "credentials manager"] },
+  { slug: "search", keywords: ["search", "full text search", "full-text search", "search engine", "site search", "faceted search", "search api"] },
+  { slug: "message-brokers", keywords: ["message broker", "message brokers", "pub sub", "pubsub", "kafka", "event streaming", "event bus", "streaming platform"] },
+  { slug: "realtime-collaboration", keywords: ["realtime collaboration", "real-time collaboration", "collaborative", "multiplayer", "presence", "live cursors", "realtime sync", "collaboration infrastructure"] },
+  { slug: "notifications", keywords: ["notifications", "push notification", "push notifications", "sms", "in-app notification", "notification service", "notification infrastructure"] },
+  { slug: "data-warehouses", keywords: ["data warehouse", "data warehouses", "warehouse", "olap", "analytical database", "columnar database"] },
+  { slug: "uptime-monitoring", keywords: ["uptime", "uptime monitoring", "status page", "status pages", "synthetic monitoring", "health check", "heartbeat monitoring"] },
+  { slug: "workflow-automation", keywords: ["workflow automation", "automation", "ipaas", "zapier", "no code automation", "no-code automation", "workflow engine", "orchestration platform"] },
 ];
 
 export const ASPECT_SIGNALS: AspectSignal[] = [

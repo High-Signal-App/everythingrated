@@ -1,0 +1,532 @@
+{
+  "deepen": {
+    "hosting": [
+      {
+        "slug": "heroku",
+        "name": "Heroku",
+        "description": "The original git-push PaaS for running web apps, now in a sustaining-engineering phase under Salesforce.",
+        "websiteUrl": "https://www.heroku.com",
+        "scores": { "cold_start": 3, "cost": 2, "dx": 4, "regions": 3, "free_tier": 1 },
+        "tags": []
+      },
+      {
+        "slug": "koyeb",
+        "name": "Koyeb",
+        "description": "Serverless platform that deploys containers and apps across many global regions including GPU instances.",
+        "websiteUrl": "https://www.koyeb.com",
+        "scores": { "cold_start": 4, "cost": 4, "dx": 4, "regions": 5, "free_tier": 4 },
+        "tags": ["deploy:serverless", "pricing:free-tier"]
+      },
+      {
+        "slug": "google-cloud-run",
+        "name": "Google Cloud Run",
+        "description": "Fully managed serverless platform for running containers that scale to zero on Google Cloud.",
+        "websiteUrl": "https://cloud.google.com/run",
+        "scores": { "cold_start": 4, "cost": 4, "dx": 4, "regions": 5, "free_tier": 4 },
+        "tags": ["deploy:serverless", "pricing:free-tier"]
+      },
+      {
+        "slug": "aws-app-runner",
+        "name": "AWS App Runner",
+        "description": "Managed AWS service for deploying containerized web apps and APIs directly from source or images.",
+        "websiteUrl": "https://aws.amazon.com/apprunner",
+        "scores": { "cold_start": 3, "cost": 3, "dx": 3, "regions": 4, "free_tier": 2 },
+        "tags": ["deploy:serverless"]
+      },
+      {
+        "slug": "azure-container-apps",
+        "name": "Azure Container Apps",
+        "description": "Serverless container platform on Azure with scale-to-zero and built-in Dapr and KEDA support.",
+        "websiteUrl": "https://azure.microsoft.com/products/container-apps",
+        "scores": { "cold_start": 3, "cost": 3, "dx": 3, "regions": 5, "free_tier": 3 },
+        "tags": ["deploy:serverless"]
+      },
+      {
+        "slug": "aws-lambda",
+        "name": "AWS Lambda",
+        "description": "Event-driven serverless functions that run code without provisioning servers across AWS regions.",
+        "websiteUrl": "https://aws.amazon.com/lambda",
+        "scores": { "cold_start": 3, "cost": 4, "dx": 3, "regions": 5, "free_tier": 4 },
+        "tags": ["deploy:serverless", "pricing:free-tier"]
+      },
+      {
+        "slug": "scaleway",
+        "name": "Scaleway",
+        "description": "European cloud provider offering serverless containers, functions, and managed app hosting.",
+        "websiteUrl": "https://www.scaleway.com",
+        "scores": { "cold_start": 3, "cost": 4, "dx": 4, "regions": 3, "free_tier": 3 },
+        "tags": ["deploy:serverless", "pricing:free-tier"]
+      },
+      {
+        "slug": "coolify",
+        "name": "Coolify",
+        "description": "Open-source self-hostable PaaS for deploying apps, databases, and services on your own servers.",
+        "websiteUrl": "https://coolify.io",
+        "scores": { "cold_start": 3, "cost": 5, "dx": 4, "regions": 2, "free_tier": 5 },
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
+      },
+      {
+        "slug": "dokploy",
+        "name": "Dokploy",
+        "description": "Open-source self-hostable platform that brings a Vercel-like deploy experience to your own VPS.",
+        "websiteUrl": "https://dokploy.com",
+        "scores": { "cold_start": 3, "cost": 5, "dx": 4, "regions": 2, "free_tier": 5 },
+        "tags": ["self-hostable:yes", "pricing:free-tier", "language:typescript"]
+      },
+      {
+        "slug": "qovery",
+        "name": "Qovery",
+        "description": "Internal developer platform that deploys apps onto your own AWS, GCP, or Azure accounts.",
+        "websiteUrl": "https://www.qovery.com",
+        "scores": { "cold_start": 3, "cost": 3, "dx": 4, "regions": 4, "free_tier": 3 },
+        "tags": []
+      },
+      {
+        "slug": "zeabur",
+        "name": "Zeabur",
+        "description": "Deployment platform that ships any framework or service with autodetected builds and one click.",
+        "websiteUrl": "https://zeabur.com",
+        "scores": { "cold_start": 3, "cost": 4, "dx": 5, "regions": 3, "free_tier": 3 },
+        "tags": ["pricing:free-tier"]
+      },
+      {
+        "slug": "sevalla",
+        "name": "Sevalla",
+        "description": "Kinsta-backed PaaS for hosting apps, databases, and static sites on Google Cloud infrastructure.",
+        "websiteUrl": "https://sevalla.com",
+        "scores": { "cold_start": 3, "cost": 4, "dx": 4, "regions": 4, "free_tier": 3 },
+        "tags": ["pricing:free-tier"]
+      },
+      {
+        "slug": "sliplane",
+        "name": "Sliplane",
+        "description": "Simple container hosting that runs Docker images on dedicated servers with predictable pricing.",
+        "websiteUrl": "https://sliplane.io",
+        "scores": { "cold_start": 3, "cost": 4, "dx": 4, "regions": 2, "free_tier": 2 },
+        "tags": []
+      },
+      {
+        "slug": "vultr",
+        "name": "Vultr",
+        "description": "Independent cloud offering compute, GPU, and app hosting across a broad set of global regions.",
+        "websiteUrl": "https://www.vultr.com",
+        "scores": { "cold_start": 3, "cost": 4, "dx": 3, "regions": 5, "free_tier": 2 },
+        "tags": []
+      },
+      {
+        "slug": "linode",
+        "name": "Akamai Linode",
+        "description": "Developer-friendly cloud compute and app hosting now backed by Akamai's edge network.",
+        "websiteUrl": "https://www.linode.com",
+        "scores": { "cold_start": 3, "cost": 4, "dx": 4, "regions": 4, "free_tier": 2 },
+        "tags": []
+      },
+      {
+        "slug": "platform-sh",
+        "name": "Platform.sh",
+        "description": "Git-driven PaaS that builds immutable application environments from a single config file.",
+        "websiteUrl": "https://platform.sh",
+        "scores": { "cold_start": 3, "cost": 2, "dx": 4, "regions": 4, "free_tier": 1 },
+        "tags": []
+      },
+      {
+        "slug": "kinsta",
+        "name": "Kinsta",
+        "description": "Managed application, database, and WordPress hosting built on Google Cloud's premium network.",
+        "websiteUrl": "https://kinsta.com",
+        "scores": { "cold_start": 3, "cost": 3, "dx": 4, "regions": 5, "free_tier": 2 },
+        "tags": []
+      }
+    ],
+    "ci-cd": [
+      {
+        "slug": "bitbucket-pipelines",
+        "name": "Bitbucket Pipelines",
+        "description": "CI/CD built directly into Atlassian Bitbucket repositories with YAML pipeline configuration.",
+        "websiteUrl": "https://bitbucket.org/product/features/pipelines",
+        "scores": { "speed": 3, "caching": 3, "config_dx": 4, "ecosystem": 3, "cost": 4 },
+        "tags": ["pricing:free-tier"]
+      },
+      {
+        "slug": "azure-devops",
+        "name": "Azure Pipelines",
+        "description": "Microsoft's cloud CI/CD service within Azure DevOps with multi-platform agents and YAML pipelines.",
+        "websiteUrl": "https://azure.microsoft.com/products/devops/pipelines",
+        "scores": { "speed": 4, "caching": 3, "config_dx": 4, "ecosystem": 5, "cost": 4 },
+        "tags": ["pricing:free-tier"]
+      },
+      {
+        "slug": "teamcity",
+        "name": "TeamCity",
+        "description": "JetBrains CI/CD server with intelligent build chains, parallel execution, and a free tier for small teams.",
+        "websiteUrl": "https://www.jetbrains.com/teamcity",
+        "scores": { "speed": 4, "caching": 5, "config_dx": 4, "ecosystem": 4, "cost": 4 },
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
+      },
+      {
+        "slug": "drone-ci",
+        "name": "Drone CI",
+        "description": "Container-native CI/CD platform that runs every pipeline step inside an isolated Docker container.",
+        "websiteUrl": "https://www.drone.io",
+        "scores": { "speed": 4, "caching": 3, "config_dx": 4, "ecosystem": 3, "cost": 5 },
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
+      },
+      {
+        "slug": "concourse-ci",
+        "name": "Concourse CI",
+        "description": "Open-source pipelines-as-code system built around resources, jobs, and reproducible containers.",
+        "websiteUrl": "https://concourse-ci.org",
+        "scores": { "speed": 4, "caching": 3, "config_dx": 3, "ecosystem": 3, "cost": 5 },
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
+      },
+      {
+        "slug": "argo-cd",
+        "name": "Argo CD",
+        "description": "Declarative GitOps continuous delivery tool for deploying applications to Kubernetes clusters.",
+        "websiteUrl": "https://argo-cd.readthedocs.io",
+        "scores": { "speed": 4, "caching": 3, "config_dx": 3, "ecosystem": 4, "cost": 5 },
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
+      },
+      {
+        "slug": "dagger",
+        "name": "Dagger",
+        "description": "Programmable CI/CD engine where pipelines are written as code and run as portable containers.",
+        "websiteUrl": "https://dagger.io",
+        "scores": { "speed": 4, "caching": 5, "config_dx": 4, "ecosystem": 3, "cost": 5 },
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
+      },
+      {
+        "slug": "gocd",
+        "name": "GoCD",
+        "description": "Open-source CI/CD server from Thoughtworks focused on modeling complex pipelines and value-stream maps.",
+        "websiteUrl": "https://www.gocd.org",
+        "scores": { "speed": 3, "caching": 3, "config_dx": 3, "ecosystem": 3, "cost": 5 },
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
+      },
+      {
+        "slug": "octopus-deploy",
+        "name": "Octopus Deploy",
+        "description": "Release orchestration and deployment automation platform spanning cloud, on-prem, and Kubernetes targets.",
+        "websiteUrl": "https://octopus.com",
+        "scores": { "speed": 4, "caching": 3, "config_dx": 4, "ecosystem": 4, "cost": 3 },
+        "tags": ["self-hostable:yes"]
+      },
+      {
+        "slug": "spacelift",
+        "name": "Spacelift",
+        "description": "CI/CD platform specialized for infrastructure-as-code with policy guardrails across Terraform and more.",
+        "websiteUrl": "https://spacelift.io",
+        "scores": { "speed": 4, "caching": 4, "config_dx": 4, "ecosystem": 4, "cost": 3 },
+        "tags": ["pricing:free-tier"]
+      },
+      {
+        "slug": "harness",
+        "name": "Harness",
+        "description": "AI-assisted software delivery platform covering CI, CD, feature flags, and deployment verification.",
+        "websiteUrl": "https://www.harness.io",
+        "scores": { "speed": 4, "caching": 4, "config_dx": 4, "ecosystem": 4, "cost": 3 },
+        "tags": ["pricing:free-tier"]
+      },
+      {
+        "slug": "flux-cd",
+        "name": "Flux CD",
+        "description": "CNCF GitOps toolkit that keeps Kubernetes clusters synchronized with declarative config in Git.",
+        "websiteUrl": "https://fluxcd.io",
+        "scores": { "speed": 4, "caching": 3, "config_dx": 3, "ecosystem": 4, "cost": 5 },
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
+      },
+      {
+        "slug": "tekton",
+        "name": "Tekton",
+        "description": "Kubernetes-native open-source framework for building CI/CD pipelines as custom resources.",
+        "websiteUrl": "https://tekton.dev",
+        "scores": { "speed": 3, "caching": 3, "config_dx": 3, "ecosystem": 4, "cost": 5 },
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
+      },
+      {
+        "slug": "depot",
+        "name": "Depot",
+        "description": "Remote build acceleration service for fast Docker image builds and cached GitHub Actions runners.",
+        "websiteUrl": "https://depot.dev",
+        "scores": { "speed": 5, "caching": 5, "config_dx": 4, "ecosystem": 3, "cost": 4 },
+        "tags": ["pricing:free-tier"]
+      },
+      {
+        "slug": "mergify",
+        "name": "Mergify",
+        "description": "Merge queue and CI optimization platform that automates pull-request batching and flaky-test handling.",
+        "websiteUrl": "https://mergify.com",
+        "scores": { "speed": 4, "caching": 3, "config_dx": 4, "ecosystem": 4, "cost": 4 },
+        "tags": ["pricing:free-tier"]
+      },
+      {
+        "slug": "garden",
+        "name": "Garden",
+        "description": "Platform that spins up production-like environments on demand for development, testing, and CI with aggressive caching.",
+        "websiteUrl": "https://garden.io",
+        "scores": { "speed": 4, "caching": 5, "config_dx": 3, "ecosystem": 3, "cost": 4 },
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
+      }
+    ],
+    "queues-and-jobs": [
+      {
+        "slug": "rabbitmq",
+        "name": "RabbitMQ",
+        "description": "Mature open-source message broker supporting AMQP and multiple protocols for reliable delivery.",
+        "websiteUrl": "https://www.rabbitmq.com",
+        "scores": { "reliability": 5, "retry_controls": 4, "latency": 4, "dx": 3, "cost": 5 },
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
+      },
+      {
+        "slug": "apache-kafka",
+        "name": "Apache Kafka",
+        "description": "Distributed event-streaming platform for high-throughput, durable, partitioned message logs.",
+        "websiteUrl": "https://kafka.apache.org",
+        "scores": { "reliability": 5, "retry_controls": 3, "latency": 4, "dx": 2, "cost": 4 },
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
+      },
+      {
+        "slug": "nats",
+        "name": "NATS",
+        "description": "Lightweight high-performance messaging system with JetStream persistence for streams and queues.",
+        "websiteUrl": "https://nats.io",
+        "scores": { "reliability": 4, "retry_controls": 4, "latency": 5, "dx": 4, "cost": 5 },
+        "tags": ["self-hostable:yes", "pricing:free-tier", "realtime:yes"]
+      },
+      {
+        "slug": "redpanda",
+        "name": "Redpanda",
+        "description": "Kafka-compatible streaming platform written in C++ that runs without the JVM or ZooKeeper.",
+        "websiteUrl": "https://www.redpanda.com",
+        "scores": { "reliability": 5, "retry_controls": 3, "latency": 5, "dx": 4, "cost": 4 },
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
+      },
+      {
+        "slug": "celery",
+        "name": "Celery",
+        "description": "Distributed task queue for Python that runs background jobs against Redis or RabbitMQ brokers.",
+        "websiteUrl": "https://docs.celeryq.dev",
+        "scores": { "reliability": 4, "retry_controls": 4, "latency": 4, "dx": 3, "cost": 5 },
+        "tags": ["self-hostable:yes", "pricing:free-tier", "language:python"]
+      },
+      {
+        "slug": "sidekiq",
+        "name": "Sidekiq",
+        "description": "Redis-backed background job processor for Ruby with a fast multithreaded worker model.",
+        "websiteUrl": "https://sidekiq.org",
+        "scores": { "reliability": 4, "retry_controls": 5, "latency": 5, "dx": 4, "cost": 4 },
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
+      },
+      {
+        "slug": "faktory",
+        "name": "Faktory",
+        "description": "Language-agnostic background job server from Sidekiq's author with a web UI and retries.",
+        "websiteUrl": "https://contribsys.com/faktory",
+        "scores": { "reliability": 4, "retry_controls": 5, "latency": 4, "dx": 4, "cost": 4 },
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
+      },
+      {
+        "slug": "hangfire",
+        "name": "Hangfire",
+        "description": "Background job library for .NET that persists jobs to SQL Server or Redis with a dashboard.",
+        "websiteUrl": "https://www.hangfire.io",
+        "scores": { "reliability": 4, "retry_controls": 4, "latency": 4, "dx": 4, "cost": 5 },
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
+      },
+      {
+        "slug": "apache-airflow",
+        "name": "Apache Airflow",
+        "description": "Workflow orchestration platform that schedules and monitors DAG-based data pipelines in Python.",
+        "websiteUrl": "https://airflow.apache.org",
+        "scores": { "reliability": 4, "retry_controls": 4, "latency": 2, "dx": 3, "cost": 5 },
+        "tags": ["self-hostable:yes", "pricing:free-tier", "language:python"]
+      },
+      {
+        "slug": "prefect",
+        "name": "Prefect",
+        "description": "Python-native workflow orchestration with dynamic flows and a hybrid cloud execution model.",
+        "websiteUrl": "https://www.prefect.io",
+        "scores": { "reliability": 4, "retry_controls": 5, "latency": 3, "dx": 5, "cost": 4 },
+        "tags": ["self-hostable:yes", "pricing:free-tier", "language:python"]
+      },
+      {
+        "slug": "dagster",
+        "name": "Dagster",
+        "description": "Asset-centric data orchestrator that models pipelines around the data assets they produce.",
+        "websiteUrl": "https://dagster.io",
+        "scores": { "reliability": 4, "retry_controls": 4, "latency": 3, "dx": 5, "cost": 4 },
+        "tags": ["self-hostable:yes", "pricing:free-tier", "language:python"]
+      },
+      {
+        "slug": "graphile-worker",
+        "name": "Graphile Worker",
+        "description": "High-performance Postgres-backed job queue for Node.js with no extra infrastructure required.",
+        "websiteUrl": "https://worker.graphile.org",
+        "scores": { "reliability": 4, "retry_controls": 4, "latency": 5, "dx": 4, "cost": 5 },
+        "tags": ["self-hostable:yes", "pricing:free-tier", "language:typescript"]
+      },
+      {
+        "slug": "river-queue",
+        "name": "River",
+        "description": "Robust Postgres-backed background job queue for Go with transactional enqueueing.",
+        "websiteUrl": "https://riverqueue.com",
+        "scores": { "reliability": 4, "retry_controls": 4, "latency": 5, "dx": 4, "cost": 5 },
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
+      },
+      {
+        "slug": "google-cloud-tasks",
+        "name": "Google Cloud Tasks",
+        "description": "Managed Google Cloud service for dispatching, scheduling, and retrying asynchronous HTTP tasks.",
+        "websiteUrl": "https://cloud.google.com/tasks",
+        "scores": { "reliability": 5, "retry_controls": 4, "latency": 4, "dx": 3, "cost": 4 },
+        "tags": ["deploy:serverless", "pricing:free-tier"]
+      },
+      {
+        "slug": "google-pubsub",
+        "name": "Google Cloud Pub/Sub",
+        "description": "Serverless global messaging service for event ingestion and asynchronous delivery on Google Cloud.",
+        "websiteUrl": "https://cloud.google.com/pubsub",
+        "scores": { "reliability": 5, "retry_controls": 4, "latency": 4, "dx": 3, "cost": 4 },
+        "tags": ["deploy:serverless", "pricing:free-tier", "realtime:yes"]
+      },
+      {
+        "slug": "windmill",
+        "name": "Windmill",
+        "description": "Open-source developer platform for turning scripts into scheduled jobs, workflows, and internal apps.",
+        "websiteUrl": "https://www.windmill.dev",
+        "scores": { "reliability": 4, "retry_controls": 4, "latency": 4, "dx": 5, "cost": 5 },
+        "tags": ["self-hostable:yes", "pricing:free-tier", "language:typescript", "language:python"]
+      }
+    ],
+    "observability": [
+      {
+        "slug": "prometheus",
+        "name": "Prometheus",
+        "description": "Open-source metrics monitoring system with a pull model, PromQL, and built-in alerting.",
+        "websiteUrl": "https://prometheus.io",
+        "scores": { "signal_quality": 4, "query_speed": 4, "alerting": 4, "cost": 5, "integrations": 5 },
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
+      },
+      {
+        "slug": "opentelemetry",
+        "name": "OpenTelemetry",
+        "description": "Vendor-neutral CNCF standard and SDKs for collecting metrics, logs, and traces across languages.",
+        "websiteUrl": "https://opentelemetry.io",
+        "scores": { "signal_quality": 4, "query_speed": 3, "alerting": 2, "cost": 5, "integrations": 5 },
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
+      },
+      {
+        "slug": "grafana-loki",
+        "name": "Grafana Loki",
+        "description": "Horizontally scalable log aggregation system that indexes labels rather than full log content.",
+        "websiteUrl": "https://grafana.com/oss/loki",
+        "scores": { "signal_quality": 4, "query_speed": 4, "alerting": 4, "cost": 5, "integrations": 4 },
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
+      },
+      {
+        "slug": "signoz",
+        "name": "SigNoz",
+        "description": "Open-source OpenTelemetry-native platform unifying logs, metrics, and traces in one product.",
+        "websiteUrl": "https://signoz.io",
+        "scores": { "signal_quality": 4, "query_speed": 4, "alerting": 3, "cost": 5, "integrations": 4 },
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
+      },
+      {
+        "slug": "uptrace",
+        "name": "Uptrace",
+        "description": "Lightweight OpenTelemetry-native observability tool for traces, metrics, logs, and service maps.",
+        "websiteUrl": "https://uptrace.dev",
+        "scores": { "signal_quality": 3, "query_speed": 4, "alerting": 3, "cost": 5, "integrations": 3 },
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
+      },
+      {
+        "slug": "openobserve",
+        "name": "OpenObserve",
+        "description": "Open-source observability platform optimized for low-cost long-term log, metric, and trace storage.",
+        "websiteUrl": "https://openobserve.ai",
+        "scores": { "signal_quality": 3, "query_speed": 4, "alerting": 3, "cost": 5, "integrations": 4 },
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
+      },
+      {
+        "slug": "dynatrace",
+        "name": "Dynatrace",
+        "description": "Enterprise observability and AIOps platform with automatic discovery and Davis AI root-cause analysis.",
+        "websiteUrl": "https://www.dynatrace.com",
+        "scores": { "signal_quality": 5, "query_speed": 5, "alerting": 5, "cost": 2, "integrations": 5 },
+        "tags": []
+      },
+      {
+        "slug": "splunk-observability",
+        "name": "Splunk Observability Cloud",
+        "description": "Cisco-owned full-fidelity observability suite for metrics, traces, logs, and incident response.",
+        "websiteUrl": "https://www.splunk.com/en_us/products/observability.html",
+        "scores": { "signal_quality": 5, "query_speed": 5, "alerting": 5, "cost": 2, "integrations": 5 },
+        "tags": []
+      },
+      {
+        "slug": "elastic-observability",
+        "name": "Elastic Observability",
+        "description": "Observability built on the Elastic Stack for logs, metrics, APM, and traces with powerful search.",
+        "websiteUrl": "https://www.elastic.co/observability",
+        "scores": { "signal_quality": 4, "query_speed": 4, "alerting": 4, "cost": 3, "integrations": 5 },
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
+      },
+      {
+        "slug": "chronosphere",
+        "name": "Chronosphere",
+        "description": "Cloud-native observability platform built for high-cardinality metrics and control over telemetry cost.",
+        "websiteUrl": "https://chronosphere.io",
+        "scores": { "signal_quality": 5, "query_speed": 5, "alerting": 4, "cost": 3, "integrations": 4 },
+        "tags": []
+      },
+      {
+        "slug": "coralogix",
+        "name": "Coralogix",
+        "description": "Full-stack observability platform with in-stream processing and indexless customer-owned storage.",
+        "websiteUrl": "https://coralogix.com",
+        "scores": { "signal_quality": 4, "query_speed": 5, "alerting": 4, "cost": 4, "integrations": 4 },
+        "tags": []
+      },
+      {
+        "slug": "logzio",
+        "name": "Logz.io",
+        "description": "Managed open-source-based observability for logs, metrics, and traces on a cloud SaaS platform.",
+        "websiteUrl": "https://logz.io",
+        "scores": { "signal_quality": 4, "query_speed": 4, "alerting": 4, "cost": 3, "integrations": 4 },
+        "tags": []
+      },
+      {
+        "slug": "sumo-logic",
+        "name": "Sumo Logic",
+        "description": "Cloud-native log analytics and observability platform combining metrics, logs, and traces.",
+        "websiteUrl": "https://www.sumologic.com",
+        "scores": { "signal_quality": 4, "query_speed": 4, "alerting": 4, "cost": 3, "integrations": 4 },
+        "tags": []
+      },
+      {
+        "slug": "last9",
+        "name": "Last9",
+        "description": "OpenTelemetry-native observability platform focused on controlling high-cardinality telemetry cost.",
+        "websiteUrl": "https://last9.io",
+        "scores": { "signal_quality": 4, "query_speed": 4, "alerting": 3, "cost": 5, "integrations": 3 },
+        "tags": []
+      },
+      {
+        "slug": "highlight-io",
+        "name": "Highlight.io",
+        "description": "Open-source full-stack monitoring with session replay, error tracking, logs, and traces.",
+        "websiteUrl": "https://www.highlight.io",
+        "scores": { "signal_quality": 4, "query_speed": 4, "alerting": 3, "cost": 4, "integrations": 4 },
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
+      },
+      {
+        "slug": "appsignal",
+        "name": "AppSignal",
+        "description": "Application performance monitoring and error tracking with a focus on simplicity and clear pricing.",
+        "websiteUrl": "https://www.appsignal.com",
+        "scores": { "signal_quality": 4, "query_speed": 4, "alerting": 4, "cost": 4, "integrations": 3 },
+        "tags": ["pricing:free-tier"]
+      }
+    ]
+  }
+}

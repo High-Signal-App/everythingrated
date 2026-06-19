@@ -1,0 +1,354 @@
+{
+  "deepen": {
+    "headless-cms": [
+      {
+        "slug": "tinacms",
+        "name": "TinaCMS",
+        "description": "Open-source Git-backed headless CMS with visual editing for Markdown and structured content.",
+        "websiteUrl": "https://tina.io",
+        "scores": { "dx": 4, "content_modeling": 4, "performance": 4, "cost": 5, "ecosystem": 3 },
+        "tags": ["self-hostable:yes", "pricing:free-tier", "language:typescript"]
+      },
+      {
+        "slug": "builder-io",
+        "name": "Builder.io",
+        "description": "Visual headless CMS with drag-and-drop page building and component bindings for any framework.",
+        "websiteUrl": "https://www.builder.io",
+        "scores": { "dx": 4, "content_modeling": 4, "performance": 4, "cost": 3, "ecosystem": 4 },
+        "tags": ["pricing:free-tier"]
+      },
+      {
+        "slug": "cosmic",
+        "name": "Cosmic",
+        "description": "AI-native headless CMS pairing content management with code generation and AI agents.",
+        "websiteUrl": "https://www.cosmicjs.com",
+        "scores": { "dx": 4, "content_modeling": 4, "performance": 4, "cost": 4, "ecosystem": 3 },
+        "tags": ["pricing:free-tier"]
+      },
+      {
+        "slug": "prismic",
+        "name": "Prismic",
+        "description": "Cloud headless CMS built around reusable Slices and a page builder optimized for JS frameworks.",
+        "websiteUrl": "https://prismic.io",
+        "scores": { "dx": 4, "content_modeling": 4, "performance": 5, "cost": 3, "ecosystem": 4 },
+        "tags": ["pricing:free-tier"]
+      },
+      {
+        "slug": "ghost",
+        "name": "Ghost",
+        "description": "Open-source publishing platform for blogs, newsletters, and memberships with a headless content API.",
+        "websiteUrl": "https://ghost.org",
+        "scores": { "dx": 4, "content_modeling": 3, "performance": 4, "cost": 4, "ecosystem": 4 },
+        "tags": []
+      },
+      {
+        "slug": "datocms",
+        "name": "DatoCMS",
+        "description": "GraphQL-first headless CMS with structured content, image CDN, and localization.",
+        "websiteUrl": "https://www.datocms.com",
+        "scores": { "dx": 4, "content_modeling": 5, "performance": 5, "cost": 3, "ecosystem": 4 },
+        "tags": ["pricing:free-tier"]
+      },
+      {
+        "slug": "kontent-ai",
+        "name": "Kontent.ai",
+        "description": "Enterprise content-as-a-service platform with modular content and governance workflows.",
+        "websiteUrl": "https://kontent.ai",
+        "scores": { "dx": 4, "content_modeling": 5, "performance": 4, "cost": 2, "ecosystem": 4 },
+        "tags": []
+      },
+      {
+        "slug": "umbraco-heartcore",
+        "name": "Umbraco Heartcore",
+        "description": "Headless CMS built on the open-source Umbraco platform for .NET-based omnichannel delivery.",
+        "websiteUrl": "https://umbraco.com/products/umbraco-heartcore",
+        "scores": { "dx": 3, "content_modeling": 4, "performance": 4, "cost": 3, "ecosystem": 3 },
+        "tags": []
+      },
+      {
+        "slug": "contentstack",
+        "name": "Contentstack",
+        "description": "Enterprise composable headless CMS with workflows, automation, and a digital experience platform.",
+        "websiteUrl": "https://www.contentstack.com",
+        "scores": { "dx": 4, "content_modeling": 5, "performance": 5, "cost": 2, "ecosystem": 4 },
+        "tags": []
+      },
+      {
+        "slug": "webiny",
+        "name": "Webiny",
+        "description": "Open-source serverless headless CMS and app framework that self-hosts on AWS.",
+        "websiteUrl": "https://www.webiny.com",
+        "scores": { "dx": 3, "content_modeling": 4, "performance": 4, "cost": 4, "ecosystem": 3 },
+        "tags": ["self-hostable:yes", "deploy:serverless"]
+      },
+      {
+        "slug": "wordpress-rest",
+        "name": "WordPress (Headless)",
+        "description": "The dominant CMS used headlessly via its REST and WPGraphQL APIs for decoupled front ends.",
+        "websiteUrl": "https://wordpress.org",
+        "scores": { "dx": 3, "content_modeling": 3, "performance": 3, "cost": 5, "ecosystem": 5 },
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
+      },
+      {
+        "slug": "statamic",
+        "name": "Statamic",
+        "description": "Flat-file Laravel-based CMS that serves content headlessly with a Git-friendly workflow.",
+        "websiteUrl": "https://statamic.com",
+        "scores": { "dx": 4, "content_modeling": 4, "performance": 4, "cost": 4, "ecosystem": 3 },
+        "tags": []
+      },
+      {
+        "slug": "plasmic",
+        "name": "Plasmic",
+        "description": "Visual page and component builder with a headless CMS and code-component integration.",
+        "websiteUrl": "https://www.plasmic.app",
+        "scores": { "dx": 4, "content_modeling": 3, "performance": 4, "cost": 4, "ecosystem": 3 },
+        "tags": ["pricing:free-tier"]
+      },
+      {
+        "slug": "sitecore-xm-cloud",
+        "name": "Sitecore XM Cloud",
+        "description": "Sitecore's SaaS headless CMS and composable DXP for enterprise digital experiences.",
+        "websiteUrl": "https://www.sitecore.com/products/xm-cloud",
+        "scores": { "dx": 3, "content_modeling": 5, "performance": 4, "cost": 1, "ecosystem": 4 },
+        "tags": []
+      }
+    ],
+    "api-frameworks": [
+      {
+        "slug": "fastapi",
+        "name": "FastAPI",
+        "description": "Modern async Python framework with Pydantic validation and automatic OpenAPI docs.",
+        "websiteUrl": "https://fastapi.tiangolo.com",
+        "scores": { "performance": 4, "dx": 5, "type_safety": 4, "ecosystem": 5, "learning_curve": 5 },
+        "tags": ["language:python"]
+      },
+      {
+        "slug": "django",
+        "name": "Django",
+        "description": "Batteries-included Python framework; Django REST Framework powers full-featured APIs.",
+        "websiteUrl": "https://www.djangoproject.com",
+        "scores": { "performance": 3, "dx": 4, "type_safety": 2, "ecosystem": 5, "learning_curve": 3 },
+        "tags": ["language:python"]
+      },
+      {
+        "slug": "flask",
+        "name": "Flask",
+        "description": "Minimal WSGI Python microframework that stays out of the way for small APIs and prototypes.",
+        "websiteUrl": "https://flask.palletsprojects.com",
+        "scores": { "performance": 3, "dx": 4, "type_safety": 2, "ecosystem": 5, "learning_curve": 5 },
+        "tags": ["language:python"]
+      },
+      {
+        "slug": "litestar",
+        "name": "Litestar",
+        "description": "Performance-focused Python ASGI framework with built-in DI, validation, and OpenAPI.",
+        "websiteUrl": "https://litestar.dev",
+        "scores": { "performance": 4, "dx": 5, "type_safety": 4, "ecosystem": 3, "learning_curve": 4 },
+        "tags": ["language:python"]
+      },
+      {
+        "slug": "gin",
+        "name": "Gin",
+        "description": "Fast minimalist Go HTTP framework with a Martini-like API for building REST services.",
+        "websiteUrl": "https://gin-gonic.com",
+        "scores": { "performance": 5, "dx": 4, "type_safety": 4, "ecosystem": 4, "learning_curve": 4 },
+        "tags": []
+      },
+      {
+        "slug": "fiber",
+        "name": "Fiber",
+        "description": "Express-inspired Go web framework built on fasthttp for high-throughput APIs.",
+        "websiteUrl": "https://gofiber.io",
+        "scores": { "performance": 5, "dx": 4, "type_safety": 4, "ecosystem": 3, "learning_curve": 5 },
+        "tags": []
+      },
+      {
+        "slug": "echo",
+        "name": "Echo",
+        "description": "High-performance minimalist Go framework with routing, middleware, and data binding.",
+        "websiteUrl": "https://echo.labstack.com",
+        "scores": { "performance": 5, "dx": 4, "type_safety": 4, "ecosystem": 3, "learning_curve": 4 },
+        "tags": []
+      },
+      {
+        "slug": "chi",
+        "name": "chi",
+        "description": "Lightweight idiomatic Go router built on the standard library net/http interfaces.",
+        "websiteUrl": "https://go-chi.io",
+        "scores": { "performance": 4, "dx": 4, "type_safety": 3, "ecosystem": 3, "learning_curve": 4 },
+        "tags": []
+      },
+      {
+        "slug": "axum",
+        "name": "Axum",
+        "description": "Ergonomic Rust web framework from the Tokio team with Tower middleware compatibility.",
+        "websiteUrl": "https://github.com/tokio-rs/axum",
+        "scores": { "performance": 5, "dx": 4, "type_safety": 5, "ecosystem": 4, "learning_curve": 3 },
+        "tags": []
+      },
+      {
+        "slug": "actix-web",
+        "name": "Actix Web",
+        "description": "Extremely fast Rust web framework built on an actor model for maximum throughput.",
+        "websiteUrl": "https://actix.rs",
+        "scores": { "performance": 5, "dx": 3, "type_safety": 5, "ecosystem": 4, "learning_curve": 2 },
+        "tags": []
+      },
+      {
+        "slug": "rocket",
+        "name": "Rocket",
+        "description": "Rust web framework focused on developer happiness with type-safe, declarative routing.",
+        "websiteUrl": "https://rocket.rs",
+        "scores": { "performance": 4, "dx": 4, "type_safety": 5, "ecosystem": 3, "learning_curve": 3 },
+        "tags": []
+      },
+      {
+        "slug": "spring-boot",
+        "name": "Spring Boot",
+        "description": "Convention-driven Java framework with the largest enterprise ecosystem for production APIs.",
+        "websiteUrl": "https://spring.io/projects/spring-boot",
+        "scores": { "performance": 4, "dx": 4, "type_safety": 5, "ecosystem": 5, "learning_curve": 2 },
+        "tags": []
+      },
+      {
+        "slug": "laravel",
+        "name": "Laravel",
+        "description": "Expressive full-stack PHP framework with Eloquent ORM and first-class API tooling.",
+        "websiteUrl": "https://laravel.com",
+        "scores": { "performance": 3, "dx": 5, "type_safety": 3, "ecosystem": 5, "learning_curve": 4 },
+        "tags": []
+      },
+      {
+        "slug": "rails",
+        "name": "Ruby on Rails",
+        "description": "Convention-over-configuration Ruby framework with an API-only mode for backend services.",
+        "websiteUrl": "https://rubyonrails.org",
+        "scores": { "performance": 3, "dx": 5, "type_safety": 2, "ecosystem": 5, "learning_curve": 3 },
+        "tags": []
+      },
+      {
+        "slug": "phoenix",
+        "name": "Phoenix",
+        "description": "Elixir framework on the BEAM with channels and LiveView for realtime, concurrent APIs.",
+        "websiteUrl": "https://www.phoenixframework.org",
+        "scores": { "performance": 5, "dx": 4, "type_safety": 3, "ecosystem": 3, "learning_curve": 3 },
+        "tags": ["realtime:yes"]
+      },
+      {
+        "slug": "aspnet-core",
+        "name": "ASP.NET Core",
+        "description": "Microsoft's high-performance cross-platform .NET framework for web APIs and services.",
+        "websiteUrl": "https://dotnet.microsoft.com/apps/aspnet",
+        "scores": { "performance": 5, "dx": 4, "type_safety": 5, "ecosystem": 5, "learning_curve": 3 },
+        "tags": []
+      },
+      {
+        "slug": "django-ninja",
+        "name": "Django Ninja",
+        "description": "FastAPI-style async API layer for Django using Python type hints and Pydantic.",
+        "websiteUrl": "https://django-ninja.dev",
+        "scores": { "performance": 4, "dx": 5, "type_safety": 4, "ecosystem": 4, "learning_curve": 4 },
+        "tags": ["language:python"]
+      },
+      {
+        "slug": "go-kit",
+        "name": "Go kit",
+        "description": "Toolkit of composable packages for building robust microservices in Go.",
+        "websiteUrl": "https://gokit.io",
+        "scores": { "performance": 4, "dx": 3, "type_safety": 4, "ecosystem": 3, "learning_curve": 3 },
+        "tags": []
+      }
+    ],
+    "mobile-frameworks": [
+      {
+        "slug": "ionic",
+        "name": "Ionic",
+        "description": "Web-based UI toolkit for hybrid apps using Angular, React, or Vue, shipped via Capacitor.",
+        "websiteUrl": "https://ionicframework.com",
+        "scores": { "performance": 3, "dx": 5, "ecosystem": 4, "ui_quality": 3, "deploy_speed": 4 },
+        "tags": []
+      },
+      {
+        "slug": "lynx",
+        "name": "Lynx",
+        "description": "ByteDance's Rust-powered cross-platform framework with a dual-thread React-style runtime.",
+        "websiteUrl": "https://lynxjs.org",
+        "scores": { "performance": 5, "dx": 4, "ecosystem": 2, "ui_quality": 4, "deploy_speed": 3 },
+        "tags": []
+      },
+      {
+        "slug": "unity",
+        "name": "Unity",
+        "description": "Cross-platform engine for games and interactive 3D apps that ships to iOS, Android, and beyond.",
+        "websiteUrl": "https://unity.com",
+        "scores": { "performance": 5, "dx": 4, "ecosystem": 5, "ui_quality": 4, "deploy_speed": 3 },
+        "tags": []
+      },
+      {
+        "slug": "apache-cordova",
+        "name": "Apache Cordova",
+        "description": "Open-source framework wrapping web apps in a native WebView container for mobile.",
+        "websiteUrl": "https://cordova.apache.org",
+        "scores": { "performance": 2, "dx": 3, "ecosystem": 3, "ui_quality": 2, "deploy_speed": 3 },
+        "tags": []
+      },
+      {
+        "slug": "uno-platform",
+        "name": "Uno Platform",
+        "description": "Cross-platform .NET UI framework running C# and XAML on mobile, web, and desktop.",
+        "websiteUrl": "https://platform.uno",
+        "scores": { "performance": 4, "dx": 3, "ecosystem": 3, "ui_quality": 4, "deploy_speed": 3 },
+        "tags": []
+      },
+      {
+        "slug": "quasar",
+        "name": "Quasar",
+        "description": "Vue-based framework that builds mobile, PWA, desktop, and web apps from one codebase.",
+        "websiteUrl": "https://quasar.dev",
+        "scores": { "performance": 3, "dx": 4, "ecosystem": 3, "ui_quality": 3, "deploy_speed": 4 },
+        "tags": []
+      },
+      {
+        "slug": "flutterflow",
+        "name": "FlutterFlow",
+        "description": "Visual low-code builder that generates Flutter apps for iOS, Android, and web.",
+        "websiteUrl": "https://flutterflow.io",
+        "scores": { "performance": 4, "dx": 5, "ecosystem": 3, "ui_quality": 4, "deploy_speed": 5 },
+        "tags": ["pricing:free-tier"]
+      },
+      {
+        "slug": "solar2d",
+        "name": "Solar2D",
+        "description": "Open-source 2D game and app engine using Lua for fast cross-platform mobile builds.",
+        "websiteUrl": "https://solar2d.com",
+        "scores": { "performance": 4, "dx": 3, "ecosystem": 2, "ui_quality": 3, "deploy_speed": 3 },
+        "tags": []
+      },
+      {
+        "slug": "framework7",
+        "name": "Framework7",
+        "description": "Full-featured framework for building iOS and Android apps with native-look web components.",
+        "websiteUrl": "https://framework7.io",
+        "scores": { "performance": 3, "dx": 4, "ecosystem": 3, "ui_quality": 4, "deploy_speed": 4 },
+        "tags": []
+      },
+      {
+        "slug": "onsen-ui",
+        "name": "Onsen UI",
+        "description": "Open-source UI component library for hybrid mobile apps that works with any JS framework.",
+        "websiteUrl": "https://onsen.io",
+        "scores": { "performance": 3, "dx": 4, "ecosystem": 2, "ui_quality": 3, "deploy_speed": 4 },
+        "tags": []
+      },
+      {
+        "slug": "codename-one",
+        "name": "Codename One",
+        "description": "Write-once cross-platform framework compiling Java and Kotlin to native iOS and Android apps.",
+        "websiteUrl": "https://www.codenameone.com",
+        "scores": { "performance": 3, "dx": 3, "ecosystem": 2, "ui_quality": 3, "deploy_speed": 3 },
+        "tags": []
+      }
+    ]
+  }
+}

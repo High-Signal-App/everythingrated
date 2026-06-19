@@ -1,0 +1,309 @@
+{
+  "deepen": {
+    "package-managers": [
+      {
+        "slug": "corepack",
+        "name": "Corepack",
+        "description": "Node.js-bundled shim that pins and provisions the exact pnpm or Yarn version a project declares.",
+        "websiteUrl": "https://nodejs.org/api/corepack.html",
+        "scores": { "install_speed": 3, "disk_usage": 4, "dx": 4, "ecosystem": 4, "monorepo_support": 3 },
+        "tags": ["pricing:free-tier", "self-hostable:yes"]
+      },
+      {
+        "slug": "volta",
+        "name": "Volta",
+        "description": "Rust-based toolchain manager that pins Node, npm, and package-manager versions per project.",
+        "websiteUrl": "https://volta.sh",
+        "scores": { "install_speed": 4, "disk_usage": 4, "dx": 5, "ecosystem": 3, "monorepo_support": 3 },
+        "tags": ["pricing:free-tier", "self-hostable:yes"]
+      },
+      {
+        "slug": "ni",
+        "name": "ni",
+        "description": "Antfu's wrapper that runs the right npm/pnpm/yarn/bun command based on the detected lockfile.",
+        "websiteUrl": "https://github.com/antfu-collective/ni",
+        "scores": { "install_speed": 3, "disk_usage": 3, "dx": 5, "ecosystem": 4, "monorepo_support": 3 },
+        "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript"]
+      },
+      {
+        "slug": "nx",
+        "name": "Nx",
+        "description": "Extensible monorepo build system with task caching, project graphs, generators, and workspace management.",
+        "websiteUrl": "https://nx.dev",
+        "scores": { "install_speed": 4, "disk_usage": 4, "dx": 4, "ecosystem": 5, "monorepo_support": 5 },
+        "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript"]
+      },
+      {
+        "slug": "turborepo",
+        "name": "Turborepo",
+        "description": "Rust-based high-performance monorepo task runner with remote caching from Vercel.",
+        "websiteUrl": "https://turborepo.com",
+        "scores": { "install_speed": 4, "disk_usage": 4, "dx": 5, "ecosystem": 4, "monorepo_support": 5 },
+        "tags": ["pricing:free-tier", "self-hostable:yes"]
+      },
+      {
+        "slug": "lerna",
+        "name": "Lerna",
+        "description": "Veteran monorepo tool for versioning and publishing multiple packages, now powered by Nx under the hood.",
+        "websiteUrl": "https://lerna.js.org",
+        "scores": { "install_speed": 3, "disk_usage": 3, "dx": 3, "ecosystem": 4, "monorepo_support": 4 },
+        "tags": ["pricing:free-tier", "self-hostable:yes"]
+      },
+      {
+        "slug": "changesets",
+        "name": "Changesets",
+        "description": "Workflow tool for managing versioning and changelogs across multi-package monorepos.",
+        "websiteUrl": "https://github.com/changesets/changesets",
+        "scores": { "install_speed": 3, "disk_usage": 4, "dx": 5, "ecosystem": 4, "monorepo_support": 5 },
+        "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript"]
+      }
+    ],
+    "bundlers": [
+      {
+        "slug": "tsup",
+        "name": "tsup",
+        "description": "Zero-config esbuild-powered bundler for TypeScript libraries, emitting ESM, CJS, and type declarations.",
+        "websiteUrl": "https://tsup.egoist.dev",
+        "scores": { "speed": 5, "dx": 5, "plugin_ecosystem": 3, "output_quality": 4, "learning_curve": 5 },
+        "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript"]
+      },
+      {
+        "slug": "tsdown",
+        "name": "tsdown",
+        "description": "Rolldown-powered library bundler positioned as a faster successor to tsup with the same DX.",
+        "websiteUrl": "https://tsdown.dev",
+        "scores": { "speed": 5, "dx": 5, "plugin_ecosystem": 3, "output_quality": 5, "learning_curve": 5 },
+        "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript"]
+      },
+      {
+        "slug": "unbuild",
+        "name": "unbuild",
+        "description": "Unified build system from the UnJS ecosystem with multiple presets and a stub mode for dev.",
+        "websiteUrl": "https://github.com/unjs/unbuild",
+        "scores": { "speed": 4, "dx": 4, "plugin_ecosystem": 3, "output_quality": 4, "learning_curve": 4 },
+        "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript"]
+      },
+      {
+        "slug": "bun-build",
+        "name": "Bun.build",
+        "description": "Bun's native, extremely fast bundler for JavaScript, TypeScript, and JSX.",
+        "websiteUrl": "https://bun.com/docs/bundler",
+        "scores": { "speed": 5, "dx": 4, "plugin_ecosystem": 3, "output_quality": 4, "learning_curve": 4 },
+        "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript"]
+      },
+      {
+        "slug": "metro",
+        "name": "Metro",
+        "description": "The JavaScript bundler purpose-built for React Native applications.",
+        "websiteUrl": "https://metrobundler.dev",
+        "scores": { "speed": 3, "dx": 3, "plugin_ecosystem": 3, "output_quality": 3, "learning_curve": 3 },
+        "tags": ["pricing:free-tier", "self-hostable:yes"]
+      },
+      {
+        "slug": "microbundle",
+        "name": "Microbundle",
+        "description": "Zero-config Rollup-based bundler for tiny modules, optimized for minimal output.",
+        "websiteUrl": "https://github.com/developit/microbundle",
+        "scores": { "speed": 3, "dx": 4, "plugin_ecosystem": 2, "output_quality": 4, "learning_curve": 5 },
+        "tags": ["pricing:free-tier", "self-hostable:yes"]
+      },
+      {
+        "slug": "farm",
+        "name": "Farm",
+        "description": "Rust-based web build tool offering Vite-compatible plugins with very fast HMR and builds.",
+        "websiteUrl": "https://www.farmfe.org",
+        "scores": { "speed": 5, "dx": 4, "plugin_ecosystem": 3, "output_quality": 4, "learning_curve": 3 },
+        "tags": ["pricing:free-tier", "self-hostable:yes"]
+      },
+      {
+        "slug": "mako",
+        "name": "Mako",
+        "description": "Rust-based bundler from Ant Group's Umi team focused on production build speed.",
+        "websiteUrl": "https://makojs.dev",
+        "scores": { "speed": 5, "dx": 3, "plugin_ecosystem": 2, "output_quality": 4, "learning_curve": 3 },
+        "tags": ["pricing:free-tier", "self-hostable:yes"]
+      },
+      {
+        "slug": "tsc",
+        "name": "TypeScript Compiler (tsc)",
+        "description": "The official TypeScript compiler, used directly to emit JavaScript and declaration files.",
+        "websiteUrl": "https://www.typescriptlang.org",
+        "scores": { "speed": 2, "dx": 4, "plugin_ecosystem": 2, "output_quality": 3, "learning_curve": 4 },
+        "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript"]
+      }
+    ],
+    "test-runners": [
+      {
+        "slug": "ava",
+        "name": "AVA",
+        "description": "Minimal test runner that runs tests concurrently in isolated processes for speed.",
+        "websiteUrl": "https://github.com/avajs/ava",
+        "scores": { "speed": 4, "dx": 4, "debugging": 3, "ecosystem": 3, "browser_testing": 1 },
+        "tags": ["pricing:free-tier", "self-hostable:yes"]
+      },
+      {
+        "slug": "uvu",
+        "name": "uvu",
+        "description": "Extremely fast and lightweight test runner for Node.js and the browser.",
+        "websiteUrl": "https://github.com/lukeed/uvu",
+        "scores": { "speed": 5, "dx": 3, "debugging": 3, "ecosystem": 2, "browser_testing": 3 },
+        "tags": ["pricing:free-tier", "self-hostable:yes"]
+      },
+      {
+        "slug": "jasmine",
+        "name": "Jasmine",
+        "description": "Behavior-driven JavaScript testing framework with no external dependencies.",
+        "websiteUrl": "https://jasmine.github.io",
+        "scores": { "speed": 3, "dx": 3, "debugging": 3, "ecosystem": 3, "browser_testing": 3 },
+        "tags": ["pricing:free-tier", "self-hostable:yes"]
+      },
+      {
+        "slug": "webdriverio",
+        "name": "WebdriverIO",
+        "description": "All-in-one browser and mobile automation framework for component and end-to-end tests.",
+        "websiteUrl": "https://webdriver.io",
+        "scores": { "speed": 3, "dx": 4, "debugging": 4, "ecosystem": 5, "browser_testing": 5 },
+        "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript"]
+      },
+      {
+        "slug": "testcafe",
+        "name": "TestCafe",
+        "description": "Node.js end-to-end testing tool that runs in real browsers without WebDriver.",
+        "websiteUrl": "https://testcafe.io",
+        "scores": { "speed": 3, "dx": 4, "debugging": 4, "ecosystem": 3, "browser_testing": 5 },
+        "tags": ["pricing:free-tier", "self-hostable:yes"]
+      },
+      {
+        "slug": "web-test-runner",
+        "name": "Web Test Runner",
+        "description": "Modern Web's test runner that executes tests in real browsers via Playwright or WebDriver.",
+        "websiteUrl": "https://modern-web.dev/docs/test-runner/overview",
+        "scores": { "speed": 4, "dx": 4, "debugging": 4, "ecosystem": 3, "browser_testing": 5 },
+        "tags": ["pricing:free-tier", "self-hostable:yes"]
+      },
+      {
+        "slug": "wallaby",
+        "name": "Wallaby.js",
+        "description": "Commercial continuous test runner that shows results and coverage inline in your editor.",
+        "websiteUrl": "https://wallabyjs.com",
+        "scores": { "speed": 5, "dx": 5, "debugging": 5, "ecosystem": 4, "browser_testing": 2 }
+      }
+    ],
+    "linters-formatters": [
+      {
+        "slug": "oxlint",
+        "name": "Oxlint",
+        "description": "Oxc's Rust-based linter, tens of times faster than ESLint with hundreds of built-in rules.",
+        "websiteUrl": "https://oxc.rs/docs/guide/usage/linter",
+        "scores": { "speed": 5, "dx": 4, "configurability": 3, "ecosystem": 3, "accuracy": 4 },
+        "tags": ["pricing:free-tier", "self-hostable:yes"]
+      },
+      {
+        "slug": "knip",
+        "name": "Knip",
+        "description": "Finds unused files, dependencies, and exports in JavaScript and TypeScript projects.",
+        "websiteUrl": "https://knip.dev",
+        "scores": { "speed": 4, "dx": 5, "configurability": 4, "ecosystem": 3, "accuracy": 4 },
+        "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript"]
+      },
+      {
+        "slug": "publint",
+        "name": "publint",
+        "description": "Linter that checks npm packages for the widest compatibility across bundlers and runtimes.",
+        "websiteUrl": "https://publint.dev",
+        "scores": { "speed": 4, "dx": 5, "configurability": 3, "ecosystem": 3, "accuracy": 5 },
+        "tags": ["pricing:free-tier", "self-hostable:yes"]
+      },
+      {
+        "slug": "standardjs",
+        "name": "StandardJS",
+        "description": "Zero-config, opinionated JavaScript style guide, linter, and formatter in one.",
+        "websiteUrl": "https://standardjs.com",
+        "scores": { "speed": 3, "dx": 4, "configurability": 2, "ecosystem": 3, "accuracy": 4 },
+        "tags": ["pricing:free-tier", "self-hostable:yes"]
+      },
+      {
+        "slug": "ruff",
+        "name": "Ruff",
+        "description": "Rust-based Python linter and formatter that replaces Flake8, isort, and Black at high speed.",
+        "websiteUrl": "https://docs.astral.sh/ruff",
+        "scores": { "speed": 5, "dx": 5, "configurability": 4, "ecosystem": 4, "accuracy": 5 },
+        "tags": ["pricing:free-tier", "self-hostable:yes", "language:python"]
+      },
+      {
+        "slug": "eslint-stylistic",
+        "name": "ESLint Stylistic",
+        "description": "Community-maintained set of stylistic ESLint rules that took over deprecated formatting rules.",
+        "websiteUrl": "https://eslint.style",
+        "scores": { "speed": 3, "dx": 4, "configurability": 5, "ecosystem": 4, "accuracy": 4 },
+        "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript"]
+      },
+      {
+        "slug": "trunk-check",
+        "name": "Trunk Check",
+        "description": "Meta-linter that orchestrates many linters and formatters behind a single fast CLI.",
+        "websiteUrl": "https://trunk.io/check",
+        "scores": { "speed": 4, "dx": 5, "configurability": 4, "ecosystem": 5, "accuracy": 4 },
+        "tags": ["pricing:free-tier"]
+      }
+    ],
+    "validation-libraries": [
+      {
+        "slug": "ajv",
+        "name": "Ajv",
+        "description": "Fastest JSON Schema validator for Node.js and the browser, widely used in tooling.",
+        "websiteUrl": "https://ajv.js.org",
+        "scores": { "type_safety": 3, "performance": 5, "bundle_size": 3, "dx": 3, "ecosystem": 5 },
+        "tags": ["pricing:free-tier", "self-hostable:yes"]
+      },
+      {
+        "slug": "class-validator",
+        "name": "class-validator",
+        "description": "Decorator-based validation for classes, the default validator in NestJS apps.",
+        "websiteUrl": "https://github.com/typestack/class-validator",
+        "scores": { "type_safety": 4, "performance": 3, "bundle_size": 3, "dx": 4, "ecosystem": 4 },
+        "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript"]
+      },
+      {
+        "slug": "io-ts",
+        "name": "io-ts",
+        "description": "Runtime type system for IO decoding built on the fp-ts functional programming ecosystem.",
+        "websiteUrl": "https://github.com/gcanti/io-ts",
+        "scores": { "type_safety": 5, "performance": 3, "bundle_size": 3, "dx": 3, "ecosystem": 3 },
+        "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript"]
+      },
+      {
+        "slug": "runtypes",
+        "name": "Runtypes",
+        "description": "Runtime validation library for TypeScript with static type inference and ergonomic combinators.",
+        "websiteUrl": "https://github.com/runtypes/runtypes",
+        "scores": { "type_safety": 5, "performance": 4, "bundle_size": 4, "dx": 4, "ecosystem": 3 },
+        "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript"]
+      },
+      {
+        "slug": "vinejs",
+        "name": "VineJS",
+        "description": "Very fast form-data validation library for Node.js, bundled with AdonisJS.",
+        "websiteUrl": "https://vinejs.dev",
+        "scores": { "type_safety": 4, "performance": 5, "bundle_size": 4, "dx": 4, "ecosystem": 3 },
+        "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript"]
+      },
+      {
+        "slug": "ow",
+        "name": "ow",
+        "description": "Expressive function argument validation library with a fluent assertion API.",
+        "websiteUrl": "https://github.com/sindresorhus/ow",
+        "scores": { "type_safety": 3, "performance": 4, "bundle_size": 3, "dx": 4, "ecosystem": 2 },
+        "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript"]
+      },
+      {
+        "slug": "zod-mini",
+        "name": "Zod Mini",
+        "description": "Tree-shakable functional variant of Zod v4 aimed at minimal bundle size.",
+        "websiteUrl": "https://zod.dev/packages/mini",
+        "scores": { "type_safety": 5, "performance": 4, "bundle_size": 5, "dx": 4, "ecosystem": 4 },
+        "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript"]
+      }
+    ]
+  }
+}

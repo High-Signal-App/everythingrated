@@ -1,0 +1,627 @@
+{
+  "newDirectories": [
+    {
+      "slug": "realtime-collaboration",
+      "name": "Realtime collaboration",
+      "description": "Sync, presence, and multiplayer infrastructure for live, collaborative apps.",
+      "heroCopy": "Latency, presence, scale, cost, and DX decide whether multiplayer feels instant or laggy.",
+      "aspects": [
+        { "key": "latency", "label": "Latency", "description": "End-to-end propagation speed of updates between clients." },
+        { "key": "presence", "label": "Presence", "description": "Quality of presence, cursors, and conflict-free shared state primitives." },
+        { "key": "cost", "label": "Cost", "description": "Pricing fit relative to connections, messages, and concurrency (5 = great deal)." },
+        { "key": "dx", "label": "Developer experience", "description": "SDKs, hooks, local dev, and debugging ergonomics." },
+        { "key": "ecosystem", "label": "Ecosystem", "description": "Framework integrations, examples, and community depth." }
+      ],
+      "items": [
+        {
+          "slug": "liveblocks",
+          "name": "Liveblocks",
+          "description": "Managed collaboration platform with rooms, presence, cursors, and conflict-free data structures.",
+          "websiteUrl": "https://liveblocks.io",
+          "scores": { "latency": 4, "presence": 5, "cost": 3, "dx": 5, "ecosystem": 4 },
+          "tags": ["pricing:free-tier", "language:typescript", "realtime:yes"]
+        },
+        {
+          "slug": "pusher-channels",
+          "name": "Pusher Channels",
+          "description": "Hosted pub/sub WebSocket service for live updates, presence, and client events.",
+          "websiteUrl": "https://pusher.com/channels",
+          "scores": { "latency": 4, "presence": 4, "cost": 3, "dx": 4, "ecosystem": 5 },
+          "tags": ["pricing:free-tier", "realtime:yes"]
+        },
+        {
+          "slug": "ably",
+          "name": "Ably",
+          "description": "Global realtime messaging platform with pub/sub, presence, and guaranteed message delivery.",
+          "websiteUrl": "https://ably.com",
+          "scores": { "latency": 5, "presence": 4, "cost": 3, "dx": 4, "ecosystem": 4 },
+          "tags": ["pricing:free-tier", "realtime:yes"]
+        },
+        {
+          "slug": "partykit",
+          "name": "PartyKit",
+          "description": "Realtime multiplayer infrastructure running stateful logic on Cloudflare's edge.",
+          "websiteUrl": "https://www.partykit.io",
+          "scores": { "latency": 5, "presence": 4, "cost": 4, "dx": 4, "ecosystem": 3 },
+          "tags": ["runs-on:cloudflare", "deploy:edge", "pricing:free-tier", "self-hostable:yes", "language:typescript", "realtime:yes"]
+        },
+        {
+          "slug": "supabase-realtime-collab",
+          "name": "Supabase Realtime",
+          "description": "Postgres change-data-capture, broadcast, and presence channels with row-level security.",
+          "websiteUrl": "https://supabase.com/realtime",
+          "scores": { "latency": 4, "presence": 4, "cost": 4, "dx": 4, "ecosystem": 4 },
+          "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript", "realtime:yes"]
+        },
+        {
+          "slug": "yjs",
+          "name": "Yjs",
+          "description": "Open-source CRDT framework for building conflict-free collaborative editing and shared state.",
+          "websiteUrl": "https://yjs.dev",
+          "scores": { "latency": 5, "presence": 4, "cost": 5, "dx": 3, "ecosystem": 5 },
+          "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript", "realtime:yes"]
+        },
+        {
+          "slug": "hocuspocus",
+          "name": "Hocuspocus",
+          "description": "Yjs-native WebSocket backend purpose-built for collaborative document editing.",
+          "websiteUrl": "https://tiptap.dev/docs/hocuspocus",
+          "scores": { "latency": 4, "presence": 4, "cost": 5, "dx": 4, "ecosystem": 3 },
+          "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript", "realtime:yes"]
+        },
+        {
+          "slug": "tiptap-collab",
+          "name": "Tiptap Collaboration",
+          "description": "Managed Yjs collaboration backend for the Tiptap rich-text editor with cursors and comments.",
+          "websiteUrl": "https://tiptap.dev/product/collaboration",
+          "scores": { "latency": 4, "presence": 5, "cost": 3, "dx": 4, "ecosystem": 4 },
+          "tags": ["pricing:free-tier", "language:typescript", "realtime:yes"]
+        },
+        {
+          "slug": "livekit",
+          "name": "LiveKit",
+          "description": "Open-source WebRTC infrastructure for realtime audio, video, and data rooms.",
+          "websiteUrl": "https://livekit.io",
+          "scores": { "latency": 5, "presence": 4, "cost": 4, "dx": 4, "ecosystem": 4 },
+          "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript", "realtime:yes"]
+        },
+        {
+          "slug": "socket-io",
+          "name": "Socket.IO",
+          "description": "Self-hosted JavaScript library for bidirectional event-based realtime communication.",
+          "websiteUrl": "https://socket.io",
+          "scores": { "latency": 4, "presence": 3, "cost": 5, "dx": 4, "ecosystem": 5 },
+          "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript", "realtime:yes"]
+        },
+        {
+          "slug": "firebase-realtime-database",
+          "name": "Firebase Realtime Database",
+          "description": "Google's hosted NoSQL database that syncs JSON state across clients in realtime.",
+          "websiteUrl": "https://firebase.google.com/products/realtime-database",
+          "scores": { "latency": 4, "presence": 3, "cost": 4, "dx": 4, "ecosystem": 5 },
+          "tags": ["pricing:free-tier", "realtime:yes"]
+        },
+        {
+          "slug": "centrifugo",
+          "name": "Centrifugo",
+          "description": "Open-source scalable realtime messaging server for pub/sub, presence, and channels.",
+          "websiteUrl": "https://centrifugal.dev",
+          "scores": { "latency": 5, "presence": 4, "cost": 5, "dx": 3, "ecosystem": 3 },
+          "tags": ["pricing:free-tier", "self-hostable:yes", "realtime:yes"]
+        },
+        {
+          "slug": "cloudflare-realtime",
+          "name": "Cloudflare Realtime",
+          "description": "Cloudflare's edge WebSocket and SFU infrastructure for serverless realtime apps.",
+          "websiteUrl": "https://developers.cloudflare.com/realtime",
+          "scores": { "latency": 5, "presence": 3, "cost": 4, "dx": 3, "ecosystem": 3 },
+          "tags": ["runs-on:cloudflare", "deploy:edge", "deploy:serverless", "pricing:free-tier", "realtime:yes"]
+        },
+        {
+          "slug": "automerge",
+          "name": "Automerge",
+          "description": "Open-source CRDT library for building local-first collaborative apps with automatic merging.",
+          "websiteUrl": "https://automerge.org",
+          "scores": { "latency": 5, "presence": 3, "cost": 5, "dx": 3, "ecosystem": 3 },
+          "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript", "realtime:yes"]
+        }
+      ]
+    },
+    {
+      "slug": "notifications",
+      "name": "Notifications",
+      "description": "Push, SMS, email, and in-app notification delivery and orchestration platforms.",
+      "heroCopy": "Channel coverage, deliverability, cost, DX, and ecosystem shape whether messages land.",
+      "aspects": [
+        { "key": "channel_coverage", "label": "Channel coverage", "description": "Breadth of push, SMS, email, in-app, and chat channels supported." },
+        { "key": "deliverability", "label": "Deliverability", "description": "Reliability, routing, fallbacks, and inbox/device delivery rates." },
+        { "key": "cost", "label": "Cost", "description": "Pricing fit across subscribers, messages, and channels (5 = great deal)." },
+        { "key": "dx", "label": "Developer experience", "description": "APIs, SDKs, templating, local testing, and debugging quality." },
+        { "key": "ecosystem", "label": "Ecosystem", "description": "Provider integrations, framework support, and community depth." }
+      ],
+      "items": [
+        {
+          "slug": "knock",
+          "name": "Knock",
+          "description": "Notification infrastructure that orchestrates product messaging across email, push, SMS, and chat.",
+          "websiteUrl": "https://knock.app",
+          "scores": { "channel_coverage": 5, "deliverability": 4, "cost": 3, "dx": 5, "ecosystem": 4 },
+          "tags": ["pricing:free-tier", "language:typescript"]
+        },
+        {
+          "slug": "novu",
+          "name": "Novu",
+          "description": "Open-source notification infrastructure with workflows, a unified API, and an inbox component.",
+          "websiteUrl": "https://novu.co",
+          "scores": { "channel_coverage": 5, "deliverability": 4, "cost": 4, "dx": 5, "ecosystem": 4 },
+          "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript"]
+        },
+        {
+          "slug": "courier",
+          "name": "Courier",
+          "description": "Multi-channel notification platform with swappable providers and visual workflow design.",
+          "websiteUrl": "https://www.courier.com",
+          "scores": { "channel_coverage": 5, "deliverability": 4, "cost": 3, "dx": 4, "ecosystem": 5 },
+          "tags": ["pricing:free-tier"]
+        },
+        {
+          "slug": "onesignal",
+          "name": "OneSignal",
+          "description": "Push-first messaging platform delivering web, mobile push, email, SMS, and in-app at scale.",
+          "websiteUrl": "https://onesignal.com",
+          "scores": { "channel_coverage": 4, "deliverability": 5, "cost": 5, "dx": 4, "ecosystem": 5 },
+          "tags": ["pricing:free-tier"]
+        },
+        {
+          "slug": "twilio",
+          "name": "Twilio",
+          "description": "Programmable communications APIs for SMS, voice, WhatsApp, and verification.",
+          "websiteUrl": "https://www.twilio.com",
+          "scores": { "channel_coverage": 4, "deliverability": 5, "cost": 3, "dx": 4, "ecosystem": 5 },
+          "tags": ["pricing:free-tier"]
+        },
+        {
+          "slug": "firebase-cloud-messaging",
+          "name": "Firebase Cloud Messaging",
+          "description": "Google's free cross-platform push notification delivery for web, Android, and iOS.",
+          "websiteUrl": "https://firebase.google.com/products/cloud-messaging",
+          "scores": { "channel_coverage": 3, "deliverability": 5, "cost": 5, "dx": 4, "ecosystem": 5 },
+          "tags": ["pricing:free-tier"]
+        },
+        {
+          "slug": "pusher-beams",
+          "name": "Pusher Beams",
+          "description": "Hosted push notification API for web and mobile with device interest targeting.",
+          "websiteUrl": "https://pusher.com/beams",
+          "scores": { "channel_coverage": 3, "deliverability": 4, "cost": 4, "dx": 4, "ecosystem": 4 },
+          "tags": ["pricing:free-tier"]
+        },
+        {
+          "slug": "suprsend",
+          "name": "SuprSend",
+          "description": "Notification infrastructure with multi-channel routing, batching, and built-in observability.",
+          "websiteUrl": "https://www.suprsend.com",
+          "scores": { "channel_coverage": 5, "deliverability": 4, "cost": 4, "dx": 4, "ecosystem": 3 },
+          "tags": ["pricing:free-tier"]
+        },
+        {
+          "slug": "fyno",
+          "name": "Fyno",
+          "description": "Notification orchestration layer that routes across many third-party providers from one API.",
+          "websiteUrl": "https://www.fyno.io",
+          "scores": { "channel_coverage": 5, "deliverability": 4, "cost": 4, "dx": 4, "ecosystem": 4 },
+          "tags": ["pricing:free-tier"]
+        },
+        {
+          "slug": "magicbell",
+          "name": "MagicBell",
+          "description": "Notification inbox and multi-channel delivery API with prebuilt in-app UI components.",
+          "websiteUrl": "https://www.magicbell.com",
+          "scores": { "channel_coverage": 4, "deliverability": 4, "cost": 3, "dx": 4, "ecosystem": 3 },
+          "tags": ["pricing:free-tier"]
+        },
+        {
+          "slug": "vonage",
+          "name": "Vonage",
+          "description": "Communications APIs for SMS, voice, messaging, and verification across global carriers.",
+          "websiteUrl": "https://www.vonage.com",
+          "scores": { "channel_coverage": 4, "deliverability": 4, "cost": 3, "dx": 3, "ecosystem": 4 },
+          "tags": ["pricing:free-tier"]
+        },
+        {
+          "slug": "messagebird",
+          "name": "Bird (MessageBird)",
+          "description": "Omnichannel CPaaS for SMS, WhatsApp, email, and voice with marketing and support flows.",
+          "websiteUrl": "https://bird.com",
+          "scores": { "channel_coverage": 5, "deliverability": 4, "cost": 3, "dx": 3, "ecosystem": 4 },
+          "tags": ["pricing:free-tier"]
+        },
+        {
+          "slug": "expo-push-notifications",
+          "name": "Expo Push Notifications",
+          "description": "Free push notification service for React Native and Expo apps via a single API.",
+          "websiteUrl": "https://docs.expo.dev/push-notifications/overview",
+          "scores": { "channel_coverage": 2, "deliverability": 4, "cost": 5, "dx": 5, "ecosystem": 4 },
+          "tags": ["pricing:free-tier", "language:typescript"]
+        },
+        {
+          "slug": "engagespot",
+          "name": "Engagespot",
+          "description": "Notification API and inbox widget for multi-channel product notifications.",
+          "websiteUrl": "https://engagespot.co",
+          "scores": { "channel_coverage": 4, "deliverability": 3, "cost": 4, "dx": 4, "ecosystem": 3 },
+          "tags": ["pricing:free-tier"]
+        }
+      ]
+    },
+    {
+      "slug": "data-warehouses",
+      "name": "Data warehouses",
+      "description": "Analytical and OLAP stores for large-scale querying, BI, and real-time analytics.",
+      "heroCopy": "Query speed, scalability, cost, DX, and ecosystem decide how fast insight arrives.",
+      "aspects": [
+        { "key": "query_speed", "label": "Query speed", "description": "Latency on analytical scans, aggregations, and concurrent queries." },
+        { "key": "scalability", "label": "Scalability", "description": "Headroom for data volume, concurrency, and storage/compute separation." },
+        { "key": "cost", "label": "Cost", "description": "Pricing predictability at real query and storage volume (5 = great deal)." },
+        { "key": "dx", "label": "Developer experience", "description": "SQL ergonomics, tooling, setup, and operational simplicity." },
+        { "key": "ecosystem", "label": "Ecosystem", "description": "Connectors, BI tools, ETL, and open-format compatibility." }
+      ],
+      "items": [
+        {
+          "slug": "snowflake",
+          "name": "Snowflake",
+          "description": "Cloud data platform with separated storage and compute and mature governance features.",
+          "websiteUrl": "https://www.snowflake.com",
+          "scores": { "query_speed": 5, "scalability": 5, "cost": 2, "dx": 4, "ecosystem": 5 }
+        },
+        {
+          "slug": "google-bigquery",
+          "name": "Google BigQuery",
+          "description": "Serverless, zero-ops analytical warehouse with separated storage and on-demand compute.",
+          "websiteUrl": "https://cloud.google.com/bigquery",
+          "scores": { "query_speed": 5, "scalability": 5, "cost": 3, "dx": 4, "ecosystem": 5 },
+          "tags": ["deploy:serverless"]
+        },
+        {
+          "slug": "clickhouse",
+          "name": "ClickHouse",
+          "description": "Open-source columnar OLAP database built for high-throughput real-time analytics.",
+          "websiteUrl": "https://clickhouse.com",
+          "scores": { "query_speed": 5, "scalability": 5, "cost": 4, "dx": 3, "ecosystem": 4 },
+          "tags": ["pricing:free-tier", "self-hostable:yes"]
+        },
+        {
+          "slug": "databricks",
+          "name": "Databricks",
+          "description": "Lakehouse platform unifying SQL analytics and ML on open table formats.",
+          "websiteUrl": "https://www.databricks.com",
+          "scores": { "query_speed": 4, "scalability": 5, "cost": 2, "dx": 3, "ecosystem": 5 }
+        },
+        {
+          "slug": "amazon-redshift",
+          "name": "Amazon Redshift",
+          "description": "AWS-native columnar data warehouse for large, predictable analytical workloads.",
+          "websiteUrl": "https://aws.amazon.com/redshift",
+          "scores": { "query_speed": 4, "scalability": 4, "cost": 3, "dx": 3, "ecosystem": 5 }
+        },
+        {
+          "slug": "motherduck",
+          "name": "MotherDuck",
+          "description": "Serverless cloud analytics platform built on DuckDB with fast spin-up for customer-facing analytics.",
+          "websiteUrl": "https://motherduck.com",
+          "scores": { "query_speed": 5, "scalability": 4, "cost": 4, "dx": 5, "ecosystem": 3 },
+          "tags": ["pricing:free-tier", "deploy:serverless"]
+        },
+        {
+          "slug": "duckdb",
+          "name": "DuckDB",
+          "description": "Open-source in-process analytical SQL database for fast local OLAP queries.",
+          "websiteUrl": "https://duckdb.org",
+          "scores": { "query_speed": 5, "scalability": 3, "cost": 5, "dx": 5, "ecosystem": 4 },
+          "tags": ["pricing:free-tier", "self-hostable:yes"]
+        },
+        {
+          "slug": "firebolt",
+          "name": "Firebolt",
+          "description": "Cloud data warehouse engineered for low-latency, high-concurrency analytics at scale.",
+          "websiteUrl": "https://www.firebolt.io",
+          "scores": { "query_speed": 5, "scalability": 4, "cost": 3, "dx": 3, "ecosystem": 3 }
+        },
+        {
+          "slug": "tinybird",
+          "name": "Tinybird",
+          "description": "ClickHouse-powered platform for building real-time analytics APIs over streaming data.",
+          "websiteUrl": "https://www.tinybird.co",
+          "scores": { "query_speed": 5, "scalability": 4, "cost": 4, "dx": 5, "ecosystem": 3 },
+          "tags": ["pricing:free-tier", "deploy:serverless"]
+        },
+        {
+          "slug": "apache-druid",
+          "name": "Apache Druid",
+          "description": "Open-source real-time analytics database for sub-second OLAP on event streams.",
+          "websiteUrl": "https://druid.apache.org",
+          "scores": { "query_speed": 5, "scalability": 5, "cost": 4, "dx": 2, "ecosystem": 3 },
+          "tags": ["pricing:free-tier", "self-hostable:yes"]
+        },
+        {
+          "slug": "apache-pinot",
+          "name": "Apache Pinot",
+          "description": "Open-source distributed OLAP datastore for ultra-low-latency user-facing analytics.",
+          "websiteUrl": "https://pinot.apache.org",
+          "scores": { "query_speed": 5, "scalability": 5, "cost": 4, "dx": 2, "ecosystem": 3 },
+          "tags": ["pricing:free-tier", "self-hostable:yes"]
+        },
+        {
+          "slug": "dremio",
+          "name": "Dremio",
+          "description": "Lakehouse query engine for fast SQL directly on data lakes and open table formats.",
+          "websiteUrl": "https://www.dremio.com",
+          "scores": { "query_speed": 4, "scalability": 4, "cost": 4, "dx": 3, "ecosystem": 4 },
+          "tags": ["pricing:free-tier", "self-hostable:yes"]
+        },
+        {
+          "slug": "starrocks",
+          "name": "StarRocks",
+          "description": "Open-source MPP analytical database for high-concurrency real-time OLAP queries.",
+          "websiteUrl": "https://www.starrocks.io",
+          "scores": { "query_speed": 5, "scalability": 4, "cost": 4, "dx": 3, "ecosystem": 3 },
+          "tags": ["pricing:free-tier", "self-hostable:yes"]
+        },
+        {
+          "slug": "azure-synapse",
+          "name": "Azure Synapse Analytics",
+          "description": "Microsoft's integrated analytics service combining data warehousing and big data.",
+          "websiteUrl": "https://azure.microsoft.com/products/synapse-analytics",
+          "scores": { "query_speed": 4, "scalability": 4, "cost": 3, "dx": 3, "ecosystem": 4 }
+        }
+      ]
+    },
+    {
+      "slug": "uptime-monitoring",
+      "name": "Uptime monitoring",
+      "description": "Uptime, status-page, and synthetic monitoring for catching outages before users do.",
+      "heroCopy": "Check frequency, alerting, cost, DX, and ecosystem keep ops calm.",
+      "aspects": [
+        { "key": "check_frequency", "label": "Check frequency", "description": "Polling interval, global probe locations, and check type breadth." },
+        { "key": "alerting", "label": "Alerting", "description": "Notification channels, on-call routing, escalation, and noise control." },
+        { "key": "cost", "label": "Cost", "description": "Pricing fit across monitors, seats, and check frequency (5 = great deal)." },
+        { "key": "dx", "label": "Developer experience", "description": "Setup, status-page quality, dashboards, and monitoring-as-code support." },
+        { "key": "ecosystem", "label": "Ecosystem", "description": "Alert destinations, incident tools, and integration connectors." }
+      ],
+      "items": [
+        {
+          "slug": "better-stack-uptime",
+          "name": "Better Stack Uptime",
+          "description": "Uptime monitoring with incident management, on-call scheduling, and status pages in one platform.",
+          "websiteUrl": "https://betterstack.com/uptime",
+          "scores": { "check_frequency": 5, "alerting": 5, "cost": 4, "dx": 5, "ecosystem": 4 },
+          "tags": ["pricing:free-tier"]
+        },
+        {
+          "slug": "checkly",
+          "name": "Checkly",
+          "description": "Code-first synthetic monitoring with Playwright browser checks and monitoring-as-code.",
+          "websiteUrl": "https://www.checklyhq.com",
+          "scores": { "check_frequency": 5, "alerting": 4, "cost": 4, "dx": 5, "ecosystem": 4 },
+          "tags": ["pricing:free-tier", "language:typescript"]
+        },
+        {
+          "slug": "pingdom",
+          "name": "Pingdom",
+          "description": "SolarWinds uptime, synthetic, and real-user monitoring from global probe locations.",
+          "websiteUrl": "https://www.pingdom.com",
+          "scores": { "check_frequency": 4, "alerting": 4, "cost": 2, "dx": 4, "ecosystem": 4 }
+        },
+        {
+          "slug": "uptimerobot",
+          "name": "UptimeRobot",
+          "description": "Focused uptime monitoring with fast downtime alerts and simple status pages.",
+          "websiteUrl": "https://uptimerobot.com",
+          "scores": { "check_frequency": 4, "alerting": 4, "cost": 5, "dx": 3, "ecosystem": 3 },
+          "tags": ["pricing:free-tier"]
+        },
+        {
+          "slug": "uptime-kuma",
+          "name": "Uptime Kuma",
+          "description": "Open-source self-hosted uptime monitoring tool with status pages and many notification channels.",
+          "websiteUrl": "https://uptime.kuma.pet",
+          "scores": { "check_frequency": 4, "alerting": 4, "cost": 5, "dx": 4, "ecosystem": 4 },
+          "tags": ["pricing:free-tier", "self-hostable:yes"]
+        },
+        {
+          "slug": "statuscake",
+          "name": "StatusCake",
+          "description": "Website uptime, page speed, domain, and SSL monitoring with public status pages.",
+          "websiteUrl": "https://www.statuscake.com",
+          "scores": { "check_frequency": 4, "alerting": 3, "cost": 4, "dx": 4, "ecosystem": 3 },
+          "tags": ["pricing:free-tier"]
+        },
+        {
+          "slug": "site24x7",
+          "name": "Site24x7",
+          "description": "Zoho's all-in-one monitoring suite covering uptime, synthetics, APM, and infrastructure.",
+          "websiteUrl": "https://www.site24x7.com",
+          "scores": { "check_frequency": 5, "alerting": 4, "cost": 3, "dx": 3, "ecosystem": 5 },
+          "tags": ["pricing:free-tier"]
+        },
+        {
+          "slug": "uptrends",
+          "name": "Uptrends",
+          "description": "Uptime, transaction, and real-user monitoring from a large network of global checkpoints.",
+          "websiteUrl": "https://www.uptrends.com",
+          "scores": { "check_frequency": 5, "alerting": 4, "cost": 3, "dx": 3, "ecosystem": 4 }
+        },
+        {
+          "slug": "hyperping",
+          "name": "Hyperping",
+          "description": "Uptime and synthetic monitoring with polished status pages across global regions.",
+          "websiteUrl": "https://hyperping.io",
+          "scores": { "check_frequency": 4, "alerting": 4, "cost": 4, "dx": 5, "ecosystem": 3 },
+          "tags": ["pricing:free-tier"]
+        },
+        {
+          "slug": "oneuptime",
+          "name": "OneUptime",
+          "description": "Open-source monitoring and observability platform with uptime checks, status pages, and incidents.",
+          "websiteUrl": "https://oneuptime.com",
+          "scores": { "check_frequency": 4, "alerting": 4, "cost": 5, "dx": 4, "ecosystem": 4 },
+          "tags": ["pricing:free-tier", "self-hostable:yes"]
+        },
+        {
+          "slug": "hetrixtools",
+          "name": "HetrixTools",
+          "description": "Uptime, server, and blacklist monitoring with status pages and a generous free tier.",
+          "websiteUrl": "https://hetrixtools.com",
+          "scores": { "check_frequency": 4, "alerting": 4, "cost": 5, "dx": 3, "ecosystem": 3 },
+          "tags": ["pricing:free-tier"]
+        },
+        {
+          "slug": "datadog-synthetics",
+          "name": "Datadog Synthetic Monitoring",
+          "description": "API and browser synthetic tests integrated into Datadog's observability platform.",
+          "websiteUrl": "https://www.datadoghq.com/product/synthetic-monitoring",
+          "scores": { "check_frequency": 5, "alerting": 5, "cost": 2, "dx": 4, "ecosystem": 5 }
+        },
+        {
+          "slug": "onlineornot",
+          "name": "OnlineOrNot",
+          "description": "Uptime and synthetic monitoring with cron job checks and status pages for small teams.",
+          "websiteUrl": "https://onlineornot.com",
+          "scores": { "check_frequency": 4, "alerting": 4, "cost": 4, "dx": 4, "ecosystem": 3 },
+          "tags": ["pricing:free-tier"]
+        },
+        {
+          "slug": "cronitor",
+          "name": "Cronitor",
+          "description": "Uptime, cron job, and heartbeat monitoring with alerting and status pages.",
+          "websiteUrl": "https://cronitor.io",
+          "scores": { "check_frequency": 4, "alerting": 4, "cost": 4, "dx": 4, "ecosystem": 4 },
+          "tags": ["pricing:free-tier"]
+        }
+      ]
+    },
+    {
+      "slug": "workflow-automation",
+      "name": "Workflow automation",
+      "description": "iPaaS and no-code/low-code platforms for connecting apps and automating workflows.",
+      "heroCopy": "Integrations, ease of use, cost, DX, and ecosystem decide how much glue work disappears.",
+      "aspects": [
+        { "key": "integrations", "label": "Integrations", "description": "Breadth of prebuilt app connectors and triggers/actions." },
+        { "key": "ease_of_use", "label": "Ease of use", "description": "How approachable workflow building is for non-developers." },
+        { "key": "cost", "label": "Cost", "description": "Pricing fit across tasks, operations, and seats (5 = great deal)." },
+        { "key": "dx", "label": "Developer experience", "description": "Code steps, APIs, version control, and extensibility for developers." },
+        { "key": "ecosystem", "label": "Ecosystem", "description": "Templates, community workflows, and integration marketplace depth." }
+      ],
+      "items": [
+        {
+          "slug": "zapier",
+          "name": "Zapier",
+          "description": "No-code automation connecting thousands of apps with triggers, actions, and AI steps.",
+          "websiteUrl": "https://zapier.com",
+          "scores": { "integrations": 5, "ease_of_use": 5, "cost": 2, "dx": 3, "ecosystem": 5 },
+          "tags": ["pricing:free-tier"]
+        },
+        {
+          "slug": "make",
+          "name": "Make",
+          "description": "Visual no-code automation platform (formerly Integromat) with flexible scenario building.",
+          "websiteUrl": "https://www.make.com",
+          "scores": { "integrations": 5, "ease_of_use": 4, "cost": 4, "dx": 3, "ecosystem": 4 },
+          "tags": ["pricing:free-tier"]
+        },
+        {
+          "slug": "n8n",
+          "name": "n8n",
+          "description": "Source-available, fair-code workflow automation with code steps and self-hosting.",
+          "websiteUrl": "https://n8n.io",
+          "scores": { "integrations": 4, "ease_of_use": 4, "cost": 4, "dx": 5, "ecosystem": 4 },
+          "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript"]
+        },
+        {
+          "slug": "pipedream",
+          "name": "Pipedream",
+          "description": "Developer-first integration platform with code steps, prebuilt actions, and hosted runtime.",
+          "websiteUrl": "https://pipedream.com",
+          "scores": { "integrations": 5, "ease_of_use": 3, "cost": 4, "dx": 5, "ecosystem": 4 },
+          "tags": ["pricing:free-tier", "deploy:serverless", "language:typescript"]
+        },
+        {
+          "slug": "workato",
+          "name": "Workato",
+          "description": "Enterprise iPaaS with governance, complex transformations, and prebuilt automation recipes.",
+          "websiteUrl": "https://www.workato.com",
+          "scores": { "integrations": 5, "ease_of_use": 3, "cost": 2, "dx": 4, "ecosystem": 4 }
+        },
+        {
+          "slug": "tray-ai",
+          "name": "Tray.ai",
+          "description": "Developer-friendly enterprise iPaaS for building integrations and AI-powered automation.",
+          "websiteUrl": "https://tray.ai",
+          "scores": { "integrations": 4, "ease_of_use": 3, "cost": 2, "dx": 4, "ecosystem": 3 }
+        },
+        {
+          "slug": "activepieces",
+          "name": "Activepieces",
+          "description": "Open-source no-code automation with a TypeScript pieces framework and self-hosting.",
+          "websiteUrl": "https://www.activepieces.com",
+          "scores": { "integrations": 4, "ease_of_use": 4, "cost": 5, "dx": 4, "ecosystem": 3 },
+          "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript"]
+        },
+        {
+          "slug": "windmill",
+          "name": "Windmill",
+          "description": "Open-source developer platform turning scripts into workflows, APIs, and internal apps.",
+          "websiteUrl": "https://www.windmill.dev",
+          "scores": { "integrations": 3, "ease_of_use": 3, "cost": 5, "dx": 5, "ecosystem": 3 },
+          "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript", "language:python"]
+        },
+        {
+          "slug": "node-red",
+          "name": "Node-RED",
+          "description": "Open-source flow-based programming tool for wiring together APIs, devices, and services.",
+          "websiteUrl": "https://nodered.org",
+          "scores": { "integrations": 4, "ease_of_use": 4, "cost": 5, "dx": 4, "ecosystem": 4 },
+          "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript"]
+        },
+        {
+          "slug": "automatisch",
+          "name": "Automatisch",
+          "description": "Open-source Zapier alternative for self-hosted business workflow automation.",
+          "websiteUrl": "https://automatisch.io",
+          "scores": { "integrations": 3, "ease_of_use": 4, "cost": 5, "dx": 4, "ecosystem": 2 },
+          "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript"]
+        },
+        {
+          "slug": "ifttt",
+          "name": "IFTTT",
+          "description": "Consumer-focused automation connecting apps and smart devices with simple applets.",
+          "websiteUrl": "https://ifttt.com",
+          "scores": { "integrations": 4, "ease_of_use": 5, "cost": 4, "dx": 2, "ecosystem": 4 },
+          "tags": ["pricing:free-tier"]
+        },
+        {
+          "slug": "mulesoft",
+          "name": "MuleSoft",
+          "description": "Salesforce's enterprise integration platform for API-led connectivity and complex iPaaS.",
+          "websiteUrl": "https://www.mulesoft.com",
+          "scores": { "integrations": 5, "ease_of_use": 2, "cost": 1, "dx": 3, "ecosystem": 4 }
+        },
+        {
+          "slug": "boomi",
+          "name": "Boomi",
+          "description": "Cloud-native iPaaS for integration, API management, and data workflows across enterprises.",
+          "websiteUrl": "https://boomi.com",
+          "scores": { "integrations": 5, "ease_of_use": 3, "cost": 2, "dx": 3, "ecosystem": 4 }
+        },
+        {
+          "slug": "kestra",
+          "name": "Kestra",
+          "description": "Open-source event-driven orchestration platform with declarative YAML workflows.",
+          "websiteUrl": "https://kestra.io",
+          "scores": { "integrations": 4, "ease_of_use": 3, "cost": 5, "dx": 5, "ecosystem": 3 },
+          "tags": ["pricing:free-tier", "self-hostable:yes"]
+        }
+      ]
+    }
+  ]
+}

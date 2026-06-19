@@ -9,7 +9,7 @@
  */
 
 import { spawn } from "node:child_process";
-import { writeFileSync, mkdirSync } from "node:fs";
+import { writeFileSync, mkdirSync, readFileSync, existsSync } from "node:fs";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { randomUUID } from "node:crypto";
@@ -2542,7 +2542,109 @@ const CURATED_TAGS: Record<string, string[]> = {
   capacitor: ["language:typescript"],
 };
 
+// ─────────────────────────────────────────────
+// Additive web-sourced catalogue (scripts/catalogue-extra.json)
+// ─────────────────────────────────────────────
+// Comprehensive tool lists gathered from the web are merged in here rather than
+// hand-edited into the DIRECTORIES literal above. `deepen` appends items to an
+// existing directory (dedupes by slug); `newDirectories` adds whole categories
+// (with their own aspects). Item tags are registered into CURATED_TAGS by slug.
+type ExtraItem = {
+  slug: string;
+  name: string;
+  description: string;
+  websiteUrl: string;
+  scores: Record<string, number>;
+  tags?: string[];
+};
+type ExtraNewDir = {
+  slug: string;
+  name: string;
+  description: string;
+  heroCopy: string;
+  aspects: Aspect[];
+  items: ExtraItem[];
+};
+type ExtraCatalogue = {
+  deepen?: Record<string, ExtraItem[]>;
+  newDirectories?: ExtraNewDir[];
+};
+
+function registerTags(slug: string, tags?: string[]) {
+  if (!tags || tags.length === 0) return;
+  const existing = CURATED_TAGS[slug] ?? [];
+  CURATED_TAGS[slug] = Array.from(new Set([...existing, ...tags]));
+}
+
+function toItem(it: ExtraItem): Item {
+  return {
+    slug: it.slug,
+    name: it.name,
+    description: it.description,
+    websiteUrl: it.websiteUrl,
+    scores: it.scores,
+  };
+}
+
+function mergeExtraCatalogue() {
+  const path = resolve(__root, "scripts/catalogue-extra.json");
+  if (!existsSync(path)) return;
+  const raw = readFileSync(path, "utf8").trim();
+  if (!raw) return;
+  const extra: ExtraCatalogue = JSON.parse(raw);
+  const bySlug = new Map(DIRECTORIES.map((d) => [d.slug, d]));
+  let addedItems = 0;
+  let addedDirs = 0;
+
+  const appendItems = (dir: Directory, items: ExtraItem[]) => {
+    const seen = new Set(dir.items.map((i) => i.slug));
+    for (const it of items) {
+      if (seen.has(it.slug)) continue;
+      seen.add(it.slug);
+      dir.items.push(toItem(it));
+      registerTags(it.slug, it.tags);
+      addedItems++;
+    }
+  };
+
+  for (const [dirSlug, items] of Object.entries(extra.deepen ?? {})) {
+    const dir = bySlug.get(dirSlug);
+    if (!dir) {
+      console.warn(`[seed] extra: unknown directory "${dirSlug}", skipping ${items.length} items`);
+      continue;
+    }
+    appendItems(dir, items);
+  }
+
+  for (const nd of extra.newDirectories ?? []) {
+    const existing = bySlug.get(nd.slug);
+    if (existing) {
+      appendItems(existing, nd.items); // merge items if the dir already exists
+      continue;
+    }
+    const dir: Directory = {
+      slug: nd.slug,
+      name: nd.name,
+      description: nd.description,
+      heroCopy: nd.heroCopy,
+      aspects: nd.aspects,
+      items: nd.items.map(toItem),
+    };
+    DIRECTORIES.push(dir);
+    bySlug.set(nd.slug, dir);
+    for (const it of nd.items) registerTags(it.slug, it.tags);
+    addedDirs++;
+    addedItems += nd.items.length;
+  }
+
+  if (addedDirs || addedItems) {
+    console.log(`[seed] merged extra catalogue: +${addedDirs} directories, +${addedItems} items`);
+  }
+}
+
 function buildSql(): string {
+  mergeExtraCatalogue();
+
   const out: string[] = [];
   const now = Date.now();
 

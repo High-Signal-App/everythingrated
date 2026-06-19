@@ -1,0 +1,413 @@
+{
+  "deepen": {
+    "databases": [
+      {
+        "slug": "postgresql",
+        "name": "PostgreSQL",
+        "description": "The default open-source relational database for new OLTP projects, with a vast extension ecosystem.",
+        "websiteUrl": "https://www.postgresql.org",
+        "scores": { "latency": 4, "durability": 5, "cost": 5, "dx": 4, "ecosystem": 5 },
+        "tags": ["pricing:free-tier", "self-hostable:yes"]
+      },
+      {
+        "slug": "mysql",
+        "name": "MySQL",
+        "description": "The most widely deployed open-source relational database, ubiquitous in web stacks.",
+        "websiteUrl": "https://www.mysql.com",
+        "scores": { "latency": 4, "durability": 4, "cost": 5, "dx": 4, "ecosystem": 5 },
+        "tags": ["pricing:free-tier", "self-hostable:yes"]
+      },
+      {
+        "slug": "sqlite",
+        "name": "SQLite",
+        "description": "Embedded, serverless relational database that ships as a single file and runs everywhere.",
+        "websiteUrl": "https://www.sqlite.org",
+        "scores": { "latency": 5, "durability": 4, "cost": 5, "dx": 4, "ecosystem": 5 },
+        "tags": ["pricing:free-tier", "self-hostable:yes"]
+      },
+      {
+        "slug": "redis",
+        "name": "Redis",
+        "description": "In-memory key-value store used for caching, queues, and low-latency data structures.",
+        "websiteUrl": "https://redis.io",
+        "scores": { "latency": 5, "durability": 3, "cost": 4, "dx": 4, "ecosystem": 5 },
+        "tags": ["pricing:free-tier", "self-hostable:yes", "realtime:yes"]
+      },
+      {
+        "slug": "dynamodb",
+        "name": "Amazon DynamoDB",
+        "description": "Fully managed serverless NoSQL key-value and document database deeply integrated with AWS.",
+        "websiteUrl": "https://aws.amazon.com/dynamodb",
+        "scores": { "latency": 5, "durability": 5, "cost": 3, "dx": 3, "ecosystem": 4 },
+        "tags": ["deploy:serverless"]
+      },
+      {
+        "slug": "firestore",
+        "name": "Cloud Firestore",
+        "description": "Google's serverless NoSQL document database with realtime sync for web and mobile apps.",
+        "websiteUrl": "https://firebase.google.com/products/firestore",
+        "scores": { "latency": 4, "durability": 5, "cost": 4, "dx": 4, "ecosystem": 4 },
+        "tags": ["deploy:serverless", "pricing:free-tier", "realtime:yes"]
+      },
+      {
+        "slug": "clickhouse",
+        "name": "ClickHouse",
+        "description": "Column-oriented OLAP database built for fast aggregation over billions of rows.",
+        "websiteUrl": "https://clickhouse.com",
+        "scores": { "latency": 5, "durability": 4, "cost": 4, "dx": 4, "ecosystem": 4 },
+        "tags": ["pricing:free-tier", "self-hostable:yes"]
+      },
+      {
+        "slug": "scylladb",
+        "name": "ScyllaDB",
+        "description": "C++ shard-per-core wide-column database compatible with Cassandra and DynamoDB APIs.",
+        "websiteUrl": "https://www.scylladb.com",
+        "scores": { "latency": 5, "durability": 5, "cost": 4, "dx": 3, "ecosystem": 3 },
+        "tags": ["self-hostable:yes"]
+      },
+      {
+        "slug": "dragonfly",
+        "name": "Dragonfly",
+        "description": "Multi-threaded in-memory data store compatible with Redis and Memcached on fewer nodes.",
+        "websiteUrl": "https://www.dragonflydb.io",
+        "scores": { "latency": 5, "durability": 3, "cost": 4, "dx": 4, "ecosystem": 3 },
+        "tags": ["self-hostable:yes", "realtime:yes"]
+      },
+      {
+        "slug": "singlestore",
+        "name": "SingleStore",
+        "description": "Distributed SQL database unifying transactional and analytical workloads for low-latency apps.",
+        "websiteUrl": "https://www.singlestore.com",
+        "scores": { "latency": 5, "durability": 4, "cost": 3, "dx": 4, "ecosystem": 3 }
+      },
+      {
+        "slug": "tidb",
+        "name": "TiDB",
+        "description": "Open-source distributed SQL database with MySQL compatibility and HTAP capabilities.",
+        "websiteUrl": "https://www.pingcap.com",
+        "scores": { "latency": 4, "durability": 5, "cost": 3, "dx": 4, "ecosystem": 4 },
+        "tags": ["self-hostable:yes", "deploy:serverless"]
+      },
+      {
+        "slug": "surrealdb",
+        "name": "SurrealDB",
+        "description": "Multi-model database combining document, graph, and relational queries with realtime subscriptions.",
+        "websiteUrl": "https://surrealdb.com",
+        "scores": { "latency": 4, "durability": 4, "cost": 4, "dx": 4, "ecosystem": 2 },
+        "tags": ["self-hostable:yes", "realtime:yes"]
+      },
+      {
+        "slug": "aurora-serverless",
+        "name": "Amazon Aurora Serverless",
+        "description": "Auto-scaling MySQL- and Postgres-compatible relational database that scales capacity on demand.",
+        "websiteUrl": "https://aws.amazon.com/rds/aurora/serverless",
+        "scores": { "latency": 4, "durability": 5, "cost": 3, "dx": 3, "ecosystem": 5 },
+        "tags": ["deploy:serverless"]
+      },
+      {
+        "slug": "cassandra",
+        "name": "Apache Cassandra",
+        "description": "Wide-column distributed NoSQL database built for high write throughput and linear scalability.",
+        "websiteUrl": "https://cassandra.apache.org",
+        "scores": { "latency": 4, "durability": 5, "cost": 4, "dx": 2, "ecosystem": 4 },
+        "tags": ["pricing:free-tier", "self-hostable:yes"]
+      },
+      {
+        "slug": "duckdb",
+        "name": "DuckDB",
+        "description": "In-process analytical database that runs OLAP queries on local files without a server.",
+        "websiteUrl": "https://duckdb.org",
+        "scores": { "latency": 5, "durability": 3, "cost": 5, "dx": 5, "ecosystem": 3 },
+        "tags": ["pricing:free-tier", "self-hostable:yes"]
+      },
+      {
+        "slug": "upstash-redis",
+        "name": "Upstash Redis",
+        "description": "Serverless Redis with per-request pricing and an HTTP API for edge runtimes.",
+        "websiteUrl": "https://upstash.com/redis",
+        "scores": { "latency": 4, "durability": 4, "cost": 5, "dx": 5, "ecosystem": 4 },
+        "tags": ["deploy:serverless", "deploy:edge", "pricing:free-tier", "realtime:yes"]
+      }
+    ],
+    "vector-databases": [
+      {
+        "slug": "pgvector",
+        "name": "pgvector",
+        "description": "Postgres extension adding vector similarity search to a database teams already run.",
+        "websiteUrl": "https://github.com/pgvector/pgvector",
+        "scores": { "recall": 4, "filtering": 5, "scale": 3, "cost": 5, "sdk_quality": 4 },
+        "tags": ["pricing:free-tier", "self-hostable:yes"]
+      },
+      {
+        "slug": "turbopuffer",
+        "name": "turbopuffer",
+        "description": "Object-storage-native vector and full-text search engine priced for very large, cost-sensitive indexes.",
+        "websiteUrl": "https://turbopuffer.com",
+        "scores": { "recall": 4, "filtering": 4, "scale": 5, "cost": 5, "sdk_quality": 3 }
+      },
+      {
+        "slug": "elasticsearch",
+        "name": "Elasticsearch",
+        "description": "Search engine with native dense-vector fields and hybrid keyword-plus-vector retrieval.",
+        "websiteUrl": "https://www.elastic.co/elasticsearch",
+        "scores": { "recall": 4, "filtering": 5, "scale": 5, "cost": 3, "sdk_quality": 4 },
+        "tags": ["self-hostable:yes"]
+      },
+      {
+        "slug": "opensearch",
+        "name": "OpenSearch",
+        "description": "Open-source search and analytics engine with k-NN vector search and hybrid queries.",
+        "websiteUrl": "https://opensearch.org",
+        "scores": { "recall": 4, "filtering": 4, "scale": 5, "cost": 5, "sdk_quality": 3 },
+        "tags": ["pricing:free-tier", "self-hostable:yes"]
+      },
+      {
+        "slug": "vespa",
+        "name": "Vespa",
+        "description": "Open-source serving engine combining vector search, structured filtering, and ranking at scale.",
+        "websiteUrl": "https://vespa.ai",
+        "scores": { "recall": 5, "filtering": 5, "scale": 5, "cost": 3, "sdk_quality": 3 },
+        "tags": ["self-hostable:yes"]
+      },
+      {
+        "slug": "azure-ai-search",
+        "name": "Azure AI Search",
+        "description": "Managed search service with vector and hybrid retrieval plus Entra-backed security trimming.",
+        "websiteUrl": "https://azure.microsoft.com/en-us/products/ai-services/ai-search",
+        "scores": { "recall": 4, "filtering": 5, "scale": 4, "cost": 3, "sdk_quality": 4 }
+      },
+      {
+        "slug": "mongodb-vector-search",
+        "name": "MongoDB Atlas Vector Search",
+        "description": "Vector search built into MongoDB Atlas so documents and embeddings live in one store.",
+        "websiteUrl": "https://www.mongodb.com/products/platform/atlas-vector-search",
+        "scores": { "recall": 4, "filtering": 4, "scale": 4, "cost": 3, "sdk_quality": 4 },
+        "tags": ["pricing:free-tier"]
+      },
+      {
+        "slug": "faiss",
+        "name": "FAISS",
+        "description": "Meta's open-source similarity-search library for embedding indexes, often embedded in other systems.",
+        "websiteUrl": "https://github.com/facebookresearch/faiss",
+        "scores": { "recall": 5, "filtering": 2, "scale": 4, "cost": 5, "sdk_quality": 3 },
+        "tags": ["pricing:free-tier", "self-hostable:yes", "language:python"]
+      },
+      {
+        "slug": "vectorize",
+        "name": "Cloudflare Vectorize",
+        "description": "Cloudflare's serverless vector database for building search and RAG on Workers at the edge.",
+        "websiteUrl": "https://developers.cloudflare.com/vectorize",
+        "scores": { "recall": 3, "filtering": 3, "scale": 3, "cost": 5, "sdk_quality": 4 },
+        "tags": ["runs-on:cloudflare", "deploy:edge", "deploy:serverless", "pricing:free-tier"]
+      },
+      {
+        "slug": "marqo",
+        "name": "Marqo",
+        "description": "End-to-end vector search engine that handles embedding generation and retrieval in one API.",
+        "websiteUrl": "https://www.marqo.ai",
+        "scores": { "recall": 4, "filtering": 4, "scale": 3, "cost": 3, "sdk_quality": 3 },
+        "tags": ["self-hostable:yes", "language:python"]
+      },
+      {
+        "slug": "supabase-vector",
+        "name": "Supabase Vector",
+        "description": "pgvector-backed vector store inside Supabase Postgres with auto-generated APIs.",
+        "websiteUrl": "https://supabase.com/modules/vector",
+        "scores": { "recall": 4, "filtering": 5, "scale": 3, "cost": 4, "sdk_quality": 4 },
+        "tags": ["pricing:free-tier", "self-hostable:yes"]
+      },
+      {
+        "slug": "zilliz-cloud",
+        "name": "Zilliz Cloud",
+        "description": "Fully managed Milvus offering tuned for large-scale production vector workloads.",
+        "websiteUrl": "https://zilliz.com",
+        "scores": { "recall": 5, "filtering": 4, "scale": 5, "cost": 3, "sdk_quality": 4 },
+        "tags": ["pricing:free-tier"]
+      }
+    ],
+    "orms": [
+      {
+        "slug": "gorm",
+        "name": "GORM",
+        "description": "The most popular Go ORM, with associations, hooks, and auto-migrations.",
+        "websiteUrl": "https://gorm.io",
+        "scores": { "type_safety": 3, "performance": 3, "dx": 4, "migrations": 4, "ecosystem": 5 }
+      },
+      {
+        "slug": "ent",
+        "name": "Ent",
+        "description": "Schema-as-code entity framework for Go with type-safe, generated query builders.",
+        "websiteUrl": "https://entgo.io",
+        "scores": { "type_safety": 5, "performance": 4, "dx": 4, "migrations": 4, "ecosystem": 3 }
+      },
+      {
+        "slug": "sqlc",
+        "name": "sqlc",
+        "description": "Compiles raw SQL into type-safe Go, Python, and Kotlin code from your queries.",
+        "websiteUrl": "https://sqlc.dev",
+        "scores": { "type_safety": 5, "performance": 5, "dx": 4, "migrations": 3, "ecosystem": 3 }
+      },
+      {
+        "slug": "sqlx-rust",
+        "name": "SQLx",
+        "description": "Async Rust SQL toolkit with compile-time query checking against your database.",
+        "websiteUrl": "https://github.com/launchbadge/sqlx",
+        "scores": { "type_safety": 5, "performance": 5, "dx": 4, "migrations": 3, "ecosystem": 4 },
+        "tags": ["pricing:free-tier"]
+      },
+      {
+        "slug": "sea-orm",
+        "name": "SeaORM",
+        "description": "Async, dynamic Rust ORM modeled on ActiveRecord patterns for building web services.",
+        "websiteUrl": "https://www.sea-ql.org/SeaORM",
+        "scores": { "type_safety": 4, "performance": 4, "dx": 4, "migrations": 4, "ecosystem": 3 }
+      },
+      {
+        "slug": "diesel",
+        "name": "Diesel",
+        "description": "Compile-time-safe Rust ORM and query builder with strong relational guarantees.",
+        "websiteUrl": "https://diesel.rs",
+        "scores": { "type_safety": 5, "performance": 5, "dx": 3, "migrations": 4, "ecosystem": 4 }
+      },
+      {
+        "slug": "django-orm",
+        "name": "Django ORM",
+        "description": "Batteries-included Python ORM bundled with Django, with migrations and an admin.",
+        "websiteUrl": "https://docs.djangoproject.com/en/stable/topics/db",
+        "scores": { "type_safety": 3, "performance": 3, "dx": 5, "migrations": 5, "ecosystem": 5 },
+        "tags": ["language:python"]
+      },
+      {
+        "slug": "objection",
+        "name": "Objection.js",
+        "description": "Node.js ORM built on Knex that exposes the full power of SQL with relation graphs.",
+        "websiteUrl": "https://vincit.github.io/objection.js",
+        "scores": { "type_safety": 3, "performance": 4, "dx": 4, "migrations": 4, "ecosystem": 3 },
+        "tags": ["language:typescript"]
+      },
+      {
+        "slug": "sqlmodel",
+        "name": "SQLModel",
+        "description": "FastAPI author's Python library uniting SQLAlchemy and Pydantic for typed models.",
+        "websiteUrl": "https://sqlmodel.tiangolo.com",
+        "scores": { "type_safety": 4, "performance": 4, "dx": 5, "migrations": 3, "ecosystem": 3 },
+        "tags": ["language:python"]
+      },
+      {
+        "slug": "entity-framework-core",
+        "name": "Entity Framework Core",
+        "description": "Microsoft's mature .NET ORM with LINQ queries, migrations, and broad provider support.",
+        "websiteUrl": "https://learn.microsoft.com/en-us/ef/core",
+        "scores": { "type_safety": 4, "performance": 4, "dx": 4, "migrations": 5, "ecosystem": 5 }
+      },
+      {
+        "slug": "bun-orm",
+        "name": "Bun",
+        "description": "Lightweight Go SQL-first ORM and query builder for Postgres, MySQL, and SQLite.",
+        "websiteUrl": "https://bun.uptrace.dev",
+        "scores": { "type_safety": 3, "performance": 5, "dx": 4, "migrations": 4, "ecosystem": 3 }
+      },
+      {
+        "slug": "tortoise-orm",
+        "name": "Tortoise ORM",
+        "description": "Async Python ORM inspired by Django, designed for asyncio web frameworks.",
+        "websiteUrl": "https://tortoise.github.io",
+        "scores": { "type_safety": 3, "performance": 4, "dx": 4, "migrations": 3, "ecosystem": 3 },
+        "tags": ["language:python"]
+      }
+    ],
+    "object-storage": [
+      {
+        "slug": "digitalocean-spaces",
+        "name": "DigitalOcean Spaces",
+        "description": "S3-compatible object storage bundled with a built-in CDN at predictable flat pricing.",
+        "websiteUrl": "https://www.digitalocean.com/products/spaces",
+        "scores": { "cost": 4, "durability": 4, "performance": 4, "dx": 4, "egress_pricing": 4 }
+      },
+      {
+        "slug": "tigris",
+        "name": "Tigris",
+        "description": "Globally distributed, S3-compatible object storage with zero egress fees.",
+        "websiteUrl": "https://www.tigrisdata.com",
+        "scores": { "cost": 5, "durability": 4, "performance": 4, "dx": 4, "egress_pricing": 5 },
+        "tags": ["deploy:edge", "pricing:free-tier"]
+      },
+      {
+        "slug": "scaleway-object-storage",
+        "name": "Scaleway Object Storage",
+        "description": "European S3-compatible storage with multi-tier classes and native static web hosting.",
+        "websiteUrl": "https://www.scaleway.com/en/object-storage",
+        "scores": { "cost": 4, "durability": 4, "performance": 4, "dx": 4, "egress_pricing": 3 },
+        "tags": ["pricing:free-tier"]
+      },
+      {
+        "slug": "hetzner-object-storage",
+        "name": "Hetzner Object Storage",
+        "description": "Low-cost, GDPR-compliant S3-compatible storage hosted in German and Finnish data centers.",
+        "websiteUrl": "https://www.hetzner.com/storage/object-storage",
+        "scores": { "cost": 5, "durability": 4, "performance": 4, "dx": 4, "egress_pricing": 4 }
+      },
+      {
+        "slug": "filebase",
+        "name": "Filebase",
+        "description": "S3-compatible object storage on decentralized networks with flat per-terabyte pricing and free egress.",
+        "websiteUrl": "https://filebase.com",
+        "scores": { "cost": 5, "durability": 4, "performance": 3, "dx": 4, "egress_pricing": 5 },
+        "tags": ["pricing:free-tier"]
+      },
+      {
+        "slug": "seaweedfs",
+        "name": "SeaweedFS",
+        "description": "Self-hosted distributed object store optimized for storing billions of small files efficiently.",
+        "websiteUrl": "https://github.com/seaweedfs/seaweedfs",
+        "scores": { "cost": 5, "durability": 4, "performance": 4, "dx": 3, "egress_pricing": 5 },
+        "tags": ["pricing:free-tier", "self-hostable:yes"]
+      },
+      {
+        "slug": "garage",
+        "name": "Garage",
+        "description": "Lightweight Rust S3-compatible object store designed to run reliably outside datacenters.",
+        "websiteUrl": "https://garagehq.deuxfleurs.fr",
+        "scores": { "cost": 5, "durability": 4, "performance": 3, "dx": 3, "egress_pricing": 5 },
+        "tags": ["pricing:free-tier", "self-hostable:yes", "deploy:edge"]
+      },
+      {
+        "slug": "ceph",
+        "name": "Ceph",
+        "description": "Open-source distributed storage with an S3-compatible gateway for heavy enterprise workloads.",
+        "websiteUrl": "https://ceph.io",
+        "scores": { "cost": 4, "durability": 5, "performance": 4, "dx": 2, "egress_pricing": 5 },
+        "tags": ["pricing:free-tier", "self-hostable:yes"]
+      },
+      {
+        "slug": "ibm-cloud-object-storage",
+        "name": "IBM Cloud Object Storage",
+        "description": "Enterprise S3-compatible object storage with flexible resiliency and storage classes.",
+        "websiteUrl": "https://www.ibm.com/products/cloud-object-storage",
+        "scores": { "cost": 3, "durability": 5, "performance": 4, "dx": 3, "egress_pricing": 2 }
+      },
+      {
+        "slug": "oracle-object-storage",
+        "name": "Oracle Cloud Object Storage",
+        "description": "OCI's S3-compatible object storage with a generous always-free egress allowance.",
+        "websiteUrl": "https://www.oracle.com/cloud/storage/object-storage",
+        "scores": { "cost": 4, "durability": 5, "performance": 4, "dx": 3, "egress_pricing": 4 },
+        "tags": ["pricing:free-tier"]
+      },
+      {
+        "slug": "ovh-object-storage",
+        "name": "OVHcloud Object Storage",
+        "description": "European S3-compatible object storage that dropped egress fees across tiers in 2026.",
+        "websiteUrl": "https://www.ovhcloud.com/en/public-cloud/object-storage",
+        "scores": { "cost": 4, "durability": 4, "performance": 4, "dx": 3, "egress_pricing": 5 }
+      },
+      {
+        "slug": "vultr-object-storage",
+        "name": "Vultr Object Storage",
+        "description": "S3-compatible object storage with bundled transfer across Vultr's global locations.",
+        "websiteUrl": "https://www.vultr.com/products/object-storage",
+        "scores": { "cost": 4, "durability": 4, "performance": 4, "dx": 4, "egress_pricing": 4 }
+      }
+    ]
+  }
+}
