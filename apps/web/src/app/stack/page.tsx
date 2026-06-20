@@ -201,8 +201,10 @@ function StackResults({ result }: { result: StackResult }) {
       </div>
 
       <p className="text-[12px] leading-[1.5] text-[var(--muted)]">
-        Scores reflect current community ratings on this site (still sparse — POC).
-        Constraint matches nudge ranking; they don&apos;t guarantee compatibility.
+        Scores are first-pass estimates; the ecosystem / adoption axis is grounded
+        in real package-registry downloads (npm, PyPI, crates, NuGet) and GitHub
+        stars where available, and improves as people rate. Constraint matches
+        nudge ranking; they don&apos;t guarantee compatibility.
       </p>
     </div>
   );

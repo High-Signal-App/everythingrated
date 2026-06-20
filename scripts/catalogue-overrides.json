@@ -1,9 +1,761 @@
 {
-  "cursor": { "speed": 5, "accuracy": 5 },
-  "claude-code": { "speed": 5, "integration_depth": 5 },
-  "codeium": { "cost": 4 },
-  "posthog": { "query_speed": 5 },
-  "june": { "warehouse_fit": 3 },
-  "zod": { "performance": 4 },
-  "zod-mini": { "ecosystem": 3 }
+ "cursor": {
+  "speed": 5,
+  "accuracy": 5
+ },
+ "claude-code": {
+  "speed": 5,
+  "integration_depth": 5
+ },
+ "codeium": {
+  "cost": 4
+ },
+ "posthog": {
+  "query_speed": 5
+ },
+ "june": {
+  "warehouse_fit": 3
+ },
+ "zod": {
+  "performance": 4,
+  "ecosystem": 5
+ },
+ "zod-mini": {
+  "ecosystem": 5
+ },
+ "postcss": {
+  "ecosystem": 5
+ },
+ "tailwindcss": {
+  "ecosystem": 5
+ },
+ "lightningcss": {
+  "ecosystem": 5
+ },
+ "sass": {
+  "ecosystem": 5
+ },
+ "emotion": {
+  "ecosystem": 4
+ },
+ "less": {
+  "ecosystem": 4
+ },
+ "styled-components": {
+  "ecosystem": 4
+ },
+ "bootstrap": {
+  "ecosystem": 3
+ },
+ "css-modules": {
+  "ecosystem": 3
+ },
+ "vanilla-extract": {
+  "ecosystem": 3
+ },
+ "stylex": {
+  "ecosystem": 3
+ },
+ "linaria": {
+  "ecosystem": 2
+ },
+ "unocss": {
+  "ecosystem": 2
+ },
+ "bulma": {
+  "ecosystem": 2
+ },
+ "panda-css": {
+  "ecosystem": 1
+ },
+ "picocss": {
+  "ecosystem": 1
+ },
+ "open-props": {
+  "ecosystem": 1
+ },
+ "tanstack-query": {
+  "ecosystem": 5
+ },
+ "zustand": {
+  "ecosystem": 5
+ },
+ "redux": {
+  "ecosystem": 5
+ },
+ "tanstack-store": {
+  "ecosystem": 5
+ },
+ "redux-toolkit": {
+  "ecosystem": 4
+ },
+ "rtk-query": {
+  "ecosystem": 4
+ },
+ "swr": {
+  "ecosystem": 4
+ },
+ "apollo-client": {
+  "ecosystem": 3
+ },
+ "jotai": {
+  "ecosystem": 3
+ },
+ "nanostores": {
+  "ecosystem": 3
+ },
+ "xstate": {
+  "ecosystem": 3
+ },
+ "pinia": {
+  "ecosystem": 2
+ },
+ "mobx": {
+  "ecosystem": 2
+ },
+ "valtio": {
+  "ecosystem": 2
+ },
+ "recoil": {
+  "ecosystem": 1
+ },
+ "effector": {
+  "ecosystem": 1
+ },
+ "legend-state": {
+  "ecosystem": 1
+ },
+ "ajv": {
+  "ecosystem": 5
+ },
+ "typebox": {
+  "ecosystem": 4
+ },
+ "joi": {
+  "ecosystem": 4
+ },
+ "effect-schema": {
+  "ecosystem": 4
+ },
+ "valibot": {
+  "ecosystem": 3
+ },
+ "yup": {
+  "ecosystem": 3
+ },
+ "class-validator": {
+  "ecosystem": 3
+ },
+ "superstruct": {
+  "ecosystem": 2
+ },
+ "io-ts": {
+  "ecosystem": 2
+ },
+ "ow": {
+  "ecosystem": 2
+ },
+ "arktype": {
+  "ecosystem": 1
+ },
+ "runtypes": {
+  "ecosystem": 1
+ },
+ "vinejs": {
+  "ecosystem": 1
+ },
+ "esbuild": {
+  "ecosystem": 5
+ },
+ "tsc": {
+  "ecosystem": 5
+ },
+ "vite": {
+  "ecosystem": 5
+ },
+ "rollup": {
+  "ecosystem": 5
+ },
+ "rolldown": {
+  "ecosystem": 4
+ },
+ "turbopack": {
+  "ecosystem": 4
+ },
+ "swc": {
+  "ecosystem": 4
+ },
+ "webpack": {
+  "ecosystem": 4
+ },
+ "rspack": {
+  "ecosystem": 3
+ },
+ "tsup": {
+  "ecosystem": 3
+ },
+ "tsdown": {
+  "ecosystem": 3
+ },
+ "bun-build": {
+  "ecosystem": 2
+ },
+ "metro": {
+  "ecosystem": 2
+ },
+ "parcel": {
+  "ecosystem": 2
+ },
+ "unbuild": {
+  "ecosystem": 2
+ },
+ "microbundle": {
+  "ecosystem": 1
+ },
+ "mako": {
+  "ecosystem": 1
+ },
+ "farm": {
+  "ecosystem": 1
+ },
+ "eslint": {
+  "ecosystem": 5
+ },
+ "prettier": {
+  "ecosystem": 5
+ },
+ "ruff": {
+  "ecosystem": 5
+ },
+ "biome": {
+  "ecosystem": 4
+ },
+ "stylelint": {
+  "ecosystem": 4
+ },
+ "standardjs": {
+  "ecosystem": 3
+ },
+ "oxc": {
+  "ecosystem": 3
+ },
+ "oxlint": {
+  "ecosystem": 3
+ },
+ "eslint-stylistic": {
+  "ecosystem": 2
+ },
+ "knip": {
+  "ecosystem": 2
+ },
+ "dprint": {
+  "ecosystem": 1
+ },
+ "publint": {
+  "ecosystem": 1
+ },
+ "pnpm": {
+  "ecosystem": 5
+ },
+ "deno": {
+  "ecosystem": 5
+ },
+ "turborepo": {
+  "ecosystem": 5
+ },
+ "npm": {
+  "ecosystem": 4
+ },
+ "nx": {
+  "ecosystem": 4
+ },
+ "yarn": {
+  "ecosystem": 3
+ },
+ "corepack": {
+  "ecosystem": 3
+ },
+ "volta": {
+  "ecosystem": 3
+ },
+ "changesets": {
+  "ecosystem": 2
+ },
+ "ni": {
+  "ecosystem": 2
+ },
+ "bun": {
+  "ecosystem": 1
+ },
+ "lerna": {
+  "ecosystem": 1
+ },
+ "vitest": {
+  "ecosystem": 5
+ },
+ "playwright": {
+  "ecosystem": 5
+ },
+ "node-test": {
+  "ecosystem": 5
+ },
+ "jest": {
+  "ecosystem": 4
+ },
+ "mocha": {
+  "ecosystem": 4
+ },
+ "cypress": {
+  "ecosystem": 4
+ },
+ "uvu": {
+  "ecosystem": 3
+ },
+ "webdriverio": {
+  "ecosystem": 3
+ },
+ "bun-test": {
+  "ecosystem": 3
+ },
+ "storybook-test": {
+  "ecosystem": 2
+ },
+ "jasmine": {
+  "ecosystem": 2
+ },
+ "ava": {
+  "ecosystem": 2
+ },
+ "testcafe": {
+  "ecosystem": 1
+ },
+ "web-test-runner": {
+  "ecosystem": 1
+ },
+ "react": {
+  "ecosystem": 5
+ },
+ "preact": {
+  "ecosystem": 5
+ },
+ "vue": {
+  "ecosystem": 5
+ },
+ "lit": {
+  "ecosystem": 5
+ },
+ "angular": {
+  "ecosystem": 4
+ },
+ "svelte": {
+  "ecosystem": 4
+ },
+ "solid": {
+  "ecosystem": 4
+ },
+ "stencil": {
+  "ecosystem": 4
+ },
+ "stimulus": {
+  "ecosystem": 3
+ },
+ "alpine": {
+  "ecosystem": 3
+ },
+ "inferno": {
+  "ecosystem": 3
+ },
+ "ember": {
+  "ecosystem": 2
+ },
+ "htmx": {
+  "ecosystem": 2
+ },
+ "qwik": {
+  "ecosystem": 2
+ },
+ "marko": {
+  "ecosystem": 2
+ },
+ "mithril": {
+  "ecosystem": 1
+ },
+ "riot": {
+  "ecosystem": 1
+ },
+ "aurelia": {
+  "ecosystem": 1
+ },
+ "react-router": {
+  "ecosystem": 5
+ },
+ "nextjs": {
+  "ecosystem": 5
+ },
+ "tanstack-start": {
+  "ecosystem": 5
+ },
+ "fresh": {
+  "ecosystem": 5
+ },
+ "astro": {
+  "ecosystem": 4
+ },
+ "sveltekit": {
+  "ecosystem": 4
+ },
+ "nuxt": {
+  "ecosystem": 4
+ },
+ "docusaurus": {
+  "ecosystem": 4
+ },
+ "remix": {
+  "ecosystem": 3
+ },
+ "gatsby": {
+  "ecosystem": 3
+ },
+ "eleventy": {
+  "ecosystem": 3
+ },
+ "vike": {
+  "ecosystem": 3
+ },
+ "solidstart": {
+  "ecosystem": 2
+ },
+ "hydrogen": {
+  "ecosystem": 2
+ },
+ "analog": {
+  "ecosystem": 2
+ },
+ "qwik-city": {
+  "ecosystem": 2
+ },
+ "redwoodjs": {
+  "ecosystem": 1
+ },
+ "waku": {
+  "ecosystem": 1
+ },
+ "redwoodsdk": {
+  "ecosystem": 1
+ },
+ "mui": {
+  "ecosystem": 5
+ },
+ "radix-ui": {
+  "ecosystem": 5
+ },
+ "react-aria": {
+  "ecosystem": 5
+ },
+ "magic-ui": {
+  "ecosystem": 5
+ },
+ "headless-ui": {
+  "ecosystem": 5
+ },
+ "shadcn-ui": {
+  "ecosystem": 4
+ },
+ "ant-design": {
+  "ecosystem": 4
+ },
+ "mantine": {
+  "ecosystem": 4
+ },
+ "chakra-ui": {
+  "ecosystem": 4
+ },
+ "vuetify": {
+  "ecosystem": 3
+ },
+ "ark-ui": {
+  "ecosystem": 3
+ },
+ "daisyui": {
+  "ecosystem": 3
+ },
+ "element-plus": {
+  "ecosystem": 3
+ },
+ "primevue": {
+  "ecosystem": 2
+ },
+ "flowbite": {
+  "ecosystem": 2
+ },
+ "nextui": {
+  "ecosystem": 2
+ },
+ "primereact": {
+  "ecosystem": 2
+ },
+ "tremor": {
+  "ecosystem": 1
+ },
+ "quasar": {
+  "ecosystem": 1
+ },
+ "naive-ui": {
+  "ecosystem": 1
+ },
+ "park-ui": {
+  "ecosystem": 1
+ },
+ "express": {
+  "ecosystem": 5
+ },
+ "flask": {
+  "ecosystem": 5
+ },
+ "hono": {
+  "ecosystem": 5
+ },
+ "fastapi": {
+  "ecosystem": 5
+ },
+ "gin": {
+  "ecosystem": 5
+ },
+ "django": {
+  "ecosystem": 5
+ },
+ "laravel": {
+  "ecosystem": 4
+ },
+ "spring-boot": {
+  "ecosystem": 4
+ },
+ "rails": {
+  "ecosystem": 4
+ },
+ "fiber": {
+  "ecosystem": 4
+ },
+ "aspnet-core": {
+  "ecosystem": 4
+ },
+ "nestjs": {
+  "ecosystem": 3
+ },
+ "echo": {
+  "ecosystem": 3
+ },
+ "go-kit": {
+  "ecosystem": 3
+ },
+ "fastify": {
+  "ecosystem": 3
+ },
+ "koa": {
+  "ecosystem": 3
+ },
+ "phoenix": {
+  "ecosystem": 3
+ },
+ "chi": {
+  "ecosystem": 2
+ },
+ "axum": {
+  "ecosystem": 2
+ },
+ "trpc": {
+  "ecosystem": 2
+ },
+ "encore": {
+  "ecosystem": 2
+ },
+ "django-ninja": {
+  "ecosystem": 2
+ },
+ "actix-web": {
+  "ecosystem": 1
+ },
+ "elysia": {
+  "ecosystem": 1
+ },
+ "litestar": {
+  "ecosystem": 1
+ },
+ "adonisjs": {
+  "ecosystem": 1
+ },
+ "rocket": {
+  "ecosystem": 1
+ },
+ "autogpt": {
+  "ecosystem": 5
+ },
+ "langchain": {
+  "ecosystem": 5
+ },
+ "llamaindex": {
+  "ecosystem": 5
+ },
+ "vercel-ai-sdk": {
+  "ecosystem": 5
+ },
+ "langgraph": {
+  "ecosystem": 5
+ },
+ "agno": {
+  "ecosystem": 4
+ },
+ "haystack": {
+  "ecosystem": 4
+ },
+ "letta": {
+  "ecosystem": 4
+ },
+ "openai-agents-sdk": {
+  "ecosystem": 4
+ },
+ "google-adk": {
+  "ecosystem": 3
+ },
+ "pydantic-ai": {
+  "ecosystem": 3
+ },
+ "anthropic-agents": {
+  "ecosystem": 3
+ },
+ "crewai": {
+  "ecosystem": 3
+ },
+ "strands-agents": {
+  "ecosystem": 2
+ },
+ "autogen": {
+  "ecosystem": 2
+ },
+ "dspy": {
+  "ecosystem": 2
+ },
+ "mastra": {
+  "ecosystem": 2
+ },
+ "semantic-kernel": {
+  "ecosystem": 1
+ },
+ "smolagents": {
+  "ecosystem": 1
+ },
+ "pocketflow": {
+  "ecosystem": 1
+ },
+ "atomic-agents": {
+  "ecosystem": 1
+ },
+ "flutter": {
+  "ecosystem": 5
+ },
+ "kotlin-multiplatform": {
+  "ecosystem": 5
+ },
+ "react-native": {
+  "ecosystem": 5
+ },
+ "expo": {
+  "ecosystem": 5
+ },
+ "capacitor": {
+  "ecosystem": 4
+ },
+ "solar2d": {
+  "ecosystem": 4
+ },
+ "codename-one": {
+  "ecosystem": 4
+ },
+ "tauri-mobile": {
+  "ecosystem": 3
+ },
+ "ionic": {
+  "ecosystem": 3
+ },
+ "dotnet-maui": {
+  "ecosystem": 3
+ },
+ "apache-cordova": {
+  "ecosystem": 2
+ },
+ "uno-platform": {
+  "ecosystem": 2
+ },
+ "lynx": {
+  "ecosystem": 2
+ },
+ "framework7": {
+  "ecosystem": 1
+ },
+ "nativescript": {
+  "ecosystem": 1
+ },
+ "onsen-ui": {
+  "ecosystem": 1
+ },
+ "sqlalchemy": {
+  "ecosystem": 5
+ },
+ "prisma": {
+  "ecosystem": 5
+ },
+ "gorm": {
+  "ecosystem": 5
+ },
+ "django-orm": {
+  "ecosystem": 5
+ },
+ "drizzle": {
+  "ecosystem": 4
+ },
+ "kysely": {
+  "ecosystem": 4
+ },
+ "entity-framework-core": {
+  "ecosystem": 4
+ },
+ "sqlc": {
+  "ecosystem": 4
+ },
+ "ent": {
+  "ecosystem": 3
+ },
+ "typeorm": {
+  "ecosystem": 3
+ },
+ "knex": {
+  "ecosystem": 3
+ },
+ "sqlmodel": {
+  "ecosystem": 3
+ },
+ "sequelize": {
+  "ecosystem": 2
+ },
+ "sqlx-rust": {
+  "ecosystem": 2
+ },
+ "tortoise-orm": {
+  "ecosystem": 2
+ },
+ "bun-orm": {
+  "ecosystem": 2
+ },
+ "mikro-orm": {
+  "ecosystem": 1
+ },
+ "diesel": {
+  "ecosystem": 1
+ },
+ "objection": {
+  "ecosystem": 1
+ },
+ "sea-orm": {
+  "ecosystem": 1
+ }
 }

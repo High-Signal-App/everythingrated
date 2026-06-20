@@ -1,0 +1,1508 @@
+{
+ "tailwindcss": {
+  "directory": "css-tools",
+  "github": "tailwindlabs/tailwindcss",
+  "registry": "npm",
+  "pkg": "tailwindcss"
+ },
+ "unocss": {
+  "directory": "css-tools",
+  "github": "unocss/unocss",
+  "registry": "npm",
+  "pkg": "unocss"
+ },
+ "css-modules": {
+  "directory": "css-tools",
+  "github": "css-modules/css-modules",
+  "registry": null,
+  "pkg": null
+ },
+ "postcss": {
+  "directory": "css-tools",
+  "github": "postcss/postcss",
+  "registry": "npm",
+  "pkg": "postcss"
+ },
+ "open-props": {
+  "directory": "css-tools",
+  "github": "argyleink/open-props",
+  "registry": "npm",
+  "pkg": "open-props"
+ },
+ "sass": {
+  "directory": "css-tools",
+  "github": "sass/dart-sass",
+  "registry": "npm",
+  "pkg": "sass"
+ },
+ "emotion": {
+  "directory": "css-tools",
+  "github": "emotion-js/emotion",
+  "registry": "npm",
+  "pkg": "@emotion/react"
+ },
+ "bootstrap": {
+  "directory": "css-tools",
+  "github": "twbs/bootstrap",
+  "registry": "npm",
+  "pkg": "bootstrap"
+ },
+ "vanilla-extract": {
+  "directory": "css-tools",
+  "github": "vanilla-extract-css/vanilla-extract",
+  "registry": "npm",
+  "pkg": "@vanilla-extract/css"
+ },
+ "lightningcss": {
+  "directory": "css-tools",
+  "github": "parcel-bundler/lightningcss",
+  "registry": "npm",
+  "pkg": "lightningcss"
+ },
+ "bulma": {
+  "directory": "css-tools",
+  "github": "jgthms/bulma",
+  "registry": "npm",
+  "pkg": "bulma"
+ },
+ "panda-css": {
+  "directory": "css-tools",
+  "github": "chakra-ui/panda",
+  "registry": "npm",
+  "pkg": "@pandacss/dev"
+ },
+ "linaria": {
+  "directory": "css-tools",
+  "github": "callstack/linaria",
+  "registry": "npm",
+  "pkg": "@linaria/core"
+ },
+ "stylex": {
+  "directory": "css-tools",
+  "github": "facebook/stylex",
+  "registry": "npm",
+  "pkg": "@stylexjs/stylex"
+ },
+ "styled-components": {
+  "directory": "css-tools",
+  "github": "styled-components/styled-components",
+  "registry": "npm",
+  "pkg": "styled-components"
+ },
+ "less": {
+  "directory": "css-tools",
+  "github": "less/less.js",
+  "registry": "npm",
+  "pkg": "less"
+ },
+ "picocss": {
+  "directory": "css-tools",
+  "github": "picocss/pico",
+  "registry": "npm",
+  "pkg": "@picocss/pico"
+ },
+ "zustand": {
+  "directory": "state-management",
+  "github": "pmndrs/zustand",
+  "registry": "npm",
+  "pkg": "zustand"
+ },
+ "jotai": {
+  "directory": "state-management",
+  "github": "pmndrs/jotai",
+  "registry": "npm",
+  "pkg": "jotai"
+ },
+ "pinia": {
+  "directory": "state-management",
+  "github": "vuejs/pinia",
+  "registry": "npm",
+  "pkg": "pinia"
+ },
+ "nanostores": {
+  "directory": "state-management",
+  "github": "nanostores/nanostores",
+  "registry": "npm",
+  "pkg": "nanostores"
+ },
+ "valtio": {
+  "directory": "state-management",
+  "github": "pmndrs/valtio",
+  "registry": "npm",
+  "pkg": "valtio"
+ },
+ "legend-state": {
+  "directory": "state-management",
+  "github": "LegendApp/legend-state",
+  "registry": "npm",
+  "pkg": "@legendapp/state"
+ },
+ "tanstack-store": {
+  "directory": "state-management",
+  "github": "TanStack/store",
+  "registry": "npm",
+  "pkg": "@tanstack/store"
+ },
+ "swr": {
+  "directory": "state-management",
+  "github": "vercel/swr",
+  "registry": "npm",
+  "pkg": "swr"
+ },
+ "tanstack-query": {
+  "directory": "state-management",
+  "github": "TanStack/query",
+  "registry": "npm",
+  "pkg": "@tanstack/react-query"
+ },
+ "effector": {
+  "directory": "state-management",
+  "github": "effector/effector",
+  "registry": "npm",
+  "pkg": "effector"
+ },
+ "redux-toolkit": {
+  "directory": "state-management",
+  "github": "reduxjs/redux-toolkit",
+  "registry": "npm",
+  "pkg": "@reduxjs/toolkit"
+ },
+ "rtk-query": {
+  "directory": "state-management",
+  "github": "reduxjs/redux-toolkit",
+  "registry": "npm",
+  "pkg": "@reduxjs/toolkit"
+ },
+ "recoil": {
+  "directory": "state-management",
+  "github": "facebookexperimental/Recoil",
+  "registry": "npm",
+  "pkg": "recoil"
+ },
+ "mobx": {
+  "directory": "state-management",
+  "github": "mobxjs/mobx",
+  "registry": "npm",
+  "pkg": "mobx"
+ },
+ "xstate": {
+  "directory": "state-management",
+  "github": "statelyai/xstate",
+  "registry": "npm",
+  "pkg": "xstate"
+ },
+ "apollo-client": {
+  "directory": "state-management",
+  "github": "apollographql/apollo-client",
+  "registry": "npm",
+  "pkg": "@apollo/client"
+ },
+ "redux": {
+  "directory": "state-management",
+  "github": "reduxjs/redux",
+  "registry": "npm",
+  "pkg": "redux"
+ },
+ "typebox": {
+  "directory": "validation-libraries",
+  "github": "sinclairzx81/typebox",
+  "registry": "npm",
+  "pkg": "@sinclair/typebox"
+ },
+ "zod-mini": {
+  "directory": "validation-libraries",
+  "github": "colinhacks/zod",
+  "registry": "npm",
+  "pkg": "zod"
+ },
+ "zod": {
+  "directory": "validation-libraries",
+  "github": "colinhacks/zod",
+  "registry": "npm",
+  "pkg": "zod"
+ },
+ "arktype": {
+  "directory": "validation-libraries",
+  "github": "arktypeio/arktype",
+  "registry": "npm",
+  "pkg": "arktype"
+ },
+ "valibot": {
+  "directory": "validation-libraries",
+  "github": "open-circle/valibot",
+  "registry": "npm",
+  "pkg": "valibot"
+ },
+ "effect-schema": {
+  "directory": "validation-libraries",
+  "github": "Effect-TS/effect",
+  "registry": "npm",
+  "pkg": "effect"
+ },
+ "runtypes": {
+  "directory": "validation-libraries",
+  "github": "runtypes/runtypes",
+  "registry": "npm",
+  "pkg": "runtypes"
+ },
+ "vinejs": {
+  "directory": "validation-libraries",
+  "github": "vinejs/vine",
+  "registry": "npm",
+  "pkg": "@vinejs/vine"
+ },
+ "ajv": {
+  "directory": "validation-libraries",
+  "github": "ajv-validator/ajv",
+  "registry": "npm",
+  "pkg": "ajv"
+ },
+ "class-validator": {
+  "directory": "validation-libraries",
+  "github": "typestack/class-validator",
+  "registry": "npm",
+  "pkg": "class-validator"
+ },
+ "superstruct": {
+  "directory": "validation-libraries",
+  "github": "ianstormtaylor/superstruct",
+  "registry": "npm",
+  "pkg": "superstruct"
+ },
+ "yup": {
+  "directory": "validation-libraries",
+  "github": "jquense/yup",
+  "registry": "npm",
+  "pkg": "yup"
+ },
+ "io-ts": {
+  "directory": "validation-libraries",
+  "github": "gcanti/io-ts",
+  "registry": "npm",
+  "pkg": "io-ts"
+ },
+ "ow": {
+  "directory": "validation-libraries",
+  "github": "sindresorhus/ow",
+  "registry": "npm",
+  "pkg": "ow"
+ },
+ "joi": {
+  "directory": "validation-libraries",
+  "github": "hapijs/joi",
+  "registry": "npm",
+  "pkg": "joi"
+ },
+ "vite": {
+  "directory": "bundlers",
+  "github": "vitejs/vite",
+  "registry": "npm",
+  "pkg": "vite"
+ },
+ "tsdown": {
+  "directory": "bundlers",
+  "github": "rolldown/tsdown",
+  "registry": "npm",
+  "pkg": "tsdown"
+ },
+ "tsup": {
+  "directory": "bundlers",
+  "github": "egoist/tsup",
+  "registry": "npm",
+  "pkg": "tsup"
+ },
+ "parcel": {
+  "directory": "bundlers",
+  "github": "parcel-bundler/parcel",
+  "registry": "npm",
+  "pkg": "parcel"
+ },
+ "rollup": {
+  "directory": "bundlers",
+  "github": "rollup/rollup",
+  "registry": "npm",
+  "pkg": "rollup"
+ },
+ "rolldown": {
+  "directory": "bundlers",
+  "github": "rolldown/rolldown",
+  "registry": "npm",
+  "pkg": "rolldown"
+ },
+ "bun-build": {
+  "directory": "bundlers",
+  "github": "oven-sh/bun",
+  "registry": "npm",
+  "pkg": "bun"
+ },
+ "rspack": {
+  "directory": "bundlers",
+  "github": "web-infra-dev/rspack",
+  "registry": "npm",
+  "pkg": "@rspack/core"
+ },
+ "esbuild": {
+  "directory": "bundlers",
+  "github": "evanw/esbuild",
+  "registry": "npm",
+  "pkg": "esbuild"
+ },
+ "turbopack": {
+  "directory": "bundlers",
+  "github": "vercel/next.js",
+  "registry": "npm",
+  "pkg": "next"
+ },
+ "unbuild": {
+  "directory": "bundlers",
+  "github": "unjs/unbuild",
+  "registry": "npm",
+  "pkg": "unbuild"
+ },
+ "farm": {
+  "directory": "bundlers",
+  "github": "farm-fe/farm",
+  "registry": "npm",
+  "pkg": "@farmfe/core"
+ },
+ "swc": {
+  "directory": "bundlers",
+  "github": "swc-project/swc",
+  "registry": "npm",
+  "pkg": "@swc/core"
+ },
+ "microbundle": {
+  "directory": "bundlers",
+  "github": "developit/microbundle",
+  "registry": "npm",
+  "pkg": "microbundle"
+ },
+ "mako": {
+  "directory": "bundlers",
+  "github": "umijs/mako",
+  "registry": "npm",
+  "pkg": "@umijs/mako"
+ },
+ "webpack": {
+  "directory": "bundlers",
+  "github": "webpack/webpack",
+  "registry": "npm",
+  "pkg": "webpack"
+ },
+ "metro": {
+  "directory": "bundlers",
+  "github": "facebook/metro",
+  "registry": "npm",
+  "pkg": "metro"
+ },
+ "tsc": {
+  "directory": "bundlers",
+  "github": "microsoft/TypeScript",
+  "registry": "npm",
+  "pkg": "typescript"
+ },
+ "ruff": {
+  "directory": "linters-formatters",
+  "github": "astral-sh/ruff",
+  "registry": "pypi",
+  "pkg": "ruff"
+ },
+ "eslint": {
+  "directory": "linters-formatters",
+  "github": "eslint/eslint",
+  "registry": "npm",
+  "pkg": "eslint"
+ },
+ "trunk-check": {
+  "directory": "linters-formatters",
+  "github": null,
+  "registry": "npm",
+  "pkg": "@trunkio/launcher"
+ },
+ "biome": {
+  "directory": "linters-formatters",
+  "github": "biomejs/biome",
+  "registry": "npm",
+  "pkg": "@biomejs/biome"
+ },
+ "prettier": {
+  "directory": "linters-formatters",
+  "github": "prettier/prettier",
+  "registry": "npm",
+  "pkg": "prettier"
+ },
+ "publint": {
+  "directory": "linters-formatters",
+  "github": "publint/publint",
+  "registry": "npm",
+  "pkg": "publint"
+ },
+ "knip": {
+  "directory": "linters-formatters",
+  "github": "webpro-nl/knip",
+  "registry": "npm",
+  "pkg": "knip"
+ },
+ "dprint": {
+  "directory": "linters-formatters",
+  "github": "dprint/dprint",
+  "registry": "npm",
+  "pkg": "dprint"
+ },
+ "eslint-stylistic": {
+  "directory": "linters-formatters",
+  "github": "eslint-stylistic/eslint-stylistic",
+  "registry": "npm",
+  "pkg": "@stylistic/eslint-plugin"
+ },
+ "stylelint": {
+  "directory": "linters-formatters",
+  "github": "stylelint/stylelint",
+  "registry": "npm",
+  "pkg": "stylelint"
+ },
+ "oxc": {
+  "directory": "linters-formatters",
+  "github": "oxc-project/oxc",
+  "registry": "npm",
+  "pkg": "oxlint"
+ },
+ "oxlint": {
+  "directory": "linters-formatters",
+  "github": "oxc-project/oxc",
+  "registry": "npm",
+  "pkg": "oxlint"
+ },
+ "standardjs": {
+  "directory": "linters-formatters",
+  "github": "standard/standard",
+  "registry": "npm",
+  "pkg": "standard"
+ },
+ "pnpm": {
+  "directory": "package-managers",
+  "github": "pnpm/pnpm",
+  "registry": "npm",
+  "pkg": "pnpm"
+ },
+ "yarn": {
+  "directory": "package-managers",
+  "github": "yarnpkg/berry",
+  "registry": "npm",
+  "pkg": "yarn"
+ },
+ "nx": {
+  "directory": "package-managers",
+  "github": "nrwl/nx",
+  "registry": "npm",
+  "pkg": "nx"
+ },
+ "turborepo": {
+  "directory": "package-managers",
+  "github": "vercel/turborepo",
+  "registry": "npm",
+  "pkg": "turbo"
+ },
+ "bun": {
+  "directory": "package-managers",
+  "github": "oven-sh/bun",
+  "registry": "npm",
+  "pkg": "bun"
+ },
+ "changesets": {
+  "directory": "package-managers",
+  "github": "changesets/changesets",
+  "registry": "npm",
+  "pkg": "@changesets/cli"
+ },
+ "deno": {
+  "directory": "package-managers",
+  "github": "denoland/deno",
+  "registry": null,
+  "pkg": null
+ },
+ "volta": {
+  "directory": "package-managers",
+  "github": "volta-cli/volta",
+  "registry": null,
+  "pkg": null
+ },
+ "corepack": {
+  "directory": "package-managers",
+  "github": "nodejs/corepack",
+  "registry": "npm",
+  "pkg": "corepack"
+ },
+ "ni": {
+  "directory": "package-managers",
+  "github": "antfu-collective/ni",
+  "registry": "npm",
+  "pkg": "@antfu/ni"
+ },
+ "lerna": {
+  "directory": "package-managers",
+  "github": "lerna/lerna",
+  "registry": "npm",
+  "pkg": "lerna"
+ },
+ "npm": {
+  "directory": "package-managers",
+  "github": "npm/cli",
+  "registry": "npm",
+  "pkg": "npm"
+ },
+ "vitest": {
+  "directory": "test-runners",
+  "github": "vitest-dev/vitest",
+  "registry": "npm",
+  "pkg": "vitest"
+ },
+ "playwright": {
+  "directory": "test-runners",
+  "github": "microsoft/playwright",
+  "registry": "npm",
+  "pkg": "@playwright/test"
+ },
+ "storybook-test": {
+  "directory": "test-runners",
+  "github": "storybookjs/test-runner",
+  "registry": "npm",
+  "pkg": "@storybook/test-runner"
+ },
+ "cypress": {
+  "directory": "test-runners",
+  "github": "cypress-io/cypress",
+  "registry": "npm",
+  "pkg": "cypress"
+ },
+ "webdriverio": {
+  "directory": "test-runners",
+  "github": "webdriverio/webdriverio",
+  "registry": "npm",
+  "pkg": "webdriverio"
+ },
+ "wallaby": {
+  "directory": "test-runners",
+  "github": null,
+  "registry": null,
+  "pkg": null
+ },
+ "web-test-runner": {
+  "directory": "test-runners",
+  "github": "modernweb-dev/web",
+  "registry": "npm",
+  "pkg": "@web/test-runner"
+ },
+ "testcafe": {
+  "directory": "test-runners",
+  "github": "DevExpress/testcafe",
+  "registry": "npm",
+  "pkg": "testcafe"
+ },
+ "bun-test": {
+  "directory": "test-runners",
+  "github": "oven-sh/bun",
+  "registry": "npm",
+  "pkg": "bun"
+ },
+ "jest": {
+  "directory": "test-runners",
+  "github": "jestjs/jest",
+  "registry": "npm",
+  "pkg": "jest"
+ },
+ "uvu": {
+  "directory": "test-runners",
+  "github": "lukeed/uvu",
+  "registry": "npm",
+  "pkg": "uvu"
+ },
+ "mocha": {
+  "directory": "test-runners",
+  "github": "mochajs/mocha",
+  "registry": "npm",
+  "pkg": "mocha"
+ },
+ "ava": {
+  "directory": "test-runners",
+  "github": "avajs/ava",
+  "registry": "npm",
+  "pkg": "ava"
+ },
+ "jasmine": {
+  "directory": "test-runners",
+  "github": "jasmine/jasmine",
+  "registry": "npm",
+  "pkg": "jasmine"
+ },
+ "node-test": {
+  "directory": "test-runners",
+  "github": "nodejs/node",
+  "registry": null,
+  "pkg": null
+ },
+ "svelte": {
+  "directory": "frontend-frameworks",
+  "github": "sveltejs/svelte",
+  "registry": "npm",
+  "pkg": "svelte"
+ },
+ "htmx": {
+  "directory": "frontend-frameworks",
+  "github": "bigskysoftware/htmx",
+  "registry": "npm",
+  "pkg": "htmx.org"
+ },
+ "react": {
+  "directory": "frontend-frameworks",
+  "github": "facebook/react",
+  "registry": "npm",
+  "pkg": "react"
+ },
+ "vue": {
+  "directory": "frontend-frameworks",
+  "github": "vuejs/core",
+  "registry": "npm",
+  "pkg": "vue"
+ },
+ "alpine": {
+  "directory": "frontend-frameworks",
+  "github": "alpinejs/alpine",
+  "registry": "npm",
+  "pkg": "alpinejs"
+ },
+ "solid": {
+  "directory": "frontend-frameworks",
+  "github": "solidjs/solid",
+  "registry": "npm",
+  "pkg": "solid-js"
+ },
+ "stimulus": {
+  "directory": "frontend-frameworks",
+  "github": "hotwired/stimulus",
+  "registry": "npm",
+  "pkg": "@hotwired/stimulus"
+ },
+ "marko": {
+  "directory": "frontend-frameworks",
+  "github": "marko-js/marko",
+  "registry": "npm",
+  "pkg": "marko"
+ },
+ "preact": {
+  "directory": "frontend-frameworks",
+  "github": "preactjs/preact",
+  "registry": "npm",
+  "pkg": "preact"
+ },
+ "qwik": {
+  "directory": "frontend-frameworks",
+  "github": "QwikDev/qwik",
+  "registry": "npm",
+  "pkg": "@builder.io/qwik"
+ },
+ "riot": {
+  "directory": "frontend-frameworks",
+  "github": "riot/riot",
+  "registry": "npm",
+  "pkg": "riot"
+ },
+ "angular": {
+  "directory": "frontend-frameworks",
+  "github": "angular/angular",
+  "registry": "npm",
+  "pkg": "@angular/core"
+ },
+ "mithril": {
+  "directory": "frontend-frameworks",
+  "github": "MithrilJS/mithril.js",
+  "registry": "npm",
+  "pkg": "mithril"
+ },
+ "lit": {
+  "directory": "frontend-frameworks",
+  "github": "lit/lit",
+  "registry": "npm",
+  "pkg": "lit"
+ },
+ "inferno": {
+  "directory": "frontend-frameworks",
+  "github": "infernojs/inferno",
+  "registry": "npm",
+  "pkg": "inferno"
+ },
+ "stencil": {
+  "directory": "frontend-frameworks",
+  "github": "stenciljs/core",
+  "registry": "npm",
+  "pkg": "@stencil/core"
+ },
+ "ember": {
+  "directory": "frontend-frameworks",
+  "github": "emberjs/ember.js",
+  "registry": "npm",
+  "pkg": "ember-source"
+ },
+ "aurelia": {
+  "directory": "frontend-frameworks",
+  "github": "aurelia/aurelia",
+  "registry": "npm",
+  "pkg": "aurelia"
+ },
+ "remix": {
+  "directory": "meta-frameworks",
+  "github": "remix-run/remix",
+  "registry": "npm",
+  "pkg": "@remix-run/react"
+ },
+ "nextjs": {
+  "directory": "meta-frameworks",
+  "github": "vercel/next.js",
+  "registry": "npm",
+  "pkg": "next"
+ },
+ "react-router": {
+  "directory": "meta-frameworks",
+  "github": "remix-run/react-router",
+  "registry": "npm",
+  "pkg": "react-router"
+ },
+ "astro": {
+  "directory": "meta-frameworks",
+  "github": "withastro/astro",
+  "registry": "npm",
+  "pkg": "astro"
+ },
+ "nuxt": {
+  "directory": "meta-frameworks",
+  "github": "nuxt/nuxt",
+  "registry": "npm",
+  "pkg": "nuxt"
+ },
+ "sveltekit": {
+  "directory": "meta-frameworks",
+  "github": "sveltejs/kit",
+  "registry": "npm",
+  "pkg": "@sveltejs/kit"
+ },
+ "docusaurus": {
+  "directory": "meta-frameworks",
+  "github": "facebook/docusaurus",
+  "registry": "npm",
+  "pkg": "@docusaurus/core"
+ },
+ "fresh": {
+  "directory": "meta-frameworks",
+  "github": "freshframework/fresh",
+  "registry": null,
+  "pkg": null
+ },
+ "tanstack-start": {
+  "directory": "meta-frameworks",
+  "github": "TanStack/router",
+  "registry": "npm",
+  "pkg": "@tanstack/react-start"
+ },
+ "vike": {
+  "directory": "meta-frameworks",
+  "github": "vikejs/vike",
+  "registry": "npm",
+  "pkg": "vike"
+ },
+ "eleventy": {
+  "directory": "meta-frameworks",
+  "github": "11ty/eleventy",
+  "registry": "npm",
+  "pkg": "@11ty/eleventy"
+ },
+ "qwik-city": {
+  "directory": "meta-frameworks",
+  "github": "QwikDev/qwik",
+  "registry": "npm",
+  "pkg": "@builder.io/qwik-city"
+ },
+ "solidstart": {
+  "directory": "meta-frameworks",
+  "github": "solidjs/solid-start",
+  "registry": "npm",
+  "pkg": "@solidjs/start"
+ },
+ "analog": {
+  "directory": "meta-frameworks",
+  "github": "analogjs/analog",
+  "registry": "npm",
+  "pkg": "@analogjs/platform"
+ },
+ "redwoodsdk": {
+  "directory": "meta-frameworks",
+  "github": "redwoodjs/sdk",
+  "registry": "npm",
+  "pkg": "rwsdk"
+ },
+ "waku": {
+  "directory": "meta-frameworks",
+  "github": "wakujs/waku",
+  "registry": "npm",
+  "pkg": "waku"
+ },
+ "hydrogen": {
+  "directory": "meta-frameworks",
+  "github": "Shopify/hydrogen",
+  "registry": "npm",
+  "pkg": "@shopify/hydrogen"
+ },
+ "gatsby": {
+  "directory": "meta-frameworks",
+  "github": "gatsbyjs/gatsby",
+  "registry": "npm",
+  "pkg": "gatsby"
+ },
+ "redwoodjs": {
+  "directory": "meta-frameworks",
+  "github": "redwoodjs/redwood",
+  "registry": "npm",
+  "pkg": "@redwoodjs/core"
+ },
+ "shadcn-ui": {
+  "directory": "ui-component-libraries",
+  "github": "shadcn-ui/ui",
+  "registry": "npm",
+  "pkg": "shadcn"
+ },
+ "radix-ui": {
+  "directory": "ui-component-libraries",
+  "github": "radix-ui/primitives",
+  "registry": "npm",
+  "pkg": "radix-ui"
+ },
+ "nextui": {
+  "directory": "ui-component-libraries",
+  "github": "heroui-inc/heroui",
+  "registry": "npm",
+  "pkg": "@heroui/react"
+ },
+ "react-aria": {
+  "directory": "ui-component-libraries",
+  "github": "adobe/react-spectrum",
+  "registry": "npm",
+  "pkg": "react-aria"
+ },
+ "headless-ui": {
+  "directory": "ui-component-libraries",
+  "github": "tailwindlabs/headlessui",
+  "registry": "npm",
+  "pkg": "@headlessui/react"
+ },
+ "chakra-ui": {
+  "directory": "ui-component-libraries",
+  "github": "chakra-ui/chakra-ui",
+  "registry": "npm",
+  "pkg": "@chakra-ui/react"
+ },
+ "vuetify": {
+  "directory": "ui-component-libraries",
+  "github": "vuetifyjs/vuetify",
+  "registry": "npm",
+  "pkg": "vuetify"
+ },
+ "park-ui": {
+  "directory": "ui-component-libraries",
+  "github": "cschroeter/park-ui",
+  "registry": "npm",
+  "pkg": "@park-ui/panda-preset"
+ },
+ "mantine": {
+  "directory": "ui-component-libraries",
+  "github": "mantinedev/mantine",
+  "registry": "npm",
+  "pkg": "@mantine/core"
+ },
+ "mui": {
+  "directory": "ui-component-libraries",
+  "github": "mui/material-ui",
+  "registry": "npm",
+  "pkg": "@mui/material"
+ },
+ "primevue": {
+  "directory": "ui-component-libraries",
+  "github": "primefaces/primevue",
+  "registry": "npm",
+  "pkg": "primevue"
+ },
+ "magic-ui": {
+  "directory": "ui-component-libraries",
+  "github": "magicuidesign/magicui",
+  "registry": null,
+  "pkg": null
+ },
+ "primereact": {
+  "directory": "ui-component-libraries",
+  "github": "primefaces/primereact",
+  "registry": "npm",
+  "pkg": "primereact"
+ },
+ "ark-ui": {
+  "directory": "ui-component-libraries",
+  "github": "chakra-ui/ark",
+  "registry": "npm",
+  "pkg": "@ark-ui/react"
+ },
+ "daisyui": {
+  "directory": "ui-component-libraries",
+  "github": "saadeghi/daisyui",
+  "registry": "npm",
+  "pkg": "daisyui"
+ },
+ "tremor": {
+  "directory": "ui-component-libraries",
+  "github": "tremorlabs/tremor",
+  "registry": "npm",
+  "pkg": "@tremor/react"
+ },
+ "ant-design": {
+  "directory": "ui-component-libraries",
+  "github": "ant-design/ant-design",
+  "registry": "npm",
+  "pkg": "antd"
+ },
+ "quasar": {
+  "directory": "ui-component-libraries",
+  "github": "quasarframework/quasar",
+  "registry": "npm",
+  "pkg": "quasar"
+ },
+ "flowbite": {
+  "directory": "ui-component-libraries",
+  "github": "themesberg/flowbite",
+  "registry": "npm",
+  "pkg": "flowbite"
+ },
+ "naive-ui": {
+  "directory": "ui-component-libraries",
+  "github": "tusen-ai/naive-ui",
+  "registry": "npm",
+  "pkg": "naive-ui"
+ },
+ "element-plus": {
+  "directory": "ui-component-libraries",
+  "github": "element-plus/element-plus",
+  "registry": "npm",
+  "pkg": "element-plus"
+ },
+ "hono": {
+  "directory": "api-frameworks",
+  "github": "honojs/hono",
+  "registry": "npm",
+  "pkg": "hono"
+ },
+ "fastapi": {
+  "directory": "api-frameworks",
+  "github": "fastapi/fastapi",
+  "registry": "pypi",
+  "pkg": "fastapi"
+ },
+ "elysia": {
+  "directory": "api-frameworks",
+  "github": "elysiajs/elysia",
+  "registry": "npm",
+  "pkg": "elysia"
+ },
+ "trpc": {
+  "directory": "api-frameworks",
+  "github": "trpc/trpc",
+  "registry": "npm",
+  "pkg": "@trpc/server"
+ },
+ "aspnet-core": {
+  "directory": "api-frameworks",
+  "github": "dotnet/aspnetcore",
+  "registry": null,
+  "pkg": null
+ },
+ "axum": {
+  "directory": "api-frameworks",
+  "github": "tokio-rs/axum",
+  "registry": "crates",
+  "pkg": "axum"
+ },
+ "django-ninja": {
+  "directory": "api-frameworks",
+  "github": "vitalik/django-ninja",
+  "registry": "pypi",
+  "pkg": "django-ninja"
+ },
+ "fastify": {
+  "directory": "api-frameworks",
+  "github": "fastify/fastify",
+  "registry": "npm",
+  "pkg": "fastify"
+ },
+ "encore": {
+  "directory": "api-frameworks",
+  "github": "encoredev/encore",
+  "registry": "go",
+  "pkg": "encore.dev"
+ },
+ "fiber": {
+  "directory": "api-frameworks",
+  "github": "gofiber/fiber",
+  "registry": "go",
+  "pkg": "github.com/gofiber/fiber/v2"
+ },
+ "gin": {
+  "directory": "api-frameworks",
+  "github": "gin-gonic/gin",
+  "registry": "go",
+  "pkg": "github.com/gin-gonic/gin"
+ },
+ "litestar": {
+  "directory": "api-frameworks",
+  "github": "litestar-org/litestar",
+  "registry": "pypi",
+  "pkg": "litestar"
+ },
+ "spring-boot": {
+  "directory": "api-frameworks",
+  "github": "spring-projects/spring-boot",
+  "registry": null,
+  "pkg": null
+ },
+ "laravel": {
+  "directory": "api-frameworks",
+  "github": "laravel/laravel",
+  "registry": null,
+  "pkg": null
+ },
+ "echo": {
+  "directory": "api-frameworks",
+  "github": "labstack/echo",
+  "registry": "go",
+  "pkg": "github.com/labstack/echo/v4"
+ },
+ "express": {
+  "directory": "api-frameworks",
+  "github": "expressjs/express",
+  "registry": "npm",
+  "pkg": "express"
+ },
+ "flask": {
+  "directory": "api-frameworks",
+  "github": "pallets/flask",
+  "registry": "pypi",
+  "pkg": "flask"
+ },
+ "actix-web": {
+  "directory": "api-frameworks",
+  "github": "actix/actix-web",
+  "registry": "crates",
+  "pkg": "actix-web"
+ },
+ "rocket": {
+  "directory": "api-frameworks",
+  "github": "rwf2/Rocket",
+  "registry": "crates",
+  "pkg": "rocket"
+ },
+ "adonisjs": {
+  "directory": "api-frameworks",
+  "github": "adonisjs/core",
+  "registry": "npm",
+  "pkg": "@adonisjs/core"
+ },
+ "chi": {
+  "directory": "api-frameworks",
+  "github": "go-chi/chi",
+  "registry": "go",
+  "pkg": "github.com/go-chi/chi/v5"
+ },
+ "rails": {
+  "directory": "api-frameworks",
+  "github": "rails/rails",
+  "registry": null,
+  "pkg": null
+ },
+ "nestjs": {
+  "directory": "api-frameworks",
+  "github": "nestjs/nest",
+  "registry": "npm",
+  "pkg": "@nestjs/core"
+ },
+ "phoenix": {
+  "directory": "api-frameworks",
+  "github": "phoenixframework/phoenix",
+  "registry": null,
+  "pkg": null
+ },
+ "koa": {
+  "directory": "api-frameworks",
+  "github": "koajs/koa",
+  "registry": "npm",
+  "pkg": "koa"
+ },
+ "go-kit": {
+  "directory": "api-frameworks",
+  "github": "go-kit/kit",
+  "registry": "go",
+  "pkg": "github.com/go-kit/kit"
+ },
+ "django": {
+  "directory": "api-frameworks",
+  "github": "django/django",
+  "registry": "pypi",
+  "pkg": "django"
+ },
+ "vercel-ai-sdk": {
+  "directory": "ai-agent-frameworks",
+  "github": "vercel/ai",
+  "registry": "npm",
+  "pkg": "ai"
+ },
+ "openai-agents-sdk": {
+  "directory": "ai-agent-frameworks",
+  "github": "openai/openai-agents-python",
+  "registry": "pypi",
+  "pkg": "openai-agents"
+ },
+ "agno": {
+  "directory": "ai-agent-frameworks",
+  "github": "agno-agi/agno",
+  "registry": "pypi",
+  "pkg": "agno"
+ },
+ "anthropic-agents": {
+  "directory": "ai-agent-frameworks",
+  "github": "anthropics/claude-agent-sdk-python",
+  "registry": "pypi",
+  "pkg": "claude-agent-sdk"
+ },
+ "llamaindex": {
+  "directory": "ai-agent-frameworks",
+  "github": "run-llama/llama_index",
+  "registry": "pypi",
+  "pkg": "llama-index"
+ },
+ "langgraph": {
+  "directory": "ai-agent-frameworks",
+  "github": "langchain-ai/langgraph",
+  "registry": "pypi",
+  "pkg": "langgraph"
+ },
+ "strands-agents": {
+  "directory": "ai-agent-frameworks",
+  "github": "strands-agents/sdk-python",
+  "registry": "pypi",
+  "pkg": "strands-agents"
+ },
+ "mastra": {
+  "directory": "ai-agent-frameworks",
+  "github": "mastra-ai/mastra",
+  "registry": "npm",
+  "pkg": "@mastra/core"
+ },
+ "pydantic-ai": {
+  "directory": "ai-agent-frameworks",
+  "github": "pydantic/pydantic-ai",
+  "registry": "pypi",
+  "pkg": "pydantic-ai"
+ },
+ "smolagents": {
+  "directory": "ai-agent-frameworks",
+  "github": "huggingface/smolagents",
+  "registry": "pypi",
+  "pkg": "smolagents"
+ },
+ "semantic-kernel": {
+  "directory": "ai-agent-frameworks",
+  "github": "microsoft/semantic-kernel",
+  "registry": "pypi",
+  "pkg": "semantic-kernel"
+ },
+ "haystack": {
+  "directory": "ai-agent-frameworks",
+  "github": "deepset-ai/haystack",
+  "registry": "pypi",
+  "pkg": "haystack-ai"
+ },
+ "google-adk": {
+  "directory": "ai-agent-frameworks",
+  "github": "google/adk-python",
+  "registry": "pypi",
+  "pkg": "google-adk"
+ },
+ "letta": {
+  "directory": "ai-agent-frameworks",
+  "github": "letta-ai/letta",
+  "registry": "pypi",
+  "pkg": "letta"
+ },
+ "langchain": {
+  "directory": "ai-agent-frameworks",
+  "github": "langchain-ai/langchain",
+  "registry": "pypi",
+  "pkg": "langchain"
+ },
+ "crewai": {
+  "directory": "ai-agent-frameworks",
+  "github": "crewAIInc/crewAI",
+  "registry": "pypi",
+  "pkg": "crewai"
+ },
+ "atomic-agents": {
+  "directory": "ai-agent-frameworks",
+  "github": "BrainBlend-AI/atomic-agents",
+  "registry": "pypi",
+  "pkg": "atomic-agents"
+ },
+ "autogen": {
+  "directory": "ai-agent-frameworks",
+  "github": "ag2ai/ag2",
+  "registry": "pypi",
+  "pkg": "ag2"
+ },
+ "pocketflow": {
+  "directory": "ai-agent-frameworks",
+  "github": "The-Pocket/PocketFlow",
+  "registry": "pypi",
+  "pkg": "pocketflow"
+ },
+ "dspy": {
+  "directory": "ai-agent-frameworks",
+  "github": "stanfordnlp/dspy",
+  "registry": "pypi",
+  "pkg": "dspy"
+ },
+ "autogpt": {
+  "directory": "ai-agent-frameworks",
+  "github": "Significant-Gravitas/AutoGPT",
+  "registry": null,
+  "pkg": null
+ },
+ "expo": {
+  "directory": "mobile-frameworks",
+  "github": "expo/expo",
+  "registry": "npm",
+  "pkg": "expo"
+ },
+ "unity": {
+  "directory": "mobile-frameworks",
+  "github": null,
+  "registry": null,
+  "pkg": null
+ },
+ "kotlin-multiplatform": {
+  "directory": "mobile-frameworks",
+  "github": "JetBrains/kotlin",
+  "registry": null,
+  "pkg": null
+ },
+ "flutter": {
+  "directory": "mobile-frameworks",
+  "github": "flutter/flutter",
+  "registry": null,
+  "pkg": null
+ },
+ "flutterflow": {
+  "directory": "mobile-frameworks",
+  "github": null,
+  "registry": null,
+  "pkg": null
+ },
+ "react-native": {
+  "directory": "mobile-frameworks",
+  "github": "facebook/react-native",
+  "registry": "npm",
+  "pkg": "react-native"
+ },
+ "ionic": {
+  "directory": "mobile-frameworks",
+  "github": "ionic-team/ionic-framework",
+  "registry": "npm",
+  "pkg": "@ionic/core"
+ },
+ "capacitor": {
+  "directory": "mobile-frameworks",
+  "github": "ionic-team/capacitor",
+  "registry": "npm",
+  "pkg": "@capacitor/core"
+ },
+ "lynx": {
+  "directory": "mobile-frameworks",
+  "github": "lynx-family/lynx",
+  "registry": "npm",
+  "pkg": "@lynx-js/react"
+ },
+ "framework7": {
+  "directory": "mobile-frameworks",
+  "github": "framework7io/framework7",
+  "registry": "npm",
+  "pkg": "framework7"
+ },
+ "dotnet-maui": {
+  "directory": "mobile-frameworks",
+  "github": "dotnet/maui",
+  "registry": "nuget",
+  "pkg": "Microsoft.Maui.Controls"
+ },
+ "nativescript": {
+  "directory": "mobile-frameworks",
+  "github": "NativeScript/NativeScript",
+  "registry": "npm",
+  "pkg": "nativescript"
+ },
+ "uno-platform": {
+  "directory": "mobile-frameworks",
+  "github": "unoplatform/uno",
+  "registry": "nuget",
+  "pkg": "Uno.WinUI"
+ },
+ "onsen-ui": {
+  "directory": "mobile-frameworks",
+  "github": "OnsenUI/OnsenUI",
+  "registry": "npm",
+  "pkg": "onsenui"
+ },
+ "tauri-mobile": {
+  "directory": "mobile-frameworks",
+  "github": "tauri-apps/tauri",
+  "registry": "crates",
+  "pkg": "tauri"
+ },
+ "solar2d": {
+  "directory": "mobile-frameworks",
+  "github": "coronalabs/corona",
+  "registry": null,
+  "pkg": null
+ },
+ "codename-one": {
+  "directory": "mobile-frameworks",
+  "github": "codenameone/CodenameOne",
+  "registry": null,
+  "pkg": null
+ },
+ "apache-cordova": {
+  "directory": "mobile-frameworks",
+  "github": "apache/cordova",
+  "registry": "npm",
+  "pkg": "cordova"
+ },
+ "drizzle": {
+  "directory": "orms",
+  "github": "drizzle-team/drizzle-orm",
+  "registry": "npm",
+  "pkg": "drizzle-orm"
+ },
+ "prisma": {
+  "directory": "orms",
+  "github": "prisma/prisma",
+  "registry": "npm",
+  "pkg": "prisma"
+ },
+ "typeorm": {
+  "directory": "orms",
+  "github": "typeorm/typeorm",
+  "registry": "npm",
+  "pkg": "typeorm"
+ },
+ "sequelize": {
+  "directory": "orms",
+  "github": "sequelize/sequelize",
+  "registry": "npm",
+  "pkg": "sequelize"
+ },
+ "kysely": {
+  "directory": "orms",
+  "github": "kysely-org/kysely",
+  "registry": "npm",
+  "pkg": "kysely"
+ },
+ "mikro-orm": {
+  "directory": "orms",
+  "github": "mikro-orm/mikro-orm",
+  "registry": "npm",
+  "pkg": "@mikro-orm/core"
+ },
+ "knex": {
+  "directory": "orms",
+  "github": "knex/knex",
+  "registry": "npm",
+  "pkg": "knex"
+ },
+ "objection": {
+  "directory": "orms",
+  "github": "Vincit/objection.js",
+  "registry": "npm",
+  "pkg": "objection"
+ },
+ "sqlalchemy": {
+  "directory": "orms",
+  "github": "sqlalchemy/sqlalchemy",
+  "registry": "pypi",
+  "pkg": "sqlalchemy"
+ },
+ "django-orm": {
+  "directory": "orms",
+  "github": "django/django",
+  "registry": "pypi",
+  "pkg": "django"
+ },
+ "tortoise-orm": {
+  "directory": "orms",
+  "github": "tortoise/tortoise-orm",
+  "registry": "pypi",
+  "pkg": "tortoise-orm"
+ },
+ "sqlmodel": {
+  "directory": "orms",
+  "github": "fastapi/sqlmodel",
+  "registry": "pypi",
+  "pkg": "sqlmodel"
+ },
+ "diesel": {
+  "directory": "orms",
+  "github": "diesel-rs/diesel",
+  "registry": "crates",
+  "pkg": "diesel"
+ },
+ "sea-orm": {
+  "directory": "orms",
+  "github": "SeaQL/sea-orm",
+  "registry": "crates",
+  "pkg": "sea-orm"
+ },
+ "sqlx-rust": {
+  "directory": "orms",
+  "github": "launchbadge/sqlx",
+  "registry": "crates",
+  "pkg": "sqlx"
+ },
+ "entity-framework-core": {
+  "directory": "orms",
+  "github": "dotnet/efcore",
+  "registry": "nuget",
+  "pkg": "Microsoft.EntityFrameworkCore"
+ },
+ "gorm": {
+  "directory": "orms",
+  "github": "go-gorm/gorm",
+  "registry": "go",
+  "pkg": null
+ },
+ "ent": {
+  "directory": "orms",
+  "github": "ent/ent",
+  "registry": "go",
+  "pkg": null
+ },
+ "bun-orm": {
+  "directory": "orms",
+  "github": "uptrace/bun",
+  "registry": "go",
+  "pkg": null
+ },
+ "sqlc": {
+  "directory": "orms",
+  "github": "sqlc-dev/sqlc",
+  "registry": "go",
+  "pkg": null
+ }
+}

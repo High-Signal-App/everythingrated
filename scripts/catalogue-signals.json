@@ -1,0 +1,2512 @@
+{
+ "tailwindcss": {
+  "directory": "css-tools",
+  "github": "tailwindlabs/tailwindcss",
+  "registry": "npm",
+  "pkg": "tailwindcss",
+  "stars": 95663,
+  "lastPush": "2026-06-19T20:39:59Z",
+  "weeklyDownloads": 121420902,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "unocss": {
+  "directory": "css-tools",
+  "github": "unocss/unocss",
+  "registry": "npm",
+  "pkg": "unocss",
+  "stars": 18855,
+  "lastPush": "2026-06-18T03:01:34Z",
+  "weeklyDownloads": 448455,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "css-modules": {
+  "directory": "css-tools",
+  "github": "css-modules/css-modules",
+  "registry": null,
+  "pkg": null,
+  "stars": 17971,
+  "lastPush": "2024-05-30T14:58:51Z",
+  "weeklyDownloads": null,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "postcss": {
+  "directory": "css-tools",
+  "github": "postcss/postcss",
+  "registry": "npm",
+  "pkg": "postcss",
+  "stars": 28968,
+  "lastPush": "2026-06-16T20:13:36Z",
+  "weeklyDownloads": 246564527,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "open-props": {
+  "directory": "css-tools",
+  "github": "argyleink/open-props",
+  "registry": "npm",
+  "pkg": "open-props",
+  "stars": 5418,
+  "lastPush": "2026-01-31T17:22:16Z",
+  "weeklyDownloads": 21324,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "sass": {
+  "directory": "css-tools",
+  "github": "sass/dart-sass",
+  "registry": "npm",
+  "pkg": "sass",
+  "stars": 4194,
+  "lastPush": "2026-06-16T22:15:23Z",
+  "weeklyDownloads": 30040071,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "emotion": {
+  "directory": "css-tools",
+  "github": "emotion-js/emotion",
+  "registry": "npm",
+  "pkg": "@emotion/react",
+  "stars": 18018,
+  "lastPush": "2026-05-06T07:42:22Z",
+  "weeklyDownloads": 19194975,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "bootstrap": {
+  "directory": "css-tools",
+  "github": "twbs/bootstrap",
+  "registry": "npm",
+  "pkg": "bootstrap",
+  "stars": 174348,
+  "lastPush": "2026-06-19T19:55:49Z",
+  "weeklyDownloads": 6420738,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "vanilla-extract": {
+  "directory": "css-tools",
+  "github": "vanilla-extract-css/vanilla-extract",
+  "registry": "npm",
+  "pkg": "@vanilla-extract/css",
+  "stars": 10383,
+  "lastPush": "2026-06-10T09:26:56Z",
+  "weeklyDownloads": 2361136,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "lightningcss": {
+  "directory": "css-tools",
+  "github": "parcel-bundler/lightningcss",
+  "registry": "npm",
+  "pkg": "lightningcss",
+  "stars": 7579,
+  "lastPush": "2026-06-16T12:13:41Z",
+  "weeklyDownloads": 86370026,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "bulma": {
+  "directory": "css-tools",
+  "github": "jgthms/bulma",
+  "registry": "npm",
+  "pkg": "bulma",
+  "stars": 50073,
+  "lastPush": "2026-03-01T20:13:02Z",
+  "weeklyDownloads": 359137,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "panda-css": {
+  "directory": "css-tools",
+  "github": "chakra-ui/panda",
+  "registry": "npm",
+  "pkg": "@pandacss/dev",
+  "stars": 6090,
+  "lastPush": "2026-06-19T17:39:02Z",
+  "weeklyDownloads": 347726,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "linaria": {
+  "directory": "css-tools",
+  "github": "callstack/linaria",
+  "registry": "npm",
+  "pkg": "@linaria/core",
+  "stars": 12329,
+  "lastPush": "2026-06-14T18:53:42Z",
+  "weeklyDownloads": 701653,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "stylex": {
+  "directory": "css-tools",
+  "github": "facebook/stylex",
+  "registry": "npm",
+  "pkg": "@stylexjs/stylex",
+  "stars": 9358,
+  "lastPush": "2026-06-20T00:51:41Z",
+  "weeklyDownloads": 889642,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "styled-components": {
+  "directory": "css-tools",
+  "github": "styled-components/styled-components",
+  "registry": "npm",
+  "pkg": "styled-components",
+  "stars": 41103,
+  "lastPush": "2026-06-11T04:36:02Z",
+  "weeklyDownloads": 11184337,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "less": {
+  "directory": "css-tools",
+  "github": "less/less.js",
+  "registry": "npm",
+  "pkg": "less",
+  "stars": 17031,
+  "lastPush": "2026-06-14T00:18:20Z",
+  "weeklyDownloads": 11236617,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "picocss": {
+  "directory": "css-tools",
+  "github": "picocss/pico",
+  "registry": "npm",
+  "pkg": "@picocss/pico",
+  "stars": 16665,
+  "lastPush": "2026-05-09T18:16:06Z",
+  "weeklyDownloads": 36576,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "zustand": {
+  "directory": "state-management",
+  "github": "pmndrs/zustand",
+  "registry": "npm",
+  "pkg": "zustand",
+  "stars": 58351,
+  "lastPush": "2026-06-19T22:52:04Z",
+  "weeklyDownloads": 43150769,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "jotai": {
+  "directory": "state-management",
+  "github": "pmndrs/jotai",
+  "registry": "npm",
+  "pkg": "jotai",
+  "stars": 21202,
+  "lastPush": "2026-06-12T05:37:34Z",
+  "weeklyDownloads": 5369301,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "pinia": {
+  "directory": "state-management",
+  "github": "vuejs/pinia",
+  "registry": "npm",
+  "pkg": "pinia",
+  "stars": 14615,
+  "lastPush": "2026-06-19T06:12:07Z",
+  "weeklyDownloads": 4292691,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "nanostores": {
+  "directory": "state-management",
+  "github": "nanostores/nanostores",
+  "registry": "npm",
+  "pkg": "nanostores",
+  "stars": 7440,
+  "lastPush": "2026-04-30T02:45:53Z",
+  "weeklyDownloads": 4977070,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "valtio": {
+  "directory": "state-management",
+  "github": "pmndrs/valtio",
+  "registry": "npm",
+  "pkg": "valtio",
+  "stars": 10199,
+  "lastPush": "2026-06-11T00:47:06Z",
+  "weeklyDownloads": 1788730,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "legend-state": {
+  "directory": "state-management",
+  "github": "LegendApp/legend-state",
+  "registry": "npm",
+  "pkg": "@legendapp/state",
+  "stars": 4143,
+  "lastPush": "2026-04-27T12:46:27Z",
+  "weeklyDownloads": 79968,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "tanstack-store": {
+  "directory": "state-management",
+  "github": "TanStack/store",
+  "registry": "npm",
+  "pkg": "@tanstack/store",
+  "stars": 854,
+  "lastPush": "2026-06-19T14:44:35Z",
+  "weeklyDownloads": 23778942,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "swr": {
+  "directory": "state-management",
+  "github": "vercel/swr",
+  "registry": "npm",
+  "pkg": "swr",
+  "stars": 32404,
+  "lastPush": "2026-06-19T17:23:45Z",
+  "weeklyDownloads": 12527168,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "tanstack-query": {
+  "directory": "state-management",
+  "github": "TanStack/query",
+  "registry": "npm",
+  "pkg": "@tanstack/react-query",
+  "stars": 49797,
+  "lastPush": "2026-06-19T11:43:35Z",
+  "weeklyDownloads": 58733035,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "effector": {
+  "directory": "state-management",
+  "github": "effector/effector",
+  "registry": "npm",
+  "pkg": "effector",
+  "stars": 4837,
+  "lastPush": "2026-05-13T20:29:57Z",
+  "weeklyDownloads": 120823,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "redux-toolkit": {
+  "directory": "state-management",
+  "github": "reduxjs/redux-toolkit",
+  "registry": "npm",
+  "pkg": "@reduxjs/toolkit",
+  "stars": 11212,
+  "lastPush": "2026-06-14T22:41:25Z",
+  "weeklyDownloads": 22915067,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "rtk-query": {
+  "directory": "state-management",
+  "github": "reduxjs/redux-toolkit",
+  "registry": "npm",
+  "pkg": "@reduxjs/toolkit",
+  "stars": 11212,
+  "lastPush": "2026-06-14T22:41:25Z",
+  "weeklyDownloads": 22915067,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "recoil": {
+  "directory": "state-management",
+  "github": "facebookexperimental/Recoil",
+  "registry": "npm",
+  "pkg": "recoil",
+  "stars": 19462,
+  "lastPush": "2025-01-01T08:07:34Z",
+  "weeklyDownloads": 455122,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "mobx": {
+  "directory": "state-management",
+  "github": "mobxjs/mobx",
+  "registry": "npm",
+  "pkg": "mobx",
+  "stars": 28191,
+  "lastPush": "2026-06-15T07:30:21Z",
+  "weeklyDownloads": 4250583,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "xstate": {
+  "directory": "state-management",
+  "github": "statelyai/xstate",
+  "registry": "npm",
+  "pkg": "xstate",
+  "stars": 29719,
+  "lastPush": "2026-06-20T01:32:25Z",
+  "weeklyDownloads": 4694724,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "apollo-client": {
+  "directory": "state-management",
+  "github": "apollographql/apollo-client",
+  "registry": "npm",
+  "pkg": "@apollo/client",
+  "stars": 19811,
+  "lastPush": "2026-06-17T20:51:44Z",
+  "weeklyDownloads": 6883415,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "redux": {
+  "directory": "state-management",
+  "github": "reduxjs/redux",
+  "registry": "npm",
+  "pkg": "redux",
+  "stars": 61512,
+  "lastPush": "2026-06-13T13:50:53Z",
+  "weeklyDownloads": 36551853,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "typebox": {
+  "directory": "validation-libraries",
+  "github": "sinclairzx81/typebox",
+  "registry": "npm",
+  "pkg": "@sinclair/typebox",
+  "stars": 6753,
+  "lastPush": "2026-06-20T05:24:19Z",
+  "weeklyDownloads": 104001480,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "zod-mini": {
+  "directory": "validation-libraries",
+  "github": "colinhacks/zod",
+  "registry": "npm",
+  "pkg": "zod",
+  "stars": 43014,
+  "lastPush": "2026-06-13T00:19:54Z",
+  "weeklyDownloads": 201966959,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "zod": {
+  "directory": "validation-libraries",
+  "github": "colinhacks/zod",
+  "registry": "npm",
+  "pkg": "zod",
+  "stars": 43014,
+  "lastPush": "2026-06-13T00:19:54Z",
+  "weeklyDownloads": 201966959,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "arktype": {
+  "directory": "validation-libraries",
+  "github": "arktypeio/arktype",
+  "registry": "npm",
+  "pkg": "arktype",
+  "stars": 7779,
+  "lastPush": "2026-06-17T14:42:35Z",
+  "weeklyDownloads": 1092637,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "valibot": {
+  "directory": "validation-libraries",
+  "github": "open-circle/valibot",
+  "registry": "npm",
+  "pkg": "valibot",
+  "stars": 8763,
+  "lastPush": "2026-06-16T18:42:10Z",
+  "weeklyDownloads": 12703215,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "effect-schema": {
+  "directory": "validation-libraries",
+  "github": "Effect-TS/effect",
+  "registry": "npm",
+  "pkg": "effect",
+  "stars": 14652,
+  "lastPush": "2026-06-18T21:45:16Z",
+  "weeklyDownloads": 19838141,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "runtypes": {
+  "directory": "validation-libraries",
+  "github": "runtypes/runtypes",
+  "registry": "npm",
+  "pkg": "runtypes",
+  "stars": 2693,
+  "lastPush": "2026-01-21T23:22:55Z",
+  "weeklyDownloads": 340182,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "vinejs": {
+  "directory": "validation-libraries",
+  "github": "vinejs/vine",
+  "registry": "npm",
+  "pkg": "@vinejs/vine",
+  "stars": 1277,
+  "lastPush": "2026-04-27T13:48:22Z",
+  "weeklyDownloads": 282094,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "ajv": {
+  "directory": "validation-libraries",
+  "github": "ajv-validator/ajv",
+  "registry": "npm",
+  "pkg": "ajv",
+  "stars": 14739,
+  "lastPush": "2026-05-12T07:38:47Z",
+  "weeklyDownloads": 327724216,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "class-validator": {
+  "directory": "validation-libraries",
+  "github": "typestack/class-validator",
+  "registry": "npm",
+  "pkg": "class-validator",
+  "stars": 11798,
+  "lastPush": "2026-03-25T22:18:47Z",
+  "weeklyDownloads": 10155515,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "superstruct": {
+  "directory": "validation-libraries",
+  "github": "ianstormtaylor/superstruct",
+  "registry": "npm",
+  "pkg": "superstruct",
+  "stars": 7141,
+  "lastPush": "2024-10-01T02:42:53Z",
+  "weeklyDownloads": 5316113,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "yup": {
+  "directory": "validation-libraries",
+  "github": "jquense/yup",
+  "registry": "npm",
+  "pkg": "yup",
+  "stars": 23676,
+  "lastPush": "2026-06-12T20:13:03Z",
+  "weeklyDownloads": 12439831,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "io-ts": {
+  "directory": "validation-libraries",
+  "github": "gcanti/io-ts",
+  "registry": "npm",
+  "pkg": "io-ts",
+  "stars": 6813,
+  "lastPush": "2024-12-10T11:53:31Z",
+  "weeklyDownloads": 3669498,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "ow": {
+  "directory": "validation-libraries",
+  "github": "sindresorhus/ow",
+  "registry": "npm",
+  "pkg": "ow",
+  "stars": 3869,
+  "lastPush": "2025-10-16T17:10:13Z",
+  "weeklyDownloads": 2771332,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "joi": {
+  "directory": "validation-libraries",
+  "github": "hapijs/joi",
+  "registry": "npm",
+  "pkg": "joi",
+  "stars": 21194,
+  "lastPush": "2026-06-17T16:53:28Z",
+  "weeklyDownloads": 23158091,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "vite": {
+  "directory": "bundlers",
+  "github": "vitejs/vite",
+  "registry": "npm",
+  "pkg": "vite",
+  "stars": 81554,
+  "lastPush": "2026-06-19T16:30:24Z",
+  "weeklyDownloads": 142305412,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "tsdown": {
+  "directory": "bundlers",
+  "github": "rolldown/tsdown",
+  "registry": "npm",
+  "pkg": "tsdown",
+  "stars": 4077,
+  "lastPush": "2026-06-19T10:44:53Z",
+  "weeklyDownloads": 2565268,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "tsup": {
+  "directory": "bundlers",
+  "github": "egoist/tsup",
+  "registry": "npm",
+  "pkg": "tsup",
+  "stars": 11267,
+  "lastPush": "2026-06-14T02:10:31Z",
+  "weeklyDownloads": 6865366,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "parcel": {
+  "directory": "bundlers",
+  "github": "parcel-bundler/parcel",
+  "registry": "npm",
+  "pkg": "parcel",
+  "stars": 44027,
+  "lastPush": "2026-06-15T03:31:52Z",
+  "weeklyDownloads": 414865,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "rollup": {
+  "directory": "bundlers",
+  "github": "rollup/rollup",
+  "registry": "npm",
+  "pkg": "rollup",
+  "stars": 26287,
+  "lastPush": "2026-06-19T15:14:56Z",
+  "weeklyDownloads": 124155143,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "rolldown": {
+  "directory": "bundlers",
+  "github": "rolldown/rolldown",
+  "registry": "npm",
+  "pkg": "rolldown",
+  "stars": 13789,
+  "lastPush": "2026-06-20T05:30:09Z",
+  "weeklyDownloads": 56735901,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "bun-build": {
+  "directory": "bundlers",
+  "github": "oven-sh/bun",
+  "registry": "npm",
+  "pkg": "bun",
+  "stars": 93322,
+  "lastPush": "2026-06-20T05:55:00Z",
+  "weeklyDownloads": 2406769,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "rspack": {
+  "directory": "bundlers",
+  "github": "web-infra-dev/rspack",
+  "registry": "npm",
+  "pkg": "@rspack/core",
+  "stars": 12769,
+  "lastPush": "2026-06-20T05:58:12Z",
+  "weeklyDownloads": 7027368,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "esbuild": {
+  "directory": "bundlers",
+  "github": "evanw/esbuild",
+  "registry": "npm",
+  "pkg": "esbuild",
+  "stars": 39941,
+  "lastPush": "2026-06-12T01:32:48Z",
+  "weeklyDownloads": 246838547,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "turbopack": {
+  "directory": "bundlers",
+  "github": "vercel/next.js",
+  "registry": "npm",
+  "pkg": "next",
+  "stars": 140094,
+  "lastPush": "2026-06-20T02:36:01Z",
+  "weeklyDownloads": 40913007,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "unbuild": {
+  "directory": "bundlers",
+  "github": "unjs/unbuild",
+  "registry": "npm",
+  "pkg": "unbuild",
+  "stars": 2732,
+  "lastPush": "2026-06-19T16:51:29Z",
+  "weeklyDownloads": 235181,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "farm": {
+  "directory": "bundlers",
+  "github": "farm-fe/farm",
+  "registry": "npm",
+  "pkg": "@farmfe/core",
+  "stars": 5580,
+  "lastPush": "2026-06-14T13:57:04Z",
+  "weeklyDownloads": 6411,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "swc": {
+  "directory": "bundlers",
+  "github": "swc-project/swc",
+  "registry": "npm",
+  "pkg": "@swc/core",
+  "stars": 34068,
+  "lastPush": "2026-06-20T05:36:12Z",
+  "weeklyDownloads": 37093359,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "microbundle": {
+  "directory": "bundlers",
+  "github": "developit/microbundle",
+  "registry": "npm",
+  "pkg": "microbundle",
+  "stars": 8136,
+  "lastPush": "2026-02-01T19:24:38Z",
+  "weeklyDownloads": 118084,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "mako": {
+  "directory": "bundlers",
+  "github": "umijs/mako",
+  "registry": "npm",
+  "pkg": "@umijs/mako",
+  "stars": 2509,
+  "lastPush": "2026-06-20T03:49:30Z",
+  "weeklyDownloads": 64936,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "webpack": {
+  "directory": "bundlers",
+  "github": "webpack/webpack",
+  "registry": "npm",
+  "pkg": "webpack",
+  "stars": 65847,
+  "lastPush": "2026-06-20T04:44:53Z",
+  "weeklyDownloads": null,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "metro": {
+  "directory": "bundlers",
+  "github": "facebook/metro",
+  "registry": "npm",
+  "pkg": "metro",
+  "stars": 5603,
+  "lastPush": "2026-06-19T14:20:55Z",
+  "weeklyDownloads": null,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "tsc": {
+  "directory": "bundlers",
+  "github": "microsoft/TypeScript",
+  "registry": "npm",
+  "pkg": "typescript",
+  "stars": 109330,
+  "lastPush": "2026-06-12T20:10:40Z",
+  "weeklyDownloads": 219577663,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "ruff": {
+  "directory": "linters-formatters",
+  "github": "astral-sh/ruff",
+  "registry": "pypi",
+  "pkg": "ruff",
+  "stars": 48104,
+  "lastPush": "2026-06-20T06:02:53Z",
+  "weeklyDownloads": null,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "eslint": {
+  "directory": "linters-formatters",
+  "github": "eslint/eslint",
+  "registry": "npm",
+  "pkg": "eslint",
+  "stars": 27367,
+  "lastPush": "2026-06-20T05:43:56Z",
+  "weeklyDownloads": 141666127,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "trunk-check": {
+  "directory": "linters-formatters",
+  "github": null,
+  "registry": "npm",
+  "pkg": "@trunkio/launcher",
+  "stars": null,
+  "lastPush": null,
+  "weeklyDownloads": null,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "biome": {
+  "directory": "linters-formatters",
+  "github": "biomejs/biome",
+  "registry": "npm",
+  "pkg": "@biomejs/biome",
+  "stars": 25135,
+  "lastPush": "2026-06-19T23:18:30Z",
+  "weeklyDownloads": 10135380,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "prettier": {
+  "directory": "linters-formatters",
+  "github": "prettier/prettier",
+  "registry": "npm",
+  "pkg": "prettier",
+  "stars": 52066,
+  "lastPush": "2026-06-19T21:29:05Z",
+  "weeklyDownloads": null,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "publint": {
+  "directory": "linters-formatters",
+  "github": "publint/publint",
+  "registry": "npm",
+  "pkg": "publint",
+  "stars": 1260,
+  "lastPush": "2026-06-17T07:06:15Z",
+  "weeklyDownloads": 829322,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "knip": {
+  "directory": "linters-formatters",
+  "github": "webpro-nl/knip",
+  "registry": "npm",
+  "pkg": "knip",
+  "stars": 11535,
+  "lastPush": "2026-06-17T11:27:14Z",
+  "weeklyDownloads": null,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "dprint": {
+  "directory": "linters-formatters",
+  "github": "dprint/dprint",
+  "registry": "npm",
+  "pkg": "dprint",
+  "stars": 3965,
+  "lastPush": "2026-06-19T20:51:46Z",
+  "weeklyDownloads": null,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "eslint-stylistic": {
+  "directory": "linters-formatters",
+  "github": "eslint-stylistic/eslint-stylistic",
+  "registry": "npm",
+  "pkg": "@stylistic/eslint-plugin",
+  "stars": 1973,
+  "lastPush": "2026-06-08T03:58:07Z",
+  "weeklyDownloads": 5832637,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "stylelint": {
+  "directory": "linters-formatters",
+  "github": "stylelint/stylelint",
+  "registry": "npm",
+  "pkg": "stylelint",
+  "stars": 11481,
+  "lastPush": "2026-06-17T04:53:00Z",
+  "weeklyDownloads": 9996452,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "oxc": {
+  "directory": "linters-formatters",
+  "github": "oxc-project/oxc",
+  "registry": "npm",
+  "pkg": "oxlint",
+  "stars": 21645,
+  "lastPush": "2026-06-20T05:19:42Z",
+  "weeklyDownloads": 9132964,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "oxlint": {
+  "directory": "linters-formatters",
+  "github": "oxc-project/oxc",
+  "registry": "npm",
+  "pkg": "oxlint",
+  "stars": 21645,
+  "lastPush": "2026-06-20T05:19:42Z",
+  "weeklyDownloads": 9132964,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "standardjs": {
+  "directory": "linters-formatters",
+  "github": "standard/standard",
+  "registry": "npm",
+  "pkg": "standard",
+  "stars": 29436,
+  "lastPush": "2025-07-11T08:28:23Z",
+  "weeklyDownloads": null,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "pnpm": {
+  "directory": "package-managers",
+  "github": "pnpm/pnpm",
+  "registry": "npm",
+  "pkg": "pnpm",
+  "stars": 35551,
+  "lastPush": "2026-06-20T02:18:37Z",
+  "weeklyDownloads": 117308696,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "yarn": {
+  "directory": "package-managers",
+  "github": "yarnpkg/berry",
+  "registry": "npm",
+  "pkg": "yarn",
+  "stars": 8082,
+  "lastPush": "2026-06-15T19:04:10Z",
+  "weeklyDownloads": 9160376,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "nx": {
+  "directory": "package-managers",
+  "github": "nrwl/nx",
+  "registry": "npm",
+  "pkg": "nx",
+  "stars": 28975,
+  "lastPush": "2026-06-19T22:06:21Z",
+  "weeklyDownloads": 9270738,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "turborepo": {
+  "directory": "package-managers",
+  "github": "vercel/turborepo",
+  "registry": "npm",
+  "pkg": "turbo",
+  "stars": 30571,
+  "lastPush": "2026-06-19T20:59:40Z",
+  "weeklyDownloads": 16949607,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "bun": {
+  "directory": "package-managers",
+  "github": "oven-sh/bun",
+  "registry": "npm",
+  "pkg": "bun",
+  "stars": 93322,
+  "lastPush": "2026-06-20T05:55:00Z",
+  "weeklyDownloads": 2406769,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "changesets": {
+  "directory": "package-managers",
+  "github": "changesets/changesets",
+  "registry": "npm",
+  "pkg": "@changesets/cli",
+  "stars": 12014,
+  "lastPush": "2026-06-19T21:45:11Z",
+  "weeklyDownloads": 3344285,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "deno": {
+  "directory": "package-managers",
+  "github": "denoland/deno",
+  "registry": null,
+  "pkg": null,
+  "stars": 107163,
+  "lastPush": "2026-06-20T06:00:51Z",
+  "weeklyDownloads": null,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "volta": {
+  "directory": "package-managers",
+  "github": "volta-cli/volta",
+  "registry": null,
+  "pkg": null,
+  "stars": 13017,
+  "lastPush": "2025-11-15T16:00:15Z",
+  "weeklyDownloads": null,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "corepack": {
+  "directory": "package-managers",
+  "github": "nodejs/corepack",
+  "registry": "npm",
+  "pkg": "corepack",
+  "stars": 3709,
+  "lastPush": "2026-06-19T05:23:28Z",
+  "weeklyDownloads": 4638240,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "ni": {
+  "directory": "package-managers",
+  "github": "antfu-collective/ni",
+  "registry": "npm",
+  "pkg": "@antfu/ni",
+  "stars": 8250,
+  "lastPush": "2026-04-22T02:36:59Z",
+  "weeklyDownloads": 2409993,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "lerna": {
+  "directory": "package-managers",
+  "github": "lerna/lerna",
+  "registry": "npm",
+  "pkg": "lerna",
+  "stars": 36064,
+  "lastPush": "2026-06-19T15:28:44Z",
+  "weeklyDownloads": 1880125,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "npm": {
+  "directory": "package-managers",
+  "github": "npm/cli",
+  "registry": "npm",
+  "pkg": "npm",
+  "stars": 9853,
+  "lastPush": "2026-06-19T17:10:22Z",
+  "weeklyDownloads": 14737753,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "vitest": {
+  "directory": "test-runners",
+  "github": "vitest-dev/vitest",
+  "registry": "npm",
+  "pkg": "vitest",
+  "stars": 16737,
+  "lastPush": "2026-06-19T09:24:43Z",
+  "weeklyDownloads": 71277824,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "playwright": {
+  "directory": "test-runners",
+  "github": "microsoft/playwright",
+  "registry": "npm",
+  "pkg": "@playwright/test",
+  "stars": 91274,
+  "lastPush": "2026-06-19T21:15:21Z",
+  "weeklyDownloads": 42613659,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "storybook-test": {
+  "directory": "test-runners",
+  "github": "storybookjs/test-runner",
+  "registry": "npm",
+  "pkg": "@storybook/test-runner",
+  "stars": 274,
+  "lastPush": "2026-05-14T07:57:21Z",
+  "weeklyDownloads": 2047210,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "cypress": {
+  "directory": "test-runners",
+  "github": "cypress-io/cypress",
+  "registry": "npm",
+  "pkg": "cypress",
+  "stars": 50371,
+  "lastPush": "2026-06-20T01:31:25Z",
+  "weeklyDownloads": 7197378,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "webdriverio": {
+  "directory": "test-runners",
+  "github": "webdriverio/webdriverio",
+  "registry": "npm",
+  "pkg": "webdriverio",
+  "stars": 9796,
+  "lastPush": "2026-06-19T07:34:39Z",
+  "weeklyDownloads": 3152673,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "wallaby": {
+  "directory": "test-runners",
+  "github": null,
+  "registry": null,
+  "pkg": null,
+  "stars": null,
+  "lastPush": null,
+  "weeklyDownloads": null,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "web-test-runner": {
+  "directory": "test-runners",
+  "github": "modernweb-dev/web",
+  "registry": "npm",
+  "pkg": "@web/test-runner",
+  "stars": 2437,
+  "lastPush": "2026-06-17T15:35:05Z",
+  "weeklyDownloads": 156593,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "testcafe": {
+  "directory": "test-runners",
+  "github": "DevExpress/testcafe",
+  "registry": "npm",
+  "pkg": "testcafe",
+  "stars": 9906,
+  "lastPush": "2026-06-20T05:29:35Z",
+  "weeklyDownloads": 203299,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "bun-test": {
+  "directory": "test-runners",
+  "github": "oven-sh/bun",
+  "registry": "npm",
+  "pkg": "bun",
+  "stars": 93322,
+  "lastPush": "2026-06-20T05:55:00Z",
+  "weeklyDownloads": 2406769,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "jest": {
+  "directory": "test-runners",
+  "github": "jestjs/jest",
+  "registry": "npm",
+  "pkg": "jest",
+  "stars": 45462,
+  "lastPush": "2026-06-17T11:06:24Z",
+  "weeklyDownloads": null,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "uvu": {
+  "directory": "test-runners",
+  "github": "lukeed/uvu",
+  "registry": "npm",
+  "pkg": "uvu",
+  "stars": 3034,
+  "lastPush": "2024-08-30T16:52:27Z",
+  "weeklyDownloads": 4956251,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "mocha": {
+  "directory": "test-runners",
+  "github": "mochajs/mocha",
+  "registry": "npm",
+  "pkg": "mocha",
+  "stars": 22969,
+  "lastPush": "2026-06-20T02:25:06Z",
+  "weeklyDownloads": 14082418,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "ava": {
+  "directory": "test-runners",
+  "github": "avajs/ava",
+  "registry": "npm",
+  "pkg": "ava",
+  "stars": 20848,
+  "lastPush": "2026-06-17T10:19:10Z",
+  "weeklyDownloads": 655084,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "jasmine": {
+  "directory": "test-runners",
+  "github": "jasmine/jasmine",
+  "registry": "npm",
+  "pkg": "jasmine",
+  "stars": 15823,
+  "lastPush": "2026-06-06T17:49:12Z",
+  "weeklyDownloads": 1431097,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "node-test": {
+  "directory": "test-runners",
+  "github": "nodejs/node",
+  "registry": null,
+  "pkg": null,
+  "stars": 117880,
+  "lastPush": "2026-06-20T04:04:20Z",
+  "weeklyDownloads": null,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "svelte": {
+  "directory": "frontend-frameworks",
+  "github": "sveltejs/svelte",
+  "registry": "npm",
+  "pkg": "svelte",
+  "stars": 87319,
+  "lastPush": "2026-06-19T20:09:57Z",
+  "weeklyDownloads": 4791945,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "htmx": {
+  "directory": "frontend-frameworks",
+  "github": "bigskysoftware/htmx",
+  "registry": "npm",
+  "pkg": "htmx.org",
+  "stars": 48224,
+  "lastPush": "2026-06-19T07:35:41Z",
+  "weeklyDownloads": 190504,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "react": {
+  "directory": "frontend-frameworks",
+  "github": "facebook/react",
+  "registry": "npm",
+  "pkg": "react",
+  "stars": 245956,
+  "lastPush": "2026-06-19T17:14:02Z",
+  "weeklyDownloads": 147487969,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "vue": {
+  "directory": "frontend-frameworks",
+  "github": "vuejs/core",
+  "registry": "npm",
+  "pkg": "vue",
+  "stars": 53859,
+  "lastPush": "2026-06-19T14:48:10Z",
+  "weeklyDownloads": null,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "alpine": {
+  "directory": "frontend-frameworks",
+  "github": "alpinejs/alpine",
+  "registry": "npm",
+  "pkg": "alpinejs",
+  "stars": 31690,
+  "lastPush": "2026-06-16T23:03:05Z",
+  "weeklyDownloads": 593109,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "solid": {
+  "directory": "frontend-frameworks",
+  "github": "solidjs/solid",
+  "registry": "npm",
+  "pkg": "solid-js",
+  "stars": 35636,
+  "lastPush": "2026-06-17T05:10:15Z",
+  "weeklyDownloads": 2798785,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "stimulus": {
+  "directory": "frontend-frameworks",
+  "github": "hotwired/stimulus",
+  "registry": "npm",
+  "pkg": "@hotwired/stimulus",
+  "stars": 13058,
+  "lastPush": "2026-06-10T12:37:19Z",
+  "weeklyDownloads": 1016085,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "marko": {
+  "directory": "frontend-frameworks",
+  "github": "marko-js/marko",
+  "registry": "npm",
+  "pkg": "marko",
+  "stars": 14372,
+  "lastPush": "2026-06-19T18:31:56Z",
+  "weeklyDownloads": 25461,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "preact": {
+  "directory": "frontend-frameworks",
+  "github": "preactjs/preact",
+  "registry": "npm",
+  "pkg": "preact",
+  "stars": 38706,
+  "lastPush": "2026-06-15T06:18:42Z",
+  "weeklyDownloads": 23313536,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "qwik": {
+  "directory": "frontend-frameworks",
+  "github": "QwikDev/qwik",
+  "registry": "npm",
+  "pkg": "@builder.io/qwik",
+  "stars": 22011,
+  "lastPush": "2026-06-19T21:21:52Z",
+  "weeklyDownloads": 30269,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "riot": {
+  "directory": "frontend-frameworks",
+  "github": "riot/riot",
+  "registry": "npm",
+  "pkg": "riot",
+  "stars": 14920,
+  "lastPush": "2026-05-09T21:13:26Z",
+  "weeklyDownloads": 14445,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "angular": {
+  "directory": "frontend-frameworks",
+  "github": "angular/angular",
+  "registry": "npm",
+  "pkg": "@angular/core",
+  "stars": 100392,
+  "lastPush": "2026-06-19T09:37:24Z",
+  "weeklyDownloads": 6063507,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "mithril": {
+  "directory": "frontend-frameworks",
+  "github": "MithrilJS/mithril.js",
+  "registry": "npm",
+  "pkg": "mithril",
+  "stars": 14492,
+  "lastPush": "2026-02-16T19:46:08Z",
+  "weeklyDownloads": 23721,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "lit": {
+  "directory": "frontend-frameworks",
+  "github": "lit/lit",
+  "registry": "npm",
+  "pkg": "lit",
+  "stars": 21672,
+  "lastPush": "2026-06-19T07:34:56Z",
+  "weeklyDownloads": 6385088,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "inferno": {
+  "directory": "frontend-frameworks",
+  "github": "infernojs/inferno",
+  "registry": "npm",
+  "pkg": "inferno",
+  "stars": 16421,
+  "lastPush": "2026-06-12T16:51:23Z",
+  "weeklyDownloads": 291330,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "stencil": {
+  "directory": "frontend-frameworks",
+  "github": "stenciljs/core",
+  "registry": "npm",
+  "pkg": "@stencil/core",
+  "stars": 13098,
+  "lastPush": "2026-06-19T21:53:08Z",
+  "weeklyDownloads": 1403806,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "ember": {
+  "directory": "frontend-frameworks",
+  "github": "emberjs/ember.js",
+  "registry": "npm",
+  "pkg": "ember-source",
+  "stars": 22566,
+  "lastPush": "2026-06-19T09:17:56Z",
+  "weeklyDownloads": 262017,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "aurelia": {
+  "directory": "frontend-frameworks",
+  "github": "aurelia/aurelia",
+  "registry": "npm",
+  "pkg": "aurelia",
+  "stars": 1534,
+  "lastPush": "2026-06-12T07:46:44Z",
+  "weeklyDownloads": 4443,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "remix": {
+  "directory": "meta-frameworks",
+  "github": "remix-run/remix",
+  "registry": "npm",
+  "pkg": "@remix-run/react",
+  "stars": 33092,
+  "lastPush": "2026-06-19T21:09:46Z",
+  "weeklyDownloads": 785568,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "nextjs": {
+  "directory": "meta-frameworks",
+  "github": "vercel/next.js",
+  "registry": "npm",
+  "pkg": "next",
+  "stars": 140094,
+  "lastPush": "2026-06-20T02:36:01Z",
+  "weeklyDownloads": 40913007,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "react-router": {
+  "directory": "meta-frameworks",
+  "github": "remix-run/react-router",
+  "registry": "npm",
+  "pkg": "react-router",
+  "stars": 56455,
+  "lastPush": "2026-06-18T21:28:59Z",
+  "weeklyDownloads": 49169593,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "astro": {
+  "directory": "meta-frameworks",
+  "github": "withastro/astro",
+  "registry": "npm",
+  "pkg": "astro",
+  "stars": 60319,
+  "lastPush": "2026-06-20T01:40:41Z",
+  "weeklyDownloads": 3372379,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "nuxt": {
+  "directory": "meta-frameworks",
+  "github": "nuxt/nuxt",
+  "registry": "npm",
+  "pkg": "nuxt",
+  "stars": 60500,
+  "lastPush": "2026-06-19T22:16:14Z",
+  "weeklyDownloads": 1719774,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "sveltekit": {
+  "directory": "meta-frameworks",
+  "github": "sveltejs/kit",
+  "registry": "npm",
+  "pkg": "@sveltejs/kit",
+  "stars": 20600,
+  "lastPush": "2026-06-19T16:54:57Z",
+  "weeklyDownloads": 2076347,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "docusaurus": {
+  "directory": "meta-frameworks",
+  "github": "facebook/docusaurus",
+  "registry": "npm",
+  "pkg": "@docusaurus/core",
+  "stars": 65295,
+  "lastPush": "2026-06-19T20:32:57Z",
+  "weeklyDownloads": 1275503,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "fresh": {
+  "directory": "meta-frameworks",
+  "github": "freshframework/fresh",
+  "registry": null,
+  "pkg": null,
+  "stars": 13764,
+  "lastPush": "2026-06-03T14:35:24Z",
+  "weeklyDownloads": null,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "tanstack-start": {
+  "directory": "meta-frameworks",
+  "github": "TanStack/router",
+  "registry": "npm",
+  "pkg": "@tanstack/react-start",
+  "stars": 14666,
+  "lastPush": "2026-06-19T18:08:11Z",
+  "weeklyDownloads": 16699641,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "vike": {
+  "directory": "meta-frameworks",
+  "github": "vikejs/vike",
+  "registry": "npm",
+  "pkg": "vike",
+  "stars": 5755,
+  "lastPush": "2026-06-17T16:39:32Z",
+  "weeklyDownloads": 96522,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "eleventy": {
+  "directory": "meta-frameworks",
+  "github": "11ty/eleventy",
+  "registry": "npm",
+  "pkg": "@11ty/eleventy",
+  "stars": 19714,
+  "lastPush": "2026-06-18T15:29:05Z",
+  "weeklyDownloads": 154701,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "qwik-city": {
+  "directory": "meta-frameworks",
+  "github": "QwikDev/qwik",
+  "registry": "npm",
+  "pkg": "@builder.io/qwik-city",
+  "stars": 22011,
+  "lastPush": "2026-06-19T21:21:52Z",
+  "weeklyDownloads": 24064,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "solidstart": {
+  "directory": "meta-frameworks",
+  "github": "solidjs/solid-start",
+  "registry": "npm",
+  "pkg": "@solidjs/start",
+  "stars": 5879,
+  "lastPush": "2026-06-19T01:22:45Z",
+  "weeklyDownloads": 61886,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "analog": {
+  "directory": "meta-frameworks",
+  "github": "analogjs/analog",
+  "registry": "npm",
+  "pkg": "@analogjs/platform",
+  "stars": 3142,
+  "lastPush": "2026-06-19T03:30:47Z",
+  "weeklyDownloads": 31362,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "redwoodsdk": {
+  "directory": "meta-frameworks",
+  "github": "redwoodjs/sdk",
+  "registry": "npm",
+  "pkg": "rwsdk",
+  "stars": 1661,
+  "lastPush": "2026-06-19T19:58:17Z",
+  "weeklyDownloads": 9228,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "waku": {
+  "directory": "meta-frameworks",
+  "github": "wakujs/waku",
+  "registry": "npm",
+  "pkg": "waku",
+  "stars": 6328,
+  "lastPush": "2026-06-17T01:22:00Z",
+  "weeklyDownloads": 19029,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "hydrogen": {
+  "directory": "meta-frameworks",
+  "github": "Shopify/hydrogen",
+  "registry": "npm",
+  "pkg": "@shopify/hydrogen",
+  "stars": 1989,
+  "lastPush": "2026-06-19T22:00:34Z",
+  "weeklyDownloads": 61557,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "gatsby": {
+  "directory": "meta-frameworks",
+  "github": "gatsbyjs/gatsby",
+  "registry": "npm",
+  "pkg": "gatsby",
+  "stars": 55940,
+  "lastPush": "2026-06-20T04:26:36Z",
+  "weeklyDownloads": 291624,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "redwoodjs": {
+  "directory": "meta-frameworks",
+  "github": "redwoodjs/redwood",
+  "registry": "npm",
+  "pkg": "@redwoodjs/core",
+  "stars": 17613,
+  "lastPush": "2026-06-19T08:47:01Z",
+  "weeklyDownloads": 21826,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "shadcn-ui": {
+  "directory": "ui-component-libraries",
+  "github": "shadcn-ui/ui",
+  "registry": "npm",
+  "pkg": "shadcn",
+  "stars": 117011,
+  "lastPush": "2026-06-19T07:39:40Z",
+  "weeklyDownloads": 5560297,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "radix-ui": {
+  "directory": "ui-component-libraries",
+  "github": "radix-ui/primitives",
+  "registry": "npm",
+  "pkg": "radix-ui",
+  "stars": 18986,
+  "lastPush": "2026-06-16T21:41:17Z",
+  "weeklyDownloads": 8943345,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "nextui": {
+  "directory": "ui-component-libraries",
+  "github": "heroui-inc/heroui",
+  "registry": "npm",
+  "pkg": "@heroui/react",
+  "stars": 29665,
+  "lastPush": "2026-06-19T12:04:14Z",
+  "weeklyDownloads": 452972,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "react-aria": {
+  "directory": "ui-component-libraries",
+  "github": "adobe/react-spectrum",
+  "registry": "npm",
+  "pkg": "react-aria",
+  "stars": 15554,
+  "lastPush": "2026-06-20T03:45:49Z",
+  "weeklyDownloads": 7063536,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "headless-ui": {
+  "directory": "ui-component-libraries",
+  "github": "tailwindlabs/headlessui",
+  "registry": "npm",
+  "pkg": "@headlessui/react",
+  "stars": 28627,
+  "lastPush": "2026-04-13T16:12:31Z",
+  "weeklyDownloads": 6567804,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "chakra-ui": {
+  "directory": "ui-component-libraries",
+  "github": "chakra-ui/chakra-ui",
+  "registry": "npm",
+  "pkg": "@chakra-ui/react",
+  "stars": 40455,
+  "lastPush": "2026-06-19T15:15:47Z",
+  "weeklyDownloads": 1750146,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "vuetify": {
+  "directory": "ui-component-libraries",
+  "github": "vuetifyjs/vuetify",
+  "registry": "npm",
+  "pkg": "vuetify",
+  "stars": 41005,
+  "lastPush": "2026-06-19T01:30:53Z",
+  "weeklyDownloads": 978615,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "park-ui": {
+  "directory": "ui-component-libraries",
+  "github": "cschroeter/park-ui",
+  "registry": "npm",
+  "pkg": "@park-ui/panda-preset",
+  "stars": 2322,
+  "lastPush": "2026-04-10T23:05:11Z",
+  "weeklyDownloads": 14694,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "mantine": {
+  "directory": "ui-component-libraries",
+  "github": "mantinedev/mantine",
+  "registry": "npm",
+  "pkg": "@mantine/core",
+  "stars": 31275,
+  "lastPush": "2026-06-16T16:41:03Z",
+  "weeklyDownloads": 1902034,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "mui": {
+  "directory": "ui-component-libraries",
+  "github": "mui/material-ui",
+  "registry": "npm",
+  "pkg": "@mui/material",
+  "stars": 98434,
+  "lastPush": "2026-06-19T22:32:12Z",
+  "weeklyDownloads": 9846773,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "primevue": {
+  "directory": "ui-component-libraries",
+  "github": "primefaces/primevue",
+  "registry": "npm",
+  "pkg": "primevue",
+  "stars": 14468,
+  "lastPush": "2026-06-17T14:27:26Z",
+  "weeklyDownloads": 674389,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "magic-ui": {
+  "directory": "ui-component-libraries",
+  "github": "magicuidesign/magicui",
+  "registry": null,
+  "pkg": null,
+  "stars": 21313,
+  "lastPush": "2026-06-03T13:09:00Z",
+  "weeklyDownloads": null,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "primereact": {
+  "directory": "ui-component-libraries",
+  "github": "primefaces/primereact",
+  "registry": "npm",
+  "pkg": "primereact",
+  "stars": 8324,
+  "lastPush": "2026-06-05T14:34:06Z",
+  "weeklyDownloads": 343511,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "ark-ui": {
+  "directory": "ui-component-libraries",
+  "github": "chakra-ui/ark",
+  "registry": "npm",
+  "pkg": "@ark-ui/react",
+  "stars": 5236,
+  "lastPush": "2026-06-20T02:02:24Z",
+  "weeklyDownloads": 908382,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "daisyui": {
+  "directory": "ui-component-libraries",
+  "github": "saadeghi/daisyui",
+  "registry": "npm",
+  "pkg": "daisyui",
+  "stars": 41143,
+  "lastPush": "2026-06-18T11:50:44Z",
+  "weeklyDownloads": 863182,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "tremor": {
+  "directory": "ui-component-libraries",
+  "github": "tremorlabs/tremor",
+  "registry": "npm",
+  "pkg": "@tremor/react",
+  "stars": 3482,
+  "lastPush": "2025-10-10T13:08:24Z",
+  "weeklyDownloads": 329892,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "ant-design": {
+  "directory": "ui-component-libraries",
+  "github": "ant-design/ant-design",
+  "registry": "npm",
+  "pkg": "antd",
+  "stars": 98400,
+  "lastPush": "2026-06-19T04:47:39Z",
+  "weeklyDownloads": 3246533,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "quasar": {
+  "directory": "ui-component-libraries",
+  "github": "quasarframework/quasar",
+  "registry": "npm",
+  "pkg": "quasar",
+  "stars": 27179,
+  "lastPush": "2026-06-17T15:49:24Z",
+  "weeklyDownloads": 327386,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "flowbite": {
+  "directory": "ui-component-libraries",
+  "github": "themesberg/flowbite",
+  "registry": "npm",
+  "pkg": "flowbite",
+  "stars": 9279,
+  "lastPush": "2026-05-13T17:27:25Z",
+  "weeklyDownloads": 633145,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "naive-ui": {
+  "directory": "ui-component-libraries",
+  "github": "tusen-ai/naive-ui",
+  "registry": "npm",
+  "pkg": "naive-ui",
+  "stars": 18389,
+  "lastPush": "2026-06-13T16:23:34Z",
+  "weeklyDownloads": 142901,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "element-plus": {
+  "directory": "ui-component-libraries",
+  "github": "element-plus/element-plus",
+  "registry": "npm",
+  "pkg": "element-plus",
+  "stars": 27539,
+  "lastPush": "2026-06-19T00:07:17Z",
+  "weeklyDownloads": 719290,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "hono": {
+  "directory": "api-frameworks",
+  "github": "honojs/hono",
+  "registry": "npm",
+  "pkg": "hono",
+  "stars": 31036,
+  "lastPush": "2026-06-18T02:18:11Z",
+  "weeklyDownloads": 46023850,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "fastapi": {
+  "directory": "api-frameworks",
+  "github": "fastapi/fastapi",
+  "registry": "pypi",
+  "pkg": "fastapi",
+  "stars": 99414,
+  "lastPush": "2026-06-20T01:17:47Z",
+  "weeklyDownloads": null,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "elysia": {
+  "directory": "api-frameworks",
+  "github": "elysiajs/elysia",
+  "registry": "npm",
+  "pkg": "elysia",
+  "stars": 18543,
+  "lastPush": "2026-06-19T20:33:50Z",
+  "weeklyDownloads": 565984,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "trpc": {
+  "directory": "api-frameworks",
+  "github": "trpc/trpc",
+  "registry": "npm",
+  "pkg": "@trpc/server",
+  "stars": 40343,
+  "lastPush": "2026-06-19T19:52:43Z",
+  "weeklyDownloads": 3908558,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "aspnet-core": {
+  "directory": "api-frameworks",
+  "github": "dotnet/aspnetcore",
+  "registry": null,
+  "pkg": null,
+  "stars": 38137,
+  "lastPush": "2026-06-20T06:04:51Z",
+  "weeklyDownloads": null,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "axum": {
+  "directory": "api-frameworks",
+  "github": "tokio-rs/axum",
+  "registry": "crates",
+  "pkg": "axum",
+  "stars": 26291,
+  "lastPush": "2026-06-16T07:14:25Z",
+  "weeklyDownloads": 6850940,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "django-ninja": {
+  "directory": "api-frameworks",
+  "github": "vitalik/django-ninja",
+  "registry": "pypi",
+  "pkg": "django-ninja",
+  "stars": 9100,
+  "lastPush": "2026-06-09T15:46:32Z",
+  "weeklyDownloads": null,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "fastify": {
+  "directory": "api-frameworks",
+  "github": "fastify/fastify",
+  "registry": "npm",
+  "pkg": "fastify",
+  "stars": 36558,
+  "lastPush": "2026-06-19T15:21:35Z",
+  "weeklyDownloads": 8644242,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "encore": {
+  "directory": "api-frameworks",
+  "github": "encoredev/encore",
+  "registry": "go",
+  "pkg": "encore.dev",
+  "stars": 12064,
+  "lastPush": "2026-06-17T14:18:00Z",
+  "weeklyDownloads": null,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "fiber": {
+  "directory": "api-frameworks",
+  "github": "gofiber/fiber",
+  "registry": "go",
+  "pkg": "github.com/gofiber/fiber/v2",
+  "stars": 39864,
+  "lastPush": "2026-06-20T03:58:12Z",
+  "weeklyDownloads": null,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "gin": {
+  "directory": "api-frameworks",
+  "github": "gin-gonic/gin",
+  "registry": "go",
+  "pkg": "github.com/gin-gonic/gin",
+  "stars": 88710,
+  "lastPush": "2026-06-18T22:32:28Z",
+  "weeklyDownloads": null,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "litestar": {
+  "directory": "api-frameworks",
+  "github": "litestar-org/litestar",
+  "registry": "pypi",
+  "pkg": "litestar",
+  "stars": 8296,
+  "lastPush": "2026-06-17T09:19:37Z",
+  "weeklyDownloads": 461839,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "spring-boot": {
+  "directory": "api-frameworks",
+  "github": "spring-projects/spring-boot",
+  "registry": null,
+  "pkg": null,
+  "stars": 80983,
+  "lastPush": "2026-06-18T15:02:48Z",
+  "weeklyDownloads": null,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "laravel": {
+  "directory": "api-frameworks",
+  "github": "laravel/laravel",
+  "registry": null,
+  "pkg": null,
+  "stars": 84532,
+  "lastPush": "2026-06-19T13:30:30Z",
+  "weeklyDownloads": null,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "echo": {
+  "directory": "api-frameworks",
+  "github": "labstack/echo",
+  "registry": "go",
+  "pkg": "github.com/labstack/echo/v4",
+  "stars": 32455,
+  "lastPush": "2026-06-19T18:59:23Z",
+  "weeklyDownloads": null,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "express": {
+  "directory": "api-frameworks",
+  "github": "expressjs/express",
+  "registry": "npm",
+  "pkg": "express",
+  "stars": 69211,
+  "lastPush": "2026-06-16T04:16:05Z",
+  "weeklyDownloads": 111254653,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "flask": {
+  "directory": "api-frameworks",
+  "github": "pallets/flask",
+  "registry": "pypi",
+  "pkg": "flask",
+  "stars": 71680,
+  "lastPush": "2026-06-10T18:03:29Z",
+  "weeklyDownloads": 46193226,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "actix-web": {
+  "directory": "api-frameworks",
+  "github": "actix/actix-web",
+  "registry": "crates",
+  "pkg": "actix-web",
+  "stars": 24686,
+  "lastPush": "2026-06-18T10:27:23Z",
+  "weeklyDownloads": 670644,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "rocket": {
+  "directory": "api-frameworks",
+  "github": "rwf2/Rocket",
+  "registry": "crates",
+  "pkg": "rocket",
+  "stars": 25746,
+  "lastPush": "2025-12-28T18:27:39Z",
+  "weeklyDownloads": 80166,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "adonisjs": {
+  "directory": "api-frameworks",
+  "github": "adonisjs/core",
+  "registry": "npm",
+  "pkg": "@adonisjs/core",
+  "stars": 18984,
+  "lastPush": "2026-06-11T11:44:53Z",
+  "weeklyDownloads": 138736,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "chi": {
+  "directory": "api-frameworks",
+  "github": "go-chi/chi",
+  "registry": "go",
+  "pkg": "github.com/go-chi/chi/v5",
+  "stars": 22391,
+  "lastPush": "2026-06-14T12:09:23Z",
+  "weeklyDownloads": null,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "rails": {
+  "directory": "api-frameworks",
+  "github": "rails/rails",
+  "registry": null,
+  "pkg": null,
+  "stars": 58702,
+  "lastPush": "2026-06-19T22:47:04Z",
+  "weeklyDownloads": null,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "nestjs": {
+  "directory": "api-frameworks",
+  "github": "nestjs/nest",
+  "registry": "npm",
+  "pkg": "@nestjs/core",
+  "stars": 75913,
+  "lastPush": "2026-06-19T10:44:19Z",
+  "weeklyDownloads": 11495379,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "phoenix": {
+  "directory": "api-frameworks",
+  "github": "phoenixframework/phoenix",
+  "registry": null,
+  "pkg": null,
+  "stars": 23025,
+  "lastPush": "2026-06-19T14:47:14Z",
+  "weeklyDownloads": null,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "koa": {
+  "directory": "api-frameworks",
+  "github": "koajs/koa",
+  "registry": "npm",
+  "pkg": "koa",
+  "stars": 35717,
+  "lastPush": "2026-06-11T00:47:38Z",
+  "weeklyDownloads": 7994417,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "go-kit": {
+  "directory": "api-frameworks",
+  "github": "go-kit/kit",
+  "registry": "go",
+  "pkg": "github.com/go-kit/kit",
+  "stars": 27430,
+  "lastPush": "2024-07-19T01:40:06Z",
+  "weeklyDownloads": null,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "django": {
+  "directory": "api-frameworks",
+  "github": "django/django",
+  "registry": "pypi",
+  "pkg": "django",
+  "stars": 87916,
+  "lastPush": "2026-06-19T16:43:45Z",
+  "weeklyDownloads": null,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "vercel-ai-sdk": {
+  "directory": "ai-agent-frameworks",
+  "github": "vercel/ai",
+  "registry": "npm",
+  "pkg": "ai",
+  "stars": 24998,
+  "lastPush": "2026-06-19T23:52:37Z",
+  "weeklyDownloads": 15600520,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "openai-agents-sdk": {
+  "directory": "ai-agent-frameworks",
+  "github": "openai/openai-agents-python",
+  "registry": "pypi",
+  "pkg": "openai-agents",
+  "stars": 27273,
+  "lastPush": "2026-06-19T06:45:24Z",
+  "weeklyDownloads": 7303875,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "agno": {
+  "directory": "ai-agent-frameworks",
+  "github": "agno-agi/agno",
+  "registry": "pypi",
+  "pkg": "agno",
+  "stars": 40772,
+  "lastPush": "2026-06-19T20:43:22Z",
+  "weeklyDownloads": null,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "anthropic-agents": {
+  "directory": "ai-agent-frameworks",
+  "github": "anthropics/claude-agent-sdk-python",
+  "registry": "pypi",
+  "pkg": "claude-agent-sdk",
+  "stars": 7363,
+  "lastPush": "2026-06-19T04:12:37Z",
+  "weeklyDownloads": 4565195,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "llamaindex": {
+  "directory": "ai-agent-frameworks",
+  "github": "run-llama/llama_index",
+  "registry": "pypi",
+  "pkg": "llama-index",
+  "stars": 50230,
+  "lastPush": "2026-06-20T00:09:30Z",
+  "weeklyDownloads": null,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "langgraph": {
+  "directory": "ai-agent-frameworks",
+  "github": "langchain-ai/langgraph",
+  "registry": "pypi",
+  "pkg": "langgraph",
+  "stars": 35246,
+  "lastPush": "2026-06-19T10:05:20Z",
+  "weeklyDownloads": 14947506,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "strands-agents": {
+  "directory": "ai-agent-frameworks",
+  "github": "strands-agents/sdk-python",
+  "registry": "pypi",
+  "pkg": "strands-agents",
+  "stars": 6218,
+  "lastPush": "2026-06-20T01:11:00Z",
+  "weeklyDownloads": null,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "mastra": {
+  "directory": "ai-agent-frameworks",
+  "github": "mastra-ai/mastra",
+  "registry": "npm",
+  "pkg": "@mastra/core",
+  "stars": 25261,
+  "lastPush": "2026-06-20T05:51:04Z",
+  "weeklyDownloads": 1135372,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "pydantic-ai": {
+  "directory": "ai-agent-frameworks",
+  "github": "pydantic/pydantic-ai",
+  "registry": "pypi",
+  "pkg": "pydantic-ai",
+  "stars": 17863,
+  "lastPush": "2026-06-18T21:32:27Z",
+  "weeklyDownloads": null,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "smolagents": {
+  "directory": "ai-agent-frameworks",
+  "github": "huggingface/smolagents",
+  "registry": "pypi",
+  "pkg": "smolagents",
+  "stars": 27935,
+  "lastPush": "2026-06-16T18:35:47Z",
+  "weeklyDownloads": 156307,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "semantic-kernel": {
+  "directory": "ai-agent-frameworks",
+  "github": "microsoft/semantic-kernel",
+  "registry": "pypi",
+  "pkg": "semantic-kernel",
+  "stars": 28166,
+  "lastPush": "2026-06-19T23:42:11Z",
+  "weeklyDownloads": 583556,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "haystack": {
+  "directory": "ai-agent-frameworks",
+  "github": "deepset-ai/haystack",
+  "registry": "pypi",
+  "pkg": "haystack-ai",
+  "stars": 25614,
+  "lastPush": "2026-06-19T14:51:39Z",
+  "weeklyDownloads": null,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "google-adk": {
+  "directory": "ai-agent-frameworks",
+  "github": "google/adk-python",
+  "registry": "pypi",
+  "pkg": "google-adk",
+  "stars": 20187,
+  "lastPush": "2026-06-19T21:21:08Z",
+  "weeklyDownloads": null,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "letta": {
+  "directory": "ai-agent-frameworks",
+  "github": "letta-ai/letta",
+  "registry": "pypi",
+  "pkg": "letta",
+  "stars": 23421,
+  "lastPush": "2026-05-14T17:14:23Z",
+  "weeklyDownloads": null,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "langchain": {
+  "directory": "ai-agent-frameworks",
+  "github": "langchain-ai/langchain",
+  "registry": "pypi",
+  "pkg": "langchain",
+  "stars": 139737,
+  "lastPush": "2026-06-20T02:14:06Z",
+  "weeklyDownloads": null,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "crewai": {
+  "directory": "ai-agent-frameworks",
+  "github": "crewAIInc/crewAI",
+  "registry": "pypi",
+  "pkg": "crewai",
+  "stars": 54004,
+  "lastPush": "2026-06-20T03:45:44Z",
+  "weeklyDownloads": 2868043,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "atomic-agents": {
+  "directory": "ai-agent-frameworks",
+  "github": "BrainBlend-AI/atomic-agents",
+  "registry": "pypi",
+  "pkg": "atomic-agents",
+  "stars": 5995,
+  "lastPush": "2026-06-19T16:48:53Z",
+  "weeklyDownloads": 5082,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "autogen": {
+  "directory": "ai-agent-frameworks",
+  "github": "ag2ai/ag2",
+  "registry": "pypi",
+  "pkg": "ag2",
+  "stars": 4694,
+  "lastPush": "2026-06-19T04:37:11Z",
+  "weeklyDownloads": null,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "pocketflow": {
+  "directory": "ai-agent-frameworks",
+  "github": "The-Pocket/PocketFlow",
+  "registry": "pypi",
+  "pkg": "pocketflow",
+  "stars": 10770,
+  "lastPush": "2026-03-27T18:48:41Z",
+  "weeklyDownloads": 6829,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "dspy": {
+  "directory": "ai-agent-frameworks",
+  "github": "stanfordnlp/dspy",
+  "registry": "pypi",
+  "pkg": "dspy",
+  "stars": 35161,
+  "lastPush": "2026-06-18T16:57:05Z",
+  "weeklyDownloads": 1315847,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "autogpt": {
+  "directory": "ai-agent-frameworks",
+  "github": "Significant-Gravitas/AutoGPT",
+  "registry": null,
+  "pkg": null,
+  "stars": 185045,
+  "lastPush": "2026-06-19T23:09:17Z",
+  "weeklyDownloads": null,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "expo": {
+  "directory": "mobile-frameworks",
+  "github": "expo/expo",
+  "registry": "npm",
+  "pkg": "expo",
+  "stars": 50159,
+  "lastPush": "2026-06-19T22:03:14Z",
+  "weeklyDownloads": 6900419,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "unity": {
+  "directory": "mobile-frameworks",
+  "github": null,
+  "registry": null,
+  "pkg": null,
+  "stars": null,
+  "lastPush": null,
+  "weeklyDownloads": null,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "kotlin-multiplatform": {
+  "directory": "mobile-frameworks",
+  "github": "JetBrains/kotlin",
+  "registry": null,
+  "pkg": null,
+  "stars": 52911,
+  "lastPush": "2026-06-20T01:06:48Z",
+  "weeklyDownloads": null,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "flutter": {
+  "directory": "mobile-frameworks",
+  "github": "flutter/flutter",
+  "registry": null,
+  "pkg": null,
+  "stars": 177012,
+  "lastPush": "2026-06-20T01:50:03Z",
+  "weeklyDownloads": null,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "flutterflow": {
+  "directory": "mobile-frameworks",
+  "github": null,
+  "registry": null,
+  "pkg": null,
+  "stars": null,
+  "lastPush": null,
+  "weeklyDownloads": null,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "react-native": {
+  "directory": "mobile-frameworks",
+  "github": "facebook/react-native",
+  "registry": "npm",
+  "pkg": "react-native",
+  "stars": 126041,
+  "lastPush": "2026-06-19T16:47:53Z",
+  "weeklyDownloads": 10159010,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "ionic": {
+  "directory": "mobile-frameworks",
+  "github": "ionic-team/ionic-framework",
+  "registry": "npm",
+  "pkg": "@ionic/core",
+  "stars": 52518,
+  "lastPush": "2026-06-19T03:14:35Z",
+  "weeklyDownloads": 400691,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "capacitor": {
+  "directory": "mobile-frameworks",
+  "github": "ionic-team/capacitor",
+  "registry": "npm",
+  "pkg": "@capacitor/core",
+  "stars": 15912,
+  "lastPush": "2026-06-19T09:02:01Z",
+  "weeklyDownloads": 3074680,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "lynx": {
+  "directory": "mobile-frameworks",
+  "github": "lynx-family/lynx",
+  "registry": "npm",
+  "pkg": "@lynx-js/react",
+  "stars": 14920,
+  "lastPush": "2026-06-19T16:44:12Z",
+  "weeklyDownloads": 29104,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "framework7": {
+  "directory": "mobile-frameworks",
+  "github": "framework7io/framework7",
+  "registry": "npm",
+  "pkg": "framework7",
+  "stars": 18671,
+  "lastPush": "2026-05-27T15:37:38Z",
+  "weeklyDownloads": 17724,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "dotnet-maui": {
+  "directory": "mobile-frameworks",
+  "github": "dotnet/maui",
+  "registry": "nuget",
+  "pkg": "Microsoft.Maui.Controls",
+  "stars": 23270,
+  "lastPush": "2026-06-20T05:39:13Z",
+  "weeklyDownloads": 84224,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "nativescript": {
+  "directory": "mobile-frameworks",
+  "github": "NativeScript/NativeScript",
+  "registry": "npm",
+  "pkg": "nativescript",
+  "stars": 25543,
+  "lastPush": "2026-06-19T22:28:55Z",
+  "weeklyDownloads": 7096,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "uno-platform": {
+  "directory": "mobile-frameworks",
+  "github": "unoplatform/uno",
+  "registry": "nuget",
+  "pkg": "Uno.WinUI",
+  "stars": 9972,
+  "lastPush": "2026-06-20T01:04:48Z",
+  "weeklyDownloads": 40913,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "onsen-ui": {
+  "directory": "mobile-frameworks",
+  "github": "OnsenUI/OnsenUI",
+  "registry": "npm",
+  "pkg": "onsenui",
+  "stars": 8866,
+  "lastPush": "2026-06-17T03:34:27Z",
+  "weeklyDownloads": 6411,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "tauri-mobile": {
+  "directory": "mobile-frameworks",
+  "github": "tauri-apps/tauri",
+  "registry": "crates",
+  "pkg": "tauri",
+  "stars": 108095,
+  "lastPush": "2026-06-19T18:12:45Z",
+  "weeklyDownloads": 529535,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "solar2d": {
+  "directory": "mobile-frameworks",
+  "github": "coronalabs/corona",
+  "registry": null,
+  "pkg": null,
+  "stars": 2847,
+  "lastPush": "2026-06-11T18:41:10Z",
+  "weeklyDownloads": null,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "codename-one": {
+  "directory": "mobile-frameworks",
+  "github": "codenameone/CodenameOne",
+  "registry": null,
+  "pkg": null,
+  "stars": 1840,
+  "lastPush": "2026-06-20T06:05:12Z",
+  "weeklyDownloads": null,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "apache-cordova": {
+  "directory": "mobile-frameworks",
+  "github": "apache/cordova",
+  "registry": "npm",
+  "pkg": "cordova",
+  "stars": 704,
+  "lastPush": "2026-05-19T03:45:48Z",
+  "weeklyDownloads": 47675,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "drizzle": {
+  "directory": "orms",
+  "github": "drizzle-team/drizzle-orm",
+  "registry": "npm",
+  "pkg": "drizzle-orm",
+  "stars": 34865,
+  "lastPush": "2026-06-19T17:39:07Z",
+  "weeklyDownloads": 11586637,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "prisma": {
+  "directory": "orms",
+  "github": "prisma/prisma",
+  "registry": "npm",
+  "pkg": "prisma",
+  "stars": 46331,
+  "lastPush": "2026-06-12T08:32:43Z",
+  "weeklyDownloads": 13475312,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "typeorm": {
+  "directory": "orms",
+  "github": "typeorm/typeorm",
+  "registry": "npm",
+  "pkg": "typeorm",
+  "stars": 36544,
+  "lastPush": "2026-06-19T03:28:49Z",
+  "weeklyDownloads": 4659014,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "sequelize": {
+  "directory": "orms",
+  "github": "sequelize/sequelize",
+  "registry": "npm",
+  "pkg": "sequelize",
+  "stars": 30354,
+  "lastPush": "2026-06-13T10:00:58Z",
+  "weeklyDownloads": 2956342,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "kysely": {
+  "directory": "orms",
+  "github": "kysely-org/kysely",
+  "registry": "npm",
+  "pkg": "kysely",
+  "stars": 13957,
+  "lastPush": "2026-06-19T07:44:47Z",
+  "weeklyDownloads": 9005900,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "mikro-orm": {
+  "directory": "orms",
+  "github": "mikro-orm/mikro-orm",
+  "registry": "npm",
+  "pkg": "@mikro-orm/core",
+  "stars": 9088,
+  "lastPush": "2026-06-20T02:50:32Z",
+  "weeklyDownloads": 788445,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "knex": {
+  "directory": "orms",
+  "github": "knex/knex",
+  "registry": "npm",
+  "pkg": "knex",
+  "stars": 20305,
+  "lastPush": "2026-06-17T09:12:57Z",
+  "weeklyDownloads": 4522501,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "objection": {
+  "directory": "orms",
+  "github": "Vincit/objection.js",
+  "registry": "npm",
+  "pkg": "objection",
+  "stars": 7343,
+  "lastPush": "2025-10-02T17:01:53Z",
+  "weeklyDownloads": 308514,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "sqlalchemy": {
+  "directory": "orms",
+  "github": "sqlalchemy/sqlalchemy",
+  "registry": "pypi",
+  "pkg": "sqlalchemy",
+  "stars": 11924,
+  "lastPush": "2026-06-18T18:13:07Z",
+  "weeklyDownloads": 96009651,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "django-orm": {
+  "directory": "orms",
+  "github": "django/django",
+  "registry": "pypi",
+  "pkg": "django",
+  "stars": 87916,
+  "lastPush": "2026-06-19T16:43:45Z",
+  "weeklyDownloads": 12333612,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "tortoise-orm": {
+  "directory": "orms",
+  "github": "tortoise/tortoise-orm",
+  "registry": "pypi",
+  "pkg": "tortoise-orm",
+  "stars": 5586,
+  "lastPush": "2026-06-18T15:20:55Z",
+  "weeklyDownloads": null,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "sqlmodel": {
+  "directory": "orms",
+  "github": "fastapi/sqlmodel",
+  "registry": "pypi",
+  "pkg": "sqlmodel",
+  "stars": 18122,
+  "lastPush": "2026-06-18T08:24:18Z",
+  "weeklyDownloads": 4293398,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "diesel": {
+  "directory": "orms",
+  "github": "diesel-rs/diesel",
+  "registry": "crates",
+  "pkg": "diesel",
+  "stars": 14094,
+  "lastPush": "2026-06-19T15:49:00Z",
+  "weeklyDownloads": 458670,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "sea-orm": {
+  "directory": "orms",
+  "github": "SeaQL/sea-orm",
+  "registry": "crates",
+  "pkg": "sea-orm",
+  "stars": 9722,
+  "lastPush": "2026-06-18T23:29:00Z",
+  "weeklyDownloads": 225228,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "sqlx-rust": {
+  "directory": "orms",
+  "github": "launchbadge/sqlx",
+  "registry": "crates",
+  "pkg": "sqlx",
+  "stars": 17174,
+  "lastPush": "2026-06-11T16:40:58Z",
+  "weeklyDownloads": 2239882,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "entity-framework-core": {
+  "directory": "orms",
+  "github": "dotnet/efcore",
+  "registry": "nuget",
+  "pkg": "Microsoft.EntityFrameworkCore",
+  "stars": 14697,
+  "lastPush": "2026-06-20T04:46:16Z",
+  "weeklyDownloads": 8659542,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "gorm": {
+  "directory": "orms",
+  "github": "go-gorm/gorm",
+  "registry": "go",
+  "pkg": null,
+  "stars": 39804,
+  "lastPush": "2026-05-11T09:45:14Z",
+  "weeklyDownloads": null,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "ent": {
+  "directory": "orms",
+  "github": "ent/ent",
+  "registry": "go",
+  "pkg": null,
+  "stars": 17106,
+  "lastPush": "2026-05-31T07:00:04Z",
+  "weeklyDownloads": null,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "bun-orm": {
+  "directory": "orms",
+  "github": "uptrace/bun",
+  "registry": "go",
+  "pkg": null,
+  "stars": 4862,
+  "lastPush": "2026-06-17T10:08:25Z",
+  "weeklyDownloads": null,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ },
+ "sqlc": {
+  "directory": "orms",
+  "github": "sqlc-dev/sqlc",
+  "registry": "go",
+  "pkg": null,
+  "stars": 17892,
+  "lastPush": "2026-06-19T10:02:14Z",
+  "weeklyDownloads": null,
+  "fetchedAt": "2026-06-20T06:02:17.086Z"
+ }
+}
