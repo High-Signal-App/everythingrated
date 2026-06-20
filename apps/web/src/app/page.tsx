@@ -1,8 +1,8 @@
-import { listDirectories } from "@/lib/ratings";
-import { DirectoryCard } from "@/components/organisms/directory-card";
 import { Badge } from "@/components/atoms/badge";
 import { ScoreBar } from "@/components/atoms/score-bar";
 import { CategoryChips } from "@/components/molecules/category-chips";
+import { DirectoryCard } from "@/components/organisms/directory-card";
+import { listDirectories } from "@/lib/ratings";
 
 export const dynamic = "force-dynamic";
 

@@ -1,4 +1,5 @@
 import Link from "next/link";
+
 import { Badge } from "@/components/atoms/badge";
 import { Card, CardBody } from "@/components/atoms/card";
 import { ScoreBar } from "@/components/atoms/score-bar";

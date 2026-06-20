@@ -2,6 +2,8 @@
 
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
+
+import { trackActivated, trackCoreAction } from "@/lib/analytics";
 import {
   approveDirectorySubmission,
   rejectDirectorySubmission,
@@ -14,7 +16,6 @@ import {
   rollbackApprovedItemSubmission,
   submitItemSuggestion,
 } from "@/lib/item-submissions";
-import { trackActivated, trackCoreAction } from "@/lib/analytics";
 import { getModerationToken } from "@/lib/moderation";
 import { countVisitorRatings, rate } from "@/lib/ratings";
 import { ensureVisitorId } from "@/lib/visitor";

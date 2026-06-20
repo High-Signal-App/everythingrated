@@ -1,15 +1,17 @@
-import { test } from 'vitest';
 import assert from "node:assert/strict";
+
+import { test } from 'vitest';
+
 import {
   addItemToCollection,
   createCollection,
   directoriesFromRatedItems,
   parseStoredCollections,
-  reorderItem,
-  removeItemFromCollection,
-  resolveCollectionItems,
-  type RatedItemRef,
   type RankedCollection,
+  type RatedItemRef,
+  removeItemFromCollection,
+  reorderItem,
+  resolveCollectionItems,
 } from "./collections";
 
 test('collections', () => {

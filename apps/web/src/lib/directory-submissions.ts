@@ -1,10 +1,11 @@
 import {
   aspects,
   directories,
-  directorySubmissions,
   type DirectorySubmission,
+  directorySubmissions,
 } from "@everythingrated/db";
 import { and, desc, eq, ne } from "drizzle-orm";
+
 import { getDb } from "./db";
 
 const MAX_TEXT_LENGTH = 500;

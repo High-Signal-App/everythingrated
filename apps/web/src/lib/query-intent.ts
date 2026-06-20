@@ -11,8 +11,8 @@
 import {
   ASPECT_SIGNALS,
   CONSTRAINT_SIGNALS,
-  DIRECTORY_SIGNALS,
   type ConstraintTag,
+  DIRECTORY_SIGNALS,
   type StackIntent,
 } from "./stack-vocabulary";
 

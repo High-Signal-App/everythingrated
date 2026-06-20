@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { Card, CardBody } from "@/components/atoms/card";
+
 import { Badge } from "@/components/atoms/badge";
+import { Card, CardBody } from "@/components/atoms/card";
 import type { DirectorySummary } from "@/lib/ratings";
 
 export function DirectoryCard({ data }: { data: DirectorySummary }) {

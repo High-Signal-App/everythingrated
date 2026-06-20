@@ -1,6 +1,8 @@
-import { test } from 'vitest';
 import assert from "node:assert/strict";
-import { interpretQuery, mergeIntent, weightsForAspectGroups, EMPHASIS_WEIGHT } from "./query-intent";
+
+import { test } from 'vitest';
+
+import { EMPHASIS_WEIGHT,interpretQuery, mergeIntent, weightsForAspectGroups } from "./query-intent";
 
 test('query-intent', () => {
   // ── Directory detection ───────────────────────────────────────────

@@ -1,5 +1,6 @@
-import { directories, items, ratings, itemSubmissions } from "@everythingrated/db";
+import { directories, items, itemSubmissions,ratings } from "@everythingrated/db";
 import { and, desc, eq, inArray, ne, or } from "drizzle-orm";
+
 import { getDb } from "./db";
 import { readVisitorId } from "./visitor";
 

@@ -8,12 +8,13 @@
  */
 
 import { aspects, directories, items, itemTags, ratings } from "@everythingrated/db";
+
 import { getDb } from "./db";
 import {
-  recommendStack,
   type Catalogue,
   type CatalogueAspect,
   type CatalogueItem,
+  recommendStack,
   type StackResult,
 } from "./stack-recommender";
 import type { ConstraintTag, StackIntent } from "./stack-vocabulary";

@@ -1,6 +1,7 @@
 import Link from "next/link";
-import type { DirectorySummary } from "@/lib/ratings";
+
 import { cn } from "@/lib/cn";
+import type { DirectorySummary } from "@/lib/ratings";
 
 type Props = {
   directories: DirectorySummary[];

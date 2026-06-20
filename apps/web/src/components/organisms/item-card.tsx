@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { Card, CardBody } from "@/components/atoms/card";
+
 import { Badge } from "@/components/atoms/badge";
+import { Card, CardBody } from "@/components/atoms/card";
 import { AspectRow } from "@/components/molecules/aspect-row";
 import type { ItemWithAggregate } from "@/lib/ratings";
 

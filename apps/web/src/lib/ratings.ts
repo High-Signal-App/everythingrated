@@ -1,14 +1,15 @@
 import {
-  items,
-  aspects,
-  ratings,
-  directories,
-  itemVersions,
   type Aspect,
-  type Item,
+  aspects,
+  directories,
   type Directory,
+  type Item,
+  items,
+  itemVersions,
+  ratings,
 } from "@everythingrated/db";
 import { and, desc, eq, isNull, lte } from "drizzle-orm";
+
 import { getDb } from "./db";
 
 export type AspectAverage = {

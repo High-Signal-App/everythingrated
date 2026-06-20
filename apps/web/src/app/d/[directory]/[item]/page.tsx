@@ -1,10 +1,11 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+
+import { Badge } from "@/components/atoms/badge";
+import { CategoryChips } from "@/components/molecules/category-chips";
+import { RateRow } from "@/components/molecules/rate-row";
 import { getItemAggregate, listDirectories } from "@/lib/ratings";
 import { readVisitorId } from "@/lib/visitor";
-import { Badge } from "@/components/atoms/badge";
-import { RateRow } from "@/components/molecules/rate-row";
-import { CategoryChips } from "@/components/molecules/category-chips";
 
 export const dynamic = "force-dynamic";
 

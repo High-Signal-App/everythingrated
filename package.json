@@ -19,10 +19,13 @@
     "db:studio": "pnpm --filter @everythingrated/db studio",
     "db:seed:local": "tsx scripts/seed-d1.ts --local",
     "db:seed:remote": "tsx scripts/seed-d1.ts --remote",
+    "format": "biome format --write .",
+    "format:check": "biome format .",
+    "check": "biome check .",
     "prepare": "husky"
   },
   "devDependencies": {
-    "@saas-maker/test-config": "^0.2.0",
+    "@biomejs/biome": "2.5.0",
     "husky": "9.1.7",
     "next": "16.2.4",
     "tsx": "4.21.0",

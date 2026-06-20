@@ -1,5 +1,7 @@
-import { test } from 'vitest';
 import assert from "node:assert/strict";
+
+import { test } from 'vitest';
+
 import { compareItems, encodeCompareState, parseCompareState } from "./comparison";
 import type { ItemWithAggregate } from "./ratings";
 

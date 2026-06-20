@@ -1,5 +1,5 @@
-import { getCloudflareContext } from "@opennextjs/cloudflare";
 import { createDb, type DB } from "@everythingrated/db";
+import { getCloudflareContext } from "@opennextjs/cloudflare";
 
 /**
  * Returns a Drizzle client bound to the request's D1 binding.

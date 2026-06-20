@@ -1,13 +1,14 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
+import { useEffect, useMemo, useRef, useState } from "react";
+
+import { Badge } from "@/components/atoms/badge";
+import { Card, CardBody } from "@/components/atoms/card";
+import { ScoreBar } from "@/components/atoms/score-bar";
 import { trackCompareViewOpened } from "@/lib/analytics";
 import { compareItems, encodeCompareState, MAX_COMPARE_ITEMS, type WeightMap } from "@/lib/comparison";
 import type { ItemWithAggregate } from "@/lib/ratings";
-import { Card, CardBody } from "@/components/atoms/card";
-import { ScoreBar } from "@/components/atoms/score-bar";
-import { Badge } from "@/components/atoms/badge";
 
 export function ComparisonBoard({
   directorySlug,

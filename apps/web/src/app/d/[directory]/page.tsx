@@ -1,12 +1,13 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getDirectoryBySlug, listItemsWithAggregates } from "@/lib/ratings";
-import { readVisitorId } from "@/lib/visitor";
-import { ItemCard } from "@/components/organisms/item-card";
-import { ComparisonBoard } from "@/components/organisms/comparison-board";
+
 import { Badge } from "@/components/atoms/badge";
+import { ComparisonBoard } from "@/components/organisms/comparison-board";
+import { ItemCard } from "@/components/organisms/item-card";
 import { parseCompareState } from "@/lib/comparison";
 import { PILOT_DIRECTORY_SLUG } from "@/lib/item-submissions";
+import { getDirectoryBySlug, listItemsWithAggregates } from "@/lib/ratings";
+import { readVisitorId } from "@/lib/visitor";
 
 export const dynamic = "force-dynamic";
 

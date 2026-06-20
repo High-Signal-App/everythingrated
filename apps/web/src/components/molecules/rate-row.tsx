@@ -1,12 +1,13 @@
 "use client";
 
 import { useState, useTransition } from "react";
-import { cn } from "@/lib/cn";
+
 import { ScoreBar } from "@/components/atoms/score-bar";
-import type { AspectAverage } from "@/lib/ratings";
 import { submitRating } from "@/lib/actions";
 import { markVisitorActivity } from "@/lib/analytics";
+import { cn } from "@/lib/cn";
 import { captureActionFailure } from "@/lib/foundry-monitoring";
+import type { AspectAverage } from "@/lib/ratings";
 
 /**
  * Interactive rating row — 5 buttons, optimistic update, calls a Server Action.

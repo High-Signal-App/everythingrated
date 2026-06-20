@@ -1,8 +1,10 @@
-import type { Metadata } from "next";
 import "./globals.css";
-import { AnalyticsProvider } from "@/components/posthog-provider";
-import { SiteHeader } from "@/components/organisms/site-header";
+
+import type { Metadata } from "next";
+
 import { SiteFooter } from "@/components/organisms/site-footer";
+import { SiteHeader } from "@/components/organisms/site-header";
+import { AnalyticsProvider } from "@/components/posthog-provider";
 import { SaaSMakerFeedback } from "@/components/saasmaker-feedback";
 
 export const metadata: Metadata = {

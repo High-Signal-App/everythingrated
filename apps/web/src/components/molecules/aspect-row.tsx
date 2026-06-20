@@ -1,5 +1,5 @@
-import type { AspectAverage } from "@/lib/ratings";
 import { ScoreBar } from "@/components/atoms/score-bar";
+import type { AspectAverage } from "@/lib/ratings";
 
 /** Read-only summary for a single aspect — used on the landing grid. */
 export function AspectRow({ a }: { a: AspectAverage }) {

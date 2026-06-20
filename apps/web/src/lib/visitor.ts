@@ -1,4 +1,5 @@
 import { cookies } from "next/headers";
+
 import { trackSignup } from "./analytics";
 
 export const VISITOR_COOKIE = "er_visitor";

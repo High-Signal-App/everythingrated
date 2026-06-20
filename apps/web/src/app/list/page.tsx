@@ -1,8 +1,9 @@
-import { notFound } from "next/navigation";
 import Link from "next/link";
-import { getDirectoryBySlug, listItemsWithAggregates } from "@/lib/ratings";
-import { AspectRow } from "@/components/molecules/aspect-row";
+import { notFound } from "next/navigation";
+
 import { Badge } from "@/components/atoms/badge";
+import { AspectRow } from "@/components/molecules/aspect-row";
+import { getDirectoryBySlug, listItemsWithAggregates } from "@/lib/ratings";
 
 export const dynamic = "force-dynamic";
 

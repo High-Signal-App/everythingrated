@@ -1,15 +1,16 @@
 "use client";
 
-import { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
+import { useMemo, useState } from "react";
+
+import { Badge } from "@/components/atoms/badge";
+import { Card, CardBody } from "@/components/atoms/card";
 import { interpretQuery } from "@/lib/query-intent";
 import {
   ASPECT_SIGNALS,
   CONSTRAINT_SIGNALS,
   type ConstraintTag,
 } from "@/lib/stack-vocabulary";
-import { Card, CardBody } from "@/components/atoms/card";
-import { Badge } from "@/components/atoms/badge";
 
 const tagId = (t: ConstraintTag) => `${t.key}:${t.value}`;
 

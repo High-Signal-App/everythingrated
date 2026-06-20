@@ -1,3 +1,4 @@
+import type { Page } from "@playwright/test";
 import { expect, test } from "@playwright/test";
 
 /**
@@ -12,7 +13,7 @@ import { expect, test } from "@playwright/test";
 
 const PUBLIC_ROUTES = ["/", "/about", "/d/ai-dev-tools"];
 
-async function horizontalOverflow(page: import("@playwright/test").Page) {
+async function horizontalOverflow(page: Page) {
   return page.evaluate(() => {
     const doc = document.documentElement;
     return doc.scrollWidth - doc.clientWidth;

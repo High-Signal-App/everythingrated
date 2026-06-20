@@ -1,6 +1,8 @@
-import { test } from 'vitest';
 import assert from "node:assert/strict";
-import { recommendStack, TAG_BOOST, type Catalogue, type CatalogueItem } from "./stack-recommender";
+
+import { test } from 'vitest';
+
+import { type Catalogue, type CatalogueItem,recommendStack, TAG_BOOST } from "./stack-recommender";
 import type { ConstraintTag, StackIntent } from "./stack-vocabulary";
 
 test('stack-recommender', () => {
