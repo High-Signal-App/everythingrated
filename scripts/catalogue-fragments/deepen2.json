@@ -1,0 +1,653 @@
+{
+  "deepen": {
+    "message-brokers": [
+      {
+        "slug": "amazon-msk",
+        "name": "Amazon MSK",
+        "description": "AWS's fully managed Apache Kafka service handling provisioning, patching, and scaling of broker clusters.",
+        "websiteUrl": "https://aws.amazon.com/msk",
+        "scores": {
+          "throughput": 5,
+          "durability": 5,
+          "cost": 3,
+          "dx": 3,
+          "ecosystem": 5
+        }
+      },
+      {
+        "slug": "amazon-kinesis",
+        "name": "Amazon Kinesis Data Streams",
+        "description": "AWS's fully managed serverless service for ingesting and processing real-time streaming data at scale.",
+        "websiteUrl": "https://aws.amazon.com/kinesis/data-streams",
+        "scores": {
+          "throughput": 5,
+          "durability": 5,
+          "cost": 3,
+          "dx": 3,
+          "ecosystem": 4
+        },
+        "tags": [
+          "deploy:serverless",
+          "realtime:yes"
+        ]
+      },
+      {
+        "slug": "emqx",
+        "name": "EMQX",
+        "description": "Highly scalable open-source MQTT broker for connecting massive fleets of IoT devices in real time.",
+        "websiteUrl": "https://www.emqx.io",
+        "scores": {
+          "throughput": 5,
+          "durability": 4,
+          "cost": 4,
+          "dx": 4,
+          "ecosystem": 3
+        },
+        "tags": [
+          "self-hostable:yes",
+          "pricing:free-tier",
+          "realtime:yes"
+        ]
+      },
+      {
+        "slug": "apache-rocketmq",
+        "name": "Apache RocketMQ",
+        "description": "Distributed messaging and streaming platform from Alibaba with low latency and financial-grade reliability.",
+        "websiteUrl": "https://rocketmq.apache.org",
+        "scores": {
+          "throughput": 4,
+          "durability": 5,
+          "cost": 5,
+          "dx": 3,
+          "ecosystem": 3
+        },
+        "tags": [
+          "self-hostable:yes",
+          "pricing:free-tier"
+        ]
+      },
+      {
+        "slug": "nsq",
+        "name": "NSQ",
+        "description": "Realtime distributed messaging platform built in Go for decentralized, fault-tolerant message delivery.",
+        "websiteUrl": "https://nsq.io",
+        "scores": {
+          "throughput": 4,
+          "durability": 3,
+          "cost": 5,
+          "dx": 4,
+          "ecosystem": 2
+        },
+        "tags": [
+          "self-hostable:yes",
+          "pricing:free-tier",
+          "realtime:yes"
+        ]
+      },
+      {
+        "slug": "warpstream",
+        "name": "WarpStream",
+        "description": "Diskless, Kafka-compatible streaming platform (now an IBM product) that stores data directly on object storage.",
+        "websiteUrl": "https://www.warpstream.com",
+        "scores": {
+          "throughput": 5,
+          "durability": 5,
+          "cost": 4,
+          "dx": 4,
+          "ecosystem": 3
+        }
+      },
+      {
+        "slug": "automq",
+        "name": "AutoMQ",
+        "description": "Cloud-native, Kafka-compatible streaming engine that offloads storage to object storage for elastic scaling.",
+        "websiteUrl": "https://www.automq.com",
+        "scores": {
+          "throughput": 5,
+          "durability": 5,
+          "cost": 4,
+          "dx": 4,
+          "ecosystem": 3
+        },
+        "tags": [
+          "self-hostable:yes",
+          "pricing:free-tier"
+        ]
+      },
+      {
+        "slug": "streamnative",
+        "name": "StreamNative",
+        "description": "Managed Apache Pulsar platform from Pulsar's creators with unified streaming and Kafka-protocol support.",
+        "websiteUrl": "https://streamnative.io",
+        "scores": {
+          "throughput": 5,
+          "durability": 5,
+          "cost": 3,
+          "dx": 3,
+          "ecosystem": 3
+        }
+      },
+      {
+        "slug": "kubemq",
+        "name": "KubeMQ",
+        "description": "Kubernetes-native message broker and queue delivered as a lightweight container for connecting microservices.",
+        "websiteUrl": "https://kubemq.io",
+        "scores": {
+          "throughput": 3,
+          "durability": 4,
+          "cost": 4,
+          "dx": 4,
+          "ecosystem": 2
+        },
+        "tags": [
+          "self-hostable:yes",
+          "pricing:free-tier"
+        ]
+      },
+      {
+        "slug": "cloudflare-queues-broker",
+        "name": "Cloudflare Queues",
+        "description": "Cloudflare's managed message queue integrated with Workers for serverless producers and consumers at the edge.",
+        "websiteUrl": "https://developers.cloudflare.com/queues",
+        "scores": {
+          "throughput": 3,
+          "durability": 4,
+          "cost": 5,
+          "dx": 5,
+          "ecosystem": 3
+        },
+        "tags": [
+          "runs-on:cloudflare",
+          "deploy:edge",
+          "deploy:serverless",
+          "pricing:free-tier"
+        ]
+      }
+    ],
+    "data-warehouses": [
+      {
+        "slug": "clickhouse-cloud",
+        "name": "ClickHouse Cloud",
+        "description": "Fully managed serverless ClickHouse service with separated storage and compute and auto-scaling.",
+        "websiteUrl": "https://clickhouse.com/cloud",
+        "scores": {
+          "query_speed": 5,
+          "scalability": 5,
+          "cost": 4,
+          "dx": 5,
+          "ecosystem": 4
+        },
+        "tags": [
+          "deploy:serverless",
+          "pricing:free-tier"
+        ]
+      },
+      {
+        "slug": "vertica",
+        "name": "Vertica",
+        "description": "Mature MPP columnar analytics database for large-scale data warehousing on-premises or in the cloud.",
+        "websiteUrl": "https://www.vertica.com",
+        "scores": {
+          "query_speed": 4,
+          "scalability": 5,
+          "cost": 2,
+          "dx": 3,
+          "ecosystem": 3
+        }
+      },
+      {
+        "slug": "teradata-vantage",
+        "name": "Teradata Vantage",
+        "description": "Enterprise analytics platform and data warehouse known for very large, complex workloads at scale.",
+        "websiteUrl": "https://www.teradata.com",
+        "scores": {
+          "query_speed": 4,
+          "scalability": 5,
+          "cost": 1,
+          "dx": 2,
+          "ecosystem": 4
+        }
+      },
+      {
+        "slug": "greenplum",
+        "name": "Greenplum",
+        "description": "Open-source massively parallel Postgres-based analytics data warehouse for big data workloads.",
+        "websiteUrl": "https://greenplum.org",
+        "scores": {
+          "query_speed": 4,
+          "scalability": 5,
+          "cost": 5,
+          "dx": 3,
+          "ecosystem": 3
+        },
+        "tags": [
+          "self-hostable:yes",
+          "pricing:free-tier"
+        ]
+      },
+      {
+        "slug": "apache-doris",
+        "name": "Apache Doris",
+        "description": "Open-source real-time MPP analytical database delivering fast queries for high-concurrency reporting.",
+        "websiteUrl": "https://doris.apache.org",
+        "scores": {
+          "query_speed": 5,
+          "scalability": 4,
+          "cost": 5,
+          "dx": 4,
+          "ecosystem": 3
+        },
+        "tags": [
+          "self-hostable:yes",
+          "pricing:free-tier",
+          "realtime:yes"
+        ]
+      },
+      {
+        "slug": "ibm-netezza",
+        "name": "IBM Netezza",
+        "description": "IBM's appliance-based data warehouse for high-performance analytics on large enterprise datasets.",
+        "websiteUrl": "https://www.ibm.com/products/netezza",
+        "scores": {
+          "query_speed": 4,
+          "scalability": 4,
+          "cost": 1,
+          "dx": 2,
+          "ecosystem": 3
+        }
+      },
+      {
+        "slug": "oracle-autonomous-warehouse",
+        "name": "Oracle Autonomous Data Warehouse",
+        "description": "Oracle's self-managing cloud data warehouse with automated tuning, patching, and scaling.",
+        "websiteUrl": "https://www.oracle.com/autonomous-database/autonomous-data-warehouse",
+        "scores": {
+          "query_speed": 4,
+          "scalability": 5,
+          "cost": 2,
+          "dx": 3,
+          "ecosystem": 4
+        }
+      },
+      {
+        "slug": "databend",
+        "name": "Databend",
+        "description": "Open-source cloud-native data warehouse built in Rust as a cost-efficient Snowflake alternative.",
+        "websiteUrl": "https://www.databend.com",
+        "scores": {
+          "query_speed": 4,
+          "scalability": 4,
+          "cost": 5,
+          "dx": 4,
+          "ecosystem": 2
+        },
+        "tags": [
+          "self-hostable:yes",
+          "pricing:free-tier"
+        ]
+      },
+      {
+        "slug": "cratedb",
+        "name": "CrateDB",
+        "description": "Distributed SQL database combining search and analytics for storing massive volumes of data in near real time.",
+        "websiteUrl": "https://cratedb.com",
+        "scores": {
+          "query_speed": 4,
+          "scalability": 5,
+          "cost": 4,
+          "dx": 4,
+          "ecosystem": 3
+        },
+        "tags": [
+          "self-hostable:yes",
+          "pricing:free-tier"
+        ]
+      },
+      {
+        "slug": "exasol",
+        "name": "Exasol",
+        "description": "High-performance in-memory analytics engine and data warehouse optimized for fast BI and reporting.",
+        "websiteUrl": "https://www.exasol.com",
+        "scores": {
+          "query_speed": 5,
+          "scalability": 4,
+          "cost": 2,
+          "dx": 3,
+          "ecosystem": 3
+        }
+      },
+      {
+        "slug": "yellowbrick",
+        "name": "Yellowbrick",
+        "description": "Elastic MPP SQL data warehouse built for Kubernetes that runs across cloud and on-premises environments.",
+        "websiteUrl": "https://yellowbrick.com",
+        "scores": {
+          "query_speed": 4,
+          "scalability": 5,
+          "cost": 3,
+          "dx": 3,
+          "ecosystem": 2
+        }
+      }
+    ],
+    "search": [
+      {
+        "slug": "manticore-search",
+        "name": "Manticore Search",
+        "description": "Fast open-source search database and Elasticsearch alternative with SQL, full-text, and vector search.",
+        "websiteUrl": "https://manticoresearch.com",
+        "scores": {
+          "relevance": 4,
+          "latency": 5,
+          "cost": 5,
+          "dx": 4,
+          "ecosystem": 2
+        },
+        "tags": [
+          "self-hostable:yes",
+          "pricing:free-tier"
+        ]
+      },
+      {
+        "slug": "orama",
+        "name": "Orama",
+        "description": "Tiny full-text, vector, and hybrid search engine that runs in the browser, server, or edge network.",
+        "websiteUrl": "https://orama.com",
+        "scores": {
+          "relevance": 4,
+          "latency": 5,
+          "cost": 5,
+          "dx": 5,
+          "ecosystem": 3
+        },
+        "tags": [
+          "self-hostable:yes",
+          "pricing:free-tier",
+          "deploy:edge",
+          "language:typescript"
+        ]
+      },
+      {
+        "slug": "quickwit",
+        "name": "Quickwit",
+        "description": "Open-source distributed search engine for logs and traces built for cost-efficient search on object storage.",
+        "websiteUrl": "https://quickwit.io",
+        "scores": {
+          "relevance": 4,
+          "latency": 4,
+          "cost": 5,
+          "dx": 3,
+          "ecosystem": 2
+        },
+        "tags": [
+          "self-hostable:yes",
+          "pricing:free-tier"
+        ]
+      },
+      {
+        "slug": "paradedb",
+        "name": "ParadeDB",
+        "description": "Postgres extension adding Elasticsearch-grade full-text and BM25 search natively inside the database.",
+        "websiteUrl": "https://www.paradedb.com",
+        "scores": {
+          "relevance": 4,
+          "latency": 4,
+          "cost": 5,
+          "dx": 4,
+          "ecosystem": 3
+        },
+        "tags": [
+          "self-hostable:yes",
+          "pricing:free-tier"
+        ]
+      },
+      {
+        "slug": "zincsearch",
+        "name": "ZincSearch",
+        "description": "Lightweight open-source full-text search engine written in Go as a minimal Elasticsearch alternative.",
+        "websiteUrl": "https://zincsearch-docs.zinc.dev",
+        "scores": {
+          "relevance": 3,
+          "latency": 4,
+          "cost": 5,
+          "dx": 4,
+          "ecosystem": 2
+        },
+        "tags": [
+          "self-hostable:yes",
+          "pricing:free-tier"
+        ]
+      },
+      {
+        "slug": "sonic-search",
+        "name": "Sonic",
+        "description": "Fast, lightweight, schema-less search backend in Rust that runs on a few megabytes of RAM.",
+        "websiteUrl": "https://github.com/valeriansaliou/sonic",
+        "scores": {
+          "relevance": 3,
+          "latency": 5,
+          "cost": 5,
+          "dx": 3,
+          "ecosystem": 1
+        },
+        "tags": [
+          "self-hostable:yes",
+          "pricing:free-tier"
+        ]
+      },
+      {
+        "slug": "constructor",
+        "name": "Constructor",
+        "description": "AI-powered ecommerce search, browse, and product discovery platform optimized for revenue metrics.",
+        "websiteUrl": "https://constructor.com",
+        "scores": {
+          "relevance": 4,
+          "latency": 4,
+          "cost": 2,
+          "dx": 3,
+          "ecosystem": 3
+        }
+      },
+      {
+        "slug": "klevu",
+        "name": "Klevu",
+        "description": "AI-driven ecommerce site search and merchandising platform, now part of Athos Commerce.",
+        "websiteUrl": "https://www.klevu.com",
+        "scores": {
+          "relevance": 4,
+          "latency": 4,
+          "cost": 2,
+          "dx": 3,
+          "ecosystem": 3
+        }
+      },
+      {
+        "slug": "searchspring",
+        "name": "Searchspring",
+        "description": "Ecommerce search, merchandising, and personalization platform now part of Athos Commerce.",
+        "websiteUrl": "https://searchspring.com",
+        "scores": {
+          "relevance": 4,
+          "latency": 4,
+          "cost": 2,
+          "dx": 3,
+          "ecosystem": 3
+        }
+      },
+      {
+        "slug": "glean",
+        "name": "Glean",
+        "description": "Enterprise search and AI assistant that indexes a company's apps and documents for unified retrieval.",
+        "websiteUrl": "https://www.glean.com",
+        "scores": {
+          "relevance": 5,
+          "latency": 4,
+          "cost": 1,
+          "dx": 3,
+          "ecosystem": 4
+        }
+      }
+    ],
+    "workflow-automation": [
+      {
+        "slug": "mage-ai",
+        "name": "Mage",
+        "description": "Open-source hybrid framework for transforming and integrating data with a notebook-style pipeline editor.",
+        "websiteUrl": "https://www.mage.ai",
+        "scores": {
+          "integrations": 3,
+          "ease_of_use": 4,
+          "cost": 5,
+          "dx": 4,
+          "ecosystem": 3
+        },
+        "tags": [
+          "self-hostable:yes",
+          "pricing:free-tier",
+          "language:python"
+        ]
+      },
+      {
+        "slug": "bruin",
+        "name": "Bruin",
+        "description": "Open-source framework to build data pipelines with SQL and Python, with ingestion and quality checks built in.",
+        "websiteUrl": "https://getbruin.com",
+        "scores": {
+          "integrations": 4,
+          "ease_of_use": 3,
+          "cost": 5,
+          "dx": 5,
+          "ecosystem": 2
+        },
+        "tags": [
+          "self-hostable:yes",
+          "pricing:free-tier",
+          "language:python"
+        ]
+      },
+      {
+        "slug": "tines",
+        "name": "Tines",
+        "description": "No-code security and IT automation platform for building workflows that orchestrate APIs and tools.",
+        "websiteUrl": "https://www.tines.com",
+        "scores": {
+          "integrations": 4,
+          "ease_of_use": 4,
+          "cost": 3,
+          "dx": 3,
+          "ecosystem": 3
+        },
+        "tags": [
+          "pricing:free-tier"
+        ]
+      },
+      {
+        "slug": "power-automate",
+        "name": "Microsoft Power Automate",
+        "description": "Microsoft's low-code automation tool for workflows across Microsoft 365 and hundreds of connectors.",
+        "websiteUrl": "https://www.microsoft.com/power-platform/products/power-automate",
+        "scores": {
+          "integrations": 5,
+          "ease_of_use": 4,
+          "cost": 3,
+          "dx": 3,
+          "ecosystem": 5
+        }
+      },
+      {
+        "slug": "huginn",
+        "name": "Huginn",
+        "description": "Open-source self-hosted system of agents that monitor the web and act on your behalf.",
+        "websiteUrl": "https://github.com/huginn/huginn",
+        "scores": {
+          "integrations": 3,
+          "ease_of_use": 2,
+          "cost": 5,
+          "dx": 3,
+          "ecosystem": 2
+        },
+        "tags": [
+          "self-hostable:yes",
+          "pricing:free-tier"
+        ]
+      },
+      {
+        "slug": "gumloop",
+        "name": "Gumloop",
+        "description": "No-code platform for building AI-powered automations with a visual drag-and-drop workflow builder.",
+        "websiteUrl": "https://www.gumloop.com",
+        "scores": {
+          "integrations": 3,
+          "ease_of_use": 5,
+          "cost": 3,
+          "dx": 3,
+          "ecosystem": 2
+        },
+        "tags": [
+          "pricing:free-tier"
+        ]
+      },
+      {
+        "slug": "relay-app",
+        "name": "Relay.app",
+        "description": "AI-first workflow automation tool emphasizing human-in-the-loop steps and collaborative approvals.",
+        "websiteUrl": "https://www.relay.app",
+        "scores": {
+          "integrations": 4,
+          "ease_of_use": 5,
+          "cost": 3,
+          "dx": 3,
+          "ecosystem": 2
+        },
+        "tags": [
+          "pricing:free-tier"
+        ]
+      },
+      {
+        "slug": "bardeen",
+        "name": "Bardeen",
+        "description": "Browser-based AI automation tool that scrapes and moves data between web apps without code.",
+        "websiteUrl": "https://www.bardeen.ai",
+        "scores": {
+          "integrations": 4,
+          "ease_of_use": 5,
+          "cost": 3,
+          "dx": 2,
+          "ecosystem": 2
+        },
+        "tags": [
+          "pricing:free-tier"
+        ]
+      },
+      {
+        "slug": "lindy",
+        "name": "Lindy",
+        "description": "AI-agent automation platform where natural-language assistants perform multi-step tasks across apps.",
+        "websiteUrl": "https://www.lindy.ai",
+        "scores": {
+          "integrations": 4,
+          "ease_of_use": 5,
+          "cost": 2,
+          "dx": 2,
+          "ecosystem": 2
+        }
+      },
+      {
+        "slug": "camunda",
+        "name": "Camunda",
+        "description": "Process orchestration platform pairing BPMN modeling with a scalable workflow and decision engine.",
+        "websiteUrl": "https://camunda.com",
+        "scores": {
+          "integrations": 4,
+          "ease_of_use": 3,
+          "cost": 3,
+          "dx": 4,
+          "ecosystem": 4
+        },
+        "tags": [
+          "self-hostable:yes"
+        ]
+      }
+    ]
+  }
+}

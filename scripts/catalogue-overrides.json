@@ -1,0 +1,9 @@
+{
+  "cursor": { "speed": 5, "accuracy": 5 },
+  "claude-code": { "speed": 5, "integration_depth": 5 },
+  "codeium": { "cost": 4 },
+  "posthog": { "query_speed": 5 },
+  "june": { "warehouse_fit": 3 },
+  "zod": { "performance": 4 },
+  "zod-mini": { "ecosystem": 3 }
+}

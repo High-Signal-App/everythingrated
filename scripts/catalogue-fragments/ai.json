@@ -1,494 +1,976 @@
 {
-  "deepen": {
-    "ai-dev-tools": [
-      {
-        "slug": "replit-agent",
-        "name": "Replit Agent",
-        "description": "Cloud IDE agent that plans, builds, tests, and deploys full applications from a natural-language prompt.",
-        "websiteUrl": "https://replit.com",
-        "scores": { "speed": 4, "accuracy": 3, "cost": 3, "ergonomics": 4, "integration_depth": 4 },
-        "tags": ["pricing:free-tier", "deploy:serverless"]
-      },
-      {
-        "slug": "bolt-new",
-        "name": "Bolt.new",
-        "description": "StackBlitz's in-browser AI app builder that generates and runs full-stack web apps in a WebContainer.",
-        "websiteUrl": "https://bolt.new",
-        "scores": { "speed": 4, "accuracy": 3, "cost": 3, "ergonomics": 5, "integration_depth": 3 },
-        "tags": ["pricing:free-tier"]
-      },
-      {
-        "slug": "lovable",
-        "name": "Lovable",
-        "description": "Prompt-to-app builder that generates production React front-ends with Supabase-backed data and auth.",
-        "websiteUrl": "https://lovable.dev",
-        "scores": { "speed": 4, "accuracy": 3, "cost": 3, "ergonomics": 5, "integration_depth": 3 },
-        "tags": ["pricing:free-tier"]
-      },
-      {
-        "slug": "v0",
-        "name": "v0",
-        "description": "Vercel's generative UI tool that turns prompts into React and Tailwind components and full pages.",
-        "websiteUrl": "https://v0.app",
-        "scores": { "speed": 5, "accuracy": 4, "cost": 3, "ergonomics": 5, "integration_depth": 4 },
-        "tags": ["pricing:free-tier", "language:typescript"]
-      },
-      {
-        "slug": "devin",
-        "name": "Devin",
-        "description": "Cognition's autonomous software engineer agent that takes tickets and works tasks end to end in its own sandbox.",
-        "websiteUrl": "https://devin.ai",
-        "scores": { "speed": 3, "accuracy": 4, "cost": 2, "ergonomics": 4, "integration_depth": 4 }
-      },
-      {
-        "slug": "augment-code",
-        "name": "Augment Code",
-        "description": "Codebase-aware AI assistant and agent built around a large real-time context engine for big repositories.",
-        "websiteUrl": "https://www.augmentcode.com",
-        "scores": { "speed": 4, "accuracy": 4, "cost": 3, "ergonomics": 4, "integration_depth": 4 }
-      },
-      {
-        "slug": "amazon-q-developer",
-        "name": "Amazon Q Developer",
-        "description": "AWS's AI coding assistant with inline completions, agents, and deep AWS service integration.",
-        "websiteUrl": "https://aws.amazon.com/q/developer",
-        "scores": { "speed": 4, "accuracy": 3, "cost": 4, "ergonomics": 3, "integration_depth": 4 },
-        "tags": ["pricing:free-tier"]
-      },
-      {
-        "slug": "gemini-code-assist",
-        "name": "Gemini Code Assist",
-        "description": "Google's AI coding assistant for IDEs and the cloud, backed by Gemini models and a generous free tier.",
-        "websiteUrl": "https://codeassist.google",
-        "scores": { "speed": 4, "accuracy": 3, "cost": 5, "ergonomics": 3, "integration_depth": 4 },
-        "tags": ["pricing:free-tier"]
-      },
-      {
-        "slug": "jetbrains-junie",
-        "name": "JetBrains Junie",
-        "description": "JetBrains' coding agent that uses the IDE's program structure model to plan and execute multi-file tasks.",
-        "websiteUrl": "https://www.jetbrains.com/junie",
-        "scores": { "speed": 3, "accuracy": 4, "cost": 3, "ergonomics": 4, "integration_depth": 5 }
-      },
-      {
-        "slug": "qodo",
-        "name": "Qodo",
-        "description": "Code-integrity platform focused on AI-generated tests, PR review, and quality verification.",
-        "websiteUrl": "https://www.qodo.ai",
-        "scores": { "speed": 4, "accuracy": 4, "cost": 4, "ergonomics": 4, "integration_depth": 4 },
-        "tags": ["pricing:free-tier"]
-      },
-      {
-        "slug": "zed",
-        "name": "Zed",
-        "description": "Rust-built high-performance editor with collaborative editing and built-in AI agentic editing.",
-        "websiteUrl": "https://zed.dev",
-        "scores": { "speed": 5, "accuracy": 4, "cost": 4, "ergonomics": 5, "integration_depth": 4 },
-        "tags": ["pricing:free-tier", "self-hostable:yes"]
-      },
-      {
-        "slug": "roo-code",
-        "name": "Roo Code",
-        "description": "Open-source autonomous coding agent for VS Code with multiple modes and bring-your-own-model support.",
-        "websiteUrl": "https://roocode.com",
-        "scores": { "speed": 3, "accuracy": 4, "cost": 4, "ergonomics": 4, "integration_depth": 3 },
-        "tags": ["pricing:free-tier", "self-hostable:yes"]
-      },
-      {
-        "slug": "opencode",
-        "name": "OpenCode",
-        "description": "Open-source terminal-native coding agent that works with any model provider.",
-        "websiteUrl": "https://opencode.ai",
-        "scores": { "speed": 4, "accuracy": 4, "cost": 5, "ergonomics": 4, "integration_depth": 3 },
-        "tags": ["pricing:free-tier", "self-hostable:yes"]
-      },
-      {
-        "slug": "gemini-cli",
-        "name": "Gemini CLI",
-        "description": "Google's open-source terminal AI agent for coding and automation with a large free tier.",
-        "websiteUrl": "https://github.com/google-gemini/gemini-cli",
-        "scores": { "speed": 4, "accuracy": 4, "cost": 5, "ergonomics": 4, "integration_depth": 4 },
-        "tags": ["pricing:free-tier", "self-hostable:yes"]
-      },
-      {
-        "slug": "codex-cli",
-        "name": "OpenAI Codex",
-        "description": "OpenAI's cloud and CLI coding agent that runs tasks in sandboxes and ships changes via PRs.",
-        "websiteUrl": "https://openai.com/codex",
-        "scores": { "speed": 4, "accuracy": 4, "cost": 3, "ergonomics": 4, "integration_depth": 4 }
-      }
-    ],
-    "llm-models": [
-      {
-        "slug": "gpt-5-mini",
-        "name": "GPT-5 mini",
-        "description": "OpenAI's smaller, faster GPT-5 variant tuned for cost-sensitive, high-throughput workloads.",
-        "websiteUrl": "https://openai.com",
-        "scores": { "reasoning": 4, "coding": 4, "speed": 5, "cost": 5, "context_window": 4 }
-      },
-      {
-        "slug": "gpt-oss",
-        "name": "gpt-oss",
-        "description": "OpenAI's open-weight reasoning model family released under Apache 2.0 for local and self-hosted use.",
-        "websiteUrl": "https://openai.com/open-models",
-        "scores": { "reasoning": 4, "coding": 4, "speed": 4, "cost": 5, "context_window": 4 },
-        "tags": ["self-hostable:yes", "pricing:free-tier"]
-      },
-      {
-        "slug": "o-series-reasoning",
-        "name": "OpenAI o3",
-        "description": "OpenAI's deep-reasoning model line trained to think longer on hard math, science, and coding problems.",
-        "websiteUrl": "https://openai.com",
-        "scores": { "reasoning": 5, "coding": 5, "speed": 2, "cost": 2, "context_window": 4 }
-      },
-      {
-        "slug": "gemini-flash",
-        "name": "Gemini 2.5 Flash",
-        "description": "Google's fast, low-cost multimodal model with a one-million-token context window.",
-        "websiteUrl": "https://deepmind.google/technologies/gemini",
-        "scores": { "reasoning": 4, "coding": 4, "speed": 5, "cost": 5, "context_window": 5 },
-        "tags": ["pricing:free-tier"]
-      },
-      {
-        "slug": "deepseek-v3",
-        "name": "DeepSeek V3",
-        "description": "DeepSeek's open-weight mixture-of-experts chat model offering frontier quality at low cost.",
-        "websiteUrl": "https://www.deepseek.com",
-        "scores": { "reasoning": 4, "coding": 4, "speed": 4, "cost": 5, "context_window": 4 },
-        "tags": ["self-hostable:yes"]
-      },
-      {
-        "slug": "kimi-k2",
-        "name": "Kimi K2",
-        "description": "Moonshot AI's trillion-parameter open-weight mixture-of-experts model built for agentic and coding tasks.",
-        "websiteUrl": "https://www.kimi.com",
-        "scores": { "reasoning": 4, "coding": 5, "speed": 3, "cost": 5, "context_window": 4 },
-        "tags": ["self-hostable:yes"]
-      },
-      {
-        "slug": "glm",
-        "name": "GLM",
-        "description": "Z.ai's open-weight GLM model family with strong coding and agentic performance at low cost.",
-        "websiteUrl": "https://z.ai",
-        "scores": { "reasoning": 4, "coding": 5, "speed": 4, "cost": 5, "context_window": 4 },
-        "tags": ["self-hostable:yes"]
-      },
-      {
-        "slug": "minimax-m2",
-        "name": "MiniMax M2",
-        "description": "MiniMax's open-weight model emphasizing coding, agentic tool use, and very long context.",
-        "websiteUrl": "https://www.minimax.io",
-        "scores": { "reasoning": 4, "coding": 4, "speed": 4, "cost": 5, "context_window": 5 },
-        "tags": ["self-hostable:yes"]
-      },
-      {
-        "slug": "gemma",
-        "name": "Gemma",
-        "description": "Google's open-weight lightweight model family derived from the same research as Gemini.",
-        "websiteUrl": "https://ai.google.dev/gemma",
-        "scores": { "reasoning": 3, "coding": 3, "speed": 5, "cost": 5, "context_window": 3 },
-        "tags": ["self-hostable:yes", "pricing:free-tier"]
-      },
-      {
-        "slug": "phi",
-        "name": "Phi",
-        "description": "Microsoft's open-weight small-language-model family trained on high-quality data for strong reasoning per size.",
-        "websiteUrl": "https://azure.microsoft.com/en-us/products/phi",
-        "scores": { "reasoning": 3, "coding": 3, "speed": 5, "cost": 5, "context_window": 3 },
-        "tags": ["self-hostable:yes"]
-      },
-      {
-        "slug": "command-a",
-        "name": "Cohere Command A",
-        "description": "Cohere's enterprise-focused model optimized for RAG, tool use, and multilingual business workloads.",
-        "websiteUrl": "https://cohere.com/command",
-        "scores": { "reasoning": 4, "coding": 3, "speed": 4, "cost": 4, "context_window": 4 }
-      },
-      {
-        "slug": "nova",
-        "name": "Amazon Nova",
-        "description": "Amazon's multimodal model family on Bedrock spanning fast, balanced, and high-capability tiers.",
-        "websiteUrl": "https://aws.amazon.com/ai/generative-ai/nova",
-        "scores": { "reasoning": 3, "coding": 3, "speed": 4, "cost": 5, "context_window": 4 }
-      },
-      {
-        "slug": "mistral-small",
-        "name": "Mistral Small",
-        "description": "Mistral's open-weight small model balancing capable reasoning with efficient local deployment.",
-        "websiteUrl": "https://mistral.ai",
-        "scores": { "reasoning": 3, "coding": 3, "speed": 5, "cost": 5, "context_window": 3 },
-        "tags": ["self-hostable:yes"]
-      }
-    ],
-    "llm-gateways": [
-      {
-        "slug": "truefoundry",
-        "name": "TrueFoundry AI Gateway",
-        "description": "Enterprise AI gateway unifying routing, governance, observability, and access control across many providers.",
-        "websiteUrl": "https://www.truefoundry.com/ai-gateway",
-        "scores": { "model_coverage": 5, "latency": 4, "observability": 5, "cost": 3, "dx": 4 },
-        "tags": ["self-hostable:yes"]
-      },
-      {
-        "slug": "eden-ai",
-        "name": "Eden AI",
-        "description": "Unified API across LLMs and specialized AI services like OCR, speech, and translation with cost routing.",
-        "websiteUrl": "https://www.edenai.co",
-        "scores": { "model_coverage": 5, "latency": 4, "observability": 3, "cost": 4, "dx": 4 },
-        "tags": ["pricing:free-tier"]
-      },
-      {
-        "slug": "unify",
-        "name": "Unify",
-        "description": "LLMOps platform that benchmarks and routes requests to the best model on quality, speed, and cost.",
-        "websiteUrl": "https://unify.ai",
-        "scores": { "model_coverage": 4, "latency": 4, "observability": 4, "cost": 4, "dx": 4 }
-      },
-      {
-        "slug": "martian",
-        "name": "Martian",
-        "description": "Model router that forwards each request to the most suitable LLM with cost ceilings and automatic failover.",
-        "websiteUrl": "https://withmartian.com",
-        "scores": { "model_coverage": 4, "latency": 4, "observability": 4, "cost": 4, "dx": 4 }
-      },
-      {
-        "slug": "requesty",
-        "name": "Requesty",
-        "description": "AI gateway in front of 400+ providers offering intelligent routing, fallbacks, caching, and governance.",
-        "websiteUrl": "https://www.requesty.ai",
-        "scores": { "model_coverage": 5, "latency": 4, "observability": 4, "cost": 4, "dx": 4 }
-      },
-      {
-        "slug": "langdb",
-        "name": "LangDB",
-        "description": "Open-source high-performance API gateway for managing and monitoring LLM traffic at scale.",
-        "websiteUrl": "https://langdb.ai",
-        "scores": { "model_coverage": 4, "latency": 5, "observability": 4, "cost": 5, "dx": 4 },
-        "tags": ["self-hostable:yes", "pricing:free-tier"]
-      },
-      {
-        "slug": "bedrock",
-        "name": "Amazon Bedrock",
-        "description": "AWS's managed service exposing many foundation models behind one API with governance and guardrails.",
-        "websiteUrl": "https://aws.amazon.com/bedrock",
-        "scores": { "model_coverage": 4, "latency": 4, "observability": 4, "cost": 4, "dx": 3 },
-        "tags": ["deploy:serverless"]
-      },
-      {
-        "slug": "together-ai",
-        "name": "Together AI",
-        "description": "Inference platform serving 100+ open-weight models behind an OpenAI-compatible API with fine-tuning.",
-        "websiteUrl": "https://www.together.ai",
-        "scores": { "model_coverage": 4, "latency": 5, "observability": 3, "cost": 4, "dx": 4 },
-        "tags": ["pricing:free-tier"]
-      },
-      {
-        "slug": "fireworks-ai",
-        "name": "Fireworks AI",
-        "description": "Fast inference gateway for open and proprietary models with an OpenAI-compatible API and fine-tuning.",
-        "websiteUrl": "https://fireworks.ai",
-        "scores": { "model_coverage": 4, "latency": 5, "observability": 3, "cost": 4, "dx": 4 },
-        "tags": ["pricing:free-tier"]
-      },
-      {
-        "slug": "langfuse",
-        "name": "Langfuse",
-        "description": "Open-source LLM observability and tracing platform with prompt management and evals.",
-        "websiteUrl": "https://langfuse.com",
-        "scores": { "model_coverage": 3, "latency": 5, "observability": 5, "cost": 5, "dx": 5 },
-        "tags": ["self-hostable:yes", "pricing:free-tier"]
-      },
-      {
-        "slug": "groq",
-        "name": "GroqCloud",
-        "description": "Inference gateway running open-weight models on custom LPUs for extremely low-latency, OpenAI-compatible calls.",
-        "websiteUrl": "https://groq.com",
-        "scores": { "model_coverage": 3, "latency": 5, "observability": 3, "cost": 4, "dx": 5 },
-        "tags": ["pricing:free-tier"]
-      }
-    ],
-    "image-generation": [
-      {
-        "slug": "gpt-image",
-        "name": "GPT Image",
-        "description": "OpenAI's natively multimodal image model with strong instruction following, available via the Images API.",
-        "websiteUrl": "https://openai.com",
-        "scores": { "quality": 5, "prompt_adherence": 5, "speed": 3, "cost": 3, "control": 4 }
-      },
-      {
-        "slug": "nano-banana",
-        "name": "Nano Banana",
-        "description": "Google's Gemini-native image generation and editing model known for character consistency and edits.",
-        "websiteUrl": "https://deepmind.google/models/gemini-image",
-        "scores": { "quality": 5, "prompt_adherence": 5, "speed": 4, "cost": 4, "control": 5 }
-      },
-      {
-        "slug": "seedream",
-        "name": "Seedream",
-        "description": "ByteDance Seed's high-resolution text-to-image and editing model with strong photorealism.",
-        "websiteUrl": "https://seed.bytedance.com",
-        "scores": { "quality": 5, "prompt_adherence": 4, "speed": 4, "cost": 4, "control": 4 }
-      },
-      {
-        "slug": "qwen-image",
-        "name": "Qwen-Image",
-        "description": "Alibaba's open-weight image model with best-in-class multilingual in-image text rendering.",
-        "websiteUrl": "https://qwen.ai",
-        "scores": { "quality": 4, "prompt_adherence": 4, "speed": 4, "cost": 5, "control": 4 },
-        "tags": ["self-hostable:yes"]
-      },
-      {
-        "slug": "reve",
-        "name": "Reve",
-        "description": "Image generation and editing tool with strong prompt adherence and natural-language editing.",
-        "websiteUrl": "https://reve.art",
-        "scores": { "quality": 4, "prompt_adherence": 5, "speed": 4, "cost": 4, "control": 4 }
-      },
-      {
-        "slug": "adobe-firefly",
-        "name": "Adobe Firefly",
-        "description": "Adobe's commercially-safe generative image model integrated across Creative Cloud and a web studio.",
-        "websiteUrl": "https://www.adobe.com/products/firefly.html",
-        "scores": { "quality": 4, "prompt_adherence": 4, "speed": 4, "cost": 3, "control": 5 }
-      },
-      {
-        "slug": "krea",
-        "name": "Krea",
-        "description": "Creative suite with real-time generation, editing, and access to many image and video models.",
-        "websiteUrl": "https://www.krea.ai",
-        "scores": { "quality": 4, "prompt_adherence": 4, "speed": 5, "cost": 4, "control": 5 },
-        "tags": ["realtime:yes", "pricing:free-tier"]
-      },
-      {
-        "slug": "freepik",
-        "name": "Freepik AI",
-        "description": "AI creative platform aggregating many image and video models alongside a large stock asset library.",
-        "websiteUrl": "https://www.freepik.com/ai",
-        "scores": { "quality": 4, "prompt_adherence": 3, "speed": 4, "cost": 4, "control": 4 },
-        "tags": ["pricing:free-tier"]
-      },
-      {
-        "slug": "playground-ai",
-        "name": "Playground",
-        "description": "Image generation platform with graphic-design-oriented models and editing tools for creators.",
-        "websiteUrl": "https://playground.com",
-        "scores": { "quality": 4, "prompt_adherence": 3, "speed": 4, "cost": 4, "control": 4 },
-        "tags": ["pricing:free-tier"]
-      },
-      {
-        "slug": "fal",
-        "name": "fal",
-        "description": "Generative media inference platform serving fast hosted image and video models via API.",
-        "websiteUrl": "https://fal.ai",
-        "scores": { "quality": 4, "prompt_adherence": 4, "speed": 5, "cost": 4, "control": 4 },
-        "tags": ["deploy:serverless"]
-      },
-      {
-        "slug": "comfyui",
-        "name": "ComfyUI",
-        "description": "Open-source node-based interface for building custom diffusion pipelines with maximal control.",
-        "websiteUrl": "https://www.comfy.org",
-        "scores": { "quality": 5, "prompt_adherence": 4, "speed": 3, "cost": 5, "control": 5 },
-        "tags": ["self-hostable:yes", "pricing:free-tier"]
-      }
-    ],
-    "ai-agent-frameworks": [
-      {
-        "slug": "autogen",
-        "name": "AutoGen (AG2)",
-        "description": "Open-source multi-agent conversation framework, originally from Microsoft Research, now developed as AG2.",
-        "websiteUrl": "https://www.ag2.ai",
-        "scores": { "ergonomics": 4, "observability": 3, "performance": 3, "ecosystem": 4, "learning_curve": 3 },
-        "tags": ["self-hostable:yes", "language:python", "pricing:free-tier"]
-      },
-      {
-        "slug": "semantic-kernel",
-        "name": "Semantic Kernel",
-        "description": "Microsoft's enterprise agent SDK with first-class C#/.NET support, plugins, and Azure integration.",
-        "websiteUrl": "https://learn.microsoft.com/en-us/semantic-kernel/overview",
-        "scores": { "ergonomics": 4, "observability": 4, "performance": 4, "ecosystem": 4, "learning_curve": 3 },
-        "tags": ["self-hostable:yes", "pricing:free-tier"]
-      },
-      {
-        "slug": "google-adk",
-        "name": "Google ADK",
-        "description": "Google's Agent Development Kit for hierarchical multi-agent systems with native A2A and Vertex AI integration.",
-        "websiteUrl": "https://google.github.io/adk-docs",
-        "scores": { "ergonomics": 4, "observability": 4, "performance": 4, "ecosystem": 4, "learning_curve": 3 },
-        "tags": ["self-hostable:yes", "language:python", "pricing:free-tier"]
-      },
-      {
-        "slug": "strands-agents",
-        "name": "Strands Agents",
-        "description": "AWS's open-source model-driven agent SDK for Python and TypeScript with built-in observability.",
-        "websiteUrl": "https://strandsagents.com",
-        "scores": { "ergonomics": 5, "observability": 4, "performance": 4, "ecosystem": 4, "learning_curve": 4 },
-        "tags": ["self-hostable:yes", "language:python", "language:typescript", "pricing:free-tier"]
-      },
-      {
-        "slug": "smolagents",
-        "name": "smolagents",
-        "description": "Hugging Face's minimalist library for code-writing agents in just a few lines of Python.",
-        "websiteUrl": "https://github.com/huggingface/smolagents",
-        "scores": { "ergonomics": 5, "observability": 3, "performance": 4, "ecosystem": 3, "learning_curve": 5 },
-        "tags": ["self-hostable:yes", "language:python", "pricing:free-tier"]
-      },
-      {
-        "slug": "haystack",
-        "name": "Haystack",
-        "description": "deepset's open-source orchestration framework for production RAG pipelines and tool-using agents.",
-        "websiteUrl": "https://haystack.deepset.ai",
-        "scores": { "ergonomics": 4, "observability": 4, "performance": 4, "ecosystem": 4, "learning_curve": 3 },
-        "tags": ["self-hostable:yes", "language:python", "pricing:free-tier"]
-      },
-      {
-        "slug": "dspy",
-        "name": "DSPy",
-        "description": "Stanford's framework for programming and optimizing LLM pipelines via declarative modules instead of prompts.",
-        "websiteUrl": "https://dspy.ai",
-        "scores": { "ergonomics": 3, "observability": 3, "performance": 4, "ecosystem": 3, "learning_curve": 2 },
-        "tags": ["self-hostable:yes", "language:python", "pricing:free-tier"]
-      },
-      {
-        "slug": "atomic-agents",
-        "name": "Atomic Agents",
-        "description": "Lightweight Python framework for building agents from composable, schema-driven atomic components.",
-        "websiteUrl": "https://github.com/BrainBlend-AI/atomic-agents",
-        "scores": { "ergonomics": 4, "observability": 3, "performance": 4, "ecosystem": 3, "learning_curve": 4 },
-        "tags": ["self-hostable:yes", "language:python", "pricing:free-tier"]
-      },
-      {
-        "slug": "autogpt",
-        "name": "AutoGPT",
-        "description": "Open-source platform for building, deploying, and running continuous autonomous AI agents.",
-        "websiteUrl": "https://agpt.co",
-        "scores": { "ergonomics": 3, "observability": 3, "performance": 3, "ecosystem": 3, "learning_curve": 3 },
-        "tags": ["self-hostable:yes", "language:python", "pricing:free-tier"]
-      },
-      {
-        "slug": "n8n",
-        "name": "n8n",
-        "description": "Open-source workflow automation platform with visual AI agent and tool-orchestration nodes.",
-        "websiteUrl": "https://n8n.io",
-        "scores": { "ergonomics": 5, "observability": 4, "performance": 4, "ecosystem": 5, "learning_curve": 4 },
-        "tags": ["self-hostable:yes", "pricing:free-tier"]
-      },
-      {
-        "slug": "letta",
-        "name": "Letta",
-        "description": "Open-source framework for stateful agents with long-term memory, evolved from the MemGPT project.",
-        "websiteUrl": "https://www.letta.com",
-        "scores": { "ergonomics": 4, "observability": 4, "performance": 4, "ecosystem": 3, "learning_curve": 3 },
-        "tags": ["self-hostable:yes", "language:python", "pricing:free-tier"]
-      },
-      {
-        "slug": "pocketflow",
-        "name": "PocketFlow",
-        "description": "Minimalist 100-line LLM framework that models agents and workflows as a simple nested graph.",
-        "websiteUrl": "https://pocketflow.dev",
-        "scores": { "ergonomics": 4, "observability": 2, "performance": 4, "ecosystem": 2, "learning_curve": 5 },
-        "tags": ["self-hostable:yes", "language:python", "pricing:free-tier"]
-      }
+ "deepen": {
+  "ai-dev-tools": [
+   {
+    "slug": "replit-agent",
+    "name": "Replit Agent",
+    "description": "Cloud IDE agent that plans, builds, tests, and deploys full applications from a natural-language prompt.",
+    "websiteUrl": "https://replit.com",
+    "scores": {
+     "speed": 4,
+     "accuracy": 3,
+     "cost": 3,
+     "ergonomics": 4,
+     "integration_depth": 4
+    },
+    "tags": [
+     "pricing:free-tier",
+     "deploy:serverless"
     ]
-  }
+   },
+   {
+    "slug": "bolt-new",
+    "name": "Bolt.new",
+    "description": "StackBlitz's in-browser AI app builder that generates and runs full-stack web apps in a WebContainer.",
+    "websiteUrl": "https://bolt.new",
+    "scores": {
+     "speed": 4,
+     "accuracy": 3,
+     "cost": 3,
+     "ergonomics": 5,
+     "integration_depth": 3
+    },
+    "tags": [
+     "pricing:free-tier"
+    ]
+   },
+   {
+    "slug": "lovable",
+    "name": "Lovable",
+    "description": "Prompt-to-app builder that generates production React front-ends with Supabase-backed data and auth.",
+    "websiteUrl": "https://lovable.dev",
+    "scores": {
+     "speed": 4,
+     "accuracy": 3,
+     "cost": 3,
+     "ergonomics": 5,
+     "integration_depth": 3
+    },
+    "tags": [
+     "pricing:free-tier"
+    ]
+   },
+   {
+    "slug": "v0",
+    "name": "v0",
+    "description": "Vercel's generative UI tool that turns prompts into React and Tailwind components and full pages.",
+    "websiteUrl": "https://v0.app",
+    "scores": {
+     "speed": 5,
+     "accuracy": 4,
+     "cost": 3,
+     "ergonomics": 5,
+     "integration_depth": 4
+    },
+    "tags": [
+     "pricing:free-tier",
+     "language:typescript"
+    ]
+   },
+   {
+    "slug": "devin",
+    "name": "Devin",
+    "description": "Cognition's autonomous software engineer agent that takes tickets and works tasks end to end in its own sandbox.",
+    "websiteUrl": "https://devin.ai",
+    "scores": {
+     "speed": 3,
+     "accuracy": 4,
+     "cost": 2,
+     "ergonomics": 4,
+     "integration_depth": 4
+    }
+   },
+   {
+    "slug": "augment-code",
+    "name": "Augment Code",
+    "description": "Codebase-aware AI assistant and agent built around a large real-time context engine for big repositories.",
+    "websiteUrl": "https://www.augmentcode.com",
+    "scores": {
+     "speed": 4,
+     "accuracy": 4,
+     "cost": 3,
+     "ergonomics": 4,
+     "integration_depth": 4
+    }
+   },
+   {
+    "slug": "amazon-q-developer",
+    "name": "Amazon Q Developer",
+    "description": "AWS's AI coding assistant with inline completions, agents, and deep AWS service integration.",
+    "websiteUrl": "https://aws.amazon.com/q/developer",
+    "scores": {
+     "speed": 4,
+     "accuracy": 3,
+     "cost": 4,
+     "ergonomics": 3,
+     "integration_depth": 4
+    },
+    "tags": [
+     "pricing:free-tier"
+    ]
+   },
+   {
+    "slug": "gemini-code-assist",
+    "name": "Gemini Code Assist",
+    "description": "Google's AI coding assistant for IDEs and the cloud, backed by Gemini models and a generous free tier.",
+    "websiteUrl": "https://codeassist.google",
+    "scores": {
+     "speed": 4,
+     "accuracy": 3,
+     "cost": 5,
+     "ergonomics": 3,
+     "integration_depth": 4
+    },
+    "tags": [
+     "pricing:free-tier"
+    ]
+   },
+   {
+    "slug": "jetbrains-junie",
+    "name": "JetBrains Junie",
+    "description": "JetBrains' coding agent that uses the IDE's program structure model to plan and execute multi-file tasks.",
+    "websiteUrl": "https://www.jetbrains.com/junie",
+    "scores": {
+     "speed": 3,
+     "accuracy": 4,
+     "cost": 3,
+     "ergonomics": 4,
+     "integration_depth": 5
+    }
+   },
+   {
+    "slug": "qodo",
+    "name": "Qodo",
+    "description": "Code-integrity platform focused on AI-generated tests, PR review, and quality verification.",
+    "websiteUrl": "https://www.qodo.ai",
+    "scores": {
+     "speed": 4,
+     "accuracy": 4,
+     "cost": 4,
+     "ergonomics": 4,
+     "integration_depth": 4
+    },
+    "tags": [
+     "pricing:free-tier"
+    ]
+   },
+   {
+    "slug": "zed",
+    "name": "Zed",
+    "description": "Rust-built high-performance editor with collaborative editing and built-in AI agentic editing.",
+    "websiteUrl": "https://zed.dev",
+    "scores": {
+     "speed": 5,
+     "accuracy": 4,
+     "cost": 4,
+     "ergonomics": 5,
+     "integration_depth": 4
+    },
+    "tags": [
+     "pricing:free-tier",
+     "self-hostable:yes"
+    ]
+   },
+   {
+    "slug": "roo-code",
+    "name": "Roo Code",
+    "description": "Open-source autonomous coding agent for VS Code with multiple modes and bring-your-own-model support.",
+    "websiteUrl": "https://roocode.com",
+    "scores": {
+     "speed": 3,
+     "accuracy": 4,
+     "cost": 4,
+     "ergonomics": 4,
+     "integration_depth": 3
+    },
+    "tags": [
+     "pricing:free-tier",
+     "self-hostable:yes"
+    ]
+   },
+   {
+    "slug": "opencode",
+    "name": "OpenCode",
+    "description": "Open-source terminal-native coding agent that works with any model provider.",
+    "websiteUrl": "https://opencode.ai",
+    "scores": {
+     "speed": 4,
+     "accuracy": 4,
+     "cost": 5,
+     "ergonomics": 4,
+     "integration_depth": 3
+    },
+    "tags": [
+     "pricing:free-tier",
+     "self-hostable:yes"
+    ]
+   },
+   {
+    "slug": "gemini-cli",
+    "name": "Gemini CLI",
+    "description": "Google's open-source terminal AI agent for coding and automation with a large free tier.",
+    "websiteUrl": "https://github.com/google-gemini/gemini-cli",
+    "scores": {
+     "speed": 4,
+     "accuracy": 4,
+     "cost": 5,
+     "ergonomics": 4,
+     "integration_depth": 4
+    },
+    "tags": [
+     "pricing:free-tier",
+     "self-hostable:yes"
+    ]
+   },
+   {
+    "slug": "codex-cli",
+    "name": "OpenAI Codex",
+    "description": "OpenAI's cloud and CLI coding agent that runs tasks in sandboxes and ships changes via PRs.",
+    "websiteUrl": "https://openai.com/codex",
+    "scores": {
+     "speed": 4,
+     "accuracy": 4,
+     "cost": 3,
+     "ergonomics": 4,
+     "integration_depth": 4
+    }
+   }
+  ],
+  "llm-models": [
+   {
+    "slug": "gpt-5-mini",
+    "name": "GPT-5 mini",
+    "description": "OpenAI's smaller, faster GPT-5 variant tuned for cost-sensitive, high-throughput workloads.",
+    "websiteUrl": "https://openai.com",
+    "scores": {
+     "reasoning": 4,
+     "coding": 4,
+     "speed": 5,
+     "cost": 5,
+     "context_window": 4
+    }
+   },
+   {
+    "slug": "gpt-oss",
+    "name": "gpt-oss",
+    "description": "OpenAI's open-weight reasoning model family released under Apache 2.0 for local and self-hosted use.",
+    "websiteUrl": "https://openai.com/open-models",
+    "scores": {
+     "reasoning": 4,
+     "coding": 4,
+     "speed": 4,
+     "cost": 5,
+     "context_window": 4
+    },
+    "tags": [
+     "self-hostable:yes",
+     "pricing:free-tier"
+    ]
+   },
+   {
+    "slug": "o-series-reasoning",
+    "name": "OpenAI o3",
+    "description": "OpenAI's deep-reasoning model line trained to think longer on hard math, science, and coding problems.",
+    "websiteUrl": "https://openai.com",
+    "scores": {
+     "reasoning": 5,
+     "coding": 5,
+     "speed": 2,
+     "cost": 2,
+     "context_window": 4
+    }
+   },
+   {
+    "slug": "gemini-flash",
+    "name": "Gemini 2.5 Flash",
+    "description": "Google's fast, low-cost multimodal model with a one-million-token context window.",
+    "websiteUrl": "https://deepmind.google/technologies/gemini",
+    "scores": {
+     "reasoning": 4,
+     "coding": 4,
+     "speed": 5,
+     "cost": 5,
+     "context_window": 5
+    },
+    "tags": [
+     "pricing:free-tier"
+    ]
+   },
+   {
+    "slug": "deepseek-v3",
+    "name": "DeepSeek V3",
+    "description": "DeepSeek's open-weight mixture-of-experts chat model offering frontier quality at low cost.",
+    "websiteUrl": "https://www.deepseek.com",
+    "scores": {
+     "reasoning": 4,
+     "coding": 4,
+     "speed": 4,
+     "cost": 5,
+     "context_window": 4
+    },
+    "tags": [
+     "self-hostable:yes"
+    ]
+   },
+   {
+    "slug": "kimi-k2",
+    "name": "Kimi K2",
+    "description": "Moonshot AI's trillion-parameter open-weight mixture-of-experts model built for agentic and coding tasks.",
+    "websiteUrl": "https://www.kimi.com",
+    "scores": {
+     "reasoning": 4,
+     "coding": 5,
+     "speed": 3,
+     "cost": 5,
+     "context_window": 4
+    },
+    "tags": [
+     "self-hostable:yes"
+    ]
+   },
+   {
+    "slug": "glm",
+    "name": "GLM",
+    "description": "Z.ai's open-weight GLM model family with strong coding and agentic performance at low cost.",
+    "websiteUrl": "https://z.ai",
+    "scores": {
+     "reasoning": 4,
+     "coding": 5,
+     "speed": 4,
+     "cost": 5,
+     "context_window": 4
+    },
+    "tags": [
+     "self-hostable:yes"
+    ]
+   },
+   {
+    "slug": "minimax-m2",
+    "name": "MiniMax M2",
+    "description": "MiniMax's open-weight model emphasizing coding, agentic tool use, and very long context.",
+    "websiteUrl": "https://www.minimax.io",
+    "scores": {
+     "reasoning": 4,
+     "coding": 4,
+     "speed": 4,
+     "cost": 5,
+     "context_window": 5
+    },
+    "tags": [
+     "self-hostable:yes"
+    ]
+   },
+   {
+    "slug": "gemma",
+    "name": "Gemma",
+    "description": "Google's open-weight lightweight model family derived from the same research as Gemini.",
+    "websiteUrl": "https://ai.google.dev/gemma",
+    "scores": {
+     "reasoning": 3,
+     "coding": 3,
+     "speed": 5,
+     "cost": 5,
+     "context_window": 3
+    },
+    "tags": [
+     "self-hostable:yes",
+     "pricing:free-tier"
+    ]
+   },
+   {
+    "slug": "phi",
+    "name": "Phi",
+    "description": "Microsoft's open-weight small-language-model family trained on high-quality data for strong reasoning per size.",
+    "websiteUrl": "https://azure.microsoft.com/en-us/products/phi",
+    "scores": {
+     "reasoning": 3,
+     "coding": 3,
+     "speed": 5,
+     "cost": 5,
+     "context_window": 3
+    },
+    "tags": [
+     "self-hostable:yes"
+    ]
+   },
+   {
+    "slug": "command-a",
+    "name": "Cohere Command A",
+    "description": "Cohere's enterprise-focused model optimized for RAG, tool use, and multilingual business workloads.",
+    "websiteUrl": "https://cohere.com/command",
+    "scores": {
+     "reasoning": 4,
+     "coding": 3,
+     "speed": 4,
+     "cost": 4,
+     "context_window": 4
+    }
+   },
+   {
+    "slug": "nova",
+    "name": "Amazon Nova",
+    "description": "Amazon's multimodal model family on Bedrock spanning fast, balanced, and high-capability tiers.",
+    "websiteUrl": "https://aws.amazon.com/ai/generative-ai/nova",
+    "scores": {
+     "reasoning": 3,
+     "coding": 3,
+     "speed": 4,
+     "cost": 5,
+     "context_window": 4
+    }
+   },
+   {
+    "slug": "mistral-small",
+    "name": "Mistral Small",
+    "description": "Mistral's open-weight small model balancing capable reasoning with efficient local deployment.",
+    "websiteUrl": "https://mistral.ai",
+    "scores": {
+     "reasoning": 3,
+     "coding": 3,
+     "speed": 5,
+     "cost": 5,
+     "context_window": 3
+    },
+    "tags": [
+     "self-hostable:yes"
+    ]
+   }
+  ],
+  "llm-gateways": [
+   {
+    "slug": "truefoundry",
+    "name": "TrueFoundry AI Gateway",
+    "description": "Enterprise AI gateway unifying routing, governance, observability, and access control across many providers.",
+    "websiteUrl": "https://www.truefoundry.com/ai-gateway",
+    "scores": {
+     "model_coverage": 5,
+     "latency": 4,
+     "observability": 5,
+     "cost": 3,
+     "dx": 4
+    },
+    "tags": [
+     "self-hostable:yes"
+    ]
+   },
+   {
+    "slug": "eden-ai",
+    "name": "Eden AI",
+    "description": "Unified API across LLMs and specialized AI services like OCR, speech, and translation with cost routing.",
+    "websiteUrl": "https://www.edenai.co",
+    "scores": {
+     "model_coverage": 5,
+     "latency": 4,
+     "observability": 3,
+     "cost": 4,
+     "dx": 4
+    },
+    "tags": [
+     "pricing:free-tier"
+    ]
+   },
+   {
+    "slug": "unify",
+    "name": "Unify",
+    "description": "LLMOps platform that benchmarks and routes requests to the best model on quality, speed, and cost.",
+    "websiteUrl": "https://unify.ai",
+    "scores": {
+     "model_coverage": 4,
+     "latency": 4,
+     "observability": 4,
+     "cost": 4,
+     "dx": 4
+    }
+   },
+   {
+    "slug": "martian",
+    "name": "Martian",
+    "description": "Model router that forwards each request to the most suitable LLM with cost ceilings and automatic failover.",
+    "websiteUrl": "https://withmartian.com",
+    "scores": {
+     "model_coverage": 4,
+     "latency": 4,
+     "observability": 4,
+     "cost": 4,
+     "dx": 4
+    }
+   },
+   {
+    "slug": "requesty",
+    "name": "Requesty",
+    "description": "AI gateway in front of 400+ providers offering intelligent routing, fallbacks, caching, and governance.",
+    "websiteUrl": "https://www.requesty.ai",
+    "scores": {
+     "model_coverage": 5,
+     "latency": 4,
+     "observability": 4,
+     "cost": 4,
+     "dx": 4
+    }
+   },
+   {
+    "slug": "langdb",
+    "name": "LangDB",
+    "description": "Open-source high-performance API gateway for managing and monitoring LLM traffic at scale.",
+    "websiteUrl": "https://langdb.ai",
+    "scores": {
+     "model_coverage": 4,
+     "latency": 5,
+     "observability": 4,
+     "cost": 5,
+     "dx": 4
+    },
+    "tags": [
+     "self-hostable:yes",
+     "pricing:free-tier"
+    ]
+   },
+   {
+    "slug": "bedrock",
+    "name": "Amazon Bedrock",
+    "description": "AWS's managed service exposing many foundation models behind one API with governance and guardrails.",
+    "websiteUrl": "https://aws.amazon.com/bedrock",
+    "scores": {
+     "model_coverage": 4,
+     "latency": 4,
+     "observability": 4,
+     "cost": 4,
+     "dx": 3
+    },
+    "tags": [
+     "deploy:serverless"
+    ]
+   },
+   {
+    "slug": "together-ai",
+    "name": "Together AI",
+    "description": "Inference platform serving 100+ open-weight models behind an OpenAI-compatible API with fine-tuning.",
+    "websiteUrl": "https://www.together.ai",
+    "scores": {
+     "model_coverage": 4,
+     "latency": 5,
+     "observability": 3,
+     "cost": 4,
+     "dx": 4
+    },
+    "tags": [
+     "pricing:free-tier"
+    ]
+   },
+   {
+    "slug": "fireworks-ai",
+    "name": "Fireworks AI",
+    "description": "Fast inference gateway for open and proprietary models with an OpenAI-compatible API and fine-tuning.",
+    "websiteUrl": "https://fireworks.ai",
+    "scores": {
+     "model_coverage": 4,
+     "latency": 5,
+     "observability": 3,
+     "cost": 4,
+     "dx": 4
+    },
+    "tags": [
+     "pricing:free-tier"
+    ]
+   },
+   {
+    "slug": "langfuse",
+    "name": "Langfuse",
+    "description": "Open-source LLM observability and tracing platform with prompt management and evals.",
+    "websiteUrl": "https://langfuse.com",
+    "scores": {
+     "model_coverage": 3,
+     "latency": 5,
+     "observability": 5,
+     "cost": 5,
+     "dx": 5
+    },
+    "tags": [
+     "self-hostable:yes",
+     "pricing:free-tier"
+    ]
+   },
+   {
+    "slug": "groq",
+    "name": "GroqCloud",
+    "description": "Inference gateway running open-weight models on custom LPUs for extremely low-latency, OpenAI-compatible calls.",
+    "websiteUrl": "https://groq.com",
+    "scores": {
+     "model_coverage": 3,
+     "latency": 5,
+     "observability": 3,
+     "cost": 4,
+     "dx": 5
+    },
+    "tags": [
+     "pricing:free-tier"
+    ]
+   }
+  ],
+  "image-generation": [
+   {
+    "slug": "gpt-image",
+    "name": "GPT Image",
+    "description": "OpenAI's natively multimodal image model with strong instruction following, available via the Images API.",
+    "websiteUrl": "https://openai.com",
+    "scores": {
+     "quality": 5,
+     "prompt_adherence": 5,
+     "speed": 3,
+     "cost": 3,
+     "control": 4
+    }
+   },
+   {
+    "slug": "nano-banana",
+    "name": "Nano Banana",
+    "description": "Google's Gemini-native image generation and editing model known for character consistency and edits.",
+    "websiteUrl": "https://deepmind.google/models/gemini-image",
+    "scores": {
+     "quality": 5,
+     "prompt_adherence": 5,
+     "speed": 4,
+     "cost": 4,
+     "control": 5
+    }
+   },
+   {
+    "slug": "seedream",
+    "name": "Seedream",
+    "description": "ByteDance Seed's high-resolution text-to-image and editing model with strong photorealism.",
+    "websiteUrl": "https://seed.bytedance.com",
+    "scores": {
+     "quality": 5,
+     "prompt_adherence": 4,
+     "speed": 4,
+     "cost": 4,
+     "control": 4
+    }
+   },
+   {
+    "slug": "qwen-image",
+    "name": "Qwen-Image",
+    "description": "Alibaba's open-weight image model with best-in-class multilingual in-image text rendering.",
+    "websiteUrl": "https://qwen.ai",
+    "scores": {
+     "quality": 4,
+     "prompt_adherence": 4,
+     "speed": 4,
+     "cost": 5,
+     "control": 4
+    },
+    "tags": [
+     "self-hostable:yes"
+    ]
+   },
+   {
+    "slug": "reve",
+    "name": "Reve",
+    "description": "Image generation and editing tool with strong prompt adherence and natural-language editing.",
+    "websiteUrl": "https://reve.art",
+    "scores": {
+     "quality": 4,
+     "prompt_adherence": 5,
+     "speed": 4,
+     "cost": 4,
+     "control": 4
+    }
+   },
+   {
+    "slug": "adobe-firefly",
+    "name": "Adobe Firefly",
+    "description": "Adobe's commercially-safe generative image model integrated across Creative Cloud and a web studio.",
+    "websiteUrl": "https://www.adobe.com/products/firefly.html",
+    "scores": {
+     "quality": 4,
+     "prompt_adherence": 4,
+     "speed": 4,
+     "cost": 3,
+     "control": 5
+    }
+   },
+   {
+    "slug": "krea",
+    "name": "Krea",
+    "description": "Creative suite with real-time generation, editing, and access to many image and video models.",
+    "websiteUrl": "https://www.krea.ai",
+    "scores": {
+     "quality": 4,
+     "prompt_adherence": 4,
+     "speed": 5,
+     "cost": 4,
+     "control": 5
+    },
+    "tags": [
+     "realtime:yes",
+     "pricing:free-tier"
+    ]
+   },
+   {
+    "slug": "freepik",
+    "name": "Freepik AI",
+    "description": "AI creative platform aggregating many image and video models alongside a large stock asset library.",
+    "websiteUrl": "https://www.freepik.com/ai",
+    "scores": {
+     "quality": 4,
+     "prompt_adherence": 3,
+     "speed": 4,
+     "cost": 4,
+     "control": 4
+    },
+    "tags": [
+     "pricing:free-tier"
+    ]
+   },
+   {
+    "slug": "playground-ai",
+    "name": "Playground",
+    "description": "Image generation platform with graphic-design-oriented models and editing tools for creators.",
+    "websiteUrl": "https://playground.com",
+    "scores": {
+     "quality": 4,
+     "prompt_adherence": 3,
+     "speed": 4,
+     "cost": 4,
+     "control": 4
+    },
+    "tags": [
+     "pricing:free-tier"
+    ]
+   },
+   {
+    "slug": "fal",
+    "name": "fal",
+    "description": "Generative media inference platform serving fast hosted image and video models via API.",
+    "websiteUrl": "https://fal.ai",
+    "scores": {
+     "quality": 4,
+     "prompt_adherence": 4,
+     "speed": 5,
+     "cost": 4,
+     "control": 4
+    },
+    "tags": [
+     "deploy:serverless"
+    ]
+   },
+   {
+    "slug": "comfyui",
+    "name": "ComfyUI",
+    "description": "Open-source node-based interface for building custom diffusion pipelines with maximal control.",
+    "websiteUrl": "https://www.comfy.org",
+    "scores": {
+     "quality": 5,
+     "prompt_adherence": 4,
+     "speed": 3,
+     "cost": 5,
+     "control": 5
+    },
+    "tags": [
+     "self-hostable:yes",
+     "pricing:free-tier"
+    ]
+   }
+  ],
+  "ai-agent-frameworks": [
+   {
+    "slug": "autogen",
+    "name": "AutoGen (AG2)",
+    "description": "Open-source multi-agent conversation framework, originally from Microsoft Research, now developed as AG2.",
+    "websiteUrl": "https://www.ag2.ai",
+    "scores": {
+     "ergonomics": 4,
+     "observability": 3,
+     "performance": 3,
+     "ecosystem": 4,
+     "learning_curve": 3
+    },
+    "tags": [
+     "self-hostable:yes",
+     "language:python",
+     "pricing:free-tier"
+    ]
+   },
+   {
+    "slug": "semantic-kernel",
+    "name": "Semantic Kernel",
+    "description": "Microsoft's enterprise agent SDK with first-class C#/.NET support, plugins, and Azure integration.",
+    "websiteUrl": "https://learn.microsoft.com/en-us/semantic-kernel/overview",
+    "scores": {
+     "ergonomics": 4,
+     "observability": 4,
+     "performance": 4,
+     "ecosystem": 4,
+     "learning_curve": 3
+    },
+    "tags": [
+     "self-hostable:yes",
+     "pricing:free-tier"
+    ]
+   },
+   {
+    "slug": "google-adk",
+    "name": "Google ADK",
+    "description": "Google's Agent Development Kit for hierarchical multi-agent systems with native A2A and Vertex AI integration.",
+    "websiteUrl": "https://google.github.io/adk-docs",
+    "scores": {
+     "ergonomics": 4,
+     "observability": 4,
+     "performance": 4,
+     "ecosystem": 4,
+     "learning_curve": 3
+    },
+    "tags": [
+     "self-hostable:yes",
+     "language:python",
+     "pricing:free-tier"
+    ]
+   },
+   {
+    "slug": "strands-agents",
+    "name": "Strands Agents",
+    "description": "AWS's open-source model-driven agent SDK for Python and TypeScript with built-in observability.",
+    "websiteUrl": "https://strandsagents.com",
+    "scores": {
+     "ergonomics": 5,
+     "observability": 4,
+     "performance": 4,
+     "ecosystem": 4,
+     "learning_curve": 4
+    },
+    "tags": [
+     "self-hostable:yes",
+     "language:python",
+     "language:typescript",
+     "pricing:free-tier"
+    ]
+   },
+   {
+    "slug": "smolagents",
+    "name": "smolagents",
+    "description": "Hugging Face's minimalist library for code-writing agents in just a few lines of Python.",
+    "websiteUrl": "https://github.com/huggingface/smolagents",
+    "scores": {
+     "ergonomics": 5,
+     "observability": 3,
+     "performance": 4,
+     "ecosystem": 3,
+     "learning_curve": 5
+    },
+    "tags": [
+     "self-hostable:yes",
+     "language:python",
+     "pricing:free-tier"
+    ]
+   },
+   {
+    "slug": "haystack",
+    "name": "Haystack",
+    "description": "deepset's open-source orchestration framework for production RAG pipelines and tool-using agents.",
+    "websiteUrl": "https://haystack.deepset.ai",
+    "scores": {
+     "ergonomics": 4,
+     "observability": 4,
+     "performance": 4,
+     "ecosystem": 4,
+     "learning_curve": 3
+    },
+    "tags": [
+     "self-hostable:yes",
+     "language:python",
+     "pricing:free-tier"
+    ]
+   },
+   {
+    "slug": "dspy",
+    "name": "DSPy",
+    "description": "Stanford's framework for programming and optimizing LLM pipelines via declarative modules instead of prompts.",
+    "websiteUrl": "https://dspy.ai",
+    "scores": {
+     "ergonomics": 3,
+     "observability": 3,
+     "performance": 4,
+     "ecosystem": 3,
+     "learning_curve": 2
+    },
+    "tags": [
+     "self-hostable:yes",
+     "language:python",
+     "pricing:free-tier"
+    ]
+   },
+   {
+    "slug": "atomic-agents",
+    "name": "Atomic Agents",
+    "description": "Lightweight Python framework for building agents from composable, schema-driven atomic components.",
+    "websiteUrl": "https://github.com/BrainBlend-AI/atomic-agents",
+    "scores": {
+     "ergonomics": 4,
+     "observability": 3,
+     "performance": 4,
+     "ecosystem": 3,
+     "learning_curve": 4
+    },
+    "tags": [
+     "self-hostable:yes",
+     "language:python",
+     "pricing:free-tier"
+    ]
+   },
+   {
+    "slug": "autogpt",
+    "name": "AutoGPT",
+    "description": "Open-source platform for building, deploying, and running continuous autonomous AI agents.",
+    "websiteUrl": "https://agpt.co",
+    "scores": {
+     "ergonomics": 3,
+     "observability": 3,
+     "performance": 3,
+     "ecosystem": 3,
+     "learning_curve": 3
+    },
+    "tags": [
+     "self-hostable:yes",
+     "language:python",
+     "pricing:free-tier"
+    ]
+   },
+   {
+    "slug": "letta",
+    "name": "Letta",
+    "description": "Open-source framework for stateful agents with long-term memory, evolved from the MemGPT project.",
+    "websiteUrl": "https://www.letta.com",
+    "scores": {
+     "ergonomics": 4,
+     "observability": 4,
+     "performance": 4,
+     "ecosystem": 3,
+     "learning_curve": 3
+    },
+    "tags": [
+     "self-hostable:yes",
+     "language:python",
+     "pricing:free-tier"
+    ]
+   },
+   {
+    "slug": "pocketflow",
+    "name": "PocketFlow",
+    "description": "Minimalist 100-line LLM framework that models agents and workflows as a simple nested graph.",
+    "websiteUrl": "https://pocketflow.dev",
+    "scores": {
+     "ergonomics": 4,
+     "observability": 2,
+     "performance": 4,
+     "ecosystem": 2,
+     "learning_curve": 5
+    },
+    "tags": [
+     "self-hostable:yes",
+     "language:python",
+     "pricing:free-tier"
+    ]
+   }
+  ]
+ }
 }

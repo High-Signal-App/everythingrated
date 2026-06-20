@@ -1,0 +1,540 @@
+{
+  "newDirectories": [
+    {
+      "slug": "container-orchestration",
+      "name": "Container orchestration",
+      "description": "Kubernetes distributions, managed clusters, and container schedulers for running workloads at scale.",
+      "heroCopy": "Cost, DX, ecosystem, scalability, and ops burden decide whether your cluster runs itself or runs you ragged.",
+      "aspects": [
+        { "key": "cost", "label": "Cost", "description": "Control-plane fees and total cost relative to what you get (5 = great value)." },
+        { "key": "dx", "label": "Developer experience", "description": "CLI, dashboards, day-one setup, and ergonomics of running workloads." },
+        { "key": "ecosystem", "label": "Ecosystem", "description": "Add-ons, operators, integrations, and community depth." },
+        { "key": "scalability", "label": "Scalability", "description": "Headroom for node count, multi-cluster, and large production traffic." },
+        { "key": "ops_burden", "label": "Ops burden", "description": "How little upgrade, patching, and maintenance toil it demands (5 = nearly hands-off)." }
+      ],
+      "items": [
+        {
+          "slug": "amazon-eks",
+          "name": "Amazon EKS",
+          "description": "AWS's managed Kubernetes service with deep IAM, VPC, and AWS service integration.",
+          "websiteUrl": "https://aws.amazon.com/eks",
+          "scores": { "cost": 2, "dx": 3, "ecosystem": 5, "scalability": 5, "ops_burden": 4 }
+        },
+        {
+          "slug": "google-gke",
+          "name": "Google GKE",
+          "description": "Google's managed Kubernetes engine with Autopilot mode and strong autoscaling and upgrades.",
+          "websiteUrl": "https://cloud.google.com/kubernetes-engine",
+          "scores": { "cost": 3, "dx": 4, "ecosystem": 5, "scalability": 5, "ops_burden": 5 },
+          "tags": ["pricing:free-tier"]
+        },
+        {
+          "slug": "azure-aks",
+          "name": "Azure AKS",
+          "description": "Microsoft's managed Kubernetes service with Entra ID identity and event-driven scaling.",
+          "websiteUrl": "https://azure.microsoft.com/products/kubernetes-service",
+          "scores": { "cost": 3, "dx": 3, "ecosystem": 5, "scalability": 5, "ops_burden": 4 },
+          "tags": ["pricing:free-tier"]
+        },
+        {
+          "slug": "openshift",
+          "name": "Red Hat OpenShift",
+          "description": "Enterprise Kubernetes distribution with built-in CI/CD, developer tooling, and hardened security defaults.",
+          "websiteUrl": "https://www.redhat.com/en/technologies/cloud-computing/openshift",
+          "scores": { "cost": 2, "dx": 4, "ecosystem": 4, "scalability": 4, "ops_burden": 3 },
+          "tags": ["self-hostable:yes"]
+        },
+        {
+          "slug": "rancher",
+          "name": "Rancher",
+          "description": "Open-source multi-cluster Kubernetes management platform spanning on-prem and public clouds.",
+          "websiteUrl": "https://www.rancher.com",
+          "scores": { "cost": 4, "dx": 4, "ecosystem": 4, "scalability": 4, "ops_burden": 3 },
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
+        },
+        {
+          "slug": "k3s",
+          "name": "k3s",
+          "description": "Rancher's lightweight CNCF-certified Kubernetes distribution packaged as a single binary for edge and IoT.",
+          "websiteUrl": "https://k3s.io",
+          "scores": { "cost": 5, "dx": 4, "ecosystem": 3, "scalability": 3, "ops_burden": 3 },
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
+        },
+        {
+          "slug": "hashicorp-nomad",
+          "name": "HashiCorp Nomad",
+          "description": "Simple, flexible scheduler that orchestrates containerized and non-containerized workloads on a single binary.",
+          "websiteUrl": "https://www.nomadproject.io",
+          "scores": { "cost": 4, "dx": 5, "ecosystem": 3, "scalability": 4, "ops_burden": 4 },
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
+        },
+        {
+          "slug": "docker-swarm",
+          "name": "Docker Swarm",
+          "description": "Docker's built-in clustering and orchestration mode for simple multi-host container deployments.",
+          "websiteUrl": "https://docs.docker.com/engine/swarm",
+          "scores": { "cost": 5, "dx": 4, "ecosystem": 2, "scalability": 2, "ops_burden": 3 },
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
+        },
+        {
+          "slug": "digitalocean-kubernetes",
+          "name": "DigitalOcean Kubernetes",
+          "description": "Managed Kubernetes with a free control plane and DigitalOcean's developer-friendly pricing and UX.",
+          "websiteUrl": "https://www.digitalocean.com/products/kubernetes",
+          "scores": { "cost": 4, "dx": 5, "ecosystem": 3, "scalability": 3, "ops_burden": 4 },
+          "tags": ["pricing:free-tier"]
+        },
+        {
+          "slug": "linode-lke",
+          "name": "Akamai LKE",
+          "description": "Akamai Cloud's managed Kubernetes (formerly Linode) with a free control plane and predictable pricing.",
+          "websiteUrl": "https://www.linode.com/products/kubernetes",
+          "scores": { "cost": 4, "dx": 4, "ecosystem": 3, "scalability": 3, "ops_burden": 4 },
+          "tags": ["pricing:free-tier"]
+        },
+        {
+          "slug": "oci-oke",
+          "name": "Oracle OKE",
+          "description": "Oracle Cloud's managed Kubernetes engine with a free basic control plane and OCI integration.",
+          "websiteUrl": "https://www.oracle.com/cloud/cloud-native/kubernetes-engine",
+          "scores": { "cost": 4, "dx": 3, "ecosystem": 3, "scalability": 4, "ops_burden": 4 },
+          "tags": ["pricing:free-tier"]
+        },
+        {
+          "slug": "talos-linux",
+          "name": "Talos Linux",
+          "description": "Minimal immutable Linux OS managed entirely through an API for secure, reproducible Kubernetes nodes.",
+          "websiteUrl": "https://www.talos.dev",
+          "scores": { "cost": 5, "dx": 4, "ecosystem": 3, "scalability": 4, "ops_burden": 4 },
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
+        },
+        {
+          "slug": "rke2",
+          "name": "RKE2",
+          "description": "Rancher's security-focused, FIPS-compliant Kubernetes distribution for government and enterprise clusters.",
+          "websiteUrl": "https://docs.rke2.io",
+          "scores": { "cost": 5, "dx": 3, "ecosystem": 3, "scalability": 4, "ops_burden": 3 },
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
+        },
+        {
+          "slug": "kind",
+          "name": "kind",
+          "description": "Tool for running local Kubernetes clusters inside Docker containers, built primarily for testing and CI.",
+          "websiteUrl": "https://kind.sigs.k8s.io",
+          "scores": { "cost": 5, "dx": 4, "ecosystem": 3, "scalability": 1, "ops_burden": 4 },
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
+        },
+        {
+          "slug": "portainer",
+          "name": "Portainer",
+          "description": "Lightweight management UI for Docker, Swarm, and Kubernetes environments aimed at smaller teams.",
+          "websiteUrl": "https://www.portainer.io",
+          "scores": { "cost": 4, "dx": 5, "ecosystem": 3, "scalability": 3, "ops_burden": 4 },
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
+        }
+      ]
+    },
+    {
+      "slug": "infrastructure-as-code",
+      "name": "Infrastructure as code",
+      "description": "Declarative and programmatic tools for provisioning cloud infrastructure from version-controlled definitions.",
+      "heroCopy": "Cost, DX, ecosystem, multi-cloud reach, and state management separate clean provisioning from drift and dread.",
+      "aspects": [
+        { "key": "cost", "label": "Cost", "description": "Licensing and platform cost relative to value (5 = free or cheap)." },
+        { "key": "dx", "label": "Developer experience", "description": "Authoring ergonomics, language fit, docs, and debuggability." },
+        { "key": "ecosystem", "label": "Ecosystem", "description": "Providers, modules, registries, and community size." },
+        { "key": "multi_cloud", "label": "Multi-cloud", "description": "Breadth of providers and how cloud-agnostic the tool is." },
+        { "key": "state_management", "label": "State management", "description": "Quality of state, drift detection, and reconciliation handling." }
+      ],
+      "items": [
+        {
+          "slug": "terraform",
+          "name": "Terraform",
+          "description": "HashiCorp's HCL-based provisioning tool with the largest provider ecosystem under a BSL license.",
+          "websiteUrl": "https://www.terraform.io",
+          "scores": { "cost": 3, "dx": 4, "ecosystem": 5, "multi_cloud": 5, "state_management": 4 },
+          "tags": ["self-hostable:yes"]
+        },
+        {
+          "slug": "opentofu",
+          "name": "OpenTofu",
+          "description": "Open-source, community-governed fork of Terraform offering the same HCL, providers, and workflow.",
+          "websiteUrl": "https://opentofu.org",
+          "scores": { "cost": 5, "dx": 4, "ecosystem": 5, "multi_cloud": 5, "state_management": 4 },
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
+        },
+        {
+          "slug": "pulumi",
+          "name": "Pulumi",
+          "description": "Infrastructure as code using real programming languages like TypeScript, Python, and Go.",
+          "websiteUrl": "https://www.pulumi.com",
+          "scores": { "cost": 3, "dx": 5, "ecosystem": 4, "multi_cloud": 5, "state_management": 4 },
+          "tags": ["self-hostable:yes", "pricing:free-tier", "language:typescript", "language:python"]
+        },
+        {
+          "slug": "aws-cdk",
+          "name": "AWS CDK",
+          "description": "AWS Cloud Development Kit for defining CloudFormation infrastructure in familiar programming languages.",
+          "websiteUrl": "https://aws.amazon.com/cdk",
+          "scores": { "cost": 5, "dx": 4, "ecosystem": 3, "multi_cloud": 1, "state_management": 4 },
+          "tags": ["pricing:free-tier", "language:typescript", "language:python"]
+        },
+        {
+          "slug": "ansible",
+          "name": "Ansible",
+          "description": "Red Hat's agentless automation tool that configures and provisions systems over SSH with YAML playbooks.",
+          "websiteUrl": "https://www.ansible.com",
+          "scores": { "cost": 5, "dx": 4, "ecosystem": 5, "multi_cloud": 4, "state_management": 2 },
+          "tags": ["self-hostable:yes", "pricing:free-tier", "language:python"]
+        },
+        {
+          "slug": "crossplane",
+          "name": "Crossplane",
+          "description": "CNCF control plane that extends Kubernetes to provision and manage cloud infrastructure as custom resources.",
+          "websiteUrl": "https://www.crossplane.io",
+          "scores": { "cost": 5, "dx": 3, "ecosystem": 3, "multi_cloud": 4, "state_management": 5 },
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
+        },
+        {
+          "slug": "sst",
+          "name": "SST",
+          "description": "TypeScript framework for deploying full-stack apps to AWS with high-level constructs and live local dev.",
+          "websiteUrl": "https://sst.dev",
+          "scores": { "cost": 5, "dx": 5, "ecosystem": 3, "multi_cloud": 2, "state_management": 4 },
+          "tags": ["pricing:free-tier", "language:typescript", "deploy:serverless"]
+        },
+        {
+          "slug": "terragrunt",
+          "name": "Terragrunt",
+          "description": "Thin wrapper around Terraform and OpenTofu that reduces repetition and manages dependencies across modules.",
+          "websiteUrl": "https://terragrunt.gruntwork.io",
+          "scores": { "cost": 5, "dx": 3, "ecosystem": 4, "multi_cloud": 5, "state_management": 4 },
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
+        },
+        {
+          "slug": "aws-cloudformation",
+          "name": "AWS CloudFormation",
+          "description": "AWS's native declarative provisioning service that manages stacks of resources from JSON or YAML templates.",
+          "websiteUrl": "https://aws.amazon.com/cloudformation",
+          "scores": { "cost": 5, "dx": 2, "ecosystem": 3, "multi_cloud": 1, "state_management": 4 },
+          "tags": ["pricing:free-tier"]
+        },
+        {
+          "slug": "azure-bicep",
+          "name": "Azure Bicep",
+          "description": "Microsoft's domain-specific language that compiles to ARM templates for declarative Azure provisioning.",
+          "websiteUrl": "https://learn.microsoft.com/azure/azure-resource-manager/bicep",
+          "scores": { "cost": 5, "dx": 4, "ecosystem": 3, "multi_cloud": 1, "state_management": 3 },
+          "tags": ["pricing:free-tier"]
+        },
+        {
+          "slug": "cdk-for-terraform",
+          "name": "CDK for Terraform",
+          "description": "HashiCorp's CDKTF for defining Terraform infrastructure using TypeScript, Python, and other languages.",
+          "websiteUrl": "https://developer.hashicorp.com/terraform/cdktf",
+          "scores": { "cost": 4, "dx": 3, "ecosystem": 4, "multi_cloud": 5, "state_management": 4 },
+          "tags": ["self-hostable:yes", "pricing:free-tier", "language:typescript", "language:python"]
+        },
+        {
+          "slug": "terramate",
+          "name": "Terramate",
+          "description": "Orchestration and code-generation layer that adds stacks, change detection, and automation to Terraform.",
+          "websiteUrl": "https://terramate.io",
+          "scores": { "cost": 4, "dx": 4, "ecosystem": 3, "multi_cloud": 4, "state_management": 4 },
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
+        },
+        {
+          "slug": "atlantis",
+          "name": "Atlantis",
+          "description": "Open-source application that automates Terraform pull-request workflows with plan and apply via comments.",
+          "websiteUrl": "https://www.runatlantis.io",
+          "scores": { "cost": 5, "dx": 3, "ecosystem": 3, "multi_cloud": 4, "state_management": 3 },
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
+        },
+        {
+          "slug": "env0",
+          "name": "env0",
+          "description": "Infrastructure-as-code management platform with self-service, governance, and cost controls for Terraform and friends.",
+          "websiteUrl": "https://www.env0.com",
+          "scores": { "cost": 3, "dx": 4, "ecosystem": 4, "multi_cloud": 4, "state_management": 4 }
+        },
+        {
+          "slug": "scalr",
+          "name": "Scalr",
+          "description": "Remote state and operations backend for Terraform and OpenTofu with policy enforcement and hierarchy.",
+          "websiteUrl": "https://www.scalr.com",
+          "scores": { "cost": 3, "dx": 4, "ecosystem": 3, "multi_cloud": 4, "state_management": 5 }
+        },
+        {
+          "slug": "winglang",
+          "name": "Winglang",
+          "description": "Cloud-oriented programming language that compiles infrastructure and runtime code together for serverless apps.",
+          "websiteUrl": "https://www.winglang.io",
+          "scores": { "cost": 5, "dx": 4, "ecosystem": 2, "multi_cloud": 3, "state_management": 3 },
+          "tags": ["self-hostable:yes", "pricing:free-tier", "deploy:serverless"]
+        }
+      ]
+    },
+    {
+      "slug": "api-clients-testing",
+      "name": "API clients & testing",
+      "description": "Request clients and automated testing tools for building, exploring, and validating HTTP and other APIs.",
+      "heroCopy": "Cost, DX, ecosystem, protocol support, and automation decide whether your API workflow flows or fights you.",
+      "aspects": [
+        { "key": "cost", "label": "Cost", "description": "Pricing relative to value, including free and open-source tiers (5 = great value)." },
+        { "key": "dx", "label": "Developer experience", "description": "Interface speed, ergonomics, and how pleasant requests feel to build." },
+        { "key": "ecosystem", "label": "Ecosystem", "description": "Integrations, plugins, collaboration, and community depth." },
+        { "key": "protocol_support", "label": "Protocol support", "description": "Breadth across REST, GraphQL, gRPC, WebSocket, and more." },
+        { "key": "automation", "label": "Automation", "description": "Scripting, CI integration, and automated/contract testing capability." }
+      ],
+      "items": [
+        {
+          "slug": "postman",
+          "name": "Postman",
+          "description": "The dominant API platform combining a request client with collections, mocks, monitors, and collaboration.",
+          "websiteUrl": "https://www.postman.com",
+          "scores": { "cost": 2, "dx": 4, "ecosystem": 5, "protocol_support": 5, "automation": 5 },
+          "tags": ["pricing:free-tier"]
+        },
+        {
+          "slug": "insomnia",
+          "name": "Insomnia",
+          "description": "Kong's fast API client for REST, GraphQL, gRPC, and WebSocket with environments and CI-friendly workflows.",
+          "websiteUrl": "https://insomnia.rest",
+          "scores": { "cost": 4, "dx": 5, "ecosystem": 4, "protocol_support": 5, "automation": 4 },
+          "tags": ["pricing:free-tier"]
+        },
+        {
+          "slug": "bruno",
+          "name": "Bruno",
+          "description": "Open-source, Git-native API client that stores collections as plain text files in your repository.",
+          "websiteUrl": "https://www.usebruno.com",
+          "scores": { "cost": 5, "dx": 5, "ecosystem": 3, "protocol_support": 4, "automation": 4 },
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
+        },
+        {
+          "slug": "hoppscotch",
+          "name": "Hoppscotch",
+          "description": "Open-source, browser-native API client that loads instantly with no install or account required.",
+          "websiteUrl": "https://hoppscotch.io",
+          "scores": { "cost": 5, "dx": 5, "ecosystem": 3, "protocol_support": 5, "automation": 3 },
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
+        },
+        {
+          "slug": "thunder-client",
+          "name": "Thunder Client",
+          "description": "Lightweight REST API client extension that runs directly inside VS Code without a separate app.",
+          "websiteUrl": "https://www.thunderclient.com",
+          "scores": { "cost": 4, "dx": 5, "ecosystem": 3, "protocol_support": 3, "automation": 3 },
+          "tags": ["pricing:free-tier"]
+        },
+        {
+          "slug": "hurl",
+          "name": "Hurl",
+          "description": "Command-line tool that runs and asserts HTTP requests defined in a plain-text format, ideal for CI.",
+          "websiteUrl": "https://hurl.dev",
+          "scores": { "cost": 5, "dx": 4, "ecosystem": 3, "protocol_support": 2, "automation": 5 },
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
+        },
+        {
+          "slug": "schemathesis",
+          "name": "Schemathesis",
+          "description": "Property-based API testing tool that generates test cases from OpenAPI and GraphQL schemas to find bugs.",
+          "websiteUrl": "https://schemathesis.readthedocs.io",
+          "scores": { "cost": 5, "dx": 3, "ecosystem": 3, "protocol_support": 3, "automation": 5 },
+          "tags": ["self-hostable:yes", "pricing:free-tier", "language:python"]
+        },
+        {
+          "slug": "k6-load-testing",
+          "name": "Grafana k6",
+          "description": "Developer-centric load and performance testing tool that scripts API tests in JavaScript.",
+          "websiteUrl": "https://k6.io",
+          "scores": { "cost": 4, "dx": 4, "ecosystem": 4, "protocol_support": 4, "automation": 5 },
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
+        },
+        {
+          "slug": "httpie",
+          "name": "HTTPie",
+          "description": "Human-friendly command-line and desktop HTTP client designed for clear, intuitive API interaction.",
+          "websiteUrl": "https://httpie.io",
+          "scores": { "cost": 5, "dx": 5, "ecosystem": 3, "protocol_support": 2, "automation": 3 },
+          "tags": ["self-hostable:yes", "pricing:free-tier", "language:python"]
+        },
+        {
+          "slug": "karate-dsl",
+          "name": "Karate",
+          "description": "Open-source framework combining API test automation, mocks, and performance testing in a readable DSL.",
+          "websiteUrl": "https://www.karatelabs.io/karate",
+          "scores": { "cost": 4, "dx": 3, "ecosystem": 3, "protocol_support": 3, "automation": 5 },
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
+        },
+        {
+          "slug": "rest-assured",
+          "name": "REST Assured",
+          "description": "Java DSL library for testing and validating REST services inside JVM test suites.",
+          "websiteUrl": "https://rest-assured.io",
+          "scores": { "cost": 5, "dx": 3, "ecosystem": 4, "protocol_support": 2, "automation": 5 },
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
+        },
+        {
+          "slug": "pact",
+          "name": "Pact",
+          "description": "Consumer-driven contract testing framework that verifies microservice integrations without full environments.",
+          "websiteUrl": "https://pact.io",
+          "scores": { "cost": 4, "dx": 3, "ecosystem": 4, "protocol_support": 3, "automation": 5 },
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
+        },
+        {
+          "slug": "soapui",
+          "name": "SoapUI",
+          "description": "Veteran open-source tool for functional and security testing of SOAP and REST web services.",
+          "websiteUrl": "https://www.soapui.org",
+          "scores": { "cost": 4, "dx": 2, "ecosystem": 3, "protocol_support": 3, "automation": 4 },
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
+        },
+        {
+          "slug": "step-ci",
+          "name": "Step CI",
+          "description": "Open-source, language-agnostic API testing and monitoring tool configured with simple declarative YAML.",
+          "websiteUrl": "https://stepci.com",
+          "scores": { "cost": 5, "dx": 4, "ecosystem": 2, "protocol_support": 3, "automation": 5 },
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
+        },
+        {
+          "slug": "apidog",
+          "name": "Apidog",
+          "description": "All-in-one API platform combining design, debugging, mocking, and automated testing in one client.",
+          "websiteUrl": "https://apidog.com",
+          "scores": { "cost": 4, "dx": 4, "ecosystem": 3, "protocol_support": 4, "automation": 4 },
+          "tags": ["pricing:free-tier"]
+        }
+      ]
+    },
+    {
+      "slug": "internal-tools",
+      "name": "Internal tools",
+      "description": "Low-code platforms for building admin panels, dashboards, and internal apps on top of your data.",
+      "heroCopy": "Cost, DX, ecosystem, customization, and data connectors determine how fast an internal app ships and how far it bends.",
+      "aspects": [
+        { "key": "cost", "label": "Cost", "description": "Pricing and seat fees relative to value, including open-source options (5 = great value)." },
+        { "key": "dx", "label": "Developer experience", "description": "Builder ergonomics, scripting, and how quickly developers ship apps." },
+        { "key": "ecosystem", "label": "Ecosystem", "description": "Components, templates, integrations, and community size." },
+        { "key": "customization", "label": "Customization", "description": "How freely you can extend UI, logic, and styling beyond the defaults." },
+        { "key": "data_connectors", "label": "Data connectors", "description": "Breadth of database, API, and SaaS sources it connects to out of the box." }
+      ],
+      "items": [
+        {
+          "slug": "retool",
+          "name": "Retool",
+          "description": "Polished low-code platform for building internal tools with enterprise SSO, audit logs, and granular permissions.",
+          "websiteUrl": "https://retool.com",
+          "scores": { "cost": 2, "dx": 5, "ecosystem": 5, "customization": 4, "data_connectors": 5 },
+          "tags": ["pricing:free-tier"]
+        },
+        {
+          "slug": "appsmith",
+          "name": "Appsmith",
+          "description": "Widely-adopted open-source low-code builder for dashboards and CRUD apps with drag-and-drop UI and JavaScript.",
+          "websiteUrl": "https://www.appsmith.com",
+          "scores": { "cost": 5, "dx": 4, "ecosystem": 4, "customization": 4, "data_connectors": 5 },
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
+        },
+        {
+          "slug": "tooljet",
+          "name": "ToolJet",
+          "description": "Developer-first open-source platform for building internal tools, workflows, and AI-powered apps.",
+          "websiteUrl": "https://www.tooljet.com",
+          "scores": { "cost": 5, "dx": 4, "ecosystem": 4, "customization": 4, "data_connectors": 5 },
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
+        },
+        {
+          "slug": "budibase",
+          "name": "Budibase",
+          "description": "Open-source low-code platform focused on quickly building internal apps and admin panels with minimal logic.",
+          "websiteUrl": "https://budibase.com",
+          "scores": { "cost": 5, "dx": 4, "ecosystem": 3, "customization": 3, "data_connectors": 4 },
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
+        },
+        {
+          "slug": "superblocks",
+          "name": "Superblocks",
+          "description": "Enterprise internal-app platform combining UI building, backend workflows, and centralized governance.",
+          "websiteUrl": "https://www.superblocks.com",
+          "scores": { "cost": 2, "dx": 4, "ecosystem": 4, "customization": 4, "data_connectors": 5 }
+        },
+        {
+          "slug": "ui-bakery",
+          "name": "UI Bakery",
+          "description": "Low-code internal tool builder for dashboards and workflows with a polished developer experience.",
+          "websiteUrl": "https://uibakery.io",
+          "scores": { "cost": 3, "dx": 4, "ecosystem": 3, "customization": 4, "data_connectors": 4 },
+          "tags": ["self-hostable:yes"]
+        },
+        {
+          "slug": "illa-cloud",
+          "name": "ILLA",
+          "description": "Open-source low-code platform for building AI-driven dashboards, admin panels, and internal tools.",
+          "websiteUrl": "https://www.illacloud.com",
+          "scores": { "cost": 5, "dx": 4, "ecosystem": 3, "customization": 3, "data_connectors": 4 },
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
+        },
+        {
+          "slug": "forest-admin",
+          "name": "Forest Admin",
+          "description": "Admin panel platform that auto-generates internal tools by connecting to your databases and APIs.",
+          "websiteUrl": "https://www.forestadmin.com",
+          "scores": { "cost": 3, "dx": 4, "ecosystem": 3, "customization": 3, "data_connectors": 4 },
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
+        },
+        {
+          "slug": "refine",
+          "name": "Refine",
+          "description": "Open-source React framework for rapidly building data-heavy internal tools, dashboards, and admin panels.",
+          "websiteUrl": "https://refine.dev",
+          "scores": { "cost": 5, "dx": 4, "ecosystem": 4, "customization": 5, "data_connectors": 4 },
+          "tags": ["self-hostable:yes", "pricing:free-tier", "language:typescript"]
+        },
+        {
+          "slug": "react-admin",
+          "name": "React Admin",
+          "description": "Mature open-source React framework for building B2B admin applications on top of REST and GraphQL APIs.",
+          "websiteUrl": "https://marmelab.com/react-admin",
+          "scores": { "cost": 4, "dx": 4, "ecosystem": 4, "customization": 5, "data_connectors": 4 },
+          "tags": ["self-hostable:yes", "pricing:free-tier", "language:typescript"]
+        },
+        {
+          "slug": "nocodb",
+          "name": "NocoDB",
+          "description": "Open-source Airtable alternative that turns any database into a smart spreadsheet and internal app interface.",
+          "websiteUrl": "https://nocodb.com",
+          "scores": { "cost": 5, "dx": 4, "ecosystem": 3, "customization": 3, "data_connectors": 4 },
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
+        },
+        {
+          "slug": "baserow",
+          "name": "Baserow",
+          "description": "Open-source no-code database platform for building internal tools and collaborative apps from your data.",
+          "websiteUrl": "https://baserow.io",
+          "scores": { "cost": 5, "dx": 4, "ecosystem": 3, "customization": 3, "data_connectors": 3 },
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
+        },
+        {
+          "slug": "lowdefy",
+          "name": "Lowdefy",
+          "description": "Open-source, config-driven framework for building internal web apps and admin panels from YAML.",
+          "websiteUrl": "https://lowdefy.com",
+          "scores": { "cost": 5, "dx": 3, "ecosystem": 2, "customization": 4, "data_connectors": 4 },
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
+        },
+        {
+          "slug": "jet-admin",
+          "name": "Jet Admin",
+          "description": "No-code platform for building internal tools, dashboards, and customer portals on top of existing data.",
+          "websiteUrl": "https://www.jetadmin.io",
+          "scores": { "cost": 3, "dx": 4, "ecosystem": 3, "customization": 3, "data_connectors": 4 },
+          "tags": ["pricing:free-tier"]
+        }
+      ]
+    }
+  ]
+}

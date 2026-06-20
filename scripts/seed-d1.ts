@@ -2368,7 +2368,10 @@ function esc(s: string): string {
  * differentiator (e.g. "self-hostable" only on services that offer it, not on
  * every OSS library).
  */
-const CURATED_TAGS: Record<string, string[]> = {
+// Null-prototype so item slugs that collide with Object.prototype members
+// (e.g. an item literally named "Constructor" → slug "constructor", or
+// "toString") resolve to undefined instead of an inherited function.
+const CURATED_TAGS: Record<string, string[]> = Object.assign(Object.create(null), {
   // databases
   "cloudflare-d1": ["runs-on:cloudflare", "deploy:edge", "deploy:serverless", "pricing:free-tier"],
   turso: ["deploy:edge", "pricing:free-tier", "self-hostable:yes"],
@@ -2540,7 +2543,7 @@ const CURATED_TAGS: Record<string, string[]> = {
   "react-native": ["language:typescript"],
   expo: ["language:typescript", "pricing:free-tier"],
   capacitor: ["language:typescript"],
-};
+});
 
 // ─────────────────────────────────────────────
 // Additive web-sourced catalogue (scripts/catalogue-extra.json)
@@ -2607,15 +2610,8 @@ function mergeExtraCatalogue() {
     }
   };
 
-  for (const [dirSlug, items] of Object.entries(extra.deepen ?? {})) {
-    const dir = bySlug.get(dirSlug);
-    if (!dir) {
-      console.warn(`[seed] extra: unknown directory "${dirSlug}", skipping ${items.length} items`);
-      continue;
-    }
-    appendItems(dir, items);
-  }
-
+  // New directories FIRST so a `deepen` entry can target a new directory too
+  // (deepen runs after, and needs the directory to already exist).
   for (const nd of extra.newDirectories ?? []) {
     const existing = bySlug.get(nd.slug);
     if (existing) {
@@ -2637,13 +2633,47 @@ function mergeExtraCatalogue() {
     addedItems += nd.items.length;
   }
 
+  for (const [dirSlug, items] of Object.entries(extra.deepen ?? {})) {
+    const dir = bySlug.get(dirSlug);
+    if (!dir) {
+      console.warn(`[seed] extra: unknown directory "${dirSlug}", skipping ${items.length} items`);
+      continue;
+    }
+    appendItems(dir, items);
+  }
+
   if (addedDirs || addedItems) {
     console.log(`[seed] merged extra catalogue: +${addedDirs} directories, +${addedItems} items`);
   }
 }
 
+// Conservative, reviewer-authored score corrections (scripts/catalogue-overrides.json),
+// shape { "<item-slug>": { "<aspect-key>": newScore } }. Applied after merge so
+// clearly-wrong first-pass rankings can be fixed without touching item definitions.
+function applyScoreOverrides() {
+  const path = resolve(__root, "scripts/catalogue-overrides.json");
+  if (!existsSync(path)) return;
+  const raw = readFileSync(path, "utf8").trim();
+  if (!raw) return;
+  const overrides: Record<string, Record<string, number>> = JSON.parse(raw);
+  let n = 0;
+  for (const dir of DIRECTORIES) {
+    for (const it of dir.items) {
+      if (!Object.prototype.hasOwnProperty.call(overrides, it.slug)) continue;
+      for (const [k, v] of Object.entries(overrides[it.slug])) {
+        if (k in it.scores) {
+          it.scores[k] = v;
+          n++;
+        }
+      }
+    }
+  }
+  if (n) console.log(`[seed] applied ${n} score overrides`);
+}
+
 function buildSql(): string {
   mergeExtraCatalogue();
+  applyScoreOverrides();
 
   const out: string[] = [];
   const now = Date.now();

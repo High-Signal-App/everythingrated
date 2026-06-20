@@ -1,0 +1,23 @@
+{
+ "deepen": {
+  "workflow-automation": [
+   {
+    "slug": "n8n",
+    "name": "n8n",
+    "description": "Fair-code workflow automation tool with 400+ integrations and native AI/agent nodes, self-hostable.",
+    "websiteUrl": "https://n8n.io",
+    "scores": {
+     "integrations": 5,
+     "ease_of_use": 4,
+     "cost": 5,
+     "dx": 4,
+     "ecosystem": 5
+    },
+    "tags": [
+     "self-hostable:yes",
+     "pricing:free-tier"
+    ]
+   }
+  ]
+ }
+}

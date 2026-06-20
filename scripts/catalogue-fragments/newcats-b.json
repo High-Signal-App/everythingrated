@@ -1,0 +1,574 @@
+{
+  "newDirectories": [
+    {
+      "slug": "documentation-platforms",
+      "name": "Documentation platforms",
+      "description": "Hosted docs and developer-documentation platforms for product and API docs.",
+      "heroCopy": "Authoring DX, API reference quality, customization, ecosystem, and cost decide whether docs feel alive or stale.",
+      "aspects": [
+        { "key": "cost", "label": "Cost", "description": "Pricing relative to what you get (5 = great deal)." },
+        { "key": "dx", "label": "Developer experience", "description": "Authoring, docs-as-code or visual editing, and preview quality." },
+        { "key": "ecosystem", "label": "Ecosystem", "description": "Integrations, framework support, themes, and community depth." },
+        { "key": "api_docs", "label": "API reference", "description": "OpenAPI/AsyncAPI import and interactive reference quality." },
+        { "key": "customization", "label": "Customization", "description": "Theming, branding, layout control, and white-labeling." }
+      ],
+      "items": [
+        {
+          "slug": "mintlify",
+          "name": "Mintlify",
+          "description": "Developer documentation platform combining MDX docs-as-code with a web editor and auto-generated interactive API references.",
+          "websiteUrl": "https://mintlify.com",
+          "scores": { "cost": 3, "dx": 5, "ecosystem": 4, "api_docs": 5, "customization": 4 },
+          "tags": ["pricing:free-tier", "language:typescript"]
+        },
+        {
+          "slug": "gitbook",
+          "name": "GitBook",
+          "description": "Documentation platform pairing a Git-based workflow with a visual editor, AI assistant, and enterprise access controls.",
+          "websiteUrl": "https://www.gitbook.com",
+          "scores": { "cost": 3, "dx": 5, "ecosystem": 4, "api_docs": 4, "customization": 4 },
+          "tags": ["pricing:free-tier"]
+        },
+        {
+          "slug": "readme",
+          "name": "ReadMe",
+          "description": "Hosted API documentation platform with an interactive API explorer, usage metrics, and developer hub features.",
+          "websiteUrl": "https://readme.com",
+          "scores": { "cost": 2, "dx": 4, "ecosystem": 3, "api_docs": 5, "customization": 4 },
+          "tags": ["pricing:free-tier"]
+        },
+        {
+          "slug": "fern",
+          "name": "Fern",
+          "description": "API platform that generates SDKs and a hosted documentation site from an OpenAPI or Fern Definition spec.",
+          "websiteUrl": "https://buildwithfern.com",
+          "scores": { "cost": 3, "dx": 4, "ecosystem": 3, "api_docs": 5, "customization": 4 },
+          "tags": ["pricing:free-tier"]
+        },
+        {
+          "slug": "redocly",
+          "name": "Redocly",
+          "description": "API documentation and governance platform built around OpenAPI with the open-source Redoc reference renderer.",
+          "websiteUrl": "https://redocly.com",
+          "scores": { "cost": 3, "dx": 4, "ecosystem": 3, "api_docs": 5, "customization": 4 },
+          "tags": ["pricing:free-tier"]
+        },
+        {
+          "slug": "stoplight",
+          "name": "Stoplight",
+          "description": "API design and documentation platform with visual OpenAPI editing, mocking, and a hosted developer portal.",
+          "websiteUrl": "https://stoplight.io",
+          "scores": { "cost": 3, "dx": 4, "ecosystem": 3, "api_docs": 5, "customization": 3 },
+          "tags": ["pricing:free-tier"]
+        },
+        {
+          "slug": "bump-sh",
+          "name": "Bump.sh",
+          "description": "Hosted API documentation and changelog service that renders OpenAPI and AsyncAPI specs with diff tracking.",
+          "websiteUrl": "https://bump.sh",
+          "scores": { "cost": 3, "dx": 4, "ecosystem": 2, "api_docs": 5, "customization": 3 },
+          "tags": ["pricing:free-tier"]
+        },
+        {
+          "slug": "nextra",
+          "name": "Nextra",
+          "description": "Next.js-based static site generator for docs and blogs with MDX, themes, and full-text search.",
+          "websiteUrl": "https://nextra.site",
+          "scores": { "cost": 5, "dx": 4, "ecosystem": 4, "api_docs": 2, "customization": 5 },
+          "tags": ["self-hostable:yes", "pricing:free-tier", "language:typescript"]
+        },
+        {
+          "slug": "starlight",
+          "name": "Starlight",
+          "description": "Astro's official documentation theme delivering fast, accessible, content-focused docs sites out of the box.",
+          "websiteUrl": "https://starlight.astro.build",
+          "scores": { "cost": 5, "dx": 5, "ecosystem": 4, "api_docs": 2, "customization": 5 },
+          "tags": ["self-hostable:yes", "pricing:free-tier", "language:typescript"]
+        },
+        {
+          "slug": "docusaurus-platform",
+          "name": "Docusaurus",
+          "description": "Meta's open-source React documentation framework powering thousands of self-hosted developer docs sites.",
+          "websiteUrl": "https://docusaurus.io",
+          "scores": { "cost": 5, "dx": 4, "ecosystem": 5, "api_docs": 3, "customization": 5 },
+          "tags": ["self-hostable:yes", "pricing:free-tier", "language:typescript"]
+        },
+        {
+          "slug": "vitepress",
+          "name": "VitePress",
+          "description": "Vite and Vue-powered static site generator optimized for fast, lightweight technical documentation.",
+          "websiteUrl": "https://vitepress.dev",
+          "scores": { "cost": 5, "dx": 5, "ecosystem": 4, "api_docs": 2, "customization": 4 },
+          "tags": ["self-hostable:yes", "pricing:free-tier", "language:typescript"]
+        },
+        {
+          "slug": "readthedocs",
+          "name": "Read the Docs",
+          "description": "Open-source documentation hosting that builds and versions Sphinx and MkDocs sites straight from a repository.",
+          "websiteUrl": "https://about.readthedocs.com",
+          "scores": { "cost": 5, "dx": 2, "ecosystem": 4, "api_docs": 2, "customization": 3 },
+          "tags": ["self-hostable:yes", "pricing:free-tier", "language:python"]
+        },
+        {
+          "slug": "mkdocs-material",
+          "name": "Material for MkDocs",
+          "description": "Popular MkDocs theme that turns Markdown into a polished, searchable static documentation site.",
+          "websiteUrl": "https://squidfunk.github.io/mkdocs-material",
+          "scores": { "cost": 5, "dx": 4, "ecosystem": 4, "api_docs": 2, "customization": 4 },
+          "tags": ["self-hostable:yes", "pricing:free-tier", "language:python"]
+        },
+        {
+          "slug": "document360",
+          "name": "Document360",
+          "description": "Knowledge base and documentation platform aimed at help centers, product docs, and internal wikis.",
+          "websiteUrl": "https://document360.com",
+          "scores": { "cost": 2, "dx": 3, "ecosystem": 3, "api_docs": 3, "customization": 3 },
+          "tags": ["pricing:free-tier"]
+        },
+        {
+          "slug": "archbee",
+          "name": "Archbee",
+          "description": "Documentation platform for product and developer docs with block-based editing and API reference support.",
+          "websiteUrl": "https://www.archbee.com",
+          "scores": { "cost": 3, "dx": 4, "ecosystem": 3, "api_docs": 4, "customization": 3 }
+        },
+        {
+          "slug": "slab",
+          "name": "Slab",
+          "description": "Modern team knowledge base and internal wiki focused on a clean writing experience and organization.",
+          "websiteUrl": "https://slab.com",
+          "scores": { "cost": 3, "dx": 4, "ecosystem": 3, "api_docs": 1, "customization": 2 },
+          "tags": ["pricing:free-tier"]
+        }
+      ]
+    },
+    {
+      "slug": "maps-geolocation",
+      "name": "Maps and geolocation",
+      "description": "Mapping, geocoding, routing, and IP-geolocation APIs for location-aware apps.",
+      "heroCopy": "Data coverage, feature breadth, cost, DX, and ecosystem decide whether location features feel precise or patchy.",
+      "aspects": [
+        { "key": "cost", "label": "Cost", "description": "Pricing and free-tier generosity relative to request volume." },
+        { "key": "dx", "label": "Developer experience", "description": "SDKs, docs, map libraries, and ease of integration." },
+        { "key": "ecosystem", "label": "Ecosystem", "description": "Plugins, framework bindings, and third-party tooling." },
+        { "key": "data_coverage", "label": "Data coverage", "description": "Global map detail, accuracy, and freshness of location data." },
+        { "key": "feature_breadth", "label": "Feature breadth", "description": "Maps, geocoding, routing, places, traffic, and geofencing scope." }
+      ],
+      "items": [
+        {
+          "slug": "google-maps-platform",
+          "name": "Google Maps Platform",
+          "description": "Google's comprehensive location suite covering maps, geocoding, routing, places, and street-level imagery.",
+          "websiteUrl": "https://mapsplatform.google.com",
+          "scores": { "cost": 2, "dx": 4, "ecosystem": 5, "data_coverage": 5, "feature_breadth": 5 }
+        },
+        {
+          "slug": "mapbox",
+          "name": "Mapbox",
+          "description": "Developer-first mapping platform known for customizable vector maps, navigation, and rich geospatial SDKs.",
+          "websiteUrl": "https://www.mapbox.com",
+          "scores": { "cost": 3, "dx": 5, "ecosystem": 5, "data_coverage": 4, "feature_breadth": 5 },
+          "tags": ["pricing:free-tier"]
+        },
+        {
+          "slug": "here-technologies",
+          "name": "HERE Technologies",
+          "description": "Enterprise location platform offering high-accuracy maps, routing, and fleet and logistics services.",
+          "websiteUrl": "https://www.here.com",
+          "scores": { "cost": 3, "dx": 3, "ecosystem": 4, "data_coverage": 5, "feature_breadth": 5 },
+          "tags": ["pricing:free-tier"]
+        },
+        {
+          "slug": "tomtom",
+          "name": "TomTom",
+          "description": "Location technology company providing maps, real-time traffic-aware routing, and navigation APIs.",
+          "websiteUrl": "https://developer.tomtom.com",
+          "scores": { "cost": 3, "dx": 4, "ecosystem": 3, "data_coverage": 4, "feature_breadth": 5 },
+          "tags": ["pricing:free-tier"]
+        },
+        {
+          "slug": "azure-maps",
+          "name": "Azure Maps",
+          "description": "Microsoft's geospatial service for maps, search, routing, and weather integrated into the Azure ecosystem.",
+          "websiteUrl": "https://azure.microsoft.com/en-us/products/azure-maps",
+          "scores": { "cost": 3, "dx": 3, "ecosystem": 4, "data_coverage": 4, "feature_breadth": 4 },
+          "tags": ["pricing:free-tier"]
+        },
+        {
+          "slug": "esri-arcgis",
+          "name": "Esri ArcGIS",
+          "description": "Industry-standard GIS platform with location services, spatial analytics, and basemaps for professional mapping.",
+          "websiteUrl": "https://developers.arcgis.com",
+          "scores": { "cost": 2, "dx": 3, "ecosystem": 4, "data_coverage": 5, "feature_breadth": 5 },
+          "tags": ["pricing:free-tier"]
+        },
+        {
+          "slug": "maptiler",
+          "name": "MapTiler",
+          "description": "Mapping platform offering customizable vector tiles, a visual style editor, and geocoding at competitive prices.",
+          "websiteUrl": "https://www.maptiler.com",
+          "scores": { "cost": 4, "dx": 4, "ecosystem": 3, "data_coverage": 4, "feature_breadth": 3 },
+          "tags": ["pricing:free-tier", "self-hostable:yes"]
+        },
+        {
+          "slug": "stadia-maps",
+          "name": "Stadia Maps",
+          "description": "Privacy-focused mapping API serving open-data map tiles, geocoding, and routing built on OpenStreetMap.",
+          "websiteUrl": "https://stadiamaps.com",
+          "scores": { "cost": 4, "dx": 4, "ecosystem": 2, "data_coverage": 3, "feature_breadth": 3 },
+          "tags": ["pricing:free-tier"]
+        },
+        {
+          "slug": "protomaps",
+          "name": "Protomaps",
+          "description": "Open-source mapping stack that serves an entire basemap from a single static file on cheap object storage.",
+          "websiteUrl": "https://protomaps.com",
+          "scores": { "cost": 5, "dx": 3, "ecosystem": 2, "data_coverage": 3, "feature_breadth": 2 },
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
+        },
+        {
+          "slug": "radar-io",
+          "name": "Radar",
+          "description": "Location platform for geofencing, trip tracking, and address autocomplete built on OpenStreetMap data.",
+          "websiteUrl": "https://radar.com",
+          "scores": { "cost": 4, "dx": 5, "ecosystem": 3, "data_coverage": 3, "feature_breadth": 4 },
+          "tags": ["pricing:free-tier"]
+        },
+        {
+          "slug": "geoapify",
+          "name": "Geoapify",
+          "description": "Location API service for geocoding, routing, maps, and places with a generous free tier.",
+          "websiteUrl": "https://www.geoapify.com",
+          "scores": { "cost": 5, "dx": 4, "ecosystem": 2, "data_coverage": 3, "feature_breadth": 4 },
+          "tags": ["pricing:free-tier"]
+        },
+        {
+          "slug": "locationiq",
+          "name": "LocationIQ",
+          "description": "Affordable geocoding, reverse geocoding, autocomplete, and routing API built on open geodata.",
+          "websiteUrl": "https://locationiq.com",
+          "scores": { "cost": 5, "dx": 4, "ecosystem": 2, "data_coverage": 3, "feature_breadth": 3 },
+          "tags": ["pricing:free-tier"]
+        },
+        {
+          "slug": "geocodio",
+          "name": "Geocodio",
+          "description": "US and Canada-focused bulk geocoding API with data appends like congressional districts and timezones.",
+          "websiteUrl": "https://www.geocod.io",
+          "scores": { "cost": 4, "dx": 4, "ecosystem": 2, "data_coverage": 2, "feature_breadth": 2 },
+          "tags": ["pricing:free-tier"]
+        },
+        {
+          "slug": "ipinfo",
+          "name": "IPinfo",
+          "description": "IP address geolocation API providing location, ASN, carrier, and privacy-detection data.",
+          "websiteUrl": "https://ipinfo.io",
+          "scores": { "cost": 4, "dx": 5, "ecosystem": 3, "data_coverage": 4, "feature_breadth": 2 },
+          "tags": ["pricing:free-tier"]
+        },
+        {
+          "slug": "maxmind",
+          "name": "MaxMind GeoIP",
+          "description": "Long-running IP intelligence provider offering GeoIP2 geolocation databases and a lookup web service.",
+          "websiteUrl": "https://www.maxmind.com",
+          "scores": { "cost": 4, "dx": 2, "ecosystem": 4, "data_coverage": 4, "feature_breadth": 2 },
+          "tags": ["pricing:free-tier", "self-hostable:yes"]
+        },
+        {
+          "slug": "ipgeolocation",
+          "name": "ipgeolocation.io",
+          "description": "IP geolocation, timezone, and astronomy API with a broad free tier for lightweight lookups.",
+          "websiteUrl": "https://ipgeolocation.io",
+          "scores": { "cost": 5, "dx": 3, "ecosystem": 2, "data_coverage": 3, "feature_breadth": 2 },
+          "tags": ["pricing:free-tier"]
+        }
+      ]
+    },
+    {
+      "slug": "video-infrastructure",
+      "name": "Video infrastructure",
+      "description": "Video streaming, encoding, and realtime-video infrastructure for apps and platforms.",
+      "heroCopy": "Latency, scalability, cost, DX, and ecosystem separate buttery playback from buffering.",
+      "aspects": [
+        { "key": "cost", "label": "Cost", "description": "Pricing relative to delivered minutes, storage, and participants." },
+        { "key": "dx", "label": "Developer experience", "description": "SDKs, APIs, dashboards, and integration ergonomics." },
+        { "key": "ecosystem", "label": "Ecosystem", "description": "Client SDKs, platform coverage, and third-party integrations." },
+        { "key": "latency", "label": "Latency", "description": "Glass-to-glass delay for live and realtime video." },
+        { "key": "scalability", "label": "Scalability", "description": "Headroom for concurrent viewers, rooms, and global delivery." }
+      ],
+      "items": [
+        {
+          "slug": "mux",
+          "name": "Mux",
+          "description": "Developer-focused video API for on-demand and live streaming with built-in playback performance analytics.",
+          "websiteUrl": "https://www.mux.com",
+          "scores": { "cost": 3, "dx": 5, "ecosystem": 4, "latency": 4, "scalability": 5 },
+          "tags": ["pricing:free-tier"]
+        },
+        {
+          "slug": "cloudflare-stream",
+          "name": "Cloudflare Stream",
+          "description": "Cloudflare's video service for storing, encoding, and delivering on-demand and live video over its global network.",
+          "websiteUrl": "https://www.cloudflare.com/products/cloudflare-stream",
+          "scores": { "cost": 4, "dx": 4, "ecosystem": 3, "latency": 4, "scalability": 5 },
+          "tags": ["runs-on:cloudflare", "deploy:edge", "pricing:free-tier"]
+        },
+        {
+          "slug": "api-video",
+          "name": "api.video",
+          "description": "API-first platform for uploading, encoding, hosting, and live-streaming video with delivery analytics.",
+          "websiteUrl": "https://api.video",
+          "scores": { "cost": 3, "dx": 5, "ecosystem": 3, "latency": 4, "scalability": 4 },
+          "tags": ["pricing:free-tier"]
+        },
+        {
+          "slug": "bitmovin",
+          "name": "Bitmovin",
+          "description": "Enterprise video encoding, player, and analytics suite tuned for high-quality adaptive streaming.",
+          "websiteUrl": "https://bitmovin.com",
+          "scores": { "cost": 2, "dx": 4, "ecosystem": 4, "latency": 2, "scalability": 5 },
+          "tags": ["pricing:free-tier"]
+        },
+        {
+          "slug": "wowza",
+          "name": "Wowza",
+          "description": "Veteran streaming provider offering cloud APIs and on-premise media server software for live and VOD.",
+          "websiteUrl": "https://www.wowza.com",
+          "scores": { "cost": 3, "dx": 3, "ecosystem": 3, "latency": 4, "scalability": 4 },
+          "tags": ["self-hostable:yes"]
+        },
+        {
+          "slug": "livepeer",
+          "name": "Livepeer",
+          "description": "Decentralized video transcoding and streaming network offering low-cost compute for live and on-demand video.",
+          "websiteUrl": "https://livepeer.org",
+          "scores": { "cost": 5, "dx": 3, "ecosystem": 2, "latency": 3, "scalability": 4 },
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
+        },
+        {
+          "slug": "fastpix",
+          "name": "FastPix",
+          "description": "Cloud-native, API-first video platform to ingest, encode, stream, and analyze on-demand and live video.",
+          "websiteUrl": "https://www.fastpix.io",
+          "scores": { "cost": 4, "dx": 4, "ecosystem": 2, "latency": 4, "scalability": 4 },
+          "tags": ["pricing:free-tier"]
+        },
+        {
+          "slug": "livekit-cloud",
+          "name": "LiveKit Cloud",
+          "description": "Managed hosting for the open-source LiveKit WebRTC stack powering realtime audio, video, and AI agents.",
+          "websiteUrl": "https://livekit.io",
+          "scores": { "cost": 4, "dx": 5, "ecosystem": 4, "latency": 5, "scalability": 5 },
+          "tags": ["self-hostable:yes", "pricing:free-tier", "realtime:yes"]
+        },
+        {
+          "slug": "daily",
+          "name": "Daily",
+          "description": "WebRTC platform offering prebuilt and customizable APIs for embedding realtime video and audio calls.",
+          "websiteUrl": "https://www.daily.co",
+          "scores": { "cost": 4, "dx": 5, "ecosystem": 3, "latency": 5, "scalability": 4 },
+          "tags": ["pricing:free-tier", "realtime:yes"]
+        },
+        {
+          "slug": "agora",
+          "name": "Agora",
+          "description": "Realtime engagement platform with global low-latency SDKs for voice, video, and interactive live streaming.",
+          "websiteUrl": "https://www.agora.io",
+          "scores": { "cost": 3, "dx": 4, "ecosystem": 5, "latency": 5, "scalability": 5 },
+          "tags": ["pricing:free-tier", "realtime:yes"]
+        },
+        {
+          "slug": "100ms",
+          "name": "100ms",
+          "description": "Live video infrastructure with prebuilt UI components and SDKs for video conferencing and interactive streaming.",
+          "websiteUrl": "https://www.100ms.live",
+          "scores": { "cost": 4, "dx": 5, "ecosystem": 3, "latency": 5, "scalability": 4 },
+          "tags": ["pricing:free-tier", "realtime:yes"]
+        },
+        {
+          "slug": "vonage-video",
+          "name": "Vonage Video API",
+          "description": "WebRTC video API (formerly OpenTok/TokBox) for embedding multiparty realtime video into applications.",
+          "websiteUrl": "https://www.vonage.com/communications-apis/video",
+          "scores": { "cost": 3, "dx": 4, "ecosystem": 4, "latency": 4, "scalability": 4 },
+          "tags": ["pricing:free-tier", "realtime:yes"]
+        },
+        {
+          "slug": "zego",
+          "name": "ZEGOCLOUD",
+          "description": "Realtime voice, video, and live-streaming SDK provider with broad platform coverage and prebuilt UI kits.",
+          "websiteUrl": "https://www.zegocloud.com",
+          "scores": { "cost": 4, "dx": 4, "ecosystem": 4, "latency": 5, "scalability": 4 },
+          "tags": ["pricing:free-tier", "realtime:yes"]
+        },
+        {
+          "slug": "dyte",
+          "name": "Dyte",
+          "description": "Realtime video and voice SDK offering customizable prebuilt UI for embedding meetings and live experiences.",
+          "websiteUrl": "https://dyte.io",
+          "scores": { "cost": 4, "dx": 5, "ecosystem": 2, "latency": 5, "scalability": 3 },
+          "tags": ["pricing:free-tier", "realtime:yes"]
+        },
+        {
+          "slug": "whereby",
+          "name": "Whereby Embedded",
+          "description": "Embeddable WebRTC video meetings API that drops realtime video into apps with minimal code.",
+          "websiteUrl": "https://whereby.com/information/embedded",
+          "scores": { "cost": 3, "dx": 5, "ecosystem": 2, "latency": 4, "scalability": 2 },
+          "tags": ["pricing:free-tier", "realtime:yes"]
+        },
+        {
+          "slug": "mediasoup",
+          "name": "mediasoup",
+          "description": "Open-source WebRTC SFU library for Node.js used to build custom low-latency realtime video servers.",
+          "websiteUrl": "https://mediasoup.org",
+          "scores": { "cost": 5, "dx": 2, "ecosystem": 3, "latency": 5, "scalability": 4 },
+          "tags": ["self-hostable:yes", "pricing:free-tier", "realtime:yes", "language:typescript"]
+        }
+      ]
+    },
+    {
+      "slug": "ai-inference-platforms",
+      "name": "AI inference platforms",
+      "description": "Model hosting, serverless-GPU, and inference platforms for running AI workloads.",
+      "heroCopy": "Cold start, model catalog, cost, DX, and ecosystem decide whether deploying a model is a command or a project.",
+      "aspects": [
+        { "key": "cost", "label": "Cost", "description": "GPU and per-call pricing relative to performance." },
+        { "key": "dx", "label": "Developer experience", "description": "SDKs, deploy workflow, local iteration, and docs." },
+        { "key": "ecosystem", "label": "Ecosystem", "description": "Integrations, framework support, and community examples." },
+        { "key": "cold_start", "label": "Cold start", "description": "How fast a scaled-to-zero model serves its first request." },
+        { "key": "model_catalog", "label": "Model catalog", "description": "Breadth of ready-to-run hosted models and fine-tuning options." }
+      ],
+      "items": [
+        {
+          "slug": "replicate-ai",
+          "name": "Replicate",
+          "description": "Platform for running and deploying open-source machine-learning models via API with a large community model library.",
+          "websiteUrl": "https://replicate.com",
+          "scores": { "cost": 3, "dx": 5, "ecosystem": 4, "cold_start": 3, "model_catalog": 5 },
+          "tags": ["deploy:serverless", "pricing:free-tier", "language:python"]
+        },
+        {
+          "slug": "modal-labs",
+          "name": "Modal",
+          "description": "Serverless cloud platform that runs Python functions and AI workloads on GPUs with per-second billing.",
+          "websiteUrl": "https://modal.com",
+          "scores": { "cost": 4, "dx": 5, "ecosystem": 4, "cold_start": 5, "model_catalog": 3 },
+          "tags": ["deploy:serverless", "pricing:free-tier", "language:python"]
+        },
+        {
+          "slug": "baseten-ai",
+          "name": "Baseten",
+          "description": "Inference platform for deploying and autoscaling ML models in production, built around the open-source Truss tool.",
+          "websiteUrl": "https://www.baseten.co",
+          "scores": { "cost": 3, "dx": 5, "ecosystem": 3, "cold_start": 4, "model_catalog": 4 },
+          "tags": ["deploy:serverless", "language:python"]
+        },
+        {
+          "slug": "runpod-io",
+          "name": "RunPod",
+          "description": "Cloud GPU platform offering on-demand pods and serverless endpoints with fast cold starts for AI inference.",
+          "websiteUrl": "https://www.runpod.io",
+          "scores": { "cost": 5, "dx": 4, "ecosystem": 3, "cold_start": 5, "model_catalog": 3 },
+          "tags": ["deploy:serverless", "pricing:free-tier"]
+        },
+        {
+          "slug": "together-inference",
+          "name": "Together AI Inference",
+          "description": "Inference cloud serving 100-plus open-weight models behind an OpenAI-compatible API with dedicated endpoints and fine-tuning.",
+          "websiteUrl": "https://www.together.ai",
+          "scores": { "cost": 4, "dx": 4, "ecosystem": 4, "cold_start": 4, "model_catalog": 5 },
+          "tags": ["deploy:serverless", "pricing:free-tier"]
+        },
+        {
+          "slug": "fireworks-inference",
+          "name": "Fireworks AI Inference",
+          "description": "Fast inference platform for open and proprietary models with an OpenAI-compatible API, fine-tuning, and FireAttention serving.",
+          "websiteUrl": "https://fireworks.ai",
+          "scores": { "cost": 4, "dx": 4, "ecosystem": 4, "cold_start": 4, "model_catalog": 5 },
+          "tags": ["deploy:serverless", "pricing:free-tier"]
+        },
+        {
+          "slug": "fal-ai",
+          "name": "fal",
+          "description": "Generative-media inference platform serving fast hosted image, video, and audio models on its own GPU runtime.",
+          "websiteUrl": "https://fal.ai",
+          "scores": { "cost": 4, "dx": 5, "ecosystem": 3, "cold_start": 5, "model_catalog": 4 },
+          "tags": ["deploy:serverless", "pricing:free-tier"]
+        },
+        {
+          "slug": "beam-cloud",
+          "name": "Beam",
+          "description": "Serverless GPU platform for running Python AI workloads and functions with fast cold starts and per-second billing.",
+          "websiteUrl": "https://www.beam.cloud",
+          "scores": { "cost": 4, "dx": 5, "ecosystem": 2, "cold_start": 5, "model_catalog": 2 },
+          "tags": ["deploy:serverless", "pricing:free-tier", "language:python"]
+        },
+        {
+          "slug": "cerebrium-ai",
+          "name": "Cerebrium",
+          "description": "Serverless AI infrastructure platform for deploying ML models and apps on GPUs with minimal configuration.",
+          "websiteUrl": "https://www.cerebrium.ai",
+          "scores": { "cost": 4, "dx": 4, "ecosystem": 2, "cold_start": 4, "model_catalog": 2 },
+          "tags": ["deploy:serverless", "pricing:free-tier", "language:python"]
+        },
+        {
+          "slug": "huggingface-inference",
+          "name": "Hugging Face Inference Endpoints",
+          "description": "Managed service for deploying models from the Hugging Face Hub onto dedicated autoscaling infrastructure.",
+          "websiteUrl": "https://huggingface.co/inference-endpoints",
+          "scores": { "cost": 3, "dx": 4, "ecosystem": 5, "cold_start": 3, "model_catalog": 5 },
+          "tags": ["deploy:serverless", "pricing:free-tier", "language:python"]
+        },
+        {
+          "slug": "anyscale",
+          "name": "Anyscale",
+          "description": "Ray-based platform from the creators of Ray for scaling AI training and inference workloads in production.",
+          "websiteUrl": "https://www.anyscale.com",
+          "scores": { "cost": 2, "dx": 2, "ecosystem": 4, "cold_start": 2, "model_catalog": 3 },
+          "tags": ["deploy:serverless", "language:python"]
+        },
+        {
+          "slug": "deepinfra",
+          "name": "DeepInfra",
+          "description": "Low-cost inference API serving popular open-weight models on a pay-per-token basis with simple deployment.",
+          "websiteUrl": "https://deepinfra.com",
+          "scores": { "cost": 5, "dx": 4, "ecosystem": 3, "cold_start": 4, "model_catalog": 4 },
+          "tags": ["deploy:serverless", "pricing:free-tier"]
+        },
+        {
+          "slug": "novita-ai",
+          "name": "Novita AI",
+          "description": "GPU cloud and model-inference API offering serverless endpoints and on-demand instances for open models.",
+          "websiteUrl": "https://novita.ai",
+          "scores": { "cost": 5, "dx": 4, "ecosystem": 2, "cold_start": 4, "model_catalog": 4 },
+          "tags": ["deploy:serverless", "pricing:free-tier"]
+        },
+        {
+          "slug": "inferless",
+          "name": "Inferless",
+          "description": "Serverless GPU inference platform focused on fast cold starts and autoscaling for custom ML models.",
+          "websiteUrl": "https://www.inferless.com",
+          "scores": { "cost": 4, "dx": 4, "ecosystem": 2, "cold_start": 5, "model_catalog": 2 },
+          "tags": ["deploy:serverless", "pricing:free-tier"]
+        },
+        {
+          "slug": "lambda-inference",
+          "name": "Lambda Inference",
+          "description": "Inference API from GPU cloud provider Lambda serving open-weight models at low per-token pricing.",
+          "websiteUrl": "https://lambda.ai/inference",
+          "scores": { "cost": 5, "dx": 3, "ecosystem": 3, "cold_start": 3, "model_catalog": 3 },
+          "tags": ["deploy:serverless", "pricing:free-tier"]
+        },
+        {
+          "slug": "sieve",
+          "name": "Sieve",
+          "description": "Inference platform for building and deploying AI video, audio, and multimodal pipelines via composable APIs.",
+          "websiteUrl": "https://www.sievedata.com",
+          "scores": { "cost": 3, "dx": 4, "ecosystem": 2, "cold_start": 4, "model_catalog": 3 },
+          "tags": ["deploy:serverless", "pricing:free-tier", "language:python"]
+        }
+      ]
+    }
+  ]
+}

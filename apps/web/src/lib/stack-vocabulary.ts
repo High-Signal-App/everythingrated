@@ -48,7 +48,7 @@ export type ConstraintSignal = {
 export const DIRECTORY_SIGNALS: DirectorySignal[] = [
   { slug: "ai-dev-tools", keywords: ["ai editor", "copilot", "coding assistant", "ai coding", "code completion", "pair programmer", "ai dev tool", "code assistant"] },
   { slug: "databases", keywords: ["database", "databases", "db", "sql", "postgres", "postgresql", "mysql", "sqlite", "data store", "datastore", "relational", "nosql"] },
-  { slug: "hosting", keywords: ["hosting", "host", "deploy", "deployment", "paas", "platform", "vercel", "netlify", "render", "fly.io"] },
+  { slug: "hosting", keywords: ["hosting", "host", "deploy", "deployment", "paas", "vercel", "netlify", "fly.io"] },
   { slug: "vector-databases", keywords: ["vector", "vector database", "vector db", "embeddings", "semantic search", "rag", "pinecone", "similarity search"] },
   { slug: "observability", keywords: ["observability", "monitoring", "logging", "logs", "tracing", "apm", "metrics", "telemetry", "error tracking"] },
   { slug: "auth-platforms", keywords: ["auth", "authentication", "login", "sign in", "signin", "oauth", "sso", "identity", "users", "accounts"] },
@@ -87,7 +87,16 @@ export const DIRECTORY_SIGNALS: DirectorySignal[] = [
   { slug: "notifications", keywords: ["notifications", "push notification", "push notifications", "sms", "in-app notification", "notification service", "notification infrastructure"] },
   { slug: "data-warehouses", keywords: ["data warehouse", "data warehouses", "warehouse", "olap", "analytical database", "columnar database"] },
   { slug: "uptime-monitoring", keywords: ["uptime", "uptime monitoring", "status page", "status pages", "synthetic monitoring", "health check", "heartbeat monitoring"] },
-  { slug: "workflow-automation", keywords: ["workflow automation", "automation", "ipaas", "zapier", "no code automation", "no-code automation", "workflow engine", "orchestration platform"] },
+  { slug: "workflow-automation", keywords: ["workflow automation", "workflow orchestration", "automation", "ipaas", "zapier", "no code automation", "workflow engine", "orchestration platform"] },
+  // Newest categories (second expansion wave).
+  { slug: "container-orchestration", keywords: ["container orchestration", "kubernetes", "k8s", "containers", "docker", "nomad", "container platform", "managed kubernetes"] },
+  { slug: "infrastructure-as-code", keywords: ["infrastructure as code", "iac", "terraform", "opentofu", "pulumi", "provisioning", "cloud provisioning"] },
+  { slug: "api-clients-testing", keywords: ["api client", "api testing", "api test", "postman", "insomnia", "rest client", "api request", "http client"] },
+  { slug: "internal-tools", keywords: ["internal tool", "internal tools", "admin panel", "admin dashboard", "internal app", "crud app", "back office", "retool"] },
+  { slug: "documentation-platforms", keywords: ["documentation", "documentation platform", "docs platform", "dev docs", "api docs", "docs site"] },
+  { slug: "maps-geolocation", keywords: ["maps", "map", "geolocation", "geocoding", "geospatial", "location api", "ip geolocation"] },
+  { slug: "video-infrastructure", keywords: ["video", "video streaming", "video infrastructure", "live streaming", "video calling", "webrtc", "video api"] },
+  { slug: "ai-inference-platforms", keywords: ["ai inference", "model hosting", "model inference", "gpu inference", "serverless gpu", "inference platform", "run models", "model serving"] },
 ];
 
 export const ASPECT_SIGNALS: AspectSignal[] = [

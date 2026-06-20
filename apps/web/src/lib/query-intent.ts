@@ -19,19 +19,25 @@ import {
 /** Weight applied to an aspect group the user emphasised (1 = neutral). */
 export const EMPHASIS_WEIGHT = 2.5;
 
-function normalize(text: string): string {
-  return ` ${text.toLowerCase().replace(/[^a-z0-9.+/#-]+/g, " ").replace(/\s+/g, " ").trim()} `;
+/**
+ * Lowercase, collapse all punctuation (incl. hyphens) to spaces, space-pad.
+ * Hyphens → spaces so "meta-framework"/"self-hosted"/"type-safe" match their
+ * space-form keywords. Keeps . + / # for tokens like "fly.io", "ci/cd", "c#".
+ */
+function norm(s: string): string {
+  return ` ${s.toLowerCase().replace(/[^a-z0-9.+/#]+/g, " ").replace(/\s+/g, " ").trim()} `;
 }
 
-/** True if `keyword` appears in `normalized` (already space-padded, lowercased). */
+function normalize(text: string): string {
+  return norm(text);
+}
+
+/** True if `keyword` (single or multi-word) appears on token boundaries. */
 function matches(normalized: string, keyword: string): boolean {
-  const k = keyword.toLowerCase().trim();
-  if (k.includes(" ")) {
-    // Phrase: plain substring is fine, the text is normalised.
-    return normalized.includes(` ${k} `) || normalized.includes(`${k} `) || normalized.includes(` ${k}`);
-  }
-  // Single token: require word boundaries to avoid "go" ⊂ "google".
-  return normalized.includes(` ${k} `);
+  const k = norm(keyword).trim();
+  // normalized is space-padded, so ` k ` enforces boundaries for both single
+  // tokens (avoids "go" ⊂ "google") and phrases ("self hosted").
+  return k.length > 0 && normalized.includes(` ${k} `);
 }
 
 function tagKey(t: ConstraintTag): string {
