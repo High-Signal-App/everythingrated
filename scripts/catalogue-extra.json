@@ -1,5 +1,43 @@
 {
   "deepen": {
+    "realtime-collaboration": [
+      {
+        "slug": "supabase-realtime",
+        "name": "Supabase Realtime",
+        "description": "Managed realtime engine for broadcast, presence, and Postgres change subscriptions over WebSockets.",
+        "websiteUrl": "https://supabase.com/realtime",
+        "scores": {
+          "latency": 4,
+          "presence": 4,
+          "cost": 5,
+          "dx": 4,
+          "ecosystem": 4
+        },
+        "tags": [
+          "realtime:yes",
+          "self-hostable:yes",
+          "pricing:free-tier"
+        ]
+      }
+    ],
+    "notifications": [
+      {
+        "slug": "courier",
+        "name": "Courier",
+        "description": "Multi-channel notification API orchestrating email, SMS, push, Slack, and in-app from one integration.",
+        "websiteUrl": "https://www.courier.com",
+        "scores": {
+          "channel_coverage": 5,
+          "deliverability": 4,
+          "cost": 3,
+          "dx": 4,
+          "ecosystem": 4
+        },
+        "tags": [
+          "pricing:free-tier"
+        ]
+      }
+    ],
     "ai-dev-tools": [
       {
         "slug": "replit-agent",
@@ -1385,23 +1423,6 @@
         },
         "tags": [
           "pricing:free-tier"
-        ]
-      },
-      {
-        "slug": "courier",
-        "name": "Courier",
-        "description": "Notification API that orchestrates email plus SMS, push, and chat through one interface.",
-        "websiteUrl": "https://www.courier.com",
-        "scores": {
-          "deliverability": 4,
-          "dx": 5,
-          "cost": 3,
-          "templating": 5,
-          "ecosystem": 5
-        },
-        "tags": [
-          "pricing:free-tier",
-          "language:typescript"
         ]
       },
       {

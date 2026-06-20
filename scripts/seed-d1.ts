@@ -2671,9 +2671,37 @@ function applyScoreOverrides() {
   if (n) console.log(`[seed] applied ${n} score overrides`);
 }
 
+// Reproducible removals (scripts/catalogue-removals.json): a list of
+// { "slug": "...", "directory": "...", "reason": "..." }. Dead/discontinued or
+// mis-listed items. Filtered out of DIRECTORIES so they're never re-seeded, and
+// returned as DELETE statements to purge already-seeded rows on existing DBs.
+function applyRemovals(): string[] {
+  const path = resolve(__root, "scripts/catalogue-removals.json");
+  if (!existsSync(path)) return [];
+  const raw = readFileSync(path, "utf8").trim();
+  if (!raw) return [];
+  const removals: Array<{ slug: string; directory: string }> = JSON.parse(raw);
+  const removeSet = new Set(removals.map((r) => `${r.directory}::${r.slug}`));
+  let dropped = 0;
+  for (const dir of DIRECTORIES) {
+    const before = dir.items.length;
+    dir.items = dir.items.filter((it) => !removeSet.has(`${dir.slug}::${it.slug}`));
+    dropped += before - dir.items.length;
+  }
+  const deletes = removals.map(
+    (r) =>
+      `DELETE FROM items WHERE slug = ${esc(r.slug)} AND directory_id = (SELECT id FROM directories WHERE slug = ${esc(r.directory)});`,
+  );
+  if (dropped || deletes.length) {
+    console.log(`[seed] removals: dropped ${dropped} from catalogue, ${deletes.length} DELETEs`);
+  }
+  return deletes;
+}
+
 function buildSql(): string {
   mergeExtraCatalogue();
   applyScoreOverrides();
+  const removalDeletes = applyRemovals();
 
   const out: string[] = [];
   const now = Date.now();
@@ -2723,6 +2751,9 @@ function buildSql(): string {
       }
     }
   });
+
+  // Purge removed (dead/mis-listed) items last, after all upserts.
+  out.push(...removalDeletes);
 
   return out.join("\n") + "\n";
 }

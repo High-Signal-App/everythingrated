@@ -1,0 +1,97 @@
+[
+ {
+  "slug": "codeium",
+  "directory": "ai-dev-tools",
+  "reason": "dead: renamed to Windsurf then acquired/folded into Devin"
+ },
+ {
+  "slug": "fireworks-ai",
+  "directory": "llm-gateways",
+  "reason": "duplicate of fireworks-inference (ai-inference-platforms); not a gateway"
+ },
+ {
+  "slug": "together-ai",
+  "directory": "llm-gateways",
+  "reason": "duplicate of together-inference (ai-inference-platforms); not a gateway"
+ },
+ {
+  "slug": "fal",
+  "directory": "image-generation",
+  "reason": "inference platform not a model; duplicate of fal-ai"
+ },
+ {
+  "slug": "oracle-dyn",
+  "directory": "dns",
+  "reason": "dead: Oracle retired Dyn Managed DNS 2023-05-31"
+ },
+ {
+  "slug": "lucia",
+  "directory": "auth-platforms",
+  "reason": "deprecated: now a learning resource, not a maintained library"
+ },
+ {
+  "slug": "june",
+  "directory": "analytics",
+  "reason": "dead: shut down 2025-08-08 (acqui-hired by Amplitude)"
+ },
+ {
+  "slug": "split",
+  "directory": "feature-flags",
+  "reason": "acquired by Harness; no standalone product (harness-feature-flags listed)"
+ },
+ {
+  "slug": "zod-mini",
+  "directory": "validation-libraries",
+  "reason": "not separate: the zod/mini import path of zod"
+ },
+ {
+  "slug": "oxc",
+  "directory": "linters-formatters",
+  "reason": "redundant umbrella; oxlint already listed"
+ },
+ {
+  "slug": "fauna",
+  "directory": "databases",
+  "reason": "dead: FaunaDB shut down 2025-05-30"
+ },
+ {
+  "slug": "recoil",
+  "directory": "state-management",
+  "reason": "abandoned: repo archived 2025-01-01, React 19 incompatible"
+ },
+ {
+  "slug": "rtk-query",
+  "directory": "state-management",
+  "reason": "not separate: ships inside redux-toolkit"
+ },
+ {
+  "slug": "docusaurus",
+  "directory": "meta-frameworks",
+  "reason": "duplicate of docusaurus-platform (documentation-platforms)"
+ },
+ {
+  "slug": "stackpath",
+  "directory": "cdn",
+  "reason": "dead: CDN shut down 2023, company liquidated 2024"
+ },
+ {
+  "slug": "slab",
+  "directory": "documentation-platforms",
+  "reason": "internal wiki, not a developer-docs platform"
+ },
+ {
+  "slug": "typesense-cloud",
+  "directory": "search",
+  "reason": "within-directory duplicate of typesense-search"
+ },
+ {
+  "slug": "courier",
+  "directory": "email-apis",
+  "reason": "moved to notifications (multi-channel notification infra)"
+ },
+ {
+  "slug": "supabase-realtime",
+  "directory": "databases",
+  "reason": "moved to realtime-collaboration (pub/sub presence, not a datastore)"
+ }
+]
