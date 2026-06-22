@@ -138,6 +138,10 @@ export const ratings = sqliteTable(
     byAspectTime: index("ratings_item_aspect_time_idx").on(t.itemId, t.aspectId, t.createdAt),
     // Find a visitor's current (non-superseded) row for "your score".
     byVisitor: index("ratings_visitor_idx").on(t.visitorId, t.itemId, t.aspectId),
+    // Partial-style index for the "current view" aggregations that filter
+    // supersededAt IS NULL scoped to (item, aspect). Backs the WHERE
+    // inArray(itemId, ...) + isNull(supersededAt) queries in ratings.ts.
+    superseded: index("ratings_superseded_idx").on(t.itemId, t.aspectId, t.supersededAt),
   }),
 );
 
@@ -202,6 +206,8 @@ export const itemSubmissions = sqliteTable(
       t.status,
       t.createdAt,
     ),
+    // Lookups of submissions by directory (moderation queue filtered per dir).
+    byDirectory: index("item_submissions_directory_idx").on(t.directoryId),
   }),
 );
 

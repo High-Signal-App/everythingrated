@@ -8,7 +8,7 @@ import {
   itemVersions,
   ratings,
 } from "@everythingrated/db";
-import { and, desc, eq, isNull, lte } from "drizzle-orm";
+import { and, desc, eq, inArray, isNull, lte } from "drizzle-orm";
 
 import { getDb } from "./db";
 
@@ -49,14 +49,31 @@ export async function topItemsByAspectKey(
   raters: number;
 }>> {
   const db = await getDb();
-  const [matchingAspects, allItems, allDirs, allRatings] = await Promise.all([
+  const [matchingAspects, allItems, allDirs] = await Promise.all([
     db.select().from(aspects).where(eq(aspects.key, aspectKey)),
     db.select().from(items),
     db.select().from(directories),
-    db.select().from(ratings),
   ]);
 
   if (matchingAspects.length === 0) return [];
+  if (allItems.length === 0) return [];
+
+  // Filter at the DB level instead of loading the entire ratings table and
+  // reducing in JS. Restrict to the items we actually have + current
+  // (non-superseded) rows only.
+  const allRatings = await db
+    .select()
+    .from(ratings)
+    .where(
+      and(
+        inArray(
+          ratings.itemId,
+          allItems.map((i) => i.id),
+        ),
+        isNull(ratings.supersededAt),
+      ),
+    );
+
   const itemById = new Map(allItems.map((i) => [i.id, i]));
   const dirById = new Map(allDirs.map((d) => [d.id, d]));
 
@@ -74,7 +91,7 @@ export async function topItemsByAspectKey(
     const dirItems = allItems.filter((i) => i.directoryId === aspect.directoryId);
     for (const item of dirItems) {
       const rs = allRatings.filter(
-        (r) => r.itemId === item.id && r.aspectId === aspect.id && r.supersededAt == null,
+        (r) => r.itemId === item.id && r.aspectId === aspect.id,
       );
       if (rs.length === 0) continue;
       const visitors = new Set(rs.map((r) => r.visitorId));
@@ -210,18 +227,27 @@ export async function listItemsWithAggregates(
   visitorId: string | null,
 ): Promise<ItemWithAggregate[]> {
   const db = await getDb();
-  // The ratings pull is independent of items/aspects (it scans the whole table
-  // and is filtered to itemIds in JS below), so fetch all three concurrently
-  // instead of waiting for items/aspects before the ratings round-trip.
-  const [dirItems, dirAspects, allRatingsRows] = await Promise.all([
+  // Fetch items + aspects first; the ratings pull is then scoped to this
+  // directory's item ids + current (non-superseded) rows at the DB level
+  // instead of loading the whole ratings table and filtering in JS.
+  const [dirItems, dirAspects] = await Promise.all([
     db.select().from(items).where(eq(items.directoryId, directoryId)).orderBy(items.name),
     db.select().from(aspects).where(eq(aspects.directoryId, directoryId)).orderBy(aspects.sortOrder),
-    db.select().from(ratings),
   ]);
   if (dirItems.length === 0) return [];
-  const itemIds = new Set(dirItems.map((i) => i.id));
-  const allRatings = allRatingsRows
-    .filter((r) => itemIds.has(r.itemId) && r.supersededAt == null); // current view only (0001)
+
+  const allRatings = await db
+    .select()
+    .from(ratings)
+    .where(
+      and(
+        inArray(
+          ratings.itemId,
+          dirItems.map((i) => i.id),
+        ),
+        isNull(ratings.supersededAt),
+      ),
+    );
 
   return dirItems.map((item) => buildAggregate(item, dirAspects, allRatings, visitorId));
 }
@@ -249,16 +275,19 @@ export async function getItemAggregate(
 }
 
 /**
- * Count how many ratings the given visitor has already submitted. Used by the
+ * Whether the given visitor has submitted any ratings. Used by the
  * analytics layer to decide whether a rating is the visitor's first (and so
- * should also emit the `activated` event).
+ * should also emit the `activated` event). Returns 0/1 instead of a full
+ * count — only the "any vs none" distinction matters, so a LIMIT 1 probe
+ * avoids scanning/counting the visitor's entire rating history.
  */
 export async function countVisitorRatings(visitorId: string): Promise<number> {
   const db = await getDb();
   const rows = await db
     .select({ id: ratings.id })
     .from(ratings)
-    .where(eq(ratings.visitorId, visitorId));
+    .where(eq(ratings.visitorId, visitorId))
+    .limit(1);
   return rows.length;
 }
 
