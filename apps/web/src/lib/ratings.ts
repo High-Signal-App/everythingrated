@@ -210,13 +210,17 @@ export async function listItemsWithAggregates(
   visitorId: string | null,
 ): Promise<ItemWithAggregate[]> {
   const db = await getDb();
-  const [dirItems, dirAspects] = await Promise.all([
+  // The ratings pull is independent of items/aspects (it scans the whole table
+  // and is filtered to itemIds in JS below), so fetch all three concurrently
+  // instead of waiting for items/aspects before the ratings round-trip.
+  const [dirItems, dirAspects, allRatingsRows] = await Promise.all([
     db.select().from(items).where(eq(items.directoryId, directoryId)).orderBy(items.name),
     db.select().from(aspects).where(eq(aspects.directoryId, directoryId)).orderBy(aspects.sortOrder),
+    db.select().from(ratings),
   ]);
   if (dirItems.length === 0) return [];
   const itemIds = new Set(dirItems.map((i) => i.id));
-  const allRatings = (await db.select().from(ratings))
+  const allRatings = allRatingsRows
     .filter((r) => itemIds.has(r.itemId) && r.supersededAt == null); // current view only (0001)
 
   return dirItems.map((item) => buildAggregate(item, dirAspects, allRatings, visitorId));

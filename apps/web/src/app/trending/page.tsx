@@ -23,9 +23,19 @@ interface Row {
 export default async function TrendingPage() {
   const dirs = await listDirectories().catch(() => []);
 
+  // Each directory's aggregate pull is independent — fetch them concurrently
+  // instead of awaiting one directory before starting the next (was N serial
+  // round-trip groups; now one parallel batch).
+  const perDir = await Promise.all(
+    dirs.map((d) =>
+      listItemsWithAggregates(d.directory.id, null).catch(() => []),
+    ),
+  );
+
   const rows: Row[] = [];
-  for (const d of dirs) {
-    const items = await listItemsWithAggregates(d.directory.id, null).catch(() => []);
+  for (let idx = 0; idx < dirs.length; idx++) {
+    const d = dirs[idx];
+    const items = perDir[idx];
     for (const i of items) {
       if (i.totalRaters > 0) {
         rows.push({
