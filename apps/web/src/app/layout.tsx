@@ -6,6 +6,7 @@ import { SiteFooter } from "@/components/organisms/site-footer";
 import { SiteHeader } from "@/components/organisms/site-header";
 import { AnalyticsProvider } from "@/components/posthog-provider";
 import { SaaSMakerFeedback } from "@/components/saasmaker-feedback";
+import { VitalsReporter } from "@/components/VitalsReporter";
 
 export const metadata: Metadata = {
   metadataBase: new URL(
@@ -46,6 +47,7 @@ export default function RootLayout({
           <main className="flex-1">{children}</main>
           <SiteFooter />
           <SaaSMakerFeedback />
+          <VitalsReporter />
         </AnalyticsProvider>
         {/*
           Cloudflare Web Analytics — only injected when a real beacon token is
