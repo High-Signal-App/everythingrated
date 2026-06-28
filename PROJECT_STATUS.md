@@ -1,5 +1,5 @@
 # everythingrated — PROJECT STATUS
-Last updated: 2026-06-20
+Last updated: 2026-06-28
 
 ## Why / What
 
@@ -162,5 +162,4 @@ Last updated: 2026-06-20
 
 - README POC guidance still says avoid submissions — pilot exists for `ai-dev-tools` with token-gated moderation (doc drift).
 - Time-evolving ratings UI (sparklines, windows) not yet visible — aggregates behave as "latest view" only.
-- `pnpm lint` skipped in web package (Next 16 deprecation note).
-- No Playwright e2e in CI (script exists: `test:e2e` in web package).
+- No Playwright e2e in CI (script exists: `test:e2e` in web package; `apps/web/e2e/mobile.spec.ts` exists but not wired to CI).
