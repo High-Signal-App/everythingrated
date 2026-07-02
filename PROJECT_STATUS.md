@@ -1,5 +1,5 @@
 # everythingrated — PROJECT STATUS
-Last updated: 2026-06-28
+Last updated: 2026-07-02
 
 ## Why / What
 
@@ -46,6 +46,7 @@ Last updated: 2026-06-28
 
 ## Timeline
 
+- **2026-07-02** — Added global try/catch error handler to OpenNext worker (`apps/web/worker.mjs`).
 - **2026-06-13** — Item submission pilot shipped (plan 0004): `/d/ai-dev-tools/submit`, `item_submissions` D1 table, moderation approve/reject.
 - **2026-06-13** — Time-evolving ratings core shipped (plan 0001): append-only `ratings` with `supersededAt`, `item_versions` table, indexes; UI polish deferred.
 - **2026-05** — Directory submission shipped: `/submit-directory`, `directory_submissions` D1 table, token-gated `/moderation`.
