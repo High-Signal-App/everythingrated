@@ -1,17 +1,7 @@
 name: Deploy Cloudflare
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - ".github/workflows/cloudflare-deploy.yml"
-      - "apps/web/**"
-      - "packages/db/**"
-      - "package.json"
-      - "pnpm-lock.yaml"
-      - "pnpm-workspace.yaml"
-      - "tsconfig.json"
-
+  workflow_dispatch:
 concurrency:
   group: cloudflare-deploy-${{ github.ref }}
   cancel-in-progress: true
