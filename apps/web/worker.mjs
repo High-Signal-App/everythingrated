@@ -16,5 +16,15 @@ export {
 } from "./.open-next/worker.js";
 
 export default {
-  fetch: withTiming((request, env, ctx) => openNext.fetch(request, env, ctx)),
+  fetch: withTiming(async function fetch(request, env, ctx) {
+    try {
+      return await openNext.fetch(request, env, ctx);
+    } catch (err) {
+      console.error(`[error] ${request.method} ${new URL(request.url).pathname}:`, err.message, err.stack);
+      return new Response(JSON.stringify({ error: 'Internal Server Error' }), {
+        status: 500,
+        headers: { 'Content-Type': 'application/json' },
+      });
+    }
+  }),
 };
