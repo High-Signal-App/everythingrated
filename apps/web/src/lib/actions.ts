@@ -7,7 +7,6 @@ import { trackActivated, trackCoreAction } from "@/lib/analytics";
 import {
   approveDirectorySubmission,
   rejectDirectorySubmission,
-  submitDirectorySuggestion,
 } from "@/lib/directory-submissions";
 import {
   approveItemSubmission,
@@ -52,49 +51,10 @@ export async function submitRating(input: {
   revalidatePath("/");
 }
 
-export type SubmitDirectoryState = {
-  ok: boolean;
-  message: string;
-};
-
-export async function submitDirectory(
-  _prevState: SubmitDirectoryState,
-  formData: FormData,
-): Promise<SubmitDirectoryState> {
-  const aspects = formData
-    .getAll("aspectLabels")
-    .map((value) => String(value));
-
-  let result;
-  try {
-    result = await submitDirectorySuggestion({
-      name: String(formData.get("name") ?? ""),
-      description: String(formData.get("description") ?? ""),
-      heroCopy: String(formData.get("heroCopy") ?? ""),
-      aspectLabels: aspects,
-      submitterName: String(formData.get("submitterName") ?? ""),
-      submitterEmail: String(formData.get("submitterEmail") ?? ""),
-    });
-  } catch (error) {
-    // A raw infra failure (e.g. D1 unavailable) — never blank the form.
-    console.error("submitDirectory failed", error);
-    return {
-      ok: false,
-      message:
-        "Something went wrong saving your submission. Please try again in a moment.",
-    };
-  }
-
-  if (!result.ok) {
-    return { ok: false, message: result.error };
-  }
-
-  revalidatePath("/");
-  return {
-    ok: true,
-    message: "Thanks. Your directory is queued for moderation.",
-  };
-}
+// PARKED (2026-07-03): the public `submitDirectory` action and its
+// `DirectorySubmissionForm` were removed with the AI-dev-tools refocus —
+// arbitrary directory creation is paused. Restore from git history if the
+// scope widens again. Moderating the existing queue (below) still works.
 
 export async function moderateDirectorySubmission(formData: FormData): Promise<void> {
   const token = String(formData.get("token") ?? "");

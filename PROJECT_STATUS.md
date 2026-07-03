@@ -1,17 +1,19 @@
 # everythingrated — PROJECT STATUS
-Last updated: 2026-07-02
+Last updated: 2026-07-03
 
 ## Why / What
 
-**EverythingRated** is a multi-axis ratings platform testing whether directory-specific aspect rubrics are more useful than one collapsed score. Product thesis: an AI editor should be judged on different axes than a database or hosting provider.
+**EverythingRated** is a multi-axis ratings platform narrowed to one use case: **AI dev-tool adoption decisions**. The generic any-directory ambition is parked — the product helps operators decide which AI dev libraries to adopt by rating them on the six axes that actually drive the adopt/skip call (maintenance, community, license, API stability, footprint, AI portability).
 
-**Users:** Anonymous visitors rating tools across seeded directories; moderators approving community submissions via token-gated queue.
+**Users:** Anonymous visitors rating AI dev tools; moderators approving community tool submissions via token-gated queue.
 
-**Constraints:** POC stays anonymous (httpOnly `er_visitor` cookie) until rating UX proves useful. Item submission pilot is `ai-dev-tools` only. Time-evolving ratings core schema shipped; UI polish (sparklines, windows) deferred.
+**Constraints:** POC stays anonymous (httpOnly `er_visitor` cookie) until rating UX proves useful. Item submission is `ai-dev-tools` only. Time-evolving ratings core schema shipped; UI polish (sparklines, windows) deferred.
 
-**IN scope:** Three seeded directories, multi-axis rating UX, comparison boards, moderated submissions, D1 on Cloudflare Workers.
+**IN scope:** `ai-dev-tools` directory as the primary product surface, multi-axis rating UX, comparison boards, moderated tool submissions, D1 on Cloudflare Workers.
 
-**OUT of scope:** Full user auth, tier-list mode, collaborative voting, search/comments, high-signal ingest, broad public submission without moderation.
+**Parked (not deleted, routes still work):** `databases`, `hosting`, and other seeded directories — hidden from homepage, nav, footer, sitemap. See `lib/directory-focus.ts`. Reopen if adoption-decision thesis proves out and a second directory adds real value.
+
+**OUT of scope:** Full user auth, tier-list mode, collaborative voting, search/comments, high-signal ingest, broad public submission without moderation, generic any-directory expansion.
 
 ## Dependencies
 
@@ -46,6 +48,7 @@ Last updated: 2026-07-02
 
 ## Timeline
 
+- **2026-07-03** — **Product narrowed to AI dev-tool adoption decisions.** Homepage, nav, footer, sitemap, and cross-directory surfaces (`/stack`, `/trending`, `/aspects`, `/submit-directory`) refocused on `ai-dev-tools` only. Other seeded directories (`databases`, `hosting`) parked — routes still work for direct links, but hidden from all primary entry points. `lib/directory-focus.ts` codifies the focus. Copy updated to sell the adoption-decision thesis.
 - **2026-07-02** — Added global try/catch error handler to OpenNext worker (`apps/web/worker.mjs`).
 - **2026-06-13** — Item submission pilot shipped (plan 0004): `/d/ai-dev-tools/submit`, `item_submissions` D1 table, moderation approve/reject.
 - **2026-06-13** — Time-evolving ratings core shipped (plan 0001): append-only `ratings` with `supersededAt`, `item_versions` table, indexes; UI polish deferred.

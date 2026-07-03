@@ -13,26 +13,26 @@ export const metadata: Metadata = {
     process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000",
   ),
   title: {
-    default: "EverythingRated — multi-axis ratings for the things devs use",
+    default: "EverythingRated — multi-axis ratings for AI dev tool decisions",
     template: "%s — EverythingRated",
   },
   description:
-    "One stars-out-of-five hides everything that matters. EverythingRated scores every tool across the axes that actually decide the trade-off — pick a directory and dig in.",
+    "Decide which AI dev libraries to adopt. Every library scored on 6 adoption axes — maintenance, community, license, API stability, footprint, AI portability — instead of one star.",
   applicationName: "EverythingRated",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     siteName: "EverythingRated",
-    title: "EverythingRated — multi-axis ratings for the things devs use",
+    title: "EverythingRated — multi-axis ratings for AI dev tool decisions",
     description:
-      "Every tool scored across the axes that actually decide the trade-off — not a single star.",
+      "Every AI dev library scored on 6 adoption axes — maintenance, community, license, API stability, footprint, AI portability — instead of one star.",
     url: "/",
   },
   twitter: {
     card: "summary_large_image",
-    title: "EverythingRated — multi-axis ratings for the things devs use",
+    title: "EverythingRated — multi-axis ratings for AI dev tool decisions",
     description:
-      "Every tool scored across the axes that actually decide the trade-off — not a single star.",
+      "Every AI dev library scored on 6 adoption axes — maintenance, community, license, API stability, footprint, AI portability — instead of one star.",
   },
 };
 

@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { Badge } from "@/components/atoms/badge";
 import { CategoryChips } from "@/components/molecules/category-chips";
 import { RateRow } from "@/components/molecules/rate-row";
+import { isParkedDirectory } from "@/lib/directory-focus";
 import { getItemAggregate, listDirectories } from "@/lib/ratings";
 import { readVisitorId } from "@/lib/visitor";
 
@@ -23,7 +24,13 @@ export default async function ItemPage({
   if (!result) notFound();
   const { directory, data } = result;
   const otherDirectories = allDirectories.filter(
-    (d) => d.directory.id !== directory.id && d.itemCount > 0,
+    (d) =>
+      d.directory.id !== directory.id &&
+      d.itemCount > 0 &&
+      // Product focus (2026-07-03): only the focus directory is promoted.
+      // Parked directories (databases, hosting, …) are hidden from
+      // cross-directory "Rate next" chips — see lib/directory-focus.ts.
+      !isParkedDirectory(d.directory.slug),
   );
   const yourRatedAspects = data.aspects.filter((a) => a.yourScore !== null);
   const yourMean =

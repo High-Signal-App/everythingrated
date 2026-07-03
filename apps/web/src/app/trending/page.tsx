@@ -1,105 +1,48 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
-import { Card, CardBody } from "@/components/atoms/card";
-import { listDirectories, listItemsWithAggregates } from "@/lib/ratings";
+import { Badge } from "@/components/atoms/badge";
+import { FOCUS_DIRECTORY_SLUG } from "@/lib/directory-focus";
 
 export const metadata: Metadata = {
   title: "Trending — EverythingRated",
-  description: "Most-rated items across every directory.",
+  description: "Trending is paused while the product focuses on AI dev tool adoption decisions.",
 };
 
-export const dynamic = "force-dynamic";
+export const dynamic = "force-static";
 
-interface Row {
-  directorySlug: string;
-  directoryName: string;
-  itemSlug: string;
-  itemName: string;
-  raters: number;
-  overall: number;
-}
-
-export default async function TrendingPage() {
-  const dirs = await listDirectories().catch(() => []);
-
-  // Each directory's aggregate pull is independent — fetch them concurrently
-  // instead of awaiting one directory before starting the next (was N serial
-  // round-trip groups; now one parallel batch).
-  const perDir = await Promise.all(
-    dirs.map((d) =>
-      listItemsWithAggregates(d.directory.id, null).catch(() => []),
-    ),
-  );
-
-  const rows: Row[] = [];
-  for (let idx = 0; idx < dirs.length; idx++) {
-    const d = dirs[idx];
-    const items = perDir[idx];
-    for (const i of items) {
-      if (i.totalRaters > 0) {
-        rows.push({
-          directorySlug: d.directory.slug,
-          directoryName: d.directory.name,
-          itemSlug: i.item.slug,
-          itemName: i.item.name,
-          raters: i.totalRaters,
-          overall: i.overall,
-        });
-      }
-    }
-  }
-  rows.sort((a, b) => b.raters - a.raters || b.overall - a.overall);
-  const top = rows.slice(0, 50);
-
+// PARKED (2026-07-03): the cross-directory trending board mixed every
+// category. While the product focuses on AI dev tool adoption decisions this
+// route stays live for direct links but renders a paused notice.
+export default function TrendingPage() {
   return (
-    <main className="mx-auto max-w-3xl px-6 py-12">
-      <Link href="/" className="text-[12px] text-[var(--muted)] hover:text-[var(--foreground)]">
-        ← All directories
+    <div className="mx-auto w-full max-w-3xl px-6 py-14">
+      <Link
+        href="/"
+        className="text-[12px] text-[var(--muted)] hover:text-[var(--foreground)]"
+      >
+        ← Home
       </Link>
-      <h1 className="mt-3 text-3xl font-bold tracking-tight">Trending</h1>
-      <p className="mt-2 text-sm text-[var(--muted)]">
-        Most-rated items across every directory, in descending order of unique raters.
-      </p>
-
-      {top.length === 0 ? (
-        <Card className="mt-8">
-          <CardBody>
-            <h2 className="text-base font-semibold">Nothing trending yet</h2>
-            <p className="mt-2 text-sm text-[var(--muted)]">
-              Rate something — it&apos;ll appear here.
-            </p>
-          </CardBody>
-        </Card>
-      ) : (
-        <ol className="mt-8 divide-y divide-[var(--border)]">
-          {top.map((r, i) => (
-            <li key={`${r.directorySlug}/${r.itemSlug}`} className="flex items-center gap-4 py-3">
-              <span className="w-6 text-right tabular-nums text-xs text-[var(--muted)]">
-                {i + 1}
-              </span>
-              <div className="flex-1 min-w-0">
-                <Link
-                  href={`/d/${r.directorySlug}/${r.itemSlug}`}
-                  className="block truncate text-sm font-medium hover:underline"
-                >
-                  {r.itemName}
-                </Link>
-                <Link
-                  href={`/d/${r.directorySlug}`}
-                  className="text-xs text-[var(--muted)] hover:underline"
-                >
-                  {r.directoryName}
-                </Link>
-              </div>
-              <div className="text-right text-xs tabular-nums">
-                <div>{r.raters} rater{r.raters === 1 ? "" : "s"}</div>
-                <div className="text-[var(--muted)]">{r.overall.toFixed(1)}/5</div>
-              </div>
-            </li>
-          ))}
-        </ol>
-      )}
-    </main>
+      <div className="mt-6">
+        <Badge tone="outline">Paused</Badge>
+        <h1 className="mt-4 text-[36px] font-semibold tracking-tight">
+          Trending is paused
+        </h1>
+        <p className="mt-3 max-w-2xl text-[14px] leading-[1.6] text-[var(--muted)]">
+          EverythingRated now does one job: multi-axis ratings for AI dev tool
+          adoption decisions. The cross-directory trending board is on hold
+          while that use case is proven. See the most-rated AI dev libraries on
+          the board instead.
+        </p>
+        <div className="mt-8">
+          <Link
+            href={`/d/${FOCUS_DIRECTORY_SLUG}`}
+            className="inline-flex h-11 items-center rounded-[var(--radius-sm)] bg-[var(--foreground)] px-5 text-sm font-medium text-[var(--background)] transition-opacity hover:opacity-90"
+          >
+            Browse AI dev libraries →
+          </Link>
+        </div>
+      </div>
+    </div>
   );
 }

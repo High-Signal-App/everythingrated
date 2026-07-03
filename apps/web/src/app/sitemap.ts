@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 
+import { FOCUS_DIRECTORY_SLUG } from "@/lib/directory-focus";
 import { listDirectories, listItemsWithAggregates } from "@/lib/ratings";
 
 export const dynamic = "force-dynamic";
@@ -14,7 +15,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   try {
     const dirs = await listDirectories();
-    for (const d of dirs) {
+    // Product focus (2026-07-03): only the focus directory (ai-dev-tools) is
+    // promoted in the sitemap. Parked directories keep their pages and ratings
+    // for direct links but are not surfaced to search engines — see
+    // lib/directory-focus.ts.
+    const promoted = dirs.filter(
+      (d) => d.directory.slug === FOCUS_DIRECTORY_SLUG,
+    );
+    for (const d of promoted) {
       entries.push({
         url: `${siteUrl}/d/${d.directory.slug}`,
         lastModified: now,

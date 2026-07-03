@@ -1,91 +1,62 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { notFound } from "next/navigation";
 
-import { topItemsByAspectKey } from "@/lib/ratings";
+import { Badge } from "@/components/atoms/badge";
+import { FOCUS_DIRECTORY_SLUG } from "@/lib/directory-focus";
 
-export const dynamic = "force-dynamic";
+export const dynamic = "force-static";
 
-interface Params {
-  key: string;
-}
-
+// PARKED (2026-07-03): the per-aspect cross-directory leaderboard is part of
+// the generic "any-directory" ambition. While the product focuses on AI dev
+// tool adoption decisions this route stays live for direct links but renders a
+// paused notice. `topItemsByAspectKey` is untouched.
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<Params>;
+  params: Promise<{ key: string }>;
 }): Promise<Metadata> {
   const { key } = await params;
   return {
     title: `${decodeURIComponent(key)} — EverythingRated`,
-    description: `Top items rated on the "${decodeURIComponent(key)}" axis across every directory.`,
+    description: "The aspect explorer is paused while the product focuses on AI dev tool adoption decisions.",
   };
 }
 
-export default async function AspectLeaderboardPage({
+export default async function AspectKeyPage({
   params,
 }: {
-  params: Promise<Params>;
+  params: Promise<{ key: string }>;
 }) {
   const { key: raw } = await params;
   const key = decodeURIComponent(raw);
-  if (!/^[a-z0-9_-]+$/i.test(key)) notFound();
-
-  const rows = await topItemsByAspectKey(key, 50);
-
   return (
-    <main className="mx-auto max-w-3xl px-6 py-12">
+    <div className="mx-auto w-full max-w-3xl px-6 py-14">
       <Link
         href="/aspects"
         className="text-[12px] text-[var(--muted)] hover:text-[var(--foreground)]"
       >
         ← Aspects
       </Link>
-      <h1 className="mt-3 text-3xl font-bold tracking-tight">
-        Top on <span className="font-mono">{key}</span>
-      </h1>
-      <p className="mt-2 text-sm text-[var(--muted)]">
-        Items ranked by unique raters, then by mean score on this axis.
-      </p>
-
-      {rows.length === 0 ? (
-        <p className="mt-6 text-sm text-[var(--muted)]">
-          No ratings on this aspect yet across any directory.
+      <div className="mt-6">
+        <Badge tone="outline">Paused</Badge>
+        <h1 className="mt-4 text-[36px] font-semibold tracking-tight">
+          The aspect explorer is paused
+        </h1>
+        <p className="mt-3 max-w-2xl text-[14px] leading-[1.6] text-[var(--muted)]">
+          EverythingRated now does one job: multi-axis ratings for AI dev tool
+          adoption decisions. The cross-directory leaderboard for the{" "}
+          <span className="font-mono">{key}</span> axis is on hold. The six
+          adoption axes for AI dev libraries live on the board.
         </p>
-      ) : (
-        <ol className="mt-6 divide-y divide-[var(--border)]">
-          {rows.map((r, i) => (
-            <li
-              key={`${r.directory.slug}/${r.item.slug}`}
-              className="flex items-center gap-4 py-3"
-            >
-              <span className="w-6 text-right tabular-nums text-xs text-[var(--muted)]">
-                {i + 1}
-              </span>
-              <div className="flex-1 min-w-0">
-                <Link
-                  href={`/d/${r.directory.slug}/${r.item.slug}`}
-                  className="block truncate text-sm font-medium hover:underline"
-                >
-                  {r.item.name}
-                </Link>
-                <Link
-                  href={`/d/${r.directory.slug}`}
-                  className="text-xs text-[var(--muted)] hover:underline"
-                >
-                  {r.directory.name}
-                </Link>
-              </div>
-              <div className="text-right text-xs tabular-nums">
-                <div className="text-base font-semibold">{r.avg.toFixed(1)}</div>
-                <div className="text-[var(--muted)]">
-                  {r.raters} rater{r.raters === 1 ? "" : "s"}
-                </div>
-              </div>
-            </li>
-          ))}
-        </ol>
-      )}
-    </main>
+        <div className="mt-8">
+          <Link
+            href={`/d/${FOCUS_DIRECTORY_SLUG}`}
+            className="inline-flex h-11 items-center rounded-[var(--radius-sm)] bg-[var(--foreground)] px-5 text-sm font-medium text-[var(--background)] transition-opacity hover:opacity-90"
+          >
+            See the adoption axes →
+          </Link>
+        </div>
+      </div>
+    </div>
   );
 }

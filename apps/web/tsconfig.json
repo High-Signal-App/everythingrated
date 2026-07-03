@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "ES2017",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "module": "ESNext",
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
@@ -20,11 +24,20 @@
     "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true,
     "isolatedModules": true,
-    "jsx": "preserve",
-    "types": ["@cloudflare/workers-types", "node"],
-    "plugins": [{ "name": "next" }],
+    "jsx": "react-jsx",
+    "types": [
+      "@cloudflare/workers-types",
+      "node"
+    ],
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": [
+        "./src/*"
+      ]
     }
   },
   "include": [

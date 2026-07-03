@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import { FOCUS_DIRECTORY_SLUG } from "@/lib/directory-focus";
+
 export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-[var(--border)] bg-[color-mix(in_srgb,var(--background)_85%,transparent)] backdrop-blur-xl">
@@ -11,17 +13,27 @@ export function SiteHeader() {
           <LogoMark />
           <span>EverythingRated</span>
         </Link>
+        {/* Product focus (2026-07-03): nav points at the ai-dev-tools use
+            case only. Parked directories (databases, hosting, …) and the
+            cross-directory stack builder keep their routes but are not in
+            primary navigation — see lib/directory-focus.ts. */}
         <nav className="flex items-center gap-4 text-[12px] text-[var(--muted)]">
-          <Link href="/stack" className="hover:text-[var(--foreground)]">
-            Build a stack
+          <Link
+            href={`/d/${FOCUS_DIRECTORY_SLUG}`}
+            className="hover:text-[var(--foreground)]"
+          >
+            AI dev tools
           </Link>
           <Link href="/my" className="hover:text-[var(--foreground)]">
             My ratings
           </Link>
-          <Link href="/submit-directory" className="hover:text-[var(--foreground)]">
-            Submit directory
+          <Link
+            href={`/d/${FOCUS_DIRECTORY_SLUG}/submit`}
+            className="hover:text-[var(--foreground)]"
+          >
+            Suggest a tool
           </Link>
-          <span className="hidden md:block">Multi-axis ratings</span>
+          <span className="hidden md:block">AI dev tool ratings</span>
         </nav>
       </div>
     </header>

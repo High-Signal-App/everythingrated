@@ -1,15 +1,18 @@
+import Link from "next/link";
+
 import { Badge } from "@/components/atoms/badge";
 import { ScoreBar } from "@/components/atoms/score-bar";
-import { CategoryChips } from "@/components/molecules/category-chips";
 import { DirectoryCard } from "@/components/organisms/directory-card";
-import { listDirectories } from "@/lib/ratings";
+import { encodeCompareState } from "@/lib/comparison";
+import { FOCUS_DIRECTORY_SLUG } from "@/lib/directory-focus";
+import { listDirectories, listItemsWithAggregates } from "@/lib/ratings";
 
 export const dynamic = "force-dynamic";
 
 const features = [
   {
-    title: "Axes that fit the category",
-    body: "Each directory defines its own aspects. An AI editor is rated on different dimensions than a database — because the trade-offs are different.",
+    title: "Axes that decide adoption",
+    body: "AI dev libraries are scored on maintenance, community, license, API stability, footprint, and AI portability — the six dimensions the adopt/skip call actually turns on.",
   },
   {
     title: "One number per axis",
@@ -24,12 +27,12 @@ const features = [
 const steps = [
   {
     n: "1",
-    title: "Pick a directory",
-    body: "Browse the categories below — each is a bucket of comparable tools.",
+    title: "Open the AI dev tools board",
+    body: "Every tool sits on one board with per-axis averages side by side.",
   },
   {
     n: "2",
-    title: "Open an item",
+    title: "Open a tool",
     body: "See the per-aspect averages and how many people have rated it.",
   },
   {
@@ -40,7 +43,30 @@ const steps = [
 ];
 
 export default async function LandingPage() {
+  // Product focus (2026-07-03): the homepage sells one directory —
+  // ai-dev-tools. Other seeded directories are PARKED (see
+  // lib/directory-focus.ts): still reachable at /d/[slug], not promoted here.
   const directories = await listDirectories();
+  const focus =
+    directories.find((d) => d.directory.slug === FOCUS_DIRECTORY_SLUG) ?? null;
+  const items = focus
+    ? await listItemsWithAggregates(focus.directory.id, null)
+    : [];
+
+  const featuredPairs: Array<{ label: string; href: string }> = [];
+  const top = [...items]
+    .sort((a, b) => b.totalRaters - a.totalRaters || b.overall - a.overall)
+    .slice(0, 3);
+  for (let i = 0; i < top.length; i++) {
+    for (let j = i + 1; j < top.length; j++) {
+      const a = top[i];
+      const b = top[j];
+      featuredPairs.push({
+        label: `${a.item.name} vs ${b.item.name}`,
+        href: `/d/${FOCUS_DIRECTORY_SLUG}?${encodeCompareState([a.item.id, b.item.id], {})}#compare`,
+      });
+    }
+  }
 
   return (
     <>
@@ -50,38 +76,44 @@ export default async function LandingPage() {
         <div className="relative mx-auto w-full max-w-6xl px-6 pb-16 pt-14 md:pb-24 md:pt-24">
           <Badge tone="outline" className="mb-6">
             <span className="h-1.5 w-1.5 rounded-full bg-[var(--foreground)]" />
-            {directories.length} {directories.length === 1 ? "directory" : "directories"}
+            {items.length} AI dev libraries · {focus?.aspectCount ?? 6} adoption axes
           </Badge>
           <h1 className="text-balance text-[40px] font-semibold leading-[1.05] tracking-[-0.025em] md:text-[64px]">
-            Multi-axis ratings
+            Decide which AI dev library
             <br />
-            <span className="text-[var(--muted)]">for the things devs use.</span>
+            <span className="text-[var(--muted)]">to adopt — axis by axis.</span>
           </h1>
           <p className="mt-6 max-w-[52ch] text-[16px] leading-[1.55] text-[var(--muted)]">
-            One stars-out-of-five hides everything that matters. EverythingRated
-            scores every tool across the axes that actually decide the
-            trade-off — pick a directory and dig in.
+            A GitHub star count can&rsquo;t tell you whether a library will lock
+            you in or ship a breaking change next month. EverythingRated scores{" "}
+            {items.length} AI dev libraries on {focus?.aspectCount ?? 6} separate
+            axes — maintenance, community, license, API stability, footprint, and
+            AI portability — so the adoption trade-off is visible before you
+            commit.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-5">
-            <a
-              href="#directories"
+            <Link
+              href={`/d/${FOCUS_DIRECTORY_SLUG}`}
               className="inline-flex h-11 items-center rounded-[var(--radius-sm)] bg-[var(--foreground)] px-5 text-sm font-medium text-[var(--background)] transition-opacity hover:opacity-90"
             >
-              Browse directories
-            </a>
-            <a
-              href="/submit-directory"
-              className="text-sm text-[var(--muted)] underline-offset-4 hover:text-[var(--foreground)] hover:underline"
-            >
-              or submit a new directory
-            </a>
+              Compare AI dev tools
+            </Link>
           </div>
-          {directories.length > 0 && (
-            <CategoryChips
-              className="mt-6"
-              label="Jump in"
-              directories={directories}
-            />
+          {featuredPairs.length > 0 && (
+            <div className="mt-6 flex flex-wrap items-center gap-2">
+              <span className="mr-1 text-[11px] uppercase tracking-[0.1em] text-[var(--muted-2)]">
+                Featured comparisons
+              </span>
+              {featuredPairs.map((pair) => (
+                <Link
+                  key={pair.href}
+                  href={pair.href}
+                  className="inline-flex items-center gap-1.5 rounded-full border border-[var(--border)] bg-[var(--surface)] px-3 py-1 text-[12px] font-medium text-[var(--foreground)] transition-colors hover:border-[var(--border-strong)] hover:bg-[var(--surface-2)]"
+                >
+                  {pair.label}
+                </Link>
+              ))}
+            </div>
           )}
         </div>
       </section>
@@ -111,12 +143,12 @@ export default async function LandingPage() {
             ))}
           </div>
           <div className="mt-8">
-            <a
-              href="#directories"
+            <Link
+              href={`/d/${FOCUS_DIRECTORY_SLUG}`}
               className="inline-flex h-11 items-center rounded-[var(--radius-sm)] bg-[var(--foreground)] px-6 text-sm font-medium text-[var(--background)] transition-opacity hover:opacity-90"
             >
               Start rating →
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -148,7 +180,7 @@ export default async function LandingPage() {
               </div>
               <div className="mt-4 flex items-center gap-3 text-[12px]">
                 <span className="w-32 shrink-0 text-[var(--muted)]">
-                  Output quality
+                  API stability
                 </span>
                 <ScoreBar value={3.0} className="flex-1" />
                 <span className="num w-10 shrink-0 text-right tabular-nums">
@@ -173,7 +205,7 @@ export default async function LandingPage() {
               </div>
               <div className="mt-4 flex items-center gap-3 text-[12px]">
                 <span className="w-32 shrink-0 text-[var(--muted)]">
-                  Output quality
+                  API stability
                 </span>
                 <ScoreBar value={4.3} className="flex-1" />
                 <span className="num w-10 shrink-0 text-right tabular-nums">
@@ -200,8 +232,8 @@ export default async function LandingPage() {
             </li>
             <li>
               <span className="text-[var(--foreground)]">Per axis, not per item.</span>{" "}
-              An item can have a confident speed score and a thin docs score —
-              read them separately.
+              A library can have a confident maintenance score and a thin
+              stability score — read them separately.
             </li>
             <li>
               <span className="text-[var(--foreground)]">Re-rating counts.</span>{" "}
@@ -223,31 +255,31 @@ export default async function LandingPage() {
               Build a ranked list people can actually use
             </h2>
             <p className="mt-3 max-w-[54ch] text-[13px] leading-[1.55] text-[var(--muted)]">
-              Rate a few items, save your ranking, and share the final list.
-              Instead of saying “best AI tool,” show exactly why one wins.
+              Rate a few tools, save your ranking, and share the final list.
+              Instead of saying &ldquo;best AI tool,&rdquo; show exactly why one wins.
             </p>
-            <a
-              href="#directories"
+            <Link
+              href={`/d/${FOCUS_DIRECTORY_SLUG}`}
               className="mt-6 inline-flex h-11 items-center rounded-[var(--radius-sm)] bg-[var(--foreground)] px-6 text-sm font-medium text-[var(--background)] transition-opacity hover:opacity-90"
             >
               Make your list →
-            </a>
+            </Link>
           </div>
 
           <div className="rounded-[var(--radius-md)] border border-[var(--border)] bg-[var(--background)] p-5 shadow-sm">
             <div className="mb-4 flex items-center justify-between gap-3">
               <div>
-                <p className="text-[13px] font-semibold">Best AI coding tools</p>
+                <p className="text-[13px] font-semibold">Best AI dev libraries</p>
                 <p className="text-[12px] text-[var(--muted)]">
-                  Ranked by output quality, speed, and price
+                  Ranked by stability, maintenance, and AI portability
                 </p>
               </div>
               <Badge tone="outline">Public preview</Badge>
             </div>
             {[
-              ["1", "Claude Code", "Best reasoning", "4.6"],
-              ["2", "Cursor", "Best editor flow", "4.3"],
-              ["3", "Windsurf", "Fastest start", "4.0"],
+              ["1", "Vercel AI SDK", "Best provider portability", "4.5"],
+              ["2", "LangChain", "Largest ecosystem", "4.2"],
+              ["3", "LiteLLM", "No model lock-in", "4.4"],
             ].map(([rank, name, note, score]) => (
               <div
                 key={name}
@@ -293,18 +325,17 @@ export default async function LandingPage() {
         </div>
       </section>
 
-      {/* Directories */}
-      <section
-        id="directories"
-        className="mx-auto w-full max-w-6xl scroll-mt-20 px-6 py-14"
-      >
+      {/* The directory */}
+      <section className="mx-auto w-full max-w-6xl px-6 py-14">
         <div className="mb-6 flex items-baseline justify-between">
-          <h2 className="text-[20px] font-semibold tracking-tight">Directories</h2>
+          <h2 className="text-[20px] font-semibold tracking-tight">
+            The AI dev tools board
+          </h2>
         </div>
 
-        {directories.length === 0 ? (
+        {focus === null ? (
           <div className="rounded-[var(--radius-md)] border border-dashed border-[var(--border-strong)] p-10 text-center text-[var(--muted)]">
-            No directories yet. Run{" "}
+            No data yet. Run{" "}
             <code className="rounded bg-[var(--surface-2)] px-1.5 py-0.5">
               pnpm db:seed:local
             </code>{" "}
@@ -312,9 +343,7 @@ export default async function LandingPage() {
           </div>
         ) : (
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {directories.map((d) => (
-              <DirectoryCard key={d.directory.id} data={d} />
-            ))}
+            <DirectoryCard data={focus} />
           </div>
         )}
       </section>
