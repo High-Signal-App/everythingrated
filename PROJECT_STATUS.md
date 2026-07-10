@@ -149,9 +149,13 @@ Last updated: 2026-07-03
 
 ### Planned
 
-1. Time-evolving ratings polish — rolling windows, trend sparklines, `last_release` / staleness UI, seed version backfill (`apps/web/src/lib/ratings.ts`, item pages).
-2. Expand item submission pilot beyond `ai-dev-tools` after moderation load validated (`apps/web/src/lib/item-submissions.ts`).
-3. Wire `RATE_LIMITER` on all submit actions if not fully connected (`apps/web/wrangler.toml`).
+1. ~~Time-evolving ratings polish.~~ **Paused** — current latest-view aggregates are the frozen POC baseline.
+2. ~~Expand item submission pilot beyond `ai-dev-tools`.~~ **Paused** pending measured moderation demand.
+3. ~~Wire `RATE_LIMITER` on all submit actions.~~ **Paused** until endpoint-specific evidence exists.
+
+### Closure
+
+- **Finish-and-pause (2026-07-10):** AI developer-tool adoption directory is the retained surface; other directories remain parked. Reopen only with adoption traffic or moderation evidence.
 
 ### Deferred
 
