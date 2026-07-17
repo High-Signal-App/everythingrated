@@ -27,12 +27,14 @@ export const metadata: Metadata = {
     description:
       "Every AI dev library scored on 6 adoption axes — maintenance, community, license, API stability, footprint, AI portability — instead of one star.",
     url: "/",
+    images: [{ url: "/og.svg", alt: "EverythingRated adoption ratings" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "EverythingRated — multi-axis ratings for AI dev tool decisions",
     description:
       "Every AI dev library scored on 6 adoption axes — maintenance, community, license, API stability, footprint, AI portability — instead of one star.",
+    images: ["/og.svg"],
   },
 };
 
@@ -41,6 +43,20 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className="h-full antialiased">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebApplication",
+              name: "EverythingRated",
+              url: "https://ratings.highsignal.app",
+              applicationCategory: "DeveloperApplication",
+            }),
+          }}
+        />
+      </head>
       <body className="min-h-full flex flex-col bg-[var(--background)] text-[var(--foreground)]">
         <AnalyticsProvider>
           <SiteHeader />
