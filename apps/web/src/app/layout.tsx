@@ -9,6 +9,15 @@ import { SaaSMakerFeedback } from "@/components/saasmaker-feedback";
 import { VitalsReporter } from "@/components/VitalsReporter";
 
 export const metadata: Metadata = {
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/icon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.ico', sizes: 'any' },
+    ],
+    apple: '/apple-touch-icon.png',
+  },
+
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_APP_URL || "https://ratings.highsignal.app",
   ),
