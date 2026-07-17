@@ -1,45 +1,70 @@
 /**
- * Portable agent-edge handler — copy or generate into each product.
+ * Portable agent-edge handler (fleet GEO standard).
  * Spec: fleet-ops/docs/agent-indexing-standard.md
- *
- * Usage in worker.mjs (before openNext.fetch):
- *   import { handleAgentEdge } from './agent-edge.mjs'
- *   const agent = handleAgentEdge(request)
- *   if (agent) return agent
  */
 
-/** @type {{ name: string, url: string, llmsTxt: string, indexMd: string, catalog: object, llmsFull?: string | null }} */
 export const AGENT_SURFACE = {
-  "name": "EverythingRated",
-  "url": "https://ratings.highsignal.app",
-  "llmsTxt": "# EverythingRated\n\n> Multi-axis rating tool for structured directories and catalogs — decisions with explicit trade-offs, not star averages.\n\n## Product\n\n- [Home](https://ratings.highsignal.app/): Directories and ratings\n\n## Machine surfaces\n\n- [Agent catalog](https://ratings.highsignal.app/api/ai): JSON inventory of public surfaces\n- [Homepage markdown](https://ratings.highsignal.app/index.md): Product brief without JS\n- [This index](https://ratings.highsignal.app/llms.txt)\n\n## Optional\n\n- [Foundry](https://sassmaker.com): Parent fleet showcase\n",
-  "indexMd": "# EverythingRated\n\nMulti-axis ratings for structured directories and catalogs.\n\n## What it is\n\n- Rate items on multiple axes (not a single star score)\n- Built for AI/dev tool and catalog decisions\n\n## Agent entrypoints\n\n- https://ratings.highsignal.app/llms.txt\n- https://ratings.highsignal.app/api/ai\n- https://ratings.highsignal.app/index.md\n",
-  "catalog": {
-    "name": "EverythingRated",
-    "version": "1",
-    "url": "https://ratings.highsignal.app",
-    "llms": "https://ratings.highsignal.app/llms.txt",
-    "llmsFull": null,
-    "sitemap": "https://ratings.highsignal.app/sitemap.xml",
-    "markdown": {
-      "suffix": ".md",
-      "negotiation": true
+  name: 'EverythingRated',
+  url: 'https://ratings.highsignal.app',
+  llmsTxt:
+    '# EverythingRated\n' +
+    '\n' +
+    '> Multi-axis rating tool for structured directories and catalogs — decisions with explicit trade-offs, not star averages.\n' +
+    '\n' +
+    '## Product\n' +
+    '\n' +
+    '- [Home](https://ratings.highsignal.app/): Directories and ratings\n' +
+    '\n' +
+    '## Machine surfaces\n' +
+    '\n' +
+    '- [Agent catalog](https://ratings.highsignal.app/api/ai): JSON inventory of public surfaces\n' +
+    '- [Homepage markdown](https://ratings.highsignal.app/index.md): Product brief without JS\n' +
+    '- [This index](https://ratings.highsignal.app/llms.txt)\n' +
+    '\n' +
+    '## Optional\n' +
+    '\n' +
+    '- [Foundry](https://sassmaker.com): Parent fleet showcase\n',
+  indexMd:
+    '# EverythingRated\n' +
+    '\n' +
+    'Multi-axis ratings for structured directories and catalogs.\n' +
+    '\n' +
+    '## What it is\n' +
+    '\n' +
+    '- Rate items on multiple axes (not a single star score)\n' +
+    '- Built for AI/dev tool and catalog decisions\n' +
+    '\n' +
+    '## Agent entrypoints\n' +
+    '\n' +
+    '- https://ratings.highsignal.app/llms.txt\n' +
+    '- https://ratings.highsignal.app/api/ai\n' +
+    '- https://ratings.highsignal.app/index.md\n',
+  catalog: {
+    name: 'EverythingRated',
+    version: '1',
+    url: 'https://ratings.highsignal.app',
+    llms: 'https://ratings.highsignal.app/llms.txt',
+    llmsFull: null,
+    sitemap: 'https://ratings.highsignal.app/sitemap.xml',
+    markdown: {
+      suffix: '.md',
+      negotiation: true,
     },
-    "surfaces": [
+    surfaces: [
       {
-        "id": "home",
-        "url": "https://ratings.highsignal.app/",
-        "md": "https://ratings.highsignal.app/index.md",
-        "kind": "static",
-        "description": "Product home"
-      }
+        id: 'home',
+        url: 'https://ratings.highsignal.app/',
+        md: 'https://ratings.highsignal.app/index.md',
+        kind: 'static',
+        description: 'Product home',
+      },
     ],
-    "auth": {
-      "public": true,
-      "notes": "Auth-walled app routes are not agent-indexed unless listed here."
-    }
+    auth: {
+      public: true,
+      notes: 'Auth-walled app routes are not agent-indexed unless listed here.',
+    },
   },
-  "llmsFull": null
+  llmsFull: null,
 };
 
 /**
@@ -52,6 +77,7 @@ export function handleAgentEdge(request) {
   const path = url.pathname === '' ? '/' : url.pathname;
 
   if (path === '/llms.txt') {
+    if (AGENT_SURFACE.skipLlms) return null;
     return text(AGENT_SURFACE.llmsTxt, 'text/plain; charset=utf-8');
   }
   if (path === '/llms-full.txt' && AGENT_SURFACE.llmsFull) {
@@ -61,7 +87,6 @@ export function handleAgentEdge(request) {
     return text(AGENT_SURFACE.indexMd, 'text/markdown; charset=utf-8');
   }
   if (path === '/api/ai') {
-    // Re-bind origin so preview/custom domains stay correct
     const catalog = {
       ...AGENT_SURFACE.catalog,
       url: url.origin,
@@ -78,7 +103,6 @@ export function handleAgentEdge(request) {
     return json(catalog);
   }
 
-  // Homepage markdown negotiation
   if ((path === '/' || path === '') && wantsMarkdown(request)) {
     return text(AGENT_SURFACE.indexMd, 'text/markdown; charset=utf-8', {
       Link: '</index.md>; rel="alternate"; type="text/markdown"',
