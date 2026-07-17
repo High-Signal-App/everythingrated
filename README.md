@@ -4,7 +4,7 @@ Multi-axis ratings platform. Instead of collapsing a tool, product, or service
 into one score, each directory defines the aspects that matter for that kind of
 thing and collects per-aspect ratings.
 
-Live app: <https://everythingrated.sarthakagrawal927.workers.dev>
+Live app: <https://ratings.highsignal.app>
 
 Current POC directories:
 
@@ -33,7 +33,7 @@ multi-axis UX can be tested before adding accounts, submissions, or moderation.
 
 | Concern | Service |
 |---------|---------|
-| Hosting | Cloudflare Workers (`everythingrated`, everythingrated.sarthakagrawal927.workers.dev) via `@opennextjs/cloudflare` (`apps/web`) |
+| Hosting | Cloudflare Workers (`everythingrated`, `ratings.highsignal.app`) via `@opennextjs/cloudflare` (`apps/web`) |
 | Database | Cloudflare D1 (`everythingrated-db`) — Drizzle ORM |
 | Auth | None — ratings are anonymous, scoped to an httpOnly `er_visitor` cookie |
 | Rate limiting | Cloudflare Workers rate limiter binding (`RATE_LIMITER`) |

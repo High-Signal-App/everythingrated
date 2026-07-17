@@ -56,7 +56,7 @@ Last updated: 2026-07-03
 
 ## Products
 
-- **Worker (Next.js/OpenNext):** https://everythingrated.sarthakagrawal927.workers.dev — worker `everythingrated`; D1 `everythingrated-db` (`0465c98f-b920-478d-a689-94c862693a7b`).
+- **Worker (Next.js/OpenNext):** https://ratings.highsignal.app — worker `everythingrated`; D1 `everythingrated-db` (`0465c98f-b920-478d-a689-94c862693a7b`).
 - **Monorepo packages:** `apps/web` (Next.js App Router), `packages/db` (Drizzle schema).
 - **Local dev:** http://localhost:3000.
 - **Seeded directories:** `ai-dev-tools`, `databases`, `hosting`.
