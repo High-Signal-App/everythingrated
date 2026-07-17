@@ -15,3 +15,13 @@
 ## Optional
 
 - [Foundry](https://sassmaker.com): Parent fleet showcase
+
+## Product surfaces
+
+- [Trending](https://ratings.highsignal.app/trending)
+- [List](https://ratings.highsignal.app/list)
+- [Stack](https://ratings.highsignal.app/stack)
+- [Aspects](https://ratings.highsignal.app/aspects)
+- [API docs](https://ratings.highsignal.app/api-docs)
+- [About](https://ratings.highsignal.app/about)
+
