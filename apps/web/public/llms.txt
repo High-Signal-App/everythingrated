@@ -1,0 +1,17 @@
+# EverythingRated
+
+> Multi-axis rating tool for structured directories and catalogs — decisions with explicit trade-offs, not star averages.
+
+## Product
+
+- [Home](https://ratings.highsignal.app/): Directories and ratings
+
+## Machine surfaces
+
+- [Agent catalog](https://ratings.highsignal.app/api/ai): JSON inventory of public surfaces
+- [Homepage markdown](https://ratings.highsignal.app/index.md): Product brief without JS
+- [This index](https://ratings.highsignal.app/llms.txt)
+
+## Optional
+
+- [Foundry](https://sassmaker.com): Parent fleet showcase
