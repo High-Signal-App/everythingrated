@@ -76,7 +76,7 @@ export default async function LandingPage() {
         <div className="relative mx-auto w-full max-w-6xl px-6 pb-16 pt-14 md:pb-24 md:pt-24">
           <Badge tone="outline" className="mb-6">
             <span className="h-1.5 w-1.5 rounded-full bg-[var(--foreground)]" />
-            {items.length} AI dev libraries · {focus?.aspectCount ?? 6} adoption axes
+            {items.length} AI dev libraries · multi-axis adoption ratings
           </Badge>
           <h1 className="text-balance text-[40px] font-semibold leading-[1.05] tracking-[-0.025em] md:text-[64px]">
             Decide which AI dev library
@@ -86,8 +86,8 @@ export default async function LandingPage() {
           <p className="mt-6 max-w-[52ch] text-[16px] leading-[1.55] text-[var(--muted)]">
             A GitHub star count can&rsquo;t tell you whether a library will lock
             you in or ship a breaking change next month. EverythingRated scores{" "}
-            {items.length} AI dev libraries on {focus?.aspectCount ?? 6} separate
-            axes — maintenance, community, license, API stability, footprint, and
+            {items.length} AI dev libraries across separate axes — maintenance,
+            community, license, API stability, footprint, and
             AI portability — so the adoption trade-off is visible before you
             commit.
           </p>

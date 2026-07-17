@@ -10,7 +10,7 @@ import { VitalsReporter } from "@/components/VitalsReporter";
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000",
+    process.env.NEXT_PUBLIC_APP_URL || "https://ratings.highsignal.app",
   ),
   title: {
     default: "EverythingRated — multi-axis ratings for AI dev tool decisions",
