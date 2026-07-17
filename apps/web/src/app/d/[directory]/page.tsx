@@ -1,15 +1,47 @@
-import Link from "next/link";
-import { notFound } from "next/navigation";
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import { notFound } from 'next/navigation';
 
-import { Badge } from "@/components/atoms/badge";
-import { ComparisonBoard } from "@/components/organisms/comparison-board";
-import { ItemCard } from "@/components/organisms/item-card";
-import { parseCompareState } from "@/lib/comparison";
-import { PILOT_DIRECTORY_SLUG } from "@/lib/item-submissions";
-import { getDirectoryBySlug, listItemsWithAggregates } from "@/lib/ratings";
-import { readVisitorId } from "@/lib/visitor";
+import { Badge } from '@/components/atoms/badge';
+import { ComparisonBoard } from '@/components/organisms/comparison-board';
+import { ItemCard } from '@/components/organisms/item-card';
+import { parseCompareState } from '@/lib/comparison';
+import { PILOT_DIRECTORY_SLUG } from '@/lib/item-submissions';
+import { getDirectoryBySlug, listItemsWithAggregates } from '@/lib/ratings';
+import { readVisitorId } from '@/lib/visitor';
 
-export const dynamic = "force-dynamic";
+export const dynamic = 'force-dynamic';
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ directory: string }>;
+}): Promise<Metadata> {
+  const { directory: dirSlug } = await params;
+  const directory = await getDirectoryBySlug(dirSlug);
+  if (!directory) return {};
+  return {
+    title: directory.name,
+    description: directory.heroCopy,
+    alternates: {
+      canonical: `/d/${directory.slug}`,
+      types: {
+        'application/json': [
+          {
+            url: `/d/${directory.slug}/items.json`,
+            title: `${directory.name} — items + aggregate scores (JSON)`,
+          },
+        ],
+        'application/rss+xml': [
+          {
+            url: `/d/${directory.slug}/rss`,
+            title: `${directory.name} — RSS feed`,
+          },
+        ],
+      },
+    },
+  };
+}
 
 export default async function DirectoryPage({
   params,
@@ -44,10 +76,7 @@ export default async function DirectoryPage({
       <section className="relative overflow-hidden border-b border-[var(--border)]">
         <div className="pointer-events-none absolute inset-0 dot-grid" aria-hidden />
         <div className="relative mx-auto w-full max-w-6xl px-6 pb-12 pt-10 md:pb-16 md:pt-16">
-          <Link
-            href="/"
-            className="text-[12px] text-[var(--muted)] hover:text-[var(--foreground)]"
-          >
+          <Link href="/" className="text-[12px] text-[var(--muted)] hover:text-[var(--foreground)]">
             ← All directories
           </Link>
           <Badge tone="outline" className="mb-4 mt-4">
@@ -76,7 +105,7 @@ export default async function DirectoryPage({
               </Link>
             ) : null}
             <span className="text-[12px] text-[var(--muted)]">
-              {items.length} item{items.length === 1 ? "" : "s"}
+              {items.length} item{items.length === 1 ? '' : 's'}
             </span>
           </div>
         </div>

@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export function SiteFooter() {
   return (
     <footer className="mt-24 border-t border-[var(--border)]">
@@ -6,8 +8,8 @@ export function SiteFooter() {
           One star can&rsquo;t pick your next AI dev tool. Five axes can.
         </p>
         <p className="mt-1">
-          © {new Date().getFullYear()} EverythingRated · Multi-axis ratings
-          for AI dev tool decisions · Anonymous, cookie-bound ratings · POC by{" "}
+          © {new Date().getFullYear()} EverythingRated · Multi-axis ratings for AI dev tool
+          decisions · Anonymous, cookie-bound ratings · POC by{' '}
           <a
             href="https://sarthakagrawal.pages.dev"
             className="underline-offset-4 hover:text-[var(--foreground)] hover:underline"
@@ -15,6 +17,21 @@ export function SiteFooter() {
             Sarthak
           </a>
           .
+        </p>
+        <p className="mt-1">
+          <Link
+            href="/feeds"
+            className="underline-offset-4 hover:text-[var(--foreground)] hover:underline"
+          >
+            JSON & RSS feeds
+          </Link>{' '}
+          ·{' '}
+          <Link
+            href="/api-docs"
+            className="underline-offset-4 hover:text-[var(--foreground)] hover:underline"
+          >
+            API docs
+          </Link>
         </p>
       </div>
     </footer>
