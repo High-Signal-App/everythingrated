@@ -1,114 +1,139 @@
 # agents.md — EverythingRated
 
+<!-- Concise agent bootloader. Deep detail lives in docs/. This file is the
+     bootloader, not the spec. Edit docs/ first, then keep this in sync. -->
+<!-- AGENTS.md spec: https://github.com/agentsmd/agents.md — supported by
+     Claude Code, Cursor, Copilot, Gemini CLI, and others. -->
+
 ## Shared Fleet Standard
 
-Also read and follow the shared fleet-level agent standard at `../AGENTS.md`. Treat this repository as owned product code: protect production stability, keep changes scoped, verify work, and record durable follow-up tasks when something remains incomplete or blocked.
+Also read and follow the shared fleet-level agent standard at `../AGENTS.md`.
+Treat this repository as owned product code: protect production stability,
+keep changes scoped, verify work, and record durable follow-up tasks when
+something remains incomplete or blocked.
 
-## Purpose
-Multi-axis ratings platform. Every "thing" is rated across multiple aspects
-instead of a single star. Items are organised into **directories**, each with
-its own per-directory aspect set (an AI editor is rated on different axes than
-a database). Seeded directories: AI dev tools, databases, hosting.
+## What EverythingRated is
+
+Multi-axis ratings platform narrowed to **one use case: AI dev-tool adoption
+decisions**. Each directory defines its own aspect rubric; visitors rate
+items across those aspects instead of giving one collapsed score. Anonymous
+(httpOnly `er_visitor` cookie), no auth. Live: <https://ratings.highsignal.app>.
+
+Current phase: **finish-and-pause** (closed 2026-07-10). `ai-dev-tools` is the
+retained surface; `databases` and `hosting` are parked (routes still work).
+See [`STATUS.md`](./STATUS.md) and [`PROJECT_STATUS.md`](./PROJECT_STATUS.md).
 
 ## Stack
-- Framework: Next.js 16 (App Router), React 19
-- Language: TypeScript
-- Styling: Tailwind CSS v4
-- DB: Drizzle ORM + Cloudflare D1 (`everythingrated-db`). Bound via
-  `apps/web/wrangler.toml` as `DB`. Read via `getCloudflareContext().env.DB`
-  inside Server Components / Server Actions.
-- Runtime: `@opennextjs/cloudflare` → Cloudflare Workers (single Worker hosts
-  the whole app + assets).
-- Auth: NONE in POC. Ratings are anonymous, identified by an httpOnly cookie
-  `er_visitor=<uuid>` set on first rating.
-- Package manager: pnpm workspaces (Node ≥20)
 
-## Repo structure
-```
-apps/web/                           # Next.js application
-  src/app/
-    layout.tsx                      # Site shell + global styles
-    page.tsx                        # Landing — hero + directory grid
-    d/[directory]/
-      page.tsx                      # Directory landing — item grid
-      [item]/page.tsx               # Item page — interactive rating UI
-    globals.css                     # Tailwind v4 + design tokens
-  src/components/                   # Atomic design
-    atoms/      badge, card, score-bar
-    molecules/  aspect-row, rate-row
-    organisms/  site-header, site-footer, item-card, directory-card
-  src/lib/
-    cn.ts                           # clsx + tailwind-merge
-    visitor.ts                      # cookie read/ensure (er_visitor)
-    ratings.ts                      # all DB queries + aggregation
-    actions.ts                      # Server Action: submitRating
-    db.ts                           # getDb() — wraps D1 binding from request ctx
-  next.config.ts                    # initOpenNextCloudflareForDev() so `next dev` sees D1
-  open-next.config.ts
-  wrangler.toml                     # D1 binding (DB), assets, worker entry
-  cloudflare-env.d.ts               # augments CloudflareEnv with DB
-packages/
-  db/                               # Drizzle schema + D1 client
-    src/
-      schema.ts                     # directories, items, aspects, ratings
-      client.ts                     # createDb(d1) → drizzle(d1, { schema })
-      index.ts                      # re-exports
-    migrations/                     # drizzle-kit generate output (D1 SQL)
-    drizzle.config.ts               # dialect: sqlite, driver: d1-http
-scripts/
-  seed-d1.ts                        # wrangler-driven seed — 3 directories
-```
+Next.js 16 (App Router) · React 19 · Tailwind v4 · Drizzle ORM · Cloudflare D1
+(`everythingrated-db`) · `@opennextjs/cloudflare` on Workers · pnpm workspaces.
+No auth. PostHog analytics. Workers `RATE_LIMITER` binding.
+
+## Critical constraints (read first)
+
+- **No auth in the POC.** Ratings are anonymous, scoped by an httpOnly
+  `er_visitor` cookie minted **lazily on the first `submitRating` Server
+  Action, never on reads.** Do NOT add middleware that mints cookies on read
+  pages — it re-pollutes the visitor space and breaks caching. See
+  [`docs/architecture/decisions/ADR-0001-no-auth-in-poc.md`](./docs/architecture/decisions/ADR-0001-no-auth-in-poc.md).
+- **DO NOT ADD** without a plan: auth, search, item submission beyond the
+  `ai-dev-tools` pilot, comments, admin panel beyond `/moderation`, email,
+  dynamic directory creation, broad public submission without moderation,
+  high-signal external ingest. See
+  [`docs/product/overview.md`](./docs/product/overview.md) and
+  [`docs/knowledge/failed-approaches.md`](./docs/knowledge/failed-approaches.md).
+- **`apps/web/agent-edge.mjs` is generated** by the fleet `apply-agent-surfaces`
+  tool. Do not hand-edit; regenerate. The `apps/web/public/` copies are static
+  fallbacks. See
+  [`docs/architecture/edge-and-agent-surfaces.md`](./docs/architecture/edge-and-agent-surfaces.md).
+- **D1 migrations are forward-only** (no transactional rollback). Always
+  `wrangler d1 export` before a destructive remote migration. See
+  [`docs/operations/runbooks/d1-migrations.md`](./docs/operations/runbooks/d1-migrations.md).
+- **Never reseed remote casually** — `pnpm db:seed:remote` writes owner
+  ratings + catalogue rows to production. It is a deliberate, coordinated
+  action. See [`docs/development/seed-data.md`](./docs/development/seed-data.md).
+- **Do not remove `[placement] mode = "smart"`** in `apps/web/wrangler.toml` —
+  psi-swarm flagged TTFB > 1s before it. See
+  [`docs/architecture/overview.md`](./docs/architecture/overview.md).
+- **Never commit secrets.** Real values live in Cloudflare env bindings /
+  `.env.local` (gitignored). The `.husky/pre-push` hook scans for tokens.
 
 ## Key commands
+
 ```bash
 pnpm install
+cp .env.example .env.local
+pnpm db:migrate:local        # apply migrations to local D1 (.wrangler/)
+pnpm db:seed:local           # seed local D1 (3 directories + owner ratings)
+pnpm dev                     # http://localhost:3000
 
-# Local
-pnpm db:migrate:local               # apply migrations to local D1 (.wrangler/)
-pnpm db:seed:local                  # 10 tools + 5 aspects + owner ratings
-pnpm dev                            # http://localhost:3000
+pnpm test                    # vitest validation + comparison assertions
+pnpm typecheck               # tsc --noEmit across workspaces
+pnpm check                   # biome check (format + lint)
+pnpm docs:check              # validate internal Markdown links (no install)
 
-# Remote
+# remote (deliberate, coordinated)
 pnpm db:migrate:remote
-pnpm db:seed:remote
-pnpm deploy                         # opennextjs-cloudflare build && deploy
-
-pnpm --filter web typecheck
-pnpm db:generate                    # regen migrations after schema change
+pnpm deploy                  # opennextjs-cloudflare build && deploy (manual)
 ```
 
-## Architecture notes
-- **Four tables**: `directories`, `items`, `aspects`, `ratings`.
-  - `items.directory_id` + `(directory_id, slug)` unique → slugs are scoped
-    per directory.
-  - `aspects.directory_id` + `(directory_id, key)` unique → aspects are
-    per-directory (databases have their own axes, AI tools have theirs).
-  - `(item_id, aspect_id, visitor_id)` unique on `ratings` enforces "one
-    rating per axis per visitor"; `submitRating` upserts on it so re-rating
-    just updates.
-- **Aggregation lives in `lib/ratings.ts`**: `listItemsWithAggregates` is
-  directory-scoped and does one full pull + JS reduce — fine at POC scale,
-  swap for SQL avg groupings if a directory grows.
-- **Cookie**: `er_visitor` is httpOnly + SameSite=Lax + 1 year. Minted lazily
-  on the first `submitRating` call (Server Action), never on read pages, so
-  bots don't pollute the visitor space.
-- **Optimistic UI**: `RateRow` updates the displayed average + your-score
-  immediately, then awaits the Server Action; `revalidatePath` refreshes the
-  authoritative view.
-- **No middleware**: visitor ids are only minted in mutating Server Actions
-  to keep page renders cacheable and bot-noise-free.
-- **DO NOT ADD** in POC: auth, search, item submission, comments, admin
-  panel, email, dynamic directory creation (needs auth + spam mitigation).
-  The whole bet is multi-axis UX.
+Full command index: [`docs/development/commands.md`](./docs/development/commands.md).
 
-## Divergence from the truehire template
-- No `packages/core` (no domain logic worth extracting yet).
-- No `packages/ui`, `packages/config` (truehire's are empty too — not used).
-- No NextAuth, no GitHub adapter tables.
-- No husky / secret-scan yet — add when first secret lands.
-- ESLint + tsconfig use upstream `eslint-config-next` directly instead of
-  `@saas-maker/*` shared configs (those configs aren't in this repo, and the
-  POC shouldn't depend on uncommitted external packages).
+## Documentation navigation
+
+The committed Markdown under `docs/` is the source of truth. Blume
+(`blume.config.ts`) is only the presentation/search layer. Start at
+[`docs/index.md`](./docs/index.md) for the full map.
+
+| Area | Canonical doc |
+| --- | --- |
+| Current state (objective, blockers, next steps) | [`STATUS.md`](./STATUS.md) |
+| Full durable history + shipped features | [`PROJECT_STATUS.md`](./PROJECT_STATUS.md) |
+| Product (bet, scope, what not to build) | [`docs/product/overview.md`](./docs/product/overview.md) |
+| Architecture overview | [`docs/architecture/overview.md`](./docs/architecture/overview.md) |
+| Data model + non-obvious constraints | [`docs/architecture/data-model.md`](./docs/architecture/data-model.md) |
+| Ratings pipeline (write/read, supersede) | [`docs/architecture/ratings-pipeline.md`](./docs/architecture/ratings-pipeline.md) |
+| Worker entry, edge cache, agent surfaces | [`docs/architecture/edge-and-agent-surfaces.md`](./docs/architecture/edge-and-agent-surfaces.md) |
+| Architecture decisions (ADRs) + plan index | [`docs/architecture/decisions/`](./docs/architecture/decisions/) |
+| Local dev setup | [`docs/development/setup.md`](./docs/development/setup.md) |
+| Code conventions | [`docs/development/conventions.md`](./docs/development/conventions.md) |
+| Testing | [`docs/development/testing.md`](./docs/development/testing.md) |
+| Deploy | [`docs/operations/deploy.md`](./docs/operations/deploy.md) |
+| Jobs (CI + scheduled) | [`docs/operations/jobs.md`](./docs/operations/jobs.md) |
+| D1 migration runbook | [`docs/operations/runbooks/d1-migrations.md`](./docs/operations/runbooks/d1-migrations.md) |
+| Building the docs site (Blume) | [`docs/operations/build-docs.md`](./docs/operations/build-docs.md) |
+| Failed / deferred approaches (do not retry) | [`docs/knowledge/failed-approaches.md`](./docs/knowledge/failed-approaches.md) |
+| Glossary | [`docs/knowledge/glossary.md`](./docs/knowledge/glossary.md) |
+| Learnings queue | [`docs/knowledge/learnings.md`](./docs/knowledge/learnings.md) |
+
+## Documentation maintenance rules
+
+1. Markdown in `docs/` is the source of truth. Fix facts there first, then
+   update code comments or this file.
+2. One fact, one home. Do not re-explain what has a canonical page — link.
+3. Do not duplicate what code already says (columns, route lists, script
+   names). Describe *why* and *how it fits together*; link to the code.
+4. Mark unresolved questions with `TBD` or an "Open questions" section. Do
+   not invent rationale.
+5. Keep pages short (150–300 lines). Split when a page grows past that.
+6. Supersede a doc by moving it to `docs/archive/` (preserves git rename
+   history), not by deleting.
+7. After editing docs, run `pnpm docs:check` (enforced in
+   `.github/workflows/docs.yml`).
+
+## Repo structure (one screen)
+
+```
+apps/web/              Next.js app + Cloudflare Worker bundle (worker.mjs, agent-edge.mjs)
+  src/app/             landing, directory, item routes, feeds, sitemap/robots
+  src/components/      atoms / molecules / organisms (atomic design)
+  src/lib/             db, ratings, actions, visitor, moderation, comparison, stack-recommender
+packages/db/           Drizzle schema + D1 client + migrations
+scripts/               seed-d1.ts, catalogue JSON, validate-docs.sh, build-docs.sh
+docs/                  canonical documentation (source of truth)
+plans/                 long-form design documents (0001–0004)
+fixtures/              item submission fixtures
+```
 
 <!-- FLEET-GUIDANCE:START -->
 
@@ -130,9 +155,3 @@ pnpm db:generate                    # regen migrations after schema change
 - Note any paid-AI use in the task or handoff when it materially affects cost, reproducibility, or future maintenance.
 
 <!-- FLEET-GUIDANCE:END -->
-
-## Active context
-POC. Owner is the only seeded rater (`visitor_id = "seed-owner"`). Scores
-are first-pass author opinion — replace with real ratings after a few days
-of usage. 3 seeded directories (ai-dev-tools, databases, hosting); plan
-0003 covers the static multi-directory shape currently in production.

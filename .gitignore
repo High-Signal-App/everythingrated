@@ -12,6 +12,11 @@ out/
 .wrangler/
 *.tsbuildinfo
 
+# Blume documentation site (presentation layer — generated, not source of truth)
+.blume/
+.blume-verify/
+.astro/
+
 # env
 .env
 .env.local
@@ -21,6 +26,11 @@ out/
 # tmp
 .tmp/
 .symphony/workspaces/
+
+# Local agent logs / scratch (never commit agent session artifacts)
+.agent-logs/
+agent-session-*.md
+agent-session-*.jsonl
 
 # test
 coverage/
