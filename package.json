@@ -23,23 +23,33 @@
     "format": "biome format --write .",
     "format:check": "biome format .",
     "check": "biome check .",
+    "docs:check": "bash scripts/validate-docs.sh",
+    "docs:build": "blume build",
+    "docs:dev": "blume dev",
+    "docs:preview": "blume preview",
+    "docs:validate": "blume validate",
+    "docs:doctor": "blume doctor",
     "prepare": "husky"
   },
   "devDependencies": {
     "@biomejs/biome": "2.5.0",
+    "@vitest/coverage-v8": "^4.1.9",
+    "astro": "7.1.1",
+    "blume": "1.0.4",
     "husky": "9.1.7",
     "next": "16.2.4",
     "tsx": "4.21.0",
     "typescript": "5.6.3",
-    "vitest": "4.1.5",
-    "@vitest/coverage-v8": "^4.1.9"
+    "vitest": "4.1.5"
   },
   "engines": {
     "node": ">=20"
   },
   "pnpm": {
     "peerDependencyRules": {
-      "ignoreMissing": ["@opentelemetry/api"]
+      "ignoreMissing": [
+        "@opentelemetry/api"
+      ]
     }
   }
 }
