@@ -19,7 +19,7 @@ Last updated: 2026-07-03
 
 ### External
 
-- **Cloudflare:** Workers via OpenNext (`@opennextjs/cloudflare`); D1 binding `DB` → `everythingrated-db`; Workers rate limiter binding `RATE_LIMITER`.
+- **Cloudflare:** Workers via OpenNext (`@opennextjs/cloudflare`); D1 binding `DB` → `everythingrated-db`. No rate limiter binding is configured.
 - **PostHog:** analytics via local wrapper.
 - **Drizzle ORM:** D1 schema in `packages/db`.
 - **Env:** `.env.example` — `MODERATION_TOKEN` (moderation queue gate).
@@ -30,7 +30,7 @@ Last updated: 2026-07-03
 
 ### Stack & commands
 
-**Stack:** Next.js 16 + React 19 + Tailwind v4 + Drizzle ORM + Cloudflare D1; `@opennextjs/cloudflare` on Workers; pnpm monorepo (`apps/web`, `packages/db`). PostHog analytics; Workers rate limiter binding.
+**Stack:** Next.js 16 + React 19 + Tailwind v4 + Drizzle ORM + Cloudflare D1; `@opennextjs/cloudflare` on Workers; pnpm monorepo (`apps/web`, `packages/db`). PostHog analytics; no rate limiter wired.
 
 | Command | Purpose |
 |---------|---------|
@@ -70,7 +70,7 @@ Last updated: 2026-07-03
 - `/d/[directory]/[item]` — multi-axis rating page per item.
 - `/d/[directory]/random`, `/random` — random item picker.
 - `/d/[directory]/submit` — item submission form (pilot: `ai-dev-tools` only).
-- `/submit-directory` — directory suggestion form.
+- `/submit-directory` — static "submissions paused" page (form removed 2026-07-03; route kept for direct links).
 - `/moderation` — token-gated queue (`MODERATION_TOKEN` query param).
 - `/my` — visitor's ratings across directories.
 - `/list`, `/stack`, `/trending` — ranked/discovery views.
@@ -86,7 +86,7 @@ Last updated: 2026-07-03
 - Anonymous ratings: httpOnly `er_visitor` cookie minted on first rating; one score per item/aspect/visitor.
 - Append-only ratings with supersede on re-rate; current aggregates filter `supersededAt IS NULL`.
 - Server actions in `apps/web/src/lib/` for rate, compare, submit, moderate.
-- PostHog via local wrapper; rate limiter binding `RATE_LIMITER` on submit actions.
+- PostHog via local wrapper; no rate limiter binding on submit actions (deferred).
 - Seed data via `scripts/seed-d1.ts` for reproducible local/remote D1.
 
 ### Seeded directories (static POC data)
@@ -119,11 +119,11 @@ Last updated: 2026-07-03
 
 - `item_tags` table for stack recommender constraint boosts (e.g. `runs-on:cloudflare`, `pricing:free-tier`).
 
-### Directory submission (shipped 2026-05)
+### Directory submission (shipped 2026-05; public form paused 2026-07-03)
 
-- `/submit-directory` form with validation (3–8 aspects, length caps).
+- `/submit-directory` public form + `submitDirectory` action removed 2026-07-03; route is now a static "paused" page. Validation logic (`validateDirectorySubmission`, 3–8 aspects, length caps) retained for approving existing queued rows.
 - `directory_submissions` D1 table; slug dedup; approve inserts `directories` + `aspects`.
-- `/moderation` approve/reject with `MODERATION_TOKEN`.
+- `/moderation` approve/reject with `MODERATION_TOKEN` still works on the existing queue.
 
 ### Item submission pilot (plan 0004, shipped 2026-06-13)
 
@@ -141,7 +141,7 @@ Last updated: 2026-07-03
 ### Infra & tests
 
 - Deployed on Cloudflare Workers + D1 (`everythingrated-db`).
-- PostHog analytics; Workers rate limiter binding.
+- PostHog analytics; no rate limiter wired.
 - Vitest: validation + comparison assertion tests (`pnpm test`).
 - `@saas-maker/feedback` widget integration.
 
@@ -151,7 +151,7 @@ Last updated: 2026-07-03
 
 1. ~~Time-evolving ratings polish.~~ **Paused** — current latest-view aggregates are the frozen POC baseline.
 2. ~~Expand item submission pilot beyond `ai-dev-tools`.~~ **Paused** pending measured moderation demand.
-3. ~~Wire `RATE_LIMITER` on all submit actions.~~ **Paused** until endpoint-specific evidence exists.
+3. ~~Add + wire a rate limiter (`RATE_LIMITER`) on submit actions.~~ **Paused** — no limiter binding exists yet; deferred until endpoint-specific evidence exists.
 
 ### Closure
 

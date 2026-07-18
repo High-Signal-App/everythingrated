@@ -36,7 +36,7 @@ yourself after learning; never invent rationale.
 ## Token-gated moderation via shared secret
 - What: Using a shared secret token to gate moderation actions instead of full auth
 - Why here: TBD
-- Gotcha (from code): `apps/web/src/lib/moderation.ts:3-9` — `getModerationToken()` checks both Cloudflare env var `RAG_SERVICE_KEY` and `process.env` fallback
+- Gotcha (from code): `apps/web/src/lib/moderation.ts:3-10` — `getModerationToken()` reads the Cloudflare env binding `MODERATION_TOKEN` first, then falls back to `process.env.MODERATION_TOKEN`
 - Source: https://developers.cloudflare.com/workers/runtime-apis/env/
 
 ## LIMIT 1 probe for existence check

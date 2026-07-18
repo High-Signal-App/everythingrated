@@ -69,15 +69,16 @@ uniqueness is per-directory. That is the product, expressed as a constraint.
 
 ## The primary flow: rating an item
 
-The core user journey is: open an item page, drag a score, see the average move.
+The core user journey is: open an item page, tap a 1–5 score per aspect, see
+the average move.
 
 ```mermaid
 flowchart TD
     A["Visitor opens /d/ai-dev-tools/cursor"] --> B["ItemPage Server Component<br/>readVisitorId() (no cookie minted on read)"]
     B --> C["getItemAggregate() in ratings.ts<br/>SELECT current ratings WHERE supersededAt IS NULL"]
     C --> D["buildAggregate(): per-aspect avg, count, yourScore, overall"]
-    D --> E["RateRow renders sliders + optimistic UI"]
-    E -->|"visitor sets a score"| F["submitRating Server Action (actions.ts)"]
+    D --> E["RateRow renders 1–5 buttons + optimistic UI"]
+    E -->|"visitor taps a score"| F["submitRating Server Action (actions.ts)"]
     F --> G["ensureVisitorId(): mint er_visitor cookie if absent"]
     G --> H["rate() in ratings.ts"]
     H --> I["Supersede prior current row for (visitor,item,aspect)"]

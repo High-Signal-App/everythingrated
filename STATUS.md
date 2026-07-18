@@ -37,8 +37,9 @@ moderation evidence.
 - **Playwright e2e not in CI.** `apps/web/e2e/mobile.spec.ts` and
   `pnpm --filter web test:e2e` exist but are not wired to any workflow. Green
   CI does not imply e2e passed.
-- **`RATE_LIMITER` not wired to all submit actions** — paused until
-  endpoint-specific abuse evidence exists. Do not tighten speculatively.
+- **No rate limiting wired** — no `RATE_LIMITER` binding in `wrangler.toml`
+  and no code references one; deferred until endpoint-specific abuse evidence
+  exists. Do not add or tighten speculatively.
 
 ## Open questions
 

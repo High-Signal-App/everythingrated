@@ -5,14 +5,21 @@ touches the anonymous rating loop.
 
 ## Directory submission
 
-- **Public form:** `/submit-directory` (`directory-submission-form.tsx`).
-- **Validation:** `validateDirectorySubmission` enforces length caps, 3–8
-  aspects, optional email, case-insensitive slug dedup.
+- **Public form: paused (2026-07-03).** `/submit-directory` is now a static
+  "submissions paused" page (`force-static`); the `DirectorySubmissionForm`
+  component and its `submitDirectory` Server Action were removed while the
+  product focuses on AI dev tools. The route stays live for direct links and
+  points visitors at the item-submission flow instead.
+- **Validation (retained in `lib/directory-submissions.ts`):**
+  `validateDirectorySubmission` enforces `MAX_TEXT_LENGTH = 500`, `MIN_ASPECTS
+  = 3` / `MAX_ASPECTS = 8`, name ≥ 3 chars, description/heroCopy ≥ 20 chars,
+  and normalized aspect labels. Still used when approving existing queued rows.
 - **Storage:** `directory_submissions` D1 table (status `pending` by default).
-- **Moderation:** `/moderation` (token-gated via `MODERATION_TOKEN` query
-  param). Approve inserts real `directories` + `aspects` rows; reject leaves
-  the row auditable with a moderator note.
-- **Shipped:** 2026-05.
+- **Moderation:** the existing `directory_submissions` queue still works on
+  `/moderation` (token-gated via `MODERATION_TOKEN`). Approve inserts real
+  `directories` + `aspects` rows; reject leaves the row auditable with a
+  moderator note.
+- **Shipped:** 2026-05; public form paused 2026-07-03.
 
 ## Item submission (pilot: `ai-dev-tools` only)
 
@@ -37,11 +44,12 @@ passed as a query param to `/moderation`. There is no full auth — see
 
 ## Rate limiting
 
-The Workers `RATE_LIMITER` binding is intended for submit actions. As of the
-last status update it is **not wired to every endpoint** — it is paused until
-endpoint-specific abuse evidence exists. Do not tighten limits speculatively;
-see [knowledge/failed-approaches.md](../knowledge/failed-approaches.md) for
-the fleet-wide stance on stale limiter config.
+There is **no rate limiting wired** on submit actions today: `wrangler.toml`
+declares no `RATE_LIMITER` binding and no code references one. A limiter is
+deferred until endpoint-specific abuse evidence exists — do not add or tighten
+limits speculatively; see
+[knowledge/failed-approaches.md](../knowledge/failed-approaches.md) for the
+fleet-wide stance on stale limiter config.
 
 ## Non-goals
 

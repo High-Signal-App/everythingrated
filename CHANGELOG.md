@@ -24,9 +24,9 @@ Cosmetic, infra, and seed-data changes do not need entries; check `git log`.
 
 ## 2026-05 — Weighted comparison boards
 
-- `/compare-journeys`-style boards weight each aspect's per-item score by a
-  user-tunable 0–5 multiplier (`?w=key:value,...`), then divide by total
-  weight to keep totals on the original 0–10 scale.
+- Comparison boards weight each aspect's per-item average by a user-tunable
+  0–5 weight (`?w=key:value,...`), then divide by total weight (a weighted
+  mean), keeping totals on the same 1–5 scale as the underlying scores.
 - Weights default to `1`; encoding drops any weight that equals `1` to keep
   shareable URLs short.
 - Sort tie-breaks alphabetically on `item.name`.

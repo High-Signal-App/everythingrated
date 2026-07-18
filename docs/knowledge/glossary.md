@@ -12,9 +12,9 @@ look those up in their own docs.
   [architecture/data-model.md](../architecture/data-model.md).
 - **Item** — a rateable thing inside a directory. `(directoryId, slug)` is
   unique, so two directories can each have an item with the same slug.
-- **Rating** — one score by one visitor on one aspect of one item. Append-
-  only; re-rating supersedes the prior row (`supersededAt`), it does not
-  overwrite. See
+- **Rating** — one score (**1–5**) by one visitor on one aspect of one item.
+  `rate()` clamps to `1..5`. Append-only; re-rating supersedes the prior row
+  (`supersededAt`), it does not overwrite. See
   [architecture/ratings-pipeline.md](../architecture/ratings-pipeline.md).
 - **Visitor** — an anonymous rater identified by an httpOnly `er_visitor`
   UUID cookie. Minted lazily on the first `submitRating` Server Action, never
@@ -40,8 +40,9 @@ look those up in their own docs.
   describes project constraints and gets a rated stack. Tag matches boost
   items.
 - **Comparison board** — weighted multi-aspect comparison across items in a
-  directory. Weights are 0–5 per aspect, encoded as `?w=key:value,...`;
-  totals normalize by total weight to stay on the 0–10 scale.
+  directory (up to `MAX_COMPARE_ITEMS` = 4). Weights are 0–5 per aspect,
+  encoded as `?w=key:value,...`; totals are a weighted mean normalized by total
+  weight, so they stay on the same **1–5** scale as the inputs (not 0–10).
 - **Agent surface** — machine-readable endpoints (`/llms.txt`,
   `/llms-full.txt`, `/index.md`, `/api/ai`) served by the generated
   `apps/web/agent-edge.mjs`. See

@@ -36,8 +36,10 @@ plus its static assets, backed by one Cloudflare D1 database.
 - **Package manager:** pnpm workspaces (`apps/web`, `packages/db`), Node ≥20.
 - **Auth:** none. Anonymous ratings scoped by `er_visitor` cookie.
 - **Analytics:** PostHog via a local wrapper.
-- **Rate limiting:** Workers `RATE_LIMITER` binding (not yet wired to all
-  submit endpoints).
+- **Rate limiting:** none wired. There is no `RATE_LIMITER` binding in
+  `apps/web/wrangler.toml` and no code references one; adding it is deferred
+  until endpoint-specific abuse evidence exists (see
+  [knowledge/failed-approaches.md](../knowledge/failed-approaches.md)).
 
 ## Request flow
 
@@ -75,8 +77,10 @@ caching — do not do it without revisiting the trade-off.
 `apps/web/src/components/` follows atomic design:
 
 - `atoms/` — badge, card, score-bar.
-- `molecules/` — aspect-row, rate-row.
-- `organisms/` — site-header, site-footer, item-card, directory-card.
+- `molecules/` — aspect-row, category-chips, rate-row.
+- `organisms/` — site-header, site-footer, item-card, directory-card,
+  comparison-board, item-submission-form, ranked-collections-panel,
+  stack-builder.
 
 Plus `posthog-provider.tsx`, `saasmaker-feedback.tsx`, `VitalsReporter.tsx`.
 

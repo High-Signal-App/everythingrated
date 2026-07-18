@@ -54,13 +54,25 @@ resolution. Current aggregates behave as a "latest view".
 
 See [decisions/README.md](decisions/README.md) for the historical plan index.
 
+## Rating scale (1–5)
+
+The underlying rating scale is **1–5**. `rate()` in `ratings.ts` clamps every
+submitted score with `Math.max(1, Math.min(5, Math.round(score)))`, and the
+UI (`RateRow`) offers exactly the five buttons `1..5`. All per-aspect
+averages, the per-item `overall` (mean of aspect averages), and the
+comparison-board weighted totals are therefore on this same **1–5** scale —
+there is no 0–10 anywhere. `ScoreBar` renders a value as `value / 5 * 100`
+percent for the same reason.
+
 ## Comparison boards
 
-`apps/web/src/lib/comparison.ts` weights each aspect's per-item score by a
-user-tunable 0–5 multiplier (`?w=key:value,...`), then divides by total
-weight to keep totals on the original 0–10 scale. Weights default to 1; the
-URL encoding drops any weight equal to 1 to keep shareable URLs short. Sort
-tie-breaks alphabetically on `item.name`.
+`apps/web/src/lib/comparison.ts` weights each aspect's per-item average by a
+user-tunable **0–5 weight** (`?w=key:value,...`, clamped by `clampWeight` to
+`0..5` in 0.1 steps), then divides by the total weight — a weighted mean, so
+the board total stays on the same **1–5** scale as the inputs (not 0–10).
+Weights default to 1; the URL encoding drops any weight equal to 1 to keep
+shareable URLs short. At most `MAX_COMPARE_ITEMS` (4) items compare at once.
+Sort tie-breaks alphabetically on `item.name`.
 
 ## Stack recommender
 

@@ -27,7 +27,7 @@ See [`STATUS.md`](./STATUS.md) and [`PROJECT_STATUS.md`](./PROJECT_STATUS.md).
 
 Next.js 16 (App Router) · React 19 · Tailwind v4 · Drizzle ORM · Cloudflare D1
 (`everythingrated-db`) · `@opennextjs/cloudflare` on Workers · pnpm workspaces.
-No auth. PostHog analytics. Workers `RATE_LIMITER` binding.
+No auth. PostHog analytics. No rate limiter wired (no `RATE_LIMITER` binding).
 
 ## Critical constraints (read first)
 

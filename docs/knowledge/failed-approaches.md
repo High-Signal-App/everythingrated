@@ -58,10 +58,11 @@ widgets, not configs — they stay. See
 ## Rejected: broad public submission without moderation
 
 **Why rejected:** public item submission without a moderation queue is a spam
-firehose and a trust-erosion vector. Submission is gated: directory
-submissions via `/submit-directory` → token-gated `/moderation`; item
-submissions via `/d/ai-dev-tools/submit` → same queue (pilot, `ai-dev-tools`
-only). Do not open broad public submission without a moderation plan. See
+firehose and a trust-erosion vector. Submission is gated: item submissions via
+`/d/ai-dev-tools/submit` → token-gated `/moderation` queue (pilot,
+`ai-dev-tools` only). The public directory-submission form is paused (the
+queue still moderates on `/moderation`). Do not open broad public submission
+without a moderation plan. See
 [product/submission-moderation.md](../product/submission-moderation.md).
 
 ## Deferred: time-evolving ratings UI polish
@@ -83,13 +84,14 @@ if item page exceeds ~50ms p95). See
 measured. Expanding to other directories is paused pending that evidence.
 See [product/submission-moderation.md](../product/submission-moderation.md).
 
-## Deferred: wiring `RATE_LIMITER` on all submit actions
+## Deferred: rate limiting on submit actions
 
-**Why deferred:** the Workers `RATE_LIMITER` binding exists but is not wired
-to every submit endpoint. Tightening limits speculatively, without
-endpoint-specific abuse evidence, is a fleet-wide anti-pattern — stale
-limiter config causes more outages than it prevents. Wire it per-endpoint
-only when abuse evidence appears. See
+**Why deferred:** there is no rate limiting today — `apps/web/wrangler.toml`
+declares no `RATE_LIMITER` binding and no code references one. Adding a limiter
+(and tightening limits) speculatively, without endpoint-specific abuse
+evidence, is a fleet-wide anti-pattern — stale limiter config causes more
+outages than it prevents. Add + wire a limiter per-endpoint only when abuse
+evidence appears. See
 [product/submission-moderation.md](../product/submission-moderation.md#rate-limiting).
 
 ## Not yet done (gaps, not rejections)

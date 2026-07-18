@@ -24,7 +24,8 @@ multi-axis UX can be tested before adding accounts, submissions, or moderation.
 
 - Shows directory pages with seeded items and aspect rubrics.
 - Lets visitors rate every item across the directory's own axes.
-- Stores one score per item/aspect/visitor and updates it on re-rating.
+- Stores ratings append-only (1–5 per item/aspect/visitor); re-rating
+  supersedes the prior row rather than overwriting it.
 - Aggregates average scores and counts for directory and item views.
 - Uses an httpOnly visitor cookie instead of auth in the POC.
 - Runs on Cloudflare Workers with D1 as the backing store.
@@ -36,9 +37,9 @@ multi-axis UX can be tested before adding accounts, submissions, or moderation.
 | Hosting | Cloudflare Workers (`everythingrated`, `ratings.highsignal.app`) via `@opennextjs/cloudflare` (`apps/web`) |
 | Database | Cloudflare D1 (`everythingrated-db`) — Drizzle ORM |
 | Auth | None — ratings are anonymous, scoped to an httpOnly `er_visitor` cookie |
-| Rate limiting | Cloudflare Workers rate limiter binding (`RATE_LIMITER`) |
+| Rate limiting | None wired — no `RATE_LIMITER` binding; deferred until abuse evidence |
 | Analytics | PostHog (`local posthog-js wrapper`) |
-| CI/CD | GitHub Actions — auto-deploy to Cloudflare Workers on push to `main` |
+| CI/CD | GitHub Actions — `ci.yml` (lint/typecheck/test/build) on push+PR; deploy is manual (`cloudflare-deploy.yml`, `workflow_dispatch` only), never auto on push |
 
 ## Local Development
 

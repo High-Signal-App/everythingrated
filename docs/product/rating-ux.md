@@ -6,7 +6,8 @@
 2. The page renders the directory's aspect rubric and, for each aspect, a
    `RateRow` showing the current average, the rater count, and the visitor's
    own score (if any).
-3. The visitor picks a score per aspect. `RateRow` updates **optimistically**:
+3. The visitor taps one of five buttons (**1–5**) per aspect. `RateRow`
+   updates **optimistically**:
    the displayed average and "your score" change immediately, then the
    `submitRating` Server Action is awaited.
 4. On success, `revalidatePath` refreshes the authoritative server view.
@@ -42,13 +43,18 @@ See [architecture/ratings-pipeline.md](../architecture/ratings-pipeline.md).
   `apps/web/src/lib/ratings.ts` via a directory-scoped pull + JS reduce.
 - This is fine at POC scale. If a directory grows, move aggregation into SQL
   `AVG` / `GROUP BY` against the `ratings_superseded_idx` partial-style index.
-- Comparison boards weight each aspect by a user-tunable 0–5 multiplier
-  (`?w=key:value,...`), normalized by total weight so totals stay on the 0–10
-  scale. Weights default to 1; encoding drops any weight equal to 1 to keep
-  shareable URLs short. Sort tie-breaks alphabetically on `item.name`.
+- Scores are on a **1–5** scale end to end (`RateRow` buttons, clamped in
+  `rate()`); averages and comparison totals stay on that scale.
+- Comparison boards weight each aspect by a user-tunable 0–5 weight
+  (`?w=key:value,...`), normalized by total weight (a weighted mean) so totals
+  stay on the same **1–5** scale as the inputs. Weights default to 1; encoding
+  drops any weight equal to 1 to keep shareable URLs short. Sort tie-breaks
+  alphabetically on `item.name`.
 
 ## Confidence
 
-A rating confidence explainer is rendered alongside scores so visitors
-understand that a 9.0 from 2 raters is not the same as a 9.0 from 200. The
-explainer is copy, not a statistical model — keep it honest about small-n.
+A rating confidence explainer is rendered on the homepage (`app/page.tsx`) so
+visitors understand that a high average from two raters who disagree is not the
+same as one from two dozen who agree (the copy uses "a 4.3 from two dozen
+raters" — a 1–5 value). The explainer is copy, not a statistical model — keep
+it honest about small-n.
