@@ -28,7 +28,7 @@ copy column lists here — read the schema.
   `(item_id, aspect_id, visitor_id)` anymore. Re-rating inserts a new row
   and sets `supersededAt` on the prior row. See
   [ratings-pipeline.md](ratings-pipeline.md) and
-  [ADR for plan 0001](decisions/README.md#plan-0001--time-evolving-ratings).
+  [architecture decisions](decisions/README.md).
 - **`item_versions` is sparse.** Items with no rows fall back to date-only
   rating anchoring. Only fill major versions you want to anchor against.
 - **`item_tags` is sparse.** Absence of a tag row means "no constraint", not

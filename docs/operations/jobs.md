@@ -17,7 +17,7 @@ here; read the workflow files.
 
 | Hook | What it does | Source |
 | --- | --- | --- |
-| `pre-push` | Runs `pnpm lint` if a `lint` script exists, then a secret scan over tracked files (aborts on likely tokens/keys, with fixture/example exclusions). | [`.husky/pre-push`](../../.husky/pre-push) |
+| `pre-push` | Runs `pnpm lint` if a `lint` script exists, then a secret scan over tracked files (aborts on likely tokens/keys, with fixture/example exclusions). | repository-root `.husky/pre-push` |
 
 `pnpm prepare` installs husky on `pnpm install`. The secret-scan regex lives
 inline in `pre-push` — extend it there if a new secret shape needs coverage.

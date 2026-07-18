@@ -52,8 +52,7 @@ resolution. Current aggregates behave as a "latest view".
 - Seed version backfill for existing ratings.
 - `rating_snapshots` materialized table (only if item page exceeds ~50ms p95).
 
-See [decisions/README.md](decisions/README.md#plan-0001--time-evolving-ratings)
-and `plans/0001-time-evolving-ratings.md`.
+See [decisions/README.md](decisions/README.md) for the historical plan index.
 
 ## Comparison boards
 
@@ -70,4 +69,4 @@ describe their project constraints and get a rated stack. `item_tags` (sparse
 key/value) provide constraint boosts — e.g. `runs-on:cloudflare`,
 `pricing:free-tier`, `self-hostable:yes`. Items without a tag simply don't
 get a boost; absence is not "false". See
-[data-model.md](data-model.md#item_tags).
+[data-model.md](data-model.md).

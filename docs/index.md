@@ -5,15 +5,14 @@ EverythingRated. Markdown here is authoritative; the Blume site
 (`blume.config.ts` at repo root) is only the presentation and search layer
 over these same files.
 
-For a one-screen agent bootloader, see [`../agents.md`](../agents.md).
-For the current objective, active work, and blockers, see
-[`../STATUS.md`](../STATUS.md).
+The one-screen agent bootloader is `agents.md` at the repository root. The
+current objective and blockers live in the repository-root `STATUS.md`.
 
 ## Where to start
 
 | You want to | Read |
 | --- | --- |
-| Current objective, blockers, next steps | [`../STATUS.md`](../STATUS.md), [current/](current/) |
+| Current objective, blockers, next steps | repository-root `STATUS.md`, [current/README.md](current/README.md) |
 | Understand the product bet and scope | [product/overview.md](product/overview.md) |
 | See the system architecture | [architecture/overview.md](architecture/overview.md) |
 | Understand the data model | [architecture/data-model.md](architecture/data-model.md) |
@@ -23,7 +22,7 @@ For the current objective, active work, and blockers, see
 | Deploy | [operations/deploy.md](operations/deploy.md) |
 | CI + scheduled jobs | [operations/jobs.md](operations/jobs.md) |
 | Build the docs site (Blume) | [operations/build-docs.md](operations/build-docs.md) |
-| Review past decisions | [architecture/decisions/](architecture/decisions/) |
+| Review past decisions | [architecture/decisions/README.md](architecture/decisions/README.md) |
 | Avoid repeating dead ends | [knowledge/failed-approaches.md](knowledge/failed-approaches.md) |
 | Reusable learnings & glossary | [knowledge/learnings.md](knowledge/learnings.md), [knowledge/glossary.md](knowledge/glossary.md) |
 

@@ -86,4 +86,4 @@ Plus `posthog-provider.tsx`, `saasmaker-feedback.tsx`, `VitalsReporter.tsx`.
 - [ratings-pipeline.md](ratings-pipeline.md) — aggregation and time-evolution.
 - [edge-and-agent-surfaces.md](edge-and-agent-surfaces.md) — worker entry,
   agent indexing, sitemap, feeds.
-- [decisions/](decisions/) — ADRs and pointer index to `plans/`.
+- [decisions/README.md](decisions/README.md) — ADRs and historical plan index.
