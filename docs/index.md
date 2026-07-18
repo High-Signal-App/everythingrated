@@ -15,6 +15,7 @@ current objective and blockers live in the repository-root `STATUS.md`.
 | Current objective, blockers, next steps | repository-root `STATUS.md`, [current/README.md](current/README.md) |
 | Understand the product bet and scope | [product/overview.md](product/overview.md) |
 | See the system architecture | [architecture/overview.md](architecture/overview.md) |
+| Follow the whole system end to end | [architecture/how-it-works.md](architecture/how-it-works.md) |
 | Understand the data model | [architecture/data-model.md](architecture/data-model.md) |
 | Know how ratings aggregate and evolve | [architecture/ratings-pipeline.md](architecture/ratings-pipeline.md) |
 | Set up local dev | [development/setup.md](development/setup.md) |
