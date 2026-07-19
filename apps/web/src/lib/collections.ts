@@ -1,5 +1,5 @@
 export const COLLECTIONS_STORAGE_KEY = "er:ranked-collections";
-export const MAX_COLLECTION_ITEMS = 20;
+const MAX_COLLECTION_ITEMS = 20;
 
 export type RankedCollection = {
   id: string;
@@ -48,13 +48,6 @@ export function createCollection(
   };
 
   return { ok: true, collection: collection };
-}
-
-export function mergeCollections(
-  existing: RankedCollection[],
-  created: RankedCollection,
-): RankedCollection[] {
-  return [created, ...existing];
 }
 
 export function reorderItem(
@@ -107,23 +100,6 @@ export function addItemToCollection(
     collection: {
       ...collection,
       itemIds: [...collection.itemIds, itemId],
-      updatedAt: new Date().toISOString(),
-    },
-  };
-}
-
-export function renameCollection(
-  collection: RankedCollection,
-  name: string,
-): { ok: true; collection: RankedCollection } | { ok: false; error: string } {
-  const trimmed = name.trim();
-  if (!trimmed) return { ok: false, error: "Name cannot be empty." };
-  if (trimmed.length > 80) return { ok: false, error: "Name must be 80 characters or fewer." };
-  return {
-    ok: true,
-    collection: {
-      ...collection,
-      name: trimmed,
       updatedAt: new Date().toISOString(),
     },
   };

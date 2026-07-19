@@ -9,7 +9,7 @@ function escapeXml(s: string): string {
     .replace(/'/g, "&apos;");
 }
 
-export interface RssItem {
+interface RssItem {
   title: string;
   link: string;
   guid: string;
