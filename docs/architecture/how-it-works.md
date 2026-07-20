@@ -157,7 +157,7 @@ These are the load-bearing choices; each has a canonical home linked below.
   without a separate audit table. Every "current" aggregate pays for this with a
   `supersededAt IS NULL` filter, backed by `ratings_superseded_idx`. Rationale:
   [ratings-pipeline.md](ratings-pipeline.md) and
-  [decisions/README.md](decisions/README.md#plan-0001--time-evolving-ratings).
+  [architecture decision index](decisions/README.md).
 
 - **Aspects and items are per-directory, not global.** This is the product bet
   encoded as unique indexes — it is *why* an AI editor and a database can be
@@ -172,7 +172,7 @@ These are the load-bearing choices; each has a canonical home linked below.
 - **One Worker, D1 co-located via smart placement.** `[placement] mode =
   "smart"` in `wrangler.toml` runs the Worker near D1 so read/write round-trips
   don't cross the planet; psi-swarm flagged TTFB > 1 s before this. See
-  [overview.md](overview.md#worker-config-highlights-appswebwrangler-toml).
+  [architecture overview](overview.md).
 
 - **Narrowed to AI dev tools.** Other seeded directories still work via direct
   link but are hidden from primary entry points
@@ -186,4 +186,5 @@ These are the load-bearing choices; each has a canonical home linked below.
   stack recommender.
 - [edge-and-agent-surfaces.md](edge-and-agent-surfaces.md) — Worker entry, agent
   indexing, feeds, sitemap.
-- [decisions/](decisions/) — ADRs and the pointer index into `plans/`.
+- [decisions/README.md](decisions/README.md) — ADRs and the pointer index into
+  `plans/`.
