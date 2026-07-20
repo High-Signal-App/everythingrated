@@ -2,7 +2,7 @@ import { cookies } from "next/headers";
 
 import { trackSignup } from "./analytics";
 
-export const VISITOR_COOKIE = "er_visitor";
+const VISITOR_COOKIE = "er_visitor";
 const ONE_YEAR = 60 * 60 * 24 * 365;
 
 /**

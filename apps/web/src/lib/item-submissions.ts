@@ -160,7 +160,7 @@ export function isDomainAligned(name: string, websiteUrl: string): boolean {
   );
 }
 
-export async function detectDuplicateSlug(
+async function detectDuplicateSlug(
   directoryId: string,
   slug: string,
   excludeSubmissionId?: string,
@@ -197,7 +197,7 @@ export async function detectDuplicateSlug(
   return { duplicate: false };
 }
 
-export async function detectDuplicateName(
+async function detectDuplicateName(
   directoryId: string,
   name: string,
 ): Promise<{ duplicate: boolean; existingItemSlug?: string }> {
@@ -237,7 +237,7 @@ export async function detectDuplicateName(
   return { duplicate: false };
 }
 
-export async function detectDuplicateHost(
+async function detectDuplicateHost(
   directoryId: string,
   websiteUrl: string,
 ): Promise<{ duplicate: boolean; existingItemSlug?: string; host: string | null }> {
@@ -694,59 +694,4 @@ export async function rollbackApprovedItemSubmission(
     })
     .where(eq(itemSubmissions.id, id));
   return { ok: true, id: liveItem.id };
-}
-
-/** Seed helper: load the fixture rows into item_submissions as pending (idempotent by id).
- * Call after migrate, e.g. via tsx one-off or extend seed-d1.
- * Safe to run multiple times.
- */
-export async function loadItemSubmissionFixtures(): Promise<void> {
-  const { readFileSync } = await import("node:fs");
-  const { join } = await import("node:path");
-  const candidates = [
-    join(process.cwd(), "fixtures/item-submissions-ai-dev-tools.json"),
-    join(process.cwd(), "../../fixtures/item-submissions-ai-dev-tools.json"),
-  ];
-  let fixtureRows: any[] = [];
-  for (const p of candidates) {
-    try {
-      fixtureRows = JSON.parse(readFileSync(p, "utf8"));
-      break;
-    } catch {}
-  }
-  if (!fixtureRows.length) return;
-
-  const db = await getDb();
-  const [dir] = await db
-    .select({ id: directories.id })
-    .from(directories)
-    .where(eq(directories.slug, PILOT_DIRECTORY_SLUG));
-  if (!dir) return;
-
-  for (const f of fixtureRows) {
-    if (f.directorySlug !== PILOT_DIRECTORY_SLUG) continue;
-    // upsert by id (or skip if exists)
-    const existing = await db
-      .select({ id: itemSubmissions.id })
-      .from(itemSubmissions)
-      .where(eq(itemSubmissions.id, f.id));
-    if (existing.length) continue;
-
-    await db.insert(itemSubmissions).values({
-      id: f.id,
-      directoryId: dir.id,
-      slug: f.slug,
-      name: f.name,
-      description: f.description,
-      websiteUrl: f.websiteUrl,
-      submitterVisitorId: null,
-      submitterName: f.submitterName ?? null,
-      submitterEmail: f.submitterEmail ?? null,
-      status: f.status || "pending",
-      mergedIntoItemId: null,
-      moderatorNote: null,
-      createdAt: new Date(),
-      moderatedAt: null,
-    });
-  }
 }

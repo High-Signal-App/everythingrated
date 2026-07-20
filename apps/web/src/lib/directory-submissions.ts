@@ -87,56 +87,6 @@ export function validateDirectorySubmission(
   return { ok: true };
 }
 
-export async function submitDirectorySuggestion(
-  input: DirectorySubmissionInput,
-): Promise<DirectorySubmissionResult> {
-  const validation = validateDirectorySubmission(input);
-  if (!validation.ok) return validation;
-
-  const db = await getDb();
-  const name = input.name.trim();
-  const slug = slugifyDirectoryName(name);
-  if (!slug) {
-    return { ok: false, error: "Directory name needs letters or numbers." };
-  }
-
-  const [existingDirectory] = await db
-    .select({ id: directories.id })
-    .from(directories)
-    .where(eq(directories.slug, slug));
-  if (existingDirectory) {
-    return { ok: false, error: "That directory already exists." };
-  }
-
-  const [existingPending] = await db
-    .select({ id: directorySubmissions.id })
-    .from(directorySubmissions)
-    .where(
-      and(
-        eq(directorySubmissions.slug, slug),
-        ne(directorySubmissions.status, "rejected"),
-      ),
-    );
-  if (existingPending) {
-    return { ok: false, error: "That directory is already in the moderation queue." };
-  }
-
-  const id = crypto.randomUUID();
-  await db.insert(directorySubmissions).values({
-    id,
-    slug,
-    name,
-    description: input.description.trim(),
-    heroCopy: input.heroCopy.trim(),
-    aspectLabels: JSON.stringify(normalizeAspectLabels(input.aspectLabels)),
-    submitterName: input.submitterName?.trim() || null,
-    submitterEmail: input.submitterEmail?.trim() || null,
-    status: "pending",
-  });
-
-  return { ok: true, id };
-}
-
 export async function listDirectorySubmissions(
   status?: DirectorySubmissionStatus,
 ): Promise<DirectorySubmission[]> {

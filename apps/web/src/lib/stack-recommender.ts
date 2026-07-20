@@ -15,7 +15,7 @@
 import type { ConstraintTag, StackIntent } from "./stack-vocabulary";
 
 /** Per-aspect average for one item (already aggregated from ratings). */
-export type CatalogueAspect = {
+type CatalogueAspect = {
   key: string;
   label: string;
   avg: number; // 0 if unrated
@@ -40,7 +40,7 @@ export type Catalogue = {
   directories: Array<{ slug: string; name: string; items: CatalogueItem[] }>;
 };
 
-export type ScoredCandidate = {
+type ScoredCandidate = {
   item: CatalogueItem;
   /** Weighted aspect mean, 0–5 (before tag adjustment). */
   base: number;
@@ -52,7 +52,7 @@ export type ScoredCandidate = {
   topAspects: Array<{ key: string; label: string; avg: number; weight: number }>;
 };
 
-export type StackPick = {
+type StackPick = {
   directorySlug: string;
   directoryName: string;
   top: ScoredCandidate;
