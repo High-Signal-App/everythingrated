@@ -1,9 +1,17 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 
 import { Badge } from "@/components/atoms/badge";
 import { FOCUS_DIRECTORY_SLUG } from "@/lib/directory-focus";
 
 export const dynamic = "force-static";
+
+export const metadata: Metadata = {
+  title: "Stack builder — EverythingRated",
+  description:
+    "The stack builder is paused while EverythingRated focuses on AI developer-tool adoption decisions.",
+  alternates: { canonical: "/stack" },
+};
 
 // PARKED (2026-07-03): the cross-directory stack builder was part of the
 // generic "any-directory" ambition. While the product focuses on AI dev tool

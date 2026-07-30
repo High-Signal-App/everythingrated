@@ -4,6 +4,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'API & feeds — EverythingRated',
   description: 'Public endpoints for each directory — JSON items, RSS feed, random-item redirect.',
+  alternates: { canonical: '/api-docs' },
 };
 
 interface Endpoint {

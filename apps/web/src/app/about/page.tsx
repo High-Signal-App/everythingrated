@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "About — EverythingRated",
   description:
     "EverythingRated reviews everything along the axes that actually matter for that category. AI tools get rated on different aspects than databases.",
+  alternates: { canonical: "/about" },
 };
 
 export default function AboutPage() {

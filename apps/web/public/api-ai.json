@@ -1,6 +1,6 @@
 {
   "name": "EverythingRated",
-  "version": "1",
+  "version": "2",
   "url": "https://ratings.highsignal.app",
   "llms": "https://ratings.highsignal.app/llms.txt",
   "llmsFull": "https://ratings.highsignal.app/llms-full.txt",
@@ -8,7 +8,7 @@
   "robots": "https://ratings.highsignal.app/robots.txt",
   "markdown": {
     "suffix": ".md",
-    "negotiation": true
+    "negotiation": false
   },
   "surfaces": [
     {
@@ -16,11 +16,112 @@
       "url": "https://ratings.highsignal.app/",
       "md": "https://ratings.highsignal.app/index.md",
       "kind": "static",
-      "description": "Product home"
+      "description": "Multi-axis adoption ratings for AI developer tools."
+    },
+    {
+      "id": "about",
+      "url": "https://ratings.highsignal.app/about",
+      "md": "https://ratings.highsignal.app/about.md",
+      "kind": "static",
+      "description": "How multi-axis ratings preserve decision context."
+    },
+    {
+      "id": "trending",
+      "url": "https://ratings.highsignal.app/trending",
+      "md": "https://ratings.highsignal.app/trending.md",
+      "kind": "static",
+      "description": "Current status of the cross-directory trending board."
+    },
+    {
+      "id": "stack",
+      "url": "https://ratings.highsignal.app/stack",
+      "md": "https://ratings.highsignal.app/stack.md",
+      "kind": "static",
+      "description": "Current status of the cross-directory stack builder."
+    },
+    {
+      "id": "random",
+      "url": "https://ratings.highsignal.app/random",
+      "md": "https://ratings.highsignal.app/random.md",
+      "kind": "static",
+      "description": "Open a randomly selected rated item."
+    },
+    {
+      "id": "aspects",
+      "url": "https://ratings.highsignal.app/aspects",
+      "md": "https://ratings.highsignal.app/aspects.md",
+      "kind": "static",
+      "description": "Current status of the cross-directory aspect explorer."
+    },
+    {
+      "id": "api-docs",
+      "url": "https://ratings.highsignal.app/api-docs",
+      "md": "https://ratings.highsignal.app/api-docs.md",
+      "kind": "static",
+      "description": "Public machine-readable EverythingRated resources."
+    },
+    {
+      "id": "feeds",
+      "url": "https://ratings.highsignal.app/feeds",
+      "md": "https://ratings.highsignal.app/feeds.md",
+      "kind": "static",
+      "description": "Directory, item, RSS, sitemap, and crawler resources."
+    },
+    {
+      "id": "privacy",
+      "url": "https://ratings.highsignal.app/privacy",
+      "md": "https://ratings.highsignal.app/privacy.md",
+      "kind": "static",
+      "description": "Anonymous ratings, visitor identifiers, and analytics."
+    },
+    {
+      "id": "terms",
+      "url": "https://ratings.highsignal.app/terms",
+      "md": "https://ratings.highsignal.app/terms.md",
+      "kind": "static",
+      "description": "Terms for anonymous use of EverythingRated."
+    }
+  ],
+  "collections": [
+    {
+      "id": "directories",
+      "kind": "collection",
+      "urlTemplate": "https://ratings.highsignal.app/d/{directory}",
+      "markdownTemplate": "https://ratings.highsignal.app/d/{directory}.md",
+      "source": "https://ratings.highsignal.app/directories.json"
+    },
+    {
+      "id": "items",
+      "kind": "collection",
+      "urlTemplate": "https://ratings.highsignal.app/d/{directory}/{item}",
+      "markdownTemplate": "https://ratings.highsignal.app/d/{directory}/{item}.md",
+      "sourceTemplate": "https://ratings.highsignal.app/d/{directory}/items.json"
+    }
+  ],
+  "dataResources": [
+    {
+      "id": "directories-json",
+      "kind": "data",
+      "url": "https://ratings.highsignal.app/directories.json"
+    },
+    {
+      "id": "directory-items-json",
+      "kind": "data-template",
+      "urlTemplate": "https://ratings.highsignal.app/d/{directory}/items.json"
+    },
+    {
+      "id": "directory-rss",
+      "kind": "feed-template",
+      "urlTemplate": "https://ratings.highsignal.app/d/{directory}/rss"
+    },
+    {
+      "id": "item-json",
+      "kind": "data-template",
+      "urlTemplate": "https://ratings.highsignal.app/d/{directory}/{item}/item.json"
     }
   ],
   "auth": {
     "public": true,
-    "notes": "Auth-walled app routes are not agent-indexed unless listed here."
+    "notes": "Public catalog pages are readable without an account. /my is visitor-specific, /moderation is token-gated, and submission routes are intentionally excluded."
   }
 }
