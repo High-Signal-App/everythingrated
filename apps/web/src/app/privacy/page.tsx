@@ -3,6 +3,7 @@ import Link from "next/link";
 export const metadata = {
   title: "Privacy — EverythingRated",
   description: "EverythingRated has no accounts. The privacy story is short.",
+  alternates: { canonical: "/privacy" },
 };
 
 export default function PrivacyPage() {
@@ -34,10 +35,17 @@ export default function PrivacyPage() {
         </li>
       </ul>
 
-      <h2 className="mt-8 text-base font-semibold">What we don&apos;t</h2>
+      <h2 className="mt-8 text-base font-semibold">Analytics and feedback</h2>
       <ul className="mt-2 list-disc space-y-1 pl-5 text-sm">
-        <li>No login, no email collection, no IP-based tracking.</li>
-        <li>No third-party analytics or remarketing tags.</li>
+        <li>No login or email collection is required to rate an item.</li>
+        <li>
+          Pseudonymous product events are sent to PostHog to understand whether
+          the rating flow is useful.
+        </li>
+        <li>
+          The feedback widget is loaded only when its public project
+          configuration is present.
+        </li>
       </ul>
 
       <h2 className="mt-8 text-base font-semibold">Deletion</h2>

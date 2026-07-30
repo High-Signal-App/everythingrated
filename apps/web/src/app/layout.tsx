@@ -28,7 +28,6 @@ export const metadata: Metadata = {
   description:
     "Decide which AI dev libraries to adopt. Every library scored on 6 adoption axes — maintenance, community, license, API stability, footprint, AI portability — instead of one star.",
   applicationName: "EverythingRated",
-  alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     siteName: "EverythingRated",

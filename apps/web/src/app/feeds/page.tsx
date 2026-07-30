@@ -8,6 +8,7 @@ export const dynamic = 'force-dynamic';
 export const metadata: Metadata = {
   title: 'Feeds — EverythingRated',
   description: 'All public JSON and RSS feeds for EverythingRated directories and items.',
+  alternates: { canonical: '/feeds' },
 };
 
 type FeedKind = 'JSON' | 'RSS 2.0' | 'XML' | 'text';

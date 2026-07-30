@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 
 import { Badge } from "@/components/atoms/badge";
@@ -8,6 +9,10 @@ import { FOCUS_DIRECTORY_SLUG } from "@/lib/directory-focus";
 import { listDirectories, listItemsWithAggregates } from "@/lib/ratings";
 
 export const dynamic = "force-dynamic";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 const features = [
   {

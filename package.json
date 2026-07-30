@@ -5,7 +5,8 @@
   "packageManager": "pnpm@10.33.2",
   "scripts": {
     "dev": "pnpm --filter web dev",
-    "build": "pnpm --filter web build",
+    "build": "pnpm generate:agent-catalog && pnpm --filter web build",
+    "generate:agent-catalog": "tsx scripts/generate-agent-catalog.ts",
     "test": "vitest run",
     "test:coverage": "vitest run --coverage",
     "test:watch": "vitest",

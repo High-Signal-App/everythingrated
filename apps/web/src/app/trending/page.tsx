@@ -7,6 +7,7 @@ import { FOCUS_DIRECTORY_SLUG } from "@/lib/directory-focus";
 export const metadata: Metadata = {
   title: "Trending — EverythingRated",
   description: "Trending is paused while the product focuses on AI dev tool adoption decisions.",
+  alternates: { canonical: "/trending" },
 };
 
 export const dynamic = "force-static";

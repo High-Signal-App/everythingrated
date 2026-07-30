@@ -23,6 +23,18 @@ export async function generateMetadata({
   return {
     title: directory.name,
     description: directory.heroCopy,
+    openGraph: {
+      title: `${directory.name} ratings — EverythingRated`,
+      description: directory.heroCopy,
+      url: `/d/${directory.slug}`,
+      images: [{ url: "/og.svg", alt: `${directory.name} ratings` }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${directory.name} ratings — EverythingRated`,
+      description: directory.heroCopy,
+      images: ["/og.svg"],
+    },
     alternates: {
       canonical: `/d/${directory.slug}`,
       types: {
