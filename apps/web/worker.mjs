@@ -23,11 +23,11 @@ const CACHEABLE_EXACT = new Set([
   '/',
   '/about',
   '/trending',
-  '/list',
   '/stack',
   '/random',
   '/aspects',
   '/api-docs',
+  '/feeds',
   '/submit-directory',
   '/privacy',
   '/terms',
@@ -59,7 +59,16 @@ export default {
         const url = new URL(request.url);
         if (isCacheableDocumentPath(url.pathname)) {
           const cache = caches.default;
-          const cached = await cache.match(request);
+          // Cache entries survive Worker deployments. Key them by the
+          // Cloudflare version so a new release cannot keep serving stale
+          // metadata, canonicals, or removed routes from the prior version.
+          const cacheUrl = new URL(request.url);
+          cacheUrl.searchParams.set(
+            '__everythingrated_version',
+            env.CF_VERSION_METADATA?.id ?? 'local'
+          );
+          const cacheKey = new Request(cacheUrl, request);
+          const cached = await cache.match(cacheKey);
           if (cached) {
             const hit = new Response(cached.body, cached);
             hit.headers.set('x-edge-cache', 'HIT');
@@ -76,7 +85,7 @@ export default {
               statusText: response.statusText,
               headers,
             });
-            ctx.waitUntil(cache.put(request, cacheable.clone()));
+            ctx.waitUntil(cache.put(cacheKey, cacheable.clone()));
             const client = new Response(body, {
               status: response.status,
               statusText: response.statusText,

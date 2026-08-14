@@ -1,5 +1,5 @@
 # everythingrated — PROJECT STATUS
-Last updated: 2026-07-03
+Last updated: 2026-08-14
 
 ## Why / What
 
@@ -48,6 +48,7 @@ Last updated: 2026-07-03
 
 ## Timeline
 
+- **2026-08-14** — Search discovery hardened: public-page canonicals and Open Graph URLs now agree, HTML edge-cache keys are isolated by Worker deployment version, and the manual deployment verifies every live sitemap URL before it can report success.
 - **2026-07-03** — **Product narrowed to AI dev-tool adoption decisions.** Homepage, nav, footer, sitemap, and cross-directory surfaces (`/stack`, `/trending`, `/aspects`, `/submit-directory`) refocused on `ai-dev-tools` only. Other seeded directories (`databases`, `hosting`) parked — routes still work for direct links, but hidden from all primary entry points. `lib/directory-focus.ts` codifies the focus. Copy updated to sell the adoption-decision thesis.
 - **2026-07-02** — Added global try/catch error handler to OpenNext worker (`apps/web/worker.mjs`).
 - **2026-06-13** — Item submission pilot shipped (plan 0004): `/d/ai-dev-tools/submit`, `item_submissions` D1 table, moderation approve/reject.
@@ -141,6 +142,7 @@ Last updated: 2026-07-03
 ### Infra & tests
 
 - Deployed on Cloudflare Workers + D1 (`everythingrated-db`).
+- Worker-versioned HTML cache keys prevent stale metadata from surviving deployments; the production workflow crawls the complete sitemap and requires direct 200 responses with exact canonical and `og:url` values.
 - PostHog analytics; no rate limiter wired.
 - Vitest: validation + comparison assertion tests (`pnpm test`).
 - `@saas-maker/feedback` widget integration.

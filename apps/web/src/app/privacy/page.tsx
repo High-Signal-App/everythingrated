@@ -3,6 +3,7 @@ import Link from "next/link";
 export const metadata = {
   title: "Privacy — EverythingRated",
   description: "EverythingRated has no accounts. The privacy story is short.",
+  openGraph: { url: "/privacy" },
   alternates: { canonical: "/privacy" },
 };
 

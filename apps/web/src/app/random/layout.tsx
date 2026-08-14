@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Random item — EverythingRated",
   description: "Open a randomly selected public EverythingRated item.",
+  openGraph: { url: "/random" },
   alternates: { canonical: "/random" },
 };
 

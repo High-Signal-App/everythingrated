@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: "Stack builder — EverythingRated",
   description:
     "The stack builder is paused while EverythingRated focuses on AI developer-tool adoption decisions.",
+  openGraph: { url: "/stack" },
   alternates: { canonical: "/stack" },
 };
 
