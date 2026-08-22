@@ -2,6 +2,13 @@
 
 > Multi-axis rating tool for structured directories and catalogs — decisions with explicit trade-offs, not star averages.
 
+## When to use this
+
+- Comparing AI dev tools across multiple rating axes instead of a single collapsed score
+- Checking community ratings for coding agents, code review tools, and dev infrastructure
+- Getting structured multi-aspect ratings data as JSON for agent consumption
+- Reading the product brief as markdown without JavaScript
+
 ## Product
 
 - [Home](https://ratings.highsignal.app/): Directories and ratings
@@ -9,6 +16,7 @@
 ## Machine surfaces
 
 - [Agent catalog](https://ratings.highsignal.app/api/ai): JSON inventory of public surfaces
+- [OpenAPI spec](https://ratings.highsignal.app/openapi.json): Machine-readable API contract
 - [Homepage markdown](https://ratings.highsignal.app/index.md): Product brief without JS
 - [This index](https://ratings.highsignal.app/llms.txt)
 

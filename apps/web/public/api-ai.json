@@ -6,6 +6,7 @@
   "llmsFull": "https://ratings.highsignal.app/llms-full.txt",
   "sitemap": "https://ratings.highsignal.app/sitemap.xml",
   "robots": "https://ratings.highsignal.app/robots.txt",
+  "openapi": "https://ratings.highsignal.app/openapi.json",
   "markdown": {
     "suffix": ".md",
     "negotiation": false

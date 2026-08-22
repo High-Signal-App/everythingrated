@@ -4,10 +4,9 @@
 // Server-Timing response header, and logs slow requests (>200ms) via
 // console.warn.
 
-import openNext from "./.open-next/worker.js";
-import { withTiming } from "./timing.mjs";
+import openNext from './.open-next/worker.js';
+import { withTiming } from './timing.mjs';
 import { handleAgentEdge } from './agent-edge.mjs';
-
 
 // Durable Objects must be re-exported from the entry that wrangler.toml
 // points at, otherwise the bindings can't resolve them at deploy time.
@@ -15,8 +14,7 @@ export {
   DOQueueHandler,
   DOShardedTagCache,
   BucketCachePurge,
-} from "./.open-next/worker.js";
-
+} from './.open-next/worker.js';
 
 const CACHE_CONTROL = 'public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800';
 const CACHEABLE_EXACT = new Set([
@@ -41,9 +39,11 @@ function isCacheableDocumentPath(pathname) {
   return false;
 }
 
+// Paths that have a corresponding .md alternate (served by agent-edge.mjs).
+const KNOWN_MD_PAGES = new Set(['/']);
+
 export default {
   fetch: withTiming(async function fetch(request, env, ctx) {
-
     // Agent / LLM indexing surfaces (fleet GEO standard)
     {
       // The product-owned /api/ai route includes bounded collection templates
@@ -80,6 +80,11 @@ export default {
             const body = await response.arrayBuffer();
             const headers = new Headers(response.headers);
             headers.set('Cache-Control', CACHE_CONTROL);
+            // Add Vary: Accept, Accept-Encoding to HTML pages with markdown alternates.
+            if (KNOWN_MD_PAGES.has(url.pathname)) {
+              const existingVary = headers.get('Vary');
+              headers.set('Vary', existingVary ? `${existingVary}, Accept, Accept-Encoding` : 'Accept, Accept-Encoding');
+            }
             const cacheable = new Response(body, {
               status: response.status,
               statusText: response.statusText,
@@ -94,12 +99,32 @@ export default {
             client.headers.set('x-edge-cache', 'MISS');
             return client;
           }
+          // Agent-friendly 404: ensure Vary header on 404 responses for HTML clients.
+          if (response.status === 404 && !url.pathname.startsWith('/api/')) {
+            const headers = new Headers(response.headers);
+            headers.set('Vary', 'Accept, Accept-Encoding');
+            return new Response(response.body, { status: 404, headers });
+          }
           return response;
         }
       }
-      return await openNext.fetch(request, env, ctx);
+      const response = await openNext.fetch(request, env, ctx);
+      // Agent-friendly 404: ensure Vary header on 404 responses for HTML clients.
+      if (response.status === 404) {
+        const pn = new URL(request.url).pathname;
+        if (!pn.startsWith('/api/')) {
+          const headers = new Headers(response.headers);
+          headers.set('Vary', 'Accept, Accept-Encoding');
+          return new Response(response.body, { status: 404, headers });
+        }
+      }
+      return response;
     } catch (err) {
-      console.error(`[error] ${request.method} ${new URL(request.url).pathname}:`, err.message, err.stack);
+      console.error(
+        `[error] ${request.method} ${new URL(request.url).pathname}:`,
+        err.message,
+        err.stack
+      );
       return new Response(JSON.stringify({ error: 'Internal Server Error' }), {
         status: 500,
         headers: { 'Content-Type': 'application/json' },
