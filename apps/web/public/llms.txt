@@ -13,6 +13,20 @@
 
 - [Home](https://ratings.highsignal.app/): Directories and ratings
 
+## Developer docs
+
+- [OpenAPI spec](https://ratings.highsignal.app/openapi.json): Machine-readable API contract for all agent surfaces
+- [Agent catalog](https://ratings.highsignal.app/api/ai): JSON inventory of public surfaces
+- [Full agent brief](https://ratings.highsignal.app/llms-full.txt): Expanded product facts and capabilities
+- [Homepage markdown](https://ratings.highsignal.app/index.md): Product brief without JS
+
+## CLI
+
+- API base URL: `https://ratings.highsignal.app`
+- Fetch the agent catalog: `curl https://ratings.highsignal.app/api/ai`
+- Fetch the OpenAPI spec: `curl https://ratings.highsignal.app/openapi.json`
+- Get homepage as markdown: `curl -H 'Accept: text/markdown' https://ratings.highsignal.app/`
+
 ## Machine surfaces
 
 - [Agent catalog](https://ratings.highsignal.app/api/ai): JSON inventory of public surfaces
