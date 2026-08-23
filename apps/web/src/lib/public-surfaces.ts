@@ -180,6 +180,7 @@ export function publicAgentCatalog(origin = SITE_ORIGIN) {
     llmsFull: `${origin}/llms-full.txt`,
     sitemap: `${origin}/sitemap.xml`,
     robots: `${origin}/robots.txt`,
+    openapi: `${origin}/openapi.json`,
     markdown: {
       suffix: '.md',
       negotiation: false,
