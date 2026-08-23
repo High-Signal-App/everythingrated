@@ -14,7 +14,7 @@ import {
   type ConstraintTag,
   DIRECTORY_SIGNALS,
   type StackIntent,
-} from "./stack-vocabulary";
+} from './stack-vocabulary';
 
 /** Weight applied to an aspect group the user emphasised (1 = neutral). */
 export const EMPHASIS_WEIGHT = 2.5;
@@ -25,7 +25,11 @@ export const EMPHASIS_WEIGHT = 2.5;
  * space-form keywords. Keeps . + / # for tokens like "fly.io", "ci/cd", "c#".
  */
 function norm(s: string): string {
-  return ` ${s.toLowerCase().replace(/[^a-z0-9.+/#]+/g, " ").replace(/\s+/g, " ").trim()} `;
+  return ` ${s
+    .toLowerCase()
+    .replace(/[^a-z0-9.+/#]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()} `;
 }
 
 function normalize(text: string): string {
@@ -50,7 +54,7 @@ function tagKey(t: ConstraintTag): string {
  * prompt for more detail.
  */
 export function interpretQuery(text: string): StackIntent {
-  const normalized = normalize(text ?? "");
+  const normalized = normalize(text ?? '');
   if (normalized.trim().length === 0) {
     return { directories: [], weights: {}, tags: [] };
   }
@@ -95,10 +99,7 @@ export function interpretQuery(text: string): StackIntent {
  * Each provided field replaces the base field; omitted fields fall through.
  * Lets the hybrid UI start from `interpretQuery` then honour manual edits.
  */
-export function mergeIntent(
-  base: StackIntent,
-  override: Partial<StackIntent>,
-): StackIntent {
+export function mergeIntent(base: StackIntent, override: Partial<StackIntent>): StackIntent {
   return {
     directories: override.directories ?? base.directories,
     weights: override.weights ?? base.weights,

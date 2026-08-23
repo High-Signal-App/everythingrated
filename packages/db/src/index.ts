@@ -1,3 +1,3 @@
-export { createDb, schema } from "./client";
-export type { DB } from "./client";
-export * from "./schema";
+export { createDb, schema } from './client';
+export type { DB } from './client';
+export * from './schema';

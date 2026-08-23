@@ -6,7 +6,13 @@
         "name": "Corepack",
         "description": "Node.js-bundled shim that pins and provisions the exact pnpm or Yarn version a project declares.",
         "websiteUrl": "https://nodejs.org/api/corepack.html",
-        "scores": { "install_speed": 3, "disk_usage": 4, "dx": 4, "ecosystem": 4, "monorepo_support": 3 },
+        "scores": {
+          "install_speed": 3,
+          "disk_usage": 4,
+          "dx": 4,
+          "ecosystem": 4,
+          "monorepo_support": 3
+        },
         "tags": ["pricing:free-tier", "self-hostable:yes"]
       },
       {
@@ -14,7 +20,13 @@
         "name": "Volta",
         "description": "Rust-based toolchain manager that pins Node, npm, and package-manager versions per project.",
         "websiteUrl": "https://volta.sh",
-        "scores": { "install_speed": 4, "disk_usage": 4, "dx": 5, "ecosystem": 3, "monorepo_support": 3 },
+        "scores": {
+          "install_speed": 4,
+          "disk_usage": 4,
+          "dx": 5,
+          "ecosystem": 3,
+          "monorepo_support": 3
+        },
         "tags": ["pricing:free-tier", "self-hostable:yes"]
       },
       {
@@ -22,7 +34,13 @@
         "name": "ni",
         "description": "Antfu's wrapper that runs the right npm/pnpm/yarn/bun command based on the detected lockfile.",
         "websiteUrl": "https://github.com/antfu-collective/ni",
-        "scores": { "install_speed": 3, "disk_usage": 3, "dx": 5, "ecosystem": 4, "monorepo_support": 3 },
+        "scores": {
+          "install_speed": 3,
+          "disk_usage": 3,
+          "dx": 5,
+          "ecosystem": 4,
+          "monorepo_support": 3
+        },
         "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript"]
       },
       {
@@ -30,7 +48,13 @@
         "name": "Nx",
         "description": "Extensible monorepo build system with task caching, project graphs, generators, and workspace management.",
         "websiteUrl": "https://nx.dev",
-        "scores": { "install_speed": 4, "disk_usage": 4, "dx": 4, "ecosystem": 5, "monorepo_support": 5 },
+        "scores": {
+          "install_speed": 4,
+          "disk_usage": 4,
+          "dx": 4,
+          "ecosystem": 5,
+          "monorepo_support": 5
+        },
         "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript"]
       },
       {
@@ -38,7 +62,13 @@
         "name": "Turborepo",
         "description": "Rust-based high-performance monorepo task runner with remote caching from Vercel.",
         "websiteUrl": "https://turborepo.com",
-        "scores": { "install_speed": 4, "disk_usage": 4, "dx": 5, "ecosystem": 4, "monorepo_support": 5 },
+        "scores": {
+          "install_speed": 4,
+          "disk_usage": 4,
+          "dx": 5,
+          "ecosystem": 4,
+          "monorepo_support": 5
+        },
         "tags": ["pricing:free-tier", "self-hostable:yes"]
       },
       {
@@ -46,7 +76,13 @@
         "name": "Lerna",
         "description": "Veteran monorepo tool for versioning and publishing multiple packages, now powered by Nx under the hood.",
         "websiteUrl": "https://lerna.js.org",
-        "scores": { "install_speed": 3, "disk_usage": 3, "dx": 3, "ecosystem": 4, "monorepo_support": 4 },
+        "scores": {
+          "install_speed": 3,
+          "disk_usage": 3,
+          "dx": 3,
+          "ecosystem": 4,
+          "monorepo_support": 4
+        },
         "tags": ["pricing:free-tier", "self-hostable:yes"]
       },
       {
@@ -54,7 +90,13 @@
         "name": "Changesets",
         "description": "Workflow tool for managing versioning and changelogs across multi-package monorepos.",
         "websiteUrl": "https://github.com/changesets/changesets",
-        "scores": { "install_speed": 3, "disk_usage": 4, "dx": 5, "ecosystem": 4, "monorepo_support": 5 },
+        "scores": {
+          "install_speed": 3,
+          "disk_usage": 4,
+          "dx": 5,
+          "ecosystem": 4,
+          "monorepo_support": 5
+        },
         "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript"]
       }
     ],
@@ -64,7 +106,13 @@
         "name": "tsup",
         "description": "Zero-config esbuild-powered bundler for TypeScript libraries, emitting ESM, CJS, and type declarations.",
         "websiteUrl": "https://tsup.egoist.dev",
-        "scores": { "speed": 5, "dx": 5, "plugin_ecosystem": 3, "output_quality": 4, "learning_curve": 5 },
+        "scores": {
+          "speed": 5,
+          "dx": 5,
+          "plugin_ecosystem": 3,
+          "output_quality": 4,
+          "learning_curve": 5
+        },
         "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript"]
       },
       {
@@ -72,7 +120,13 @@
         "name": "tsdown",
         "description": "Rolldown-powered library bundler positioned as a faster successor to tsup with the same DX.",
         "websiteUrl": "https://tsdown.dev",
-        "scores": { "speed": 5, "dx": 5, "plugin_ecosystem": 3, "output_quality": 5, "learning_curve": 5 },
+        "scores": {
+          "speed": 5,
+          "dx": 5,
+          "plugin_ecosystem": 3,
+          "output_quality": 5,
+          "learning_curve": 5
+        },
         "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript"]
       },
       {
@@ -80,7 +134,13 @@
         "name": "unbuild",
         "description": "Unified build system from the UnJS ecosystem with multiple presets and a stub mode for dev.",
         "websiteUrl": "https://github.com/unjs/unbuild",
-        "scores": { "speed": 4, "dx": 4, "plugin_ecosystem": 3, "output_quality": 4, "learning_curve": 4 },
+        "scores": {
+          "speed": 4,
+          "dx": 4,
+          "plugin_ecosystem": 3,
+          "output_quality": 4,
+          "learning_curve": 4
+        },
         "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript"]
       },
       {
@@ -88,7 +148,13 @@
         "name": "Bun.build",
         "description": "Bun's native, extremely fast bundler for JavaScript, TypeScript, and JSX.",
         "websiteUrl": "https://bun.com/docs/bundler",
-        "scores": { "speed": 5, "dx": 4, "plugin_ecosystem": 3, "output_quality": 4, "learning_curve": 4 },
+        "scores": {
+          "speed": 5,
+          "dx": 4,
+          "plugin_ecosystem": 3,
+          "output_quality": 4,
+          "learning_curve": 4
+        },
         "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript"]
       },
       {
@@ -96,7 +162,13 @@
         "name": "Metro",
         "description": "The JavaScript bundler purpose-built for React Native applications.",
         "websiteUrl": "https://metrobundler.dev",
-        "scores": { "speed": 3, "dx": 3, "plugin_ecosystem": 3, "output_quality": 3, "learning_curve": 3 },
+        "scores": {
+          "speed": 3,
+          "dx": 3,
+          "plugin_ecosystem": 3,
+          "output_quality": 3,
+          "learning_curve": 3
+        },
         "tags": ["pricing:free-tier", "self-hostable:yes"]
       },
       {
@@ -104,7 +176,13 @@
         "name": "Microbundle",
         "description": "Zero-config Rollup-based bundler for tiny modules, optimized for minimal output.",
         "websiteUrl": "https://github.com/developit/microbundle",
-        "scores": { "speed": 3, "dx": 4, "plugin_ecosystem": 2, "output_quality": 4, "learning_curve": 5 },
+        "scores": {
+          "speed": 3,
+          "dx": 4,
+          "plugin_ecosystem": 2,
+          "output_quality": 4,
+          "learning_curve": 5
+        },
         "tags": ["pricing:free-tier", "self-hostable:yes"]
       },
       {
@@ -112,7 +190,13 @@
         "name": "Farm",
         "description": "Rust-based web build tool offering Vite-compatible plugins with very fast HMR and builds.",
         "websiteUrl": "https://www.farmfe.org",
-        "scores": { "speed": 5, "dx": 4, "plugin_ecosystem": 3, "output_quality": 4, "learning_curve": 3 },
+        "scores": {
+          "speed": 5,
+          "dx": 4,
+          "plugin_ecosystem": 3,
+          "output_quality": 4,
+          "learning_curve": 3
+        },
         "tags": ["pricing:free-tier", "self-hostable:yes"]
       },
       {
@@ -120,7 +204,13 @@
         "name": "Mako",
         "description": "Rust-based bundler from Ant Group's Umi team focused on production build speed.",
         "websiteUrl": "https://makojs.dev",
-        "scores": { "speed": 5, "dx": 3, "plugin_ecosystem": 2, "output_quality": 4, "learning_curve": 3 },
+        "scores": {
+          "speed": 5,
+          "dx": 3,
+          "plugin_ecosystem": 2,
+          "output_quality": 4,
+          "learning_curve": 3
+        },
         "tags": ["pricing:free-tier", "self-hostable:yes"]
       },
       {
@@ -128,7 +218,13 @@
         "name": "TypeScript Compiler (tsc)",
         "description": "The official TypeScript compiler, used directly to emit JavaScript and declaration files.",
         "websiteUrl": "https://www.typescriptlang.org",
-        "scores": { "speed": 2, "dx": 4, "plugin_ecosystem": 2, "output_quality": 3, "learning_curve": 4 },
+        "scores": {
+          "speed": 2,
+          "dx": 4,
+          "plugin_ecosystem": 2,
+          "output_quality": 3,
+          "learning_curve": 4
+        },
         "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript"]
       }
     ],

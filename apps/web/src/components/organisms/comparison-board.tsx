@@ -1,14 +1,19 @@
-"use client";
+'use client';
 
-import { useRouter } from "next/navigation";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useRouter } from 'next/navigation';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
-import { Badge } from "@/components/atoms/badge";
-import { Card, CardBody } from "@/components/atoms/card";
-import { ScoreBar } from "@/components/atoms/score-bar";
-import { trackCompareViewOpened } from "@/lib/analytics";
-import { compareItems, encodeCompareState, MAX_COMPARE_ITEMS, type WeightMap } from "@/lib/comparison";
-import type { ItemWithAggregate } from "@/lib/ratings";
+import { Badge } from '@/components/atoms/badge';
+import { Card, CardBody } from '@/components/atoms/card';
+import { ScoreBar } from '@/components/atoms/score-bar';
+import { trackCompareViewOpened } from '@/lib/analytics';
+import {
+  compareItems,
+  encodeCompareState,
+  MAX_COMPARE_ITEMS,
+  type WeightMap,
+} from '@/lib/comparison';
+import type { ItemWithAggregate } from '@/lib/ratings';
 
 export function ComparisonBoard({
   directorySlug,
@@ -24,27 +29,34 @@ export function ComparisonBoard({
   const router = useRouter();
   const itemIds = useMemo(() => new Set(items.map((item) => item.item.id)), [items]);
   const [selectedIds, setSelectedIds] = useState<string[]>(() =>
-    initialSelectedIds.filter((id) => itemIds.has(id)).slice(0, MAX_COMPARE_ITEMS),
+    initialSelectedIds.filter((id) => itemIds.has(id)).slice(0, MAX_COMPARE_ITEMS)
   );
   const [weights, setWeights] = useState<WeightMap>(initialWeights);
   const trackedSelections = useRef<Set<string>>(new Set());
   const aspects = items[0]?.aspects.map((a) => a.aspect) ?? [];
-  const rows = useMemo(() => compareItems(items, selectedIds, weights), [items, selectedIds, weights]);
+  const rows = useMemo(
+    () => compareItems(items, selectedIds, weights),
+    [items, selectedIds, weights]
+  );
   const selectedItems = useMemo(
-    () => selectedIds
-      .map((id) => items.find((item) => item.item.id === id))
-      .filter((item): item is ItemWithAggregate => Boolean(item)),
-    [items, selectedIds],
+    () =>
+      selectedIds
+        .map((id) => items.find((item) => item.item.id === id))
+        .filter((item): item is ItemWithAggregate => Boolean(item)),
+    [items, selectedIds]
   );
   const suggestedItems = useMemo(
     () => items.filter((item) => !selectedIds.includes(item.item.id)).slice(0, 4),
-    [items, selectedIds],
+    [items, selectedIds]
   );
   const isAtMax = selectedIds.length >= MAX_COMPARE_ITEMS;
 
   useEffect(() => {
     if (rows.length < 2) return;
-    const key = rows.map((row) => row.item.id).sort().join(",");
+    const key = rows
+      .map((row) => row.item.id)
+      .sort()
+      .join(',');
     if (trackedSelections.current.has(key)) return;
     trackedSelections.current.add(key);
     trackCompareViewOpened({ directory: directorySlug, itemCount: rows.length });
@@ -52,7 +64,7 @@ export function ComparisonBoard({
 
   function sync(nextSelectedIds: string[], nextWeights: WeightMap) {
     const query = encodeCompareState(nextSelectedIds, nextWeights);
-    router.replace(query ? `?${query}` : "?", { scroll: false });
+    router.replace(query ? `?${query}` : '?', { scroll: false });
   }
 
   function toggleItem(id: string) {
@@ -81,7 +93,8 @@ export function ComparisonBoard({
         <div>
           <h2 className="text-[20px] font-semibold tracking-tight">Comparison board</h2>
           <p className="mt-1 text-[13px] text-[var(--muted)]">
-            Add 2-{MAX_COMPARE_ITEMS} items, tune the axis weights, and share the URL for this exact tradeoff.
+            Add 2-{MAX_COMPARE_ITEMS} items, tune the axis weights, and share the URL for this exact
+            tradeoff.
           </p>
         </div>
         <div className="flex items-center gap-3">
@@ -106,8 +119,8 @@ export function ComparisonBoard({
             <div>
               <div className="flex items-center justify-between gap-3">
                 <h3 className="text-[13px] font-semibold">Items</h3>
-                <Badge tone={selectedIds.length > 1 ? "strong" : "neutral"}>
-                  {selectedIds.length > 1 ? "Ready" : "Pick 2+"}
+                <Badge tone={selectedIds.length > 1 ? 'strong' : 'neutral'}>
+                  {selectedIds.length > 1 ? 'Ready' : 'Pick 2+'}
                 </Badge>
               </div>
               {selectedItems.length === 0 ? (
@@ -140,16 +153,16 @@ export function ComparisonBoard({
                     className="flex items-center justify-between gap-3 rounded-[var(--radius-sm)] px-2 py-1.5 text-[13px] hover:bg-[var(--surface-2)]"
                   >
                     <span className="flex min-w-0 items-center gap-2">
-                    <input
-                      type="checkbox"
-                      checked={selectedIds.includes(item.item.id)}
-                      onChange={() => toggleItem(item.item.id)}
-                      disabled={!selectedIds.includes(item.item.id) && isAtMax}
-                    />
+                      <input
+                        type="checkbox"
+                        checked={selectedIds.includes(item.item.id)}
+                        onChange={() => toggleItem(item.item.id)}
+                        disabled={!selectedIds.includes(item.item.id) && isAtMax}
+                      />
                       <span className="truncate">{item.item.name}</span>
                     </span>
                     <span className="num shrink-0 text-[12px] text-[var(--muted)] tabular-nums">
-                      {item.overall > 0 ? item.overall.toFixed(1) : "—"}
+                      {item.overall > 0 ? item.overall.toFixed(1) : '—'}
                     </span>
                   </label>
                 ))}
@@ -191,15 +204,16 @@ export function ComparisonBoard({
                 />
                 <div className="relative mx-auto max-w-xl text-center">
                   <Badge tone="outline">
-                    {selectedIds.length === 0 ? "No shortlist yet" : "One more needed"}
+                    {selectedIds.length === 0 ? 'No shortlist yet' : 'One more needed'}
                   </Badge>
                   <p className="mt-4 text-[18px] font-semibold tracking-tight">
                     {selectedIds.length === 0
-                      ? "Build a shortlist, then compare the trade-offs."
-                      : "Add one more item to unlock the board."}
+                      ? 'Build a shortlist, then compare the trade-offs.'
+                      : 'Add one more item to unlock the board.'}
                   </p>
                   <p className="mt-2 text-[13px] leading-[1.55] text-[var(--muted)]">
-                    The board ranks selected items by weighted axis scores. Nothing is saved to an account; the shortlist lives in this URL.
+                    The board ranks selected items by weighted axis scores. Nothing is saved to an
+                    account; the shortlist lives in this URL.
                   </p>
 
                   {suggestedItems.length > 0 ? (
@@ -215,7 +229,7 @@ export function ComparisonBoard({
                           <span className="text-[var(--muted)]">+</span>
                           {item.item.name}
                           <span className="num text-[var(--muted)] tabular-nums">
-                            {item.overall > 0 ? item.overall.toFixed(1) : "—"}
+                            {item.overall > 0 ? item.overall.toFixed(1) : '—'}
                           </span>
                         </button>
                       ))}
@@ -224,9 +238,9 @@ export function ComparisonBoard({
 
                   <div className="mt-6 grid grid-cols-1 gap-2 text-left sm:grid-cols-3">
                     {[
-                      ["1", "Pick tools", "Choose 2-4 comparable items."],
-                      ["2", "Tune axes", "Weight what matters for this decision."],
-                      ["3", "Share URL", "Send the exact comparison state."],
+                      ['1', 'Pick tools', 'Choose 2-4 comparable items.'],
+                      ['2', 'Tune axes', 'Weight what matters for this decision.'],
+                      ['3', 'Share URL', 'Send the exact comparison state.'],
                     ].map(([n, title, body]) => (
                       <div
                         key={n}
@@ -255,7 +269,9 @@ export function ComparisonBoard({
                     className="min-w-[180px] rounded-[var(--radius-sm)] border border-[var(--border)] bg-[var(--surface-2)] p-4"
                   >
                     <div className="mb-4">
-                      <p className="text-[12px] uppercase tracking-[0.08em] text-[var(--muted)]">#{index + 1}</p>
+                      <p className="text-[12px] uppercase tracking-[0.08em] text-[var(--muted)]">
+                        #{index + 1}
+                      </p>
                       <div className="mt-1 flex items-start justify-between gap-3">
                         <h3 className="text-[16px] font-semibold">{row.item.name}</h3>
                         <span className="num text-2xl font-semibold">{row.total.toFixed(1)}</span>
@@ -266,7 +282,9 @@ export function ComparisonBoard({
                         <div key={tradeoff.aspect.id}>
                           <div className="mb-1 flex justify-between gap-2 text-[12px] text-[var(--muted)]">
                             <span>{tradeoff.aspect.label}</span>
-                            <span>{tradeoff.raw.toFixed(1)} x {tradeoff.weight}</span>
+                            <span>
+                              {tradeoff.raw.toFixed(1)} x {tradeoff.weight}
+                            </span>
                           </div>
                           <ScoreBar value={tradeoff.raw} />
                         </div>

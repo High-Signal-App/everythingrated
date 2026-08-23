@@ -1,21 +1,21 @@
-"use client";
+'use client';
 
-import posthog from "posthog-js";
+import posthog from 'posthog-js';
 
-const PROJECT_SLUG = "everythingrated";
+const PROJECT_SLUG = 'everythingrated';
 
 function route() {
-  if (typeof window === "undefined") return undefined;
+  if (typeof window === 'undefined') return undefined;
   return `${window.location.origin}${window.location.pathname}`;
 }
 
 function messageFrom(error: unknown) {
   if (error instanceof Error) return error.message;
-  if (typeof error === "string") return error;
+  if (typeof error === 'string') return error;
   return String(error);
 }
 
-type ErrorBoundaryScope = "root" | "global" | "item" | "directory" | "unknown";
+type ErrorBoundaryScope = 'root' | 'global' | 'item' | 'directory' | 'unknown';
 
 /**
  * Emits an "error_captured" event for an error surfaced by a React error
@@ -24,20 +24,20 @@ type ErrorBoundaryScope = "root" | "global" | "item" | "directory" | "unknown";
  */
 export function captureError(
   error: unknown,
-  options: { scope?: ErrorBoundaryScope; digest?: string; source?: string } = {},
+  options: { scope?: ErrorBoundaryScope; digest?: string; source?: string } = {}
 ) {
   try {
     const payload = {
       project_id: PROJECT_SLUG,
       route: route(),
-      scope: options.scope ?? "unknown",
+      scope: options.scope ?? 'unknown',
       digest: options.digest,
-      source: options.source ?? "error_boundary",
+      source: options.source ?? 'error_boundary',
       message: messageFrom(error),
       stack: error instanceof Error ? error.stack : undefined,
     };
-    posthog.capture("error_captured", payload);
-    posthog.capture("foundry_page_crash", payload);
+    posthog.capture('error_captured', payload);
+    posthog.capture('foundry_page_crash', payload);
   } catch {
     // Never let monitoring throw inside an error boundary.
   }
@@ -49,14 +49,14 @@ export function captureError(
  */
 export function captureActionFailure(
   error: unknown,
-  options: { action: string; source?: string } = { action: "unknown" },
+  options: { action: string; source?: string } = { action: 'unknown' }
 ) {
   try {
-    posthog.capture("action_failed", {
+    posthog.capture('action_failed', {
       project_id: PROJECT_SLUG,
       route: route(),
       action: options.action,
-      source: options.source ?? "client",
+      source: options.source ?? 'client',
       message: messageFrom(error),
     });
   } catch {

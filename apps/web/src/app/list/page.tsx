@@ -1,11 +1,11 @@
-import Link from "next/link";
-import { notFound } from "next/navigation";
+import Link from 'next/link';
+import { notFound } from 'next/navigation';
 
-import { Badge } from "@/components/atoms/badge";
-import { AspectRow } from "@/components/molecules/aspect-row";
-import { getDirectoryBySlug, listItemsWithAggregates } from "@/lib/ratings";
+import { Badge } from '@/components/atoms/badge';
+import { AspectRow } from '@/components/molecules/aspect-row';
+import { getDirectoryBySlug, listItemsWithAggregates } from '@/lib/ratings';
 
-export const dynamic = "force-dynamic";
+export const dynamic = 'force-dynamic';
 
 export default async function SharedListPage({
   searchParams,
@@ -19,7 +19,7 @@ export default async function SharedListPage({
 
   if (!dirSlug || !itemSlugsCsv) notFound();
 
-  const itemSlugs = itemSlugsCsv.split(",").filter(Boolean);
+  const itemSlugs = itemSlugsCsv.split(',').filter(Boolean);
   if (itemSlugs.length < 2) notFound();
 
   const directory = await getDirectoryBySlug(dirSlug);
@@ -48,11 +48,9 @@ export default async function SharedListPage({
         Ranked list
       </Badge>
 
-      <h1 className="text-[28px] font-semibold tracking-tight">
-        {name || "Ranked list"}
-      </h1>
+      <h1 className="text-[28px] font-semibold tracking-tight">{name || 'Ranked list'}</h1>
       <p className="mt-2 text-[13px] text-[var(--muted)]">
-        {ranked.length} item{ranked.length === 1 ? "" : "s"} · {directory.name}
+        {ranked.length} item{ranked.length === 1 ? '' : 's'} · {directory.name}
       </p>
 
       <ol className="mt-8 divide-y divide-[var(--border)] rounded-[var(--radius-md)] border border-[var(--border)]">
@@ -72,7 +70,7 @@ export default async function SharedListPage({
                   </Link>
                   <span className="flex shrink-0 items-baseline gap-0.5">
                     <span className="num text-[20px] font-semibold tabular-nums leading-none">
-                      {data.overall > 0 ? data.overall.toFixed(1) : "—"}
+                      {data.overall > 0 ? data.overall.toFixed(1) : '—'}
                     </span>
                     <span className="text-[11px] text-[var(--muted)]">/5</span>
                   </span>
@@ -92,8 +90,7 @@ export default async function SharedListPage({
       <div className="mt-10 rounded-[var(--radius-md)] border border-[var(--border)] bg-[var(--surface)] p-6 text-center">
         <p className="text-[15px] font-semibold">Make your own list</p>
         <p className="mt-2 max-w-[40ch] mx-auto text-[13px] leading-[1.55] text-[var(--muted)]">
-          Rate the tools yourself and build a ranked list that reflects your
-          actual experience.
+          Rate the tools yourself and build a ranked list that reflects your actual experience.
         </p>
         <div className="mt-5 flex flex-wrap justify-center gap-3">
           <Link

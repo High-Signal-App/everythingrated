@@ -1,18 +1,9 @@
-import type { Metadata } from "next";
-import Link from "next/link";
+import Link from 'next/link';
 
-import { Badge } from "@/components/atoms/badge";
-import { FOCUS_DIRECTORY_SLUG } from "@/lib/directory-focus";
+import { Badge } from '@/components/atoms/badge';
+import { FOCUS_DIRECTORY_SLUG } from '@/lib/directory-focus';
 
-export const dynamic = "force-static";
-
-export const metadata: Metadata = {
-  title: "Stack builder — EverythingRated",
-  description:
-    "The stack builder is paused while EverythingRated focuses on AI developer-tool adoption decisions.",
-  openGraph: { url: "/stack" },
-  alternates: { canonical: "/stack" },
-};
+export const dynamic = 'force-static';
 
 // PARKED (2026-07-03): the cross-directory stack builder was part of the
 // generic "any-directory" ambition. While the product focuses on AI dev tool
@@ -22,10 +13,7 @@ export const metadata: Metadata = {
 export default function StackPage() {
   return (
     <div className="mx-auto w-full max-w-3xl px-6 py-14">
-      <Link
-        href="/"
-        className="text-[12px] text-[var(--muted)] hover:text-[var(--foreground)]"
-      >
+      <Link href="/" className="text-[12px] text-[var(--muted)] hover:text-[var(--foreground)]">
         ← Home
       </Link>
       <div className="mt-6">
@@ -34,10 +22,10 @@ export default function StackPage() {
           The stack builder is paused
         </h1>
         <p className="mt-3 max-w-2xl text-[14px] leading-[1.6] text-[var(--muted)]">
-          EverythingRated now does one job: multi-axis ratings for AI dev tool
-          adoption decisions. The cross-directory stack builder — which mixed
-          databases, hosting, and other categories — is on hold while that use
-          case is proven. Existing directories keep their pages and ratings.
+          EverythingRated now does one job: multi-axis ratings for AI dev tool adoption decisions.
+          The cross-directory stack builder — which mixed databases, hosting, and other categories —
+          is on hold while that use case is proven. Existing directories keep their pages and
+          ratings.
         </p>
         <div className="mt-8">
           <Link

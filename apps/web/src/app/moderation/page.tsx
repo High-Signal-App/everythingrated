@@ -1,26 +1,23 @@
-import Link from "next/link";
-import { notFound } from "next/navigation";
+import Link from 'next/link';
+import { notFound } from 'next/navigation';
 
-import { Badge } from "@/components/atoms/badge";
-import { Card, CardBody } from "@/components/atoms/card";
-import { moderateDirectorySubmission, moderateItemSubmission } from "@/lib/actions";
-import {
-  listDirectorySubmissions,
-  parseAspectLabels,
-} from "@/lib/directory-submissions";
+import { Badge } from '@/components/atoms/badge';
+import { Card, CardBody } from '@/components/atoms/card';
+import { moderateDirectorySubmission, moderateItemSubmission } from '@/lib/actions';
+import { listDirectorySubmissions, parseAspectLabels } from '@/lib/directory-submissions';
 import {
   computeTrustSignals,
   listItemSubmissions,
   PILOT_DIRECTORY_SLUG,
-} from "@/lib/item-submissions";
-import { getModerationToken } from "@/lib/moderation";
+} from '@/lib/item-submissions';
+import { getModerationToken } from '@/lib/moderation';
 
-export const dynamic = "force-dynamic";
+export const dynamic = 'force-dynamic';
 
-function statusTone(status: string): "outline" | "neutral" | "strong" {
-  if (status === "pending") return "outline";
-  if (status === "approved") return "strong";
-  return "neutral";
+function statusTone(status: string): 'outline' | 'neutral' | 'strong' {
+  if (status === 'pending') return 'outline';
+  if (status === 'approved') return 'strong';
+  return 'neutral';
 }
 
 export default async function ModerationPage({
@@ -29,7 +26,7 @@ export default async function ModerationPage({
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
   const query = await searchParams;
-  const token = String(query.token ?? "");
+  const token = String(query.token ?? '');
   const expectedToken = await getModerationToken();
 
   if (!expectedToken || token !== expectedToken) {
@@ -41,16 +38,13 @@ export default async function ModerationPage({
     listItemSubmissions(PILOT_DIRECTORY_SLUG),
   ]);
   const pendingDirectories = directorySubmissions.filter(
-    (submission) => submission.status === "pending",
+    (submission) => submission.status === 'pending'
   );
-  const pendingItems = itemSubmissions.filter((submission) => submission.status === "pending");
+  const pendingItems = itemSubmissions.filter((submission) => submission.status === 'pending');
 
   return (
     <div className="mx-auto w-full max-w-5xl px-6 py-14">
-      <Link
-        href="/"
-        className="text-[12px] text-[var(--muted)] hover:text-[var(--foreground)]"
-      >
+      <Link href="/" className="text-[12px] text-[var(--muted)] hover:text-[var(--foreground)]">
         ← All directories
       </Link>
       <header className="mt-6 flex flex-col gap-3 border-b border-[var(--border)] pb-8 sm:flex-row sm:items-end sm:justify-between">
@@ -58,7 +52,7 @@ export default async function ModerationPage({
           <Badge tone="outline">Moderation</Badge>
           <h1 className="mt-4 text-[36px] font-semibold tracking-tight">Review queue</h1>
           <p className="mt-2 max-w-2xl text-[14px] text-[var(--muted)]">
-            Approve community directory and item suggestions. Item pilot is limited to{" "}
+            Approve community directory and item suggestions. Item pilot is limited to{' '}
             <code className="text-[12px]">{PILOT_DIRECTORY_SLUG}</code>.
           </p>
         </div>
@@ -68,15 +62,13 @@ export default async function ModerationPage({
         </div>
       </header>
 
-      {typeof query.moderated === "string" ? (
+      {typeof query.moderated === 'string' ? (
         <StatusMessage message={`Directory submission ${query.moderated}.`} />
       ) : null}
-      {typeof query.itemModerated === "string" ? (
+      {typeof query.itemModerated === 'string' ? (
         <StatusMessage message={`Item submission ${query.itemModerated}.`} />
       ) : null}
-      {typeof query.error === "string" ? (
-        <StatusMessage message={query.error} />
-      ) : null}
+      {typeof query.error === 'string' ? <StatusMessage message={query.error} /> : null}
 
       <section className="mt-10">
         <h2 className="text-[22px] font-semibold tracking-tight">Directory submissions</h2>
@@ -104,7 +96,7 @@ export default async function ModerationPage({
                       </Badge>
                     ))}
                   </div>
-                  {submission.status === "pending" ? (
+                  {submission.status === 'pending' ? (
                     <ModerationActions
                       token={token}
                       id={submission.id}
@@ -125,8 +117,8 @@ export default async function ModerationPage({
           <div>
             <h2 className="text-[22px] font-semibold tracking-tight">Item submissions</h2>
             <p className="mt-1 text-[13px] text-[var(--muted)]">
-              Pilot directory: {PILOT_DIRECTORY_SLUG}. Submissions are persisted in D1
-              and appear in this queue for review.
+              Pilot directory: {PILOT_DIRECTORY_SLUG}. Submissions are persisted in D1 and appear in
+              this queue for review.
             </p>
           </div>
           <Link
@@ -167,10 +159,10 @@ export default async function ModerationPage({
                       ) : (
                         <Badge tone="outline">domain mismatch</Badge>
                       )}
-                      {trust.duplicateConfidence !== "none" ? (
+                      {trust.duplicateConfidence !== 'none' ? (
                         <Badge tone="outline">
                           dup {trust.duplicateConfidence}
-                          {trust.duplicateHint ? ` — ${trust.duplicateHint}` : ""}
+                          {trust.duplicateHint ? ` — ${trust.duplicateHint}` : ''}
                         </Badge>
                       ) : null}
                     </div>
@@ -181,16 +173,14 @@ export default async function ModerationPage({
                     </div>
 
                     <div className="grid grid-cols-1 gap-2 text-[12px] text-[var(--muted)] sm:grid-cols-3">
-                      <span>
-                        Submitter: {submission.submitterName ?? "anonymous"}
-                      </span>
-                      <span>Email: {submission.submitterEmail ?? "—"}</span>
+                      <span>Submitter: {submission.submitterName ?? 'anonymous'}</span>
+                      <span>Email: {submission.submitterEmail ?? '—'}</span>
                       <span>Prior approvals: {trust.priorApprovals}</span>
                     </div>
 
-                    {submission.status === "merged" && submission.mergedIntoItemSlug ? (
+                    {submission.status === 'merged' && submission.mergedIntoItemSlug ? (
                       <p className="text-[13px] text-[var(--muted)]">
-                        Merged into{" "}
+                        Merged into{' '}
                         <Link
                           href={`/d/${submission.directorySlug}/${submission.mergedIntoItemSlug}`}
                           className="underline"
@@ -200,7 +190,7 @@ export default async function ModerationPage({
                       </p>
                     ) : null}
 
-                    {submission.status === "pending" ? (
+                    {submission.status === 'pending' ? (
                       <div className="flex flex-col gap-3 border-t border-[var(--border)] pt-4">
                         <div className="flex flex-wrap gap-2">
                           <form action={moderateItemSubmission}>
@@ -252,7 +242,7 @@ export default async function ModerationPage({
                           </button>
                         </form>
                       </div>
-                    ) : submission.status === "approved" ? (
+                    ) : submission.status === 'approved' ? (
                       <form
                         action={moderateItemSubmission}
                         className="flex flex-col gap-2 border-t border-[var(--border)] pt-4 sm:flex-row"
@@ -316,9 +306,7 @@ function SubmissionHeader({
 function FieldBlock({ label, value }: { label: string; value: string }) {
   return (
     <div>
-      <div className="text-[11px] uppercase tracking-[0.08em] text-[var(--muted-2)]">
-        {label}
-      </div>
+      <div className="text-[11px] uppercase tracking-[0.08em] text-[var(--muted-2)]">{label}</div>
       <p className="mt-1 text-[13px] leading-[1.55] text-[var(--muted)]">{value}</p>
     </div>
   );
@@ -362,9 +350,7 @@ function ModerationActions({
 
 function NoteBlock({ note }: { note: string }) {
   return (
-    <p className="border-t border-[var(--border)] pt-4 text-[12px] text-[var(--muted)]">
-      {note}
-    </p>
+    <p className="border-t border-[var(--border)] pt-4 text-[12px] text-[var(--muted)]">{note}</p>
   );
 }
 

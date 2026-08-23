@@ -1,22 +1,16 @@
-import type { MetadataRoute } from "next";
+import type { MetadataRoute } from 'next';
 
-import { SITE_ORIGIN } from "@/lib/public-surfaces";
+const siteUrl = 'https://everythingrated.workers.dev';
 
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
       {
-        userAgent: "*",
-        allow: ["/", "/api/ai"],
-        disallow: [
-          "/api/",
-          "/moderation",
-          "/my",
-          "/submit-directory",
-          "/d/*/submit",
-        ],
+        userAgent: '*',
+        allow: '/',
+        disallow: ['/api/', '/moderation', '/submit-directory'],
       },
     ],
-    sitemap: `${SITE_ORIGIN}/sitemap.xml`,
+    sitemap: `${siteUrl}/sitemap.xml`,
   };
 }

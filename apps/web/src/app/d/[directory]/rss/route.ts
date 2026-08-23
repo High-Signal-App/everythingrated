@@ -1,23 +1,20 @@
-import { headers } from "next/headers";
+import { headers } from 'next/headers';
 
-import { getDirectoryBySlug, listItemsWithAggregates } from "@/lib/ratings";
-import { buildRssXml } from "@/lib/rss";
+import { getDirectoryBySlug, listItemsWithAggregates } from '@/lib/ratings';
+import { buildRssXml } from '@/lib/rss';
 
-export const dynamic = "force-dynamic";
+export const dynamic = 'force-dynamic';
 
-export async function GET(
-  _req: Request,
-  ctx: { params: Promise<{ directory: string }> },
-) {
+export async function GET(_req: Request, ctx: { params: Promise<{ directory: string }> }) {
   const { directory: slug } = await ctx.params;
   const h = await headers();
-  const proto = h.get("x-forwarded-proto") ?? "https";
-  const host = h.get("x-forwarded-host") ?? h.get("host") ?? "localhost";
+  const proto = h.get('x-forwarded-proto') ?? 'https';
+  const host = h.get('x-forwarded-host') ?? h.get('host') ?? 'localhost';
   const base = `${proto}://${host}`;
 
   const directory = await getDirectoryBySlug(slug);
   if (!directory) {
-    return new Response("Directory not found", { status: 404 });
+    return new Response('Directory not found', { status: 404 });
   }
 
   const items = await listItemsWithAggregates(directory.id, null);
@@ -37,8 +34,8 @@ export async function GET(
   return new Response(xml, {
     status: 200,
     headers: {
-      "Content-Type": "application/rss+xml; charset=utf-8",
-      "Cache-Control": "public, s-maxage=300, stale-while-revalidate=600",
+      'Content-Type': 'application/rss+xml; charset=utf-8',
+      'Cache-Control': 'public, s-maxage=300, stale-while-revalidate=600',
     },
   });
 }

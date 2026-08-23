@@ -1,4 +1,4 @@
-export const COLLECTIONS_STORAGE_KEY = "er:ranked-collections";
+export const COLLECTIONS_STORAGE_KEY = 'er:ranked-collections';
 const MAX_COLLECTION_ITEMS = 20;
 
 export type RankedCollection = {
@@ -23,16 +23,16 @@ export function createCollection(
   name: string,
   directorySlug: string,
   itemIds: string[],
-  existing: RankedCollection[],
+  existing: RankedCollection[]
 ): { ok: true; collection: RankedCollection } | { ok: false; error: string } {
   const trimmed = name.trim();
-  if (!trimmed) return { ok: false, error: "Name your collection first." };
-  if (trimmed.length > 80) return { ok: false, error: "Name must be 80 characters or fewer." };
-  if (!directorySlug) return { ok: false, error: "Pick a directory." };
+  if (!trimmed) return { ok: false, error: 'Name your collection first.' };
+  if (trimmed.length > 80) return { ok: false, error: 'Name must be 80 characters or fewer.' };
+  if (!directorySlug) return { ok: false, error: 'Pick a directory.' };
 
   const uniqueIds = dedupeItemIds(itemIds);
   if (uniqueIds.length < 2) {
-    return { ok: false, error: "Add at least two items to rank." };
+    return { ok: false, error: 'Add at least two items to rank.' };
   }
   if (uniqueIds.length > MAX_COLLECTION_ITEMS) {
     return { ok: false, error: `Collections can hold up to ${MAX_COLLECTION_ITEMS} items.` };
@@ -53,12 +53,12 @@ export function createCollection(
 export function reorderItem(
   collection: RankedCollection,
   itemId: string,
-  direction: "up" | "down",
+  direction: 'up' | 'down'
 ): RankedCollection {
   const index = collection.itemIds.indexOf(itemId);
   if (index === -1) return collection;
 
-  const target = direction === "up" ? index - 1 : index + 1;
+  const target = direction === 'up' ? index - 1 : index + 1;
   if (target < 0 || target >= collection.itemIds.length) return collection;
 
   const nextIds = [...collection.itemIds];
@@ -73,7 +73,7 @@ export function reorderItem(
 
 export function removeItemFromCollection(
   collection: RankedCollection,
-  itemId: string,
+  itemId: string
 ): RankedCollection | null {
   const nextIds = collection.itemIds.filter((id) => id !== itemId);
   if (nextIds.length < 2) return null;
@@ -86,10 +86,10 @@ export function removeItemFromCollection(
 
 export function addItemToCollection(
   collection: RankedCollection,
-  itemId: string,
+  itemId: string
 ): { ok: true; collection: RankedCollection } | { ok: false; error: string } {
   if (collection.itemIds.includes(itemId)) {
-    return { ok: false, error: "Item is already in this collection." };
+    return { ok: false, error: 'Item is already in this collection.' };
   }
   if (collection.itemIds.length >= MAX_COLLECTION_ITEMS) {
     return { ok: false, error: `Collections can hold up to ${MAX_COLLECTION_ITEMS} items.` };
@@ -107,7 +107,7 @@ export function addItemToCollection(
 
 export function resolveCollectionItems(
   collection: RankedCollection,
-  ratedItems: RatedItemRef[],
+  ratedItems: RatedItemRef[]
 ): Array<RatedItemRef & { rank: number }> {
   const byId = new Map(ratedItems.map((item) => [item.itemId, item]));
   const resolved: Array<RatedItemRef & { rank: number }> = [];
@@ -122,13 +122,13 @@ export function resolveCollectionItems(
 
 export function ratedItemsForDirectory(
   ratedItems: RatedItemRef[],
-  directorySlug: string,
+  directorySlug: string
 ): RatedItemRef[] {
   return ratedItems.filter((item) => item.directorySlug === directorySlug);
 }
 
 export function directoriesFromRatedItems(
-  ratedItems: RatedItemRef[],
+  ratedItems: RatedItemRef[]
 ): Array<{ slug: string; name: string; count: number }> {
   const bySlug = new Map<string, { name: string; count: number }>();
   for (const item of ratedItems) {
@@ -147,16 +147,16 @@ export function directoriesFromRatedItems(
 export function buildShareUrl(
   origin: string,
   collection: RankedCollection,
-  resolvedItems: Array<RatedItemRef & { rank: number }>,
+  resolvedItems: Array<RatedItemRef & { rank: number }>
 ): string {
   const params = new URLSearchParams();
-  params.set("name", collection.name);
-  params.set("dir", collection.directorySlug);
+  params.set('name', collection.name);
+  params.set('dir', collection.directorySlug);
   const slugs = [...resolvedItems]
     .sort((a, b) => a.rank - b.rank)
     .map((item) => item.itemSlug)
-    .join(",");
-  params.set("items", slugs);
+    .join(',');
+  params.set('items', slugs);
   return `${origin}/list?${params.toString()}`;
 }
 
@@ -193,14 +193,14 @@ function dedupeItemIds(itemIds: string[]): string[] {
 }
 
 function isRankedCollection(value: unknown): value is RankedCollection {
-  if (!value || typeof value !== "object") return false;
+  if (!value || typeof value !== 'object') return false;
   const record = value as Record<string, unknown>;
   return (
-    typeof record.id === "string" &&
-    typeof record.name === "string" &&
-    typeof record.directorySlug === "string" &&
+    typeof record.id === 'string' &&
+    typeof record.name === 'string' &&
+    typeof record.directorySlug === 'string' &&
     Array.isArray(record.itemIds) &&
-    record.itemIds.every((id) => typeof id === "string") &&
-    typeof record.updatedAt === "string"
+    record.itemIds.every((id) => typeof id === 'string') &&
+    typeof record.updatedAt === 'string'
   );
 }

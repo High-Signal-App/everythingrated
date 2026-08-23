@@ -6,11 +6,31 @@
       "description": "Kubernetes distributions, managed clusters, and container schedulers for running workloads at scale.",
       "heroCopy": "Cost, DX, ecosystem, scalability, and ops burden decide whether your cluster runs itself or runs you ragged.",
       "aspects": [
-        { "key": "cost", "label": "Cost", "description": "Control-plane fees and total cost relative to what you get (5 = great value)." },
-        { "key": "dx", "label": "Developer experience", "description": "CLI, dashboards, day-one setup, and ergonomics of running workloads." },
-        { "key": "ecosystem", "label": "Ecosystem", "description": "Add-ons, operators, integrations, and community depth." },
-        { "key": "scalability", "label": "Scalability", "description": "Headroom for node count, multi-cluster, and large production traffic." },
-        { "key": "ops_burden", "label": "Ops burden", "description": "How little upgrade, patching, and maintenance toil it demands (5 = nearly hands-off)." }
+        {
+          "key": "cost",
+          "label": "Cost",
+          "description": "Control-plane fees and total cost relative to what you get (5 = great value)."
+        },
+        {
+          "key": "dx",
+          "label": "Developer experience",
+          "description": "CLI, dashboards, day-one setup, and ergonomics of running workloads."
+        },
+        {
+          "key": "ecosystem",
+          "label": "Ecosystem",
+          "description": "Add-ons, operators, integrations, and community depth."
+        },
+        {
+          "key": "scalability",
+          "label": "Scalability",
+          "description": "Headroom for node count, multi-cluster, and large production traffic."
+        },
+        {
+          "key": "ops_burden",
+          "label": "Ops burden",
+          "description": "How little upgrade, patching, and maintenance toil it demands (5 = nearly hands-off)."
+        }
       ],
       "items": [
         {
@@ -140,11 +160,31 @@
       "description": "Declarative and programmatic tools for provisioning cloud infrastructure from version-controlled definitions.",
       "heroCopy": "Cost, DX, ecosystem, multi-cloud reach, and state management separate clean provisioning from drift and dread.",
       "aspects": [
-        { "key": "cost", "label": "Cost", "description": "Licensing and platform cost relative to value (5 = free or cheap)." },
-        { "key": "dx", "label": "Developer experience", "description": "Authoring ergonomics, language fit, docs, and debuggability." },
-        { "key": "ecosystem", "label": "Ecosystem", "description": "Providers, modules, registries, and community size." },
-        { "key": "multi_cloud", "label": "Multi-cloud", "description": "Breadth of providers and how cloud-agnostic the tool is." },
-        { "key": "state_management", "label": "State management", "description": "Quality of state, drift detection, and reconciliation handling." }
+        {
+          "key": "cost",
+          "label": "Cost",
+          "description": "Licensing and platform cost relative to value (5 = free or cheap)."
+        },
+        {
+          "key": "dx",
+          "label": "Developer experience",
+          "description": "Authoring ergonomics, language fit, docs, and debuggability."
+        },
+        {
+          "key": "ecosystem",
+          "label": "Ecosystem",
+          "description": "Providers, modules, registries, and community size."
+        },
+        {
+          "key": "multi_cloud",
+          "label": "Multi-cloud",
+          "description": "Breadth of providers and how cloud-agnostic the tool is."
+        },
+        {
+          "key": "state_management",
+          "label": "State management",
+          "description": "Quality of state, drift detection, and reconciliation handling."
+        }
       ],
       "items": [
         {
@@ -169,7 +209,12 @@
           "description": "Infrastructure as code using real programming languages like TypeScript, Python, and Go.",
           "websiteUrl": "https://www.pulumi.com",
           "scores": { "cost": 3, "dx": 5, "ecosystem": 4, "multi_cloud": 5, "state_management": 4 },
-          "tags": ["self-hostable:yes", "pricing:free-tier", "language:typescript", "language:python"]
+          "tags": [
+            "self-hostable:yes",
+            "pricing:free-tier",
+            "language:typescript",
+            "language:python"
+          ]
         },
         {
           "slug": "aws-cdk",
@@ -233,7 +278,12 @@
           "description": "HashiCorp's CDKTF for defining Terraform infrastructure using TypeScript, Python, and other languages.",
           "websiteUrl": "https://developer.hashicorp.com/terraform/cdktf",
           "scores": { "cost": 4, "dx": 3, "ecosystem": 4, "multi_cloud": 5, "state_management": 4 },
-          "tags": ["self-hostable:yes", "pricing:free-tier", "language:typescript", "language:python"]
+          "tags": [
+            "self-hostable:yes",
+            "pricing:free-tier",
+            "language:typescript",
+            "language:python"
+          ]
         },
         {
           "slug": "terramate",
@@ -281,11 +331,31 @@
       "description": "Request clients and automated testing tools for building, exploring, and validating HTTP and other APIs.",
       "heroCopy": "Cost, DX, ecosystem, protocol support, and automation decide whether your API workflow flows or fights you.",
       "aspects": [
-        { "key": "cost", "label": "Cost", "description": "Pricing relative to value, including free and open-source tiers (5 = great value)." },
-        { "key": "dx", "label": "Developer experience", "description": "Interface speed, ergonomics, and how pleasant requests feel to build." },
-        { "key": "ecosystem", "label": "Ecosystem", "description": "Integrations, plugins, collaboration, and community depth." },
-        { "key": "protocol_support", "label": "Protocol support", "description": "Breadth across REST, GraphQL, gRPC, WebSocket, and more." },
-        { "key": "automation", "label": "Automation", "description": "Scripting, CI integration, and automated/contract testing capability." }
+        {
+          "key": "cost",
+          "label": "Cost",
+          "description": "Pricing relative to value, including free and open-source tiers (5 = great value)."
+        },
+        {
+          "key": "dx",
+          "label": "Developer experience",
+          "description": "Interface speed, ergonomics, and how pleasant requests feel to build."
+        },
+        {
+          "key": "ecosystem",
+          "label": "Ecosystem",
+          "description": "Integrations, plugins, collaboration, and community depth."
+        },
+        {
+          "key": "protocol_support",
+          "label": "Protocol support",
+          "description": "Breadth across REST, GraphQL, gRPC, WebSocket, and more."
+        },
+        {
+          "key": "automation",
+          "label": "Automation",
+          "description": "Scripting, CI integration, and automated/contract testing capability."
+        }
       ],
       "items": [
         {
@@ -416,11 +486,31 @@
       "description": "Low-code platforms for building admin panels, dashboards, and internal apps on top of your data.",
       "heroCopy": "Cost, DX, ecosystem, customization, and data connectors determine how fast an internal app ships and how far it bends.",
       "aspects": [
-        { "key": "cost", "label": "Cost", "description": "Pricing and seat fees relative to value, including open-source options (5 = great value)." },
-        { "key": "dx", "label": "Developer experience", "description": "Builder ergonomics, scripting, and how quickly developers ship apps." },
-        { "key": "ecosystem", "label": "Ecosystem", "description": "Components, templates, integrations, and community size." },
-        { "key": "customization", "label": "Customization", "description": "How freely you can extend UI, logic, and styling beyond the defaults." },
-        { "key": "data_connectors", "label": "Data connectors", "description": "Breadth of database, API, and SaaS sources it connects to out of the box." }
+        {
+          "key": "cost",
+          "label": "Cost",
+          "description": "Pricing and seat fees relative to value, including open-source options (5 = great value)."
+        },
+        {
+          "key": "dx",
+          "label": "Developer experience",
+          "description": "Builder ergonomics, scripting, and how quickly developers ship apps."
+        },
+        {
+          "key": "ecosystem",
+          "label": "Ecosystem",
+          "description": "Components, templates, integrations, and community size."
+        },
+        {
+          "key": "customization",
+          "label": "Customization",
+          "description": "How freely you can extend UI, logic, and styling beyond the defaults."
+        },
+        {
+          "key": "data_connectors",
+          "label": "Data connectors",
+          "description": "Breadth of database, API, and SaaS sources it connects to out of the box."
+        }
       ],
       "items": [
         {
@@ -428,7 +518,13 @@
           "name": "Retool",
           "description": "Polished low-code platform for building internal tools with enterprise SSO, audit logs, and granular permissions.",
           "websiteUrl": "https://retool.com",
-          "scores": { "cost": 2, "dx": 5, "ecosystem": 5, "customization": 4, "data_connectors": 5 },
+          "scores": {
+            "cost": 2,
+            "dx": 5,
+            "ecosystem": 5,
+            "customization": 4,
+            "data_connectors": 5
+          },
           "tags": ["pricing:free-tier"]
         },
         {
@@ -436,7 +532,13 @@
           "name": "Appsmith",
           "description": "Widely-adopted open-source low-code builder for dashboards and CRUD apps with drag-and-drop UI and JavaScript.",
           "websiteUrl": "https://www.appsmith.com",
-          "scores": { "cost": 5, "dx": 4, "ecosystem": 4, "customization": 4, "data_connectors": 5 },
+          "scores": {
+            "cost": 5,
+            "dx": 4,
+            "ecosystem": 4,
+            "customization": 4,
+            "data_connectors": 5
+          },
           "tags": ["self-hostable:yes", "pricing:free-tier"]
         },
         {
@@ -444,7 +546,13 @@
           "name": "ToolJet",
           "description": "Developer-first open-source platform for building internal tools, workflows, and AI-powered apps.",
           "websiteUrl": "https://www.tooljet.com",
-          "scores": { "cost": 5, "dx": 4, "ecosystem": 4, "customization": 4, "data_connectors": 5 },
+          "scores": {
+            "cost": 5,
+            "dx": 4,
+            "ecosystem": 4,
+            "customization": 4,
+            "data_connectors": 5
+          },
           "tags": ["self-hostable:yes", "pricing:free-tier"]
         },
         {
@@ -452,7 +560,13 @@
           "name": "Budibase",
           "description": "Open-source low-code platform focused on quickly building internal apps and admin panels with minimal logic.",
           "websiteUrl": "https://budibase.com",
-          "scores": { "cost": 5, "dx": 4, "ecosystem": 3, "customization": 3, "data_connectors": 4 },
+          "scores": {
+            "cost": 5,
+            "dx": 4,
+            "ecosystem": 3,
+            "customization": 3,
+            "data_connectors": 4
+          },
           "tags": ["self-hostable:yes", "pricing:free-tier"]
         },
         {
@@ -467,7 +581,13 @@
           "name": "UI Bakery",
           "description": "Low-code internal tool builder for dashboards and workflows with a polished developer experience.",
           "websiteUrl": "https://uibakery.io",
-          "scores": { "cost": 3, "dx": 4, "ecosystem": 3, "customization": 4, "data_connectors": 4 },
+          "scores": {
+            "cost": 3,
+            "dx": 4,
+            "ecosystem": 3,
+            "customization": 4,
+            "data_connectors": 4
+          },
           "tags": ["self-hostable:yes"]
         },
         {
@@ -475,7 +595,13 @@
           "name": "ILLA",
           "description": "Open-source low-code platform for building AI-driven dashboards, admin panels, and internal tools.",
           "websiteUrl": "https://www.illacloud.com",
-          "scores": { "cost": 5, "dx": 4, "ecosystem": 3, "customization": 3, "data_connectors": 4 },
+          "scores": {
+            "cost": 5,
+            "dx": 4,
+            "ecosystem": 3,
+            "customization": 3,
+            "data_connectors": 4
+          },
           "tags": ["self-hostable:yes", "pricing:free-tier"]
         },
         {
@@ -483,7 +609,13 @@
           "name": "Forest Admin",
           "description": "Admin panel platform that auto-generates internal tools by connecting to your databases and APIs.",
           "websiteUrl": "https://www.forestadmin.com",
-          "scores": { "cost": 3, "dx": 4, "ecosystem": 3, "customization": 3, "data_connectors": 4 },
+          "scores": {
+            "cost": 3,
+            "dx": 4,
+            "ecosystem": 3,
+            "customization": 3,
+            "data_connectors": 4
+          },
           "tags": ["self-hostable:yes", "pricing:free-tier"]
         },
         {
@@ -491,7 +623,13 @@
           "name": "Refine",
           "description": "Open-source React framework for rapidly building data-heavy internal tools, dashboards, and admin panels.",
           "websiteUrl": "https://refine.dev",
-          "scores": { "cost": 5, "dx": 4, "ecosystem": 4, "customization": 5, "data_connectors": 4 },
+          "scores": {
+            "cost": 5,
+            "dx": 4,
+            "ecosystem": 4,
+            "customization": 5,
+            "data_connectors": 4
+          },
           "tags": ["self-hostable:yes", "pricing:free-tier", "language:typescript"]
         },
         {
@@ -499,7 +637,13 @@
           "name": "React Admin",
           "description": "Mature open-source React framework for building B2B admin applications on top of REST and GraphQL APIs.",
           "websiteUrl": "https://marmelab.com/react-admin",
-          "scores": { "cost": 4, "dx": 4, "ecosystem": 4, "customization": 5, "data_connectors": 4 },
+          "scores": {
+            "cost": 4,
+            "dx": 4,
+            "ecosystem": 4,
+            "customization": 5,
+            "data_connectors": 4
+          },
           "tags": ["self-hostable:yes", "pricing:free-tier", "language:typescript"]
         },
         {
@@ -507,7 +651,13 @@
           "name": "NocoDB",
           "description": "Open-source Airtable alternative that turns any database into a smart spreadsheet and internal app interface.",
           "websiteUrl": "https://nocodb.com",
-          "scores": { "cost": 5, "dx": 4, "ecosystem": 3, "customization": 3, "data_connectors": 4 },
+          "scores": {
+            "cost": 5,
+            "dx": 4,
+            "ecosystem": 3,
+            "customization": 3,
+            "data_connectors": 4
+          },
           "tags": ["self-hostable:yes", "pricing:free-tier"]
         },
         {
@@ -515,7 +665,13 @@
           "name": "Baserow",
           "description": "Open-source no-code database platform for building internal tools and collaborative apps from your data.",
           "websiteUrl": "https://baserow.io",
-          "scores": { "cost": 5, "dx": 4, "ecosystem": 3, "customization": 3, "data_connectors": 3 },
+          "scores": {
+            "cost": 5,
+            "dx": 4,
+            "ecosystem": 3,
+            "customization": 3,
+            "data_connectors": 3
+          },
           "tags": ["self-hostable:yes", "pricing:free-tier"]
         },
         {
@@ -523,7 +679,13 @@
           "name": "Lowdefy",
           "description": "Open-source, config-driven framework for building internal web apps and admin panels from YAML.",
           "websiteUrl": "https://lowdefy.com",
-          "scores": { "cost": 5, "dx": 3, "ecosystem": 2, "customization": 4, "data_connectors": 4 },
+          "scores": {
+            "cost": 5,
+            "dx": 3,
+            "ecosystem": 2,
+            "customization": 4,
+            "data_connectors": 4
+          },
           "tags": ["self-hostable:yes", "pricing:free-tier"]
         },
         {
@@ -531,7 +693,13 @@
           "name": "Jet Admin",
           "description": "No-code platform for building internal tools, dashboards, and customer portals on top of existing data.",
           "websiteUrl": "https://www.jetadmin.io",
-          "scores": { "cost": 3, "dx": 4, "ecosystem": 3, "customization": 3, "data_connectors": 4 },
+          "scores": {
+            "cost": 3,
+            "dx": 4,
+            "ecosystem": 3,
+            "customization": 3,
+            "data_connectors": 4
+          },
           "tags": ["pricing:free-tier"]
         }
       ]

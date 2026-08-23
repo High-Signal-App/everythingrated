@@ -1,10 +1,8 @@
-import Link from "next/link";
+import Link from 'next/link';
 
 export const metadata = {
-  title: "Terms — EverythingRated",
-  description: "Use of EverythingRated is anonymous and provided as-is.",
-  openGraph: { url: "/terms" },
-  alternates: { canonical: "/terms" },
+  title: 'Terms — EverythingRated',
+  description: 'Use of EverythingRated is anonymous and provided as-is.',
 };
 
 export default function TermsPage() {
@@ -18,22 +16,23 @@ export default function TermsPage() {
 
       <h2 className="mt-8 text-base font-semibold">Anonymous use</h2>
       <p className="mt-2">
-        EverythingRated has no accounts. Ratings are submitted under an
-        opaque cookie. See <Link href="/privacy" className="underline">/privacy</Link>{" "}
+        EverythingRated has no accounts. Ratings are submitted under an opaque cookie. See{' '}
+        <Link href="/privacy" className="underline">
+          /privacy
+        </Link>{' '}
         for what gets stored.
       </p>
 
       <h2 className="mt-8 text-base font-semibold">Be honest</h2>
       <p className="mt-2">
-        Aggregate scores only matter if individual ratings are honest.
-        Spam, vote stuffing, or coordinated manipulation may be removed
-        at moderator discretion without notice.
+        Aggregate scores only matter if individual ratings are honest. Spam, vote stuffing, or
+        coordinated manipulation may be removed at moderator discretion without notice.
       </p>
 
       <h2 className="mt-8 text-base font-semibold">No warranty</h2>
       <p className="mt-2">
-        Provided as-is. Scores are opinions of pseudonymous raters and
-        not a recommendation, endorsement, or warranty of any kind.
+        Provided as-is. Scores are opinions of pseudonymous raters and not a recommendation,
+        endorsement, or warranty of any kind.
       </p>
     </main>
   );

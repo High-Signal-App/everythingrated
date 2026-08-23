@@ -2,11 +2,11 @@
 
 function escapeXml(s: string): string {
   return s
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&apos;");
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;');
 }
 
 interface RssItem {
@@ -36,9 +36,9 @@ export function buildRssXml(feed: RssFeed): string {
       <guid isPermaLink="true">${escapeXml(i.guid)}</guid>
       <pubDate>${i.pubDate.toUTCString()}</pubDate>
       <description>${escapeXml(i.description)}</description>
-    </item>`,
+    </item>`
     )
-    .join("\n");
+    .join('\n');
   return `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>

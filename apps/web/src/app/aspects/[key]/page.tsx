@@ -1,10 +1,10 @@
-import type { Metadata } from "next";
-import Link from "next/link";
+import type { Metadata } from 'next';
+import Link from 'next/link';
 
-import { Badge } from "@/components/atoms/badge";
-import { FOCUS_DIRECTORY_SLUG } from "@/lib/directory-focus";
+import { Badge } from '@/components/atoms/badge';
+import { FOCUS_DIRECTORY_SLUG } from '@/lib/directory-focus';
 
-export const dynamic = "force-static";
+export const dynamic = 'force-static';
 
 // PARKED (2026-07-03): the per-aspect cross-directory leaderboard is part of
 // the generic "any-directory" ambition. While the product focuses on AI dev
@@ -18,15 +18,12 @@ export async function generateMetadata({
   const { key } = await params;
   return {
     title: `${decodeURIComponent(key)} — EverythingRated`,
-    description: "The aspect explorer is paused while the product focuses on AI dev tool adoption decisions.",
+    description:
+      'The aspect explorer is paused while the product focuses on AI dev tool adoption decisions.',
   };
 }
 
-export default async function AspectKeyPage({
-  params,
-}: {
-  params: Promise<{ key: string }>;
-}) {
+export default async function AspectKeyPage({ params }: { params: Promise<{ key: string }> }) {
   const { key: raw } = await params;
   const key = decodeURIComponent(raw);
   return (
@@ -43,10 +40,9 @@ export default async function AspectKeyPage({
           The aspect explorer is paused
         </h1>
         <p className="mt-3 max-w-2xl text-[14px] leading-[1.6] text-[var(--muted)]">
-          EverythingRated now does one job: multi-axis ratings for AI dev tool
-          adoption decisions. The cross-directory leaderboard for the{" "}
-          <span className="font-mono">{key}</span> axis is on hold. The six
-          adoption axes for AI dev libraries live on the board.
+          EverythingRated now does one job: multi-axis ratings for AI dev tool adoption decisions.
+          The cross-directory leaderboard for the <span className="font-mono">{key}</span> axis is
+          on hold. The six adoption axes for AI dev libraries live on the board.
         </p>
         <div className="mt-8">
           <Link

@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 interface DirectoryEntry {
   directory: { slug: string };
@@ -12,35 +12,39 @@ interface DirectoryEntry {
  * server-side coupling.
  */
 export default function RandomItemAcrossDirectories() {
-  const [msg, setMsg] = useState("Picking a random item…");
+  const [msg, setMsg] = useState('Picking a random item…');
 
   useEffect(() => {
     let aborted = false;
-    fetch("/directories.json", { cache: "no-store" })
+    fetch('/directories.json', { cache: 'no-store' })
       .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
       .then(async (data: unknown) => {
         if (aborted) return;
         const dirs =
-          data && typeof data === "object" && "directories" in data &&
+          data &&
+          typeof data === 'object' &&
+          'directories' in data &&
           Array.isArray((data as { directories: unknown }).directories)
-            ? ((data as { directories: DirectoryEntry[] }).directories)
+            ? (data as { directories: DirectoryEntry[] }).directories
             : [];
         if (dirs.length === 0) {
-          setMsg("No directories yet.");
+          setMsg('No directories yet.');
           return;
         }
         const shuffled = [...dirs].sort(() => Math.random() - 0.5);
         for (const pickedDir of shuffled) {
           const slug = pickedDir.directory.slug;
-          const itemsRes = await fetch(`/d/${slug}/items.json`, { cache: "no-store" });
+          const itemsRes = await fetch(`/d/${slug}/items.json`, { cache: 'no-store' });
           if (!itemsRes.ok) {
             continue;
           }
           const itemsData: unknown = await itemsRes.json();
           const items =
-            itemsData && typeof itemsData === "object" && "items" in itemsData &&
+            itemsData &&
+            typeof itemsData === 'object' &&
+            'items' in itemsData &&
             Array.isArray((itemsData as { items: unknown }).items)
-              ? ((itemsData as { items: Array<{ item: { slug: string } }> }).items)
+              ? (itemsData as { items: Array<{ item: { slug: string } }> }).items
               : [];
           if (items.length === 0) {
             continue;
@@ -49,10 +53,10 @@ export default function RandomItemAcrossDirectories() {
           window.location.replace(`/d/${slug}/${pickedItem.item.slug}`);
           return;
         }
-        setMsg("No items in any directory yet.");
+        setMsg('No items in any directory yet.');
       })
       .catch(() => {
-        if (!aborted) setMsg("Could not reach the catalog.");
+        if (!aborted) setMsg('Could not reach the catalog.');
       });
     return () => {
       aborted = true;

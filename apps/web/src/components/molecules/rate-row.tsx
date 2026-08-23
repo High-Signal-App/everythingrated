@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import { useState, useTransition } from "react";
+import { useState, useTransition } from 'react';
 
-import { ScoreBar } from "@/components/atoms/score-bar";
-import { submitRating } from "@/lib/actions";
-import { markVisitorActivity } from "@/lib/analytics";
-import { cn } from "@/lib/cn";
-import { captureActionFailure } from "@/lib/foundry-monitoring";
-import type { AspectAverage } from "@/lib/ratings";
+import { ScoreBar } from '@/components/atoms/score-bar';
+import { submitRating } from '@/lib/actions';
+import { markVisitorActivity } from '@/lib/analytics';
+import { cn } from '@/lib/cn';
+import { captureActionFailure } from '@/lib/foundry-monitoring';
+import type { AspectAverage } from '@/lib/ratings';
 
 /**
  * Interactive rating row — 5 buttons, optimistic update, calls a Server Action.
@@ -58,8 +58,8 @@ export function RateRow({
         markVisitorActivity();
       } catch (error) {
         // Roll back the optimistic update and surface a retry.
-        console.error("submitRating failed", error);
-        captureActionFailure(error, { action: "submit_rating" });
+        console.error('submitRating failed', error);
+        captureActionFailure(error, { action: 'submit_rating' });
         setYour(prev);
         setOptimisticAvg(prevAvg);
         setOptimisticCount(prevCount);
@@ -71,17 +71,13 @@ export function RateRow({
   return (
     <div className="grid grid-cols-1 gap-2 border-b border-[var(--border)] py-4 last:border-b-0 sm:grid-cols-[12rem_1fr_auto] sm:items-center sm:gap-4">
       <div>
-        <div className="text-sm font-medium text-[var(--foreground)]">
-          {initial.aspect.label}
-        </div>
-        <div className="text-[11px] text-[var(--muted)]">
-          {initial.aspect.description}
-        </div>
+        <div className="text-sm font-medium text-[var(--foreground)]">{initial.aspect.label}</div>
+        <div className="text-[11px] text-[var(--muted)]">{initial.aspect.description}</div>
       </div>
       <div className="flex items-center gap-3">
         <ScoreBar value={optimisticAvg} className="flex-1" />
         <span className="num w-10 shrink-0 text-right text-sm tabular-nums">
-          {optimisticCount > 0 ? optimisticAvg.toFixed(1) : "—"}
+          {optimisticCount > 0 ? optimisticAvg.toFixed(1) : '—'}
         </span>
       </div>
       <div className="flex flex-col items-start gap-1 sm:items-end">
@@ -97,11 +93,11 @@ export function RateRow({
               className={cn(
                 // 44px touch target on mobile (WCAG 2.5.5 / iOS HIG),
                 // compact 32px on >=sm where a pointer is likely.
-                "h-11 w-11 sm:h-8 sm:w-8 rounded-[var(--radius-sm)] border text-sm font-medium transition-colors",
+                'h-11 w-11 sm:h-8 sm:w-8 rounded-[var(--radius-sm)] border text-sm font-medium transition-colors',
                 your === n
-                  ? "border-[var(--foreground)] bg-[var(--foreground)] text-[var(--background)]"
-                  : "border-[var(--border-strong)] bg-transparent text-[var(--foreground)] hover:bg-[var(--surface-2)]",
-                pending && "opacity-60",
+                  ? 'border-[var(--foreground)] bg-[var(--foreground)] text-[var(--background)]'
+                  : 'border-[var(--border-strong)] bg-transparent text-[var(--foreground)] hover:bg-[var(--surface-2)]',
+                pending && 'opacity-60'
               )}
             >
               {n}
@@ -109,11 +105,8 @@ export function RateRow({
           ))}
         </div>
         {failedScore !== null ? (
-          <p
-            role="status"
-            className="text-[11px] text-[var(--muted)]"
-          >
-            Couldn&apos;t save that rating.{" "}
+          <p role="status" className="text-[11px] text-[var(--muted)]">
+            Couldn&apos;t save that rating.{' '}
             <button
               type="button"
               onClick={() => pick(failedScore)}

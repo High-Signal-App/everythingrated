@@ -1,9 +1,6 @@
 {
   "$schema": "https://unpkg.com/knip@latest/schema.json",
-  "entry": [
-    "apps/web/open-next.config.ts",
-    "apps/web/agent-edge.mjs"
-  ],
+  "entry": ["apps/web/open-next.config.ts", "apps/web/agent-edge.mjs"],
   "project": ["**/*.{ts,tsx,js,jsx,mjs,cjs,mts}"],
   "ignore": [
     "**/dist/**",

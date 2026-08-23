@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { useEffect } from "react";
-import { initVitals } from "@/lib/vitals";
-import { initApiTiming } from "@/lib/api-timing";
+import { useEffect } from 'react';
+import { initVitals } from '@/lib/vitals';
+import { initApiTiming } from '@/lib/api-timing';
 
 export function VitalsReporter() {
   useEffect(() => {
