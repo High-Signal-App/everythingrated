@@ -1,8 +1,8 @@
-import { NextResponse } from "next/server";
+import { NextResponse } from 'next/server';
 
-import { getItemAggregate } from "@/lib/ratings";
+import { getItemAggregate } from '@/lib/ratings';
 
-export const dynamic = "force-dynamic";
+export const dynamic = 'force-dynamic';
 
 /**
  * Public JSON for a single item — directory + item slug + every aspect's
@@ -11,11 +11,11 @@ export const dynamic = "force-dynamic";
  */
 export async function GET(
   _req: Request,
-  ctx: { params: Promise<{ directory: string; item: string }> },
+  ctx: { params: Promise<{ directory: string; item: string }> }
 ) {
   const { directory, item } = await ctx.params;
   const result = await getItemAggregate(directory, item, null);
-  if (!result) return NextResponse.json({ error: "not_found" }, { status: 404 });
+  if (!result) return NextResponse.json({ error: 'not_found' }, { status: 404 });
 
   return NextResponse.json(
     {
@@ -41,8 +41,8 @@ export async function GET(
     },
     {
       headers: {
-        "Cache-Control": "public, s-maxage=300, stale-while-revalidate=1200",
+        'Cache-Control': 'public, s-maxage=300, stale-while-revalidate=1200',
       },
-    },
+    }
   );
 }

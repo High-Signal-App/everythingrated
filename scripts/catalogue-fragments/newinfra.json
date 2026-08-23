@@ -6,11 +6,31 @@
       "description": "Content delivery networks that cache and serve assets close to users.",
       "heroCopy": "Edge latency, cache control, cost, DX, ecosystem reach — see where each network wins.",
       "aspects": [
-        { "key": "latency", "label": "Latency", "description": "Edge proximity and how fast cached assets reach users." },
-        { "key": "cache_control", "label": "Cache control", "description": "Granularity of purging, TTLs, and edge cache rules." },
-        { "key": "cost", "label": "Cost", "description": "Value relative to price, including egress (5 = great deal)." },
-        { "key": "dx", "label": "Developer experience", "description": "APIs, dashboards, docs, and day-to-day ergonomics." },
-        { "key": "ecosystem", "label": "Ecosystem", "description": "Integrations, edge compute, and surrounding platform breadth." }
+        {
+          "key": "latency",
+          "label": "Latency",
+          "description": "Edge proximity and how fast cached assets reach users."
+        },
+        {
+          "key": "cache_control",
+          "label": "Cache control",
+          "description": "Granularity of purging, TTLs, and edge cache rules."
+        },
+        {
+          "key": "cost",
+          "label": "Cost",
+          "description": "Value relative to price, including egress (5 = great deal)."
+        },
+        {
+          "key": "dx",
+          "label": "Developer experience",
+          "description": "APIs, dashboards, docs, and day-to-day ergonomics."
+        },
+        {
+          "key": "ecosystem",
+          "label": "Ecosystem",
+          "description": "Integrations, edge compute, and surrounding platform breadth."
+        }
       ],
       "items": [
         {
@@ -127,11 +147,31 @@
       "description": "Authoritative DNS hosting and management providers.",
       "heroCopy": "Resolution latency, reliability, cost, DX, ecosystem — pick the nameservers your stack depends on.",
       "aspects": [
-        { "key": "latency", "label": "Latency", "description": "Resolution speed from Anycast networks worldwide." },
-        { "key": "reliability", "label": "Reliability", "description": "Uptime, SLAs, and resilience against outages and attacks." },
-        { "key": "cost", "label": "Cost", "description": "Value relative to price including query-based fees (5 = great deal)." },
-        { "key": "dx", "label": "Developer experience", "description": "APIs, terraform support, dashboards, and ergonomics." },
-        { "key": "ecosystem", "label": "Ecosystem", "description": "Integrations, automation, and surrounding platform breadth." }
+        {
+          "key": "latency",
+          "label": "Latency",
+          "description": "Resolution speed from Anycast networks worldwide."
+        },
+        {
+          "key": "reliability",
+          "label": "Reliability",
+          "description": "Uptime, SLAs, and resilience against outages and attacks."
+        },
+        {
+          "key": "cost",
+          "label": "Cost",
+          "description": "Value relative to price including query-based fees (5 = great deal)."
+        },
+        {
+          "key": "dx",
+          "label": "Developer experience",
+          "description": "APIs, terraform support, dashboards, and ergonomics."
+        },
+        {
+          "key": "ecosystem",
+          "label": "Ecosystem",
+          "description": "Integrations, automation, and surrounding platform breadth."
+        }
       ],
       "items": [
         {
@@ -237,11 +277,31 @@
       "description": "Platforms for storing, rotating, and distributing secrets and credentials.",
       "heroCopy": "Security depth, integrations, cost, DX, ecosystem — choose where your keys live.",
       "aspects": [
-        { "key": "security", "label": "Security", "description": "Encryption model, dynamic secrets, rotation, and audit depth." },
-        { "key": "integrations", "label": "Integrations", "description": "Breadth of cloud, CI/CD, Kubernetes, and SDK connectors." },
-        { "key": "cost", "label": "Cost", "description": "Value relative to price and licensing (5 = great deal)." },
-        { "key": "dx", "label": "Developer experience", "description": "CLI, SDKs, dashboards, and day-to-day ergonomics." },
-        { "key": "ecosystem", "label": "Ecosystem", "description": "Community, tooling, and surrounding platform breadth." }
+        {
+          "key": "security",
+          "label": "Security",
+          "description": "Encryption model, dynamic secrets, rotation, and audit depth."
+        },
+        {
+          "key": "integrations",
+          "label": "Integrations",
+          "description": "Breadth of cloud, CI/CD, Kubernetes, and SDK connectors."
+        },
+        {
+          "key": "cost",
+          "label": "Cost",
+          "description": "Value relative to price and licensing (5 = great deal)."
+        },
+        {
+          "key": "dx",
+          "label": "Developer experience",
+          "description": "CLI, SDKs, dashboards, and day-to-day ergonomics."
+        },
+        {
+          "key": "ecosystem",
+          "label": "Ecosystem",
+          "description": "Community, tooling, and surrounding platform breadth."
+        }
       ],
       "items": [
         {
@@ -350,11 +410,31 @@
       "description": "Full-text, faceted, and AI search engines and services for apps.",
       "heroCopy": "Relevance, latency, cost, DX, ecosystem — find the engine that powers your search box.",
       "aspects": [
-        { "key": "relevance", "label": "Relevance", "description": "Ranking quality, typo tolerance, and semantic/hybrid search." },
-        { "key": "latency", "label": "Latency", "description": "Query speed and responsiveness under load." },
-        { "key": "cost", "label": "Cost", "description": "Value relative to price and scaling economics (5 = great deal)." },
-        { "key": "dx", "label": "Developer experience", "description": "APIs, SDKs, indexing flow, and day-to-day ergonomics." },
-        { "key": "ecosystem", "label": "Ecosystem", "description": "Integrations, plugins, and surrounding platform breadth." }
+        {
+          "key": "relevance",
+          "label": "Relevance",
+          "description": "Ranking quality, typo tolerance, and semantic/hybrid search."
+        },
+        {
+          "key": "latency",
+          "label": "Latency",
+          "description": "Query speed and responsiveness under load."
+        },
+        {
+          "key": "cost",
+          "label": "Cost",
+          "description": "Value relative to price and scaling economics (5 = great deal)."
+        },
+        {
+          "key": "dx",
+          "label": "Developer experience",
+          "description": "APIs, SDKs, indexing flow, and day-to-day ergonomics."
+        },
+        {
+          "key": "ecosystem",
+          "label": "Ecosystem",
+          "description": "Integrations, plugins, and surrounding platform breadth."
+        }
       ],
       "items": [
         {
@@ -474,11 +554,31 @@
       "description": "Queues, streaming platforms, and pub/sub systems for moving events between services.",
       "heroCopy": "Throughput, durability, cost, DX, ecosystem — route your events through the right pipe.",
       "aspects": [
-        { "key": "throughput", "label": "Throughput", "description": "Sustained message rate and scalability under load." },
-        { "key": "durability", "label": "Durability", "description": "Persistence, replication, and delivery guarantees." },
-        { "key": "cost", "label": "Cost", "description": "Value relative to price and operational overhead (5 = great deal)." },
-        { "key": "dx", "label": "Developer experience", "description": "Client libraries, tooling, and day-to-day ergonomics." },
-        { "key": "ecosystem", "label": "Ecosystem", "description": "Connectors, integrations, and surrounding platform breadth." }
+        {
+          "key": "throughput",
+          "label": "Throughput",
+          "description": "Sustained message rate and scalability under load."
+        },
+        {
+          "key": "durability",
+          "label": "Durability",
+          "description": "Persistence, replication, and delivery guarantees."
+        },
+        {
+          "key": "cost",
+          "label": "Cost",
+          "description": "Value relative to price and operational overhead (5 = great deal)."
+        },
+        {
+          "key": "dx",
+          "label": "Developer experience",
+          "description": "Client libraries, tooling, and day-to-day ergonomics."
+        },
+        {
+          "key": "ecosystem",
+          "label": "Ecosystem",
+          "description": "Connectors, integrations, and surrounding platform breadth."
+        }
       ],
       "items": [
         {

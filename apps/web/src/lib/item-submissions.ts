@@ -1,16 +1,16 @@
-import { directories, items, itemSubmissions,ratings } from "@everythingrated/db";
-import { and, desc, eq, inArray, ne, or } from "drizzle-orm";
+import { directories, items, itemSubmissions, ratings } from '@everythingrated/db';
+import { and, desc, eq, inArray, ne, or } from 'drizzle-orm';
 
-import { getDb } from "./db";
-import { readVisitorId } from "./visitor";
+import { getDb } from './db';
+import { readVisitorId } from './visitor';
 
-export const PILOT_DIRECTORY_SLUG = "ai-dev-tools";
+export const PILOT_DIRECTORY_SLUG = 'ai-dev-tools';
 const MAX_TEXT_LENGTH = 500;
 const MIN_DESCRIPTION_LENGTH = 20;
 const MAX_PENDING_PER_VISITOR_PER_DAY = 3;
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-export type ItemSubmissionStatus = "pending" | "approved" | "rejected" | "merged";
+export type ItemSubmissionStatus = 'pending' | 'approved' | 'rejected' | 'merged';
 
 export type ItemSubmission = {
   id: string;
@@ -29,7 +29,7 @@ export type ItemSubmission = {
   moderatorNote: string | null;
   createdAt: Date;
   moderatedAt: Date | null;
-  source: "visitor" | "fixture";
+  source: 'visitor' | 'fixture';
 };
 
 export type ItemSubmissionInput = {
@@ -52,7 +52,7 @@ export type ItemSubmissionTrustSignals = {
   priorApprovals: number;
   urlPlausible: boolean;
   domainAligned: boolean;
-  duplicateConfidence: "none" | "low" | "high";
+  duplicateConfidence: 'none' | 'low' | 'high';
   duplicateHint: string | null;
 };
 
@@ -60,9 +60,9 @@ export function slugifyItemName(name: string): string {
   return name
     .trim()
     .toLowerCase()
-    .replace(/['"]/g, "")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "")
+    .replace(/['"]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
     .slice(0, 60);
 }
 
@@ -70,9 +70,9 @@ export function normalizeItemName(name: string): string {
   return name
     .trim()
     .toLowerCase()
-    .replace(/['"]/g, "")
-    .replace(/[^a-z0-9]+/g, " ")
-    .replace(/\s+/g, " ")
+    .replace(/['"]/g, '')
+    .replace(/[^a-z0-9]+/g, ' ')
+    .replace(/\s+/g, ' ')
     .trim();
 }
 
@@ -80,12 +80,12 @@ export function normalizeWebsiteUrl(raw: string): string | null {
   const trimmed = raw.trim();
   if (!trimmed) return null;
   try {
-    const withScheme = trimmed.startsWith("http") ? trimmed : `https://${trimmed}`;
+    const withScheme = trimmed.startsWith('http') ? trimmed : `https://${trimmed}`;
     const url = new URL(withScheme);
-    if (url.protocol !== "https:") return null;
-    url.hash = "";
-    let pathname = url.pathname.replace(/\/+$/, "");
-    if (pathname === "") pathname = "";
+    if (url.protocol !== 'https:') return null;
+    url.hash = '';
+    let pathname = url.pathname.replace(/\/+$/, '');
+    if (pathname === '') pathname = '';
     return `${url.protocol}//${url.hostname.toLowerCase()}${pathname}${url.search}`;
   } catch {
     return null;
@@ -97,21 +97,19 @@ export function parseWebsiteHost(websiteUrl: string): string | null {
   if (!normalized) return null;
   try {
     const host = new URL(normalized).hostname.toLowerCase();
-    return host.startsWith("www.") ? host.slice(4) : host;
+    return host.startsWith('www.') ? host.slice(4) : host;
   } catch {
     return null;
   }
 }
 
-export function validateItemSubmission(
-  input: ItemSubmissionInput,
-): ItemSubmissionValidation {
+export function validateItemSubmission(input: ItemSubmissionInput): ItemSubmissionValidation {
   const name = input.name.trim();
   const description = input.description.trim();
   const websiteUrl = input.websiteUrl.trim();
 
   if (name.length < 2) {
-    return { ok: false, error: "Tool name must be at least 2 characters." };
+    return { ok: false, error: 'Tool name must be at least 2 characters.' };
   }
   if (description.length < MIN_DESCRIPTION_LENGTH) {
     return {
@@ -120,21 +118,21 @@ export function validateItemSubmission(
     };
   }
   if ([name, description].some((value) => value.length > MAX_TEXT_LENGTH)) {
-    return { ok: false, error: "Keep each field under 500 characters." };
+    return { ok: false, error: 'Keep each field under 500 characters.' };
   }
   if (!normalizeWebsiteUrl(websiteUrl)) {
-    return { ok: false, error: "Website must be a valid https:// URL." };
+    return { ok: false, error: 'Website must be a valid https:// URL.' };
   }
 
   const submitterEmail = input.submitterEmail?.trim();
   if (submitterEmail && !EMAIL_PATTERN.test(submitterEmail)) {
-    return { ok: false, error: "Submitter email looks malformed." };
+    return { ok: false, error: 'Submitter email looks malformed.' };
   }
 
   if (input.directorySlug !== PILOT_DIRECTORY_SLUG) {
     return {
       ok: false,
-      error: "Item suggestions are only open for the AI dev tools directory during the pilot.",
+      error: 'Item suggestions are only open for the AI dev tools directory during the pilot.',
     };
   }
 
@@ -144,26 +142,26 @@ export function validateItemSubmission(
 export function isUrlPlausible(websiteUrl: string): boolean {
   const host = parseWebsiteHost(websiteUrl);
   if (!host) return false;
-  if (host === "example.invalid" || host.endsWith(".invalid")) return false;
-  if (!host.includes(".")) return false;
+  if (host === 'example.invalid' || host.endsWith('.invalid')) return false;
+  if (!host.includes('.')) return false;
   return true;
 }
 
 export function isDomainAligned(name: string, websiteUrl: string): boolean {
   const host = parseWebsiteHost(websiteUrl);
   if (!host) return false;
-  const tokens = normalizeItemName(name).split(" ").filter(Boolean);
+  const tokens = normalizeItemName(name).split(' ').filter(Boolean);
   if (tokens.length === 0) return false;
-  const stem = host.split(".")[0] ?? "";
+  const stem = host.split('.')[0] ?? '';
   return tokens.some(
-    (token) => stem.includes(token) || token.includes(stem) || host.includes(token),
+    (token) => stem.includes(token) || token.includes(stem) || host.includes(token)
   );
 }
 
 async function detectDuplicateSlug(
   directoryId: string,
   slug: string,
-  excludeSubmissionId?: string,
+  excludeSubmissionId?: string
 ): Promise<{ duplicate: boolean; existingItemSlug?: string }> {
   const db = await getDb();
   const [liveItem] = await db
@@ -177,10 +175,7 @@ async function detectDuplicateSlug(
   const conditions = [
     eq(itemSubmissions.directoryId, directoryId),
     eq(itemSubmissions.slug, slug),
-    or(
-      eq(itemSubmissions.status, "pending"),
-      eq(itemSubmissions.status, "approved"),
-    ),
+    or(eq(itemSubmissions.status, 'pending'), eq(itemSubmissions.status, 'approved')),
   ];
   if (excludeSubmissionId) {
     conditions.push(ne(itemSubmissions.id, excludeSubmissionId));
@@ -199,7 +194,7 @@ async function detectDuplicateSlug(
 
 async function detectDuplicateName(
   directoryId: string,
-  name: string,
+  name: string
 ): Promise<{ duplicate: boolean; existingItemSlug?: string }> {
   const normalized = normalizeItemName(name);
   if (!normalized) return { duplicate: false };
@@ -222,11 +217,8 @@ async function detectDuplicateName(
     .where(
       and(
         eq(itemSubmissions.directoryId, directoryId),
-        or(
-          eq(itemSubmissions.status, "pending"),
-          eq(itemSubmissions.status, "approved"),
-        ),
-      ),
+        or(eq(itemSubmissions.status, 'pending'), eq(itemSubmissions.status, 'approved'))
+      )
     );
   for (const sub of activeSubs) {
     if (normalizeItemName(sub.name) === normalized) {
@@ -239,7 +231,7 @@ async function detectDuplicateName(
 
 async function detectDuplicateHost(
   directoryId: string,
-  websiteUrl: string,
+  websiteUrl: string
 ): Promise<{ duplicate: boolean; existingItemSlug?: string; host: string | null }> {
   const host = parseWebsiteHost(websiteUrl);
   if (!host) return { duplicate: false, host: null };
@@ -262,11 +254,8 @@ async function detectDuplicateHost(
     .where(
       and(
         eq(itemSubmissions.directoryId, directoryId),
-        or(
-          eq(itemSubmissions.status, "pending"),
-          eq(itemSubmissions.status, "approved"),
-        ),
-      ),
+        or(eq(itemSubmissions.status, 'pending'), eq(itemSubmissions.status, 'approved'))
+      )
     );
   for (const sub of activeSubs) {
     if (parseWebsiteHost(sub.websiteUrl) === host) {
@@ -279,35 +268,35 @@ async function detectDuplicateHost(
 
 export function computeTrustSignals(
   submission: ItemSubmission,
-  allSubmissions: ItemSubmission[],
+  allSubmissions: ItemSubmission[]
 ): ItemSubmissionTrustSignals {
   const priorApprovals = allSubmissions.filter(
     (row) =>
-      row.status === "approved" &&
+      row.status === 'approved' &&
       ((submission.submitterVisitorId &&
         row.submitterVisitorId === submission.submitterVisitorId) ||
         (submission.submitterEmail &&
           row.submitterEmail &&
-          row.submitterEmail === submission.submitterEmail)),
+          row.submitterEmail === submission.submitterEmail))
   ).length;
 
   const urlPlausible = isUrlPlausible(submission.websiteUrl);
   const domainAligned = isDomainAligned(submission.name, submission.websiteUrl);
 
-  let duplicateConfidence: ItemSubmissionTrustSignals["duplicateConfidence"] = "none";
+  let duplicateConfidence: ItemSubmissionTrustSignals['duplicateConfidence'] = 'none';
   let duplicateHint: string | null = null;
-  if (submission.slug === "cursor" || normalizeItemName(submission.name).includes("cursor")) {
-    duplicateConfidence = "high";
-    duplicateHint = "Likely duplicate of seeded Cursor item.";
+  if (submission.slug === 'cursor' || normalizeItemName(submission.name).includes('cursor')) {
+    duplicateConfidence = 'high';
+    duplicateHint = 'Likely duplicate of seeded Cursor item.';
   } else if (
-    normalizeItemName(submission.name).includes("continue") ||
-    parseWebsiteHost(submission.websiteUrl) === "continue.dev"
+    normalizeItemName(submission.name).includes('continue') ||
+    parseWebsiteHost(submission.websiteUrl) === 'continue.dev'
   ) {
-    duplicateConfidence = "high";
-    duplicateHint = "Likely duplicate of seeded Continue item.";
+    duplicateConfidence = 'high';
+    duplicateHint = 'Likely duplicate of seeded Continue item.';
   } else if (!domainAligned && !urlPlausible) {
-    duplicateConfidence = "low";
-    duplicateHint = "URL host does not align with tool name.";
+    duplicateConfidence = 'low';
+    duplicateHint = 'URL host does not align with tool name.';
   }
 
   return {
@@ -320,10 +309,9 @@ export function computeTrustSignals(
   };
 }
 
-
 export async function listItemSubmissions(
   directorySlug = PILOT_DIRECTORY_SLUG,
-  status?: ItemSubmissionStatus,
+  status?: ItemSubmissionStatus
 ): Promise<ItemSubmission[]> {
   const db = await getDb();
   const [directory] = await db
@@ -339,12 +327,7 @@ export async function listItemSubmissions(
         .from(itemSubmissions)
         .where(and(baseWhere, eq(itemSubmissions.status, status)))
         .orderBy(desc(itemSubmissions.createdAt))
-    : db
-        .select()
-        .from(itemSubmissions)
-        .where(baseWhere)
-        .orderBy(desc(itemSubmissions.createdAt)));
-
+    : db.select().from(itemSubmissions).where(baseWhere).orderBy(desc(itemSubmissions.createdAt)));
 
   // For merged rows, resolve the target slug for UI links
   const mergedIds = rows.filter((r) => r.mergedIntoItemId).map((r) => r.mergedIntoItemId!);
@@ -374,14 +357,18 @@ export async function listItemSubmissions(
     mergedIntoItemSlug: r.mergedIntoItemId ? (slugById.get(r.mergedIntoItemId) ?? null) : null,
     moderatorNote: r.moderatorNote ?? null,
     createdAt: r.createdAt instanceof Date ? r.createdAt : new Date(r.createdAt),
-    moderatedAt: r.moderatedAt ? (r.moderatedAt instanceof Date ? r.moderatedAt : new Date(r.moderatedAt)) : null,
-    source: "visitor" as const,
+    moderatedAt: r.moderatedAt
+      ? r.moderatedAt instanceof Date
+        ? r.moderatedAt
+        : new Date(r.moderatedAt)
+      : null,
+    source: 'visitor' as const,
   }));
 }
 
 async function countRecentPendingForVisitor(
   visitorId: string,
-  directoryId: string,
+  directoryId: string
 ): Promise<number> {
   const dayAgo = Date.now() - 24 * 60 * 60 * 1000;
   const rows = await (await getDb())
@@ -391,8 +378,8 @@ async function countRecentPendingForVisitor(
       and(
         eq(itemSubmissions.directoryId, directoryId),
         eq(itemSubmissions.submitterVisitorId, visitorId),
-        eq(itemSubmissions.status, "pending"),
-      ),
+        eq(itemSubmissions.status, 'pending')
+      )
     );
   return rows.filter((r) => {
     const t = r.createdAt instanceof Date ? r.createdAt.getTime() : Number(r.createdAt);
@@ -401,7 +388,7 @@ async function countRecentPendingForVisitor(
 }
 
 export async function submitItemSuggestion(
-  input: ItemSubmissionInput,
+  input: ItemSubmissionInput
 ): Promise<ItemSubmissionResult> {
   const validation = validateItemSubmission(input);
   if (!validation.ok) return validation;
@@ -412,13 +399,13 @@ export async function submitItemSuggestion(
     .from(directories)
     .where(eq(directories.slug, input.directorySlug));
   if (!directory) {
-    return { ok: false, error: "Directory not found." };
+    return { ok: false, error: 'Directory not found.' };
   }
 
   const name = input.name.trim();
   const slug = slugifyItemName(name);
   if (!slug) {
-    return { ok: false, error: "Tool name needs letters or numbers." };
+    return { ok: false, error: 'Tool name needs letters or numbers.' };
   }
 
   const visitorId = await readVisitorId();
@@ -426,7 +413,7 @@ export async function submitItemSuggestion(
   if (visitorId && recent >= MAX_PENDING_PER_VISITOR_PER_DAY) {
     return {
       ok: false,
-      error: "You already have several suggestions pending review. Try again tomorrow.",
+      error: 'You already have several suggestions pending review. Try again tomorrow.',
     };
   }
 
@@ -470,7 +457,7 @@ export async function submitItemSuggestion(
     submitterVisitorId: visitorId ?? null,
     submitterName: input.submitterName?.trim() || null,
     submitterEmail: input.submitterEmail?.trim() || null,
-    status: "pending",
+    status: 'pending',
     mergedIntoItemId: null,
     moderatorNote: null,
     createdAt: now,
@@ -481,7 +468,7 @@ export async function submitItemSuggestion(
 }
 
 async function findMergeTarget(
-  submission: ItemSubmission,
+  submission: ItemSubmission
 ): Promise<{ itemId: string; slug: string } | null> {
   const db = await getDb();
   const slugMatch = await db
@@ -496,10 +483,7 @@ async function findMergeTarget(
       .select({ id: items.id, slug: items.slug })
       .from(items)
       .where(
-        and(
-          eq(items.directoryId, submission.directoryId),
-          eq(items.slug, nameDup.existingItemSlug),
-        ),
+        and(eq(items.directoryId, submission.directoryId), eq(items.slug, nameDup.existingItemSlug))
       );
     if (item) return { itemId: item.id, slug: item.slug };
   }
@@ -510,10 +494,7 @@ async function findMergeTarget(
       .select({ id: items.id, slug: items.slug })
       .from(items)
       .where(
-        and(
-          eq(items.directoryId, submission.directoryId),
-          eq(items.slug, hostDup.existingItemSlug),
-        ),
+        and(eq(items.directoryId, submission.directoryId), eq(items.slug, hostDup.existingItemSlug))
       );
     if (item) return { itemId: item.id, slug: item.slug };
   }
@@ -523,23 +504,16 @@ async function findMergeTarget(
 
 export async function approveItemSubmission(id: string): Promise<ItemSubmissionResult> {
   const db = await getDb();
-  const [submission] = await db
-    .select()
-    .from(itemSubmissions)
-    .where(eq(itemSubmissions.id, id));
-  if (!submission) return { ok: false, error: "Submission not found." };
-  if (submission.status !== "pending") {
-    return { ok: false, error: "Only pending submissions can be approved." };
+  const [submission] = await db.select().from(itemSubmissions).where(eq(itemSubmissions.id, id));
+  if (!submission) return { ok: false, error: 'Submission not found.' };
+  if (submission.status !== 'pending') {
+    return { ok: false, error: 'Only pending submissions can be approved.' };
   }
 
   // Exclude the submission itself from duplicate check
-  const slugDup = await detectDuplicateSlug(
-    submission.directoryId,
-    submission.slug,
-    submission.id,
-  );
+  const slugDup = await detectDuplicateSlug(submission.directoryId, submission.slug, submission.id);
   if (slugDup.duplicate) {
-    return { ok: false, error: "An item with this slug already exists." };
+    return { ok: false, error: 'An item with this slug already exists.' };
   }
 
   const itemId = crypto.randomUUID();
@@ -555,8 +529,8 @@ export async function approveItemSubmission(id: string): Promise<ItemSubmissionR
   await db
     .update(itemSubmissions)
     .set({
-      status: "approved",
-      moderatorNote: "Approved into public directory.",
+      status: 'approved',
+      moderatorNote: 'Approved into public directory.',
       moderatedAt: new Date(),
     })
     .where(eq(itemSubmissions.id, id));
@@ -566,23 +540,23 @@ export async function approveItemSubmission(id: string): Promise<ItemSubmissionR
 
 export async function rejectItemSubmission(
   id: string,
-  note: string,
+  note: string
 ): Promise<ItemSubmissionResult> {
   const db = await getDb();
   const [submission] = await db
     .select({ id: itemSubmissions.id, status: itemSubmissions.status })
     .from(itemSubmissions)
     .where(eq(itemSubmissions.id, id));
-  if (!submission) return { ok: false, error: "Submission not found." };
-  if (submission.status !== "pending") {
-    return { ok: false, error: "Only pending submissions can be rejected." };
+  if (!submission) return { ok: false, error: 'Submission not found.' };
+  if (submission.status !== 'pending') {
+    return { ok: false, error: 'Only pending submissions can be rejected.' };
   }
 
   await db
     .update(itemSubmissions)
     .set({
-      status: "rejected",
-      moderatorNote: note.trim() || "Rejected by moderator.",
+      status: 'rejected',
+      moderatorNote: note.trim() || 'Rejected by moderator.',
       moderatedAt: new Date(),
     })
     .where(eq(itemSubmissions.id, id));
@@ -592,19 +566,16 @@ export async function rejectItemSubmission(
 
 export async function mergeItemSubmission(id: string): Promise<ItemSubmissionResult> {
   const db = await getDb();
-  const [row] = await db
-    .select()
-    .from(itemSubmissions)
-    .where(eq(itemSubmissions.id, id));
-  if (!row) return { ok: false, error: "Submission not found." };
-  if (row.status !== "pending") {
-    return { ok: false, error: "Only pending submissions can be merged." };
+  const [row] = await db.select().from(itemSubmissions).where(eq(itemSubmissions.id, id));
+  if (!row) return { ok: false, error: 'Submission not found.' };
+  if (row.status !== 'pending') {
+    return { ok: false, error: 'Only pending submissions can be merged.' };
   }
 
   // Rebuild a minimal ItemSubmission-like for findMergeTarget (it only needs directoryId, slug, name, websiteUrl)
   const submissionForMerge: ItemSubmission = {
     id: row.id,
-    directorySlug: "", // not used
+    directorySlug: '', // not used
     directoryId: row.directoryId,
     slug: row.slug,
     name: row.name,
@@ -618,21 +589,25 @@ export async function mergeItemSubmission(id: string): Promise<ItemSubmissionRes
     mergedIntoItemSlug: null,
     moderatorNote: row.moderatorNote ?? null,
     createdAt: row.createdAt instanceof Date ? row.createdAt : new Date(row.createdAt),
-    moderatedAt: row.moderatedAt ? (row.moderatedAt instanceof Date ? row.moderatedAt : new Date(row.moderatedAt)) : null,
-    source: "visitor",
+    moderatedAt: row.moderatedAt
+      ? row.moderatedAt instanceof Date
+        ? row.moderatedAt
+        : new Date(row.moderatedAt)
+      : null,
+    source: 'visitor',
   };
 
   const target = await findMergeTarget(submissionForMerge);
   if (!target) {
-    return { ok: false, error: "No matching live item found to merge into." };
+    return { ok: false, error: 'No matching live item found to merge into.' };
   }
 
   await db
     .update(itemSubmissions)
     .set({
-      status: "merged",
+      status: 'merged',
       mergedIntoItemId: target.itemId,
-      moderatorNote: `Merged into existing item /d/${(await db.select({slug: directories.slug}).from(directories).where(eq(directories.id, row.directoryId)))[0]?.slug || "ai-dev-tools"}/${target.slug}.`,
+      moderatorNote: `Merged into existing item /d/${(await db.select({ slug: directories.slug }).from(directories).where(eq(directories.id, row.directoryId)))[0]?.slug || 'ai-dev-tools'}/${target.slug}.`,
       moderatedAt: new Date(),
     })
     .where(eq(itemSubmissions.id, id));
@@ -643,30 +618,25 @@ export async function mergeItemSubmission(id: string): Promise<ItemSubmissionRes
 /** Roll back an approved submission by removing the item when it has no ratings. */
 export async function rollbackApprovedItemSubmission(
   id: string,
-  note: string,
+  note: string
 ): Promise<ItemSubmissionResult> {
   const db = await getDb();
-  const [submission] = await db
-    .select()
-    .from(itemSubmissions)
-    .where(eq(itemSubmissions.id, id));
-  if (!submission) return { ok: false, error: "Submission not found." };
-  if (submission.status !== "approved") {
-    return { ok: false, error: "Only approved submissions can be rolled back." };
+  const [submission] = await db.select().from(itemSubmissions).where(eq(itemSubmissions.id, id));
+  if (!submission) return { ok: false, error: 'Submission not found.' };
+  if (submission.status !== 'approved') {
+    return { ok: false, error: 'Only approved submissions can be rolled back.' };
   }
 
   const [liveItem] = await db
     .select({ id: items.id })
     .from(items)
-    .where(
-      and(eq(items.directoryId, submission.directoryId), eq(items.slug, submission.slug)),
-    );
+    .where(and(eq(items.directoryId, submission.directoryId), eq(items.slug, submission.slug)));
   if (!liveItem) {
     await db
       .update(itemSubmissions)
       .set({
-        status: "rejected",
-        moderatorNote: note.trim() || "Rolled back — item row missing.",
+        status: 'rejected',
+        moderatorNote: note.trim() || 'Rolled back — item row missing.',
         moderatedAt: new Date(),
       })
       .where(eq(itemSubmissions.id, id));
@@ -680,7 +650,7 @@ export async function rollbackApprovedItemSubmission(
   if (existingRatings.length > 0) {
     return {
       ok: false,
-      error: "Cannot roll back — this item already has ratings. Hide manually later.",
+      error: 'Cannot roll back — this item already has ratings. Hide manually later.',
     };
   }
 
@@ -688,8 +658,8 @@ export async function rollbackApprovedItemSubmission(
   await db
     .update(itemSubmissions)
     .set({
-      status: "rejected",
-      moderatorNote: note.trim() || "Rolled back — removed approved item with no ratings yet.",
+      status: 'rejected',
+      moderatorNote: note.trim() || 'Rolled back — removed approved item with no ratings yet.',
       moderatedAt: new Date(),
     })
     .where(eq(itemSubmissions.id, id));

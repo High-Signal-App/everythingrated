@@ -1,8 +1,8 @@
-import Link from "next/link";
+import Link from 'next/link';
 
-import { Badge } from "@/components/atoms/badge";
-import { Card, CardBody } from "@/components/atoms/card";
-import type { DirectorySummary } from "@/lib/ratings";
+import { Badge } from '@/components/atoms/badge';
+import { Card, CardBody } from '@/components/atoms/card';
+import type { DirectorySummary } from '@/lib/ratings';
 
 export function DirectoryCard({ data }: { data: DirectorySummary }) {
   const { directory, itemCount, aspectCount } = data;
@@ -10,7 +10,7 @@ export function DirectoryCard({ data }: { data: DirectorySummary }) {
     .split(/\s+/)
     .slice(0, 2)
     .map((word) => word[0])
-    .join("")
+    .join('')
     .toUpperCase();
 
   return (
@@ -26,9 +26,7 @@ export function DirectoryCard({ data }: { data: DirectorySummary }) {
               <span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-[var(--radius-sm)] border border-[var(--border)] bg-[var(--surface)] text-[12px] font-semibold tracking-tight shadow-sm">
                 {initials}
               </span>
-              <h3 className="text-[18px] font-semibold tracking-tight">
-                {directory.name}
-              </h3>
+              <h3 className="text-[18px] font-semibold tracking-tight">{directory.name}</h3>
               <p className="mt-1 line-clamp-2 text-[12px] text-[var(--muted)]">
                 {directory.description}
               </p>
@@ -44,20 +42,14 @@ export function DirectoryCard({ data }: { data: DirectorySummary }) {
 
           <div className="grid grid-cols-2 gap-2">
             <div className="rounded-[var(--radius-sm)] border border-[var(--border)] bg-[var(--surface-2)] p-3">
-              <p className="num text-[20px] font-semibold leading-none tabular-nums">
-                {itemCount}
-              </p>
-              <p className="mt-1 text-[11px] text-[var(--muted)]">
-                comparable items
-              </p>
+              <p className="num text-[20px] font-semibold leading-none tabular-nums">{itemCount}</p>
+              <p className="mt-1 text-[11px] text-[var(--muted)]">comparable items</p>
             </div>
             <div className="rounded-[var(--radius-sm)] border border-[var(--border)] bg-[var(--surface-2)] p-3">
               <p className="num text-[20px] font-semibold leading-none tabular-nums">
                 {aspectCount}
               </p>
-              <p className="mt-1 text-[11px] text-[var(--muted)]">
-                rating axes
-              </p>
+              <p className="mt-1 text-[11px] text-[var(--muted)]">rating axes</p>
             </div>
           </div>
 

@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import posthog from "posthog-js";
-import { PostHogProvider } from "posthog-js/react";
-import { useEffect } from "react";
+import posthog from 'posthog-js';
+import { PostHogProvider } from 'posthog-js/react';
+import { useEffect } from 'react';
 
-import { trackReturnedOnce } from "@/lib/analytics";
+import { trackReturnedOnce } from '@/lib/analytics';
 
 /**
  * Session-level analytics. `returned` fires once per session for a visitor

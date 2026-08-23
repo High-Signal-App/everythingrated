@@ -120,7 +120,13 @@
         "name": "FastAPI",
         "description": "Modern async Python framework with Pydantic validation and automatic OpenAPI docs.",
         "websiteUrl": "https://fastapi.tiangolo.com",
-        "scores": { "performance": 4, "dx": 5, "type_safety": 4, "ecosystem": 5, "learning_curve": 5 },
+        "scores": {
+          "performance": 4,
+          "dx": 5,
+          "type_safety": 4,
+          "ecosystem": 5,
+          "learning_curve": 5
+        },
         "tags": ["language:python"]
       },
       {
@@ -128,7 +134,13 @@
         "name": "Django",
         "description": "Batteries-included Python framework; Django REST Framework powers full-featured APIs.",
         "websiteUrl": "https://www.djangoproject.com",
-        "scores": { "performance": 3, "dx": 4, "type_safety": 2, "ecosystem": 5, "learning_curve": 3 },
+        "scores": {
+          "performance": 3,
+          "dx": 4,
+          "type_safety": 2,
+          "ecosystem": 5,
+          "learning_curve": 3
+        },
         "tags": ["language:python"]
       },
       {
@@ -136,7 +148,13 @@
         "name": "Flask",
         "description": "Minimal WSGI Python microframework that stays out of the way for small APIs and prototypes.",
         "websiteUrl": "https://flask.palletsprojects.com",
-        "scores": { "performance": 3, "dx": 4, "type_safety": 2, "ecosystem": 5, "learning_curve": 5 },
+        "scores": {
+          "performance": 3,
+          "dx": 4,
+          "type_safety": 2,
+          "ecosystem": 5,
+          "learning_curve": 5
+        },
         "tags": ["language:python"]
       },
       {
@@ -144,7 +162,13 @@
         "name": "Litestar",
         "description": "Performance-focused Python ASGI framework with built-in DI, validation, and OpenAPI.",
         "websiteUrl": "https://litestar.dev",
-        "scores": { "performance": 4, "dx": 5, "type_safety": 4, "ecosystem": 3, "learning_curve": 4 },
+        "scores": {
+          "performance": 4,
+          "dx": 5,
+          "type_safety": 4,
+          "ecosystem": 3,
+          "learning_curve": 4
+        },
         "tags": ["language:python"]
       },
       {
@@ -152,7 +176,13 @@
         "name": "Gin",
         "description": "Fast minimalist Go HTTP framework with a Martini-like API for building REST services.",
         "websiteUrl": "https://gin-gonic.com",
-        "scores": { "performance": 5, "dx": 4, "type_safety": 4, "ecosystem": 4, "learning_curve": 4 },
+        "scores": {
+          "performance": 5,
+          "dx": 4,
+          "type_safety": 4,
+          "ecosystem": 4,
+          "learning_curve": 4
+        },
         "tags": []
       },
       {
@@ -160,7 +190,13 @@
         "name": "Fiber",
         "description": "Express-inspired Go web framework built on fasthttp for high-throughput APIs.",
         "websiteUrl": "https://gofiber.io",
-        "scores": { "performance": 5, "dx": 4, "type_safety": 4, "ecosystem": 3, "learning_curve": 5 },
+        "scores": {
+          "performance": 5,
+          "dx": 4,
+          "type_safety": 4,
+          "ecosystem": 3,
+          "learning_curve": 5
+        },
         "tags": []
       },
       {
@@ -168,7 +204,13 @@
         "name": "Echo",
         "description": "High-performance minimalist Go framework with routing, middleware, and data binding.",
         "websiteUrl": "https://echo.labstack.com",
-        "scores": { "performance": 5, "dx": 4, "type_safety": 4, "ecosystem": 3, "learning_curve": 4 },
+        "scores": {
+          "performance": 5,
+          "dx": 4,
+          "type_safety": 4,
+          "ecosystem": 3,
+          "learning_curve": 4
+        },
         "tags": []
       },
       {
@@ -176,7 +218,13 @@
         "name": "chi",
         "description": "Lightweight idiomatic Go router built on the standard library net/http interfaces.",
         "websiteUrl": "https://go-chi.io",
-        "scores": { "performance": 4, "dx": 4, "type_safety": 3, "ecosystem": 3, "learning_curve": 4 },
+        "scores": {
+          "performance": 4,
+          "dx": 4,
+          "type_safety": 3,
+          "ecosystem": 3,
+          "learning_curve": 4
+        },
         "tags": []
       },
       {
@@ -184,7 +232,13 @@
         "name": "Axum",
         "description": "Ergonomic Rust web framework from the Tokio team with Tower middleware compatibility.",
         "websiteUrl": "https://github.com/tokio-rs/axum",
-        "scores": { "performance": 5, "dx": 4, "type_safety": 5, "ecosystem": 4, "learning_curve": 3 },
+        "scores": {
+          "performance": 5,
+          "dx": 4,
+          "type_safety": 5,
+          "ecosystem": 4,
+          "learning_curve": 3
+        },
         "tags": []
       },
       {
@@ -192,7 +246,13 @@
         "name": "Actix Web",
         "description": "Extremely fast Rust web framework built on an actor model for maximum throughput.",
         "websiteUrl": "https://actix.rs",
-        "scores": { "performance": 5, "dx": 3, "type_safety": 5, "ecosystem": 4, "learning_curve": 2 },
+        "scores": {
+          "performance": 5,
+          "dx": 3,
+          "type_safety": 5,
+          "ecosystem": 4,
+          "learning_curve": 2
+        },
         "tags": []
       },
       {
@@ -200,7 +260,13 @@
         "name": "Rocket",
         "description": "Rust web framework focused on developer happiness with type-safe, declarative routing.",
         "websiteUrl": "https://rocket.rs",
-        "scores": { "performance": 4, "dx": 4, "type_safety": 5, "ecosystem": 3, "learning_curve": 3 },
+        "scores": {
+          "performance": 4,
+          "dx": 4,
+          "type_safety": 5,
+          "ecosystem": 3,
+          "learning_curve": 3
+        },
         "tags": []
       },
       {
@@ -208,7 +274,13 @@
         "name": "Spring Boot",
         "description": "Convention-driven Java framework with the largest enterprise ecosystem for production APIs.",
         "websiteUrl": "https://spring.io/projects/spring-boot",
-        "scores": { "performance": 4, "dx": 4, "type_safety": 5, "ecosystem": 5, "learning_curve": 2 },
+        "scores": {
+          "performance": 4,
+          "dx": 4,
+          "type_safety": 5,
+          "ecosystem": 5,
+          "learning_curve": 2
+        },
         "tags": []
       },
       {
@@ -216,7 +288,13 @@
         "name": "Laravel",
         "description": "Expressive full-stack PHP framework with Eloquent ORM and first-class API tooling.",
         "websiteUrl": "https://laravel.com",
-        "scores": { "performance": 3, "dx": 5, "type_safety": 3, "ecosystem": 5, "learning_curve": 4 },
+        "scores": {
+          "performance": 3,
+          "dx": 5,
+          "type_safety": 3,
+          "ecosystem": 5,
+          "learning_curve": 4
+        },
         "tags": []
       },
       {
@@ -224,7 +302,13 @@
         "name": "Ruby on Rails",
         "description": "Convention-over-configuration Ruby framework with an API-only mode for backend services.",
         "websiteUrl": "https://rubyonrails.org",
-        "scores": { "performance": 3, "dx": 5, "type_safety": 2, "ecosystem": 5, "learning_curve": 3 },
+        "scores": {
+          "performance": 3,
+          "dx": 5,
+          "type_safety": 2,
+          "ecosystem": 5,
+          "learning_curve": 3
+        },
         "tags": []
       },
       {
@@ -232,7 +316,13 @@
         "name": "Phoenix",
         "description": "Elixir framework on the BEAM with channels and LiveView for realtime, concurrent APIs.",
         "websiteUrl": "https://www.phoenixframework.org",
-        "scores": { "performance": 5, "dx": 4, "type_safety": 3, "ecosystem": 3, "learning_curve": 3 },
+        "scores": {
+          "performance": 5,
+          "dx": 4,
+          "type_safety": 3,
+          "ecosystem": 3,
+          "learning_curve": 3
+        },
         "tags": ["realtime:yes"]
       },
       {
@@ -240,7 +330,13 @@
         "name": "ASP.NET Core",
         "description": "Microsoft's high-performance cross-platform .NET framework for web APIs and services.",
         "websiteUrl": "https://dotnet.microsoft.com/apps/aspnet",
-        "scores": { "performance": 5, "dx": 4, "type_safety": 5, "ecosystem": 5, "learning_curve": 3 },
+        "scores": {
+          "performance": 5,
+          "dx": 4,
+          "type_safety": 5,
+          "ecosystem": 5,
+          "learning_curve": 3
+        },
         "tags": []
       },
       {
@@ -248,7 +344,13 @@
         "name": "Django Ninja",
         "description": "FastAPI-style async API layer for Django using Python type hints and Pydantic.",
         "websiteUrl": "https://django-ninja.dev",
-        "scores": { "performance": 4, "dx": 5, "type_safety": 4, "ecosystem": 4, "learning_curve": 4 },
+        "scores": {
+          "performance": 4,
+          "dx": 5,
+          "type_safety": 4,
+          "ecosystem": 4,
+          "learning_curve": 4
+        },
         "tags": ["language:python"]
       },
       {
@@ -256,7 +358,13 @@
         "name": "Go kit",
         "description": "Toolkit of composable packages for building robust microservices in Go.",
         "websiteUrl": "https://gokit.io",
-        "scores": { "performance": 4, "dx": 3, "type_safety": 4, "ecosystem": 3, "learning_curve": 3 },
+        "scores": {
+          "performance": 4,
+          "dx": 3,
+          "type_safety": 4,
+          "ecosystem": 3,
+          "learning_curve": 3
+        },
         "tags": []
       }
     ],

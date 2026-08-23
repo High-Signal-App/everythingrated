@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import Link from 'next/link';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 
-import { Card, CardBody } from "@/components/atoms/card";
+import { Card, CardBody } from '@/components/atoms/card';
 import {
   addItemToCollection,
   buildShareUrl,
@@ -18,16 +18,12 @@ import {
   reorderItem,
   resolveCollectionItems,
   serializeCollections,
-} from "@/lib/collections";
+} from '@/lib/collections';
 
-type LoadState = "loading" | "ready" | "error";
+type LoadState = 'loading' | 'ready' | 'error';
 
-export function RankedCollectionsPanel({
-  ratedItems,
-}: {
-  ratedItems: RatedItemRef[];
-}) {
-  const [loadState, setLoadState] = useState<LoadState>("loading");
+export function RankedCollectionsPanel({ ratedItems }: { ratedItems: RatedItemRef[] }) {
+  const [loadState, setLoadState] = useState<LoadState>('loading');
   const [collections, setCollections] = useState<RankedCollection[]>([]);
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [creating, setCreating] = useState(false);
@@ -35,32 +31,27 @@ export function RankedCollectionsPanel({
   const [actionError, setActionError] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
 
-  const [draftName, setDraftName] = useState("");
-  const [draftDirectory, setDraftDirectory] = useState("");
+  const [draftName, setDraftName] = useState('');
+  const [draftDirectory, setDraftDirectory] = useState('');
   const [draftItemIds, setDraftItemIds] = useState<string[]>([]);
 
-  const directories = useMemo(
-    () => directoriesFromRatedItems(ratedItems),
-    [ratedItems],
-  );
+  const directories = useMemo(() => directoriesFromRatedItems(ratedItems), [ratedItems]);
 
   const directoryItems = useMemo(
     () => (draftDirectory ? ratedItemsForDirectory(ratedItems, draftDirectory) : []),
-    [draftDirectory, ratedItems],
+    [draftDirectory, ratedItems]
   );
 
   const selected = collections.find((collection) => collection.id === selectedId) ?? null;
-  const selectedRows = selected
-    ? resolveCollectionItems(selected, ratedItems)
-    : [];
+  const selectedRows = selected ? resolveCollectionItems(selected, ratedItems) : [];
 
   const persist = useCallback((next: RankedCollection[]) => {
     setCollections(next);
     try {
       window.localStorage.setItem(COLLECTIONS_STORAGE_KEY, serializeCollections(next));
-      setLoadState("ready");
+      setLoadState('ready');
     } catch {
-      setLoadState("error");
+      setLoadState('error');
     }
   }, []);
 
@@ -70,9 +61,9 @@ export function RankedCollectionsPanel({
       const parsed = parseStoredCollections(raw);
       setCollections(parsed);
       setSelectedId(parsed[0]?.id ?? null);
-      setLoadState("ready");
+      setLoadState('ready');
     } catch {
-      setLoadState("error");
+      setLoadState('error');
     }
   }, []);
 
@@ -84,9 +75,7 @@ export function RankedCollectionsPanel({
 
   function toggleDraftItem(itemId: string) {
     setDraftItemIds((current) =>
-      current.includes(itemId)
-        ? current.filter((id) => id !== itemId)
-        : [...current, itemId],
+      current.includes(itemId) ? current.filter((id) => id !== itemId) : [...current, itemId]
     );
     setFormError(null);
   }
@@ -102,17 +91,17 @@ export function RankedCollectionsPanel({
     persist(next);
     setSelectedId(result.collection.id);
     setCreating(false);
-    setDraftName("");
+    setDraftName('');
     setDraftItemIds([]);
     setFormError(null);
     setActionError(null);
   }
 
-  function handleReorder(itemId: string, direction: "up" | "down") {
+  function handleReorder(itemId: string, direction: 'up' | 'down') {
     if (!selected) return;
     const nextCollection = reorderItem(selected, itemId, direction);
     const next = collections.map((collection) =>
-      collection.id === selected.id ? nextCollection : collection,
+      collection.id === selected.id ? nextCollection : collection
     );
     persist(next);
     setActionError(null);
@@ -129,7 +118,7 @@ export function RankedCollectionsPanel({
       return;
     }
     const next = collections.map((collection) =>
-      collection.id === selected.id ? nextCollection : collection,
+      collection.id === selected.id ? nextCollection : collection
     );
     persist(next);
     setActionError(null);
@@ -143,7 +132,7 @@ export function RankedCollectionsPanel({
       return;
     }
     const next = collections.map((collection) =>
-      collection.id === selected.id ? result.collection : collection,
+      collection.id === selected.id ? result.collection : collection
     );
     persist(next);
     setActionError(null);
@@ -172,15 +161,15 @@ export function RankedCollectionsPanel({
         <CardBody>
           <h2 className="text-[20px] font-semibold tracking-tight">Ranked collections</h2>
           <p className="mt-2 text-sm text-[var(--muted)]">
-            Rate at least two items in the same directory to build a ranked list you can
-            revisit and reorder.
+            Rate at least two items in the same directory to build a ranked list you can revisit and
+            reorder.
           </p>
         </CardBody>
       </Card>
     );
   }
 
-  if (loadState === "loading") {
+  if (loadState === 'loading') {
     return (
       <Card className="mt-10">
         <CardBody>
@@ -191,7 +180,7 @@ export function RankedCollectionsPanel({
     );
   }
 
-  if (loadState === "error") {
+  if (loadState === 'error') {
     return (
       <Card className="mt-10">
         <CardBody>
@@ -206,7 +195,7 @@ export function RankedCollectionsPanel({
 
   const addableItems = selected
     ? ratedItemsForDirectory(ratedItems, selected.directorySlug).filter(
-        (item) => !selected.itemIds.includes(item.itemId),
+        (item) => !selected.itemIds.includes(item.itemId)
       )
     : [];
 
@@ -320,7 +309,7 @@ export function RankedCollectionsPanel({
                   onClick={() => {
                     setCreating(false);
                     setFormError(null);
-                    setDraftName("");
+                    setDraftName('');
                     setDraftItemIds([]);
                   }}
                   className="inline-flex h-11 items-center rounded-[var(--radius-sm)] border border-[var(--border-strong)] px-4 text-sm font-medium"
@@ -367,13 +356,13 @@ export function RankedCollectionsPanel({
                     }}
                     className={`w-full rounded-[var(--radius-sm)] border px-3 py-3 text-left text-[13px] transition-colors ${
                       isActive
-                        ? "border-[var(--border-strong)] bg-[var(--surface-2)]"
-                        : "border-[var(--border)] hover:border-[var(--border-strong)]"
+                        ? 'border-[var(--border-strong)] bg-[var(--surface-2)]'
+                        : 'border-[var(--border)] hover:border-[var(--border-strong)]'
                     }`}
                   >
                     <div className="font-medium">{collection.name}</div>
                     <div className="mt-0.5 text-[12px] text-[var(--muted)]">
-                      {count} item{count === 1 ? "" : "s"}
+                      {count} item{count === 1 ? '' : 's'}
                     </div>
                   </button>
                 );
@@ -405,7 +394,7 @@ export function RankedCollectionsPanel({
                     <div>
                       <h3 className="text-[16px] font-semibold">{selected.name}</h3>
                       <p className="mt-1 text-[12px] text-[var(--muted)]">
-                        {selectedRows.length} ranked item{selectedRows.length === 1 ? "" : "s"}
+                        {selectedRows.length} ranked item{selectedRows.length === 1 ? '' : 's'}
                       </p>
                     </div>
                     <div className="flex items-center gap-3">
@@ -414,7 +403,7 @@ export function RankedCollectionsPanel({
                         onClick={handleShare}
                         className="text-[12px] text-[var(--muted)] hover:text-[var(--foreground)]"
                       >
-                        {copied ? "Copied!" : "Share"}
+                        {copied ? 'Copied!' : 'Share'}
                       </button>
                       <button
                         type="button"
@@ -444,7 +433,7 @@ export function RankedCollectionsPanel({
                               {row.itemName}
                             </Link>
                             <p className="text-[12px] text-[var(--muted)]">
-                              Your avg {row.yourMean.toFixed(1)}/5 ·{" "}
+                              Your avg {row.yourMean.toFixed(1)}/5 ·{' '}
                               <Link
                                 href={`/d/${row.directorySlug}/${row.itemSlug}`}
                                 className="underline"
@@ -459,7 +448,7 @@ export function RankedCollectionsPanel({
                             type="button"
                             aria-label={`Move ${row.itemName} up`}
                             disabled={index === 0}
-                            onClick={() => handleReorder(row.itemId, "up")}
+                            onClick={() => handleReorder(row.itemId, 'up')}
                             className="inline-flex h-11 w-11 items-center justify-center rounded-[var(--radius-sm)] border border-[var(--border)] text-sm disabled:opacity-40"
                           >
                             ↑
@@ -468,7 +457,7 @@ export function RankedCollectionsPanel({
                             type="button"
                             aria-label={`Move ${row.itemName} down`}
                             disabled={index === selectedRows.length - 1}
-                            onClick={() => handleReorder(row.itemId, "down")}
+                            onClick={() => handleReorder(row.itemId, 'down')}
                             className="inline-flex h-11 w-11 items-center justify-center rounded-[var(--radius-sm)] border border-[var(--border)] text-sm disabled:opacity-40"
                           >
                             ↓

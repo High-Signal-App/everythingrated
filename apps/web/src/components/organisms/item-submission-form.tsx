@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { useActionState } from "react";
+import Link from 'next/link';
+import { useActionState } from 'react';
 
-import { submitItem, type SubmitItemState } from "@/lib/actions";
+import { submitItem, type SubmitItemState } from '@/lib/actions';
 
 const initialState: SubmitItemState = {
   ok: false,
-  message: "",
+  message: '',
 };
 
 export function ItemSubmissionForm({
@@ -34,9 +34,7 @@ export function ItemSubmissionForm({
       </label>
 
       <label className="block">
-        <span className="text-[12px] font-medium text-[var(--muted)]">
-          Short description
-        </span>
+        <span className="text-[12px] font-medium text-[var(--muted)]">Short description</span>
         <textarea
           name="description"
           required
@@ -81,8 +79,8 @@ export function ItemSubmissionForm({
         <div
           className={
             state.ok
-              ? "rounded-[var(--radius-sm)] border border-[var(--border)] bg-[var(--surface-2)] px-3 py-2 text-[13px]"
-              : "rounded-[var(--radius-sm)] border border-[var(--border-strong)] px-3 py-2 text-[13px] text-[var(--muted)]"
+              ? 'rounded-[var(--radius-sm)] border border-[var(--border)] bg-[var(--surface-2)] px-3 py-2 text-[13px]'
+              : 'rounded-[var(--radius-sm)] border border-[var(--border-strong)] px-3 py-2 text-[13px] text-[var(--muted)]'
           }
         >
           {state.message}
@@ -104,7 +102,7 @@ export function ItemSubmissionForm({
         disabled={pending}
         className="inline-flex h-10 items-center justify-center rounded-[var(--radius-sm)] bg-[var(--foreground)] px-4 text-[13px] font-medium text-[var(--background)] disabled:cursor-not-allowed disabled:opacity-60"
       >
-        {pending ? "Submitting..." : "Submit for review"}
+        {pending ? 'Submitting...' : 'Submit for review'}
       </button>
     </form>
   );

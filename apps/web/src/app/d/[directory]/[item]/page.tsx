@@ -115,7 +115,6 @@ export default async function ItemPage({
       {jsonLd ? (
         <script
           type="application/ld+json"
-          // biome-ignore lint/security/noDangerouslySetInnerHtml: structured data from real rating aggregates
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       ) : null}

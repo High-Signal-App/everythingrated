@@ -7,10 +7,10 @@ import {
   items,
   itemVersions,
   ratings,
-} from "@everythingrated/db";
-import { and, desc, eq, inArray, isNull, lte } from "drizzle-orm";
+} from '@everythingrated/db';
+import { and, desc, eq, inArray, isNull, lte } from 'drizzle-orm';
 
-import { getDb } from "./db";
+import { getDb } from './db';
 
 export type AspectAverage = {
   aspect: Aspect;
@@ -36,15 +36,15 @@ export type DirectorySummary = {
  * Items the given visitor has rated, with the visitor's mean score per item
  * and the directory it lives in. Newest rating first.
  */
-export async function listItemsRatedByVisitor(
-  visitorId: string,
-): Promise<Array<{
-  item: Item;
-  directory: Directory;
-  yourMean: number;
-  ratedAspects: number;
-  lastRatedAt: Date;
-}>> {
+export async function listItemsRatedByVisitor(visitorId: string): Promise<
+  Array<{
+    item: Item;
+    directory: Directory;
+    yourMean: number;
+    ratedAspects: number;
+    lastRatedAt: Date;
+  }>
+> {
   const db = await getDb();
   const [myRatings, allItems, allDirs] = await Promise.all([
     db.select().from(ratings).where(eq(ratings.visitorId, visitorId)),
@@ -55,10 +55,7 @@ export async function listItemsRatedByVisitor(
   const itemById = new Map(allItems.map((i) => [i.id, i]));
   const dirById = new Map(allDirs.map((d) => [d.id, d]));
 
-  const byItem = new Map<
-    string,
-    { sum: number; count: number; latest: number }
-  >();
+  const byItem = new Map<string, { sum: number; count: number; latest: number }>();
   for (const r of currentMyRatings) {
     const e = byItem.get(r.itemId) ?? { sum: 0, count: 0, latest: 0 };
     e.sum += r.score;
@@ -118,7 +115,7 @@ export async function getDirectoryBySlug(slug: string): Promise<Directory | null
 /** Aggregate every item in a directory with per-aspect averages and the visitor's own scores. */
 export async function listItemsWithAggregates(
   directoryId: string,
-  visitorId: string | null,
+  visitorId: string | null
 ): Promise<ItemWithAggregate[]> {
   const db = await getDb();
   // Fetch items + aspects first; the ratings pull is then scoped to this
@@ -126,7 +123,11 @@ export async function listItemsWithAggregates(
   // instead of loading the whole ratings table and filtering in JS.
   const [dirItems, dirAspects] = await Promise.all([
     db.select().from(items).where(eq(items.directoryId, directoryId)).orderBy(items.name),
-    db.select().from(aspects).where(eq(aspects.directoryId, directoryId)).orderBy(aspects.sortOrder),
+    db
+      .select()
+      .from(aspects)
+      .where(eq(aspects.directoryId, directoryId))
+      .orderBy(aspects.sortOrder),
   ]);
   if (dirItems.length === 0) return [];
 
@@ -137,10 +138,10 @@ export async function listItemsWithAggregates(
       and(
         inArray(
           ratings.itemId,
-          dirItems.map((i) => i.id),
+          dirItems.map((i) => i.id)
         ),
-        isNull(ratings.supersededAt),
-      ),
+        isNull(ratings.supersededAt)
+      )
     );
 
   return dirItems.map((item) => buildAggregate(item, dirAspects, allRatings, visitorId));
@@ -150,7 +151,7 @@ export async function listItemsWithAggregates(
 export async function getItemAggregate(
   directorySlug: string,
   itemSlug: string,
-  visitorId: string | null,
+  visitorId: string | null
 ): Promise<{ directory: Directory; data: ItemWithAggregate } | null> {
   const db = await getDb();
   const dir = await getDirectoryBySlug(directorySlug);
@@ -199,15 +200,12 @@ export async function rate(opts: {
   score: number;
 }): Promise<void> {
   if (!Number.isFinite(opts.score)) {
-    throw new Error("Invalid rating: score must be a finite number.");
+    throw new Error('Invalid rating: score must be a finite number.');
   }
   const score = Math.max(1, Math.min(5, Math.round(opts.score)));
   const db = await getDb();
   const [[item], [aspect]] = await Promise.all([
-    db
-      .select({ directoryId: items.directoryId })
-      .from(items)
-      .where(eq(items.id, opts.itemId)),
+    db.select({ directoryId: items.directoryId }).from(items).where(eq(items.id, opts.itemId)),
     db
       .select({ directoryId: aspects.directoryId })
       .from(aspects)
@@ -231,8 +229,8 @@ export async function rate(opts: {
         eq(ratings.visitorId, opts.visitorId),
         eq(ratings.itemId, opts.itemId),
         eq(ratings.aspectId, opts.aspectId),
-        isNull(ratings.supersededAt),
-      ),
+        isNull(ratings.supersededAt)
+      )
     );
 
   // Auto-resolve version: latest item_version released at or before now.
@@ -262,7 +260,7 @@ function buildAggregate(
   item: Item,
   dirAspects: Aspect[],
   allRatings: { itemId: string; aspectId: string; visitorId: string; score: number }[],
-  visitorId: string | null,
+  visitorId: string | null
 ): ItemWithAggregate {
   const itemRatings = allRatings.filter((r) => r.itemId === item.id);
 
@@ -270,16 +268,12 @@ function buildAggregate(
     const rs = itemRatings.filter((r) => r.aspectId === aspect.id);
     const avg = rs.length ? rs.reduce((s, r) => s + r.score, 0) / rs.length : 0;
     const yourScore =
-      visitorId !== null
-        ? (rs.find((r) => r.visitorId === visitorId)?.score ?? null)
-        : null;
+      visitorId !== null ? (rs.find((r) => r.visitorId === visitorId)?.score ?? null) : null;
     return { aspect, avg, count: rs.length, yourScore };
   });
 
   const rated = perAspect.filter((a) => a.count > 0);
-  const overall = rated.length
-    ? rated.reduce((s, a) => s + a.avg, 0) / rated.length
-    : 0;
+  const overall = rated.length ? rated.reduce((s, a) => s + a.avg, 0) / rated.length : 0;
 
   const totalRaters = new Set(itemRatings.map((r) => r.visitorId)).size;
 

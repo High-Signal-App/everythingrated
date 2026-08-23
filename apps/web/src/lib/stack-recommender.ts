@@ -12,7 +12,7 @@
  * told us." All pure functions; see stack-recommender.test.ts.
  */
 
-import type { ConstraintTag, StackIntent } from "./stack-vocabulary";
+import type { ConstraintTag, StackIntent } from './stack-vocabulary';
 
 /** Per-aspect average for one item (already aggregated from ratings). */
 type CatalogueAspect = {
@@ -78,8 +78,8 @@ function tagKey(t: ConstraintTag): string {
 /** Weighted mean of an item's *rated* aspects using the intent weights. */
 function scoreAspects(
   item: CatalogueItem,
-  weights: Record<string, number>,
-): { base: number; topAspects: ScoredCandidate["topAspects"] } {
+  weights: Record<string, number>
+): { base: number; topAspects: ScoredCandidate['topAspects'] } {
   const contributions = item.aspects
     .filter((a) => a.count > 0)
     .map((a) => {
@@ -88,9 +88,8 @@ function scoreAspects(
     });
 
   const totalWeight = contributions.reduce((s, c) => s + c.weight, 0);
-  const base = totalWeight > 0
-    ? contributions.reduce((s, c) => s + c.weighted, 0) / totalWeight
-    : 0;
+  const base =
+    totalWeight > 0 ? contributions.reduce((s, c) => s + c.weighted, 0) / totalWeight : 0;
 
   // "Why": aspects the user emphasised (weight > 1) that this item scores well on.
   const topAspects = contributions
@@ -116,7 +115,7 @@ function scoreCandidate(item: CatalogueItem, intent: StackIntent): ScoredCandida
 
 function rankDirectory(
   dir: { slug: string; name: string; items: CatalogueItem[] },
-  intent: StackIntent,
+  intent: StackIntent
 ): StackPick | null {
   if (dir.items.length === 0) return null;
 
@@ -127,7 +126,7 @@ function rankDirectory(
         b.score - a.score ||
         b.matchedTags.length - a.matchedTags.length ||
         b.item.totalRaters - a.item.totalRaters ||
-        a.item.name.localeCompare(b.item.name),
+        a.item.name.localeCompare(b.item.name)
     );
 
   return {

@@ -404,7 +404,13 @@
         "name": "Prometheus",
         "description": "Open-source metrics monitoring system with a pull model, PromQL, and built-in alerting.",
         "websiteUrl": "https://prometheus.io",
-        "scores": { "signal_quality": 4, "query_speed": 4, "alerting": 4, "cost": 5, "integrations": 5 },
+        "scores": {
+          "signal_quality": 4,
+          "query_speed": 4,
+          "alerting": 4,
+          "cost": 5,
+          "integrations": 5
+        },
         "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
@@ -412,7 +418,13 @@
         "name": "OpenTelemetry",
         "description": "Vendor-neutral CNCF standard and SDKs for collecting metrics, logs, and traces across languages.",
         "websiteUrl": "https://opentelemetry.io",
-        "scores": { "signal_quality": 4, "query_speed": 3, "alerting": 2, "cost": 5, "integrations": 5 },
+        "scores": {
+          "signal_quality": 4,
+          "query_speed": 3,
+          "alerting": 2,
+          "cost": 5,
+          "integrations": 5
+        },
         "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
@@ -420,7 +432,13 @@
         "name": "Grafana Loki",
         "description": "Horizontally scalable log aggregation system that indexes labels rather than full log content.",
         "websiteUrl": "https://grafana.com/oss/loki",
-        "scores": { "signal_quality": 4, "query_speed": 4, "alerting": 4, "cost": 5, "integrations": 4 },
+        "scores": {
+          "signal_quality": 4,
+          "query_speed": 4,
+          "alerting": 4,
+          "cost": 5,
+          "integrations": 4
+        },
         "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
@@ -428,7 +446,13 @@
         "name": "SigNoz",
         "description": "Open-source OpenTelemetry-native platform unifying logs, metrics, and traces in one product.",
         "websiteUrl": "https://signoz.io",
-        "scores": { "signal_quality": 4, "query_speed": 4, "alerting": 3, "cost": 5, "integrations": 4 },
+        "scores": {
+          "signal_quality": 4,
+          "query_speed": 4,
+          "alerting": 3,
+          "cost": 5,
+          "integrations": 4
+        },
         "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
@@ -436,7 +460,13 @@
         "name": "Uptrace",
         "description": "Lightweight OpenTelemetry-native observability tool for traces, metrics, logs, and service maps.",
         "websiteUrl": "https://uptrace.dev",
-        "scores": { "signal_quality": 3, "query_speed": 4, "alerting": 3, "cost": 5, "integrations": 3 },
+        "scores": {
+          "signal_quality": 3,
+          "query_speed": 4,
+          "alerting": 3,
+          "cost": 5,
+          "integrations": 3
+        },
         "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
@@ -444,7 +474,13 @@
         "name": "OpenObserve",
         "description": "Open-source observability platform optimized for low-cost long-term log, metric, and trace storage.",
         "websiteUrl": "https://openobserve.ai",
-        "scores": { "signal_quality": 3, "query_speed": 4, "alerting": 3, "cost": 5, "integrations": 4 },
+        "scores": {
+          "signal_quality": 3,
+          "query_speed": 4,
+          "alerting": 3,
+          "cost": 5,
+          "integrations": 4
+        },
         "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
@@ -452,7 +488,13 @@
         "name": "Dynatrace",
         "description": "Enterprise observability and AIOps platform with automatic discovery and Davis AI root-cause analysis.",
         "websiteUrl": "https://www.dynatrace.com",
-        "scores": { "signal_quality": 5, "query_speed": 5, "alerting": 5, "cost": 2, "integrations": 5 },
+        "scores": {
+          "signal_quality": 5,
+          "query_speed": 5,
+          "alerting": 5,
+          "cost": 2,
+          "integrations": 5
+        },
         "tags": []
       },
       {
@@ -460,7 +502,13 @@
         "name": "Splunk Observability Cloud",
         "description": "Cisco-owned full-fidelity observability suite for metrics, traces, logs, and incident response.",
         "websiteUrl": "https://www.splunk.com/en_us/products/observability.html",
-        "scores": { "signal_quality": 5, "query_speed": 5, "alerting": 5, "cost": 2, "integrations": 5 },
+        "scores": {
+          "signal_quality": 5,
+          "query_speed": 5,
+          "alerting": 5,
+          "cost": 2,
+          "integrations": 5
+        },
         "tags": []
       },
       {
@@ -468,7 +516,13 @@
         "name": "Elastic Observability",
         "description": "Observability built on the Elastic Stack for logs, metrics, APM, and traces with powerful search.",
         "websiteUrl": "https://www.elastic.co/observability",
-        "scores": { "signal_quality": 4, "query_speed": 4, "alerting": 4, "cost": 3, "integrations": 5 },
+        "scores": {
+          "signal_quality": 4,
+          "query_speed": 4,
+          "alerting": 4,
+          "cost": 3,
+          "integrations": 5
+        },
         "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
@@ -476,7 +530,13 @@
         "name": "Chronosphere",
         "description": "Cloud-native observability platform built for high-cardinality metrics and control over telemetry cost.",
         "websiteUrl": "https://chronosphere.io",
-        "scores": { "signal_quality": 5, "query_speed": 5, "alerting": 4, "cost": 3, "integrations": 4 },
+        "scores": {
+          "signal_quality": 5,
+          "query_speed": 5,
+          "alerting": 4,
+          "cost": 3,
+          "integrations": 4
+        },
         "tags": []
       },
       {
@@ -484,7 +544,13 @@
         "name": "Coralogix",
         "description": "Full-stack observability platform with in-stream processing and indexless customer-owned storage.",
         "websiteUrl": "https://coralogix.com",
-        "scores": { "signal_quality": 4, "query_speed": 5, "alerting": 4, "cost": 4, "integrations": 4 },
+        "scores": {
+          "signal_quality": 4,
+          "query_speed": 5,
+          "alerting": 4,
+          "cost": 4,
+          "integrations": 4
+        },
         "tags": []
       },
       {
@@ -492,7 +558,13 @@
         "name": "Logz.io",
         "description": "Managed open-source-based observability for logs, metrics, and traces on a cloud SaaS platform.",
         "websiteUrl": "https://logz.io",
-        "scores": { "signal_quality": 4, "query_speed": 4, "alerting": 4, "cost": 3, "integrations": 4 },
+        "scores": {
+          "signal_quality": 4,
+          "query_speed": 4,
+          "alerting": 4,
+          "cost": 3,
+          "integrations": 4
+        },
         "tags": []
       },
       {
@@ -500,7 +572,13 @@
         "name": "Sumo Logic",
         "description": "Cloud-native log analytics and observability platform combining metrics, logs, and traces.",
         "websiteUrl": "https://www.sumologic.com",
-        "scores": { "signal_quality": 4, "query_speed": 4, "alerting": 4, "cost": 3, "integrations": 4 },
+        "scores": {
+          "signal_quality": 4,
+          "query_speed": 4,
+          "alerting": 4,
+          "cost": 3,
+          "integrations": 4
+        },
         "tags": []
       },
       {
@@ -508,7 +586,13 @@
         "name": "Last9",
         "description": "OpenTelemetry-native observability platform focused on controlling high-cardinality telemetry cost.",
         "websiteUrl": "https://last9.io",
-        "scores": { "signal_quality": 4, "query_speed": 4, "alerting": 3, "cost": 5, "integrations": 3 },
+        "scores": {
+          "signal_quality": 4,
+          "query_speed": 4,
+          "alerting": 3,
+          "cost": 5,
+          "integrations": 3
+        },
         "tags": []
       },
       {
@@ -516,7 +600,13 @@
         "name": "Highlight.io",
         "description": "Open-source full-stack monitoring with session replay, error tracking, logs, and traces.",
         "websiteUrl": "https://www.highlight.io",
-        "scores": { "signal_quality": 4, "query_speed": 4, "alerting": 3, "cost": 4, "integrations": 4 },
+        "scores": {
+          "signal_quality": 4,
+          "query_speed": 4,
+          "alerting": 3,
+          "cost": 4,
+          "integrations": 4
+        },
         "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
@@ -524,7 +614,13 @@
         "name": "AppSignal",
         "description": "Application performance monitoring and error tracking with a focus on simplicity and clear pricing.",
         "websiteUrl": "https://www.appsignal.com",
-        "scores": { "signal_quality": 4, "query_speed": 4, "alerting": 4, "cost": 4, "integrations": 3 },
+        "scores": {
+          "signal_quality": 4,
+          "query_speed": 4,
+          "alerting": 4,
+          "cost": 4,
+          "integrations": 3
+        },
         "tags": ["pricing:free-tier"]
       }
     ]

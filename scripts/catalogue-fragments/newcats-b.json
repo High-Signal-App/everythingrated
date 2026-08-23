@@ -6,11 +6,31 @@
       "description": "Hosted docs and developer-documentation platforms for product and API docs.",
       "heroCopy": "Authoring DX, API reference quality, customization, ecosystem, and cost decide whether docs feel alive or stale.",
       "aspects": [
-        { "key": "cost", "label": "Cost", "description": "Pricing relative to what you get (5 = great deal)." },
-        { "key": "dx", "label": "Developer experience", "description": "Authoring, docs-as-code or visual editing, and preview quality." },
-        { "key": "ecosystem", "label": "Ecosystem", "description": "Integrations, framework support, themes, and community depth." },
-        { "key": "api_docs", "label": "API reference", "description": "OpenAPI/AsyncAPI import and interactive reference quality." },
-        { "key": "customization", "label": "Customization", "description": "Theming, branding, layout control, and white-labeling." }
+        {
+          "key": "cost",
+          "label": "Cost",
+          "description": "Pricing relative to what you get (5 = great deal)."
+        },
+        {
+          "key": "dx",
+          "label": "Developer experience",
+          "description": "Authoring, docs-as-code or visual editing, and preview quality."
+        },
+        {
+          "key": "ecosystem",
+          "label": "Ecosystem",
+          "description": "Integrations, framework support, themes, and community depth."
+        },
+        {
+          "key": "api_docs",
+          "label": "API reference",
+          "description": "OpenAPI/AsyncAPI import and interactive reference quality."
+        },
+        {
+          "key": "customization",
+          "label": "Customization",
+          "description": "Theming, branding, layout control, and white-labeling."
+        }
       ],
       "items": [
         {
@@ -148,11 +168,31 @@
       "description": "Mapping, geocoding, routing, and IP-geolocation APIs for location-aware apps.",
       "heroCopy": "Data coverage, feature breadth, cost, DX, and ecosystem decide whether location features feel precise or patchy.",
       "aspects": [
-        { "key": "cost", "label": "Cost", "description": "Pricing and free-tier generosity relative to request volume." },
-        { "key": "dx", "label": "Developer experience", "description": "SDKs, docs, map libraries, and ease of integration." },
-        { "key": "ecosystem", "label": "Ecosystem", "description": "Plugins, framework bindings, and third-party tooling." },
-        { "key": "data_coverage", "label": "Data coverage", "description": "Global map detail, accuracy, and freshness of location data." },
-        { "key": "feature_breadth", "label": "Feature breadth", "description": "Maps, geocoding, routing, places, traffic, and geofencing scope." }
+        {
+          "key": "cost",
+          "label": "Cost",
+          "description": "Pricing and free-tier generosity relative to request volume."
+        },
+        {
+          "key": "dx",
+          "label": "Developer experience",
+          "description": "SDKs, docs, map libraries, and ease of integration."
+        },
+        {
+          "key": "ecosystem",
+          "label": "Ecosystem",
+          "description": "Plugins, framework bindings, and third-party tooling."
+        },
+        {
+          "key": "data_coverage",
+          "label": "Data coverage",
+          "description": "Global map detail, accuracy, and freshness of location data."
+        },
+        {
+          "key": "feature_breadth",
+          "label": "Feature breadth",
+          "description": "Maps, geocoding, routing, places, traffic, and geofencing scope."
+        }
       ],
       "items": [
         {
@@ -167,7 +207,13 @@
           "name": "Mapbox",
           "description": "Developer-first mapping platform known for customizable vector maps, navigation, and rich geospatial SDKs.",
           "websiteUrl": "https://www.mapbox.com",
-          "scores": { "cost": 3, "dx": 5, "ecosystem": 5, "data_coverage": 4, "feature_breadth": 5 },
+          "scores": {
+            "cost": 3,
+            "dx": 5,
+            "ecosystem": 5,
+            "data_coverage": 4,
+            "feature_breadth": 5
+          },
           "tags": ["pricing:free-tier"]
         },
         {
@@ -175,7 +221,13 @@
           "name": "HERE Technologies",
           "description": "Enterprise location platform offering high-accuracy maps, routing, and fleet and logistics services.",
           "websiteUrl": "https://www.here.com",
-          "scores": { "cost": 3, "dx": 3, "ecosystem": 4, "data_coverage": 5, "feature_breadth": 5 },
+          "scores": {
+            "cost": 3,
+            "dx": 3,
+            "ecosystem": 4,
+            "data_coverage": 5,
+            "feature_breadth": 5
+          },
           "tags": ["pricing:free-tier"]
         },
         {
@@ -183,7 +235,13 @@
           "name": "TomTom",
           "description": "Location technology company providing maps, real-time traffic-aware routing, and navigation APIs.",
           "websiteUrl": "https://developer.tomtom.com",
-          "scores": { "cost": 3, "dx": 4, "ecosystem": 3, "data_coverage": 4, "feature_breadth": 5 },
+          "scores": {
+            "cost": 3,
+            "dx": 4,
+            "ecosystem": 3,
+            "data_coverage": 4,
+            "feature_breadth": 5
+          },
           "tags": ["pricing:free-tier"]
         },
         {
@@ -191,7 +249,13 @@
           "name": "Azure Maps",
           "description": "Microsoft's geospatial service for maps, search, routing, and weather integrated into the Azure ecosystem.",
           "websiteUrl": "https://azure.microsoft.com/en-us/products/azure-maps",
-          "scores": { "cost": 3, "dx": 3, "ecosystem": 4, "data_coverage": 4, "feature_breadth": 4 },
+          "scores": {
+            "cost": 3,
+            "dx": 3,
+            "ecosystem": 4,
+            "data_coverage": 4,
+            "feature_breadth": 4
+          },
           "tags": ["pricing:free-tier"]
         },
         {
@@ -199,7 +263,13 @@
           "name": "Esri ArcGIS",
           "description": "Industry-standard GIS platform with location services, spatial analytics, and basemaps for professional mapping.",
           "websiteUrl": "https://developers.arcgis.com",
-          "scores": { "cost": 2, "dx": 3, "ecosystem": 4, "data_coverage": 5, "feature_breadth": 5 },
+          "scores": {
+            "cost": 2,
+            "dx": 3,
+            "ecosystem": 4,
+            "data_coverage": 5,
+            "feature_breadth": 5
+          },
           "tags": ["pricing:free-tier"]
         },
         {
@@ -207,7 +277,13 @@
           "name": "MapTiler",
           "description": "Mapping platform offering customizable vector tiles, a visual style editor, and geocoding at competitive prices.",
           "websiteUrl": "https://www.maptiler.com",
-          "scores": { "cost": 4, "dx": 4, "ecosystem": 3, "data_coverage": 4, "feature_breadth": 3 },
+          "scores": {
+            "cost": 4,
+            "dx": 4,
+            "ecosystem": 3,
+            "data_coverage": 4,
+            "feature_breadth": 3
+          },
           "tags": ["pricing:free-tier", "self-hostable:yes"]
         },
         {
@@ -215,7 +291,13 @@
           "name": "Stadia Maps",
           "description": "Privacy-focused mapping API serving open-data map tiles, geocoding, and routing built on OpenStreetMap.",
           "websiteUrl": "https://stadiamaps.com",
-          "scores": { "cost": 4, "dx": 4, "ecosystem": 2, "data_coverage": 3, "feature_breadth": 3 },
+          "scores": {
+            "cost": 4,
+            "dx": 4,
+            "ecosystem": 2,
+            "data_coverage": 3,
+            "feature_breadth": 3
+          },
           "tags": ["pricing:free-tier"]
         },
         {
@@ -223,7 +305,13 @@
           "name": "Protomaps",
           "description": "Open-source mapping stack that serves an entire basemap from a single static file on cheap object storage.",
           "websiteUrl": "https://protomaps.com",
-          "scores": { "cost": 5, "dx": 3, "ecosystem": 2, "data_coverage": 3, "feature_breadth": 2 },
+          "scores": {
+            "cost": 5,
+            "dx": 3,
+            "ecosystem": 2,
+            "data_coverage": 3,
+            "feature_breadth": 2
+          },
           "tags": ["self-hostable:yes", "pricing:free-tier"]
         },
         {
@@ -231,7 +319,13 @@
           "name": "Radar",
           "description": "Location platform for geofencing, trip tracking, and address autocomplete built on OpenStreetMap data.",
           "websiteUrl": "https://radar.com",
-          "scores": { "cost": 4, "dx": 5, "ecosystem": 3, "data_coverage": 3, "feature_breadth": 4 },
+          "scores": {
+            "cost": 4,
+            "dx": 5,
+            "ecosystem": 3,
+            "data_coverage": 3,
+            "feature_breadth": 4
+          },
           "tags": ["pricing:free-tier"]
         },
         {
@@ -239,7 +333,13 @@
           "name": "Geoapify",
           "description": "Location API service for geocoding, routing, maps, and places with a generous free tier.",
           "websiteUrl": "https://www.geoapify.com",
-          "scores": { "cost": 5, "dx": 4, "ecosystem": 2, "data_coverage": 3, "feature_breadth": 4 },
+          "scores": {
+            "cost": 5,
+            "dx": 4,
+            "ecosystem": 2,
+            "data_coverage": 3,
+            "feature_breadth": 4
+          },
           "tags": ["pricing:free-tier"]
         },
         {
@@ -247,7 +347,13 @@
           "name": "LocationIQ",
           "description": "Affordable geocoding, reverse geocoding, autocomplete, and routing API built on open geodata.",
           "websiteUrl": "https://locationiq.com",
-          "scores": { "cost": 5, "dx": 4, "ecosystem": 2, "data_coverage": 3, "feature_breadth": 3 },
+          "scores": {
+            "cost": 5,
+            "dx": 4,
+            "ecosystem": 2,
+            "data_coverage": 3,
+            "feature_breadth": 3
+          },
           "tags": ["pricing:free-tier"]
         },
         {
@@ -255,7 +361,13 @@
           "name": "Geocodio",
           "description": "US and Canada-focused bulk geocoding API with data appends like congressional districts and timezones.",
           "websiteUrl": "https://www.geocod.io",
-          "scores": { "cost": 4, "dx": 4, "ecosystem": 2, "data_coverage": 2, "feature_breadth": 2 },
+          "scores": {
+            "cost": 4,
+            "dx": 4,
+            "ecosystem": 2,
+            "data_coverage": 2,
+            "feature_breadth": 2
+          },
           "tags": ["pricing:free-tier"]
         },
         {
@@ -263,7 +375,13 @@
           "name": "IPinfo",
           "description": "IP address geolocation API providing location, ASN, carrier, and privacy-detection data.",
           "websiteUrl": "https://ipinfo.io",
-          "scores": { "cost": 4, "dx": 5, "ecosystem": 3, "data_coverage": 4, "feature_breadth": 2 },
+          "scores": {
+            "cost": 4,
+            "dx": 5,
+            "ecosystem": 3,
+            "data_coverage": 4,
+            "feature_breadth": 2
+          },
           "tags": ["pricing:free-tier"]
         },
         {
@@ -271,7 +389,13 @@
           "name": "MaxMind GeoIP",
           "description": "Long-running IP intelligence provider offering GeoIP2 geolocation databases and a lookup web service.",
           "websiteUrl": "https://www.maxmind.com",
-          "scores": { "cost": 4, "dx": 2, "ecosystem": 4, "data_coverage": 4, "feature_breadth": 2 },
+          "scores": {
+            "cost": 4,
+            "dx": 2,
+            "ecosystem": 4,
+            "data_coverage": 4,
+            "feature_breadth": 2
+          },
           "tags": ["pricing:free-tier", "self-hostable:yes"]
         },
         {
@@ -279,7 +403,13 @@
           "name": "ipgeolocation.io",
           "description": "IP geolocation, timezone, and astronomy API with a broad free tier for lightweight lookups.",
           "websiteUrl": "https://ipgeolocation.io",
-          "scores": { "cost": 5, "dx": 3, "ecosystem": 2, "data_coverage": 3, "feature_breadth": 2 },
+          "scores": {
+            "cost": 5,
+            "dx": 3,
+            "ecosystem": 2,
+            "data_coverage": 3,
+            "feature_breadth": 2
+          },
           "tags": ["pricing:free-tier"]
         }
       ]
@@ -290,11 +420,31 @@
       "description": "Video streaming, encoding, and realtime-video infrastructure for apps and platforms.",
       "heroCopy": "Latency, scalability, cost, DX, and ecosystem separate buttery playback from buffering.",
       "aspects": [
-        { "key": "cost", "label": "Cost", "description": "Pricing relative to delivered minutes, storage, and participants." },
-        { "key": "dx", "label": "Developer experience", "description": "SDKs, APIs, dashboards, and integration ergonomics." },
-        { "key": "ecosystem", "label": "Ecosystem", "description": "Client SDKs, platform coverage, and third-party integrations." },
-        { "key": "latency", "label": "Latency", "description": "Glass-to-glass delay for live and realtime video." },
-        { "key": "scalability", "label": "Scalability", "description": "Headroom for concurrent viewers, rooms, and global delivery." }
+        {
+          "key": "cost",
+          "label": "Cost",
+          "description": "Pricing relative to delivered minutes, storage, and participants."
+        },
+        {
+          "key": "dx",
+          "label": "Developer experience",
+          "description": "SDKs, APIs, dashboards, and integration ergonomics."
+        },
+        {
+          "key": "ecosystem",
+          "label": "Ecosystem",
+          "description": "Client SDKs, platform coverage, and third-party integrations."
+        },
+        {
+          "key": "latency",
+          "label": "Latency",
+          "description": "Glass-to-glass delay for live and realtime video."
+        },
+        {
+          "key": "scalability",
+          "label": "Scalability",
+          "description": "Headroom for concurrent viewers, rooms, and global delivery."
+        }
       ],
       "items": [
         {
@@ -433,11 +583,31 @@
       "description": "Model hosting, serverless-GPU, and inference platforms for running AI workloads.",
       "heroCopy": "Cold start, model catalog, cost, DX, and ecosystem decide whether deploying a model is a command or a project.",
       "aspects": [
-        { "key": "cost", "label": "Cost", "description": "GPU and per-call pricing relative to performance." },
-        { "key": "dx", "label": "Developer experience", "description": "SDKs, deploy workflow, local iteration, and docs." },
-        { "key": "ecosystem", "label": "Ecosystem", "description": "Integrations, framework support, and community examples." },
-        { "key": "cold_start", "label": "Cold start", "description": "How fast a scaled-to-zero model serves its first request." },
-        { "key": "model_catalog", "label": "Model catalog", "description": "Breadth of ready-to-run hosted models and fine-tuning options." }
+        {
+          "key": "cost",
+          "label": "Cost",
+          "description": "GPU and per-call pricing relative to performance."
+        },
+        {
+          "key": "dx",
+          "label": "Developer experience",
+          "description": "SDKs, deploy workflow, local iteration, and docs."
+        },
+        {
+          "key": "ecosystem",
+          "label": "Ecosystem",
+          "description": "Integrations, framework support, and community examples."
+        },
+        {
+          "key": "cold_start",
+          "label": "Cold start",
+          "description": "How fast a scaled-to-zero model serves its first request."
+        },
+        {
+          "key": "model_catalog",
+          "label": "Model catalog",
+          "description": "Breadth of ready-to-run hosted models and fine-tuning options."
+        }
       ],
       "items": [
         {

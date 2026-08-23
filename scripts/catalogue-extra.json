@@ -13,11 +13,7 @@
           "dx": 4,
           "ecosystem": 4
         },
-        "tags": [
-          "realtime:yes",
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["realtime:yes", "self-hostable:yes", "pricing:free-tier"]
       }
     ],
     "notifications": [
@@ -33,9 +29,7 @@
           "dx": 4,
           "ecosystem": 4
         },
-        "tags": [
-          "pricing:free-tier"
-        ]
+        "tags": ["pricing:free-tier"]
       }
     ],
     "ai-dev-tools": [
@@ -51,10 +45,7 @@
           "ergonomics": 4,
           "integration_depth": 4
         },
-        "tags": [
-          "pricing:free-tier",
-          "deploy:serverless"
-        ]
+        "tags": ["pricing:free-tier", "deploy:serverless"]
       },
       {
         "slug": "bolt-new",
@@ -68,9 +59,7 @@
           "ergonomics": 5,
           "integration_depth": 3
         },
-        "tags": [
-          "pricing:free-tier"
-        ]
+        "tags": ["pricing:free-tier"]
       },
       {
         "slug": "lovable",
@@ -84,9 +73,7 @@
           "ergonomics": 5,
           "integration_depth": 3
         },
-        "tags": [
-          "pricing:free-tier"
-        ]
+        "tags": ["pricing:free-tier"]
       },
       {
         "slug": "v0",
@@ -100,10 +87,7 @@
           "ergonomics": 5,
           "integration_depth": 4
         },
-        "tags": [
-          "pricing:free-tier",
-          "language:typescript"
-        ]
+        "tags": ["pricing:free-tier", "language:typescript"]
       },
       {
         "slug": "devin",
@@ -143,9 +127,7 @@
           "ergonomics": 3,
           "integration_depth": 4
         },
-        "tags": [
-          "pricing:free-tier"
-        ]
+        "tags": ["pricing:free-tier"]
       },
       {
         "slug": "gemini-code-assist",
@@ -159,9 +141,7 @@
           "ergonomics": 3,
           "integration_depth": 4
         },
-        "tags": [
-          "pricing:free-tier"
-        ]
+        "tags": ["pricing:free-tier"]
       },
       {
         "slug": "jetbrains-junie",
@@ -188,9 +168,7 @@
           "ergonomics": 4,
           "integration_depth": 4
         },
-        "tags": [
-          "pricing:free-tier"
-        ]
+        "tags": ["pricing:free-tier"]
       },
       {
         "slug": "zed",
@@ -204,10 +182,7 @@
           "ergonomics": 5,
           "integration_depth": 4
         },
-        "tags": [
-          "pricing:free-tier",
-          "self-hostable:yes"
-        ]
+        "tags": ["pricing:free-tier", "self-hostable:yes"]
       },
       {
         "slug": "roo-code",
@@ -221,10 +196,7 @@
           "ergonomics": 4,
           "integration_depth": 3
         },
-        "tags": [
-          "pricing:free-tier",
-          "self-hostable:yes"
-        ]
+        "tags": ["pricing:free-tier", "self-hostable:yes"]
       },
       {
         "slug": "opencode",
@@ -238,10 +210,7 @@
           "ergonomics": 4,
           "integration_depth": 3
         },
-        "tags": [
-          "pricing:free-tier",
-          "self-hostable:yes"
-        ]
+        "tags": ["pricing:free-tier", "self-hostable:yes"]
       },
       {
         "slug": "gemini-cli",
@@ -255,10 +224,7 @@
           "ergonomics": 4,
           "integration_depth": 4
         },
-        "tags": [
-          "pricing:free-tier",
-          "self-hostable:yes"
-        ]
+        "tags": ["pricing:free-tier", "self-hostable:yes"]
       },
       {
         "slug": "codex-cli",
@@ -300,10 +266,7 @@
           "cost": 5,
           "context_window": 4
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
         "slug": "o-series-reasoning",
@@ -330,9 +293,7 @@
           "cost": 5,
           "context_window": 5
         },
-        "tags": [
-          "pricing:free-tier"
-        ]
+        "tags": ["pricing:free-tier"]
       },
       {
         "slug": "deepseek-v3",
@@ -346,9 +307,7 @@
           "cost": 5,
           "context_window": 4
         },
-        "tags": [
-          "self-hostable:yes"
-        ]
+        "tags": ["self-hostable:yes"]
       },
       {
         "slug": "kimi-k2",
@@ -362,9 +321,7 @@
           "cost": 5,
           "context_window": 4
         },
-        "tags": [
-          "self-hostable:yes"
-        ]
+        "tags": ["self-hostable:yes"]
       },
       {
         "slug": "glm",
@@ -378,9 +335,7 @@
           "cost": 5,
           "context_window": 4
         },
-        "tags": [
-          "self-hostable:yes"
-        ]
+        "tags": ["self-hostable:yes"]
       },
       {
         "slug": "minimax-m2",
@@ -394,9 +349,7 @@
           "cost": 5,
           "context_window": 5
         },
-        "tags": [
-          "self-hostable:yes"
-        ]
+        "tags": ["self-hostable:yes"]
       },
       {
         "slug": "gemma",
@@ -410,10 +363,7 @@
           "cost": 5,
           "context_window": 3
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
         "slug": "phi",
@@ -427,9 +377,7 @@
           "cost": 5,
           "context_window": 3
         },
-        "tags": [
-          "self-hostable:yes"
-        ]
+        "tags": ["self-hostable:yes"]
       },
       {
         "slug": "command-a",
@@ -469,9 +417,7 @@
           "cost": 5,
           "context_window": 3
         },
-        "tags": [
-          "self-hostable:yes"
-        ]
+        "tags": ["self-hostable:yes"]
       }
     ],
     "llm-gateways": [
@@ -487,9 +433,7 @@
           "cost": 3,
           "dx": 4
         },
-        "tags": [
-          "self-hostable:yes"
-        ]
+        "tags": ["self-hostable:yes"]
       },
       {
         "slug": "eden-ai",
@@ -503,9 +447,7 @@
           "cost": 4,
           "dx": 4
         },
-        "tags": [
-          "pricing:free-tier"
-        ]
+        "tags": ["pricing:free-tier"]
       },
       {
         "slug": "unify",
@@ -558,10 +500,7 @@
           "cost": 5,
           "dx": 4
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
         "slug": "bedrock",
@@ -575,9 +514,7 @@
           "cost": 4,
           "dx": 3
         },
-        "tags": [
-          "deploy:serverless"
-        ]
+        "tags": ["deploy:serverless"]
       },
       {
         "slug": "together-ai",
@@ -591,9 +528,7 @@
           "cost": 4,
           "dx": 4
         },
-        "tags": [
-          "pricing:free-tier"
-        ]
+        "tags": ["pricing:free-tier"]
       },
       {
         "slug": "fireworks-ai",
@@ -607,9 +542,7 @@
           "cost": 4,
           "dx": 4
         },
-        "tags": [
-          "pricing:free-tier"
-        ]
+        "tags": ["pricing:free-tier"]
       },
       {
         "slug": "langfuse",
@@ -623,10 +556,7 @@
           "cost": 5,
           "dx": 5
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
         "slug": "groq",
@@ -640,9 +570,7 @@
           "cost": 4,
           "dx": 5
         },
-        "tags": [
-          "pricing:free-tier"
-        ]
+        "tags": ["pricing:free-tier"]
       }
     ],
     "image-generation": [
@@ -697,9 +625,7 @@
           "cost": 5,
           "control": 4
         },
-        "tags": [
-          "self-hostable:yes"
-        ]
+        "tags": ["self-hostable:yes"]
       },
       {
         "slug": "reve",
@@ -739,10 +665,7 @@
           "cost": 4,
           "control": 5
         },
-        "tags": [
-          "realtime:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["realtime:yes", "pricing:free-tier"]
       },
       {
         "slug": "freepik",
@@ -756,9 +679,7 @@
           "cost": 4,
           "control": 4
         },
-        "tags": [
-          "pricing:free-tier"
-        ]
+        "tags": ["pricing:free-tier"]
       },
       {
         "slug": "playground-ai",
@@ -772,9 +693,7 @@
           "cost": 4,
           "control": 4
         },
-        "tags": [
-          "pricing:free-tier"
-        ]
+        "tags": ["pricing:free-tier"]
       },
       {
         "slug": "fal",
@@ -788,9 +707,7 @@
           "cost": 4,
           "control": 4
         },
-        "tags": [
-          "deploy:serverless"
-        ]
+        "tags": ["deploy:serverless"]
       },
       {
         "slug": "comfyui",
@@ -804,10 +721,7 @@
           "cost": 5,
           "control": 5
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       }
     ],
     "ai-agent-frameworks": [
@@ -823,11 +737,7 @@
           "ecosystem": 4,
           "learning_curve": 3
         },
-        "tags": [
-          "self-hostable:yes",
-          "language:python",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "language:python", "pricing:free-tier"]
       },
       {
         "slug": "semantic-kernel",
@@ -841,10 +751,7 @@
           "ecosystem": 4,
           "learning_curve": 3
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
         "slug": "google-adk",
@@ -858,11 +765,7 @@
           "ecosystem": 4,
           "learning_curve": 3
         },
-        "tags": [
-          "self-hostable:yes",
-          "language:python",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "language:python", "pricing:free-tier"]
       },
       {
         "slug": "strands-agents",
@@ -876,12 +779,7 @@
           "ecosystem": 4,
           "learning_curve": 4
         },
-        "tags": [
-          "self-hostable:yes",
-          "language:python",
-          "language:typescript",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "language:python", "language:typescript", "pricing:free-tier"]
       },
       {
         "slug": "smolagents",
@@ -895,11 +793,7 @@
           "ecosystem": 3,
           "learning_curve": 5
         },
-        "tags": [
-          "self-hostable:yes",
-          "language:python",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "language:python", "pricing:free-tier"]
       },
       {
         "slug": "haystack",
@@ -913,11 +807,7 @@
           "ecosystem": 4,
           "learning_curve": 3
         },
-        "tags": [
-          "self-hostable:yes",
-          "language:python",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "language:python", "pricing:free-tier"]
       },
       {
         "slug": "dspy",
@@ -931,11 +821,7 @@
           "ecosystem": 3,
           "learning_curve": 2
         },
-        "tags": [
-          "self-hostable:yes",
-          "language:python",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "language:python", "pricing:free-tier"]
       },
       {
         "slug": "atomic-agents",
@@ -949,11 +835,7 @@
           "ecosystem": 3,
           "learning_curve": 4
         },
-        "tags": [
-          "self-hostable:yes",
-          "language:python",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "language:python", "pricing:free-tier"]
       },
       {
         "slug": "autogpt",
@@ -967,11 +849,7 @@
           "ecosystem": 3,
           "learning_curve": 3
         },
-        "tags": [
-          "self-hostable:yes",
-          "language:python",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "language:python", "pricing:free-tier"]
       },
       {
         "slug": "letta",
@@ -985,11 +863,7 @@
           "ecosystem": 3,
           "learning_curve": 3
         },
-        "tags": [
-          "self-hostable:yes",
-          "language:python",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "language:python", "pricing:free-tier"]
       },
       {
         "slug": "pocketflow",
@@ -1003,11 +877,7 @@
           "ecosystem": 2,
           "learning_curve": 5
         },
-        "tags": [
-          "self-hostable:yes",
-          "language:python",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "language:python", "pricing:free-tier"]
       }
     ],
     "auth-platforms": [
@@ -1023,10 +893,7 @@
           "dx": 5,
           "ecosystem": 4
         },
-        "tags": [
-          "pricing:free-tier",
-          "language:typescript"
-        ]
+        "tags": ["pricing:free-tier", "language:typescript"]
       },
       {
         "slug": "keycloak",
@@ -1040,10 +907,7 @@
           "dx": 2,
           "ecosystem": 5
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
         "slug": "zitadel",
@@ -1057,10 +921,7 @@
           "dx": 4,
           "ecosystem": 3
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
         "slug": "ory",
@@ -1074,10 +935,7 @@
           "dx": 3,
           "ecosystem": 4
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
         "slug": "supertokens",
@@ -1091,11 +949,7 @@
           "dx": 4,
           "ecosystem": 3
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier",
-          "language:typescript"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier", "language:typescript"]
       },
       {
         "slug": "fusionauth",
@@ -1109,10 +963,7 @@
           "dx": 3,
           "ecosystem": 4
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
         "slug": "descope",
@@ -1126,9 +977,7 @@
           "dx": 4,
           "ecosystem": 4
         },
-        "tags": [
-          "pricing:free-tier"
-        ]
+        "tags": ["pricing:free-tier"]
       },
       {
         "slug": "aws-cognito",
@@ -1142,10 +991,7 @@
           "dx": 2,
           "ecosystem": 5
         },
-        "tags": [
-          "pricing:free-tier",
-          "deploy:serverless"
-        ]
+        "tags": ["pricing:free-tier", "deploy:serverless"]
       },
       {
         "slug": "hanko",
@@ -1159,11 +1005,7 @@
           "dx": 4,
           "ecosystem": 2
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier",
-          "language:typescript"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier", "language:typescript"]
       },
       {
         "slug": "authelia",
@@ -1177,10 +1019,7 @@
           "dx": 3,
           "ecosystem": 2
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       }
     ],
     "payments": [
@@ -1274,9 +1113,7 @@
           "dx": 5,
           "fees": 4
         },
-        "tags": [
-          "language:typescript"
-        ]
+        "tags": ["language:typescript"]
       },
       {
         "slug": "dodo-payments",
@@ -1331,9 +1168,7 @@
           "templating": 5,
           "ecosystem": 3
         },
-        "tags": [
-          "pricing:free-tier"
-        ]
+        "tags": ["pricing:free-tier"]
       },
       {
         "slug": "smtp2go",
@@ -1347,9 +1182,7 @@
           "templating": 3,
           "ecosystem": 3
         },
-        "tags": [
-          "pricing:free-tier"
-        ]
+        "tags": ["pricing:free-tier"]
       },
       {
         "slug": "sparkpost",
@@ -1376,9 +1209,7 @@
           "templating": 4,
           "ecosystem": 4
         },
-        "tags": [
-          "pricing:free-tier"
-        ]
+        "tags": ["pricing:free-tier"]
       },
       {
         "slug": "elastic-email",
@@ -1392,9 +1223,7 @@
           "templating": 3,
           "ecosystem": 3
         },
-        "tags": [
-          "pricing:free-tier"
-        ]
+        "tags": ["pricing:free-tier"]
       },
       {
         "slug": "mailchimp-transactional",
@@ -1421,9 +1250,7 @@
           "templating": 4,
           "ecosystem": 4
         },
-        "tags": [
-          "pricing:free-tier"
-        ]
+        "tags": ["pricing:free-tier"]
       },
       {
         "slug": "mailpace",
@@ -1491,10 +1318,7 @@
           "dx": 4,
           "cost": 4
         },
-        "tags": [
-          "deploy:edge",
-          "language:typescript"
-        ]
+        "tags": ["deploy:edge", "language:typescript"]
       },
       {
         "slug": "posthog-feature-flags",
@@ -1508,10 +1332,7 @@
           "dx": 4,
           "cost": 5
         },
-        "tags": [
-          "pricing:free-tier",
-          "self-hostable:yes"
-        ]
+        "tags": ["pricing:free-tier", "self-hostable:yes"]
       },
       {
         "slug": "featbit",
@@ -1525,10 +1346,7 @@
           "dx": 3,
           "cost": 5
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
         "slug": "flipt",
@@ -1542,10 +1360,7 @@
           "dx": 4,
           "cost": 5
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
         "slug": "hypertune",
@@ -1559,10 +1374,7 @@
           "dx": 5,
           "cost": 4
         },
-        "tags": [
-          "language:typescript",
-          "deploy:edge"
-        ]
+        "tags": ["language:typescript", "deploy:edge"]
       },
       {
         "slug": "openfeature",
@@ -1576,10 +1388,7 @@
           "dx": 4,
           "cost": 5
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       }
     ],
     "analytics": [
@@ -1595,9 +1404,7 @@
           "cost": 5,
           "warehouse_fit": 5
         },
-        "tags": [
-          "pricing:free-tier"
-        ]
+        "tags": ["pricing:free-tier"]
       },
       {
         "slug": "matomo",
@@ -1611,10 +1418,7 @@
           "cost": 4,
           "warehouse_fit": 3
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
         "slug": "pendo",
@@ -1654,9 +1458,7 @@
           "cost": 3,
           "warehouse_fit": 5
         },
-        "tags": [
-          "self-hostable:yes"
-        ]
+        "tags": ["self-hostable:yes"]
       },
       {
         "slug": "snowplow",
@@ -1670,9 +1472,7 @@
           "cost": 3,
           "warehouse_fit": 5
         },
-        "tags": [
-          "self-hostable:yes"
-        ]
+        "tags": ["self-hostable:yes"]
       },
       {
         "slug": "pirsch",
@@ -1686,9 +1486,7 @@
           "cost": 4,
           "warehouse_fit": 3
         },
-        "tags": [
-          "pricing:free-tier"
-        ]
+        "tags": ["pricing:free-tier"]
       },
       {
         "slug": "cloudflare-web-analytics",
@@ -1702,11 +1500,7 @@
           "cost": 5,
           "warehouse_fit": 2
         },
-        "tags": [
-          "pricing:free-tier",
-          "runs-on:cloudflare",
-          "deploy:edge"
-        ]
+        "tags": ["pricing:free-tier", "runs-on:cloudflare", "deploy:edge"]
       },
       {
         "slug": "simple-analytics",
@@ -1733,9 +1527,7 @@
           "cost": 3,
           "warehouse_fit": 5
         },
-        "tags": [
-          "realtime:yes"
-        ]
+        "tags": ["realtime:yes"]
       }
     ],
     "package-managers": [
@@ -1751,10 +1543,7 @@
           "ecosystem": 4,
           "monorepo_support": 3
         },
-        "tags": [
-          "pricing:free-tier",
-          "self-hostable:yes"
-        ]
+        "tags": ["pricing:free-tier", "self-hostable:yes"]
       },
       {
         "slug": "volta",
@@ -1768,10 +1557,7 @@
           "ecosystem": 3,
           "monorepo_support": 3
         },
-        "tags": [
-          "pricing:free-tier",
-          "self-hostable:yes"
-        ]
+        "tags": ["pricing:free-tier", "self-hostable:yes"]
       },
       {
         "slug": "ni",
@@ -1785,11 +1571,7 @@
           "ecosystem": 4,
           "monorepo_support": 3
         },
-        "tags": [
-          "pricing:free-tier",
-          "self-hostable:yes",
-          "language:typescript"
-        ]
+        "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript"]
       },
       {
         "slug": "nx",
@@ -1803,11 +1585,7 @@
           "ecosystem": 5,
           "monorepo_support": 5
         },
-        "tags": [
-          "pricing:free-tier",
-          "self-hostable:yes",
-          "language:typescript"
-        ]
+        "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript"]
       },
       {
         "slug": "turborepo",
@@ -1821,10 +1599,7 @@
           "ecosystem": 4,
           "monorepo_support": 5
         },
-        "tags": [
-          "pricing:free-tier",
-          "self-hostable:yes"
-        ]
+        "tags": ["pricing:free-tier", "self-hostable:yes"]
       },
       {
         "slug": "lerna",
@@ -1838,10 +1613,7 @@
           "ecosystem": 4,
           "monorepo_support": 4
         },
-        "tags": [
-          "pricing:free-tier",
-          "self-hostable:yes"
-        ]
+        "tags": ["pricing:free-tier", "self-hostable:yes"]
       },
       {
         "slug": "changesets",
@@ -1855,11 +1627,7 @@
           "ecosystem": 4,
           "monorepo_support": 5
         },
-        "tags": [
-          "pricing:free-tier",
-          "self-hostable:yes",
-          "language:typescript"
-        ]
+        "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript"]
       }
     ],
     "bundlers": [
@@ -1875,11 +1643,7 @@
           "output_quality": 4,
           "learning_curve": 5
         },
-        "tags": [
-          "pricing:free-tier",
-          "self-hostable:yes",
-          "language:typescript"
-        ]
+        "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript"]
       },
       {
         "slug": "tsdown",
@@ -1893,11 +1657,7 @@
           "output_quality": 5,
           "learning_curve": 5
         },
-        "tags": [
-          "pricing:free-tier",
-          "self-hostable:yes",
-          "language:typescript"
-        ]
+        "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript"]
       },
       {
         "slug": "unbuild",
@@ -1911,11 +1671,7 @@
           "output_quality": 4,
           "learning_curve": 4
         },
-        "tags": [
-          "pricing:free-tier",
-          "self-hostable:yes",
-          "language:typescript"
-        ]
+        "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript"]
       },
       {
         "slug": "bun-build",
@@ -1929,11 +1685,7 @@
           "output_quality": 4,
           "learning_curve": 4
         },
-        "tags": [
-          "pricing:free-tier",
-          "self-hostable:yes",
-          "language:typescript"
-        ]
+        "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript"]
       },
       {
         "slug": "metro",
@@ -1947,10 +1699,7 @@
           "output_quality": 3,
           "learning_curve": 3
         },
-        "tags": [
-          "pricing:free-tier",
-          "self-hostable:yes"
-        ]
+        "tags": ["pricing:free-tier", "self-hostable:yes"]
       },
       {
         "slug": "microbundle",
@@ -1964,10 +1713,7 @@
           "output_quality": 4,
           "learning_curve": 5
         },
-        "tags": [
-          "pricing:free-tier",
-          "self-hostable:yes"
-        ]
+        "tags": ["pricing:free-tier", "self-hostable:yes"]
       },
       {
         "slug": "farm",
@@ -1981,10 +1727,7 @@
           "output_quality": 4,
           "learning_curve": 3
         },
-        "tags": [
-          "pricing:free-tier",
-          "self-hostable:yes"
-        ]
+        "tags": ["pricing:free-tier", "self-hostable:yes"]
       },
       {
         "slug": "mako",
@@ -1998,10 +1741,7 @@
           "output_quality": 4,
           "learning_curve": 3
         },
-        "tags": [
-          "pricing:free-tier",
-          "self-hostable:yes"
-        ]
+        "tags": ["pricing:free-tier", "self-hostable:yes"]
       },
       {
         "slug": "tsc",
@@ -2015,11 +1755,7 @@
           "output_quality": 3,
           "learning_curve": 4
         },
-        "tags": [
-          "pricing:free-tier",
-          "self-hostable:yes",
-          "language:typescript"
-        ]
+        "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript"]
       }
     ],
     "test-runners": [
@@ -2035,10 +1771,7 @@
           "ecosystem": 3,
           "browser_testing": 1
         },
-        "tags": [
-          "pricing:free-tier",
-          "self-hostable:yes"
-        ]
+        "tags": ["pricing:free-tier", "self-hostable:yes"]
       },
       {
         "slug": "uvu",
@@ -2052,10 +1785,7 @@
           "ecosystem": 2,
           "browser_testing": 3
         },
-        "tags": [
-          "pricing:free-tier",
-          "self-hostable:yes"
-        ]
+        "tags": ["pricing:free-tier", "self-hostable:yes"]
       },
       {
         "slug": "jasmine",
@@ -2069,10 +1799,7 @@
           "ecosystem": 3,
           "browser_testing": 3
         },
-        "tags": [
-          "pricing:free-tier",
-          "self-hostable:yes"
-        ]
+        "tags": ["pricing:free-tier", "self-hostable:yes"]
       },
       {
         "slug": "webdriverio",
@@ -2086,11 +1813,7 @@
           "ecosystem": 5,
           "browser_testing": 5
         },
-        "tags": [
-          "pricing:free-tier",
-          "self-hostable:yes",
-          "language:typescript"
-        ]
+        "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript"]
       },
       {
         "slug": "testcafe",
@@ -2104,10 +1827,7 @@
           "ecosystem": 3,
           "browser_testing": 5
         },
-        "tags": [
-          "pricing:free-tier",
-          "self-hostable:yes"
-        ]
+        "tags": ["pricing:free-tier", "self-hostable:yes"]
       },
       {
         "slug": "web-test-runner",
@@ -2121,10 +1841,7 @@
           "ecosystem": 3,
           "browser_testing": 5
         },
-        "tags": [
-          "pricing:free-tier",
-          "self-hostable:yes"
-        ]
+        "tags": ["pricing:free-tier", "self-hostable:yes"]
       },
       {
         "slug": "wallaby",
@@ -2153,10 +1870,7 @@
           "ecosystem": 3,
           "accuracy": 4
         },
-        "tags": [
-          "pricing:free-tier",
-          "self-hostable:yes"
-        ]
+        "tags": ["pricing:free-tier", "self-hostable:yes"]
       },
       {
         "slug": "knip",
@@ -2170,11 +1884,7 @@
           "ecosystem": 3,
           "accuracy": 4
         },
-        "tags": [
-          "pricing:free-tier",
-          "self-hostable:yes",
-          "language:typescript"
-        ]
+        "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript"]
       },
       {
         "slug": "publint",
@@ -2188,10 +1898,7 @@
           "ecosystem": 3,
           "accuracy": 5
         },
-        "tags": [
-          "pricing:free-tier",
-          "self-hostable:yes"
-        ]
+        "tags": ["pricing:free-tier", "self-hostable:yes"]
       },
       {
         "slug": "standardjs",
@@ -2205,10 +1912,7 @@
           "ecosystem": 3,
           "accuracy": 4
         },
-        "tags": [
-          "pricing:free-tier",
-          "self-hostable:yes"
-        ]
+        "tags": ["pricing:free-tier", "self-hostable:yes"]
       },
       {
         "slug": "ruff",
@@ -2222,11 +1926,7 @@
           "ecosystem": 4,
           "accuracy": 5
         },
-        "tags": [
-          "pricing:free-tier",
-          "self-hostable:yes",
-          "language:python"
-        ]
+        "tags": ["pricing:free-tier", "self-hostable:yes", "language:python"]
       },
       {
         "slug": "eslint-stylistic",
@@ -2240,11 +1940,7 @@
           "ecosystem": 4,
           "accuracy": 4
         },
-        "tags": [
-          "pricing:free-tier",
-          "self-hostable:yes",
-          "language:typescript"
-        ]
+        "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript"]
       },
       {
         "slug": "trunk-check",
@@ -2258,9 +1954,7 @@
           "ecosystem": 5,
           "accuracy": 4
         },
-        "tags": [
-          "pricing:free-tier"
-        ]
+        "tags": ["pricing:free-tier"]
       }
     ],
     "validation-libraries": [
@@ -2276,10 +1970,7 @@
           "dx": 3,
           "ecosystem": 5
         },
-        "tags": [
-          "pricing:free-tier",
-          "self-hostable:yes"
-        ]
+        "tags": ["pricing:free-tier", "self-hostable:yes"]
       },
       {
         "slug": "class-validator",
@@ -2293,11 +1984,7 @@
           "dx": 4,
           "ecosystem": 4
         },
-        "tags": [
-          "pricing:free-tier",
-          "self-hostable:yes",
-          "language:typescript"
-        ]
+        "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript"]
       },
       {
         "slug": "io-ts",
@@ -2311,11 +1998,7 @@
           "dx": 3,
           "ecosystem": 3
         },
-        "tags": [
-          "pricing:free-tier",
-          "self-hostable:yes",
-          "language:typescript"
-        ]
+        "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript"]
       },
       {
         "slug": "runtypes",
@@ -2329,11 +2012,7 @@
           "dx": 4,
           "ecosystem": 3
         },
-        "tags": [
-          "pricing:free-tier",
-          "self-hostable:yes",
-          "language:typescript"
-        ]
+        "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript"]
       },
       {
         "slug": "vinejs",
@@ -2347,11 +2026,7 @@
           "dx": 4,
           "ecosystem": 3
         },
-        "tags": [
-          "pricing:free-tier",
-          "self-hostable:yes",
-          "language:typescript"
-        ]
+        "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript"]
       },
       {
         "slug": "ow",
@@ -2365,11 +2040,7 @@
           "dx": 4,
           "ecosystem": 2
         },
-        "tags": [
-          "pricing:free-tier",
-          "self-hostable:yes",
-          "language:typescript"
-        ]
+        "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript"]
       },
       {
         "slug": "zod-mini",
@@ -2383,11 +2054,7 @@
           "dx": 4,
           "ecosystem": 4
         },
-        "tags": [
-          "pricing:free-tier",
-          "self-hostable:yes",
-          "language:typescript"
-        ]
+        "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript"]
       }
     ],
     "databases": [
@@ -2403,10 +2070,7 @@
           "dx": 4,
           "ecosystem": 5
         },
-        "tags": [
-          "pricing:free-tier",
-          "self-hostable:yes"
-        ]
+        "tags": ["pricing:free-tier", "self-hostable:yes"]
       },
       {
         "slug": "mysql",
@@ -2420,10 +2084,7 @@
           "dx": 4,
           "ecosystem": 5
         },
-        "tags": [
-          "pricing:free-tier",
-          "self-hostable:yes"
-        ]
+        "tags": ["pricing:free-tier", "self-hostable:yes"]
       },
       {
         "slug": "sqlite",
@@ -2437,10 +2098,7 @@
           "dx": 4,
           "ecosystem": 5
         },
-        "tags": [
-          "pricing:free-tier",
-          "self-hostable:yes"
-        ]
+        "tags": ["pricing:free-tier", "self-hostable:yes"]
       },
       {
         "slug": "redis",
@@ -2454,11 +2112,7 @@
           "dx": 4,
           "ecosystem": 5
         },
-        "tags": [
-          "pricing:free-tier",
-          "self-hostable:yes",
-          "realtime:yes"
-        ]
+        "tags": ["pricing:free-tier", "self-hostable:yes", "realtime:yes"]
       },
       {
         "slug": "dynamodb",
@@ -2472,9 +2126,7 @@
           "dx": 3,
           "ecosystem": 4
         },
-        "tags": [
-          "deploy:serverless"
-        ]
+        "tags": ["deploy:serverless"]
       },
       {
         "slug": "firestore",
@@ -2488,11 +2140,7 @@
           "dx": 4,
           "ecosystem": 4
         },
-        "tags": [
-          "deploy:serverless",
-          "pricing:free-tier",
-          "realtime:yes"
-        ]
+        "tags": ["deploy:serverless", "pricing:free-tier", "realtime:yes"]
       },
       {
         "slug": "clickhouse",
@@ -2506,10 +2154,7 @@
           "dx": 4,
           "ecosystem": 4
         },
-        "tags": [
-          "pricing:free-tier",
-          "self-hostable:yes"
-        ]
+        "tags": ["pricing:free-tier", "self-hostable:yes"]
       },
       {
         "slug": "scylladb",
@@ -2523,9 +2168,7 @@
           "dx": 3,
           "ecosystem": 3
         },
-        "tags": [
-          "self-hostable:yes"
-        ]
+        "tags": ["self-hostable:yes"]
       },
       {
         "slug": "dragonfly",
@@ -2539,10 +2182,7 @@
           "dx": 4,
           "ecosystem": 3
         },
-        "tags": [
-          "self-hostable:yes",
-          "realtime:yes"
-        ]
+        "tags": ["self-hostable:yes", "realtime:yes"]
       },
       {
         "slug": "singlestore",
@@ -2569,10 +2209,7 @@
           "dx": 4,
           "ecosystem": 4
         },
-        "tags": [
-          "self-hostable:yes",
-          "deploy:serverless"
-        ]
+        "tags": ["self-hostable:yes", "deploy:serverless"]
       },
       {
         "slug": "surrealdb",
@@ -2586,10 +2223,7 @@
           "dx": 4,
           "ecosystem": 2
         },
-        "tags": [
-          "self-hostable:yes",
-          "realtime:yes"
-        ]
+        "tags": ["self-hostable:yes", "realtime:yes"]
       },
       {
         "slug": "aurora-serverless",
@@ -2603,9 +2237,7 @@
           "dx": 3,
           "ecosystem": 5
         },
-        "tags": [
-          "deploy:serverless"
-        ]
+        "tags": ["deploy:serverless"]
       },
       {
         "slug": "cassandra",
@@ -2619,10 +2251,7 @@
           "dx": 2,
           "ecosystem": 4
         },
-        "tags": [
-          "pricing:free-tier",
-          "self-hostable:yes"
-        ]
+        "tags": ["pricing:free-tier", "self-hostable:yes"]
       },
       {
         "slug": "duckdb",
@@ -2636,10 +2265,7 @@
           "dx": 5,
           "ecosystem": 3
         },
-        "tags": [
-          "pricing:free-tier",
-          "self-hostable:yes"
-        ]
+        "tags": ["pricing:free-tier", "self-hostable:yes"]
       },
       {
         "slug": "upstash-redis",
@@ -2653,12 +2279,7 @@
           "dx": 5,
           "ecosystem": 4
         },
-        "tags": [
-          "deploy:serverless",
-          "deploy:edge",
-          "pricing:free-tier",
-          "realtime:yes"
-        ]
+        "tags": ["deploy:serverless", "deploy:edge", "pricing:free-tier", "realtime:yes"]
       }
     ],
     "vector-databases": [
@@ -2674,10 +2295,7 @@
           "cost": 5,
           "sdk_quality": 4
         },
-        "tags": [
-          "pricing:free-tier",
-          "self-hostable:yes"
-        ]
+        "tags": ["pricing:free-tier", "self-hostable:yes"]
       },
       {
         "slug": "turbopuffer",
@@ -2704,9 +2322,7 @@
           "cost": 3,
           "sdk_quality": 4
         },
-        "tags": [
-          "self-hostable:yes"
-        ]
+        "tags": ["self-hostable:yes"]
       },
       {
         "slug": "opensearch",
@@ -2720,10 +2336,7 @@
           "cost": 5,
           "sdk_quality": 3
         },
-        "tags": [
-          "pricing:free-tier",
-          "self-hostable:yes"
-        ]
+        "tags": ["pricing:free-tier", "self-hostable:yes"]
       },
       {
         "slug": "vespa",
@@ -2737,9 +2350,7 @@
           "cost": 3,
           "sdk_quality": 3
         },
-        "tags": [
-          "self-hostable:yes"
-        ]
+        "tags": ["self-hostable:yes"]
       },
       {
         "slug": "azure-ai-search",
@@ -2766,9 +2377,7 @@
           "cost": 3,
           "sdk_quality": 4
         },
-        "tags": [
-          "pricing:free-tier"
-        ]
+        "tags": ["pricing:free-tier"]
       },
       {
         "slug": "faiss",
@@ -2782,11 +2391,7 @@
           "cost": 5,
           "sdk_quality": 3
         },
-        "tags": [
-          "pricing:free-tier",
-          "self-hostable:yes",
-          "language:python"
-        ]
+        "tags": ["pricing:free-tier", "self-hostable:yes", "language:python"]
       },
       {
         "slug": "vectorize",
@@ -2800,12 +2405,7 @@
           "cost": 5,
           "sdk_quality": 4
         },
-        "tags": [
-          "runs-on:cloudflare",
-          "deploy:edge",
-          "deploy:serverless",
-          "pricing:free-tier"
-        ]
+        "tags": ["runs-on:cloudflare", "deploy:edge", "deploy:serverless", "pricing:free-tier"]
       },
       {
         "slug": "marqo",
@@ -2819,10 +2419,7 @@
           "cost": 3,
           "sdk_quality": 3
         },
-        "tags": [
-          "self-hostable:yes",
-          "language:python"
-        ]
+        "tags": ["self-hostable:yes", "language:python"]
       },
       {
         "slug": "supabase-vector",
@@ -2836,10 +2433,7 @@
           "cost": 4,
           "sdk_quality": 4
         },
-        "tags": [
-          "pricing:free-tier",
-          "self-hostable:yes"
-        ]
+        "tags": ["pricing:free-tier", "self-hostable:yes"]
       },
       {
         "slug": "zilliz-cloud",
@@ -2853,9 +2447,7 @@
           "cost": 3,
           "sdk_quality": 4
         },
-        "tags": [
-          "pricing:free-tier"
-        ]
+        "tags": ["pricing:free-tier"]
       }
     ],
     "orms": [
@@ -2910,9 +2502,7 @@
           "migrations": 3,
           "ecosystem": 4
         },
-        "tags": [
-          "pricing:free-tier"
-        ]
+        "tags": ["pricing:free-tier"]
       },
       {
         "slug": "sea-orm",
@@ -2952,9 +2542,7 @@
           "migrations": 5,
           "ecosystem": 5
         },
-        "tags": [
-          "language:python"
-        ]
+        "tags": ["language:python"]
       },
       {
         "slug": "objection",
@@ -2968,9 +2556,7 @@
           "migrations": 4,
           "ecosystem": 3
         },
-        "tags": [
-          "language:typescript"
-        ]
+        "tags": ["language:typescript"]
       },
       {
         "slug": "sqlmodel",
@@ -2984,9 +2570,7 @@
           "migrations": 3,
           "ecosystem": 3
         },
-        "tags": [
-          "language:python"
-        ]
+        "tags": ["language:python"]
       },
       {
         "slug": "entity-framework-core",
@@ -3026,9 +2610,7 @@
           "migrations": 3,
           "ecosystem": 3
         },
-        "tags": [
-          "language:python"
-        ]
+        "tags": ["language:python"]
       }
     ],
     "object-storage": [
@@ -3057,10 +2639,7 @@
           "dx": 4,
           "egress_pricing": 5
         },
-        "tags": [
-          "deploy:edge",
-          "pricing:free-tier"
-        ]
+        "tags": ["deploy:edge", "pricing:free-tier"]
       },
       {
         "slug": "scaleway-object-storage",
@@ -3074,9 +2653,7 @@
           "dx": 4,
           "egress_pricing": 3
         },
-        "tags": [
-          "pricing:free-tier"
-        ]
+        "tags": ["pricing:free-tier"]
       },
       {
         "slug": "hetzner-object-storage",
@@ -3103,9 +2680,7 @@
           "dx": 4,
           "egress_pricing": 5
         },
-        "tags": [
-          "pricing:free-tier"
-        ]
+        "tags": ["pricing:free-tier"]
       },
       {
         "slug": "seaweedfs",
@@ -3119,10 +2694,7 @@
           "dx": 3,
           "egress_pricing": 5
         },
-        "tags": [
-          "pricing:free-tier",
-          "self-hostable:yes"
-        ]
+        "tags": ["pricing:free-tier", "self-hostable:yes"]
       },
       {
         "slug": "garage",
@@ -3136,11 +2708,7 @@
           "dx": 3,
           "egress_pricing": 5
         },
-        "tags": [
-          "pricing:free-tier",
-          "self-hostable:yes",
-          "deploy:edge"
-        ]
+        "tags": ["pricing:free-tier", "self-hostable:yes", "deploy:edge"]
       },
       {
         "slug": "ceph",
@@ -3154,10 +2722,7 @@
           "dx": 2,
           "egress_pricing": 5
         },
-        "tags": [
-          "pricing:free-tier",
-          "self-hostable:yes"
-        ]
+        "tags": ["pricing:free-tier", "self-hostable:yes"]
       },
       {
         "slug": "ibm-cloud-object-storage",
@@ -3184,9 +2749,7 @@
           "dx": 3,
           "egress_pricing": 4
         },
-        "tags": [
-          "pricing:free-tier"
-        ]
+        "tags": ["pricing:free-tier"]
       },
       {
         "slug": "ovh-object-storage",
@@ -3241,10 +2804,7 @@
           "dx": 3,
           "ecosystem": 4
         },
-        "tags": [
-          "deploy:serverless",
-          "realtime:yes"
-        ]
+        "tags": ["deploy:serverless", "realtime:yes"]
       },
       {
         "slug": "emqx",
@@ -3258,11 +2818,7 @@
           "dx": 4,
           "ecosystem": 3
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier",
-          "realtime:yes"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier", "realtime:yes"]
       },
       {
         "slug": "apache-rocketmq",
@@ -3276,10 +2832,7 @@
           "dx": 3,
           "ecosystem": 3
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
         "slug": "nsq",
@@ -3293,11 +2846,7 @@
           "dx": 4,
           "ecosystem": 2
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier",
-          "realtime:yes"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier", "realtime:yes"]
       },
       {
         "slug": "warpstream",
@@ -3324,10 +2873,7 @@
           "dx": 4,
           "ecosystem": 3
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
         "slug": "streamnative",
@@ -3354,10 +2900,7 @@
           "dx": 4,
           "ecosystem": 2
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
         "slug": "cloudflare-queues-broker",
@@ -3371,12 +2914,7 @@
           "dx": 5,
           "ecosystem": 3
         },
-        "tags": [
-          "runs-on:cloudflare",
-          "deploy:edge",
-          "deploy:serverless",
-          "pricing:free-tier"
-        ]
+        "tags": ["runs-on:cloudflare", "deploy:edge", "deploy:serverless", "pricing:free-tier"]
       }
     ],
     "data-warehouses": [
@@ -3392,10 +2930,7 @@
           "dx": 5,
           "ecosystem": 4
         },
-        "tags": [
-          "deploy:serverless",
-          "pricing:free-tier"
-        ]
+        "tags": ["deploy:serverless", "pricing:free-tier"]
       },
       {
         "slug": "vertica",
@@ -3435,10 +2970,7 @@
           "dx": 3,
           "ecosystem": 3
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
         "slug": "apache-doris",
@@ -3452,11 +2984,7 @@
           "dx": 4,
           "ecosystem": 3
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier",
-          "realtime:yes"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier", "realtime:yes"]
       },
       {
         "slug": "ibm-netezza",
@@ -3496,10 +3024,7 @@
           "dx": 4,
           "ecosystem": 2
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
         "slug": "cratedb",
@@ -3513,10 +3038,7 @@
           "dx": 4,
           "ecosystem": 3
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
         "slug": "exasol",
@@ -3558,10 +3080,7 @@
           "dx": 4,
           "ecosystem": 2
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
         "slug": "orama",
@@ -3575,12 +3094,7 @@
           "dx": 5,
           "ecosystem": 3
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier",
-          "deploy:edge",
-          "language:typescript"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier", "deploy:edge", "language:typescript"]
       },
       {
         "slug": "quickwit",
@@ -3594,10 +3108,7 @@
           "dx": 3,
           "ecosystem": 2
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
         "slug": "paradedb",
@@ -3611,10 +3122,7 @@
           "dx": 4,
           "ecosystem": 3
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
         "slug": "zincsearch",
@@ -3628,10 +3136,7 @@
           "dx": 4,
           "ecosystem": 2
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
         "slug": "sonic-search",
@@ -3645,10 +3150,7 @@
           "dx": 3,
           "ecosystem": 1
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
         "slug": "constructor",
@@ -3716,11 +3218,7 @@
           "dx": 4,
           "ecosystem": 3
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier",
-          "language:python"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier", "language:python"]
       },
       {
         "slug": "bruin",
@@ -3734,11 +3232,7 @@
           "dx": 5,
           "ecosystem": 2
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier",
-          "language:python"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier", "language:python"]
       },
       {
         "slug": "tines",
@@ -3752,9 +3246,7 @@
           "dx": 3,
           "ecosystem": 3
         },
-        "tags": [
-          "pricing:free-tier"
-        ]
+        "tags": ["pricing:free-tier"]
       },
       {
         "slug": "power-automate",
@@ -3781,10 +3273,7 @@
           "dx": 3,
           "ecosystem": 2
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
         "slug": "gumloop",
@@ -3798,9 +3287,7 @@
           "dx": 3,
           "ecosystem": 2
         },
-        "tags": [
-          "pricing:free-tier"
-        ]
+        "tags": ["pricing:free-tier"]
       },
       {
         "slug": "relay-app",
@@ -3814,9 +3301,7 @@
           "dx": 3,
           "ecosystem": 2
         },
-        "tags": [
-          "pricing:free-tier"
-        ]
+        "tags": ["pricing:free-tier"]
       },
       {
         "slug": "bardeen",
@@ -3830,9 +3315,7 @@
           "dx": 2,
           "ecosystem": 2
         },
-        "tags": [
-          "pricing:free-tier"
-        ]
+        "tags": ["pricing:free-tier"]
       },
       {
         "slug": "lindy",
@@ -3859,9 +3342,7 @@
           "dx": 4,
           "ecosystem": 4
         },
-        "tags": [
-          "self-hostable:yes"
-        ]
+        "tags": ["self-hostable:yes"]
       },
       {
         "slug": "n8n",
@@ -3875,10 +3356,7 @@
           "dx": 4,
           "ecosystem": 5
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       }
     ],
     "frontend-frameworks": [
@@ -3894,10 +3372,7 @@
           "learning_curve": 4,
           "ssr_support": 5
         },
-        "tags": [
-          "language:typescript",
-          "self-hostable:yes"
-        ]
+        "tags": ["language:typescript", "self-hostable:yes"]
       },
       {
         "slug": "mithril",
@@ -3911,9 +3386,7 @@
           "learning_curve": 4,
           "ssr_support": 2
         },
-        "tags": [
-          "self-hostable:yes"
-        ]
+        "tags": ["self-hostable:yes"]
       },
       {
         "slug": "ember",
@@ -3927,10 +3400,7 @@
           "learning_curve": 2,
           "ssr_support": 3
         },
-        "tags": [
-          "language:typescript",
-          "self-hostable:yes"
-        ]
+        "tags": ["language:typescript", "self-hostable:yes"]
       },
       {
         "slug": "stencil",
@@ -3944,10 +3414,7 @@
           "learning_curve": 3,
           "ssr_support": 3
         },
-        "tags": [
-          "language:typescript",
-          "self-hostable:yes"
-        ]
+        "tags": ["language:typescript", "self-hostable:yes"]
       },
       {
         "slug": "stimulus",
@@ -3961,9 +3428,7 @@
           "learning_curve": 5,
           "ssr_support": 5
         },
-        "tags": [
-          "self-hostable:yes"
-        ]
+        "tags": ["self-hostable:yes"]
       },
       {
         "slug": "aurelia",
@@ -3977,10 +3442,7 @@
           "learning_curve": 3,
           "ssr_support": 3
         },
-        "tags": [
-          "language:typescript",
-          "self-hostable:yes"
-        ]
+        "tags": ["language:typescript", "self-hostable:yes"]
       },
       {
         "slug": "riot",
@@ -3994,9 +3456,7 @@
           "learning_curve": 5,
           "ssr_support": 3
         },
-        "tags": [
-          "self-hostable:yes"
-        ]
+        "tags": ["self-hostable:yes"]
       },
       {
         "slug": "inferno",
@@ -4010,9 +3470,7 @@
           "learning_curve": 3,
           "ssr_support": 3
         },
-        "tags": [
-          "self-hostable:yes"
-        ]
+        "tags": ["self-hostable:yes"]
       }
     ],
     "meta-frameworks": [
@@ -4028,12 +3486,7 @@
           "ecosystem": 4,
           "ssr_quality": 5
         },
-        "tags": [
-          "deploy:edge",
-          "deploy:serverless",
-          "language:typescript",
-          "self-hostable:yes"
-        ]
+        "tags": ["deploy:edge", "deploy:serverless", "language:typescript", "self-hostable:yes"]
       },
       {
         "slug": "vike",
@@ -4047,12 +3500,7 @@
           "ecosystem": 3,
           "ssr_quality": 4
         },
-        "tags": [
-          "deploy:edge",
-          "deploy:serverless",
-          "language:typescript",
-          "self-hostable:yes"
-        ]
+        "tags": ["deploy:edge", "deploy:serverless", "language:typescript", "self-hostable:yes"]
       },
       {
         "slug": "analog",
@@ -4066,11 +3514,7 @@
           "ecosystem": 3,
           "ssr_quality": 4
         },
-        "tags": [
-          "deploy:serverless",
-          "language:typescript",
-          "self-hostable:yes"
-        ]
+        "tags": ["deploy:serverless", "language:typescript", "self-hostable:yes"]
       },
       {
         "slug": "waku",
@@ -4084,12 +3528,7 @@
           "ecosystem": 2,
           "ssr_quality": 4
         },
-        "tags": [
-          "deploy:edge",
-          "deploy:serverless",
-          "language:typescript",
-          "self-hostable:yes"
-        ]
+        "tags": ["deploy:edge", "deploy:serverless", "language:typescript", "self-hostable:yes"]
       },
       {
         "slug": "redwoodsdk",
@@ -4123,12 +3562,7 @@
           "ecosystem": 3,
           "ssr_quality": 4
         },
-        "tags": [
-          "deploy:edge",
-          "deploy:serverless",
-          "language:typescript",
-          "self-hostable:yes"
-        ]
+        "tags": ["deploy:edge", "deploy:serverless", "language:typescript", "self-hostable:yes"]
       },
       {
         "slug": "eleventy",
@@ -4142,9 +3576,7 @@
           "ecosystem": 3,
           "ssr_quality": 3
         },
-        "tags": [
-          "self-hostable:yes"
-        ]
+        "tags": ["self-hostable:yes"]
       },
       {
         "slug": "gatsby",
@@ -4158,11 +3590,7 @@
           "ecosystem": 4,
           "ssr_quality": 3
         },
-        "tags": [
-          "deploy:serverless",
-          "language:typescript",
-          "self-hostable:yes"
-        ]
+        "tags": ["deploy:serverless", "language:typescript", "self-hostable:yes"]
       },
       {
         "slug": "hydrogen",
@@ -4176,10 +3604,7 @@
           "ecosystem": 3,
           "ssr_quality": 4
         },
-        "tags": [
-          "deploy:edge",
-          "language:typescript"
-        ]
+        "tags": ["deploy:edge", "language:typescript"]
       },
       {
         "slug": "docusaurus",
@@ -4193,10 +3618,7 @@
           "ecosystem": 4,
           "ssr_quality": 3
         },
-        "tags": [
-          "language:typescript",
-          "self-hostable:yes"
-        ]
+        "tags": ["language:typescript", "self-hostable:yes"]
       }
     ],
     "css-tools": [
@@ -4212,9 +3634,7 @@
           "learning_curve": 4,
           "ecosystem": 5
         },
-        "tags": [
-          "self-hostable:yes"
-        ]
+        "tags": ["self-hostable:yes"]
       },
       {
         "slug": "postcss",
@@ -4228,9 +3648,7 @@
           "learning_curve": 3,
           "ecosystem": 5
         },
-        "tags": [
-          "self-hostable:yes"
-        ]
+        "tags": ["self-hostable:yes"]
       },
       {
         "slug": "less",
@@ -4244,9 +3662,7 @@
           "learning_curve": 4,
           "ecosystem": 4
         },
-        "tags": [
-          "self-hostable:yes"
-        ]
+        "tags": ["self-hostable:yes"]
       },
       {
         "slug": "lightningcss",
@@ -4260,9 +3676,7 @@
           "learning_curve": 4,
           "ecosystem": 4
         },
-        "tags": [
-          "self-hostable:yes"
-        ]
+        "tags": ["self-hostable:yes"]
       },
       {
         "slug": "stylex",
@@ -4276,10 +3690,7 @@
           "learning_curve": 3,
           "ecosystem": 3
         },
-        "tags": [
-          "language:typescript",
-          "self-hostable:yes"
-        ]
+        "tags": ["language:typescript", "self-hostable:yes"]
       },
       {
         "slug": "linaria",
@@ -4293,10 +3704,7 @@
           "learning_curve": 3,
           "ecosystem": 3
         },
-        "tags": [
-          "language:typescript",
-          "self-hostable:yes"
-        ]
+        "tags": ["language:typescript", "self-hostable:yes"]
       },
       {
         "slug": "bootstrap",
@@ -4310,9 +3718,7 @@
           "learning_curve": 5,
           "ecosystem": 5
         },
-        "tags": [
-          "self-hostable:yes"
-        ]
+        "tags": ["self-hostable:yes"]
       },
       {
         "slug": "bulma",
@@ -4326,9 +3732,7 @@
           "learning_curve": 5,
           "ecosystem": 3
         },
-        "tags": [
-          "self-hostable:yes"
-        ]
+        "tags": ["self-hostable:yes"]
       },
       {
         "slug": "picocss",
@@ -4342,9 +3746,7 @@
           "learning_curve": 5,
           "ecosystem": 2
         },
-        "tags": [
-          "self-hostable:yes"
-        ]
+        "tags": ["self-hostable:yes"]
       }
     ],
     "ui-component-libraries": [
@@ -4360,10 +3762,7 @@
           "dx": 4,
           "ecosystem": 4
         },
-        "tags": [
-          "language:typescript",
-          "self-hostable:yes"
-        ]
+        "tags": ["language:typescript", "self-hostable:yes"]
       },
       {
         "slug": "daisyui",
@@ -4377,9 +3776,7 @@
           "dx": 5,
           "ecosystem": 4
         },
-        "tags": [
-          "self-hostable:yes"
-        ]
+        "tags": ["self-hostable:yes"]
       },
       {
         "slug": "react-aria",
@@ -4393,10 +3790,7 @@
           "dx": 4,
           "ecosystem": 4
         },
-        "tags": [
-          "language:typescript",
-          "self-hostable:yes"
-        ]
+        "tags": ["language:typescript", "self-hostable:yes"]
       },
       {
         "slug": "vuetify",
@@ -4410,10 +3804,7 @@
           "dx": 4,
           "ecosystem": 5
         },
-        "tags": [
-          "language:typescript",
-          "self-hostable:yes"
-        ]
+        "tags": ["language:typescript", "self-hostable:yes"]
       },
       {
         "slug": "primevue",
@@ -4427,10 +3818,7 @@
           "dx": 4,
           "ecosystem": 4
         },
-        "tags": [
-          "language:typescript",
-          "self-hostable:yes"
-        ]
+        "tags": ["language:typescript", "self-hostable:yes"]
       },
       {
         "slug": "quasar",
@@ -4444,10 +3832,7 @@
           "dx": 4,
           "ecosystem": 4
         },
-        "tags": [
-          "language:typescript",
-          "self-hostable:yes"
-        ]
+        "tags": ["language:typescript", "self-hostable:yes"]
       },
       {
         "slug": "element-plus",
@@ -4461,10 +3846,7 @@
           "dx": 4,
           "ecosystem": 4
         },
-        "tags": [
-          "language:typescript",
-          "self-hostable:yes"
-        ]
+        "tags": ["language:typescript", "self-hostable:yes"]
       },
       {
         "slug": "naive-ui",
@@ -4478,10 +3860,7 @@
           "dx": 4,
           "ecosystem": 3
         },
-        "tags": [
-          "language:typescript",
-          "self-hostable:yes"
-        ]
+        "tags": ["language:typescript", "self-hostable:yes"]
       },
       {
         "slug": "flowbite",
@@ -4495,9 +3874,7 @@
           "dx": 4,
           "ecosystem": 4
         },
-        "tags": [
-          "self-hostable:yes"
-        ]
+        "tags": ["self-hostable:yes"]
       },
       {
         "slug": "tremor",
@@ -4511,10 +3888,7 @@
           "dx": 5,
           "ecosystem": 3
         },
-        "tags": [
-          "language:typescript",
-          "self-hostable:yes"
-        ]
+        "tags": ["language:typescript", "self-hostable:yes"]
       },
       {
         "slug": "magic-ui",
@@ -4528,10 +3902,7 @@
           "dx": 4,
           "ecosystem": 3
         },
-        "tags": [
-          "language:typescript",
-          "self-hostable:yes"
-        ]
+        "tags": ["language:typescript", "self-hostable:yes"]
       }
     ],
     "state-management": [
@@ -4547,10 +3918,7 @@
           "ts_support": 4,
           "learning_curve": 2
         },
-        "tags": [
-          "language:typescript",
-          "self-hostable:yes"
-        ]
+        "tags": ["language:typescript", "self-hostable:yes"]
       },
       {
         "slug": "xstate",
@@ -4564,10 +3932,7 @@
           "ts_support": 5,
           "learning_curve": 2
         },
-        "tags": [
-          "language:typescript",
-          "self-hostable:yes"
-        ]
+        "tags": ["language:typescript", "self-hostable:yes"]
       },
       {
         "slug": "effector",
@@ -4581,10 +3946,7 @@
           "ts_support": 5,
           "learning_curve": 3
         },
-        "tags": [
-          "language:typescript",
-          "self-hostable:yes"
-        ]
+        "tags": ["language:typescript", "self-hostable:yes"]
       },
       {
         "slug": "legend-state",
@@ -4598,10 +3960,7 @@
           "ts_support": 5,
           "learning_curve": 4
         },
-        "tags": [
-          "language:typescript",
-          "self-hostable:yes"
-        ]
+        "tags": ["language:typescript", "self-hostable:yes"]
       },
       {
         "slug": "pinia",
@@ -4615,10 +3974,7 @@
           "ts_support": 5,
           "learning_curve": 5
         },
-        "tags": [
-          "language:typescript",
-          "self-hostable:yes"
-        ]
+        "tags": ["language:typescript", "self-hostable:yes"]
       },
       {
         "slug": "apollo-client",
@@ -4632,10 +3988,7 @@
           "ts_support": 4,
           "learning_curve": 3
         },
-        "tags": [
-          "language:typescript",
-          "self-hostable:yes"
-        ]
+        "tags": ["language:typescript", "self-hostable:yes"]
       },
       {
         "slug": "tanstack-store",
@@ -4649,10 +4002,7 @@
           "ts_support": 5,
           "learning_curve": 4
         },
-        "tags": [
-          "language:typescript",
-          "self-hostable:yes"
-        ]
+        "tags": ["language:typescript", "self-hostable:yes"]
       },
       {
         "slug": "rtk-query",
@@ -4666,10 +4016,7 @@
           "ts_support": 5,
           "learning_curve": 3
         },
-        "tags": [
-          "language:typescript",
-          "self-hostable:yes"
-        ]
+        "tags": ["language:typescript", "self-hostable:yes"]
       }
     ],
     "hosting": [
@@ -4699,10 +4046,7 @@
           "regions": 5,
           "free_tier": 4
         },
-        "tags": [
-          "deploy:serverless",
-          "pricing:free-tier"
-        ]
+        "tags": ["deploy:serverless", "pricing:free-tier"]
       },
       {
         "slug": "google-cloud-run",
@@ -4716,10 +4060,7 @@
           "regions": 5,
           "free_tier": 4
         },
-        "tags": [
-          "deploy:serverless",
-          "pricing:free-tier"
-        ]
+        "tags": ["deploy:serverless", "pricing:free-tier"]
       },
       {
         "slug": "aws-app-runner",
@@ -4733,9 +4074,7 @@
           "regions": 4,
           "free_tier": 2
         },
-        "tags": [
-          "deploy:serverless"
-        ]
+        "tags": ["deploy:serverless"]
       },
       {
         "slug": "azure-container-apps",
@@ -4749,9 +4088,7 @@
           "regions": 5,
           "free_tier": 3
         },
-        "tags": [
-          "deploy:serverless"
-        ]
+        "tags": ["deploy:serverless"]
       },
       {
         "slug": "aws-lambda",
@@ -4765,10 +4102,7 @@
           "regions": 5,
           "free_tier": 4
         },
-        "tags": [
-          "deploy:serverless",
-          "pricing:free-tier"
-        ]
+        "tags": ["deploy:serverless", "pricing:free-tier"]
       },
       {
         "slug": "scaleway",
@@ -4782,10 +4116,7 @@
           "regions": 3,
           "free_tier": 3
         },
-        "tags": [
-          "deploy:serverless",
-          "pricing:free-tier"
-        ]
+        "tags": ["deploy:serverless", "pricing:free-tier"]
       },
       {
         "slug": "coolify",
@@ -4799,10 +4130,7 @@
           "regions": 2,
           "free_tier": 5
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
         "slug": "dokploy",
@@ -4816,11 +4144,7 @@
           "regions": 2,
           "free_tier": 5
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier",
-          "language:typescript"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier", "language:typescript"]
       },
       {
         "slug": "qovery",
@@ -4848,9 +4172,7 @@
           "regions": 3,
           "free_tier": 3
         },
-        "tags": [
-          "pricing:free-tier"
-        ]
+        "tags": ["pricing:free-tier"]
       },
       {
         "slug": "sevalla",
@@ -4864,9 +4186,7 @@
           "regions": 4,
           "free_tier": 3
         },
-        "tags": [
-          "pricing:free-tier"
-        ]
+        "tags": ["pricing:free-tier"]
       },
       {
         "slug": "sliplane",
@@ -4952,9 +4272,7 @@
           "ecosystem": 3,
           "cost": 4
         },
-        "tags": [
-          "pricing:free-tier"
-        ]
+        "tags": ["pricing:free-tier"]
       },
       {
         "slug": "azure-devops",
@@ -4968,9 +4286,7 @@
           "ecosystem": 5,
           "cost": 4
         },
-        "tags": [
-          "pricing:free-tier"
-        ]
+        "tags": ["pricing:free-tier"]
       },
       {
         "slug": "teamcity",
@@ -4984,10 +4300,7 @@
           "ecosystem": 4,
           "cost": 4
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
         "slug": "drone-ci",
@@ -5001,10 +4314,7 @@
           "ecosystem": 3,
           "cost": 5
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
         "slug": "concourse-ci",
@@ -5018,10 +4328,7 @@
           "ecosystem": 3,
           "cost": 5
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
         "slug": "argo-cd",
@@ -5035,10 +4342,7 @@
           "ecosystem": 4,
           "cost": 5
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
         "slug": "dagger",
@@ -5052,10 +4356,7 @@
           "ecosystem": 3,
           "cost": 5
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
         "slug": "gocd",
@@ -5069,10 +4370,7 @@
           "ecosystem": 3,
           "cost": 5
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
         "slug": "octopus-deploy",
@@ -5086,9 +4384,7 @@
           "ecosystem": 4,
           "cost": 3
         },
-        "tags": [
-          "self-hostable:yes"
-        ]
+        "tags": ["self-hostable:yes"]
       },
       {
         "slug": "spacelift",
@@ -5102,9 +4398,7 @@
           "ecosystem": 4,
           "cost": 3
         },
-        "tags": [
-          "pricing:free-tier"
-        ]
+        "tags": ["pricing:free-tier"]
       },
       {
         "slug": "harness",
@@ -5118,9 +4412,7 @@
           "ecosystem": 4,
           "cost": 3
         },
-        "tags": [
-          "pricing:free-tier"
-        ]
+        "tags": ["pricing:free-tier"]
       },
       {
         "slug": "flux-cd",
@@ -5134,10 +4426,7 @@
           "ecosystem": 4,
           "cost": 5
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
         "slug": "tekton",
@@ -5151,10 +4440,7 @@
           "ecosystem": 4,
           "cost": 5
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
         "slug": "depot",
@@ -5168,9 +4454,7 @@
           "ecosystem": 3,
           "cost": 4
         },
-        "tags": [
-          "pricing:free-tier"
-        ]
+        "tags": ["pricing:free-tier"]
       },
       {
         "slug": "mergify",
@@ -5184,9 +4468,7 @@
           "ecosystem": 4,
           "cost": 4
         },
-        "tags": [
-          "pricing:free-tier"
-        ]
+        "tags": ["pricing:free-tier"]
       },
       {
         "slug": "garden",
@@ -5200,10 +4482,7 @@
           "ecosystem": 3,
           "cost": 4
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       }
     ],
     "queues-and-jobs": [
@@ -5219,10 +4498,7 @@
           "dx": 3,
           "cost": 5
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
         "slug": "apache-kafka",
@@ -5236,10 +4512,7 @@
           "dx": 2,
           "cost": 4
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
         "slug": "nats",
@@ -5253,11 +4526,7 @@
           "dx": 4,
           "cost": 5
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier",
-          "realtime:yes"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier", "realtime:yes"]
       },
       {
         "slug": "redpanda",
@@ -5271,10 +4540,7 @@
           "dx": 4,
           "cost": 4
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
         "slug": "celery",
@@ -5288,11 +4554,7 @@
           "dx": 3,
           "cost": 5
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier",
-          "language:python"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier", "language:python"]
       },
       {
         "slug": "sidekiq",
@@ -5306,10 +4568,7 @@
           "dx": 4,
           "cost": 4
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
         "slug": "faktory",
@@ -5323,10 +4582,7 @@
           "dx": 4,
           "cost": 4
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
         "slug": "hangfire",
@@ -5340,10 +4596,7 @@
           "dx": 4,
           "cost": 5
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
         "slug": "apache-airflow",
@@ -5357,11 +4610,7 @@
           "dx": 3,
           "cost": 5
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier",
-          "language:python"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier", "language:python"]
       },
       {
         "slug": "prefect",
@@ -5375,11 +4624,7 @@
           "dx": 5,
           "cost": 4
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier",
-          "language:python"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier", "language:python"]
       },
       {
         "slug": "dagster",
@@ -5393,11 +4638,7 @@
           "dx": 5,
           "cost": 4
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier",
-          "language:python"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier", "language:python"]
       },
       {
         "slug": "graphile-worker",
@@ -5411,11 +4652,7 @@
           "dx": 4,
           "cost": 5
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier",
-          "language:typescript"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier", "language:typescript"]
       },
       {
         "slug": "river-queue",
@@ -5429,10 +4666,7 @@
           "dx": 4,
           "cost": 5
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
         "slug": "google-cloud-tasks",
@@ -5446,10 +4680,7 @@
           "dx": 3,
           "cost": 4
         },
-        "tags": [
-          "deploy:serverless",
-          "pricing:free-tier"
-        ]
+        "tags": ["deploy:serverless", "pricing:free-tier"]
       },
       {
         "slug": "google-pubsub",
@@ -5463,11 +4694,7 @@
           "dx": 3,
           "cost": 4
         },
-        "tags": [
-          "deploy:serverless",
-          "pricing:free-tier",
-          "realtime:yes"
-        ]
+        "tags": ["deploy:serverless", "pricing:free-tier", "realtime:yes"]
       },
       {
         "slug": "windmill",
@@ -5481,12 +4708,7 @@
           "dx": 5,
           "cost": 5
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier",
-          "language:typescript",
-          "language:python"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier", "language:typescript", "language:python"]
       }
     ],
     "observability": [
@@ -5502,10 +4724,7 @@
           "cost": 5,
           "integrations": 5
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
         "slug": "opentelemetry",
@@ -5519,10 +4738,7 @@
           "cost": 5,
           "integrations": 5
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
         "slug": "grafana-loki",
@@ -5536,10 +4752,7 @@
           "cost": 5,
           "integrations": 4
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
         "slug": "signoz",
@@ -5553,10 +4766,7 @@
           "cost": 5,
           "integrations": 4
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
         "slug": "uptrace",
@@ -5570,10 +4780,7 @@
           "cost": 5,
           "integrations": 3
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
         "slug": "openobserve",
@@ -5587,10 +4794,7 @@
           "cost": 5,
           "integrations": 4
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
         "slug": "dynatrace",
@@ -5632,10 +4836,7 @@
           "cost": 3,
           "integrations": 5
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
         "slug": "chronosphere",
@@ -5719,10 +4920,7 @@
           "cost": 4,
           "integrations": 4
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
         "slug": "appsignal",
@@ -5736,9 +4934,7 @@
           "cost": 4,
           "integrations": 3
         },
-        "tags": [
-          "pricing:free-tier"
-        ]
+        "tags": ["pricing:free-tier"]
       }
     ],
     "headless-cms": [
@@ -5754,11 +4950,7 @@
           "cost": 5,
           "ecosystem": 3
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier",
-          "language:typescript"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier", "language:typescript"]
       },
       {
         "slug": "builder-io",
@@ -5772,9 +4964,7 @@
           "cost": 3,
           "ecosystem": 4
         },
-        "tags": [
-          "pricing:free-tier"
-        ]
+        "tags": ["pricing:free-tier"]
       },
       {
         "slug": "cosmic",
@@ -5788,9 +4978,7 @@
           "cost": 4,
           "ecosystem": 3
         },
-        "tags": [
-          "pricing:free-tier"
-        ]
+        "tags": ["pricing:free-tier"]
       },
       {
         "slug": "prismic",
@@ -5804,9 +4992,7 @@
           "cost": 3,
           "ecosystem": 4
         },
-        "tags": [
-          "pricing:free-tier"
-        ]
+        "tags": ["pricing:free-tier"]
       },
       {
         "slug": "ghost",
@@ -5834,9 +5020,7 @@
           "cost": 3,
           "ecosystem": 4
         },
-        "tags": [
-          "pricing:free-tier"
-        ]
+        "tags": ["pricing:free-tier"]
       },
       {
         "slug": "kontent-ai",
@@ -5892,10 +5076,7 @@
           "cost": 4,
           "ecosystem": 3
         },
-        "tags": [
-          "self-hostable:yes",
-          "deploy:serverless"
-        ]
+        "tags": ["self-hostable:yes", "deploy:serverless"]
       },
       {
         "slug": "wordpress-rest",
@@ -5909,10 +5090,7 @@
           "cost": 5,
           "ecosystem": 5
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
         "slug": "statamic",
@@ -5940,9 +5118,7 @@
           "cost": 4,
           "ecosystem": 3
         },
-        "tags": [
-          "pricing:free-tier"
-        ]
+        "tags": ["pricing:free-tier"]
       },
       {
         "slug": "sitecore-xm-cloud",
@@ -5972,9 +5148,7 @@
           "ecosystem": 5,
           "learning_curve": 5
         },
-        "tags": [
-          "language:python"
-        ]
+        "tags": ["language:python"]
       },
       {
         "slug": "django",
@@ -5988,9 +5162,7 @@
           "ecosystem": 5,
           "learning_curve": 3
         },
-        "tags": [
-          "language:python"
-        ]
+        "tags": ["language:python"]
       },
       {
         "slug": "flask",
@@ -6004,9 +5176,7 @@
           "ecosystem": 5,
           "learning_curve": 5
         },
-        "tags": [
-          "language:python"
-        ]
+        "tags": ["language:python"]
       },
       {
         "slug": "litestar",
@@ -6020,9 +5190,7 @@
           "ecosystem": 3,
           "learning_curve": 4
         },
-        "tags": [
-          "language:python"
-        ]
+        "tags": ["language:python"]
       },
       {
         "slug": "gin",
@@ -6176,9 +5344,7 @@
           "ecosystem": 3,
           "learning_curve": 3
         },
-        "tags": [
-          "realtime:yes"
-        ]
+        "tags": ["realtime:yes"]
       },
       {
         "slug": "aspnet-core",
@@ -6206,9 +5372,7 @@
           "ecosystem": 4,
           "learning_curve": 4
         },
-        "tags": [
-          "language:python"
-        ]
+        "tags": ["language:python"]
       },
       {
         "slug": "go-kit",
@@ -6308,9 +5472,7 @@
           "ui_quality": 4,
           "deploy_speed": 5
         },
-        "tags": [
-          "pricing:free-tier"
-        ]
+        "tags": ["pricing:free-tier"]
       },
       {
         "slug": "solar2d",
@@ -6429,9 +5591,7 @@
             "scalability": 5,
             "ops_burden": 5
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         },
         {
           "slug": "azure-aks",
@@ -6445,9 +5605,7 @@
             "scalability": 5,
             "ops_burden": 4
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         },
         {
           "slug": "openshift",
@@ -6461,9 +5619,7 @@
             "scalability": 4,
             "ops_burden": 3
           },
-          "tags": [
-            "self-hostable:yes"
-          ]
+          "tags": ["self-hostable:yes"]
         },
         {
           "slug": "rancher",
@@ -6477,10 +5633,7 @@
             "scalability": 4,
             "ops_burden": 3
           },
-          "tags": [
-            "self-hostable:yes",
-            "pricing:free-tier"
-          ]
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
         },
         {
           "slug": "k3s",
@@ -6494,10 +5647,7 @@
             "scalability": 3,
             "ops_burden": 3
           },
-          "tags": [
-            "self-hostable:yes",
-            "pricing:free-tier"
-          ]
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
         },
         {
           "slug": "hashicorp-nomad",
@@ -6511,10 +5661,7 @@
             "scalability": 4,
             "ops_burden": 4
           },
-          "tags": [
-            "self-hostable:yes",
-            "pricing:free-tier"
-          ]
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
         },
         {
           "slug": "docker-swarm",
@@ -6528,10 +5675,7 @@
             "scalability": 2,
             "ops_burden": 3
           },
-          "tags": [
-            "self-hostable:yes",
-            "pricing:free-tier"
-          ]
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
         },
         {
           "slug": "digitalocean-kubernetes",
@@ -6545,9 +5689,7 @@
             "scalability": 3,
             "ops_burden": 4
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         },
         {
           "slug": "linode-lke",
@@ -6561,9 +5703,7 @@
             "scalability": 3,
             "ops_burden": 4
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         },
         {
           "slug": "oci-oke",
@@ -6577,9 +5717,7 @@
             "scalability": 4,
             "ops_burden": 4
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         },
         {
           "slug": "talos-linux",
@@ -6593,10 +5731,7 @@
             "scalability": 4,
             "ops_burden": 4
           },
-          "tags": [
-            "self-hostable:yes",
-            "pricing:free-tier"
-          ]
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
         },
         {
           "slug": "rke2",
@@ -6610,10 +5745,7 @@
             "scalability": 4,
             "ops_burden": 3
           },
-          "tags": [
-            "self-hostable:yes",
-            "pricing:free-tier"
-          ]
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
         },
         {
           "slug": "kind",
@@ -6627,10 +5759,7 @@
             "scalability": 1,
             "ops_burden": 4
           },
-          "tags": [
-            "self-hostable:yes",
-            "pricing:free-tier"
-          ]
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
         },
         {
           "slug": "portainer",
@@ -6644,10 +5773,7 @@
             "scalability": 3,
             "ops_burden": 4
           },
-          "tags": [
-            "self-hostable:yes",
-            "pricing:free-tier"
-          ]
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
         }
       ]
     },
@@ -6696,9 +5822,7 @@
             "multi_cloud": 5,
             "state_management": 4
           },
-          "tags": [
-            "self-hostable:yes"
-          ]
+          "tags": ["self-hostable:yes"]
         },
         {
           "slug": "opentofu",
@@ -6712,10 +5836,7 @@
             "multi_cloud": 5,
             "state_management": 4
           },
-          "tags": [
-            "self-hostable:yes",
-            "pricing:free-tier"
-          ]
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
         },
         {
           "slug": "pulumi",
@@ -6748,11 +5869,7 @@
             "multi_cloud": 1,
             "state_management": 4
           },
-          "tags": [
-            "pricing:free-tier",
-            "language:typescript",
-            "language:python"
-          ]
+          "tags": ["pricing:free-tier", "language:typescript", "language:python"]
         },
         {
           "slug": "ansible",
@@ -6766,11 +5883,7 @@
             "multi_cloud": 4,
             "state_management": 2
           },
-          "tags": [
-            "self-hostable:yes",
-            "pricing:free-tier",
-            "language:python"
-          ]
+          "tags": ["self-hostable:yes", "pricing:free-tier", "language:python"]
         },
         {
           "slug": "crossplane",
@@ -6784,10 +5897,7 @@
             "multi_cloud": 4,
             "state_management": 5
           },
-          "tags": [
-            "self-hostable:yes",
-            "pricing:free-tier"
-          ]
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
         },
         {
           "slug": "sst",
@@ -6801,11 +5911,7 @@
             "multi_cloud": 2,
             "state_management": 4
           },
-          "tags": [
-            "pricing:free-tier",
-            "language:typescript",
-            "deploy:serverless"
-          ]
+          "tags": ["pricing:free-tier", "language:typescript", "deploy:serverless"]
         },
         {
           "slug": "terragrunt",
@@ -6819,10 +5925,7 @@
             "multi_cloud": 5,
             "state_management": 4
           },
-          "tags": [
-            "self-hostable:yes",
-            "pricing:free-tier"
-          ]
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
         },
         {
           "slug": "aws-cloudformation",
@@ -6836,9 +5939,7 @@
             "multi_cloud": 1,
             "state_management": 4
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         },
         {
           "slug": "azure-bicep",
@@ -6852,9 +5953,7 @@
             "multi_cloud": 1,
             "state_management": 3
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         },
         {
           "slug": "cdk-for-terraform",
@@ -6887,10 +5986,7 @@
             "multi_cloud": 4,
             "state_management": 4
           },
-          "tags": [
-            "self-hostable:yes",
-            "pricing:free-tier"
-          ]
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
         },
         {
           "slug": "atlantis",
@@ -6904,10 +6000,7 @@
             "multi_cloud": 4,
             "state_management": 3
           },
-          "tags": [
-            "self-hostable:yes",
-            "pricing:free-tier"
-          ]
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
         },
         {
           "slug": "env0",
@@ -6947,11 +6040,7 @@
             "multi_cloud": 3,
             "state_management": 3
           },
-          "tags": [
-            "self-hostable:yes",
-            "pricing:free-tier",
-            "deploy:serverless"
-          ]
+          "tags": ["self-hostable:yes", "pricing:free-tier", "deploy:serverless"]
         }
       ]
     },
@@ -7000,9 +6089,7 @@
             "protocol_support": 5,
             "automation": 5
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         },
         {
           "slug": "insomnia",
@@ -7016,9 +6103,7 @@
             "protocol_support": 5,
             "automation": 4
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         },
         {
           "slug": "bruno",
@@ -7032,10 +6117,7 @@
             "protocol_support": 4,
             "automation": 4
           },
-          "tags": [
-            "self-hostable:yes",
-            "pricing:free-tier"
-          ]
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
         },
         {
           "slug": "hoppscotch",
@@ -7049,10 +6131,7 @@
             "protocol_support": 5,
             "automation": 3
           },
-          "tags": [
-            "self-hostable:yes",
-            "pricing:free-tier"
-          ]
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
         },
         {
           "slug": "thunder-client",
@@ -7066,9 +6145,7 @@
             "protocol_support": 3,
             "automation": 3
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         },
         {
           "slug": "hurl",
@@ -7082,10 +6159,7 @@
             "protocol_support": 2,
             "automation": 5
           },
-          "tags": [
-            "self-hostable:yes",
-            "pricing:free-tier"
-          ]
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
         },
         {
           "slug": "schemathesis",
@@ -7099,11 +6173,7 @@
             "protocol_support": 3,
             "automation": 5
           },
-          "tags": [
-            "self-hostable:yes",
-            "pricing:free-tier",
-            "language:python"
-          ]
+          "tags": ["self-hostable:yes", "pricing:free-tier", "language:python"]
         },
         {
           "slug": "k6-load-testing",
@@ -7117,10 +6187,7 @@
             "protocol_support": 4,
             "automation": 5
           },
-          "tags": [
-            "self-hostable:yes",
-            "pricing:free-tier"
-          ]
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
         },
         {
           "slug": "httpie",
@@ -7134,11 +6201,7 @@
             "protocol_support": 2,
             "automation": 3
           },
-          "tags": [
-            "self-hostable:yes",
-            "pricing:free-tier",
-            "language:python"
-          ]
+          "tags": ["self-hostable:yes", "pricing:free-tier", "language:python"]
         },
         {
           "slug": "karate-dsl",
@@ -7152,10 +6215,7 @@
             "protocol_support": 3,
             "automation": 5
           },
-          "tags": [
-            "self-hostable:yes",
-            "pricing:free-tier"
-          ]
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
         },
         {
           "slug": "rest-assured",
@@ -7169,10 +6229,7 @@
             "protocol_support": 2,
             "automation": 5
           },
-          "tags": [
-            "self-hostable:yes",
-            "pricing:free-tier"
-          ]
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
         },
         {
           "slug": "pact",
@@ -7186,10 +6243,7 @@
             "protocol_support": 3,
             "automation": 5
           },
-          "tags": [
-            "self-hostable:yes",
-            "pricing:free-tier"
-          ]
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
         },
         {
           "slug": "soapui",
@@ -7203,10 +6257,7 @@
             "protocol_support": 3,
             "automation": 4
           },
-          "tags": [
-            "self-hostable:yes",
-            "pricing:free-tier"
-          ]
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
         },
         {
           "slug": "step-ci",
@@ -7220,10 +6271,7 @@
             "protocol_support": 3,
             "automation": 5
           },
-          "tags": [
-            "self-hostable:yes",
-            "pricing:free-tier"
-          ]
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
         },
         {
           "slug": "apidog",
@@ -7237,9 +6285,7 @@
             "protocol_support": 4,
             "automation": 4
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         }
       ]
     },
@@ -7288,9 +6334,7 @@
             "customization": 4,
             "data_connectors": 5
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         },
         {
           "slug": "appsmith",
@@ -7304,10 +6348,7 @@
             "customization": 4,
             "data_connectors": 5
           },
-          "tags": [
-            "self-hostable:yes",
-            "pricing:free-tier"
-          ]
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
         },
         {
           "slug": "tooljet",
@@ -7321,10 +6362,7 @@
             "customization": 4,
             "data_connectors": 5
           },
-          "tags": [
-            "self-hostable:yes",
-            "pricing:free-tier"
-          ]
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
         },
         {
           "slug": "budibase",
@@ -7338,10 +6376,7 @@
             "customization": 3,
             "data_connectors": 4
           },
-          "tags": [
-            "self-hostable:yes",
-            "pricing:free-tier"
-          ]
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
         },
         {
           "slug": "superblocks",
@@ -7368,9 +6403,7 @@
             "customization": 4,
             "data_connectors": 4
           },
-          "tags": [
-            "self-hostable:yes"
-          ]
+          "tags": ["self-hostable:yes"]
         },
         {
           "slug": "illa-cloud",
@@ -7384,10 +6417,7 @@
             "customization": 3,
             "data_connectors": 4
           },
-          "tags": [
-            "self-hostable:yes",
-            "pricing:free-tier"
-          ]
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
         },
         {
           "slug": "forest-admin",
@@ -7401,10 +6431,7 @@
             "customization": 3,
             "data_connectors": 4
           },
-          "tags": [
-            "self-hostable:yes",
-            "pricing:free-tier"
-          ]
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
         },
         {
           "slug": "refine",
@@ -7418,11 +6445,7 @@
             "customization": 5,
             "data_connectors": 4
           },
-          "tags": [
-            "self-hostable:yes",
-            "pricing:free-tier",
-            "language:typescript"
-          ]
+          "tags": ["self-hostable:yes", "pricing:free-tier", "language:typescript"]
         },
         {
           "slug": "react-admin",
@@ -7436,11 +6459,7 @@
             "customization": 5,
             "data_connectors": 4
           },
-          "tags": [
-            "self-hostable:yes",
-            "pricing:free-tier",
-            "language:typescript"
-          ]
+          "tags": ["self-hostable:yes", "pricing:free-tier", "language:typescript"]
         },
         {
           "slug": "nocodb",
@@ -7454,10 +6473,7 @@
             "customization": 3,
             "data_connectors": 4
           },
-          "tags": [
-            "self-hostable:yes",
-            "pricing:free-tier"
-          ]
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
         },
         {
           "slug": "baserow",
@@ -7471,10 +6487,7 @@
             "customization": 3,
             "data_connectors": 3
           },
-          "tags": [
-            "self-hostable:yes",
-            "pricing:free-tier"
-          ]
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
         },
         {
           "slug": "lowdefy",
@@ -7488,10 +6501,7 @@
             "customization": 4,
             "data_connectors": 4
           },
-          "tags": [
-            "self-hostable:yes",
-            "pricing:free-tier"
-          ]
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
         },
         {
           "slug": "jet-admin",
@@ -7505,9 +6515,7 @@
             "customization": 3,
             "data_connectors": 4
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         }
       ]
     },
@@ -7556,10 +6564,7 @@
             "api_docs": 5,
             "customization": 4
           },
-          "tags": [
-            "pricing:free-tier",
-            "language:typescript"
-          ]
+          "tags": ["pricing:free-tier", "language:typescript"]
         },
         {
           "slug": "gitbook",
@@ -7573,9 +6578,7 @@
             "api_docs": 4,
             "customization": 4
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         },
         {
           "slug": "readme",
@@ -7589,9 +6592,7 @@
             "api_docs": 5,
             "customization": 4
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         },
         {
           "slug": "fern",
@@ -7605,9 +6606,7 @@
             "api_docs": 5,
             "customization": 4
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         },
         {
           "slug": "redocly",
@@ -7621,9 +6620,7 @@
             "api_docs": 5,
             "customization": 4
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         },
         {
           "slug": "stoplight",
@@ -7637,9 +6634,7 @@
             "api_docs": 5,
             "customization": 3
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         },
         {
           "slug": "bump-sh",
@@ -7653,9 +6648,7 @@
             "api_docs": 5,
             "customization": 3
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         },
         {
           "slug": "nextra",
@@ -7669,11 +6662,7 @@
             "api_docs": 2,
             "customization": 5
           },
-          "tags": [
-            "self-hostable:yes",
-            "pricing:free-tier",
-            "language:typescript"
-          ]
+          "tags": ["self-hostable:yes", "pricing:free-tier", "language:typescript"]
         },
         {
           "slug": "starlight",
@@ -7687,11 +6676,7 @@
             "api_docs": 2,
             "customization": 5
           },
-          "tags": [
-            "self-hostable:yes",
-            "pricing:free-tier",
-            "language:typescript"
-          ]
+          "tags": ["self-hostable:yes", "pricing:free-tier", "language:typescript"]
         },
         {
           "slug": "docusaurus-platform",
@@ -7705,11 +6690,7 @@
             "api_docs": 3,
             "customization": 5
           },
-          "tags": [
-            "self-hostable:yes",
-            "pricing:free-tier",
-            "language:typescript"
-          ]
+          "tags": ["self-hostable:yes", "pricing:free-tier", "language:typescript"]
         },
         {
           "slug": "vitepress",
@@ -7723,11 +6704,7 @@
             "api_docs": 2,
             "customization": 4
           },
-          "tags": [
-            "self-hostable:yes",
-            "pricing:free-tier",
-            "language:typescript"
-          ]
+          "tags": ["self-hostable:yes", "pricing:free-tier", "language:typescript"]
         },
         {
           "slug": "readthedocs",
@@ -7741,11 +6718,7 @@
             "api_docs": 2,
             "customization": 3
           },
-          "tags": [
-            "self-hostable:yes",
-            "pricing:free-tier",
-            "language:python"
-          ]
+          "tags": ["self-hostable:yes", "pricing:free-tier", "language:python"]
         },
         {
           "slug": "mkdocs-material",
@@ -7759,11 +6732,7 @@
             "api_docs": 2,
             "customization": 4
           },
-          "tags": [
-            "self-hostable:yes",
-            "pricing:free-tier",
-            "language:python"
-          ]
+          "tags": ["self-hostable:yes", "pricing:free-tier", "language:python"]
         },
         {
           "slug": "document360",
@@ -7777,9 +6746,7 @@
             "api_docs": 3,
             "customization": 3
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         },
         {
           "slug": "archbee",
@@ -7806,9 +6773,7 @@
             "api_docs": 1,
             "customization": 2
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         }
       ]
     },
@@ -7870,9 +6835,7 @@
             "data_coverage": 4,
             "feature_breadth": 5
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         },
         {
           "slug": "here-technologies",
@@ -7886,9 +6849,7 @@
             "data_coverage": 5,
             "feature_breadth": 5
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         },
         {
           "slug": "tomtom",
@@ -7902,9 +6863,7 @@
             "data_coverage": 4,
             "feature_breadth": 5
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         },
         {
           "slug": "azure-maps",
@@ -7918,9 +6877,7 @@
             "data_coverage": 4,
             "feature_breadth": 4
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         },
         {
           "slug": "esri-arcgis",
@@ -7934,9 +6891,7 @@
             "data_coverage": 5,
             "feature_breadth": 5
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         },
         {
           "slug": "maptiler",
@@ -7950,10 +6905,7 @@
             "data_coverage": 4,
             "feature_breadth": 3
           },
-          "tags": [
-            "pricing:free-tier",
-            "self-hostable:yes"
-          ]
+          "tags": ["pricing:free-tier", "self-hostable:yes"]
         },
         {
           "slug": "stadia-maps",
@@ -7967,9 +6919,7 @@
             "data_coverage": 3,
             "feature_breadth": 3
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         },
         {
           "slug": "protomaps",
@@ -7983,10 +6933,7 @@
             "data_coverage": 3,
             "feature_breadth": 2
           },
-          "tags": [
-            "self-hostable:yes",
-            "pricing:free-tier"
-          ]
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
         },
         {
           "slug": "radar-io",
@@ -8000,9 +6947,7 @@
             "data_coverage": 3,
             "feature_breadth": 4
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         },
         {
           "slug": "geoapify",
@@ -8016,9 +6961,7 @@
             "data_coverage": 3,
             "feature_breadth": 4
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         },
         {
           "slug": "locationiq",
@@ -8032,9 +6975,7 @@
             "data_coverage": 3,
             "feature_breadth": 3
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         },
         {
           "slug": "geocodio",
@@ -8048,9 +6989,7 @@
             "data_coverage": 2,
             "feature_breadth": 2
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         },
         {
           "slug": "ipinfo",
@@ -8064,9 +7003,7 @@
             "data_coverage": 4,
             "feature_breadth": 2
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         },
         {
           "slug": "maxmind",
@@ -8080,10 +7017,7 @@
             "data_coverage": 4,
             "feature_breadth": 2
           },
-          "tags": [
-            "pricing:free-tier",
-            "self-hostable:yes"
-          ]
+          "tags": ["pricing:free-tier", "self-hostable:yes"]
         },
         {
           "slug": "ipgeolocation",
@@ -8097,9 +7031,7 @@
             "data_coverage": 3,
             "feature_breadth": 2
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         }
       ]
     },
@@ -8148,9 +7080,7 @@
             "latency": 4,
             "scalability": 5
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         },
         {
           "slug": "cloudflare-stream",
@@ -8164,11 +7094,7 @@
             "latency": 4,
             "scalability": 5
           },
-          "tags": [
-            "runs-on:cloudflare",
-            "deploy:edge",
-            "pricing:free-tier"
-          ]
+          "tags": ["runs-on:cloudflare", "deploy:edge", "pricing:free-tier"]
         },
         {
           "slug": "api-video",
@@ -8182,9 +7108,7 @@
             "latency": 4,
             "scalability": 4
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         },
         {
           "slug": "bitmovin",
@@ -8198,9 +7122,7 @@
             "latency": 2,
             "scalability": 5
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         },
         {
           "slug": "wowza",
@@ -8214,9 +7136,7 @@
             "latency": 4,
             "scalability": 4
           },
-          "tags": [
-            "self-hostable:yes"
-          ]
+          "tags": ["self-hostable:yes"]
         },
         {
           "slug": "livepeer",
@@ -8230,10 +7150,7 @@
             "latency": 3,
             "scalability": 4
           },
-          "tags": [
-            "self-hostable:yes",
-            "pricing:free-tier"
-          ]
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
         },
         {
           "slug": "fastpix",
@@ -8247,9 +7164,7 @@
             "latency": 4,
             "scalability": 4
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         },
         {
           "slug": "livekit-cloud",
@@ -8263,11 +7178,7 @@
             "latency": 5,
             "scalability": 5
           },
-          "tags": [
-            "self-hostable:yes",
-            "pricing:free-tier",
-            "realtime:yes"
-          ]
+          "tags": ["self-hostable:yes", "pricing:free-tier", "realtime:yes"]
         },
         {
           "slug": "daily",
@@ -8281,10 +7192,7 @@
             "latency": 5,
             "scalability": 4
           },
-          "tags": [
-            "pricing:free-tier",
-            "realtime:yes"
-          ]
+          "tags": ["pricing:free-tier", "realtime:yes"]
         },
         {
           "slug": "agora",
@@ -8298,10 +7206,7 @@
             "latency": 5,
             "scalability": 5
           },
-          "tags": [
-            "pricing:free-tier",
-            "realtime:yes"
-          ]
+          "tags": ["pricing:free-tier", "realtime:yes"]
         },
         {
           "slug": "100ms",
@@ -8315,10 +7220,7 @@
             "latency": 5,
             "scalability": 4
           },
-          "tags": [
-            "pricing:free-tier",
-            "realtime:yes"
-          ]
+          "tags": ["pricing:free-tier", "realtime:yes"]
         },
         {
           "slug": "vonage-video",
@@ -8332,10 +7234,7 @@
             "latency": 4,
             "scalability": 4
           },
-          "tags": [
-            "pricing:free-tier",
-            "realtime:yes"
-          ]
+          "tags": ["pricing:free-tier", "realtime:yes"]
         },
         {
           "slug": "zego",
@@ -8349,10 +7248,7 @@
             "latency": 5,
             "scalability": 4
           },
-          "tags": [
-            "pricing:free-tier",
-            "realtime:yes"
-          ]
+          "tags": ["pricing:free-tier", "realtime:yes"]
         },
         {
           "slug": "dyte",
@@ -8366,10 +7262,7 @@
             "latency": 5,
             "scalability": 3
           },
-          "tags": [
-            "pricing:free-tier",
-            "realtime:yes"
-          ]
+          "tags": ["pricing:free-tier", "realtime:yes"]
         },
         {
           "slug": "whereby",
@@ -8383,10 +7276,7 @@
             "latency": 4,
             "scalability": 2
           },
-          "tags": [
-            "pricing:free-tier",
-            "realtime:yes"
-          ]
+          "tags": ["pricing:free-tier", "realtime:yes"]
         },
         {
           "slug": "mediasoup",
@@ -8400,12 +7290,7 @@
             "latency": 5,
             "scalability": 4
           },
-          "tags": [
-            "self-hostable:yes",
-            "pricing:free-tier",
-            "realtime:yes",
-            "language:typescript"
-          ]
+          "tags": ["self-hostable:yes", "pricing:free-tier", "realtime:yes", "language:typescript"]
         }
       ]
     },
@@ -8454,11 +7339,7 @@
             "cold_start": 3,
             "model_catalog": 5
           },
-          "tags": [
-            "deploy:serverless",
-            "pricing:free-tier",
-            "language:python"
-          ]
+          "tags": ["deploy:serverless", "pricing:free-tier", "language:python"]
         },
         {
           "slug": "modal-labs",
@@ -8472,11 +7353,7 @@
             "cold_start": 5,
             "model_catalog": 3
           },
-          "tags": [
-            "deploy:serverless",
-            "pricing:free-tier",
-            "language:python"
-          ]
+          "tags": ["deploy:serverless", "pricing:free-tier", "language:python"]
         },
         {
           "slug": "baseten-ai",
@@ -8490,10 +7367,7 @@
             "cold_start": 4,
             "model_catalog": 4
           },
-          "tags": [
-            "deploy:serverless",
-            "language:python"
-          ]
+          "tags": ["deploy:serverless", "language:python"]
         },
         {
           "slug": "runpod-io",
@@ -8507,10 +7381,7 @@
             "cold_start": 5,
             "model_catalog": 3
           },
-          "tags": [
-            "deploy:serverless",
-            "pricing:free-tier"
-          ]
+          "tags": ["deploy:serverless", "pricing:free-tier"]
         },
         {
           "slug": "together-inference",
@@ -8524,10 +7395,7 @@
             "cold_start": 4,
             "model_catalog": 5
           },
-          "tags": [
-            "deploy:serverless",
-            "pricing:free-tier"
-          ]
+          "tags": ["deploy:serverless", "pricing:free-tier"]
         },
         {
           "slug": "fireworks-inference",
@@ -8541,10 +7409,7 @@
             "cold_start": 4,
             "model_catalog": 5
           },
-          "tags": [
-            "deploy:serverless",
-            "pricing:free-tier"
-          ]
+          "tags": ["deploy:serverless", "pricing:free-tier"]
         },
         {
           "slug": "fal-ai",
@@ -8558,10 +7423,7 @@
             "cold_start": 5,
             "model_catalog": 4
           },
-          "tags": [
-            "deploy:serverless",
-            "pricing:free-tier"
-          ]
+          "tags": ["deploy:serverless", "pricing:free-tier"]
         },
         {
           "slug": "beam-cloud",
@@ -8575,11 +7437,7 @@
             "cold_start": 5,
             "model_catalog": 2
           },
-          "tags": [
-            "deploy:serverless",
-            "pricing:free-tier",
-            "language:python"
-          ]
+          "tags": ["deploy:serverless", "pricing:free-tier", "language:python"]
         },
         {
           "slug": "cerebrium-ai",
@@ -8593,11 +7451,7 @@
             "cold_start": 4,
             "model_catalog": 2
           },
-          "tags": [
-            "deploy:serverless",
-            "pricing:free-tier",
-            "language:python"
-          ]
+          "tags": ["deploy:serverless", "pricing:free-tier", "language:python"]
         },
         {
           "slug": "huggingface-inference",
@@ -8611,11 +7465,7 @@
             "cold_start": 3,
             "model_catalog": 5
           },
-          "tags": [
-            "deploy:serverless",
-            "pricing:free-tier",
-            "language:python"
-          ]
+          "tags": ["deploy:serverless", "pricing:free-tier", "language:python"]
         },
         {
           "slug": "anyscale",
@@ -8629,10 +7479,7 @@
             "cold_start": 2,
             "model_catalog": 3
           },
-          "tags": [
-            "deploy:serverless",
-            "language:python"
-          ]
+          "tags": ["deploy:serverless", "language:python"]
         },
         {
           "slug": "deepinfra",
@@ -8646,10 +7493,7 @@
             "cold_start": 4,
             "model_catalog": 4
           },
-          "tags": [
-            "deploy:serverless",
-            "pricing:free-tier"
-          ]
+          "tags": ["deploy:serverless", "pricing:free-tier"]
         },
         {
           "slug": "novita-ai",
@@ -8663,10 +7507,7 @@
             "cold_start": 4,
             "model_catalog": 4
           },
-          "tags": [
-            "deploy:serverless",
-            "pricing:free-tier"
-          ]
+          "tags": ["deploy:serverless", "pricing:free-tier"]
         },
         {
           "slug": "inferless",
@@ -8680,10 +7521,7 @@
             "cold_start": 5,
             "model_catalog": 2
           },
-          "tags": [
-            "deploy:serverless",
-            "pricing:free-tier"
-          ]
+          "tags": ["deploy:serverless", "pricing:free-tier"]
         },
         {
           "slug": "lambda-inference",
@@ -8697,10 +7535,7 @@
             "cold_start": 3,
             "model_catalog": 3
           },
-          "tags": [
-            "deploy:serverless",
-            "pricing:free-tier"
-          ]
+          "tags": ["deploy:serverless", "pricing:free-tier"]
         },
         {
           "slug": "sieve",
@@ -8714,11 +7549,7 @@
             "cold_start": 4,
             "model_catalog": 3
           },
-          "tags": [
-            "deploy:serverless",
-            "pricing:free-tier",
-            "language:python"
-          ]
+          "tags": ["deploy:serverless", "pricing:free-tier", "language:python"]
         }
       ]
     },
@@ -8767,11 +7598,7 @@
             "dx": 4,
             "ecosystem": 5
           },
-          "tags": [
-            "runs-on:cloudflare",
-            "deploy:edge",
-            "pricing:free-tier"
-          ]
+          "tags": ["runs-on:cloudflare", "deploy:edge", "pricing:free-tier"]
         },
         {
           "slug": "fastly",
@@ -8785,10 +7612,7 @@
             "dx": 5,
             "ecosystem": 4
           },
-          "tags": [
-            "deploy:edge",
-            "pricing:free-tier"
-          ]
+          "tags": ["deploy:edge", "pricing:free-tier"]
         },
         {
           "slug": "akamai",
@@ -8815,10 +7639,7 @@
             "dx": 3,
             "ecosystem": 5
           },
-          "tags": [
-            "deploy:edge",
-            "pricing:free-tier"
-          ]
+          "tags": ["deploy:edge", "pricing:free-tier"]
         },
         {
           "slug": "bunny-cdn",
@@ -8845,9 +7666,7 @@
             "dx": 3,
             "ecosystem": 4
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         },
         {
           "slug": "keycdn",
@@ -8913,9 +7732,7 @@
             "dx": 4,
             "ecosystem": 3
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         },
         {
           "slug": "vercel-edge-network",
@@ -8929,11 +7746,7 @@
             "dx": 5,
             "ecosystem": 4
           },
-          "tags": [
-            "deploy:edge",
-            "deploy:serverless",
-            "pricing:free-tier"
-          ]
+          "tags": ["deploy:edge", "deploy:serverless", "pricing:free-tier"]
         },
         {
           "slug": "netlify-cdn",
@@ -8947,11 +7760,7 @@
             "dx": 5,
             "ecosystem": 4
           },
-          "tags": [
-            "deploy:edge",
-            "deploy:serverless",
-            "pricing:free-tier"
-          ]
+          "tags": ["deploy:edge", "deploy:serverless", "pricing:free-tier"]
         },
         {
           "slug": "stackpath",
@@ -8965,9 +7774,7 @@
             "dx": 3,
             "ecosystem": 3
           },
-          "tags": [
-            "deploy:edge"
-          ]
+          "tags": ["deploy:edge"]
         }
       ]
     },
@@ -9016,10 +7823,7 @@
             "dx": 5,
             "ecosystem": 4
           },
-          "tags": [
-            "runs-on:cloudflare",
-            "pricing:free-tier"
-          ]
+          "tags": ["runs-on:cloudflare", "pricing:free-tier"]
         },
         {
           "slug": "aws-route53",
@@ -9137,9 +7941,7 @@
             "dx": 3,
             "ecosystem": 2
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         },
         {
           "slug": "bunny-dns",
@@ -9166,10 +7968,7 @@
             "dx": 4,
             "ecosystem": 2
           },
-          "tags": [
-            "pricing:free-tier",
-            "self-hostable:yes"
-          ]
+          "tags": ["pricing:free-tier", "self-hostable:yes"]
         },
         {
           "slug": "hurricane-electric-dns",
@@ -9183,9 +7982,7 @@
             "dx": 2,
             "ecosystem": 2
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         }
       ]
     },
@@ -9234,9 +8031,7 @@
             "dx": 3,
             "ecosystem": 5
           },
-          "tags": [
-            "self-hostable:yes"
-          ]
+          "tags": ["self-hostable:yes"]
         },
         {
           "slug": "aws-secrets-manager",
@@ -9289,9 +8084,7 @@
             "dx": 5,
             "ecosystem": 4
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         },
         {
           "slug": "infisical",
@@ -9305,11 +8098,7 @@
             "dx": 5,
             "ecosystem": 4
           },
-          "tags": [
-            "self-hostable:yes",
-            "pricing:free-tier",
-            "language:typescript"
-          ]
+          "tags": ["self-hostable:yes", "pricing:free-tier", "language:typescript"]
         },
         {
           "slug": "akeyless",
@@ -9336,9 +8125,7 @@
             "dx": 3,
             "ecosystem": 4
           },
-          "tags": [
-            "self-hostable:yes"
-          ]
+          "tags": ["self-hostable:yes"]
         },
         {
           "slug": "openbao",
@@ -9352,10 +8139,7 @@
             "dx": 3,
             "ecosystem": 3
           },
-          "tags": [
-            "self-hostable:yes",
-            "pricing:free-tier"
-          ]
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
         },
         {
           "slug": "1password-secrets",
@@ -9382,10 +8166,7 @@
             "dx": 4,
             "ecosystem": 3
           },
-          "tags": [
-            "self-hostable:yes",
-            "pricing:free-tier"
-          ]
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
         },
         {
           "slug": "keeper-secrets-manager",
@@ -9412,10 +8193,7 @@
             "dx": 3,
             "ecosystem": 4
           },
-          "tags": [
-            "self-hostable:yes",
-            "pricing:free-tier"
-          ]
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
         }
       ]
     },
@@ -9464,9 +8242,7 @@
             "dx": 5,
             "ecosystem": 5
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         },
         {
           "slug": "typesense-search",
@@ -9480,10 +8256,7 @@
             "dx": 5,
             "ecosystem": 3
           },
-          "tags": [
-            "self-hostable:yes",
-            "pricing:free-tier"
-          ]
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
         },
         {
           "slug": "meilisearch",
@@ -9497,10 +8270,7 @@
             "dx": 5,
             "ecosystem": 3
           },
-          "tags": [
-            "self-hostable:yes",
-            "pricing:free-tier"
-          ]
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
         },
         {
           "slug": "apache-solr",
@@ -9514,10 +8284,7 @@
             "dx": 2,
             "ecosystem": 4
           },
-          "tags": [
-            "self-hostable:yes",
-            "pricing:free-tier"
-          ]
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
         },
         {
           "slug": "pinecone-search",
@@ -9531,9 +8298,7 @@
             "dx": 5,
             "ecosystem": 4
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         },
         {
           "slug": "weaviate-search",
@@ -9547,10 +8312,7 @@
             "dx": 4,
             "ecosystem": 4
           },
-          "tags": [
-            "self-hostable:yes",
-            "pricing:free-tier"
-          ]
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
         },
         {
           "slug": "qdrant-search",
@@ -9564,10 +8326,7 @@
             "dx": 4,
             "ecosystem": 4
           },
-          "tags": [
-            "self-hostable:yes",
-            "pricing:free-tier"
-          ]
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
         },
         {
           "slug": "coveo",
@@ -9594,9 +8353,7 @@
             "dx": 4,
             "ecosystem": 5
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         },
         {
           "slug": "aws-opensearch-service",
@@ -9671,10 +8428,7 @@
             "dx": 3,
             "ecosystem": 4
           },
-          "tags": [
-            "self-hostable:yes",
-            "realtime:yes"
-          ]
+          "tags": ["self-hostable:yes", "realtime:yes"]
         },
         {
           "slug": "amazon-sqs",
@@ -9688,10 +8442,7 @@
             "dx": 4,
             "ecosystem": 5
           },
-          "tags": [
-            "deploy:serverless",
-            "pricing:free-tier"
-          ]
+          "tags": ["deploy:serverless", "pricing:free-tier"]
         },
         {
           "slug": "azure-service-bus",
@@ -9718,10 +8469,7 @@
             "dx": 4,
             "ecosystem": 5
           },
-          "tags": [
-            "pricing:free-tier",
-            "realtime:yes"
-          ]
+          "tags": ["pricing:free-tier", "realtime:yes"]
         },
         {
           "slug": "activemq",
@@ -9735,10 +8483,7 @@
             "dx": 3,
             "ecosystem": 3
           },
-          "tags": [
-            "self-hostable:yes",
-            "pricing:free-tier"
-          ]
+          "tags": ["self-hostable:yes", "pricing:free-tier"]
         },
         {
           "slug": "solace-pubsub",
@@ -9752,10 +8497,7 @@
             "dx": 3,
             "ecosystem": 4
           },
-          "tags": [
-            "self-hostable:yes",
-            "realtime:yes"
-          ]
+          "tags": ["self-hostable:yes", "realtime:yes"]
         },
         {
           "slug": "redis-streams",
@@ -9769,11 +8511,7 @@
             "dx": 4,
             "ecosystem": 4
           },
-          "tags": [
-            "self-hostable:yes",
-            "pricing:free-tier",
-            "realtime:yes"
-          ]
+          "tags": ["self-hostable:yes", "pricing:free-tier", "realtime:yes"]
         },
         {
           "slug": "eclipse-mosquitto",
@@ -9787,11 +8525,7 @@
             "dx": 4,
             "ecosystem": 3
           },
-          "tags": [
-            "self-hostable:yes",
-            "pricing:free-tier",
-            "realtime:yes"
-          ]
+          "tags": ["self-hostable:yes", "pricing:free-tier", "realtime:yes"]
         },
         {
           "slug": "zeromq",
@@ -9805,11 +8539,7 @@
             "dx": 3,
             "ecosystem": 3
           },
-          "tags": [
-            "self-hostable:yes",
-            "pricing:free-tier",
-            "realtime:yes"
-          ]
+          "tags": ["self-hostable:yes", "pricing:free-tier", "realtime:yes"]
         }
       ]
     },
@@ -9858,11 +8588,7 @@
             "dx": 5,
             "ecosystem": 4
           },
-          "tags": [
-            "pricing:free-tier",
-            "language:typescript",
-            "realtime:yes"
-          ]
+          "tags": ["pricing:free-tier", "language:typescript", "realtime:yes"]
         },
         {
           "slug": "pusher-channels",
@@ -9876,10 +8602,7 @@
             "dx": 4,
             "ecosystem": 5
           },
-          "tags": [
-            "pricing:free-tier",
-            "realtime:yes"
-          ]
+          "tags": ["pricing:free-tier", "realtime:yes"]
         },
         {
           "slug": "ably",
@@ -9893,10 +8616,7 @@
             "dx": 4,
             "ecosystem": 4
           },
-          "tags": [
-            "pricing:free-tier",
-            "realtime:yes"
-          ]
+          "tags": ["pricing:free-tier", "realtime:yes"]
         },
         {
           "slug": "partykit",
@@ -9931,12 +8651,7 @@
             "dx": 4,
             "ecosystem": 4
           },
-          "tags": [
-            "pricing:free-tier",
-            "self-hostable:yes",
-            "language:typescript",
-            "realtime:yes"
-          ]
+          "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript", "realtime:yes"]
         },
         {
           "slug": "yjs",
@@ -9950,12 +8665,7 @@
             "dx": 3,
             "ecosystem": 5
           },
-          "tags": [
-            "pricing:free-tier",
-            "self-hostable:yes",
-            "language:typescript",
-            "realtime:yes"
-          ]
+          "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript", "realtime:yes"]
         },
         {
           "slug": "hocuspocus",
@@ -9969,12 +8679,7 @@
             "dx": 4,
             "ecosystem": 3
           },
-          "tags": [
-            "pricing:free-tier",
-            "self-hostable:yes",
-            "language:typescript",
-            "realtime:yes"
-          ]
+          "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript", "realtime:yes"]
         },
         {
           "slug": "tiptap-collab",
@@ -9988,11 +8693,7 @@
             "dx": 4,
             "ecosystem": 4
           },
-          "tags": [
-            "pricing:free-tier",
-            "language:typescript",
-            "realtime:yes"
-          ]
+          "tags": ["pricing:free-tier", "language:typescript", "realtime:yes"]
         },
         {
           "slug": "livekit",
@@ -10006,12 +8707,7 @@
             "dx": 4,
             "ecosystem": 4
           },
-          "tags": [
-            "pricing:free-tier",
-            "self-hostable:yes",
-            "language:typescript",
-            "realtime:yes"
-          ]
+          "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript", "realtime:yes"]
         },
         {
           "slug": "socket-io",
@@ -10025,12 +8721,7 @@
             "dx": 4,
             "ecosystem": 5
           },
-          "tags": [
-            "pricing:free-tier",
-            "self-hostable:yes",
-            "language:typescript",
-            "realtime:yes"
-          ]
+          "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript", "realtime:yes"]
         },
         {
           "slug": "firebase-realtime-database",
@@ -10044,10 +8735,7 @@
             "dx": 4,
             "ecosystem": 5
           },
-          "tags": [
-            "pricing:free-tier",
-            "realtime:yes"
-          ]
+          "tags": ["pricing:free-tier", "realtime:yes"]
         },
         {
           "slug": "centrifugo",
@@ -10061,11 +8749,7 @@
             "dx": 3,
             "ecosystem": 3
           },
-          "tags": [
-            "pricing:free-tier",
-            "self-hostable:yes",
-            "realtime:yes"
-          ]
+          "tags": ["pricing:free-tier", "self-hostable:yes", "realtime:yes"]
         },
         {
           "slug": "cloudflare-realtime",
@@ -10099,12 +8783,7 @@
             "dx": 3,
             "ecosystem": 3
           },
-          "tags": [
-            "pricing:free-tier",
-            "self-hostable:yes",
-            "language:typescript",
-            "realtime:yes"
-          ]
+          "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript", "realtime:yes"]
         }
       ]
     },
@@ -10153,10 +8832,7 @@
             "dx": 5,
             "ecosystem": 4
           },
-          "tags": [
-            "pricing:free-tier",
-            "language:typescript"
-          ]
+          "tags": ["pricing:free-tier", "language:typescript"]
         },
         {
           "slug": "novu",
@@ -10170,11 +8846,7 @@
             "dx": 5,
             "ecosystem": 4
           },
-          "tags": [
-            "pricing:free-tier",
-            "self-hostable:yes",
-            "language:typescript"
-          ]
+          "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript"]
         },
         {
           "slug": "onesignal",
@@ -10188,9 +8860,7 @@
             "dx": 4,
             "ecosystem": 5
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         },
         {
           "slug": "twilio",
@@ -10204,9 +8874,7 @@
             "dx": 4,
             "ecosystem": 5
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         },
         {
           "slug": "firebase-cloud-messaging",
@@ -10220,9 +8888,7 @@
             "dx": 4,
             "ecosystem": 5
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         },
         {
           "slug": "pusher-beams",
@@ -10236,9 +8902,7 @@
             "dx": 4,
             "ecosystem": 4
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         },
         {
           "slug": "suprsend",
@@ -10252,9 +8916,7 @@
             "dx": 4,
             "ecosystem": 3
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         },
         {
           "slug": "fyno",
@@ -10268,9 +8930,7 @@
             "dx": 4,
             "ecosystem": 4
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         },
         {
           "slug": "magicbell",
@@ -10284,9 +8944,7 @@
             "dx": 4,
             "ecosystem": 3
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         },
         {
           "slug": "vonage",
@@ -10300,9 +8958,7 @@
             "dx": 3,
             "ecosystem": 4
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         },
         {
           "slug": "messagebird",
@@ -10316,9 +8972,7 @@
             "dx": 3,
             "ecosystem": 4
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         },
         {
           "slug": "expo-push-notifications",
@@ -10332,10 +8986,7 @@
             "dx": 5,
             "ecosystem": 4
           },
-          "tags": [
-            "pricing:free-tier",
-            "language:typescript"
-          ]
+          "tags": ["pricing:free-tier", "language:typescript"]
         },
         {
           "slug": "engagespot",
@@ -10349,9 +9000,7 @@
             "dx": 4,
             "ecosystem": 3
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         }
       ]
     },
@@ -10413,9 +9062,7 @@
             "dx": 4,
             "ecosystem": 5
           },
-          "tags": [
-            "deploy:serverless"
-          ]
+          "tags": ["deploy:serverless"]
         },
         {
           "slug": "databricks",
@@ -10455,10 +9102,7 @@
             "dx": 5,
             "ecosystem": 3
           },
-          "tags": [
-            "pricing:free-tier",
-            "deploy:serverless"
-          ]
+          "tags": ["pricing:free-tier", "deploy:serverless"]
         },
         {
           "slug": "firebolt",
@@ -10485,10 +9129,7 @@
             "dx": 2,
             "ecosystem": 3
           },
-          "tags": [
-            "pricing:free-tier",
-            "self-hostable:yes"
-          ]
+          "tags": ["pricing:free-tier", "self-hostable:yes"]
         },
         {
           "slug": "apache-pinot",
@@ -10502,10 +9143,7 @@
             "dx": 2,
             "ecosystem": 3
           },
-          "tags": [
-            "pricing:free-tier",
-            "self-hostable:yes"
-          ]
+          "tags": ["pricing:free-tier", "self-hostable:yes"]
         },
         {
           "slug": "dremio",
@@ -10519,10 +9157,7 @@
             "dx": 3,
             "ecosystem": 4
           },
-          "tags": [
-            "pricing:free-tier",
-            "self-hostable:yes"
-          ]
+          "tags": ["pricing:free-tier", "self-hostable:yes"]
         },
         {
           "slug": "starrocks",
@@ -10536,10 +9171,7 @@
             "dx": 3,
             "ecosystem": 3
           },
-          "tags": [
-            "pricing:free-tier",
-            "self-hostable:yes"
-          ]
+          "tags": ["pricing:free-tier", "self-hostable:yes"]
         },
         {
           "slug": "azure-synapse",
@@ -10601,9 +9233,7 @@
             "dx": 5,
             "ecosystem": 4
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         },
         {
           "slug": "checkly",
@@ -10617,10 +9247,7 @@
             "dx": 5,
             "ecosystem": 4
           },
-          "tags": [
-            "pricing:free-tier",
-            "language:typescript"
-          ]
+          "tags": ["pricing:free-tier", "language:typescript"]
         },
         {
           "slug": "pingdom",
@@ -10647,9 +9274,7 @@
             "dx": 3,
             "ecosystem": 3
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         },
         {
           "slug": "uptime-kuma",
@@ -10663,10 +9288,7 @@
             "dx": 4,
             "ecosystem": 4
           },
-          "tags": [
-            "pricing:free-tier",
-            "self-hostable:yes"
-          ]
+          "tags": ["pricing:free-tier", "self-hostable:yes"]
         },
         {
           "slug": "statuscake",
@@ -10680,9 +9302,7 @@
             "dx": 4,
             "ecosystem": 3
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         },
         {
           "slug": "site24x7",
@@ -10696,9 +9316,7 @@
             "dx": 3,
             "ecosystem": 5
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         },
         {
           "slug": "uptrends",
@@ -10725,9 +9343,7 @@
             "dx": 5,
             "ecosystem": 3
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         },
         {
           "slug": "oneuptime",
@@ -10741,10 +9357,7 @@
             "dx": 4,
             "ecosystem": 4
           },
-          "tags": [
-            "pricing:free-tier",
-            "self-hostable:yes"
-          ]
+          "tags": ["pricing:free-tier", "self-hostable:yes"]
         },
         {
           "slug": "hetrixtools",
@@ -10758,9 +9371,7 @@
             "dx": 3,
             "ecosystem": 3
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         },
         {
           "slug": "datadog-synthetics",
@@ -10787,9 +9398,7 @@
             "dx": 4,
             "ecosystem": 3
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         },
         {
           "slug": "cronitor",
@@ -10803,9 +9412,7 @@
             "dx": 4,
             "ecosystem": 4
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         }
       ]
     },
@@ -10854,9 +9461,7 @@
             "dx": 3,
             "ecosystem": 5
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         },
         {
           "slug": "make",
@@ -10870,9 +9475,7 @@
             "dx": 3,
             "ecosystem": 4
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         },
         {
           "slug": "pipedream",
@@ -10886,11 +9489,7 @@
             "dx": 5,
             "ecosystem": 4
           },
-          "tags": [
-            "pricing:free-tier",
-            "deploy:serverless",
-            "language:typescript"
-          ]
+          "tags": ["pricing:free-tier", "deploy:serverless", "language:typescript"]
         },
         {
           "slug": "workato",
@@ -10930,11 +9529,7 @@
             "dx": 4,
             "ecosystem": 3
           },
-          "tags": [
-            "pricing:free-tier",
-            "self-hostable:yes",
-            "language:typescript"
-          ]
+          "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript"]
         },
         {
           "slug": "node-red",
@@ -10948,11 +9543,7 @@
             "dx": 4,
             "ecosystem": 4
           },
-          "tags": [
-            "pricing:free-tier",
-            "self-hostable:yes",
-            "language:typescript"
-          ]
+          "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript"]
         },
         {
           "slug": "automatisch",
@@ -10966,11 +9557,7 @@
             "dx": 4,
             "ecosystem": 2
           },
-          "tags": [
-            "pricing:free-tier",
-            "self-hostable:yes",
-            "language:typescript"
-          ]
+          "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript"]
         },
         {
           "slug": "ifttt",
@@ -10984,9 +9571,7 @@
             "dx": 2,
             "ecosystem": 4
           },
-          "tags": [
-            "pricing:free-tier"
-          ]
+          "tags": ["pricing:free-tier"]
         },
         {
           "slug": "mulesoft",
@@ -11026,10 +9611,7 @@
             "dx": 5,
             "ecosystem": 3
           },
-          "tags": [
-            "pricing:free-tier",
-            "self-hostable:yes"
-          ]
+          "tags": ["pricing:free-tier", "self-hostable:yes"]
         }
       ]
     }

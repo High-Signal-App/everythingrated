@@ -6,11 +6,31 @@
       "description": "Sync, presence, and multiplayer infrastructure for live, collaborative apps.",
       "heroCopy": "Latency, presence, scale, cost, and DX decide whether multiplayer feels instant or laggy.",
       "aspects": [
-        { "key": "latency", "label": "Latency", "description": "End-to-end propagation speed of updates between clients." },
-        { "key": "presence", "label": "Presence", "description": "Quality of presence, cursors, and conflict-free shared state primitives." },
-        { "key": "cost", "label": "Cost", "description": "Pricing fit relative to connections, messages, and concurrency (5 = great deal)." },
-        { "key": "dx", "label": "Developer experience", "description": "SDKs, hooks, local dev, and debugging ergonomics." },
-        { "key": "ecosystem", "label": "Ecosystem", "description": "Framework integrations, examples, and community depth." }
+        {
+          "key": "latency",
+          "label": "Latency",
+          "description": "End-to-end propagation speed of updates between clients."
+        },
+        {
+          "key": "presence",
+          "label": "Presence",
+          "description": "Quality of presence, cursors, and conflict-free shared state primitives."
+        },
+        {
+          "key": "cost",
+          "label": "Cost",
+          "description": "Pricing fit relative to connections, messages, and concurrency (5 = great deal)."
+        },
+        {
+          "key": "dx",
+          "label": "Developer experience",
+          "description": "SDKs, hooks, local dev, and debugging ergonomics."
+        },
+        {
+          "key": "ecosystem",
+          "label": "Ecosystem",
+          "description": "Framework integrations, examples, and community depth."
+        }
       ],
       "items": [
         {
@@ -43,7 +63,14 @@
           "description": "Realtime multiplayer infrastructure running stateful logic on Cloudflare's edge.",
           "websiteUrl": "https://www.partykit.io",
           "scores": { "latency": 5, "presence": 4, "cost": 4, "dx": 4, "ecosystem": 3 },
-          "tags": ["runs-on:cloudflare", "deploy:edge", "pricing:free-tier", "self-hostable:yes", "language:typescript", "realtime:yes"]
+          "tags": [
+            "runs-on:cloudflare",
+            "deploy:edge",
+            "pricing:free-tier",
+            "self-hostable:yes",
+            "language:typescript",
+            "realtime:yes"
+          ]
         },
         {
           "slug": "supabase-realtime-collab",
@@ -115,7 +142,13 @@
           "description": "Cloudflare's edge WebSocket and SFU infrastructure for serverless realtime apps.",
           "websiteUrl": "https://developers.cloudflare.com/realtime",
           "scores": { "latency": 5, "presence": 3, "cost": 4, "dx": 3, "ecosystem": 3 },
-          "tags": ["runs-on:cloudflare", "deploy:edge", "deploy:serverless", "pricing:free-tier", "realtime:yes"]
+          "tags": [
+            "runs-on:cloudflare",
+            "deploy:edge",
+            "deploy:serverless",
+            "pricing:free-tier",
+            "realtime:yes"
+          ]
         },
         {
           "slug": "automerge",
@@ -133,11 +166,31 @@
       "description": "Push, SMS, email, and in-app notification delivery and orchestration platforms.",
       "heroCopy": "Channel coverage, deliverability, cost, DX, and ecosystem shape whether messages land.",
       "aspects": [
-        { "key": "channel_coverage", "label": "Channel coverage", "description": "Breadth of push, SMS, email, in-app, and chat channels supported." },
-        { "key": "deliverability", "label": "Deliverability", "description": "Reliability, routing, fallbacks, and inbox/device delivery rates." },
-        { "key": "cost", "label": "Cost", "description": "Pricing fit across subscribers, messages, and channels (5 = great deal)." },
-        { "key": "dx", "label": "Developer experience", "description": "APIs, SDKs, templating, local testing, and debugging quality." },
-        { "key": "ecosystem", "label": "Ecosystem", "description": "Provider integrations, framework support, and community depth." }
+        {
+          "key": "channel_coverage",
+          "label": "Channel coverage",
+          "description": "Breadth of push, SMS, email, in-app, and chat channels supported."
+        },
+        {
+          "key": "deliverability",
+          "label": "Deliverability",
+          "description": "Reliability, routing, fallbacks, and inbox/device delivery rates."
+        },
+        {
+          "key": "cost",
+          "label": "Cost",
+          "description": "Pricing fit across subscribers, messages, and channels (5 = great deal)."
+        },
+        {
+          "key": "dx",
+          "label": "Developer experience",
+          "description": "APIs, SDKs, templating, local testing, and debugging quality."
+        },
+        {
+          "key": "ecosystem",
+          "label": "Ecosystem",
+          "description": "Provider integrations, framework support, and community depth."
+        }
       ],
       "items": [
         {
@@ -145,7 +198,13 @@
           "name": "Knock",
           "description": "Notification infrastructure that orchestrates product messaging across email, push, SMS, and chat.",
           "websiteUrl": "https://knock.app",
-          "scores": { "channel_coverage": 5, "deliverability": 4, "cost": 3, "dx": 5, "ecosystem": 4 },
+          "scores": {
+            "channel_coverage": 5,
+            "deliverability": 4,
+            "cost": 3,
+            "dx": 5,
+            "ecosystem": 4
+          },
           "tags": ["pricing:free-tier", "language:typescript"]
         },
         {
@@ -153,7 +212,13 @@
           "name": "Novu",
           "description": "Open-source notification infrastructure with workflows, a unified API, and an inbox component.",
           "websiteUrl": "https://novu.co",
-          "scores": { "channel_coverage": 5, "deliverability": 4, "cost": 4, "dx": 5, "ecosystem": 4 },
+          "scores": {
+            "channel_coverage": 5,
+            "deliverability": 4,
+            "cost": 4,
+            "dx": 5,
+            "ecosystem": 4
+          },
           "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript"]
         },
         {
@@ -161,7 +226,13 @@
           "name": "Courier",
           "description": "Multi-channel notification platform with swappable providers and visual workflow design.",
           "websiteUrl": "https://www.courier.com",
-          "scores": { "channel_coverage": 5, "deliverability": 4, "cost": 3, "dx": 4, "ecosystem": 5 },
+          "scores": {
+            "channel_coverage": 5,
+            "deliverability": 4,
+            "cost": 3,
+            "dx": 4,
+            "ecosystem": 5
+          },
           "tags": ["pricing:free-tier"]
         },
         {
@@ -169,7 +240,13 @@
           "name": "OneSignal",
           "description": "Push-first messaging platform delivering web, mobile push, email, SMS, and in-app at scale.",
           "websiteUrl": "https://onesignal.com",
-          "scores": { "channel_coverage": 4, "deliverability": 5, "cost": 5, "dx": 4, "ecosystem": 5 },
+          "scores": {
+            "channel_coverage": 4,
+            "deliverability": 5,
+            "cost": 5,
+            "dx": 4,
+            "ecosystem": 5
+          },
           "tags": ["pricing:free-tier"]
         },
         {
@@ -177,7 +254,13 @@
           "name": "Twilio",
           "description": "Programmable communications APIs for SMS, voice, WhatsApp, and verification.",
           "websiteUrl": "https://www.twilio.com",
-          "scores": { "channel_coverage": 4, "deliverability": 5, "cost": 3, "dx": 4, "ecosystem": 5 },
+          "scores": {
+            "channel_coverage": 4,
+            "deliverability": 5,
+            "cost": 3,
+            "dx": 4,
+            "ecosystem": 5
+          },
           "tags": ["pricing:free-tier"]
         },
         {
@@ -185,7 +268,13 @@
           "name": "Firebase Cloud Messaging",
           "description": "Google's free cross-platform push notification delivery for web, Android, and iOS.",
           "websiteUrl": "https://firebase.google.com/products/cloud-messaging",
-          "scores": { "channel_coverage": 3, "deliverability": 5, "cost": 5, "dx": 4, "ecosystem": 5 },
+          "scores": {
+            "channel_coverage": 3,
+            "deliverability": 5,
+            "cost": 5,
+            "dx": 4,
+            "ecosystem": 5
+          },
           "tags": ["pricing:free-tier"]
         },
         {
@@ -193,7 +282,13 @@
           "name": "Pusher Beams",
           "description": "Hosted push notification API for web and mobile with device interest targeting.",
           "websiteUrl": "https://pusher.com/beams",
-          "scores": { "channel_coverage": 3, "deliverability": 4, "cost": 4, "dx": 4, "ecosystem": 4 },
+          "scores": {
+            "channel_coverage": 3,
+            "deliverability": 4,
+            "cost": 4,
+            "dx": 4,
+            "ecosystem": 4
+          },
           "tags": ["pricing:free-tier"]
         },
         {
@@ -201,7 +296,13 @@
           "name": "SuprSend",
           "description": "Notification infrastructure with multi-channel routing, batching, and built-in observability.",
           "websiteUrl": "https://www.suprsend.com",
-          "scores": { "channel_coverage": 5, "deliverability": 4, "cost": 4, "dx": 4, "ecosystem": 3 },
+          "scores": {
+            "channel_coverage": 5,
+            "deliverability": 4,
+            "cost": 4,
+            "dx": 4,
+            "ecosystem": 3
+          },
           "tags": ["pricing:free-tier"]
         },
         {
@@ -209,7 +310,13 @@
           "name": "Fyno",
           "description": "Notification orchestration layer that routes across many third-party providers from one API.",
           "websiteUrl": "https://www.fyno.io",
-          "scores": { "channel_coverage": 5, "deliverability": 4, "cost": 4, "dx": 4, "ecosystem": 4 },
+          "scores": {
+            "channel_coverage": 5,
+            "deliverability": 4,
+            "cost": 4,
+            "dx": 4,
+            "ecosystem": 4
+          },
           "tags": ["pricing:free-tier"]
         },
         {
@@ -217,7 +324,13 @@
           "name": "MagicBell",
           "description": "Notification inbox and multi-channel delivery API with prebuilt in-app UI components.",
           "websiteUrl": "https://www.magicbell.com",
-          "scores": { "channel_coverage": 4, "deliverability": 4, "cost": 3, "dx": 4, "ecosystem": 3 },
+          "scores": {
+            "channel_coverage": 4,
+            "deliverability": 4,
+            "cost": 3,
+            "dx": 4,
+            "ecosystem": 3
+          },
           "tags": ["pricing:free-tier"]
         },
         {
@@ -225,7 +338,13 @@
           "name": "Vonage",
           "description": "Communications APIs for SMS, voice, messaging, and verification across global carriers.",
           "websiteUrl": "https://www.vonage.com",
-          "scores": { "channel_coverage": 4, "deliverability": 4, "cost": 3, "dx": 3, "ecosystem": 4 },
+          "scores": {
+            "channel_coverage": 4,
+            "deliverability": 4,
+            "cost": 3,
+            "dx": 3,
+            "ecosystem": 4
+          },
           "tags": ["pricing:free-tier"]
         },
         {
@@ -233,7 +352,13 @@
           "name": "Bird (MessageBird)",
           "description": "Omnichannel CPaaS for SMS, WhatsApp, email, and voice with marketing and support flows.",
           "websiteUrl": "https://bird.com",
-          "scores": { "channel_coverage": 5, "deliverability": 4, "cost": 3, "dx": 3, "ecosystem": 4 },
+          "scores": {
+            "channel_coverage": 5,
+            "deliverability": 4,
+            "cost": 3,
+            "dx": 3,
+            "ecosystem": 4
+          },
           "tags": ["pricing:free-tier"]
         },
         {
@@ -241,7 +366,13 @@
           "name": "Expo Push Notifications",
           "description": "Free push notification service for React Native and Expo apps via a single API.",
           "websiteUrl": "https://docs.expo.dev/push-notifications/overview",
-          "scores": { "channel_coverage": 2, "deliverability": 4, "cost": 5, "dx": 5, "ecosystem": 4 },
+          "scores": {
+            "channel_coverage": 2,
+            "deliverability": 4,
+            "cost": 5,
+            "dx": 5,
+            "ecosystem": 4
+          },
           "tags": ["pricing:free-tier", "language:typescript"]
         },
         {
@@ -249,7 +380,13 @@
           "name": "Engagespot",
           "description": "Notification API and inbox widget for multi-channel product notifications.",
           "websiteUrl": "https://engagespot.co",
-          "scores": { "channel_coverage": 4, "deliverability": 3, "cost": 4, "dx": 4, "ecosystem": 3 },
+          "scores": {
+            "channel_coverage": 4,
+            "deliverability": 3,
+            "cost": 4,
+            "dx": 4,
+            "ecosystem": 3
+          },
           "tags": ["pricing:free-tier"]
         }
       ]
@@ -260,11 +397,31 @@
       "description": "Analytical and OLAP stores for large-scale querying, BI, and real-time analytics.",
       "heroCopy": "Query speed, scalability, cost, DX, and ecosystem decide how fast insight arrives.",
       "aspects": [
-        { "key": "query_speed", "label": "Query speed", "description": "Latency on analytical scans, aggregations, and concurrent queries." },
-        { "key": "scalability", "label": "Scalability", "description": "Headroom for data volume, concurrency, and storage/compute separation." },
-        { "key": "cost", "label": "Cost", "description": "Pricing predictability at real query and storage volume (5 = great deal)." },
-        { "key": "dx", "label": "Developer experience", "description": "SQL ergonomics, tooling, setup, and operational simplicity." },
-        { "key": "ecosystem", "label": "Ecosystem", "description": "Connectors, BI tools, ETL, and open-format compatibility." }
+        {
+          "key": "query_speed",
+          "label": "Query speed",
+          "description": "Latency on analytical scans, aggregations, and concurrent queries."
+        },
+        {
+          "key": "scalability",
+          "label": "Scalability",
+          "description": "Headroom for data volume, concurrency, and storage/compute separation."
+        },
+        {
+          "key": "cost",
+          "label": "Cost",
+          "description": "Pricing predictability at real query and storage volume (5 = great deal)."
+        },
+        {
+          "key": "dx",
+          "label": "Developer experience",
+          "description": "SQL ergonomics, tooling, setup, and operational simplicity."
+        },
+        {
+          "key": "ecosystem",
+          "label": "Ecosystem",
+          "description": "Connectors, BI tools, ETL, and open-format compatibility."
+        }
       ],
       "items": [
         {
@@ -382,11 +539,31 @@
       "description": "Uptime, status-page, and synthetic monitoring for catching outages before users do.",
       "heroCopy": "Check frequency, alerting, cost, DX, and ecosystem keep ops calm.",
       "aspects": [
-        { "key": "check_frequency", "label": "Check frequency", "description": "Polling interval, global probe locations, and check type breadth." },
-        { "key": "alerting", "label": "Alerting", "description": "Notification channels, on-call routing, escalation, and noise control." },
-        { "key": "cost", "label": "Cost", "description": "Pricing fit across monitors, seats, and check frequency (5 = great deal)." },
-        { "key": "dx", "label": "Developer experience", "description": "Setup, status-page quality, dashboards, and monitoring-as-code support." },
-        { "key": "ecosystem", "label": "Ecosystem", "description": "Alert destinations, incident tools, and integration connectors." }
+        {
+          "key": "check_frequency",
+          "label": "Check frequency",
+          "description": "Polling interval, global probe locations, and check type breadth."
+        },
+        {
+          "key": "alerting",
+          "label": "Alerting",
+          "description": "Notification channels, on-call routing, escalation, and noise control."
+        },
+        {
+          "key": "cost",
+          "label": "Cost",
+          "description": "Pricing fit across monitors, seats, and check frequency (5 = great deal)."
+        },
+        {
+          "key": "dx",
+          "label": "Developer experience",
+          "description": "Setup, status-page quality, dashboards, and monitoring-as-code support."
+        },
+        {
+          "key": "ecosystem",
+          "label": "Ecosystem",
+          "description": "Alert destinations, incident tools, and integration connectors."
+        }
       ],
       "items": [
         {
@@ -506,11 +683,31 @@
       "description": "iPaaS and no-code/low-code platforms for connecting apps and automating workflows.",
       "heroCopy": "Integrations, ease of use, cost, DX, and ecosystem decide how much glue work disappears.",
       "aspects": [
-        { "key": "integrations", "label": "Integrations", "description": "Breadth of prebuilt app connectors and triggers/actions." },
-        { "key": "ease_of_use", "label": "Ease of use", "description": "How approachable workflow building is for non-developers." },
-        { "key": "cost", "label": "Cost", "description": "Pricing fit across tasks, operations, and seats (5 = great deal)." },
-        { "key": "dx", "label": "Developer experience", "description": "Code steps, APIs, version control, and extensibility for developers." },
-        { "key": "ecosystem", "label": "Ecosystem", "description": "Templates, community workflows, and integration marketplace depth." }
+        {
+          "key": "integrations",
+          "label": "Integrations",
+          "description": "Breadth of prebuilt app connectors and triggers/actions."
+        },
+        {
+          "key": "ease_of_use",
+          "label": "Ease of use",
+          "description": "How approachable workflow building is for non-developers."
+        },
+        {
+          "key": "cost",
+          "label": "Cost",
+          "description": "Pricing fit across tasks, operations, and seats (5 = great deal)."
+        },
+        {
+          "key": "dx",
+          "label": "Developer experience",
+          "description": "Code steps, APIs, version control, and extensibility for developers."
+        },
+        {
+          "key": "ecosystem",
+          "label": "Ecosystem",
+          "description": "Templates, community workflows, and integration marketplace depth."
+        }
       ],
       "items": [
         {
@@ -573,7 +770,12 @@
           "description": "Open-source developer platform turning scripts into workflows, APIs, and internal apps.",
           "websiteUrl": "https://www.windmill.dev",
           "scores": { "integrations": 3, "ease_of_use": 3, "cost": 5, "dx": 5, "ecosystem": 3 },
-          "tags": ["pricing:free-tier", "self-hostable:yes", "language:typescript", "language:python"]
+          "tags": [
+            "pricing:free-tier",
+            "self-hostable:yes",
+            "language:typescript",
+            "language:python"
+          ]
         },
         {
           "slug": "node-red",

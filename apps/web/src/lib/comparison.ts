@@ -1,28 +1,28 @@
-import type { AspectAverage, ItemWithAggregate } from "./ratings";
+import type { AspectAverage, ItemWithAggregate } from './ratings';
 
 export type WeightMap = Record<string, number>;
 
 export const MAX_COMPARE_ITEMS = 4;
 
 export type WeightedComparisonRow = {
-  item: ItemWithAggregate["item"];
+  item: ItemWithAggregate['item'];
   total: number;
-  tradeoffs: { aspect: AspectAverage["aspect"]; weighted: number; raw: number; weight: number }[];
+  tradeoffs: { aspect: AspectAverage['aspect']; weighted: number; raw: number; weight: number }[];
 };
 
 export function parseCompareState(searchParams: URLSearchParams): {
   selectedIds: string[];
   weights: WeightMap;
 } {
-  const selectedIds = (searchParams.get("compare") ?? "")
-    .split(",")
+  const selectedIds = (searchParams.get('compare') ?? '')
+    .split(',')
     .map((value) => value.trim())
     .filter(Boolean)
     .slice(0, MAX_COMPARE_ITEMS);
 
   const weights: WeightMap = {};
-  for (const part of (searchParams.get("w") ?? "").split(",")) {
-    const [key, rawValue] = part.split(":");
+  for (const part of (searchParams.get('w') ?? '').split(',')) {
+    const [key, rawValue] = part.split(':');
     const value = Number(rawValue);
     if (key && Number.isFinite(value)) weights[key] = clampWeight(value);
   }
@@ -33,17 +33,21 @@ export function parseCompareState(searchParams: URLSearchParams): {
 export function encodeCompareState(selectedIds: string[], weights: WeightMap): string {
   const params = new URLSearchParams();
   if (selectedIds.length > 0) {
-    params.set("compare", selectedIds.slice(0, MAX_COMPARE_ITEMS).join(","));
+    params.set('compare', selectedIds.slice(0, MAX_COMPARE_ITEMS).join(','));
   }
   const encodedWeights = Object.entries(weights)
     .filter(([, value]) => value !== 1)
     .map(([key, value]) => `${key}:${clampWeight(value)}`)
-    .join(",");
-  if (encodedWeights) params.set("w", encodedWeights);
+    .join(',');
+  if (encodedWeights) params.set('w', encodedWeights);
   return params.toString();
 }
 
-export function compareItems(items: ItemWithAggregate[], selectedIds: string[], weights: WeightMap): WeightedComparisonRow[] {
+export function compareItems(
+  items: ItemWithAggregate[],
+  selectedIds: string[],
+  weights: WeightMap
+): WeightedComparisonRow[] {
   const selected = new Set(selectedIds);
   return items
     .filter((item) => selected.has(item.item.id))

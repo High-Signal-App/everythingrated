@@ -1,17 +1,16 @@
-import type { Metadata } from "next";
-import Link from "next/link";
+import type { Metadata } from 'next';
+import Link from 'next/link';
 
-import { Badge } from "@/components/atoms/badge";
-import { FOCUS_DIRECTORY_SLUG } from "@/lib/directory-focus";
+import { Badge } from '@/components/atoms/badge';
+import { FOCUS_DIRECTORY_SLUG } from '@/lib/directory-focus';
 
 export const metadata: Metadata = {
-  title: "Aspects — EverythingRated",
-  description: "The aspect explorer is paused while the product focuses on AI dev tool adoption decisions.",
-  openGraph: { url: "/aspects" },
-  alternates: { canonical: "/aspects" },
+  title: 'Aspects — EverythingRated',
+  description:
+    'The aspect explorer is paused while the product focuses on AI dev tool adoption decisions.',
 };
 
-export const dynamic = "force-static";
+export const dynamic = 'force-static';
 
 // PARKED (2026-07-03): the cross-directory aspect explorer mixed axes from
 // every category. While the product focuses on AI dev tool adoption decisions
@@ -20,10 +19,7 @@ export const dynamic = "force-static";
 export default function AspectsIndex() {
   return (
     <div className="mx-auto w-full max-w-3xl px-6 py-14">
-      <Link
-        href="/"
-        className="text-[12px] text-[var(--muted)] hover:text-[var(--foreground)]"
-      >
+      <Link href="/" className="text-[12px] text-[var(--muted)] hover:text-[var(--foreground)]">
         ← Home
       </Link>
       <div className="mt-6">
@@ -32,11 +28,10 @@ export default function AspectsIndex() {
           The aspect explorer is paused
         </h1>
         <p className="mt-3 max-w-2xl text-[14px] leading-[1.6] text-[var(--muted)]">
-          EverythingRated now does one job: multi-axis ratings for AI dev tool
-          adoption decisions. The cross-directory aspect explorer — which
-          compared axes like &ldquo;latency&rdquo; and &ldquo;cost&rdquo; across
-          unrelated categories — is on hold. The six adoption axes for AI dev
-          libraries live on the board.
+          EverythingRated now does one job: multi-axis ratings for AI dev tool adoption decisions.
+          The cross-directory aspect explorer — which compared axes like &ldquo;latency&rdquo; and
+          &ldquo;cost&rdquo; across unrelated categories — is on hold. The six adoption axes for AI
+          dev libraries live on the board.
         </p>
         <div className="mt-8">
           <Link

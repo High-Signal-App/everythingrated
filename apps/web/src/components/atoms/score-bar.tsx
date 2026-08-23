@@ -1,4 +1,4 @@
-import { cn } from "@/lib/cn";
+import { cn } from '@/lib/cn';
 
 /** A static 0-5 horizontal bar — average score with optional label. */
 export function ScoreBar({
@@ -12,8 +12,8 @@ export function ScoreBar({
   return (
     <div
       className={cn(
-        "h-2 w-full overflow-hidden rounded-full bg-[var(--score-track)] ring-1 ring-inset ring-[var(--border)]",
-        className,
+        'h-2 w-full overflow-hidden rounded-full bg-[var(--score-track)] ring-1 ring-inset ring-[var(--border)]',
+        className
       )}
       role="meter"
       aria-valuemin={0}

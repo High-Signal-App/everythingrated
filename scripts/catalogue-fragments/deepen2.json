@@ -26,10 +26,7 @@
           "dx": 3,
           "ecosystem": 4
         },
-        "tags": [
-          "deploy:serverless",
-          "realtime:yes"
-        ]
+        "tags": ["deploy:serverless", "realtime:yes"]
       },
       {
         "slug": "emqx",
@@ -43,11 +40,7 @@
           "dx": 4,
           "ecosystem": 3
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier",
-          "realtime:yes"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier", "realtime:yes"]
       },
       {
         "slug": "apache-rocketmq",
@@ -61,10 +54,7 @@
           "dx": 3,
           "ecosystem": 3
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
         "slug": "nsq",
@@ -78,11 +68,7 @@
           "dx": 4,
           "ecosystem": 2
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier",
-          "realtime:yes"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier", "realtime:yes"]
       },
       {
         "slug": "warpstream",
@@ -109,10 +95,7 @@
           "dx": 4,
           "ecosystem": 3
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
         "slug": "streamnative",
@@ -139,10 +122,7 @@
           "dx": 4,
           "ecosystem": 2
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
         "slug": "cloudflare-queues-broker",
@@ -156,12 +136,7 @@
           "dx": 5,
           "ecosystem": 3
         },
-        "tags": [
-          "runs-on:cloudflare",
-          "deploy:edge",
-          "deploy:serverless",
-          "pricing:free-tier"
-        ]
+        "tags": ["runs-on:cloudflare", "deploy:edge", "deploy:serverless", "pricing:free-tier"]
       }
     ],
     "data-warehouses": [
@@ -177,10 +152,7 @@
           "dx": 5,
           "ecosystem": 4
         },
-        "tags": [
-          "deploy:serverless",
-          "pricing:free-tier"
-        ]
+        "tags": ["deploy:serverless", "pricing:free-tier"]
       },
       {
         "slug": "vertica",
@@ -220,10 +192,7 @@
           "dx": 3,
           "ecosystem": 3
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
         "slug": "apache-doris",
@@ -237,11 +206,7 @@
           "dx": 4,
           "ecosystem": 3
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier",
-          "realtime:yes"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier", "realtime:yes"]
       },
       {
         "slug": "ibm-netezza",
@@ -281,10 +246,7 @@
           "dx": 4,
           "ecosystem": 2
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
         "slug": "cratedb",
@@ -298,10 +260,7 @@
           "dx": 4,
           "ecosystem": 3
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
         "slug": "exasol",
@@ -343,10 +302,7 @@
           "dx": 4,
           "ecosystem": 2
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
         "slug": "orama",
@@ -360,12 +316,7 @@
           "dx": 5,
           "ecosystem": 3
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier",
-          "deploy:edge",
-          "language:typescript"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier", "deploy:edge", "language:typescript"]
       },
       {
         "slug": "quickwit",
@@ -379,10 +330,7 @@
           "dx": 3,
           "ecosystem": 2
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
         "slug": "paradedb",
@@ -396,10 +344,7 @@
           "dx": 4,
           "ecosystem": 3
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
         "slug": "zincsearch",
@@ -413,10 +358,7 @@
           "dx": 4,
           "ecosystem": 2
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
         "slug": "sonic-search",
@@ -430,10 +372,7 @@
           "dx": 3,
           "ecosystem": 1
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
         "slug": "constructor",
@@ -501,11 +440,7 @@
           "dx": 4,
           "ecosystem": 3
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier",
-          "language:python"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier", "language:python"]
       },
       {
         "slug": "bruin",
@@ -519,11 +454,7 @@
           "dx": 5,
           "ecosystem": 2
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier",
-          "language:python"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier", "language:python"]
       },
       {
         "slug": "tines",
@@ -537,9 +468,7 @@
           "dx": 3,
           "ecosystem": 3
         },
-        "tags": [
-          "pricing:free-tier"
-        ]
+        "tags": ["pricing:free-tier"]
       },
       {
         "slug": "power-automate",
@@ -566,10 +495,7 @@
           "dx": 3,
           "ecosystem": 2
         },
-        "tags": [
-          "self-hostable:yes",
-          "pricing:free-tier"
-        ]
+        "tags": ["self-hostable:yes", "pricing:free-tier"]
       },
       {
         "slug": "gumloop",
@@ -583,9 +509,7 @@
           "dx": 3,
           "ecosystem": 2
         },
-        "tags": [
-          "pricing:free-tier"
-        ]
+        "tags": ["pricing:free-tier"]
       },
       {
         "slug": "relay-app",
@@ -599,9 +523,7 @@
           "dx": 3,
           "ecosystem": 2
         },
-        "tags": [
-          "pricing:free-tier"
-        ]
+        "tags": ["pricing:free-tier"]
       },
       {
         "slug": "bardeen",
@@ -615,9 +537,7 @@
           "dx": 2,
           "ecosystem": 2
         },
-        "tags": [
-          "pricing:free-tier"
-        ]
+        "tags": ["pricing:free-tier"]
       },
       {
         "slug": "lindy",
@@ -644,9 +564,7 @@
           "dx": 4,
           "ecosystem": 4
         },
-        "tags": [
-          "self-hostable:yes"
-        ]
+        "tags": ["self-hostable:yes"]
       }
     ]
   }

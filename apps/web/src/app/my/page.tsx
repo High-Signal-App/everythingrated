@@ -1,16 +1,16 @@
-import type { Metadata } from "next";
-import Link from "next/link";
+import type { Metadata } from 'next';
+import Link from 'next/link';
 
-import { Card, CardBody } from "@/components/atoms/card";
-import { RankedCollectionsPanel } from "@/components/organisms/ranked-collections-panel";
-import type { RatedItemRef } from "@/lib/collections";
-import { listItemsRatedByVisitor } from "@/lib/ratings";
-import { readVisitorId } from "@/lib/visitor";
+import { Card, CardBody } from '@/components/atoms/card';
+import { RankedCollectionsPanel } from '@/components/organisms/ranked-collections-panel';
+import type { RatedItemRef } from '@/lib/collections';
+import { listItemsRatedByVisitor } from '@/lib/ratings';
+import { readVisitorId } from '@/lib/visitor';
 
-export const dynamic = "force-dynamic";
+export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: "My ratings — EverythingRated",
+  title: 'My ratings — EverythingRated',
   description: "Things you've rated on this browser, newest first.",
 };
 
@@ -24,9 +24,8 @@ export default async function MyRatingsPage() {
         </Link>
         <h1 className="mt-3 text-3xl font-bold tracking-tight">My ratings</h1>
         <p className="mt-3 text-sm text-[var(--muted)]">
-          Rate something — we&apos;ll mint your anonymous cookie and start
-          tracking your history here. Nothing is sent server-side beyond
-          that opaque id.
+          Rate something — we&apos;ll mint your anonymous cookie and start tracking your history
+          here. Nothing is sent server-side beyond that opaque id.
         </p>
       </main>
     );
@@ -50,8 +49,8 @@ export default async function MyRatingsPage() {
       <h1 className="mt-3 text-3xl font-bold tracking-tight">My ratings</h1>
       <p className="mt-2 text-sm text-[var(--muted)]">
         {items.length === 0
-          ? "Nothing rated on this browser yet."
-          : `${items.length} item${items.length === 1 ? "" : "s"}, newest first.`}
+          ? 'Nothing rated on this browser yet.'
+          : `${items.length} item${items.length === 1 ? '' : 's'}, newest first.`}
       </p>
 
       {items.length > 0 && (
@@ -73,11 +72,9 @@ export default async function MyRatingsPage() {
                 </Link>
               </div>
               <div className="text-right text-xs tabular-nums">
-                <div className="font-medium">
-                  {entry.yourMean.toFixed(1)}/5
-                </div>
+                <div className="font-medium">{entry.yourMean.toFixed(1)}/5</div>
                 <div className="text-[var(--muted)]">
-                  {entry.ratedAspects} axis{entry.ratedAspects === 1 ? "" : "es"}
+                  {entry.ratedAspects} axis{entry.ratedAspects === 1 ? '' : 'es'}
                 </div>
                 <div className="text-[var(--muted)]">
                   {entry.lastRatedAt.toISOString().slice(0, 10)}
@@ -92,10 +89,10 @@ export default async function MyRatingsPage() {
         <Card className="mt-6">
           <CardBody>
             <p className="text-sm text-[var(--muted)]">
-              Head over to a{" "}
+              Head over to a{' '}
               <Link href="/" className="underline">
                 directory
-              </Link>{" "}
+              </Link>{' '}
               and rate a few items. They&apos;ll appear here on next visit.
             </p>
           </CardBody>

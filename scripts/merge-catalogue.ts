@@ -9,13 +9,13 @@
  * twice; dropped dups are reported.
  */
 
-import { readdirSync, readFileSync, writeFileSync, existsSync } from "node:fs";
-import { resolve, dirname } from "node:path";
-import { fileURLToPath } from "node:url";
+import { readdirSync, readFileSync, writeFileSync, existsSync } from 'node:fs';
+import { resolve, dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const __root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
-const FRAG_DIR = resolve(__root, "scripts/catalogue-fragments");
-const OUT = resolve(__root, "scripts/catalogue-extra.json");
+const __root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
+const FRAG_DIR = resolve(__root, 'scripts/catalogue-fragments');
+const OUT = resolve(__root, 'scripts/catalogue-extra.json');
 
 type Item = { slug: string; [k: string]: unknown };
 type Catalogue = {
@@ -31,7 +31,7 @@ let fragCount = 0;
 function takeItems(items: Item[], where: string): Item[] {
   const out: Item[] = [];
   for (const it of items) {
-    if (!it || typeof it.slug !== "string") continue;
+    if (!it || typeof it.slug !== 'string') continue;
     if (seenItemSlugs.has(it.slug)) {
       dupCount++;
       continue;
@@ -43,10 +43,12 @@ function takeItems(items: Item[], where: string): Item[] {
 }
 
 if (existsSync(FRAG_DIR)) {
-  for (const file of readdirSync(FRAG_DIR).filter((f) => f.endsWith(".json")).sort()) {
+  for (const file of readdirSync(FRAG_DIR)
+    .filter((f) => f.endsWith('.json'))
+    .sort()) {
     let frag: Catalogue;
     try {
-      frag = JSON.parse(readFileSync(resolve(FRAG_DIR, file), "utf8"));
+      frag = JSON.parse(readFileSync(resolve(FRAG_DIR, file), 'utf8'));
     } catch (e) {
       console.error(`[merge] SKIP ${file}: invalid JSON — ${(e as Error).message}`);
       continue;
@@ -61,7 +63,10 @@ if (existsSync(FRAG_DIR)) {
       if (existing) {
         existing.items.push(...takeItems(nd.items ?? [], `${file}:newDir:${nd.slug}`));
       } else {
-        merged.newDirectories.push({ ...nd, items: takeItems(nd.items ?? [], `${file}:newDir:${nd.slug}`) });
+        merged.newDirectories.push({
+          ...nd,
+          items: takeItems(nd.items ?? [], `${file}:newDir:${nd.slug}`),
+        });
       }
     }
   }
@@ -70,10 +75,10 @@ if (existsSync(FRAG_DIR)) {
 const deepenItems = Object.values(merged.deepen).reduce((s, a) => s + a.length, 0);
 const newDirItems = merged.newDirectories.reduce((s, d) => s + d.items.length, 0);
 
-writeFileSync(OUT, JSON.stringify(merged, null, 2) + "\n");
+writeFileSync(OUT, JSON.stringify(merged, null, 2) + '\n');
 console.log(
   `[merge] ${fragCount} fragments → ${OUT}\n` +
     `  deepen: ${Object.keys(merged.deepen).length} directories, ${deepenItems} items\n` +
     `  new directories: ${merged.newDirectories.length} (${newDirItems} items)\n` +
-    `  total new items: ${deepenItems + newDirItems}  (deduped ${dupCount})`,
+    `  total new items: ${deepenItems + newDirItems}  (deduped ${dupCount})`
 );

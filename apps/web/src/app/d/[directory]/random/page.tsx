@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { useParams, useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useParams, useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
 /**
  * /d/[directory]/random — bounces to a random item in this directory.
@@ -15,31 +15,32 @@ export default function RandomItem() {
   useEffect(() => {
     const directory = params?.directory;
     if (!directory) {
-      setError("missing directory");
+      setError('missing directory');
       return;
     }
-    fetch(`/d/${directory}/items.json`, { cache: "no-store" })
+    fetch(`/d/${directory}/items.json`, { cache: 'no-store' })
       .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
       .then((data: unknown) => {
         const items =
-          data && typeof data === "object" && "items" in data && Array.isArray((data as { items: unknown }).items)
-            ? ((data as { items: Array<{ item: { slug: string } }> }).items)
+          data &&
+          typeof data === 'object' &&
+          'items' in data &&
+          Array.isArray((data as { items: unknown }).items)
+            ? (data as { items: Array<{ item: { slug: string } }> }).items
             : [];
         if (items.length === 0) {
-          setError("no items in this directory yet");
+          setError('no items in this directory yet');
           return;
         }
         const pick = items[Math.floor(Math.random() * items.length)];
         router.replace(`/d/${directory}/${pick.item.slug}`);
       })
-      .catch(() => setError("could not load items"));
+      .catch(() => setError('could not load items'));
   }, [params, router]);
 
   return (
     <main className="mx-auto max-w-md px-4 py-16 text-center">
-      <p className="text-sm text-[var(--muted)]">
-        {error ?? "Picking a random item…"}
-      </p>
+      <p className="text-sm text-[var(--muted)]">{error ?? 'Picking a random item…'}</p>
     </main>
   );
 }

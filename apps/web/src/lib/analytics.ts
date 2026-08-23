@@ -27,16 +27,17 @@
  * the server bundle.
  */
 
-const PROJECT = "everythingrated" as const;
+const PROJECT = 'everythingrated' as const;
 
 // Shared with foundry-monitoring.ts — same PostHog project.
-const POSTHOG_KEY = process.env['NEXT_PUBLIC_POSTHOG_KEY'] ?? "phc_qgiAarw4Co4pw9fz3Fxj4UJaHmqzFetqs4JrXhGc35Nd";
-const POSTHOG_HOST = "https://us.i.posthog.com";
+const POSTHOG_KEY =
+  process.env['NEXT_PUBLIC_POSTHOG_KEY'] ?? 'phc_qgiAarw4Co4pw9fz3Fxj4UJaHmqzFetqs4JrXhGc35Nd';
+const POSTHOG_HOST = 'https://us.i.posthog.com';
 
 /** The product-specific action behind a `core_action` event. */
 export type CoreAction =
   /** A visitor rated an item on one aspect. */
-  "rating_submitted";
+  'rating_submitted';
 
 interface AnalyticsEventMap {
   /** First identified visit — the `er_visitor` cookie was minted. */
@@ -49,15 +50,11 @@ interface AnalyticsEventMap {
   returned: { project_id: typeof PROJECT };
 }
 
-function emitServer(
-  event: string,
-  props: Record<string, unknown>,
-  distinctId?: string,
-) {
+function emitServer(event: string, props: Record<string, unknown>, distinctId?: string) {
   // Fire-and-forget: analytics must never block or break a server action.
   void fetch(`${POSTHOG_HOST}/i/v0/e/`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       api_key: POSTHOG_KEY,
       event,
@@ -72,7 +69,7 @@ function emitServer(
 function emitBrowser(event: string, payload: Record<string, unknown>): void {
   // Dynamically import the browser PostHog client so `posthog-js` is never
   // pulled into a server bundle. Fire-and-forget; never throws upward.
-  void import("posthog-js")
+  void import('posthog-js')
     .then(({ default: posthog }) => {
       posthog.capture(event, payload);
     })
@@ -84,11 +81,11 @@ function emitBrowser(event: string, payload: Record<string, unknown>): void {
 export function trackEvent(
   event: string,
   properties: Record<string, unknown> = {},
-  distinctId?: string,
+  distinctId?: string
 ): void {
   const payload = { project_id: PROJECT, ...properties };
   try {
-    if (typeof window === "undefined") {
+    if (typeof window === 'undefined') {
       emitServer(event, payload, distinctId);
     } else {
       emitBrowser(event, payload);
@@ -100,8 +97,8 @@ export function trackEvent(
 
 function emit<K extends keyof AnalyticsEventMap>(
   event: K,
-  props: Omit<AnalyticsEventMap[K], "project_id">,
-  distinctId?: string,
+  props: Omit<AnalyticsEventMap[K], 'project_id'>,
+  distinctId?: string
 ): void {
   trackEvent(event, props, distinctId);
 }
@@ -112,22 +109,22 @@ function emit<K extends keyof AnalyticsEventMap>(
  * Pass the visitor id so the event attaches to the right person.
  */
 export function trackSignup(distinctId?: string): void {
-  emit("signup", {}, distinctId);
+  emit('signup', {}, distinctId);
 }
 
 /** Fire once, when the visitor submits their first rating. */
 export function trackActivated(distinctId?: string): void {
-  emit("activated", {}, distinctId);
+  emit('activated', {}, distinctId);
 }
 
 /** Fire on each completion of the core product action. */
 export function trackCoreAction(action: CoreAction, distinctId?: string): void {
-  emit("core_action", { action }, distinctId);
+  emit('core_action', { action }, distinctId);
 }
 
 /** Fire on session start for a visitor who has prior activity. */
 export function trackReturned(distinctId?: string): void {
-  emit("returned", {}, distinctId);
+  emit('returned', {}, distinctId);
 }
 
 /**
@@ -141,9 +138,9 @@ export function trackCompareViewOpened({
   directory: string;
   itemCount: number;
 }): void {
-  if (typeof window === "undefined") return;
+  if (typeof window === 'undefined') return;
   try {
-    emitBrowser("compare_view_opened", {
+    emitBrowser('compare_view_opened', {
       project_id: PROJECT,
       directory,
       item_count: itemCount,
@@ -161,14 +158,14 @@ export function trackCompareViewOpened({
 // sessionStorage. `returned` fires once per session for a visitor who has
 // prior activity — exactly what the D1/D7 retention insight needs.
 
-const ACTIVITY_KEY = "er:analytics-has-activity";
-const SESSION_KEY = "er:analytics-session-fired";
+const ACTIVITY_KEY = 'er:analytics-has-activity';
+const SESSION_KEY = 'er:analytics-session-fired';
 
 /** Mark that this visitor has prior activity. Call after a rating succeeds. */
 export function markVisitorActivity(): void {
-  if (typeof window === "undefined") return;
+  if (typeof window === 'undefined') return;
   try {
-    window.localStorage.setItem(ACTIVITY_KEY, "1");
+    window.localStorage.setItem(ACTIVITY_KEY, '1');
   } catch {
     /* ignore */
   }
@@ -179,11 +176,11 @@ export function markVisitorActivity(): void {
  * Safe to call on every page load — self-gates.
  */
 export function trackReturnedOnce(): void {
-  if (typeof window === "undefined") return;
+  if (typeof window === 'undefined') return;
   try {
-    if (window.localStorage.getItem(ACTIVITY_KEY) !== "1") return;
-    if (window.sessionStorage.getItem(SESSION_KEY) === "1") return;
-    window.sessionStorage.setItem(SESSION_KEY, "1");
+    if (window.localStorage.getItem(ACTIVITY_KEY) !== '1') return;
+    if (window.sessionStorage.getItem(SESSION_KEY) === '1') return;
+    window.sessionStorage.setItem(SESSION_KEY, '1');
   } catch {
     return;
   }

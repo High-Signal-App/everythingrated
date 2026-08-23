@@ -1,15 +1,12 @@
-import Link from "next/link";
+import Link from 'next/link';
 
-import { FOCUS_DIRECTORY_SLUG } from "@/lib/directory-focus";
+import { FOCUS_DIRECTORY_SLUG } from '@/lib/directory-focus';
 
 export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-[var(--border)] bg-[color-mix(in_srgb,var(--background)_85%,transparent)] backdrop-blur-xl">
       <div className="mx-auto flex h-14 w-full max-w-6xl items-center justify-between gap-4 px-6">
-        <Link
-          href="/"
-          className="flex items-center gap-2 font-semibold tracking-tight"
-        >
+        <Link href="/" className="flex items-center gap-2 font-semibold tracking-tight">
           <LogoMark />
           <span>EverythingRated</span>
         </Link>
@@ -18,10 +15,7 @@ export function SiteHeader() {
             cross-directory stack builder keep their routes but are not in
             primary navigation — see lib/directory-focus.ts. */}
         <nav className="flex items-center gap-4 text-[12px] text-[var(--muted)]">
-          <Link
-            href={`/d/${FOCUS_DIRECTORY_SLUG}`}
-            className="hover:text-[var(--foreground)]"
-          >
+          <Link href={`/d/${FOCUS_DIRECTORY_SLUG}`} className="hover:text-[var(--foreground)]">
             AI dev tools
           </Link>
           <Link href="/my" className="hover:text-[var(--foreground)]">
