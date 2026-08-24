@@ -80,6 +80,16 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             })}
           />
         ) : null}
+        <script
+          src="https://sassmaker.com/project-strip.js"
+          data-project="everythingrated"
+          defer
+        />
+        <script
+          src="https://sassmaker.com/ai-chat-footer.js"
+          data-name="EverythingRated"
+          defer
+        />
       </body>
     </html>
   );
