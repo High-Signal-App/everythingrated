@@ -81,8 +81,7 @@ Full command index: [`docs/development/commands.md`](./docs/development/commands
 
 ## Documentation navigation
 
-The committed Markdown under `docs/` is the source of truth. Blume
-(`blume.config.ts`) is only the presentation/search layer. Start at
+The committed Markdown under `docs/` is the source of truth. Start at
 [`docs/index.md`](./docs/index.md) for the full map.
 
 | Area | Canonical doc |
@@ -101,7 +100,6 @@ The committed Markdown under `docs/` is the source of truth. Blume
 | Deploy | [`docs/operations/deploy.md`](./docs/operations/deploy.md) |
 | Jobs (CI + scheduled) | [`docs/operations/jobs.md`](./docs/operations/jobs.md) |
 | D1 migration runbook | [`docs/operations/runbooks/d1-migrations.md`](./docs/operations/runbooks/d1-migrations.md) |
-| Building the docs site (Blume) | [`docs/operations/build-docs.md`](./docs/operations/build-docs.md) |
 | Failed / deferred approaches (do not retry) | [`docs/knowledge/failed-approaches.md`](./docs/knowledge/failed-approaches.md) |
 | Glossary | [`docs/knowledge/glossary.md`](./docs/knowledge/glossary.md) |
 | Learnings queue | [`docs/knowledge/learnings.md`](./docs/knowledge/learnings.md) |
@@ -129,7 +127,7 @@ apps/web/              Next.js app + Cloudflare Worker bundle (worker.mjs, agent
   src/components/      atoms / molecules / organisms (atomic design)
   src/lib/             db, ratings, actions, visitor, moderation, comparison, stack-recommender
 packages/db/           Drizzle schema + D1 client + migrations
-scripts/               seed-d1.ts, catalogue JSON, validate-docs.sh, build-docs.sh
+scripts/               seed-d1.ts, catalogue JSON, validate-docs.sh
 docs/                  canonical documentation (source of truth)
 plans/                 long-form design documents (0001–0004)
 fixtures/              item submission fixtures

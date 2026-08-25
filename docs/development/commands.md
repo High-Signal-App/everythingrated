@@ -61,10 +61,6 @@ Playwright exists but is **not** in CI. See
 | Command | Purpose |
 | --- | --- |
 | `pnpm docs:check` | Validate docs structure + internal Markdown links. |
-| `pnpm docs:build` | Build the Blume docs site into `dist/` (presentation layer). |
-| `pnpm docs:dev` | Blume dev server with hot reload. |
-
-See [../operations/build-docs.md](../operations/build-docs.md).
 
 ## Husky / hooks
 

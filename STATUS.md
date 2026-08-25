@@ -16,8 +16,8 @@ moderation evidence.
 ## Active work
 
 - **Repository knowledge system** — this consolidation: `docs/` tree as
-  source of truth, Blume as presentation layer, link-check CI, `AGENTS.md`
-  slimmed to a bootloader. See [`docs/index.md`](./docs/index.md).
+  source of truth, link-check CI, and a slimmed `AGENTS.md` bootloader. See
+  [`docs/index.md`](./docs/index.md).
 - **Doc-drift cleanup** — `README.md` POC guidance still says "avoid
   submissions" while the `ai-dev-tools` submission pilot + token-gated
   moderation are shipped. Reconcile on the next README pass.

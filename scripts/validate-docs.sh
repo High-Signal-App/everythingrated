@@ -33,9 +33,9 @@ LINK_RE = re.compile(r'\[([^\]]*)\]\(([^)]+)\)')
 
 # Dirs whose contents are generated, vendored, or out of scope for doc links.
 EXCLUDE_DIRS = {
-    ".git", "node_modules", ".pnpm-store", ".blume", ".blume-verify",
+    ".git", "node_modules", ".pnpm-store",
     "dist", "build", "out", ".next", ".open-next", ".wrangler", ".turbo",
-    ".astro", ".husky", ".vscode", ".idea", "coverage", "test-results",
+    ".husky", ".vscode", ".idea", "coverage", "test-results",
     "playwright-report", ".vitest-cache", ".tmp", ".fallow",
 }
 

@@ -2,8 +2,7 @@
 
 ## Prerequisites
 
-- Node ≥ 20 (Blume docs tooling needs ≥ 22.12 if you use it — see
-  [../operations/build-docs.md](../operations/build-docs.md)).
+- Node ≥ 20.
 - pnpm 10.33.2 (pinned via `packageManager` in `package.json`; corepack will
   pick it up).
 - Cloudflare Wrangler (comes with `apps/web` devDependencies) for local D1.
@@ -73,5 +72,4 @@ pnpm build
 ```
 
 For README/docs-only changes, no app check is needed, but run
-`pnpm docs:check` to validate links — see
-[../operations/build-docs.md](../operations/build-docs.md).
+`pnpm docs:check` to validate links.

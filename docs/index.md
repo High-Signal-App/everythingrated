@@ -1,9 +1,7 @@
 # EverythingRated — Documentation
 
 This `docs/` tree is the canonical, committed source of truth for
-EverythingRated. Markdown here is authoritative; the Blume site
-(`blume.config.ts` at repo root) is only the presentation and search layer
-over these same files.
+EverythingRated. Markdown here is authoritative.
 
 The one-screen agent bootloader is `agents.md` at the repository root. The
 current objective and blockers live in the repository-root `STATUS.md`.
@@ -22,7 +20,6 @@ current objective and blockers live in the repository-root `STATUS.md`.
 | Run migrations safely | [operations/runbooks/d1-migrations.md](operations/runbooks/d1-migrations.md) |
 | Deploy | [operations/deploy.md](operations/deploy.md) |
 | CI + scheduled jobs | [operations/jobs.md](operations/jobs.md) |
-| Build the docs site (Blume) | [operations/build-docs.md](operations/build-docs.md) |
 | Review past decisions | [architecture/decisions/README.md](architecture/decisions/README.md) |
 | Avoid repeating dead ends | [knowledge/failed-approaches.md](knowledge/failed-approaches.md) |
 | Reusable learnings & glossary | [knowledge/learnings.md](knowledge/learnings.md), [knowledge/glossary.md](knowledge/glossary.md) |
@@ -37,7 +34,7 @@ docs/
   architecture/                 how it works
   architecture/decisions/       ADRs (thin) + pointer index to plans/
   development/                  local dev, commands, conventions, testing
-  operations/                   deploy, jobs, build-docs, runbooks
+  operations/                   deploy, jobs, runbooks
   operations/runbooks/          step-by-step operational procedures
   knowledge/                    learnings, failed approaches, glossary
   archive/                      superseded docs kept for history

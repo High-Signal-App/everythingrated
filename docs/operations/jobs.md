@@ -9,7 +9,7 @@ here; read the workflow files.
 | Workflow | Trigger | What it does | Source |
 | --- | --- | --- | --- |
 | `ci.yml` | push, pull_request | `install --frozen-lockfile` → `lint` → `typecheck` → `test` → `cf:build`. The blocking gate. | [`ci.yml`](../../.github/workflows/ci.yml) |
-| `docs.yml` | push/PR to main, `workflow_dispatch` | `links` job: dependency-free Markdown link check (`scripts/validate-docs.sh`). `blume-build` job: opt-in render verify (non-blocking). | [`docs.yml`](../../.github/workflows/docs.yml) |
+| `docs.yml` | push/PR to main, `workflow_dispatch` | Dependency-free Markdown link check (`scripts/validate-docs.sh`). | [`docs.yml`](../../.github/workflows/docs.yml) |
 | `cloudflare-deploy.yml` | `workflow_dispatch` only | `typecheck` → `pnpm deploy` → smoke `https://ratings.highsignal.app/`. Manual; never auto on push. | [`cloudflare-deploy.yml`](../../.github/workflows/cloudflare-deploy.yml) |
 | `weekly.yml` | cron `0 9 * * 1` (Mon 09:00 UTC), `workflow_dispatch` | Runs available quality scripts (lint/typecheck/test/build) as a drift catch. | [`weekly.yml`](../../.github/workflows/weekly.yml) |
 

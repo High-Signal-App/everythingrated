@@ -88,5 +88,3 @@ undo via a new compensating migration or a `wrangler d1 export` restore. See
 - [runbooks/d1-migrations.md](runbooks/d1-migrations.md) — migration and
   rollback procedures.
 - [jobs.md](jobs.md) — scheduled and CI jobs.
-- [build-docs.md](build-docs.md) — building the docs site (separate from the
-  app deploy).

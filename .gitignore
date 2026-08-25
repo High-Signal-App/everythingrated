@@ -12,11 +12,6 @@ out/
 .wrangler/
 *.tsbuildinfo
 
-# Blume documentation site (presentation layer — generated, not source of truth)
-.blume/
-.blume-verify/
-.astro/
-
 # env
 .env
 .env.local
