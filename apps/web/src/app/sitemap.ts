@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next';
 
+import { FOCUS_DIRECTORY_SLUG } from '@/lib/directory-focus';
 import { listDirectories, listItemsWithAggregates } from '@/lib/ratings';
 
 export const dynamic = 'force-dynamic';
@@ -26,12 +27,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.85,
     },
     {
-      url: `${siteUrl}/list`,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
       url: `${siteUrl}/stack`,
       lastModified: now,
       changeFrequency: 'weekly',
@@ -56,30 +51,37 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.65,
     },
     {
+      url: `${siteUrl}/feeds`,
+      lastModified: now,
+      changeFrequency: 'weekly',
+      priority: 0.6,
+    },
+    {
+      url: `${siteUrl}/privacy`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.3,
+    },
+    {
+      url: `${siteUrl}/terms`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.3,
+    },
+    {
       url: `${siteUrl}/submit-directory`,
       lastModified: now,
       changeFrequency: 'monthly',
       priority: 0.5,
     },
-    {
-      url: `${siteUrl}/llms.txt`,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.4,
-    },
-    {
-      url: `${siteUrl}/index.md`,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.4,
-    },
   ];
 
   try {
     const dirs = await listDirectories();
-    // Include every directory + item so crawlers discover the full catalog.
-    // Parked directories remain public at direct URLs (see directory-focus.ts).
-    for (const d of dirs) {
+    // Only the retained AI-dev-tools surface belongs in discovery. Parked
+    // directories remain available to direct links but are intentionally
+    // absent from homepage, navigation, and sitemap.
+    for (const d of dirs.filter((entry) => entry.directory.slug === FOCUS_DIRECTORY_SLUG)) {
       entries.push({
         url: `${siteUrl}/d/${d.directory.slug}`,
         lastModified: now,

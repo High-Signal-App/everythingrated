@@ -5,7 +5,7 @@ export function SiteFooter() {
     <footer className="mt-24 border-t border-[var(--border)]">
       <div className="mx-auto w-full max-w-6xl px-6 py-6 text-[11px] text-[var(--muted-2)]">
         <p className="text-[var(--muted)]">
-          One star can&rsquo;t pick your next AI dev tool. Five axes can.
+          One star can&rsquo;t pick your next AI dev tool. Six axes can.
         </p>
         <p className="mt-1">
           © {new Date().getFullYear()} EverythingRated · Multi-axis ratings for AI dev tool

@@ -20,27 +20,27 @@ export const metadata: Metadata = {
 
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'https://ratings.highsignal.app'),
   title: {
-    default: 'EverythingRated — multi-axis ratings for AI dev tool decisions',
+    default: 'EverythingRated — multi-axis AI dev tool ratings',
     template: '%s — EverythingRated',
   },
   description:
-    'Decide which AI dev libraries to adopt. Every library scored on 6 adoption axes — maintenance, community, license, API stability, footprint, AI portability — instead of one star.',
+    'Compare 24 AI dev libraries across maintenance, community, license, API stability, footprint, and model portability — one adoption trade-off at a time.',
   applicationName: 'EverythingRated',
   alternates: { canonical: '/' },
   openGraph: {
     type: 'website',
     siteName: 'EverythingRated',
-    title: 'EverythingRated — multi-axis ratings for AI dev tool decisions',
+    title: 'EverythingRated — multi-axis AI dev tool ratings',
     description:
-      'Every AI dev library scored on 6 adoption axes — maintenance, community, license, API stability, footprint, AI portability — instead of one star.',
+      'Compare 24 AI dev libraries across six adoption axes instead of collapsing the decision into one star.',
     url: '/',
     images: [{ url: '/og.svg', alt: 'EverythingRated adoption ratings' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'EverythingRated — multi-axis ratings for AI dev tool decisions',
+    title: 'EverythingRated — multi-axis AI dev tool ratings',
     description:
-      'Every AI dev library scored on 6 adoption axes — maintenance, community, license, API stability, footprint, AI portability — instead of one star.',
+      'Compare 24 AI dev libraries across six adoption axes instead of collapsing the decision into one star.',
     images: ['/og.svg'],
   },
 };
@@ -80,14 +80,11 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             })}
           />
         ) : null}
-        <script
-          src="https://sassmaker.com/project-strip.js"
-          data-project="everythingrated"
-          defer
-        />
+        <script src="https://sassmaker.com/project-strip.js" data-project="everythingrated" defer />
         <script
           src="https://sassmaker.com/ai-chat-footer.js"
           data-name="EverythingRated"
+          data-compose="false"
           defer
         />
       </body>

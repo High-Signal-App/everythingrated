@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
+import { FOCUS_DIRECTORY_SLUG } from '@/lib/directory-focus';
 import { listDirectories } from '@/lib/ratings';
 
 export const dynamic = 'force-dynamic';
@@ -23,7 +24,9 @@ type Feed = {
 export default async function FeedsPage() {
   let directories: Awaited<ReturnType<typeof listDirectories>> = [];
   try {
-    directories = await listDirectories();
+    directories = (await listDirectories()).filter(
+      ({ directory }) => directory.slug === FOCUS_DIRECTORY_SLUG
+    );
   } catch {
     /* DB offline — show only the global feeds. */
   }
@@ -32,12 +35,12 @@ export default async function FeedsPage() {
     {
       path: '/directories.json',
       kind: 'JSON',
-      description: 'Every directory with its slug, name, item count, and aspect count.',
+      description: 'The public directory inventory with item and aspect counts.',
     },
     {
       path: '/sitemap.xml',
       kind: 'XML',
-      description: 'All public directory and item pages for crawlers.',
+      description: 'The retained AI dev-tool directory and item pages for crawlers.',
     },
     {
       path: '/robots.txt',
