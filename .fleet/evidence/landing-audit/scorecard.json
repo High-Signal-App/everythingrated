@@ -1,0 +1,40 @@
+{
+  "$schema": "fleet.landing-audit.v1",
+  "project": "everythingrated",
+  "priority": "P4",
+  "decision": "Hold",
+  "auditedAt": "2026-08-29",
+  "candidateUrl": "https://silicon-tunnel-buttons-over.trycloudflare.com/",
+  "productionUrl": "https://ratings.highsignal.app/",
+  "releaseState": "Local candidate qualified; copy, footer, metadata, robots, feeds, and sitemap repairs are not deployed by this audit.",
+  "implementationAction": "preserve",
+  "migrationCandidate": false,
+  "gates": {
+    "contentPurpose": {
+      "score": 99,
+      "status": "pass",
+      "evidence": "The first viewport identifies the retained product precisely: compare 24 AI development libraries across six adoption axes before committing. It explains why stars are insufficient, names every axis, and gives one clear compare action. Parked generic-directory ambitions are no longer promoted in candidate discovery surfaces."
+    },
+    "designQuality": {
+      "score": 94,
+      "status": "pass",
+      "evidence": "The restrained analytical UI fits an adoption-decision product, with clear hierarchy, confidence examples, comparison chips, and useful board previews. Exact 390 and 1440 pixel checks show no horizontal overflow; the latest candidate renders both fleet footer elements."
+    },
+    "seo": {
+      "score": 98,
+      "status": "pass",
+      "evidence": "The candidate passes all 14 critical homepage checks after shortening title and description. Its sitemap was reduced from 948 mixed/parked routes to 37 intentional AI-dev-tool and supporting HTML pages, removing the invalid bare /list URL. The candidate graph has zero internal errors or redirects; contextual /my, submit, random, and RSS routes remain intentionally outside the sitemap."
+    },
+    "geo": {
+      "score": 92,
+      "status": "pass-with-advisory",
+      "evidence": "Production has all seven machine-readiness primitives and scores A-tier 80. Source discovery is now narrowed from 948 routes, and cataloged feeds, privacy, and terms pages are included. A fresh production-host audit is still required after release to prove route-level Markdown and catalog integrity against the corrected sitemap."
+    },
+    "performance": {
+      "score": 93,
+      "status": "pass",
+      "evidence": "The optimized production build was re-qualified through a fresh tunnel rather than grading the earlier Next.js development server. PSI Swarm completed 4/4 profiles with a good 2.21 s LCP gate, CLS 0, and at most 27 ms TBT in the slow profile. LCP measured 2.21 s on slow mobile, 4.09 s on a cold mid-mobile run, 545 ms on fast mobile, and 392 ms on desktop. The isolated mid-mobile cold-start variance and approximately 102 KiB unused JavaScript remain P4 advisories."
+    }
+  },
+  "minimumObserved": 92
+}
