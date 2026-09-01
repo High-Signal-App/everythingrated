@@ -12,7 +12,7 @@ export default function PrivacyPage() {
         ← All directories
       </Link>
       <h1 className="mt-3 text-3xl font-bold tracking-tight">Privacy</h1>
-      <p className="mt-4 text-xs text-[var(--muted)]">Last updated: 2026-05-15.</p>
+      <p className="mt-4 text-xs text-[var(--muted)]">Last updated: 2026-08-31.</p>
 
       <p className="mt-6 text-sm leading-7">
         EverythingRated has no user accounts. Ratings are submitted anonymously and identified only
@@ -31,10 +31,18 @@ export default function PrivacyPage() {
         </li>
       </ul>
 
+      <h2 className="mt-8 text-base font-semibold">Website analytics</h2>
+      <p className="mt-2 text-sm leading-7">
+        The public site uses PostHog for product events and Microsoft Clarity for session replay and
+        heatmaps. These services may receive browser, device, page, and interaction data under their
+        respective privacy policies. Ratings remain associated only with the opaque visitor cookie
+        described above.
+      </p>
+
       <h2 className="mt-8 text-base font-semibold">What we don&apos;t</h2>
       <ul className="mt-2 list-disc space-y-1 pl-5 text-sm">
         <li>No login, no email collection, no IP-based tracking.</li>
-        <li>No third-party analytics or remarketing tags.</li>
+        <li>No remarketing tags and no sale of ratings or analytics data.</li>
       </ul>
 
       <h2 className="mt-8 text-base font-semibold">Deletion</h2>

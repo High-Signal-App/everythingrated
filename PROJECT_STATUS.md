@@ -1,5 +1,5 @@
 # everythingrated — PROJECT STATUS
-Last updated: 2026-08-14
+Last updated: 2026-08-31
 
 ## Why / What
 
@@ -48,6 +48,9 @@ Last updated: 2026-08-14
 
 ## Timeline
 
+- **2026-08-31** — Added source-ready product-owned Microsoft Clarity tracking
+  and corrected the public privacy disclosure to name both analytics services.
+  No deployment ran.
 - **2026-08-14** — Search discovery hardened: public-page canonicals and Open Graph URLs now agree, HTML edge-cache keys are isolated by Worker deployment version, and the manual deployment verifies every live sitemap URL before it can report success.
 - **2026-07-03** — **Product narrowed to AI dev-tool adoption decisions.** Homepage, nav, footer, sitemap, and cross-directory surfaces (`/stack`, `/trending`, `/aspects`, `/submit-directory`) refocused on `ai-dev-tools` only. Other seeded directories (`databases`, `hosting`) parked — routes still work for direct links, but hidden from all primary entry points. `lib/directory-focus.ts` codifies the focus. Copy updated to sell the adoption-decision thesis.
 - **2026-07-02** — Added global try/catch error handler to OpenNext worker (`apps/web/worker.mjs`).

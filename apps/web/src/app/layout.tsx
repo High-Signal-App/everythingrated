@@ -1,6 +1,7 @@
 import './globals.css';
 
 import type { Metadata } from 'next';
+import Script from 'next/script';
 
 import { SiteFooter } from '@/components/organisms/site-footer';
 import { SiteHeader } from '@/components/organisms/site-header';
@@ -80,11 +81,18 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             })}
           />
         ) : null}
+        <Script id="microsoft-clarity" strategy="afterInteractive">
+          {`(function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+          })(window,document,"clarity","script","y6btfbf6sv");
+          window.clarity("set","project_id","everythingrated");`}
+        </Script>
         <script src="https://sassmaker.com/project-strip.js" data-project="everythingrated" defer />
         <script
           src="https://sassmaker.com/ai-chat-footer.js"
           data-name="EverythingRated"
-          data-compose="false"
           defer
         />
       </body>
