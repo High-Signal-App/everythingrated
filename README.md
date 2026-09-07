@@ -15,6 +15,9 @@ weights, while scores can change as ratings arrive.
 
 **Shareability (2026-09-07):** source repair is prepared; deployment approval
 and live homepage-to-comparison/mobile verification remain outstanding.
+Remaining task: [live qualification #17](https://github.com/High-Signal-App/everythingrated/issues/17).
+The September 7 task reconciliation found no existing open Issues or PRs;
+this issue preserves the outstanding deployment/live gate.
 See [PROJECT_STATUS.md](PROJECT_STATUS.md) and the
 [product overview](docs/product/overview.md).
 
