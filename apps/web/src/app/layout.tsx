@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     template: '%s — EverythingRated',
   },
   description:
-    'Compare 24 AI dev libraries across maintenance, community, license, API stability, footprint, and model portability — one adoption trade-off at a time.',
+    'Compare AI developer tools using per-axis anonymous opinions, visible rating counts, and adjustable comparison weights.',
   applicationName: 'EverythingRated',
   alternates: { canonical: '/' },
   openGraph: {
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     siteName: 'EverythingRated',
     title: 'EverythingRated — multi-axis AI dev tool ratings',
     description:
-      'Compare 24 AI dev libraries across six adoption axes instead of collapsing the decision into one star.',
+      'Compare AI developer tools axis by axis. Check rating counts and treat sparse opinions as early signals.',
     url: '/',
     images: [{ url: '/og.svg', alt: 'EverythingRated adoption ratings' }],
   },
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'EverythingRated — multi-axis AI dev tool ratings',
     description:
-      'Compare 24 AI dev libraries across six adoption axes instead of collapsing the decision into one star.',
+      'Compare AI developer tools axis by axis. Check rating counts and treat sparse opinions as early signals.',
     images: ['/og.svg'],
   },
 };
@@ -90,11 +90,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           window.clarity("set","project_id","everythingrated");`}
         </Script>
         <script src="https://sassmaker.com/project-strip.js" data-project="everythingrated" defer />
-        <script
-          src="https://sassmaker.com/ai-chat-footer.js"
-          data-name="EverythingRated"
-          defer
-        />
+        <script src="https://sassmaker.com/ai-chat-footer.js" data-name="EverythingRated" defer />
       </body>
     </html>
   );

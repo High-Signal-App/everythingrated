@@ -43,7 +43,23 @@ test('comparison', () => {
   );
 
   assert.equal(rows[0].item.id, 'b');
-  assert.equal(rows[0].total > rows[1].total, true);
+  assert.equal(rows[0].total! > rows[1].total!, true);
+
+  // A missing axis must not drag a rated score down, and evidence survives ranking.
+  const sparse = item('sparse', 'Sparse', { speed: 4, polish: 0 });
+  sparse.aspects[1].count = 0;
+  sparse.totalRaters = 1;
+  const sparseRows = compareItems([sparse], ['sparse'], {});
+  assert.equal(sparseRows[0].total, 4);
+  assert.equal(sparseRows[0].totalRaters, 1);
+  assert.equal(sparseRows[0].tradeoffs[1].count, 0);
+  assert.equal(compareItems([sparse], ['sparse'], { speed: 0 })[0].total, null);
+  assert.equal(compareItems([sparse], ['sparse'], { speed: 0, polish: 0 })[0].total, null);
+  const unrated = item('unrated', 'Unrated', { speed: 0 });
+  unrated.aspects[0].count = 0;
+  const mixed = compareItems([unrated, sparse], ['unrated', 'sparse'], {});
+  assert.equal(mixed[0].item.id, 'sparse');
+  assert.equal(mixed[1].total, null);
 
   const encoded = encodeCompareState(['a', 'b'], { speed: 1, polish: 2.5 });
   const parsed = parseCompareState(new URLSearchParams(encoded));

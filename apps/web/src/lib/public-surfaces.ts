@@ -19,7 +19,7 @@ export const PUBLIC_STATIC_SURFACES: readonly PublicStaticSurface[] = [
     title: 'EverythingRated',
     description: 'Multi-axis adoption ratings for AI developer tools.',
     markdown:
-      'Compare AI developer tools across maintenance, community, license, API stability, footprint, and AI portability. Ratings are anonymous and each axis remains visible.',
+      'Compare AI developer tools using the current board rubric, adjustable weights, and visible rating counts. Ratings include starter owner opinions; small samples are not community consensus.',
     changeFrequency: 'weekly',
     priority: 1,
   },
@@ -74,7 +74,7 @@ export const PUBLIC_STATIC_SURFACES: readonly PublicStaticSurface[] = [
     title: 'Aspects',
     description: 'Current status of the cross-directory aspect explorer.',
     markdown:
-      'The cross-directory aspect explorer is paused. The active AI developer-tool board uses six adoption axes: maintenance, community, license, API stability, footprint, and AI portability.',
+      'The cross-directory aspect explorer is paused. Open the AI developer-tool board for its current rating axes and per-axis counts.',
     changeFrequency: 'monthly',
     priority: 0.4,
   },

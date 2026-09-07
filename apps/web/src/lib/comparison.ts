@@ -6,8 +6,15 @@ export const MAX_COMPARE_ITEMS = 4;
 
 export type WeightedComparisonRow = {
   item: ItemWithAggregate['item'];
-  total: number;
-  tradeoffs: { aspect: AspectAverage['aspect']; weighted: number; raw: number; weight: number }[];
+  total: number | null;
+  totalRaters: number;
+  tradeoffs: {
+    aspect: AspectAverage['aspect'];
+    weighted: number;
+    raw: number;
+    weight: number;
+    count: number;
+  }[];
 };
 
 export function parseCompareState(searchParams: URLSearchParams): {
@@ -57,15 +64,20 @@ export function compareItems(
         return {
           aspect: aspect.aspect,
           raw: aspect.avg,
+          count: aspect.count,
           weight,
           weighted: aspect.avg * weight,
         };
       });
-      const totalWeight = tradeoffs.reduce((sum, aspect) => sum + aspect.weight, 0) || 1;
-      const total = tradeoffs.reduce((sum, aspect) => sum + aspect.weighted, 0) / totalWeight;
-      return { item: item.item, total, tradeoffs };
+      const rated = tradeoffs.filter((aspect) => aspect.count > 0 && aspect.weight > 0);
+      const totalWeight = rated.reduce((sum, aspect) => sum + aspect.weight, 0);
+      const total =
+        totalWeight > 0
+          ? rated.reduce((sum, aspect) => sum + aspect.weighted, 0) / totalWeight
+          : null;
+      return { item: item.item, total, totalRaters: item.totalRaters, tradeoffs };
     })
-    .sort((a, b) => b.total - a.total || a.item.name.localeCompare(b.item.name));
+    .sort((a, b) => (b.total ?? -1) - (a.total ?? -1) || a.item.name.localeCompare(b.item.name));
 }
 
 function clampWeight(value: number): number {

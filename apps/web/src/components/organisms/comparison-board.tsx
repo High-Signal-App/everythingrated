@@ -94,7 +94,9 @@ export function ComparisonBoard({
           <h2 className="text-[20px] font-semibold tracking-tight">Comparison board</h2>
           <p className="mt-1 text-[13px] text-[var(--muted)]">
             Add 2-{MAX_COMPARE_ITEMS} items, tune the axis weights, and share the URL for this exact
-            tradeoff.
+            tradeoff. Scores are anonymous opinions, including starter owner ratings. Small samples
+            are early signals, not a reliable winner. Unrated axes are excluded from weighted
+            totals; compare the coverage as well as the score.
           </p>
         </div>
         <div className="flex items-center gap-3">
@@ -274,8 +276,18 @@ export function ComparisonBoard({
                       </p>
                       <div className="mt-1 flex items-start justify-between gap-3">
                         <h3 className="text-[16px] font-semibold">{row.item.name}</h3>
-                        <span className="num text-2xl font-semibold">{row.total.toFixed(1)}</span>
+                        <span className="num text-2xl font-semibold">
+                          {row.total === null ? '—' : row.total.toFixed(1)}
+                        </span>
                       </div>
+                      <p className="mt-2 text-[12px] text-[var(--muted)]">
+                        {row.totalRaters} rater{row.totalRaters === 1 ? '' : 's'}
+                        {row.totalRaters < 5 ? ' · Early signal' : ' · Anonymous opinions'}
+                      </p>
+                      <p className="mt-1 text-[11px] text-[var(--muted)]">
+                        {row.tradeoffs.filter((axis) => axis.count > 0 && axis.weight > 0).length}/
+                        {row.tradeoffs.filter((axis) => axis.weight > 0).length} weighted axes rated
+                      </p>
                     </div>
                     <div className="space-y-3">
                       {row.tradeoffs.map((tradeoff) => (
@@ -283,10 +295,19 @@ export function ComparisonBoard({
                           <div className="mb-1 flex justify-between gap-2 text-[12px] text-[var(--muted)]">
                             <span>{tradeoff.aspect.label}</span>
                             <span>
-                              {tradeoff.raw.toFixed(1)} x {tradeoff.weight}
+                              {tradeoff.count > 0 ? tradeoff.raw.toFixed(1) : '—'} x{' '}
+                              {tradeoff.weight}
                             </span>
                           </div>
                           <ScoreBar value={tradeoff.raw} />
+                          <p className="mt-1 text-[11px] text-[var(--muted)]">
+                            {tradeoff.count} rating{tradeoff.count === 1 ? '' : 's'}
+                            {tradeoff.count === 0
+                              ? ' · Not rated'
+                              : tradeoff.count < 5
+                                ? ' · Early signal'
+                                : ''}
+                          </p>
                         </div>
                       ))}
                     </div>

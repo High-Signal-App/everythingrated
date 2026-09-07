@@ -1,9 +1,28 @@
 # everythingrated — PROJECT STATUS
+
+## Shareability repair — 2026-09-07
+
+- Homepage axis names and preview tools/scores/counts now come from directory
+  aggregates; removed the invented library ranking and unsupported confidence
+  claims. Metadata and Markdown descriptions match the narrower promise.
+- Comparison cards retain per-tool visitor counts, per-axis rating counts,
+  early-signal copy, and rated-axis coverage. Missing ratings do not count as
+  zero; entirely unrated or zero-weight selections show no total.
+- Local validation: all 28 Vitest tests, workspace typecheck, changed-file Biome,
+  Markdown links, and Next production build pass. The first build hit transient
+  local workerd SQLite locking; the retry passed. Full-repository Biome still
+  reports five pre-existing formatting errors in untouched files; `lint` is an
+  existing no-op. Exact commit CI is recorded in the delivery handoff.
+- **Remaining gate:** source repair awaits approved deployment and live checks
+  of homepage axes, Aider/Claude Code deep-link selection, counts, sparse/empty
+  states, and mobile layout. CI alone does not establish shareability.
+- Canonical behavior: [product overview](docs/product/overview.md).
+
 Last updated: 2026-08-31
 
 ## Why / What
 
-**EverythingRated** is a multi-axis ratings platform narrowed to one use case: **AI dev-tool adoption decisions**. The generic any-directory ambition is parked — the product helps operators decide which AI dev libraries to adopt by rating them on the six axes that actually drive the adopt/skip call (maintenance, community, license, API stability, footprint, AI portability).
+**EverythingRated** is a multi-axis ratings platform narrowed to one use case: **AI dev-tool adoption decisions**. The generic any-directory ambition is parked — the product lets operators compare AI developer tools using the current directory rubric, anonymous opinions, and visible evidence counts.
 
 **Users:** Anonymous visitors rating AI dev tools; moderators approving community tool submissions via token-gated queue.
 

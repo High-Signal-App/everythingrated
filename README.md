@@ -6,11 +6,17 @@ thing and collects per-aspect ratings.
 
 Live app: <https://ratings.highsignal.app>
 
-Current POC directories:
+Active board: **AI developer tools**. Databases and hosting remain parked.
 
-- AI developer tools
-- Databases
-- Hosting platforms
+The homepage shows the current board rubric and real tool/count previews.
+Comparisons expose per-axis counts and coverage; starter owner opinions and
+small samples are not community consensus. Share URLs preserve tools and
+weights, while scores can change as ratings arrive.
+
+**Shareability (2026-09-07):** source repair is prepared; deployment approval
+and live homepage-to-comparison/mobile verification remain outstanding.
+See [PROJECT_STATUS.md](PROJECT_STATUS.md) and the
+[product overview](docs/product/overview.md).
 
 ## Product Bet
 

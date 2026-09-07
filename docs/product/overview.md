@@ -30,6 +30,25 @@ they are hidden from all primary entry points. See
 [`apps/web/src/lib/directory-focus.ts`](../../apps/web/src/lib/directory-focus.ts)
 and [ADR-0002](../architecture/decisions/ADR-0002-narrow-to-ai-dev-tools.md).
 
+## Public promise and evidence (2026-09-07)
+
+The homepage reads axis labels, tool previews, and rating counts from the same
+published directory aggregates as the comparison board. It must not promise a
+fixed library rubric or display invented rankings. The September live audit
+found coding tools compared on speed/accuracy/cost while the homepage promised
+maintenance/license/API stability; the source repair removes that mismatch
+without changing the database rubric.
+
+Comparison cards show distinct visitor counts per tool and rating counts per
+axis. Missing axes are excluded from weighted averages; no rated, positively
+weighted axes means no score. Coverage remains visible because different axis
+coverage makes totals less comparable. Counts measure anonymous visitor
+identities, not verified people, independence, or statistical confidence.
+The share URL preserves selections and weights, not a snapshot of scores.
+
+Source checks and CI do not qualify the live product. Deployment approval and
+live homepage-to-comparison verification are still required before sharing.
+
 ## Users
 
 - **Anonymous visitors** rate items. Identity is an httpOnly `er_visitor`
