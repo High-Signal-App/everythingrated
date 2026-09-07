@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/about' },
+  openGraph: { url: '/about' },
   title: 'About — EverythingRated',
   description:
     'EverythingRated reviews everything along the axes that actually matter for that category. AI tools get rated on different aspects than databases.',

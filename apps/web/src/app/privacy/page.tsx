@@ -1,6 +1,8 @@
 import Link from 'next/link';
 
 export const metadata = {
+  alternates: { canonical: '/privacy' },
+  openGraph: { url: '/privacy' },
   title: 'Privacy — EverythingRated',
   description: 'EverythingRated has no accounts. The privacy story is short.',
 };

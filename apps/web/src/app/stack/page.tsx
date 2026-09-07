@@ -3,6 +3,11 @@ import Link from 'next/link';
 import { Badge } from '@/components/atoms/badge';
 import { FOCUS_DIRECTORY_SLUG } from '@/lib/directory-focus';
 
+export const metadata = {
+  alternates: { canonical: '/stack' },
+  openGraph: { url: '/stack' },
+};
+
 export const dynamic = 'force-static';
 
 // PARKED (2026-07-03): the cross-directory stack builder was part of the

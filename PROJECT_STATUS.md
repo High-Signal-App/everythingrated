@@ -1,5 +1,21 @@
 # everythingrated — PROJECT STATUS
 
+## Hosted guest qualification — 2026-09-07
+
+Deployed checked source `53a6bc032e0da7b9ede516e53a103e4e6f26a47d` as
+Worker version `ef424402-21f6-405c-bf39-e2455b44a4d5` at 100% traffic.
+Desktop/mobile homepage-to-comparison, weights/share/reopen, counts and empty
+states passed without submitting ratings. No visitor identity cookie was minted.
+This qualifies the guest comparison experiment, not rating writes or community
+consensus. [Receipt and screenshots](docs/verification/2026-09-07-release.md).
+
+The full sitemap smoke found seven inherited-root canonicals. Their source fix
+passes generated-HTML canonical/og:url checks and is awaiting its release slot.
+Actions deployment also lacks its Cloudflare token; the successful deployment
+used the documented local authenticated path without changing credentials.
+These separate remaining tasks are [#18](https://github.com/High-Signal-App/everythingrated/issues/18).
+The earlier source-only section below records the pre-release state.
+
 ## Shareability repair — 2026-09-07
 
 - Homepage axis names and preview tools/scores/counts now come from directory

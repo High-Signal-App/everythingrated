@@ -13,11 +13,16 @@ Comparisons expose per-axis counts and coverage; starter owner opinions and
 small samples are not community consensus. Share URLs preserve tools and
 weights, while scores can change as ratings arrive.
 
-**Shareability (2026-09-07):** source repair is prepared; deployment approval
-and live homepage-to-comparison/mobile verification remain outstanding.
-Remaining task: [live qualification #17](https://github.com/High-Signal-App/everythingrated/issues/17).
-The September 7 task reconciliation found no existing open Issues or PRs;
-this issue preserves the outstanding deployment/live gate.
+**Shareability (2026-09-07):** the hosted guest comparison experiment is
+qualified on desktop and mobile. Selection, weights and current rating counts
+survive a shared URL. Ratings were not submitted during qualification; small
+anonymous samples remain early opinions, not benchmarks or consensus.
+[Release and browser receipt](docs/verification/2026-09-07-release.md).
+[Guest qualification #17](https://github.com/High-Signal-App/everythingrated/issues/17)
+is complete. Remaining [release operations #18](https://github.com/High-Signal-App/everythingrated/issues/18):
+deploy the seven-page canonical metadata repair and restore the manual Actions
+deployment authentication. The successful release used existing local Wrangler
+authentication; no credentials or D1 data were changed.
 See [PROJECT_STATUS.md](PROJECT_STATUS.md) and the
 [product overview](docs/product/overview.md).
 
@@ -65,10 +70,12 @@ Open `/` for the grid; click a tool for the multi-axis rating page.
 ## Deploy
 
 ```bash
-pnpm db:migrate:remote
-pnpm db:seed:remote
 pnpm deploy        # opennextjs-cloudflare build && deploy
 ```
+
+Only apply remote migrations when schema preflight identifies a reviewed need.
+Remote seeding is a separate deliberate data change, never a routine deploy step.
+See the [deployment runbook](docs/operations/deploy.md).
 
 ## Stack
 

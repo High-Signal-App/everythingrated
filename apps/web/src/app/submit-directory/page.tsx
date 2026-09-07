@@ -3,6 +3,11 @@ import Link from 'next/link';
 import { Badge } from '@/components/atoms/badge';
 import { FOCUS_DIRECTORY_SLUG } from '@/lib/directory-focus';
 
+export const metadata = {
+  alternates: { canonical: '/submit-directory' },
+  openGraph: { url: '/submit-directory' },
+};
+
 export const dynamic = 'force-static';
 
 // PARKED (2026-07-03): public directory creation is paused while the product

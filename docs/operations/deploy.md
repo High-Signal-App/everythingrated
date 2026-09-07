@@ -78,7 +78,7 @@ deploy step. See [development/seed-data.md](../development/seed-data.md).
 
 ## Rollback
 
-Workers are immutable deploys — `wrangler deployments rollback` returns the
+Workers are immutable deploys — `wrangler rollback <version-id> --name everythingrated` returns the
 previous version. D1 migrations are forward-only (no transactional rollback);
 undo via a new compensating migration or a `wrangler d1 export` restore. See
 [runbooks/d1-migrations.md](runbooks/d1-migrations.md).

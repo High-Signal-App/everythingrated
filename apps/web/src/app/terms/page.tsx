@@ -1,6 +1,8 @@
 import Link from 'next/link';
 
 export const metadata = {
+  alternates: { canonical: '/terms' },
+  openGraph: { url: '/terms' },
   title: 'Terms — EverythingRated',
   description: 'Use of EverythingRated is anonymous and provided as-is.',
 };

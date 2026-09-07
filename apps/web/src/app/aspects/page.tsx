@@ -5,6 +5,8 @@ import { Badge } from '@/components/atoms/badge';
 import { FOCUS_DIRECTORY_SLUG } from '@/lib/directory-focus';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/aspects' },
+  openGraph: { url: '/aspects' },
   title: 'Aspects — EverythingRated',
   description:
     'The aspect explorer is paused while the product focuses on AI dev tool adoption decisions.',
