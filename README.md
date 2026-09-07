@@ -20,8 +20,8 @@ anonymous samples remain early opinions, not benchmarks or consensus.
 [Release and browser receipt](docs/verification/2026-09-07-release.md).
 [Guest qualification #17](https://github.com/High-Signal-App/everythingrated/issues/17)
 is complete. Remaining [release operations #18](https://github.com/High-Signal-App/everythingrated/issues/18):
-deploy the seven-page canonical metadata repair and restore the manual Actions
-deployment authentication. The successful release used existing local Wrangler
+restore the manual Actions deployment authentication. The metadata correction
+is deployed and all 36 sitemap URLs pass exact canonical/Open Graph checks. The successful release used existing local Wrangler
 authentication; no credentials or D1 data were changed.
 See [PROJECT_STATUS.md](PROJECT_STATUS.md) and the
 [product overview](docs/product/overview.md).

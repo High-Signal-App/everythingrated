@@ -10,7 +10,8 @@ This qualifies the guest comparison experiment, not rating writes or community
 consensus. [Receipt and screenshots](docs/verification/2026-09-07-release.md).
 
 The full sitemap smoke found seven inherited-root canonicals. Their source fix
-passes generated-HTML canonical/og:url checks and is awaiting its release slot.
+passed generated-HTML checks and is now deployed as version 114; all 36 hosted
+sitemap URLs pass exact canonical/og:url checks.
 Actions deployment also lacks its Cloudflare token; the successful deployment
 used the documented local authenticated path without changing credentials.
 These separate remaining tasks are [#18](https://github.com/High-Signal-App/everythingrated/issues/18).
