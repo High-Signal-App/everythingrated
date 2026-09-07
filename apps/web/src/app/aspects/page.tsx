@@ -30,8 +30,8 @@ export default function AspectsIndex() {
         <p className="mt-3 max-w-2xl text-[14px] leading-[1.6] text-[var(--muted)]">
           EverythingRated now does one job: multi-axis ratings for AI dev tool adoption decisions.
           The cross-directory aspect explorer — which compared axes like &ldquo;latency&rdquo; and
-          &ldquo;cost&rdquo; across unrelated categories — is on hold. The six adoption axes for AI
-          dev libraries live on the board.
+          &ldquo;cost&rdquo; across unrelated categories — is on hold. The current rating axes for
+          AI developer tools live on the board.
         </p>
         <div className="mt-8">
           <Link

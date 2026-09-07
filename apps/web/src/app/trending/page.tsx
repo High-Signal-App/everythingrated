@@ -26,14 +26,14 @@ export default function TrendingPage() {
         <p className="mt-3 max-w-2xl text-[14px] leading-[1.6] text-[var(--muted)]">
           EverythingRated now does one job: multi-axis ratings for AI dev tool adoption decisions.
           The cross-directory trending board is on hold while that use case is proven. See the
-          most-rated AI dev libraries on the board instead.
+          most-rated AI developer tools on the board instead.
         </p>
         <div className="mt-8">
           <Link
             href={`/d/${FOCUS_DIRECTORY_SLUG}`}
             className="inline-flex h-11 items-center rounded-[var(--radius-sm)] bg-[var(--foreground)] px-5 text-sm font-medium text-[var(--background)] transition-opacity hover:opacity-90"
           >
-            Browse AI dev libraries →
+            Browse AI developer tools →
           </Link>
         </div>
       </div>

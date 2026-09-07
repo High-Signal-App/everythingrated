@@ -32,7 +32,7 @@ export default function StackPage() {
             href={`/d/${FOCUS_DIRECTORY_SLUG}`}
             className="inline-flex h-11 items-center rounded-[var(--radius-sm)] bg-[var(--foreground)] px-5 text-sm font-medium text-[var(--background)] transition-opacity hover:opacity-90"
           >
-            Compare AI dev libraries →
+            Compare AI developer tools →
           </Link>
         </div>
       </div>
