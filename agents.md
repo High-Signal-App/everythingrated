@@ -1,3 +1,5 @@
+> **Owner retirement decision:** Read [CONCEPT_STATUS.md](CONCEPT_STATUS.md) first. No autonomous product work; historical instructions below do not reopen this archived experiment.
+
 # agents.md — EverythingRated
 
 <!-- Concise agent bootloader. Deep detail lives in docs/. This file is the

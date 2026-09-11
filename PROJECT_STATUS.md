@@ -1,3 +1,5 @@
+> **Current owner decision (2026-09-10): archived experimental concept; no ongoing development.** [Decision and return condition](CONCEPT_STATUS.md). Earlier entries below are historical.
+
 # everythingrated — PROJECT STATUS
 
 ## Hosted guest qualification — 2026-09-07

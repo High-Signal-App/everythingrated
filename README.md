@@ -1,5 +1,7 @@
 # EverythingRated
 
+> **Archived experimental concept — no longer maintained.** See [owner decision and return condition](CONCEPT_STATUS.md). Historical setup instructions and roadmaps are retained for reference.
+
 Multi-axis ratings platform. Instead of collapsing a tool, product, or service
 into one score, each directory defines the aspects that matter for that kind of
 thing and collects per-aspect ratings.
